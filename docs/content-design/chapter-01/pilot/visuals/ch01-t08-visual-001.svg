@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-labelledby="ch01t08visTitle ch01t08visDesc">
+  <title id="ch01t08visTitle">Signed Acceleration: Same Fall, Different Convention (التسارع المُوقَّع: السقوط نفسه، اصطلاح مختلف)</title>
+  <desc id="ch01t08visDesc">An original schematic with two side-by-side panels showing the identical physical situation of an object falling, at three successive instants each. In the left panel, upward is chosen as the positive direction, and the constant-magnitude acceleration is labeled a = -g. In the right panel, downward is chosen as the positive direction, and the same constant-magnitude acceleration is labeled a = +g. The acceleration label is shown once per panel and applies at all three instants, as the legend states. In both panels the object's downward physical motion is identical: the object falls the same distance in the same pattern, and its velocity (shown as growing arrows) increases in the same way. Only the algebraic sign of the acceleration label differs, because the chosen positive-axis convention differs; the magnitude of gravitational acceleration, |g| approximately 9.8 m/s squared, is the same in both panels. The velocity and acceleration arrows use independent visual length scales and must not be compared to each other quantitatively. The diagram explicitly notes that the object speeds up in both panels, so a negative acceleration sign does not indicate slowing down or backward motion. Captions are provided in English and Arabic.</desc>
+
+  <defs>
+    <marker id="arrowSlateT08" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowRustT08" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9480f"/>
+    </marker>
+    <marker id="arrowVioletT08" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="1000" fill="#ffffff"/>
+
+  <!-- Title (bilingual) -->
+  <text x="500" y="38" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Signed Acceleration: Same Fall, Different Convention</text>
+  <text x="500" y="64" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">التسارع المُوقَّع: السقوط نفسه، اصطلاح مختلف</text>
+
+  <!-- Panel headers (bilingual) -->
+  <text x="250" y="92" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Upward-Positive Convention</text>
+  <text x="250" y="112" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">اصطلاح الأعلى موجب</text>
+  <text x="750" y="92" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Downward-Positive Convention</text>
+  <text x="750" y="112" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">اصطلاح الأسفل موجب</text>
+
+  <!-- Panel divider -->
+  <line x1="500" y1="128" x2="500" y2="560" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Panel 1: upward-positive axis (arrow points up = "+") -->
+  <line x1="110" y1="545" x2="110" y2="150" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowSlateT08)"/>
+  <text x="128" y="145" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">+</text>
+
+  <!-- Panel 1: falling object at three instants (identical physical motion to Panel 2) -->
+  <line x1="280" y1="190" x2="280" y2="510" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="280" cy="190" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="280" cy="350" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="280" cy="510" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Panel 1 acceleration arrows: constant length, pointing down (physical direction never flips) -->
+  <line x1="302" y1="190" x2="302" y2="222" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+  <line x1="302" y1="350" x2="302" y2="382" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+  <line x1="302" y1="510" x2="302" y2="542" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+
+  <!-- Panel 1 velocity arrows: growing length, pointing down -->
+  <line x1="258" y1="190" x2="258" y2="204" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+  <line x1="258" y1="350" x2="258" y2="378" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+  <line x1="258" y1="510" x2="258" y2="552" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+
+  <!-- Acceleration label shown once per panel (applies at all three instants — see legend note below) -->
+  <text x="317" y="210" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a"><tspan font-style="italic">a</tspan><tspan> = -</tspan><tspan font-style="italic">g</tspan></text>
+
+  <!-- Panel 2: downward-positive axis (arrow points down = "+") -->
+  <line x1="610" y1="150" x2="610" y2="560" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowSlateT08)"/>
+  <text x="628" y="572" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">+</text>
+
+  <!-- Panel 2 falling object at the same three instants as Panel 1 (identical physical motion) -->
+  <line x1="780" y1="190" x2="780" y2="510" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="780" cy="190" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="780" cy="350" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="780" cy="510" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Panel 2 acceleration arrows: same constant length and same downward physical direction as Panel 1 -->
+  <line x1="802" y1="190" x2="802" y2="222" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+  <line x1="802" y1="350" x2="802" y2="382" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+  <line x1="802" y1="510" x2="802" y2="542" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+
+  <!-- Panel 2 velocity arrows: same growing lengths and same downward direction as Panel 1 -->
+  <line x1="758" y1="190" x2="758" y2="204" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+  <line x1="758" y1="350" x2="758" y2="378" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+  <line x1="758" y1="510" x2="758" y2="552" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+
+  <!-- Acceleration label shown once per panel (applies at all three instants — see legend note below) -->
+  <text x="817" y="210" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a"><tspan font-style="italic">a</tspan><tspan> = +</tspan><tspan font-style="italic">g</tspan></text>
+
+  <!-- Legend: color key for the two vector types -->
+  <line x1="330" y1="590" x2="350" y2="590" stroke="#6d28d9" stroke-width="3" marker-end="url(#arrowVioletT08)"/>
+  <text x="356" y="594" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">a</tspan><tspan> — acceleration (constant)</tspan></text>
+  <line x1="560" y1="590" x2="580" y2="590" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT08)"/>
+  <text x="586" y="594" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">v</tspan><tspan> — velocity (increasing)</tspan></text>
+  <text x="500" y="616" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" fill="#334155">a — التسارع (مقدار ثابت)&#160;&#160;&#160;&#160;&#160;v — السرعة المتجهة (مقدار متزايد)</text>
+
+  <!-- Legend note 1: the acceleration label applies at all three instants, even though it is drawn once -->
+  <text x="500" y="640" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Constant at all three instants</text>
+  <text x="500" y="660" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">ثابت عند اللحظات الثلاث</text>
+
+  <!-- Legend note 2: velocity and acceleration arrow lengths are on independent scales, not quantitatively comparable -->
+  <text x="500" y="682" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Velocity and acceleration arrows use independent scales.</text>
+  <text x="500" y="702" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">تُستخدم مقاييس مستقلة لأسهم السرعة المتجهة والتسارع.</text>
+
+  <!-- Magnitude panel: |g| is the same in both conventions -->
+  <rect x="354" y="731" width="300" height="60" rx="12" fill="#1f6f8b" fill-opacity="0.18"/>
+  <rect x="350" y="726" width="300" height="60" rx="12" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="500" y="765" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a"><tspan>|</tspan><tspan font-style="italic">g</tspan><tspan>| &#8776; 9.8 m/s</tspan><tspan font-size="14" dy="-8">2</tspan></text>
+
+  <text x="500" y="810" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#334155">Magnitude of gravitational acceleration — the same in both panels</text>
+  <text x="500" y="830" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">مقدار التسارع الجذبي — نفسه في اللوحتين</text>
+
+  <!-- Caption 1: sign is a convention choice, not a change in gravity -->
+  <text x="500" y="858" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">Same physical motion, opposite-signed acceleration — because the positive direction was chosen differently, not because gravity changed.</text>
+  <text x="500" y="878" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">الحركة الفيزيائية نفسها، لكن بتسارع متعاكس الإشارة — لأن الاتجاه الموجب اختير بصورة مختلفة، لا لأن الجاذبية تغيّرت.</text>
+
+  <!-- Caption 2: explicit anti-misconception note -->
+  <text x="500" y="903" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">In both panels the object speeds up as it falls — a negative sign does not mean slowing down.</text>
+  <text x="500" y="923" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">في كلتا اللوحتين يتسارع الجسم أثناء سقوطه — والإشارة السالبة لا تعني التباطؤ.</text>
+
+  <!-- Draft / review-required footer band -->
+  <rect x="0" y="951" width="1000" height="40" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="500" y="976" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#b45309">DRAFT — REVIEW REQUIRED — ORIGINAL SCHEMATIC (ch01-t08-visual-001) — Not authorized for student-facing use</text>
+</svg>

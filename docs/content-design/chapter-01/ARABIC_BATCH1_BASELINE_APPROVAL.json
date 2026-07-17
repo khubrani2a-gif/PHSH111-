@@ -1,0 +1,119 @@
+{
+  "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
+  "baselineVersion": "1.0.0",
+  "status": "approved",
+  "language": "Arabic",
+  "batchId": "Batch 1",
+  "approvalLevel": "projectOwnerArabicBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-17",
+  "scope": {
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "notApplicableTo": "All other Chapter 1 topics remain outside this baseline. This is a separate, standalone record — it does not extend, merge with, or modify ARABIC_PILOT_BASELINE_APPROVAL.json (scope: ch01-t02/ch01-t03/ch01-t08/ch01-t10) or ENGLISH_BATCH1_BASELINE_APPROVAL.json, both of which remain entirely separate, unmodified governance records with their own independent version sequences."
+  },
+  "approvedCandidateFiles": [
+    {
+      "topicId": "ch01-t01",
+      "topicTitle": "Fundamental Quantities",
+      "topicTitleAr": "الكميات الأساسية",
+      "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
+      "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0",
+      "schemaVersion": "2.3.0",
+      "recordCount": 7
+    },
+    {
+      "topicId": "ch01-t04",
+      "topicTitle": "Mass, Inertia and Weight",
+      "topicTitleAr": "الكتلة والقصور الذاتي والوزن",
+      "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json",
+      "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371",
+      "schemaVersion": "2.3.0",
+      "recordCount": 8
+    }
+  ],
+  "filePreservationNote": "The approved Arabic candidate files are unmoved, unrenamed, uncopied, and not promoted into docs/content-design/chapter-01/pilot/ or docs/content-design/chapter-01/batch1-drafts/. Their internal content and governance fields (blocking, visibility, translationStatus, etc.) were not altered by this approval — every record's arabic.translationStatus remains exactly \"draft\", not changed to \"approved\". This baseline-approval record, external to the files themselves, is what establishes that the exact versions at the checksums above are approved — mirroring the same pattern already used by ENGLISH_BATCH1_BASELINE_APPROVAL.json and ARABIC_PILOT_BASELINE_APPROVAL.json, which likewise approve their respective content files in place without relocating, renaming, or internally rewriting them.",
+  "englishBaselineDependency": {
+    "record": "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+    "baselineVersion": "1.0.0",
+    "status": "approved",
+    "note": "Both Arabic candidate files were generated as structural copies of the exact English files approved at this version, with every English field, record ID, record order, and governance field preserved unchanged. This approval relies on, and does not re-open or re-litigate, that existing English baseline approval.",
+    "verifiedEnglishSourceChecksums": {
+      "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+      "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b",
+      "verifiedAt": "2026-07-17",
+      "verifiedResult": "Both re-computed and confirmed byte-identical to ENGLISH_BATCH1_BASELINE_APPROVAL.json's approvedDraftFiles values immediately before this Arabic baseline approval. Neither English file was modified by the Arabic candidate-draft generation, correction, review, or this approval."
+    }
+  },
+  "glossaryDependency": {
+    "record": "docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json",
+    "glossaryVersion": "1.3.0",
+    "note": "All nine Batch 1 glossary actions (per PHSH111_BATCH1_GLOSSARY_APPROVAL_RECORD.md) were used as terminology authority for both Arabic candidate files. This approval relies on, and does not modify, that already-approved glossary."
+  },
+  "correctionDependencies": {
+    "ch01-corr-001": {
+      "appliesToTopicId": "ch01-t01",
+      "approvalStatus": "editoriallyApproved",
+      "note": "Applied exactly as approved to the English baseline this candidate was copied from; its scientific meaning (mechanics-scope qualifier; charge as a deferred fourth fundamental property) is preserved throughout the Arabic candidate, independently re-verified during the review-and-revision pass."
+    },
+    "ch01-corr-002": {
+      "appliesToTopicId": "ch01-t04",
+      "approvalStatus": "editoriallyApproved, with a recorded qualification — see SCIENTIFIC_CORRECTIONS.json ch01-corr-002.approvals.approvalBasis: 'apparent weight' is scientifically valid, project-authored interpretive terminology and must not be represented as verbatim source wording.",
+      "note": "Applied exactly as approved, including its qualification, to the English baseline this candidate was copied from; the qualification is preserved as an explicit Arabic sentence in the candidate's own explanation block and instructor script, independently re-verified during the review-and-revision pass."
+    }
+  },
+  "reviewBasis": [
+    "docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md",
+    "docs/app/PHSH111_BATCH1_ARABIC_DRAFT_GENERATION_REPORT.md",
+    "docs/app/PHSH111_BATCH1_ARABIC_DRAFT_REVIEW_AND_REVISION_REPORT.md",
+    "docs/app/PHSH111_BATCH1_ARABIC_BASELINE_APPROVAL_RECORD.md"
+  ],
+  "statementOfApproval": "The Arabic-language candidate-draft content for ch01-t01 (Fundamental Quantities) and ch01-t04 (Mass, Inertia and Weight), as it exists in the two files listed in approvedCandidateFiles at the checksums recorded there, is approved by the project owner as Arabic Batch 1 baseline version 1.0.0. This approval is a project-owner content-readiness decision made on the basis of Claude's completed generation, correction, and review-and-revision work (see reviewBasis) — it is not independent human scientific approval, not visual approval, not application-integration authorization, not student-facing authorization, and not deployment or publication authorization.",
+  "perTopicDecision": {
+    "ch01-t01": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "A pervasive stylistic pattern (a glossary term echoed in parentheses immediately after its own use, e.g. \"الكميات الأساسية (الكمية الأساسية)\") was identified during review as an optional future improvement, not a defect — it does not affect scientific meaning or glossary compliance and was deliberately not rewritten at draft scale. See PHSH111_BATCH1_ARABIC_DRAFT_REVIEW_AND_REVISION_REPORT.md §18."
+      ]
+    },
+    "ch01-t04": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "Same structural note as ch01-t01 regarding the glossary term-echo stylistic pattern.",
+        "sourceVariants[0].answerVariant on ch01-prob-104 remains untranslated (plain English string) — the schema provides no Arabic slot for this internal governance field; not a blocking gap."
+      ]
+    }
+  },
+  "downstreamAuthorization": {
+    "sourceForVisualProduction": "This approved Arabic baseline (arabic.canonicalArabicTranslation and localizedContent.ar / .ar-sibling text as it exists in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json and ch01-t04-content.json at baselineVersion 1.0.0), together with the already-approved English visualReference specifications, is now the designated bilingual source for original diagram artwork production for these two topics, if and when a separate visual-production authorization is granted. Designating this baseline as the future visual-production source text does not itself authorize or perform any artwork creation.",
+    "sourceForFutureBilingualRendering": "This approved Arabic baseline is now the designated source text for any future bilingual (English/Arabic) rendering, layout, or display work on these two topics, if and when a separate application-integration authorization is granted.",
+    "note": "Designating this baseline as the visual-production and bilingual-rendering source text does not itself perform any artwork creation, rendering, or application integration, and does not authorize student-facing publication of the resulting bilingual or illustrated content — those remain separate, unauthorized actions requiring explicit future authorization."
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to the Arabic content of ch01-t01 or ch01-t04 (any .ar text field, or arabic.canonicalArabicTranslation, in the instructorScript, contentBlock, or problem records in the two Batch 1 Arabic candidate files) must be recorded as a controlled revision against this baseline, not made silently.",
+    "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.0.1) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when — following the exact pattern already proven in ENGLISH_PILOT_BASELINE_APPROVAL.json / ARABIC_PILOT_BASELINE_APPROVAL.json's own revisionControlPolicy.revisionLog.",
+    "revisionLog": []
+  },
+  "identifierRegistrationStatus": {
+    "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal Arabic baseline approval and was NOT performed as part of it. Registration remains required before any future application-integration step, unchanged from the status already recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json and PILOT_READINESS.json. IDENTIFIER_REGISTRY.json was not modified by this approval."
+  },
+  "governanceRestrictions": {
+    "approvalLevelStatement": "This is a project-owner internal ARABIC-CONTENT baseline approval only. It is distinct from: (1) independent human scientific or linguistic review (has not occurred, for any topic, at any point in this project), (2) visual approval (no visual exists or is approved), (3) application-integration authorization (a separate, still-absent gate), and (4) student-publication authorization (a separate, still-absent gate).",
+    "independentHumanReviewCompleted": false,
+    "visualProductionAuthorized": false,
+    "applicationIntegrationAuthorized": false,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false
+  },
+  "unchangedByThisApproval": [
+    "Every instructorScript, contentBlock, and problem record in the two Arabic candidate files remains in its existing draft/blocked governance state — blocking.blockingStatus, blocking.studentFacingAllowed (false on every record), arabic.translationStatus (remains \"draft\", not changed to \"approved\"), and every other governance/localization field are untouched by this approval.",
+    "The two approved English source files (docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json, ch01-t04-content.json) are entirely untouched by this approval; their checksums remain byte-identical to ENGLISH_BATCH1_BASELINE_APPROVAL.json's recorded values.",
+    "BILINGUAL_GLOSSARY.json remains unchanged, still glossaryVersion 1.3.0.",
+    "IDENTIFIER_REGISTRY.json remains unchanged.",
+    "ARABIC_PILOT_BASELINE_APPROVAL.json and ENGLISH_PILOT_BASELINE_APPROVAL.json remain entirely separate and unmodified by this record.",
+    "PILOT_AUTHORIZATION.json's scope.authorizedTopicIds and applicationBuildAuthorization.applicableTopicIds remain exactly the original four pilot topics.",
+    "studentFacingAllowed remains false on every record in every topic.",
+    "studentPublicationAuthorized remains false (global).",
+    "canonicalGenerationAuthorized remains chapter-wide false in PILOT_READINESS.json.",
+    "This approval does not authorize visual production, application integration, or any student-facing use for ch01-t01 or ch01-t04."
+  ]
+}

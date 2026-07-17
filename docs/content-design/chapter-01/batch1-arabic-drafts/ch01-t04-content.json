@@ -1,0 +1,1022 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t04",
+  "topicTitle": "Mass, Inertia and Weight",
+  "topicTitleAr": "الكتلة والقصور الذاتي والوزن",
+  "generationStatus": "draft-batch1-arabic-candidate-generation",
+  "generationNote": "This file is a controlled ARABIC CANDIDATE DRAFT, generated under PILOT_AUTHORIZATION.json v1.3.2's batch1ArabicGenerationAuthorization (corrected at v1.3.1, explicitly project-owner ratified at v1.3.2) and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md. It begins from the exact structure of the approved English Batch 1 baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0, this topic's approved checksum: c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b), with every English field, record ID, record order, and source/audit/correction/visibility/governance field preserved unchanged. Only the authorized Arabic localization structures (contentBlock.localizedContent.ar, every record's arabic sub-object, and problem-level ar fields on problemStatement / conceptualInterpretation / numberedSolution[].explanation / finalAnswer.interpretation) were newly populated, using BILINGUAL_GLOSSARY.json v1.3.0 as terminology authority. Every populated arabic.translationStatus reads \"draft\", never \"approved\" -- this is NOT an approved Arabic baseline. This file is NOT located under docs/content-design/chapter-01/batch1-drafts/ or docs/content-design/chapter-01/pilot/, and is NOT read by apps/chapter1-mvp/ -- it is a controlled candidate-draft artifact only, not application-facing content, and not authorized for student-facing use in any form. The approved English source file this candidate was copied from was not modified by this task.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-104",
+        "topicIds": [
+          "ch01-t04"
+        ],
+        "openingHook": {
+          "text": "Ask students to imagine two identical-looking gurneys sitting still on a flat, frictionless-feeling floor — one empty, one loaded with equipment. Ask which one would be harder to get moving with a push, and which one would be harder to stop once it was already rolling. Then ask a second question: which one would be harder to lift straight up off the ground? Are these the same question?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "When we say something is 'heavy,' are we always talking about the same physical quantity?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Mass measures an object's inertia — its resistance to a change in motion. Gravitational weight is the force of gravity acting on an object, while apparent weight is the support force a scale reads or a body feels; the two normally agree in ordinary situations but describe different physical ideas. 'Amount of matter' is a useful starting intuition for mass, but inertia is the operational definition this chapter relies on.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "Define mass operationally as a measure of inertia, distinguishing it from the everyday 'amount of matter' intuition.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Distinguish gravitational weight (a force) from mass (not a force), and compute gravitational weight using W = mg.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Recognize that a scale or support-force reading (apparent weight) is a related but distinct idea from gravitational weight, and that mass does not change with location while weight does.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "It is tempting to think of mass as simply 'how much stuff' something is made of. That intuition is a reasonable starting point, but it becomes circular the moment you try to define 'how much stuff' without already knowing what mass is. Physics uses a more precise, operational definition instead: mass measures an object's inertia — its resistance to a change in motion. A larger mass means it takes more effort to speed an object up, slow it down, or change its direction. Notice that this definition has nothing to do with gravity. Weight is a different idea. Gravitational weight is the force of gravity pulling on an object, and its size depends on where the object is — specifically, on the local strength of gravity there. The same object has a smaller gravitational weight somewhere with weaker gravity, even though its mass — its amount of inertia — has not changed at all. There is a third, closely related idea worth naming here: apparent weight, the support force a scale actually reads, or that your own body feels when something is resting on it. In ordinary, everyday situations — an object sitting still on a scale — apparent weight and gravitational weight come out equal, which is why we can normally measure gravitational weight indirectly, just by reading a scale. The everyday habit of saying an object 'weighs' a certain number of kilograms actually blurs mass and weight together: kilograms are a unit of mass, not weight. Weight, being a force, is properly measured in newtons, using the relationship W equals mass times the local gravitational acceleration.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [],
+        "figureCues": [
+          {
+            "visualIds": [
+              "ch01-t04-visual-001"
+            ],
+            "instruction": {
+              "text": "Show the push-versus-lift contrast diagram here (see contentBlock ch01-t04-block-visual). This visual has not yet been produced; use the fallback below until it exists.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "fallbackIfUnavailable": "Describe the contrast verbally: pushing an object along a flat floor reveals its mass (inertia); lifting it straight up, or reading a scale under it, reveals its weight."
+          }
+        ],
+        "intuition": {
+          "text": "If a question is really about how hard it is to start, stop, or redirect an object's motion, it is asking about mass. If it is really about the pull of gravity, or what a scale would read, it is asking about weight.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [],
+        "levelAdaptations": [
+          "Introductory: use only the push-versus-lift contrast and the everyday 'kilograms measure mass, not weight' correction, before introducing W = mg.",
+          "Standard: introduce W = mg with explicit units (kg, m/s², N) and work a numeric example.",
+          "Advanced: introduce apparent weight by name, and pose (without solving) the question of what happens to a scale reading during acceleration, explicitly flagging that this extension is outside this chapter's scope and belongs to a later dynamics topic."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "Which is easier to change with a push: the mass of an object, or its weight? Which one is even meaningful to 'push on' at all?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "If an object were moved somewhere with weaker gravity, what would happen to its mass? What would happen to its weight?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "You can't push on 'weight' directly — pushing changes motion, which is resisted by mass. Weight isn't something you push against in that sense.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Mass would stay exactly the same; weight would decrease, because weight depends on the local strength of gravity and mass does not.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Treating mass and weight as the same physical quantity, including using 'weigh' and kilograms interchangeably for both.",
+          "Believing an object's mass itself changes if it is moved somewhere with different gravity, rather than recognizing only its weight changes."
+        ],
+        "analogies": [
+          "Mass is like how stubborn something is about changing its motion; weight is like how hard gravity is currently pulling on it — the same object can be equally stubborn everywhere but pulled on with different strength in different places."
+        ],
+        "examples": [
+          "Pushing versus lifting a loaded equipment cart (this chapter's own worked example).",
+          "The qualitative point that the same object would weigh less somewhere with weaker gravity while its mass stays unchanged (no specific non-Earth gravitational value is used or required)."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t05",
+            "script": {
+              "text": "Now that we can distinguish an object's mass from its weight, let's turn from what is moving to how its motion itself is measured, starting with speed.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Always lead with mass as inertia, treating 'amount of matter' as introductory intuition only — this is the exact gap the approved correction ch01-corr-002 addresses.",
+          "Always state clearly that gravitational weight and apparent weight are distinct ideas, and that 'apparent weight' is this project's own clarifying term, not a direct quotation from any source."
+        ],
+        "timing": {
+          "estimatedMinutes": 9,
+          "pauseCues": [
+            "After the push-versus-lift question, before revealing the mass/weight distinction.",
+            "After stating W = mg, before working the numeric example."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Do not present 'apparent weight' as if it were verbatim wording from the textbook or slides — it is this project's own interpretive term, consistent with but not quoted from the audited sources, per the ch01-corr-002 approval qualification.",
+          "Do not extend into accelerating-reference-frame or elevator-style apparent-weight problems here — that is beyond this chapter's audited scope and belongs to a later dynamics topic."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-002"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG021",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Primary supporting evidence per the citation-repair task; ch01-t04's own mapped segment. Wording above is newly authored, not derived from this segment's text."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG022",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Primary supporting evidence per the citation-repair task; ch01-t04's own mapped segment. Wording above is newly authored, not derived from this segment's text."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-002",
+            "locatorType": "segment",
+            "locatorId": "S2-SEG056",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; textbook paragraph connecting mass to inertia informed this script's framing, reworded originally."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-002",
+            "locatorType": "segment",
+            "locatorId": "S2-SEG058",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; textbook paragraph distinguishing weight-felt-when-lifting from mass-felt-when-accelerating informed the push-versus-lift example, reworded originally, using a different object (equipment cart, not a suitcase)."
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تمهيد افتتاحي: اطلب من الطلاب تخيّل نقالتين متطابقتين في الشكل، ساكنتين على أرضية مستوية تكاد تخلو من الاحتكاك — إحداهما فارغة، والأخرى محمَّلة بمعدات. اسألهم: أيّهما أصعب في تحريكه بدفعة؟ وأيّهما أصعب في إيقافه بعد أن يبدأ بالتدحرج؟ ثم اطرح سؤالًا ثانيًا: أيّهما أصعب في رفعه رأسيًا عن الأرض؟ وهل هذان السؤالان سؤال واحد في الحقيقة؟\n\nالسؤال المحوري: حين نقول إن شيئًا ما 'ثقيل'، هل نتحدث دائمًا عن الكمية الفيزيائية نفسها؟\n\nالفكرة الرئيسية: تقيس الكتلة (الكتلة) قصور الجسم الذاتي — أي مقاومته لتغيّر حركته. أما الوزن الجذبي فهو قوة الجاذبية المؤثرة في الجسم، في حين أن الوزن الظاهري (الوزن الظاهري) هو قوة الدعم التي يقرأها الميزان أو يشعر بها الجسم؛ وهما يتفقان عادةً في الحالات المعتادة، لكنهما يصفان فكرتين فيزيائيتين مختلفتين. و'مقدار المادة' حدسٌ أوَّلي مفيد للكتلة، غير أن القصور الذاتي هو التعريف الإجرائي الذي يعتمد عليه هذا الفصل.\n\nأهداف التعلم:\n1. تعريف الكتلة إجرائيًا بوصفها مقياسًا للقصور الذاتي، والتمييز بينها وبين الحدس اليومي 'مقدار المادة'.\n2. التمييز بين الوزن الجذبي (وهو قوة) والكتلة (وهي ليست قوة)، وحساب الوزن الجذبي باستخدام W = mg.\n3. إدراك أن قراءة الميزان أو قوة الدعم (الوزن الظاهري) فكرة مرتبطة بالوزن الجذبي لكنها متمايزة عنه، وأن الكتلة لا تتغير بتغيّر الموقع بخلاف الوزن.\n\nالنص الكامل لسكربت التدريس: من المغري أن نظن أن الكتلة هي ببساطة 'مقدار المادة' التي يتكوّن منها الشيء. هذا الحدس نقطة انطلاق معقولة، لكنه يصبح دائريًا بمجرد أن تحاول تعريف 'مقدار المادة' دون أن تعرف أصلًا ما هي الكتلة. تستخدم الفيزياء بدلًا من ذلك تعريفًا إجرائيًا أدق: تقيس الكتلة قصور الجسم الذاتي — أي مقاومته لتغيّر حركته. وكلما كبرت كتلة الجسم، ازداد الجهد اللازم لتسريعه أو تبطيئه أو تغيير اتجاهه. ولاحظ أن هذا التعريف لا علاقة له بالجاذبية إطلاقًا. أما الوزن فهو فكرة مختلفة. الوزن الجذبي هو قوة الجاذبية التي تسحب الجسم، ويعتمد مقداره على موضع الجسم — وتحديدًا على قوة الجاذبية المحلية هناك. فالجسم نفسه يكون وزنه الجذبي أصغر في موضع جاذبيته أضعف، مع أن كتلته — أي مقدار قصوره الذاتي — لم تتغيّر إطلاقًا. وثمة فكرة ثالثة، وثيقة الصلة، تستحق أن نسمّيها هنا: الوزن الظاهري، وهو قوة الدعم التي يقرأها الميزان فعليًا، أو التي يشعر بها جسمك حين يستقر عليه شيء ما. وفي المواقف العادية اليومية — كجسم ساكن على ميزان — يتساوى الوزن الظاهري مع الوزن الجذبي، ولهذا يمكننا عادةً قياس الوزن الجذبي بطريقة غير مباشرة، بمجرد قراءة الميزان. والعادة اليومية في القول إن جسمًا ما 'يزن' عددًا معينًا من الكيلوغرامات تخلط في الواقع بين الكتلة والوزن: فالكيلوغرام وحدة كتلة، لا وحدة وزن. أما الوزن، بوصفه قوة، فيُقاس بدقة بالنيوتن، باستخدام العلاقة W يساوي الكتلة مضروبة في التسارع الجذبي المحلي.\n\nالحدس: إذا كان السؤال عن مدى صعوبة بدء حركة جسم أو إيقافها أو تغيير اتجاهها، فهو سؤال عن الكتلة. وإذا كان عن جذب الجاذبية، أو عمّا يقرأه الميزان، فهو سؤال عن الوزن.\n\nأسئلة تُطرح على الطلاب:\n- أيّهما أسهل تغييره بدفعة: كتلة الجسم أم وزنه؟ وأيّهما، أصلًا، له معنى أن 'تدفعه'؟\n- لو نُقل جسم إلى موضع جاذبيته أضعف، ماذا سيحدث لكتلته؟ وماذا سيحدث لوزنه؟\n\nالإجابات المتوقعة من الطلاب:\n- لا يمكنك أن تدفع 'الوزن' مباشرة — فالدفع يغيّر الحركة، وهذا ما تقاومه الكتلة. أما الوزن فليس شيئًا تدفع ضده بهذا المعنى.\n- ستبقى الكتلة كما هي تمامًا؛ أما الوزن فسينقص، لأن الوزن يعتمد على قوة الجاذبية المحلية، والكتلة لا تعتمد عليها.\n\nالمفاهيم الخاطئة المتوقعة: معاملة الكتلة والوزن على أنهما الكمية الفيزيائية نفسها، بما في ذلك استخدام كلمة 'يزن' والكيلوغرام بالتبادل لكليهما. الاعتقاد بأن كتلة الجسم نفسها تتغيّر إذا نُقل إلى موضع بجاذبية مختلفة، بدلاً من إدراك أن وزنه فقط هو الذي يتغيّر.\n\nتكييف المستوى:\nتمهيدي: الاقتصار على تباين الدفع مقابل الرفع، وتصحيح الفكرة اليومية 'الكيلوغرام يقيس الكتلة لا الوزن'، قبل تقديم W = mg.\nعادي: تقديم W = mg مع وحداتها الصريحة (kg، m/s²، N) وحل مثال عددي.\nمتقدم: تقديم الوزن الظاهري بالاسم، وطرح (دون حلّ) سؤال عمّا يحدث لقراءة الميزان أثناء التسارع، مع التوضيح الصريح أن هذا الامتداد خارج نطاق هذا الفصل وينتمي إلى موضوع ديناميكا لاحق.\n\nتشبيهات: الكتلة أشبه بمدى عناد الجسم في مقاومة تغيّر حركته؛ والوزن أشبه بمدى قوة جذب الجاذبية له حاليًا — فالجسم نفسه يمكن أن يكون عنيدًا بالقدر نفسه في كل مكان، بينما تجذبه الجاذبية بقوى مختلفة في أماكن مختلفة.\n\nأمثلة يستخدمها المعلم: دفع عربة معدات محمَّلة مقابل رفعها (المثال المحلول الخاص بهذا الفصل). النقطة النوعية بأن الجسم نفسه سيكون وزنه أقل في موضع جاذبيته أضعف، بينما تبقى كتلته دون تغيير (دون استخدام أي قيمة جاذبية محددة خارج الأرض أو اشتراطها).\n\nجملة الانتقال إلى الموضوع التالي: والآن بعد أن أصبحنا قادرين على التمييز بين كتلة الجسم ووزنه، لننتقل من 'ما الذي يتحرك' إلى 'كيف تُقاس حركته'، بدءًا بالسرعة.\n\nملاحظات تشديد للمعلم: ابدأ دائمًا بتقديم الكتلة بوصفها قصورًا ذاتيًا، مع معاملة 'مقدار المادة' حدسًا تمهيديًا فقط — فهذه هي الثغرة بالضبط التي يعالجها التصحيح المعتمد ch01-corr-002. اذكر دائمًا بوضوح أن الوزن الجذبي والوزن الظاهري فكرتان متمايزتان، وأن 'الوزن الظاهري' مصطلح خاص بهذا المشروع، لا اقتباسًا مباشرًا من أي مصدر.\n\nتنبيهات خاصة بالمعلم: لا تُقدّم 'الوزن الظاهري' وكأنه نص حرفي من الكتاب المدرسي أو الشرائح — فهو مصطلح تفسيري خاص بهذا المشروع، متّسق مع المصادر المدقَّقة لكنه غير مقتبس عنها حرفيًا، وفقًا لتأهيل اعتماد ch01-corr-002. لا تتوسّع في مسائل الوزن الظاهري ضمن أطر مرجعية غير قصورية (كالمصعد) هنا — فذلك خارج النطاق المدقَّق لهذا الفصل وينتمي إلى موضوع ديناميكا لاحق.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight",
+            "ch01-term-acceleration"
+          ]
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Mass measures an object's inertia — its resistance to a change in motion. Gravitational weight is the gravitational force acting on an object, while apparent weight is the support force indicated by a scale or felt by the body; the two normally agree in everyday situations but describe different physical ideas. 'Amount of matter' is a useful starting intuition for mass, but inertia is the definition this chapter relies on.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تقيس الكتلة (الكتلة) قصور الجسم الذاتي — أي مقاومته لتغيّر حركته. أما الوزن الجذبي فهو قوة الجاذبية المؤثرة في الجسم، في حين أن الوزن الظاهري (الوزن الظاهري) هو قوة الدعم التي يُشير إليها الميزان أو يشعر بها الجسم؛ وهما يتفقان عادةً في المواقف اليومية، لكنهما يصفان فكرتين فيزيائيتين مختلفتين. و'مقدار المادة' حدسٌ أوَّلي مفيد للكتلة، غير أن القصور الذاتي هو التعريف الذي يعتمد عليه هذا الفصل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تقيس الكتلة (الكتلة) قصور الجسم الذاتي — أي مقاومته لتغيّر حركته. أما الوزن الجذبي فهو قوة الجاذبية المؤثرة في الجسم، في حين أن الوزن الظاهري (الوزن الظاهري) هو قوة الدعم التي يُشير إليها الميزان أو يشعر بها الجسم؛ وهما يتفقان عادةً في المواقف اليومية، لكنهما يصفان فكرتين فيزيائيتين مختلفتين. و'مقدار المادة' حدسٌ أوَّلي مفيد للكتلة، غير أن القصور الذاتي هو التعريف الذي يعتمد عليه هذا الفصل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG021",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Primary supporting evidence; states the mass-as-inertia framing the corrected wording preserves."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG022",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Primary supporting evidence; states the gravitational-weight-versus-mass framing the corrected wording preserves."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording (ch01-corr-002), including its recorded qualification on 'apparent weight' terminology.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "It is tempting to define mass simply as 'how much matter' an object contains. That intuition is a reasonable starting point, but it becomes circular once you try to define 'how much matter' without already knowing what mass is. This chapter instead relies on an operational definition: mass measures an object's inertia — its resistance to a change in motion. The larger an object's mass, the more effort is required to speed it up, slow it down, or change its direction; pushing an object along a flat surface is a direct way to feel this resistance. Weight is a different physical idea. Gravitational weight is the force of gravity acting on an object; because it is a force due to gravity, its size depends on the local strength of gravity, not on the object itself. Lifting an object straight up against gravity is a direct way to feel this force. A closely related idea is apparent weight: the support force a scale actually reads, or that a body feels when something rests on it. In an ordinary situation — an object resting still on a scale — apparent weight and gravitational weight come out equal, which is why a scale reading is normally treated as a measurement of gravitational weight. (The term 'apparent weight' is this chapter's own clarifying label for that support-force reading; it is not a direct quotation from any source material, though the underlying distinction it names is consistent with the audited sources' own treatment of scales, lifting, and gravity.) A common source of confusion is everyday language: saying an object 'weighs' a certain number of kilograms actually blurs mass and weight together, since kilograms are a unit of mass, not weight. Because mass does not depend on location and gravitational weight does, the same object retains exactly the same mass everywhere, while its gravitational weight would be smaller somewhere with weaker gravity than Earth's surface.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "من المغري أن تُعرَّف الكتلة ببساطة بأنها 'مقدار المادة' التي يحتويها الجسم. هذا الحدس نقطة انطلاق معقولة، لكنه يصبح دائريًا بمجرد أن تحاول تعريف 'مقدار المادة' دون أن تعرف أصلًا ما هي الكتلة. يعتمد هذا الفصل بدلًا من ذلك على تعريف إجرائي: تقيس الكتلة قصور الجسم الذاتي — أي مقاومته لتغيّر حركته. وكلما كبرت كتلة الجسم، ازداد الجهد اللازم لتسريعه أو تبطيئه أو تغيير اتجاهه؛ ودفع جسم على سطح مستوٍ طريقة مباشرة لتحسّس هذه المقاومة. أما الوزن ففكرة فيزيائية مختلفة. الوزن الجذبي هو قوة الجاذبية المؤثرة في الجسم؛ وبما أنها قوة ناتجة عن الجاذبية، فإن مقدارها يعتمد على قوة الجاذبية المحلية، لا على الجسم نفسه. ورفع جسم رأسيًا ضد الجاذبية طريقة مباشرة لتحسّس هذه القوة. وثمة فكرة وثيقة الصلة بها، هي الوزن الظاهري: قوة الدعم التي يقرأها الميزان فعليًا، أو التي يشعر بها الجسم حين يستقر عليه شيء ما. وفي الموقف المعتاد — جسم ساكن على ميزان — يتساوى الوزن الظاهري مع الوزن الجذبي، ولهذا تُعامَل قراءة الميزان عادةً بوصفها قياسًا للوزن الجذبي. (مصطلح 'الوزن الظاهري' وسمٌ توضيحي خاص بهذا الفصل لتلك القراءة الدالة على قوة الدعم؛ وهو ليس اقتباسًا حرفيًا من أي مادة مصدرية، وإن كان التمييز الذي يشير إليه متّسقًا مع معالجة المصادر المدقَّقة نفسها للموازين والرفع والجاذبية.) ومن مصادر اللبس الشائعة اللغة اليومية: فقول إن جسمًا ما 'يزن' عددًا معينًا من الكيلوغرامات يخلط في الواقع بين الكتلة والوزن، لأن الكيلوغرام وحدة كتلة، لا وحدة وزن. وبما أن الكتلة لا تعتمد على الموقع بخلاف الوزن الجذبي، فإن الجسم نفسه يحتفظ بالكتلة ذاتها تمامًا في كل مكان، في حين يكون وزنه الجذبي أصغر في موضع جاذبيته أضعف من سطح الأرض.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "من المغري أن تُعرَّف الكتلة ببساطة بأنها 'مقدار المادة' التي يحتويها الجسم. هذا الحدس نقطة انطلاق معقولة، لكنه يصبح دائريًا بمجرد أن تحاول تعريف 'مقدار المادة' دون أن تعرف أصلًا ما هي الكتلة. يعتمد هذا الفصل بدلًا من ذلك على تعريف إجرائي: تقيس الكتلة قصور الجسم الذاتي — أي مقاومته لتغيّر حركته. وكلما كبرت كتلة الجسم، ازداد الجهد اللازم لتسريعه أو تبطيئه أو تغيير اتجاهه؛ ودفع جسم على سطح مستوٍ طريقة مباشرة لتحسّس هذه المقاومة. أما الوزن ففكرة فيزيائية مختلفة. الوزن الجذبي هو قوة الجاذبية المؤثرة في الجسم؛ وبما أنها قوة ناتجة عن الجاذبية، فإن مقدارها يعتمد على قوة الجاذبية المحلية، لا على الجسم نفسه. ورفع جسم رأسيًا ضد الجاذبية طريقة مباشرة لتحسّس هذه القوة. وثمة فكرة وثيقة الصلة بها، هي الوزن الظاهري: قوة الدعم التي يقرأها الميزان فعليًا، أو التي يشعر بها الجسم حين يستقر عليه شيء ما. وفي الموقف المعتاد — جسم ساكن على ميزان — يتساوى الوزن الظاهري مع الوزن الجذبي، ولهذا تُعامَل قراءة الميزان عادةً بوصفها قياسًا للوزن الجذبي. (مصطلح 'الوزن الظاهري' وسمٌ توضيحي خاص بهذا الفصل لتلك القراءة الدالة على قوة الدعم؛ وهو ليس اقتباسًا حرفيًا من أي مادة مصدرية، وإن كان التمييز الذي يشير إليه متّسقًا مع معالجة المصادر المدقَّقة نفسها للموازين والرفع والجاذبية.) ومن مصادر اللبس الشائعة اللغة اليومية: فقول إن جسمًا ما 'يزن' عددًا معينًا من الكيلوغرامات يخلط في الواقع بين الكتلة والوزن، لأن الكيلوغرام وحدة كتلة، لا وحدة وزن. وبما أن الكتلة لا تعتمد على الموقع بخلاف الوزن الجذبي، فإن الجسم نفسه يحتفظ بالكتلة ذاتها تمامًا في كل مكان، في حين يكون وزنه الجذبي أصغر في موضع جاذبيته أضعف من سطح الأرض.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG021",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording newly authored."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG022",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording newly authored."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-002",
+            "locatorType": "segment",
+            "locatorId": "S2-SEG056",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; informed the inertia framing, reworded originally."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-002",
+            "locatorType": "segment",
+            "locatorId": "S2-SEG058",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; informed the lift-vs-push framing, reworded originally with a different example object."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording; expands the mass/gravitational-weight/apparent-weight distinction into a full explanation, with the qualification stated explicitly rather than only in governance metadata.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "W = mg, where W is the magnitude of an object's gravitational weight (a force, measured in newtons, N), m is its mass (measured in kilograms, kg), and g is the magnitude of the local gravitational acceleration (|g| is approximately 9.8 m/s^2 at Earth's surface, consistent with the value already established elsewhere in this chapter). Mass (m) is a scalar property of the object itself and does not depend on location. Gravitational weight (W), because it is a force due to gravity, does depend on location through g: the same object has a smaller gravitational weight somewhere with weaker local gravity, while its mass stays exactly the same. This equation gives only the magnitude of the gravitational-weight force, which acts toward the source of gravitational attraction (at Earth's surface, downward); a full signed treatment of direction is not required for the quantities this equation is used for in this chapter.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "W = mg، حيث W مقدار الوزن الجذبي للجسم (وهو قوة، تُقاس بالنيوتن، N)، وm كتلته (تُقاس بالكيلوغرام، kg)، وg مقدار التسارع الجذبي المحلي (|g| يساوي تقريبًا 9.8 m/s^2 عند سطح الأرض، بما يتسق مع القيمة المعتمدة أصلًا في موضع آخر من هذا الفصل). والكتلة (m) خاصية قياسية (كمية قياسية) للجسم نفسه، ولا تعتمد على الموقع. أما الوزن الجذبي (W)، فبما أنه قوة ناتجة عن الجاذبية، فإنه يعتمد على الموقع من خلال g: إذ يكون وزن الجسم نفسه الجذبي أصغر في موضع جاذبيته المحلية أضعف، بينما تبقى كتلته كما هي تمامًا. وتُعطي هذه المعادلة مقدار قوة الوزن الجذبي فقط، وهي قوة تتجه نحو مصدر الجذب الجاذبي (عند سطح الأرض، إلى الأسفل)؛ ولا يلزم تناول إشاري كامل للاتجاه بالنسبة للكميات التي تُستخدم من أجلها هذه المعادلة في هذا الفصل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "W = mg، حيث W مقدار الوزن الجذبي للجسم (وهو قوة، تُقاس بالنيوتن، N)، وm كتلته (تُقاس بالكيلوغرام، kg)، وg مقدار التسارع الجذبي المحلي (|g| يساوي تقريبًا 9.8 m/s^2 عند سطح الأرض، بما يتسق مع القيمة المعتمدة أصلًا في موضع آخر من هذا الفصل). والكتلة (m) خاصية قياسية (كمية قياسية) للجسم نفسه، ولا تعتمد على الموقع. أما الوزن الجذبي (W)، فبما أنه قوة ناتجة عن الجاذبية، فإنه يعتمد على الموقع من خلال g: إذ يكون وزن الجسم نفسه الجذبي أصغر في موضع جاذبيته المحلية أضعف، بينما تبقى كتلته كما هي تمامًا. وتُعطي هذه المعادلة مقدار قوة الوزن الجذبي فقط، وهي قوة تتجه نحو مصدر الجذب الجاذبي (عند سطح الأرض، إلى الأسفل)؛ ولا يلزم تناول إشاري كامل للاتجاه بالنسبة للكميات التي تُستخدم من أجلها هذه المعادلة في هذا الفصل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-weight",
+            "ch01-term-mass",
+            "ch01-term-scalar"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; W = mg is the standard gravitational-weight relationship, consistent with S3C-Q004's own use of the same equation and with the |g| ≈ 9.8 m/s^2 value already established for ch01-t08 by the approved correction ch01-corr-007.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-visual",
+        "blockType": "visualReference",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "VISUAL REQUIREMENT (planning metadata only — this visual has NOT been produced, NOT been reviewed, and is NOT student-facing; separate visual-production authorization is required before any asset is created). Instructional purpose: help a learner see the physical contrast between the action that reveals mass (inertia) and the action that reveals weight (gravitational force), plus the related idea of a scale reading. Concept to visualize: two panels showing the same object (e.g. a wheeled equipment cart, an original scenario, not the suitcase used in any audited source) — one panel showing the object being pushed horizontally along a flat floor, labeled 'reveals mass (inertia) — resistance to a change in motion'; the other panel showing the same object being lifted straight up, labeled 'reveals gravitational weight — the force of gravity on the object.' A third, smaller panel or inset shows the object resting on a scale, labeled 'apparent weight — the support force the scale reads,' with a caption noting it normally equals gravitational weight when the object is at rest. Required labels: bilingual title and captions (English now; Arabic to be added only once a separate Arabic-generation authorization exists), each panel's action and the physical quantity it reveals. Relationships to show: mass as an intrinsic, location-independent property; gravitational weight as a location-dependent force; apparent weight as the scale-reading concept, distinct in name from gravitational weight even where their values agree. Accessibility intent: role=img with a full title/desc pair sufficient for a screen-reader user to reconstruct the diagram's teaching content, following the same accessibility pattern already proven in the four pilot topics' visuals (see VISUAL_HOUSE_STYLE.md). Rights-safe originality requirement: any asset eventually produced from this specification must be entirely original artwork and must use an object/scenario distinct from any audited source's own illustration, not traced, cropped, or adapted from any slide, textbook page, or other publisher source.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "متطلب بصري (بيانات تخطيطية فقط — هذا العنصر البصري لم يُنتَج بعد، ولم تتم مراجعته، وليس مُوجَّهًا للطلاب؛ يلزم تفويض منفصل لإنتاج العناصر البصرية قبل إنشاء أي أصل بصري). الغرض التعليمي: مساعدة المتعلم على رؤية التباين الفيزيائي بين الفعل الذي يكشف الكتلة (القصور الذاتي) والفعل الذي يكشف الوزن (قوة الجاذبية)، إضافةً إلى الفكرة المرتبطة بقراءة الميزان. المفهوم المطلوب تصويره: لوحتان تُظهران الجسم نفسه (مثل عربة معدات ذات عجلات، سيناريو أصلي، لا الحقيبة المستخدمة في أي مصدر مدقَّق) — تُظهر إحدى اللوحتين دفع الجسم أفقيًا على أرضية مستوية، وتحمل وسم 'يكشف الكتلة (القصور الذاتي) — مقاومة تغيّر الحركة'؛ وتُظهر الأخرى رفع الجسم نفسه رأسيًا، وتحمل وسم 'يكشف الوزن الجذبي — قوة الجاذبية المؤثرة في الجسم.' وتُظهر لوحة ثالثة أصغر، أو إطار مصغَّر، الجسم مستقرًا على ميزان، بوسم 'الوزن الظاهري — قوة الدعم التي يقرأها الميزان'، مع تعليق يذكر أنه يساوي عادةً الوزن الجذبي حين يكون الجسم ساكنًا. الوسوم المطلوبة: عنوان وتعليقات ثنائيا اللغة (الإنجليزية حاليًا؛ وتُضاف العربية فقط عند وجود تفويض منفصل لتوليد المحتوى العربي)، وفعل كل لوحة والكمية الفيزيائية التي تكشفها. العلاقات المطلوب توضيحها: الكتلة بوصفها خاصية جوهرية لا تعتمد على الموقع؛ والوزن الجذبي بوصفه قوة تعتمد على الموقع؛ والوزن الظاهري بوصفه مفهوم قراءة الميزان، المتمايز اسمًا عن الوزن الجذبي حتى حين تتفق قيمتاهما. الغرض من إتاحة الوصول: role=img مع زوج عنوان/وصف كامل يكفي لمستخدم قارئ الشاشة لإعادة بناء المحتوى التعليمي للرسم، باتباع نمط إتاحة الوصول نفسه المُثبَت فعلاً في العناصر البصرية للمواضيع التجريبية الأربعة (انظر VISUAL_HOUSE_STYLE.md). شرط الأصالة الآمن من حيث الحقوق: يجب أن يكون أي أصل يُنتَج لاحقًا من هذه المواصفة عملًا فنيًا أصليًا بالكامل، ويجب أن يستخدم جسمًا/سيناريو متمايزًا عن أي توضيح خاص بأي مصدر مدقَّق، غير منقول أو مقتطع أو مقتبس من أي شريحة عرض أو صفحة كتاب مدرسي أو أي مصدر آخر من مصادر الناشر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "متطلب بصري (بيانات تخطيطية فقط — هذا العنصر البصري لم يُنتَج بعد، ولم تتم مراجعته، وليس مُوجَّهًا للطلاب؛ يلزم تفويض منفصل لإنتاج العناصر البصرية قبل إنشاء أي أصل بصري). الغرض التعليمي: مساعدة المتعلم على رؤية التباين الفيزيائي بين الفعل الذي يكشف الكتلة (القصور الذاتي) والفعل الذي يكشف الوزن (قوة الجاذبية)، إضافةً إلى الفكرة المرتبطة بقراءة الميزان. المفهوم المطلوب تصويره: لوحتان تُظهران الجسم نفسه (مثل عربة معدات ذات عجلات، سيناريو أصلي، لا الحقيبة المستخدمة في أي مصدر مدقَّق) — تُظهر إحدى اللوحتين دفع الجسم أفقيًا على أرضية مستوية، وتحمل وسم 'يكشف الكتلة (القصور الذاتي) — مقاومة تغيّر الحركة'؛ وتُظهر الأخرى رفع الجسم نفسه رأسيًا، وتحمل وسم 'يكشف الوزن الجذبي — قوة الجاذبية المؤثرة في الجسم.' وتُظهر لوحة ثالثة أصغر، أو إطار مصغَّر، الجسم مستقرًا على ميزان، بوسم 'الوزن الظاهري — قوة الدعم التي يقرأها الميزان'، مع تعليق يذكر أنه يساوي عادةً الوزن الجذبي حين يكون الجسم ساكنًا. الوسوم المطلوبة: عنوان وتعليقات ثنائيا اللغة (الإنجليزية حاليًا؛ وتُضاف العربية فقط عند وجود تفويض منفصل لتوليد المحتوى العربي)، وفعل كل لوحة والكمية الفيزيائية التي تكشفها. العلاقات المطلوب توضيحها: الكتلة بوصفها خاصية جوهرية لا تعتمد على الموقع؛ والوزن الجذبي بوصفه قوة تعتمد على الموقع؛ والوزن الظاهري بوصفه مفهوم قراءة الميزان، المتمايز اسمًا عن الوزن الجذبي حتى حين تتفق قيمتاهما. الغرض من إتاحة الوصول: role=img مع زوج عنوان/وصف كامل يكفي لمستخدم قارئ الشاشة لإعادة بناء المحتوى التعليمي للرسم، باتباع نمط إتاحة الوصول نفسه المُثبَت فعلاً في العناصر البصرية للمواضيع التجريبية الأربعة (انظر VISUAL_HOUSE_STYLE.md). شرط الأصالة الآمن من حيث الحقوق: يجب أن يكون أي أصل يُنتَج لاحقًا من هذه المواصفة عملًا فنيًا أصليًا بالكامل، ويجب أن يستخدم جسمًا/سيناريو متمايزًا عن أي توضيح خاص بأي مصدر مدقَّق، غير منقول أو مقتطع أو مقتبس من أي شريحة عرض أو صفحة كتاب مدرسي أو أي مصدر آخر من مصادر الناشر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Original visual specification; deliberately uses a different example object (equipment cart) than the audited sources' suitcase illustration, and adds the apparent-weight scale panel the audited sources do not depict. No asset has been produced.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "missingVisual",
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "visualDesignerAndScientificReviewer",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "visualReferenceIds": [
+          "ch01-t04-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t04-visual-001",
+            "availabilityStatus": "missing",
+            "linkageConfidence": "unresolved",
+            "linkageType": "none",
+            "rightsStatus": "pendingReview",
+            "visualResolutionId": null
+          }
+        ]
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t04",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception: treating mass and weight as the same physical quantity, including using 'weigh' and kilograms interchangeably for both. A related misconception: believing an object's mass itself changes if it is moved somewhere with different gravity (for example, believing an object would have 'less mass' with weaker local gravity). Correction: mass is an intrinsic property (a measure of inertia) that does not depend on location; gravitational weight, because it is the force of gravity on the object, does change with location; an object moved somewhere with weaker gravity would have a smaller gravitational weight while its mass stays exactly the same. Kilograms are a unit of mass, not weight; gravitational weight is properly expressed in newtons.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مفهوم خاطئ: معاملة الكتلة والوزن على أنهما الكمية الفيزيائية نفسها، بما في ذلك استخدام كلمة 'يزن' والكيلوغرام بالتبادل لكليهما. وثمة مفهوم خاطئ ذو صلة: الاعتقاد بأن كتلة الجسم نفسها تتغيّر إذا نُقل إلى موضع بجاذبية مختلفة (كالاعتقاد مثلًا بأن الجسم سيصبح 'أقل كتلة' في جاذبية محلية أضعف). التصحيح: الكتلة خاصية جوهرية (مقياس للقصور الذاتي) لا تعتمد على الموقع؛ أما الوزن الجذبي، فبما أنه قوة الجاذبية المؤثرة في الجسم، فإنه يتغيّر بتغيّر الموقع؛ والجسم المنقول إلى موضع جاذبيته أضعف سيكون وزنه الجذبي أصغر بينما تبقى كتلته كما هي تمامًا. والكيلوغرام وحدة كتلة، لا وحدة وزن؛ ويُعبَّر عن الوزن الجذبي بدقة بالنيوتن.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مفهوم خاطئ: معاملة الكتلة والوزن على أنهما الكمية الفيزيائية نفسها، بما في ذلك استخدام كلمة 'يزن' والكيلوغرام بالتبادل لكليهما. وثمة مفهوم خاطئ ذو صلة: الاعتقاد بأن كتلة الجسم نفسها تتغيّر إذا نُقل إلى موضع بجاذبية مختلفة (كالاعتقاد مثلًا بأن الجسم سيصبح 'أقل كتلة' في جاذبية محلية أضعف). التصحيح: الكتلة خاصية جوهرية (مقياس للقصور الذاتي) لا تعتمد على الموقع؛ أما الوزن الجذبي، فبما أنه قوة الجاذبية المؤثرة في الجسم، فإنه يتغيّر بتغيّر الموقع؛ والجسم المنقول إلى موضع جاذبيته أضعف سيكون وزنه الجذبي أصغر بينما تبقى كتلته كما هي تمامًا. والكيلوغرام وحدة كتلة، لا وحدة وزن؛ ويُعبَّر عن الوزن الجذبي بدقة بالنيوتن.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; directly targets the gap addressed by ch01-corr-002, independently corroborated by scientific-audit records SCA02, SCA03, and the positive-contrast Kahoot finding K1-SCI-010.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t04",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A health-sciences student says, 'This equipment case weighs 10 kilograms.' Is the word 'weighs' being used correctly here, and what physical quantity is actually being measured in kilograms? Correct answer: Kilograms measure mass, not weight — weight is a force, ordinarily expressed in newtons. The statement blurs the everyday use of 'weigh' with mass. The case's mass is 10 kg; its gravitational weight at Earth's surface would be W = mg = 10 kg x 9.8 m/s^2 = 98 N.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تقول إحدى طالبات العلوم الصحية: 'هذه الحقيبة الطبية تزن 10 كيلوغرامات.' هل استُخدمت كلمة 'تزن' هنا استخدامًا صحيحًا، وما الكمية الفيزيائية التي تُقاس فعليًا بالكيلوغرام؟ الإجابة الصحيحة: الكيلوغرام يقيس الكتلة، لا الوزن — فالوزن قوة، تُعبَّر عنها عادةً بالنيوتن. وتخلط هذه العبارة بين الاستخدام اليومي لكلمة 'يزن' والكتلة. كتلة الحقيبة 10 kg؛ ووزنها الجذبي عند سطح الأرض يساوي W = mg = 10 kg x 9.8 m/s^2 = 98 N.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تقول إحدى طالبات العلوم الصحية: 'هذه الحقيبة الطبية تزن 10 كيلوغرامات.' هل استُخدمت كلمة 'تزن' هنا استخدامًا صحيحًا، وما الكمية الفيزيائية التي تُقاس فعليًا بالكيلوغرام؟ الإجابة الصحيحة: الكيلوغرام يقيس الكتلة، لا الوزن — فالوزن قوة، تُعبَّر عنها عادةً بالنيوتن. وتخلط هذه العبارة بين الاستخدام اليومي لكلمة 'يزن' والكتلة. كتلة الحقيبة 10 kg؛ ووزنها الجذبي عند سطح الأرض يساوي W = mg = 10 kg x 9.8 m/s^2 = 98 N.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original review question, distinct in scenario and wording from R1-Q004's true/false item and S3C-Q004's true/false item; reinforces the same field-standard mass-versus-weight distinction independently corroborated by K1-SCI-010's Kahoot examples (e.g. 'kg measures mass, not weight').",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "problem",
+      "record": {
+        "problemId": "ch01-prob-104",
+        "topicIds": [
+          "ch01-t04"
+        ],
+        "problemStatement": {
+          "en": {
+            "text": "A medical equipment cart has a mass of 45 kg. (a) Determine the magnitude of its gravitational weight at Earth's surface, where |g| ≈ 9.8 m/s^2. (b) A staff member later moves the same cart onto a research-station module where the local gravitational acceleration is weaker than at Earth's surface. Without calculating a new numeric value, state what happens to the cart's gravitational weight and what happens to its mass, and explain why.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تبلغ كتلة عربة معدات طبية 45 kg. (أ) أوجد مقدار وزنها الجذبي عند سطح الأرض، حيث |g| ≈ 9.8 m/s^2. (ب) ينقل أحد أفراد الطاقم العربة نفسها لاحقًا إلى وحدة محطة بحثية يكون فيها التسارع الجذبي المحلي أضعف منه عند سطح الأرض. دون حساب قيمة عددية جديدة، بيّن ماذا يحدث لوزن العربة الجذبي وماذا يحدث لكتلتها، وفسّر السبب.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "givenValues": [
+          {
+            "symbol": "m",
+            "value": 45,
+            "unit": "kg",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "g",
+            "value": 9.8,
+            "unit": "m/s^2",
+            "exactOrApproximate": "approximate"
+          }
+        ],
+        "conceptualInterpretation": {
+          "en": {
+            "text": "Mass is an intrinsic property of the cart and does not depend on location. Gravitational weight is the force of gravity on the cart and depends on the local value of g, through W = mg.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "الكتلة خاصية جوهرية للعربة، ولا تعتمد على الموقع. أما الوزن الجذبي فهو قوة الجاذبية المؤثرة في العربة، ويعتمد على القيمة المحلية لـg، من خلال W = mg.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "equationSelection": [
+          {
+            "equationId": "ch01-t04-eq-weight",
+            "reason": "W = mg directly gives the magnitude of gravitational weight from the given mass and local gravitational acceleration.",
+            "conditionsSatisfied": [
+              "The cart is being considered at rest (no acceleration beyond gravity itself), so W = mg gives the full gravitational-force magnitude.",
+              "Mass (45 kg) and local g (9.8 m/s^2) are both given for part (a)."
+            ],
+            "conditionsMissing": []
+          }
+        ],
+        "numberedSolution": [
+          {
+            "stepNumber": 1,
+            "purpose": "Find the cart's gravitational weight at Earth's surface",
+            "explanation": {
+              "en": {
+                "text": "W = mg = 45 kg x 9.8 m/s^2 = 441 N (unrounded). Both given values (45 kg and 9.8 m/s^2) have two significant figures, so the result is reported to two significant figures: W = 4.4 x 10^2 N.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "W = mg = 45 kg x 9.8 m/s^2 = 441 N (غير مقرَّبة). تحمل القيمتان المعطاتان (45 kg و9.8 m/s^2) كلتاهما رقمين معنويين، لذا تُعرَض النتيجة برقمين معنويين: W = 4.4 x 10^2 N.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-104-calc-1"
+          },
+          {
+            "stepNumber": 2,
+            "purpose": "Reason qualitatively about part (b) without a new numeric calculation",
+            "explanation": {
+              "en": {
+                "text": "Since gravitational weight depends on the local value of g, and the research-station module has weaker gravity than Earth's surface, the cart's gravitational weight there would be smaller than 4.4 x 10^2 N. The cart's mass, however, is an intrinsic property that does not depend on location — it would remain exactly 45 kg.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "بما أن الوزن الجذبي يعتمد على القيمة المحلية لـg، وبما أن وحدة المحطة البحثية ذات جاذبية أضعف من سطح الأرض، فإن وزن العربة الجذبي هناك سيكون أصغر من 4.4 x 10^2 N. أما كتلة العربة، فهي خاصية جوهرية لا تعتمد على الموقع — وستبقى 45 kg تمامًا.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": null
+          }
+        ],
+        "calculation": [
+          {
+            "calculationId": "ch01-prob-104-calc-1",
+            "expression": "45 * 9.8",
+            "substitution": "45 kg x 9.8 m/s^2",
+            "result": 441.0,
+            "unit": "N",
+            "roundingRule": "result field (441 N) is the unrounded product; both given values (45 kg, 9.8 m/s^2) carry two significant figures, so 441 N is rounded to 4.4 x 10^2 N for the reported/final value",
+            "significantFigures": 2
+          }
+        ],
+        "finalAnswer": {
+          "value": "4.4 x 10^2 N at Earth's surface; mass remains 45 kg everywhere",
+          "unit": "N (weight), kg (mass)",
+          "direction": null,
+          "sign": null,
+          "referencePoint": null,
+          "interpretation": {
+            "en": {
+              "text": "The cart's gravitational weight at Earth's surface is 4.4 x 10^2 N (441 N unrounded, reported to two significant figures to match the precision of the given values). On the research-station module, its weight would be smaller than that, because gravity there is weaker, but its mass would remain exactly 45 kg, because mass does not depend on location.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "ar": {
+              "text": "وزن العربة الجذبي عند سطح الأرض هو 4.4 x 10^2 N (441 N غير مقرَّبة، تُعرَض برقمين معنويين ليتوافق مع دقة القيم المعطاة). أما في وحدة المحطة البحثية، فسيكون وزنها أصغر من ذلك، لأن الجاذبية هناك أضعف، لكن كتلتها ستبقى 45 kg تمامًا، لأن الكتلة لا تعتمد على الموقع.",
+              "status": "draft",
+              "language": "ar",
+              "direction": "rtl"
+            }
+          }
+        },
+        "units": [
+          "kg",
+          "m/s^2",
+          "N"
+        ],
+        "directionSign": {
+          "applicable": false,
+          "note": "This problem asks only for the magnitude of gravitational weight; the direction (toward the source of gravitational attraction) is not required for the requested quantities."
+        },
+        "intuition": {
+          "en": {
+            "text": "4.4 x 10^2 N is a reasonable size for the weight of a 45 kg object at Earth's surface — roughly the same order of magnitude as an adult person's own weight — so the number is a sensible check on the calculation.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تُعَدّ 4.4 x 10^2 N قيمة معقولة لوزن جسم كتلته 45 kg عند سطح الأرض — بالرتبة نفسها تقريبًا لوزن شخص بالغ — لذا فإن هذا الرقم فحصٌ منطقي على صحة الحساب.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "commonMistake": [
+          "Treating the cart's mass (45 kg) as if it were also the numeric answer for its weight in newtons, instead of computing W = mg.",
+          "Assuming the cart's mass itself changes on the research-station module, rather than recognizing that only its weight changes."
+        ],
+        "sourceAnswer": {
+          "textRef": null,
+          "value": null,
+          "unit": null,
+          "direction": null,
+          "status": "unknown"
+        },
+        "correctedAnswer": {
+          "value": "4.4 x 10^2 N at Earth's surface; mass 45 kg, unchanged everywhere",
+          "unit": "N, kg",
+          "direction": null,
+          "status": "proposed"
+        },
+        "sourceVariants": [
+          {
+            "variantId": "ch01-prob-104-variant-original",
+            "sourceId": "SRC-CH01-BATCH1-ORIGINAL",
+            "problemIds": [],
+            "solutionIds": [],
+            "reviewCardIds": [],
+            "questionIds": [],
+            "pageIds": [],
+            "segmentIds": [],
+            "occurrenceIds": [],
+            "visualIds": [],
+            "answerVariant": "4.4 x 10^2 N; mass unchanged",
+            "answerStatus": "correct",
+            "correctionRecordIds": [
+              "ch01-corr-002"
+            ],
+            "conflictRecordIds": [
+              "CD-CONF-002"
+            ],
+            "provenanceLinks": []
+          }
+        ],
+        "selectedVariantIds": [
+          "ch01-prob-104-variant-original"
+        ],
+        "selectionRationale": "Only variant; fully original problem, not derived from any audited source's specific scenario, wording, object, or numbers. S3C-Q004's true/false item (which uses the same W = mg equation and a qualitative gravity-location comparison) and SEG022's qualitative Moon example informed the underlying scope and concept only — this problem uses a different object (a medical equipment cart, not a suitcase or the Moon specifically), different numbers, and an original two-part structure (numeric part (a), qualitative part (b)).",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تبلغ كتلة عربة معدات طبية 45 kg. (أ) أوجد مقدار وزنها الجذبي عند سطح الأرض، حيث |g| ≈ 9.8 m/s^2. (ب) ينقل أحد أفراد الطاقم العربة نفسها لاحقًا إلى وحدة محطة بحثية يكون فيها التسارع الجذبي المحلي أضعف منه عند سطح الأرض. دون حساب قيمة عددية جديدة، بيّن ماذا يحدث لوزن العربة الجذبي وماذا يحدث لكتلتها، وفسّر السبب.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Only version; fully original.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    }
+  ]
+}

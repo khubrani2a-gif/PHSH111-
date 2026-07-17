@@ -1,0 +1,162 @@
+{
+  "visualResolutionId": "ch01-t02-visual-validation-001",
+  "visualId": "ch01-t02-visual-001",
+  "topicIds": ["ch01-t02"],
+  "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t02-visual-001.svg",
+  "assetFormat": "svg",
+  "assetStatus": "draft",
+  "reviewRequired": true,
+  "createdAt": "2026-07-16",
+  "createdBasis": "Drawn from scratch directly from this task's explicit 'Required structure' instructions (three panels: length, area, volume; unit progression m/m²/m³; one conversion example per panel; explicit squared/cubed conversion-factor rule), cross-checked against the approved ch01-t02-block-equations and organizedExplanation content (which already establish A = length x width, V = length x width x height, and the squared/cubed conversion-factor rule in prose). ch01-t03-visual-001.svg and ch01-t08-visual-001.svg were consulted only as provisional style references (palette, typography, bilingual-per-element convention, footer format, superscript technique) — no geometry, wording, or layout was copied from either. Rendered and visually inspected in-browser during creation; one real rendering defect (a broken/misaligned superscript on the 'Volume: x k^3' summary-box line, caused by an incorrect tspan dy value that did not match the pattern used successfully on the 'Area: x k^2' line above it) was found and fixed before finalizing.",
+  "contentScopeDivergence": {
+    "status": "resolved",
+    "originalNote": "As first flagged: this asset's content did not literally match ch01-t02-block-visual's own recorded English/Arabic spec text, which described a different scene (a coin, a doorway, and a city block, illustrating that distance uses different natural units at different scales). This task's explicit 'Required structure' instructions asked for a different concept: the length/area/volume dimensional relationship and why the conversion factor is squared or cubed. Both concepts were legitimately part of ch01-t02's approved baseline; only one had been drawn. A read-only rendered visual review weighed the two against the approved instructional content and recommended decision A (keep this visual, formally revise the recorded specification to match it), based on this visual's direct support for ch01-t02-block-equations, ch01-t02-block-example, the instructor script's teaching narrative, and the graded problem ch01-prob-102, versus the scale-comparison concept's narrower role as opening-hook/motivational material only, untested by any equation, example, or problem.",
+    "resolution": {
+      "decision": "A — keep ch01-t02-visual-001.svg as the primary required visual for ch01-t02, and formally revise the recorded ch01-t02-block-visual specification to describe the length/area/volume squared-cubed visual that was actually produced. The prior coin/doorway/city-block scale-comparison concept is retained only as an explicitly optional future supplementary visual, not as a currently required one.",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "resolutionDate": "2026-07-16",
+      "rationale": "The delivered length/area/volume/squared-cubed content is the load-bearing technical content of ch01-t02 — it is what ch01-t02-block-equations states as its formula rule, what ch01-t02-block-example computes, what the instructor script's word-for-word teaching narrative culminates in, and what the graded problem ch01-prob-102 tests in both its area and volume parts. The coin/doorway/city-block scale-comparison concept remains a legitimate part of the approved baseline but functions only as an opening-hook device and one supporting sentence in the organizedExplanation block, with no dedicated equation, worked example, or problem built on it.",
+      "governanceActionsTaken": [
+        "ch01-t02-block-visual's recorded localizedContent.en/ar spec text revised in ch01-t02-content.json to describe the length/area/volume visual, with the original coin/doorway/city-block concept preserved as an explicit optional-future-supplementary note rather than deleted.",
+        "ENGLISH_PILOT_BASELINE_APPROVAL.json baselineVersion bumped from 1.0.0 to 1.0.1 with a revisionLog entry scoped strictly to ch01-t02-block-visual, per that file's own controlled-revision policy.",
+        "This validation record's contentScopeDivergence marked resolved, preserving the original flagged note and the resolution decision for audit trail rather than deleting the history."
+      ]
+    }
+  },
+  "sourceIndependenceStatement": "Fully original schematic composition. Uses only generic, non-copyrightable conventions (a simple side-view table icon, a square pad icon, a three-face line-drawn cube) that are standard, generic geometric devices, not tied to any specific textbook or slide illustration. Consistent with PILOT_RIGHTS_POLICY.json's requirement that all pilot visuals be newly authored, not recovered or adapted from SRC-CH01-CONV-001, SRC-CH01-PDF-003, or any other cataloged source.",
+  "houseStyleNote": "Extends the provisional style established by ch01-t03-visual-001.svg and ch01-t08-visual-001.svg: teal (#1f6f8b) for structural/object elements, slate/navy for text, amber draft-footer band, bilingual-per-element convention with explicit per-element LTR/RTL direction, italic single-letter variables with upright units, and true-superscript exponent rendering. This diagram does not need the rust/violet vector-color roles from t08 (no velocity or acceleration vectors here) and correctly omits them rather than reusing them out of context. It introduces one new element: short slate connector arrows between panels showing the m -> m^2 -> m^3 progression, reusing the same slate arrow marker already established for structural/reference arrows (the t03 timeline arrow, the t08 axis arrows) rather than inventing a new color for a third arrow role.",
+  "validation": {
+    "scientificAccuracy": {
+      "status": "pass",
+      "findings": [
+        "Panel 1: 1.8 m x 100 = 180 cm — correct linear conversion, and the value 1.8 m is the same examination-table length already used in the approved ch01-t02-block-example content, keeping this asset consistent with existing approved numbers rather than inventing an unrelated figure.",
+        "Panel 2: 0.1 m x 0.1 m = 0.01 m^2, then 0.01 m^2 x 100^2 = 0.01 x 10,000 = 100 cm^2 — arithmetic independently re-verified and correct.",
+        "Panel 3: 0.1 m x 0.1 m x 0.1 m = 0.001 m^3, then 0.001 m^3 x 100^3 = 0.001 x 1,000,000 = 1000 cm^3 — arithmetic independently re-verified and correct.",
+        "The A = length x width and V = length x width x height relationships shown match ch01-t02-block-equations exactly, using the same already-approved A and V symbols (no new unapproved symbol was introduced for length, since the approved content never assigns length its own single-letter symbol)."
+      ]
+    },
+    "dimensionalUnitCorrectness": {
+      "status": "pass",
+      "findings": [
+        "Panel 1 is dimensionally length only (m, no exponent). Panel 2 is dimensionally area (m^2, exponent 2, matching two multiplied length measurements). Panel 3 is dimensionally volume (m^3, exponent 3, matching three multiplied length measurements) — the exponents on every unit tag and every conversion line correctly match the number of length dimensions multiplied in that panel's own computation line, with no mismatched exponent anywhere.",
+        "Unit symbols (m, m^2, m^3, cm, cm^2, cm^3) are rendered upright throughout; only the single-letter algebraic symbols (A, V, k) are italicized — verified by inspecting every tspan's font-style attribute, none of the unit-symbol tspans carry font-style=\"italic\"."
+      ]
+    },
+    "squaredCubedConversionFactorClarity": {
+      "status": "pass",
+      "findings": [
+        "Each panel shows its own conversion line demonstrating the factor at the correct power for that dimension (x100 for length, x100^2 for area, x100^3 for volume) — satisfying the 'one clear conversion example for each' requirement directly and individually.",
+        "A shared summary box beneath all three panels generalizes this into an explicit, panel-independent rule (Length: x k, Area: x k^2, Volume: x k^3, with a grounding note that k = 100 in these examples) — satisfying 'explicitly show that area conversion uses the square of the length factor and volume conversion uses the cube' as its own dedicated statement, not left to be inferred only from the three separate panel examples.",
+        "A closing bilingual caption states the same rule a third time in plain prose ('it is squared for area and cubed for volume'), directly targeting the misconception already on record in this topic's approved instructor script ('Assuming an area conversion factor equals the length conversion factor rather than its square')."
+      ]
+    },
+    "bilingualRendering": {
+      "status": "pass",
+      "findings": [
+        "Every Arabic text element carries an explicit direction=\"rtl\" attribute; every Latin/formula/symbol text element carries an explicit direction=\"ltr\" attribute.",
+        "English and Arabic lines are separate, monolingual <text> elements throughout (title, panel headers, closing caption) — no script-mixing within a single text run. The three per-panel computation/conversion lines and the summary box are English/symbol-only by design (matching the precedent already set in ch01-t03-visual-001.svg's equation panel and ch01-t08-visual-001.svg's magnitude panel, where formula content is not duplicated in Arabic inside the box itself), with the bilingual closing caption providing the Arabic explanation of the concept in prose instead — this is 'isolate mixed-direction equations explicitly' satisfied by construction, consistent with the established pattern.",
+        "Rendered and visually inspected in-browser: Arabic glyphs in the title, panel headers, and closing caption join correctly (cursive connected forms) and read right-to-left.",
+        "Panel labels use literal digits (Panel 1 / Panel 2 / Panel 3, اللوحة 1 / اللوحة 2 / اللوحة 3) per this task's explicit instruction, consistent with the ordinal-word-to-digit fix already applied to ch01-t02-block-visual's and ch01-t08-block-visual's earlier diagrams."
+      ]
+    },
+    "rightsPolicyCompliance": {
+      "status": "pass",
+      "findings": [
+        "No publisher slide, textbook figure, or any cataloged source visual was traced, cropped, referenced, or used as a basis for this artwork; the table, pad, and cube icons are generic geometric shapes, not reproductions of any specific source image.",
+        "All label and caption text is either newly authored for this diagram or drawn from already rights-cleared, newly authored pilot content (ch01-t02-block-equations' A/V formulas, the topic's existing 1.8 m table figure) — no publisher wording is present.",
+        "ch01-t03-visual-001.svg and ch01-t08-visual-001.svg were used only as style references (palette, type scale, bilingual convention, superscript technique) per this task's explicit instruction, not as source content."
+      ]
+    },
+    "accessibilityAndReadability": {
+      "status": "passWithHumanVerificationRecommended",
+      "findings": [
+        "role=\"img\" with a <title> and <desc> element is present, giving screen readers a full textual summary of all three panels' objects, computations, conversions, and the general squared/cubed rule.",
+        "The three panels are distinguished by position, digit-labeled headers, and divider lines, not by color alone (all three use the same teal object-fill color, which is intentional — color is not being used to encode a distinction that needs to be perceived here, since the panels are already unambiguously separated by position and text labels).",
+        "Text/background contrast follows the same near-black/slate-on-white pattern already used in the two prior assets, assessed as visually high-contrast by inspection; exact WCAG ratios were not measured with an automated contrast tool in this environment — same open recommendation carried forward from both prior assets.",
+        "Designed at 1100x850 (revised up from 1100x760 in revision 1 to make room for the three object captions and the summary-box header) for classroom-projector and standard student-screen viewing; smallest text is 12-13px (cube dimension labels, object captions, summary-box grounding note), comparable to the smallest text sizes already used in the two prior assets.",
+        "Native cross-renderer rendering (other browsers, PDF export, presentation software) was not verified beyond the one browser environment used during creation — same open item as both prior assets."
+      ]
+    },
+    "readyForHumanReview": {
+      "status": "pass",
+      "note": "All required structural elements (three panels, unit progression, per-panel conversion examples, explicit squared/cubed rule, bilingual labeling, digit panel numbers, draft footer, accessibility metadata) are present and were re-verified after fixing the one rendering defect found during creation. The content-scope divergence from this block's own recorded spec text (see contentScopeDivergenceNote above) is not a defect in the artwork itself, but is flagged prominently for the human reviewer's explicit decision before this asset is treated as the final visual for ch01-t02-block-visual."
+    }
+  },
+  "requirementsChecklist": {
+    "fullyOriginalArtwork": true,
+    "noTracingOrPublisherReuse": true,
+    "threePanelsLengthAreaVolume": true,
+    "healthScienceFriendlyObjectsUsed": true,
+    "unitProgressionMM2M3Shown": true,
+    "oneConversionExamplePerDimension": true,
+    "areaFactorShownAsSquareOfLengthFactor": true,
+    "volumeFactorShownAsCubeOfLengthFactor": true,
+    "noFullWorkedProblemOverload": true,
+    "conciseBilingualLabels": true,
+    "bilingualLabelsSeparateElements": true,
+    "explicitLtrRtlDirection": true,
+    "latinSiUnitsPreserved": true,
+    "variablesItalicizedUnitsUpright": true,
+    "formulaOnlyLabelsLTR": true,
+    "arabicAnnotationsRTL": true,
+    "mixedDirectionEquationsIsolated": true,
+    "panelLabelsUseLiteralDigits": true,
+    "reusesProvisionalPaletteAndHierarchy": true,
+    "draftFooterPresent": true,
+    "accessibilityMetadataPresent": true,
+    "designedForProjectorAndStudentScreens": true,
+    "mobileRiskDocumentedNotCompressed": true,
+    "vectorFirstEditableAsset": true,
+    "markedDraftAndReviewRequired": true
+  },
+  "mobileSizeRisk": {
+    "status": "documentedNotAttemptedToFix",
+    "findings": [
+      "This asset is the widest of the three pilot visuals so far (1100x760) because it needs three full panels side by side, so its mobile/small-screen risk is at least as significant as the already-flagged risk for ch01-t03-visual-001.svg and ch01-t08-visual-001.svg, and likely somewhat greater given the three-panel horizontal layout compresses further when squeezed into a narrow phone viewport.",
+      "Per this task's explicit instruction, no compressed mobile variant was attempted. This is recorded as an open item for the downstream rendering/delivery pipeline (responsive zoom/pan, minimum-width floor, or a dedicated mobile layout), not something resolved in this asset — consistent with how the same risk was handled for the two prior visuals."
+    ]
+  },
+  "revisionHistory": [
+    {
+      "revisionId": "ch01-t02-visual-001-rev-001",
+      "appliedAt": "2026-07-16",
+      "appliedBasis": "Applies the accepted minor revision from the prior read-only rendered-visual-review pass (approve-with-minor-revision decision) plus the project-owner's formal resolution of the content-scope divergence. No new scientific claim was introduced; both content changes are labeling/heading additions only.",
+      "revisionsApplied": [
+        "Added a visible bilingual object-identity caption beneath each panel's icon: 'Examination table' / 'منضدة الفحص' (Panel 1), 'Dressing pad' / 'ضمادة شاش' (Panel 2), 'Sample container' / 'وعاء العينة' (Panel 3) — each language in its own text element with explicit direction=\"ltr\"/\"rtl\". This closes the sighted/screen-reader information gap flagged in the prior review: the <desc> already named these objects, but the visible artwork previously did not.",
+        "Added a bilingual header to the shared summary box: 'General rule' / 'القاعدة العامة', each in its own text element, giving the box an explicit orienting title rather than leaving its purpose to be inferred from position alone.",
+        "Expanded the canvas from 1100x760 to 1100x850 and shifted the unit-tag row, computation/conversion lines, progression connector arrows, the summary box, the closing caption, and the footer downward using the asset's existing spacing pattern, to fit the new captions and header without crowding.",
+        "The <desc> accessibility text was updated to mention that each panel now carries a visible object caption and that the summary box is titled 'General rule', so screen-reader users' experience stays aligned with what sighted viewers now see.",
+        "Everything else — all three conversion examples and their arithmetic, the A/V formulas, the m/m²/m³ unit tags and their superscripts, the icons, the closing anti-misconception caption, the draft footer, and the full palette/hierarchy — was preserved unchanged."
+      ],
+      "renderedLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Rendered in-browser after the edit (cache-busted reload) and visually confirmed: all three object captions and the summary-box header display cleanly with no overlap against neighboring elements (dimension labels above, unit tags below, box content below the header).",
+          "No pre-existing element shifted out of alignment: panel headers, dividers, icons, and dimension labels remain in their original positions; only content from the caption row downward was repositioned."
+        ]
+      },
+      "arithmeticDimensionalSuperscriptRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-verified all three panels' conversion arithmetic against the rendered image: 1.8 m x 100 = 180 cm; 0.01 m^2 x 100^2 = 100 cm^2; 0.001 m^3 x 100^3 = 1000 cm^3 — all unchanged and correct.",
+          "Every superscript in the diagram (unit tags, computation lines, conversion lines, and the summary box's k^2/k^3) was individually re-inspected in the fresh render; all raise and size correctly, including the 'Volume: x k^3' line whose earlier tspan defect was fixed and confirmed to have remained fixed through this revision."
+        ]
+      },
+      "bilingualAndAccessibilityRecheck": {
+        "status": "pass",
+        "findings": [
+          "The six new caption text elements and two new header text elements all carry explicit direction=\"ltr\"/\"rtl\" attributes, confirmed by direct inspection of the file; no script-mixing was introduced.",
+          "Arabic captions and header render with correct glyph joining and right-to-left order in-browser, consistent with the rest of the asset's already-verified Arabic text.",
+          "role=\"img\", <title>, and <desc> remain present and were updated (not removed) to describe the new visible content, keeping accessibility metadata accurate rather than stale."
+        ]
+      },
+      "contentScopeDivergenceResolution": "Formally resolved by project-owner decision A — see contentScopeDivergence above. No longer an open item requiring a human reviewer decision before this asset can be treated as ch01-t02's primary required visual; the governance record (ch01-t02-content.json's visualGovernance) and the English pilot baseline approval (ENGLISH_PILOT_BASELINE_APPROVAL.json, now baselineVersion 1.0.1) were both updated to reflect this resolution."
+    }
+  ],
+  "readyForHumanReview": true,
+  "readyForHumanReviewNote": "Revision 1 (ch01-t02-visual-001-rev-001) applied the accepted minor revision (visible bilingual object captions, summary-box header) and the project owner formally resolved the content-scope divergence via decision A. All required structural elements remain present and scientifically correct (re-verified arithmetic, dimensional correctness, and every superscript after the edit), and bilingual/LTR-RTL handling remains consistent with the established pattern. Not yet certified: exact WCAG contrast-ratio measurement (now including the new caption and header text) and cross-renderer Arabic RTL verification — same open items carried forward from the two prior assets. Mobile/small-screen handling remains an explicitly open, undeferred item for downstream tooling (this revision made the canvas taller, which does not reduce that risk). This asset has not been marked as finally approved or resolved at the human-review level; it remains draft and review-required — only the content-scope question has been formally closed, not the human scientific/linguistic review itself.",
+  "studentFacingAllowed": false,
+  "studentPublicationAuthorized": false,
+  "reviewer": null,
+  "reviewedAt": null
+}

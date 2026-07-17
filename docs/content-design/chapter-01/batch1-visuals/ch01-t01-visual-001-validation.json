@@ -1,0 +1,236 @@
+{
+  "visualResolutionId": "ch01-t01-visual-validation-001",
+  "visualId": "ch01-t01-visual-001",
+  "topicIds": ["ch01-t01"],
+  "assetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg",
+  "assetFormat": "svg",
+  "assetStatus": "draft",
+  "reviewRequired": true,
+  "createdAt": "2026-07-17",
+  "createdBasis": "Drawn from scratch by Claude directly from the approved visualReference specification in ch01-t01-block-visual (English and Arabic, ENGLISH_BATCH1_BASELINE_APPROVAL.json / ARABIC_BATCH1_BASELINE_APPROVAL.json, both baselineVersion 1.0.0) and ch01-corr-001's approved corrected wording. The four pilot visuals and VISUAL_HOUSE_STYLE.md were consulted only as structural, accessibility, validation, and house-style precedents (color semantics, typography, bilingual convention, footer format, validation-record shape) — no pilot topic-specific composition was reused or imitated; this diagram's four-box plus derived-quantity-plus-dimensional-notation layout is original to ch01-t01's own content and does not match any of the four pilot layouts (dual sign-convention panels, three-panel unit comparison, three-instant circular strip, single-circle-plus-inset). No source image, slide, or publisher figure was viewed, traced, or referenced during creation.",
+  "sourceIndependenceStatement": "Fully original schematic composition. Uses only generic, non-copyrightable conventions (labeled boxes, directional connector arrows, a bordered equation/summary panel) already established as house style across the four pilot topics, applied to entirely new content (fundamental-vs-derived quantities) that has no counterpart in any of the four pilot diagrams. Consistent with PILOT_RIGHTS_POLICY.json's and this authorization's own requirement that the visual be newly authored, not recovered or adapted from SRC-CH01-CONV-001, SRC-CH01-CONV-002, SRC-CH01-PDF-003, or any other cataloged source.",
+  "houseStyleNote": "Follows VISUAL_HOUSE_STYLE.md's proven conventions: teal (#1f6f8b) for structural elements (the four quantity boxes, the derived-quantity box, the equation-panel container style), slate/navy (#0f172a primary, #334155 secondary) for text and non-vector connector arrows, amber draft-footer band (unchanged hex values), bilingual-per-element convention (English immediately above Arabic, every text element carrying an explicit direction attribute), and the same rounded-rect teal-bordered light-teal-fill equation-panel container already reused across all four pilot topics. This diagram does not use rust-orange or violet (both reserved exclusively for velocity and acceleration respectively) because no physical motion or acceleration vector is drawn here — nothing in this diagram is a moving or changing physical quantity in the kinematic sense, so reusing those reserved colors would misapply their established semantic meaning. One deliberate refinement beyond the four pilot assets' own color set: reference/connector lines here use a darker slate (structural arrows at #334155, matching the axis-arrow precedent in ch01-t08-visual-001.svg) rather than the lighter #94a3b8 dashed-reference-line color used for purely decorative guide lines in some pilot assets, since ch01-t10-visual-001's own revision history recorded that #94a3b8 measured below the 3:1 graphical-contrast target and was corrected upward — this asset simply starts from that already-corrected, higher-contrast choice rather than needing its own later revision. As of ch01-t01-visual-001-rev-002 (see revisionHistory), the Speed (derived) box's decorative 'shadow' rectangle (the reduced-opacity offset rect drawn behind the main box, matching the pilot's own equation-panel container convention) was corrected: it originally had an incorrect height (20px instead of matching the main box's own height) and was consequently entirely hidden behind the opaque main box, achieving no visible effect. It now mirrors the exact working pattern already used for this same asset's own Dimensional Notation panel and for ch01-t04-visual-001's equation panel (same width/height as the main box, offset +4/+5), restoring the intended subtle drop-shadow effect.",
+  "validation": {
+    "xmlValidity": {
+      "status": "pass",
+      "findings": [
+        "Parsed successfully with Python's xml.etree.ElementTree: exactly one root <svg> element, well-formed XML throughout.",
+        "No duplicate element IDs found (programmatic check across all 44 elements carrying an id attribute).",
+        "All url(#...) marker references (1 use of arrowSlateT01) resolve to a defined <marker> element; no unresolved or broken internal references. Re-confirmed after ch01-t01-visual-001-rev-002 (see revisionHistory).",
+        "aria-labelledby=\"ch01t01visTitle ch01t01visDesc\" on the root element correctly resolves to the <title id=\"ch01t01visTitle\"> and <desc id=\"ch01t01visDesc\"> elements present in the file."
+      ]
+    },
+    "viewBoxAndDimensions": {
+      "status": "pass",
+      "findings": [
+        "viewBox=\"0 0 1000 820\", width=\"1000\", height=\"820\" (updated by ch01-t01-visual-001-rev-002 from the original \"0 0 1000 750\" to accommodate two added scientific-completeness lines in the Speed box) — consistent, no mismatch between viewBox and width/height attributes.",
+        "Canvas size remains within the same practical range already used across the four pilot assets (900-1100 wide; height now 820, still a reasonable extension of the 680-1000 range given this asset's added content)."
+      ]
+    },
+    "expectedLabels": {
+      "status": "pass",
+      "findings": [
+        "Title (bilingual): 'Fundamental and Derived Quantities: Building Speed' / 'الكميات الأساسية والمشتقة: بناء السرعة' — present.",
+        "Four quantity boxes, each with bilingual name and (for the first three) an italic dimensional symbol: Distance/المسافة (L), Time/الزمن (T), Mass/الكتلة (M), Charge/الشحنة (no symbol assigned, matching the approved baseline's own restraint — the baseline never assigns Charge a symbol) — all present, matching the approved visualReference's required box set.",
+        "Each box's bilingual status tag present: 'fundamental — this chapter'/'أساسية — هذا الفصل' (Distance, Time, Mass) and 'fundamental — later'/'أساسية — لاحقًا' (Charge) — condensed, accurate renderings of the approved spec's fuller phrasing ('fundamental — used throughout this chapter' / 'fundamental — introduced later'), with the complete unabridged phrasing preserved in the accessible <desc>.",
+        "Speed (derived) box present with bilingual header, the symbolic equation v = d / t, the conceptual gloss '= Distance / Time' / '= المسافة / الزمن', and, as of ch01-t01-visual-001-rev-002, two additional bilingual qualifiers explicitly stating that speed is a scalar quantity (magnitude only, no direction) and that v = d/t gives the average speed over the stated interval — both drawn verbatim in substance from the approved English/Arabic equations-block text, which had not been represented on-canvas before this revision (see revisionHistory and scientificAccuracy below).",
+        "Dimensional Notation panel present (new content required by this production task's own brief, consistent with the approved equations-block prose), with bilingual header and three bilingual content lines covering: L/T as dimension names, d/t as measured-variable symbols in v = d/t, and speed's dimension L/T.",
+        "Legend present clarifying solid-border (used now) versus dashed-border (deferred) meaning, bilingual.",
+        "Two bilingual captions present, echoing ch01-corr-001's approved scope statement and the derived-quantity definition.",
+        "Draft/review-required footer band present with the exact established wording pattern, correctly naming this asset's own ID (ch01-t01-visual-001)."
+      ]
+    },
+    "scientificAccuracy": {
+      "status": "pass",
+      "findings": [
+        "Distance, time, and mass are shown as this chapter's three fundamental quantities, each explicitly tagged 'this chapter' rather than implying they are the only fundamental quantities in all of physics — directly matching ch01-corr-001's approved corrected wording and its mechanics-scope qualifier.",
+        "Charge is shown as a fourth fundamental property, visually set apart (dashed border, extra spacing, distinct fill) and explicitly tagged 'later', matching ch01-corr-001's requirement that charge be presented as deferred, not excluded.",
+        "Speed is shown as a derived quantity, built by two convergence arrows from Distance and Time, never presented as an independent fundamental unit — matching the approved equations-block text exactly.",
+        "As of ch01-t01-visual-001-rev-002: speed is now also explicitly labeled a scalar quantity ('(scalar — magnitude only)' / '(كمية قياسية — مقدار فقط)') — verified against the approved English baseline's own wording, 'v is speed (a scalar quantity — magnitude only, with no direction attached),' and the approved Arabic baseline's 'كمية قياسية — أي مقدار فقط دون اتجاه.' This closes a gap identified during this review: the original asset never stated speed's scalar nature anywhere, even though this is explicit, approved-baseline content the review's own checklist specifically asked to verify.",
+        "As of ch01-t01-visual-001-rev-002: v = d/t is now also explicitly labeled 'Average, over the stated interval' / 'متوسطة، خلال الفترة المحددة' — verified against the approved English baseline's own wording, 'This relationship gives the average speed over the specified distance and time interval,' and the parallel approved Arabic baseline wording. This closes a second identified gap: the original asset never stated that v = d/t computes average (not instantaneous) speed.",
+        "The equation v = d / t is shown with d as measured distance and t as elapsed time, matching the approved English/Arabic baseline's own variable definitions.",
+        "No instantaneous speed, no advanced dimensional analysis beyond naming L/T as dimensions and d/t as measured variables, and no adjacent-topic equation (e.g. area, volume, or acceleration) was introduced — confirmed by direct re-reading of the diagram's full text content against the approved baseline and against this production task's explicit scope restriction."
+      ]
+    },
+    "equationAndSymbolIntegrity": {
+      "status": "pass",
+      "findings": [
+        "v = d / t renders with v, d, t all italic (font-style=\"italic\"), matching the house-style rule that single-letter variables are italic.",
+        "L, T, M (dimensional/fundamental symbols) are italic in the quantity boxes, consistent with the same rule.",
+        "No unit symbols appear in this diagram (distance/time/mass units are not part of the approved visualReference spec for this topic), so no upright-unit-vs-italic-variable conflict arises.",
+        "L/T (speed's dimension) is rendered as plain upright text in the Dimensional Notation panel, since here L and T are being named/discussed as dimension labels rather than used as algebraic variables in an equation — consistent with how the approved English baseline's own equations-block prose treats 'dimension L' and 'dimension T' as names, not computed variables.",
+        "No caret-exponent or literal-underscore-subscript notation was needed anywhere in this diagram (no squared/cubed/subscripted quantity appears in ch01-t01's approved content)."
+      ]
+    },
+    "englishLabelIntegrity": {
+      "status": "pass",
+      "findings": [
+        "Every English text element carries direction=\"ltr\" (programmatically re-confirmed after ch01-t01-visual-001-rev-002: 0 of 46 text elements missing an explicit direction attribute — element count increased from 42 to 46 due to the four new lines, two per language, added in the revision).",
+        "Every English label is either a verbatim or a faithfully condensed rendering of the approved English Batch 1 baseline text (ch01-t01-block-visual, ch01-t01-block-equations, ch01-corr-001) — no wording was invented beyond concise labeling.",
+        "No spelling, grammar, or terminology inconsistency found on re-read."
+      ]
+    },
+    "arabicLabelAndBidiIntegrity": {
+      "status": "pass",
+      "findings": [
+        "Every Arabic text element carries direction=\"rtl\" (programmatically confirmed, 0 missing).",
+        "Every Arabic label is drawn from, or a faithful condensed rendering of, the approved Arabic Batch 1 baseline text (ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0) — the exact approved glossary terms are used: الكمية الأساسية, الكمية المشتقة, السرعة, كمية قياسية (not used in this diagram directly but consistent with its Arabic candidate text elsewhere), المسافة.",
+        "Every equation/formula fragment (v = d / t, L, T, L/T) is isolated in its own dedicated text element or tspan run, never interleaved character-by-character with Arabic prose — matching VISUAL_HOUSE_STYLE.md §3's rule exactly. Rendered and visually inspected in-browser (via a local static file server, Chromium-based preview): Arabic glyphs join correctly (cursive connected forms) and read right-to-left throughout, including the legend's combined Arabic line.",
+        "English and Arabic are always separate <text> elements — no element's content mixes both scripts as prose anywhere in the file (programmatically re-confirmed by inspecting every text element's language/direction pairing)."
+      ]
+    },
+    "contrastMeasurement": {
+      "status": "pass",
+      "findings": [
+        "Primary text (#0f172a) on white background: measured contrast ratio 17.85:1 (WCAG AA text target: 4.5:1) — pass.",
+        "Secondary text (#334155) on white background: 10.36:1 — pass.",
+        "Primary text (#0f172a) on the light-teal equation-panel fill (#eaf6f8): 16.18:1 — pass.",
+        "Secondary text (#334155) on the light-teal panel fill: 9.39:1 — pass.",
+        "Teal graphical elements (#1f6f8b, box borders) on white: 5.67:1 (WCAG 1.4.11 non-text target: 3:1) — pass.",
+        "Footer text (#b45309) on the amber footer background (#fff7ed): 4.73:1 — pass (identical, unchanged color pair already used and accepted across all four pilot assets).",
+        "All ratios computed programmatically using the standard WCAG relative-luminance formula, not assessed by eye alone — matching the rigor of ch01-t10-visual-001's own measured-contrast precedent, and extending it (this asset's contrast was measured before finalizing colors, rather than measured only during a later revision)."
+      ]
+    },
+    "textSizeAndReadability": {
+      "status": "pass",
+      "findings": [
+        "Font sizes range from 10.5px (box status tags, the smallest text) to 34px (dimensional-symbol letters in the quantity boxes), within the same practical range already used across the four pilot assets (10-24px). The two new lines added in ch01-t01-visual-001-rev-002 (scalar qualifier at 12px, average-speed qualifier at 11px) fall within this same existing range and do not introduce a new smallest-text extreme.",
+        "Visual hierarchy descends consistently: title (24/20px) > box symbols (34px, the diagram's single largest accent) > box names / Speed & Dimensional-Notation headers (15-16px) > body/caption text (12-14px) > status tags/legend (10.5-12px)."
+      ]
+    },
+    "overlapAndClipping": {
+      "status": "pass",
+      "findings": [
+        "Programmatic check confirmed 0 of 46 text elements fall outside the 0-1000 x 0-820 viewBox (updated after ch01-t01-visual-001-rev-002 enlarged the canvas and the Speed box).",
+        "Full-canvas visual inspection at desktop scale (rendered via a local static-file server in the Chromium-based preview browser), both before and after ch01-t01-visual-001-rev-002, confirmed no overlapping text, no clipped labels, and no element crossing outside the canvas — all four quantity boxes, the enlarged Speed box (now including the scalar and average-speed qualifiers), the Dimensional Notation panel, the legend, both captions, and the footer render cleanly with clear separation. The Speed box and the Dimensional Notation panel are no longer the same height (260px vs. 200px respectively) following the Speed box's enlargement — this asymmetry was inspected and found visually acceptable (a common top-aligned two-card layout with different natural content heights), not a defect."
+      ]
+    },
+    "zoomReadability": {
+      "status": "pass",
+      "findings": [
+        "All text is defined with absolute font-size values in a scalable viewBox-based SVG; zooming (browser zoom or an enlarge/dialog viewer, matching the existing pilot VisualViewer pattern) scales every element proportionally with no loss of relative legibility or layout integrity, the same property already relied upon by all four pilot assets."
+      ]
+    },
+    "mobileReadability": {
+      "status": "documentedNotAttemptedToFix",
+      "findings": [
+        "Inspected at a 375px-wide mobile viewport (Chromium-based preview, mobile emulation preset): the diagram scales down proportionally to fit the viewport width; the smallest text (the 10.5px box status tags) becomes the least legible element at this scale, consistent with the same, already-documented mobile-legibility risk recorded in every one of the four pilot visuals' own validation records.",
+        "Per this task's own instruction and the established house-style precedent (§7-8), no compressed mobile-specific variant was attempted; this is recorded as an open, undeferred item for the downstream rendering/delivery pipeline (responsive zoom/pan or a purpose-built mobile layout), not resolved within this asset — this asset is not yet integrated into any application delivery pipeline in any case, since application integration remains unauthorized."
+      ]
+    },
+    "projectorReadability": {
+      "status": "pass",
+      "findings": [
+        "At native canvas size (1000x750) and at the desktop-scale inspection performed, all text sizes (10.5-34px) are comparable to or larger than the smallest elements already used successfully across the four pilot assets at classroom-projector scale; no new projector-specific legibility regression is expected."
+      ]
+    },
+    "grayscaleNonColorDependency": {
+      "status": "pass",
+      "findings": [
+        "The fundamental-versus-deferred distinction (Distance/Time/Mass vs. Charge) is carried by border style (solid vs. dashed) and by explicit bilingual text tags, not by color alone — confirmed by an explicit on-canvas legend stating this rule directly.",
+        "The fundamental-vs-derived distinction (the four quantity boxes vs. the Speed box) is carried by position (top row vs. below, reached by explicit arrows) and by explicit bilingual labels ('fundamental' vs. '(derived)'), not by color alone.",
+        "No meaningful distinction in this diagram relies on hue alone; a grayscale rendering would remain fully interpretable via border style, position, arrows, and text."
+      ]
+    },
+    "accessibilityMetadata": {
+      "status": "pass",
+      "findings": [
+        "role=\"img\" with a <title> and <desc> element is present, wired via aria-labelledby, giving screen-reader users a full textual summary of every box, the derived-quantity relationship, the dimensional-notation distinction, and both captions.",
+        "The <desc> content independently restates the complete, unabridged approved-baseline meaning, including detail condensed on-canvas for space (e.g. the box tags' fuller phrasing)."
+      ]
+    },
+    "externalDependencyAbsence": {
+      "status": "pass",
+      "findings": [
+        "No <image> element, no base64-encoded data, no <script> element, and no external stylesheet or font link anywhere in the file (programmatically confirmed).",
+        "Font stacks are system-font fallback chains only ('Segoe UI', Arial, sans-serif for Latin/formula text; 'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif for Arabic text), matching the exact stacks already used across all four pilot assets — no new external font dependency introduced."
+      ]
+    },
+    "rasterContentAbsence": {
+      "status": "pass",
+      "findings": [
+        "The entire asset is built from native SVG vector primitives (rect, line, circle, text, tspan) plus marker defs — no raster image data, embedded or referenced, anywhere in the file."
+      ]
+    },
+    "rightsSafeOriginality": {
+      "status": "pass",
+      "findings": [
+        "No publisher slide, textbook figure, review card, or Kahoot-derived image was traced, cropped, referenced, or used as a compositional basis for this artwork.",
+        "The composition (four labeled boxes, two convergence arrows into a derived-quantity box, plus a separate dimensional-notation explanatory panel) is original to this task and does not reuse or closely imitate any of the four pilot topics' own layouts (verified by direct side-by-side comparison against all four existing pilot SVGs).",
+        "All caption and label text is either newly authored for this diagram or a concise, original rendering of already rights-cleared, newly authored Batch 1 baseline content (ch01-t01-block-visual, ch01-t01-block-equations, ch01-corr-001) — no publisher wording is present anywhere."
+      ]
+    }
+  },
+  "requirementsChecklist": {
+    "fullyOriginalArtwork": true,
+    "noTracingOrPublisherReuse": true,
+    "doesNotReuseOrImitatePilotComposition": true,
+    "fourFundamentalQuantityBoxesPresent": true,
+    "chargeVisuallySetApartDeferredNotExcluded": true,
+    "derivedQuantityBoxWithEquationPresent": true,
+    "dimensionalNotationDistinctionShown": true,
+    "measuredVariableVsDimensionSymbolDistinctionShown": true,
+    "speedShownAsScalarQuantity": true,
+    "vEqualsDOverTIdentifiedAsAverageSpeed": true,
+    "noAdvancedDimensionalAnalysisIntroduced": true,
+    "noAdjacentTopicContentIntroduced": true,
+    "bilingualLabelsSeparateElements": true,
+    "explicitLtrRtlDirectionOnEveryTextElement": true,
+    "latinSymbolsAndSiUnitsPreserved": true,
+    "formulaOnlyLabelsIsolated": true,
+    "arabicAnnotationsRTL": true,
+    "mixedDirectionEquationsIsolated": true,
+    "measuredContrastAllPairsPass": true,
+    "noOverlapOrClipping": true,
+    "accessibilityMetadataPresent": true,
+    "noExternalDependencies": true,
+    "noRasterContent": true,
+    "draftFooterPresent": true,
+    "designedForProjectorAndStudentScreens": true,
+    "mobileRiskDocumentedNotCompressed": true,
+    "markedDraftAndReviewRequired": true,
+    "studentFacingAllowedFalse": true,
+    "notApplicationIntegrated": true,
+    "notIndependentlyReviewed": true
+  },
+  "revisionHistory": [
+    {
+      "revisionId": "ch01-t01-visual-001-rev-001",
+      "appliedAt": "2026-07-17",
+      "appliedBasis": "Internal self-review during production, before any human review occurred. No scientific claim was changed; this is a layout/consistency check only, applied while drafting this asset for the first time (not a post-hoc revision to an already-finalized file).",
+      "revisionsApplied": [
+        "None required for this asset — ch01-t01-visual-001.svg had no layout defect found during in-browser inspection at desktop and mobile scale; this entry documents that the inspection occurred and found no correction necessary, for parity with this file's own production-report record."
+      ]
+    },
+    {
+      "revisionId": "ch01-t01-visual-001-rev-002",
+      "appliedAt": "2026-07-17",
+      "appliedBasis": "A consolidated visual review (docs/app/PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md) checked this asset against the approved English/Arabic baseline and ch01-corr-001 and identified two scientific-completeness gaps, plus one house-style consistency defect, all corrected here. No new scientific content was introduced — both additions restate content already explicit and approved in ENGLISH_BATCH1_BASELINE_APPROVAL.json / ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0's own ch01-t01-block-equations text.",
+      "revisionsApplied": [
+        "Added a bilingual qualifier to the Speed (derived) box stating speed is a scalar quantity (magnitude only, no direction) — '(scalar — magnitude only)' / '(كمية قياسية — مقدار فقط)' — matching the approved baseline's own wording exactly in substance.",
+        "Added a second bilingual qualifier stating that v = d/t gives the average speed over the stated interval — 'Average, over the stated interval' / 'متوسطة، خلال الفترة المحددة' — matching the approved baseline's own wording exactly in substance.",
+        "Enlarged the Speed (derived) box from 220x200 to 220x260 to accommodate the two new lines without crowding, and enlarged the overall canvas from 1000x750 to 1000x820, shifting the legend, both captions, and the footer band downward by a consistent margin to preserve the same relative spacing rhythm used throughout the rest of the asset.",
+        "Corrected the Speed box's decorative 'shadow' rectangle, which had an incorrect height (20px) that left it entirely hidden behind the opaque main box and achieving no visible effect; it now matches the box's own new dimensions (220x260), offset +4/+5, mirroring the already-correct pattern used by this same asset's Dimensional Notation panel and by ch01-t04-visual-001's equation panel.",
+        "Updated the <desc> accessibility text to mention the two new qualifiers, so screen-reader users receive the same additional clarification sighted viewers now get.",
+        "No other element, coordinate, color, caption, box content, arrow, or equation was changed."
+      ],
+      "scientificAndLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-parsed as XML: single root <svg>, 0 duplicate IDs, the one marker reference (arrowSlateT01) still resolves, no raster/base64/script/external content.",
+          "Re-inspected in-browser at desktop (1100x1050) and mobile (375x812) viewports: no overlap or clipping anywhere in the file; the two new lines render legibly within the enlarged Speed box; the legend, captions, and footer render correctly at their new, shifted positions.",
+          "The four quantity boxes, the convergence arrows, the Dimensional Notation panel, both captions, and the footer are all unchanged in position, wording, and meaning from the pre-revision file.",
+          "Re-verified the approved English and Arabic Batch 1 baseline files' checksums remain unchanged (a445f55d..., c876a6fe..., 3955df75..., d1f5bfbd...) — this review touched only the visual asset, never the baseline files."
+        ]
+      }
+    }
+  ],
+  "readyForHumanReview": true,
+  "readyForHumanReviewNote": "This asset was drawn from scratch, validated against the approved English and Arabic Batch 1 baselines and ch01-corr-001, checked for schema-equivalent structural correctness, measured for WCAG contrast, and visually inspected at desktop, tablet, and mobile scale in a Chromium-based preview browser. A subsequent consolidated review (rev-002) identified and corrected two scientific-completeness gaps (speed's scalar nature; v = d/t as average speed) and one house-style consistency defect (a non-functional shadow rectangle), re-validating the asset afterward with no new issue found. No overlap, clipping, or unresolved reference was found at any point. The mobile-legibility risk (small text at 375px width) remains open and undeferred, matching the exact same accepted risk already documented for all four pilot visuals. This asset has NOT been marked as finally approved or resolved; it remains draft and review-required. A machine or author validation pass, as recorded here, is not independent human visual review.",
+  "studentFacingAllowed": false,
+  "studentPublicationAuthorized": false,
+  "applicationIntegrationAuthorized": false,
+  "reviewer": null,
+  "reviewedAt": null,
+  "fileChecksumSha256": "48c73a36fef43644ab810e500045c83777e57ba5bb25d1c1d64f5f887fc67a98"
+}

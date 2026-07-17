@@ -1,0 +1,1078 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t10",
+  "topicTitle": "Centripetal Acceleration",
+  "topicTitleAr": "التسارع المركزي",
+  "generationStatus": "draft-pilot-generation",
+  "generationNote": "All content in this file is newly authored for the Chapter 1 pilot, built directly from the approved correction ch01-corr-008. No textbook, review-card, problem-bank, slide, or Kahoot wording was copied or closely paraphrased (Kahoot is cited only as corroborating scientific evidence, K1-SCI-009, not as a wording source). Provenance links trace conceptual topic lineage only. Nothing in this file is authorized for student-facing display; every record is draft and review-required.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-110",
+        "topicIds": [
+          "ch01-t10"
+        ],
+        "openingHook": {
+          "text": "Ask: 'A car drives around a perfectly circular track at a perfectly constant speed. Is it accelerating?' Let the class debate before revealing that yes, it is — direction change alone is enough.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "Can something accelerate without changing speed at all?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Velocity is always tangent to a circular path; centripetal acceleration is the name for the continuous change in that velocity's direction, and it points toward the center — never along the velocity and never outward.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "State that velocity remains tangent to a circular path at every instant.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "State that centripetal acceleration points toward the center, and explain why constant speed does not mean zero acceleration.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Apply a_c = v^2/r correctly, including to inverse problems (solving for v or r given a_c).",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "When an object moves along a circular path, its velocity vector is always tangent to the circle at that instant — pointing in the direction the object is currently moving, which continuously changes as the object goes around the curve. Here's the surprising part: even if the object's speed — how fast it's going — stays perfectly constant, its velocity is still changing, because velocity includes direction, and direction is constantly changing on a circular path. A continuously changing velocity means the object is accelerating, even at constant speed. This acceleration has a name: centripetal acceleration, meaning 'center-seeking.' It points toward the center of the circle — not along the direction of motion, and not outward. It's easy to mistakenly picture the velocity itself pointing toward the center, but that's not right: velocity stays tangent to the path at all times; only the acceleration — the rate at which velocity changes — points inward. The magnitude of this acceleration is given by a sub c equals v squared over r, where v is the speed and r is the radius of the circular path.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [
+          {
+            "cueOrder": 1,
+            "pageIds": [
+              "S3-P033",
+              "S3-P034"
+            ],
+            "instruction": {
+              "text": "Reference only for pacing — do not display or reuse these slides; excluded from the pilot per PILOT_RIGHTS_POLICY.json.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "figureCues": [
+          {
+            "visualIds": [
+              "ch01-t10-visual-001"
+            ],
+            "instruction": {
+              "text": "Show the newly designed tangent-velocity/inward-acceleration diagram (see contentBlock ch01-t10-block-visual) here.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "fallbackIfUnavailable": "Describe verbally: velocity arrow tangent to the circle, acceleration arrow pointing to the center, from the same point on the circle."
+          }
+        ],
+        "intuition": {
+          "text": "If you swing a ball on a string and the string suddenly breaks, the ball does not fly toward or away from the center — it flies off in a straight line, tangent to the circle at the instant the string broke, because that tangent direction is exactly where its velocity was pointing all along.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [],
+        "levelAdaptations": [
+          "Introductory: use the string-breaking example to build the tangent-velocity intuition before introducing the word 'centripetal.'",
+          "Standard: add a_c = v^2/r with direct substitution.",
+          "Advanced: work an inverse problem (solve for v given a maximum allowed a_c and a fixed r), and connect the topic to satellite orbits."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "If a ball on a string moving in a circle has its string cut, which way does it fly?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Is a car turning a corner at constant speed accelerating?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "Straight out along the tangent line at the instant the string broke — not toward or away from the center.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Yes — its direction is changing even though its speed is constant, and that counts as acceleration.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Believing velocity itself points toward the center.",
+          "Believing constant speed means zero acceleration.",
+          "Believing a released/unstrung object flies toward or away from the center rather than tangentially."
+        ],
+        "analogies": [
+          "A hammer-throw athlete releasing the hammer: it flies off tangent to the circular path it was following, not toward the center where the athlete stood."
+        ],
+        "examples": [
+          "A satellite in circular orbit around Earth."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t11",
+            "script": {
+              "text": "We've now covered several special types of motion in isolation — next we'll look at the simplest case of all: rest and uniform motion — and see how they fit into the same overall framework.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Repeatedly distinguish 'velocity: tangent' from 'acceleration: inward' using two visually distinct arrow styles every time — this is exactly the distinction ch01-corr-008 requires."
+        ],
+        "timing": {
+          "estimatedMinutes": 13,
+          "pauseCues": [
+            "After the opening constant-speed question, before revealing that the car IS accelerating.",
+            "After introducing a_c = v^2/r, before working the satellite example."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Never say or write 'velocity points toward the center' even as a simplification — this is the exact error ch01-corr-008 exists to correct, and simplifying it this way undoes the correction."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-008"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG041",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording above is newly authored per ch01-corr-008."
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P033",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          },
+          {
+            "sourceId": "SRC-CH01-KAHOOT-001",
+            "locatorType": "occurrence",
+            "locatorId": "K1-SCI-009",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Cited as corroborating scientific evidence only (a positive-contrast finding confirming the tangent-velocity framing is standard); no Kahoot wording reused."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تمهيد افتتاحي: اسأل: 'سيارة تسير في مسار دائري تام بسرعة ثابتة تمامًا. هل هي تتسارع؟' دع الصف يتناقش قبل أن تكشف أن الجواب نعم — فتغيّر الاتجاه وحده كافٍ لذلك.\n\nالسؤال المحوري: هل يمكن لشيء أن يتسارع دون أن تتغيّر سرعته إطلاقًا؟\n\nالفكرة الرئيسية: السرعة المتجهة تكون دائمًا مماسّة للمسار الدائري؛ والتسارع المركزي هو اسم التغيّر المستمر في اتجاه تلك السرعة المتجهة، ويتجه نحو المركز — أبدًا لا على طول السرعة المتجهة وأبدًا لا إلى الخارج.\n\nأهداف التعلم:\n1. بيان أن السرعة المتجهة تبقى مماسّة للمسار الدائري في كل لحظة.\n2. بيان أن التسارع المركزي يتجه نحو المركز، وتوضيح لماذا لا تعني السرعة الثابتة تسارعًا معدومًا.\n3. تطبيق العلاقة a_c = v^2/r تطبيقًا صحيحًا، بما يشمل المسائل العكسية (إيجاد v أو r عند معرفة a_c).\n\nالنص الكامل لسكربت التدريس: عندما يتحرك جسم على مسار دائري، يكون متجه سرعته دائمًا مماسًّا للدائرة في تلك اللحظة — يشير إلى الاتجاه الذي يتحرك فيه الجسم حاليًا، وهو اتجاه يتغيّر باستمرار أثناء دوران الجسم حول المنحنى. وهنا الجزء المثير للدهشة: حتى لو ظلت سرعة الجسم — أي مدى سرعته — ثابتة تمامًا، فإن سرعته المتجهة لا تزال تتغيّر، لأن السرعة المتجهة تتضمن الاتجاه، والاتجاه يتغيّر باستمرار على المسار الدائري. وتغيّر السرعة المتجهة باستمرار يعني أن الجسم يتسارع، حتى عند سرعة ثابتة. ولهذا التسارع اسم: التسارع المركزي، بمعنى 'الباحث عن المركز' أو 'المتجه نحو المركز'. وهو يتجه نحو مركز الدائرة — لا على طول اتجاه الحركة، ولا إلى الخارج. من السهل تخيّل السرعة المتجهة نفسها وهي تتجه نحو المركز خطأً، لكن هذا غير صحيح: تبقى السرعة المتجهة مماسّة للمسار في كل الأوقات؛ والتسارع وحده — أي معدّل تغيّر السرعة المتجهة — هو الذي يتجه إلى الداخل. ويُعطى مقدار هذا التسارع بالعلاقة a تحت c يساوي v تربيع مقسومًا على r، حيث v هي السرعة وr نصف قطر المسار الدائري.\n\nالحدس: إذا كنت تُرجرج كرة مربوطة بخيط وانقطع الخيط فجأة، فإن الكرة لا تطير نحو المركز أو بعيدًا عنه — بل تنطلق في خط مستقيم، مماسّ للدائرة عند لحظة انقطاع الخيط، لأن ذلك الاتجاه المماسّ هو بالضبط الاتجاه الذي كانت تشير إليه سرعتها المتجهة طوال الوقت.\n\nأسئلة تُطرح على الطلاب:\n- إذا قُطع خيط كرة تتحرك في مسار دائري، في أي اتجاه ستطير؟\n- هل تتسارع سيارة تدور عند منعطف بسرعة ثابتة؟\n\nالإجابات المتوقعة من الطلاب:\n- تطير مباشرة على طول خط المماس عند لحظة انقطاع الخيط — لا نحو المركز ولا بعيدًا عنه.\n- نعم — فاتجاهها يتغيّر رغم أن سرعتها ثابتة، وهذا يُعدّ تسارعًا.\n\nالمفاهيم الخاطئة المتوقعة: الاعتقاد بأن السرعة المتجهة نفسها تتجه نحو المركز. الاعتقاد بأن السرعة الثابتة تعني تسارعًا معدومًا. الاعتقاد بأن جسمًا تحرر من قيده يطير نحو المركز أو بعيدًا عنه بدلاً من الطيران مماسيًا.\n\nتكييف المستوى:\nتمهيدي: استخدام مثال انقطاع الخيط لبناء حدس السرعة المماسية قبل تقديم كلمة 'المركزي'.\nعادي: إضافة a_c = v^2/r مع التعويض المباشر.\nمتقدم: حلّ مسألة عكسية (إيجاد v عند معرفة أقصى a_c مسموح به وr ثابت)، وربط الموضوع بمدارات الأقمار الصناعية.\n\nتشبيهات: رياضي رمي المطرقة عند إطلاق المطرقة: تطير مماسًّا للمسار الدائري الذي كانت تتبعه، لا نحو المركز حيث وقف الرياضي.\n\nأمثلة يستخدمها المعلم: قمر صناعي في مدار دائري حول الأرض.\n\nجملة الانتقال إلى الموضوع التالي: بعد أن غطّينا عدة أنواع خاصة من الحركة كلًّا على حدة، سننظر بعد ذلك في أبسط حالة على الإطلاق: السكون والحركة المنتظمة — ونرى كيف تندرج ضمن الإطار العام نفسه.\n\nملاحظات تشديد للمعلم: ميّز مرارًا بين 'السرعة المتجهة: مماسّة' و'التسارع: إلى الداخل' باستخدام نمطين مختلفين بصريًا من الأسهم في كل مرة — فهذا بالضبط التمييز الذي يتطلبه التصحيح ch01-corr-008.\n\nتنبيهات خاصة بالمعلم: لا تقل أو تكتب أبدًا 'السرعة المتجهة تتجه نحو المركز' حتى كتبسيط — فهذا هو الخطأ نفسه الذي وُجد التصحيح ch01-corr-008 لتصحيحه، وتبسيطه بهذه الطريقة يُبطل التصحيح.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration",
+            "ch01-term-velocity"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t10",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Velocity is tangent to a circular path at every instant; centripetal acceleration is the continuous change in that velocity's direction, and it points toward the center. Constant speed does not imply constant velocity or zero acceleration.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "السرعة المتجهة تكون مماسّة للمسار الدائري في كل لحظة؛ والتسارع المركزي هو التغيّر المستمر في اتجاه تلك السرعة المتجهة، ويتجه نحو المركز. والسرعة الثابتة لا تعني بالضرورة سرعة متجهة ثابتة أو تسارعًا معدومًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "السرعة المتجهة تكون مماسّة للمسار الدائري في كل لحظة؛ والتسارع المركزي هو التغيّر المستمر في اتجاه تلك السرعة المتجهة، ويتجه نحو المركز. والسرعة الثابتة لا تعني بالضرورة سرعة متجهة ثابتة أو تسارعًا معدومًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration",
+            "ch01-term-velocity"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG041",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t10",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "When an object moves along a circular path, its velocity vector is always tangent to the circle at that instant, pointing in the direction the object is currently moving, which continuously changes as the object goes around the curve. Even if the object's speed stays perfectly constant, its velocity is still changing, because velocity includes direction, and direction is constantly changing on a circular path. A continuously changing velocity means the object IS accelerating, even at constant speed. This acceleration, called centripetal acceleration, points toward the center of the circle, not along the direction of motion and not outward. It is incorrect to describe velocity itself as directed toward the center; only the acceleration points inward.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "عندما يتحرك جسم على مسار دائري، يكون متجه سرعته دائمًا مماسًّا للدائرة في تلك اللحظة، ويشير إلى الاتجاه الذي يتحرك فيه الجسم حاليًا، وهو اتجاه يتغيّر باستمرار أثناء دوران الجسم حول المنحنى. وحتى لو ظلت سرعة الجسم ثابتة تمامًا، فإن سرعته المتجهة لا تزال تتغيّر، لأن السرعة المتجهة تتضمن الاتجاه، والاتجاه يتغيّر باستمرار على المسار الدائري. وتغيّر السرعة المتجهة باستمرار يعني أن الجسم يتسارع فعلاً، حتى عند سرعة ثابتة. وهذا التسارع، المسمّى التسارع المركزي، يتجه نحو مركز الدائرة، لا على طول اتجاه الحركة ولا إلى الخارج. ومن الخطأ وصف السرعة المتجهة نفسها بأنها متجهة نحو المركز؛ فالتسارع وحده هو الذي يتجه إلى الداخل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "عندما يتحرك جسم على مسار دائري، يكون متجه سرعته دائمًا مماسًّا للدائرة في تلك اللحظة، ويشير إلى الاتجاه الذي يتحرك فيه الجسم حاليًا، وهو اتجاه يتغيّر باستمرار أثناء دوران الجسم حول المنحنى. وحتى لو ظلت سرعة الجسم ثابتة تمامًا، فإن سرعته المتجهة لا تزال تتغيّر، لأن السرعة المتجهة تتضمن الاتجاه، والاتجاه يتغيّر باستمرار على المسار الدائري. وتغيّر السرعة المتجهة باستمرار يعني أن الجسم يتسارع فعلاً، حتى عند سرعة ثابتة. وهذا التسارع، المسمّى التسارع المركزي، يتجه نحو مركز الدائرة، لا على طول اتجاه الحركة ولا إلى الخارج. ومن الخطأ وصف السرعة المتجهة نفسها بأنها متجهة نحو المركز؛ فالتسارع وحده هو الذي يتجه إلى الداخل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration",
+            "ch01-term-velocity"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P033",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          },
+          {
+            "sourceId": "SRC-CH01-KAHOOT-001",
+            "locatorType": "occurrence",
+            "locatorId": "K1-SCI-009",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Corroborating scientific evidence only; no wording reused."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t10",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "a_c = v^2 / r, where v is speed and r is the radius of the circular path; a_c is directed toward the center of the circle at every instant.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "a_c = v^2 / r، حيث v هي السرعة وr نصف قطر المسار الدائري؛ ويتجه a_c نحو مركز الدائرة في كل لحظة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "a_c = v^2 / r، حيث v هي السرعة وr نصف قطر المسار الدائري؛ ويتجه a_c نحو مركز الدائرة في كل لحظة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction's equation.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-example",
+        "blockType": "example",
+        "topicId": "ch01-t10",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Example: A satellite orbits Earth at a constant speed of 7,600 m/s in a circular orbit of radius 6.9 x 10^6 m. Find its centripetal acceleration. Solution: a_c = v^2/r = (7600)^2 / (6.9 x 10^6) = 57,760,000 / 6,900,000 (approximately) = 8.37 m/s^2, directed toward the center of the Earth.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مثال: يدور قمر صناعي حول الأرض بسرعة ثابتة مقدارها 7,600 m/s في مدار دائري نصف قطره 6.9 × 10^6 m. أوجد تسارعه المركزي. الحل: a_c = v^2/r = (7600)^2 / (6.9 × 10^6) = 57,760,000 / 6,900,000 (تقريبًا) = 8.37 m/s^2، ويتجه نحو مركز الأرض.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مثال: يدور قمر صناعي حول الأرض بسرعة ثابتة مقدارها 7,600 m/s في مدار دائري نصف قطره 6.9 × 10^6 m. أوجد تسارعه المركزي. الحل: a_c = v^2/r = (7600)^2 / (6.9 × 10^6) = 57,760,000 / 6,900,000 (تقريبًا) = 8.37 m/s^2، ويتجه نحو مركز الأرض.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original example (satellite orbit scenario, very different physical scale from ball-on-string/merry-go-round/NASCAR source examples) applying the same formula.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-visual",
+        "blockType": "visualReference",
+        "topicId": "ch01-t10",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "VISUAL SPECIFICATION (not an image — describes a diagram to be newly designed): A circle representing the circular path, with an object marked at one point on the circle. From that point, draw a velocity arrow tangent to the circle (perpendicular to the radius at that point, pointing in the direction of travel) using a solid line style, and a separate, shorter acceleration arrow from the same point pointing directly toward the circle's center, using a dashed line style, to visually distinguish the two directions. Label the velocity arrow 'v (tangent)' and the acceleration arrow 'a_c (toward center)'. Include a small inset showing the object an instant later, slightly further along the circle: its velocity arrow has rotated to remain tangent at the new position, while the acceleration arrow still points toward the same center, to demonstrate that velocity direction changes while the center-pointing relationship of acceleration stays fixed. No slide or textbook imagery is to be used; this is an original schematic to be drawn from scratch.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل وصف لرسم تخطيطي سيُصمَّم حديثًا): دائرة تمثّل المسار الدائري، مع جسم موسوم عند نقطة واحدة على الدائرة. ارسم من تلك النقطة سهم سرعة متجهة مماسًّا للدائرة (عموديًا على نصف القطر عند تلك النقطة، ويشير إلى اتجاه الحركة) بخط متصل، وسهم تسارع منفصلًا وأقصر من النقطة نفسها يشير مباشرة نحو مركز الدائرة، بخط متقطع، للتمييز البصري بين الاتجاهين. ضَع على سهم السرعة المتجهة تسمية 'v (مماس)' وعلى سهم التسارع تسمية 'a_c (نحو المركز)'. أضِف لقطة صغيرة مصغّرة تُظهر الجسم بعد لحظة، أبعد قليلاً على الدائرة: يكون سهم سرعته المتجهة قد دار ليبقى مماسًّا عند الموضع الجديد، بينما يظل سهم التسارع يشير نحو المركز نفسه، لإظهار أن اتجاه السرعة المتجهة يتغيّر بينما تبقى علاقة التسارع بالاتجاه نحو المركز ثابتة. يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا رسم تخطيطي أصلي يُرسم من الصفر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل وصف لرسم تخطيطي سيُصمَّم حديثًا): دائرة تمثّل المسار الدائري، مع جسم موسوم عند نقطة واحدة على الدائرة. ارسم من تلك النقطة سهم سرعة متجهة مماسًّا للدائرة (عموديًا على نصف القطر عند تلك النقطة، ويشير إلى اتجاه الحركة) بخط متصل، وسهم تسارع منفصلًا وأقصر من النقطة نفسها يشير مباشرة نحو مركز الدائرة، بخط متقطع، للتمييز البصري بين الاتجاهين. ضَع على سهم السرعة المتجهة تسمية 'v (مماس)' وعلى سهم التسارع تسمية 'a_c (نحو المركز)'. أضِف لقطة صغيرة مصغّرة تُظهر الجسم بعد لحظة، أبعد قليلاً على الدائرة: يكون سهم سرعته المتجهة قد دار ليبقى مماسًّا عند الموضع الجديد، بينما يظل سهم التسارع يشير نحو المركز نفسه، لإظهار أن اتجاه السرعة المتجهة يتغيّر بينما تبقى علاقة التسارع بالاتجاه نحو المركز ثابتة. يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا رسم تخطيطي أصلي يُرسم من الصفر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "visualReferenceIds": [
+          "ch01-t10-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t10-visual-001",
+            "availabilityStatus": "available",
+            "linkageConfidence": "unresolved",
+            "linkageType": "none",
+            "rightsStatus": "approvedInternal",
+            "visualResolutionId": "ch01-t10-visual-validation-001",
+            "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t10-visual-001.svg",
+            "assetFormat": "svg",
+            "assetStatus": "draft",
+            "reviewRequired": true
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Original visual specification; not traced or adapted from any slide or textbook figure.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "unverifiedVisual",
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "visualDesignerAndScientificReviewer",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t10",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception: 'velocity points toward the center' or 'if the string breaks, the object flies toward the center.' Correction: velocity is tangent to the path at every instant; if the centripetal force vanishes (e.g., a string breaks), the object continues in a straight line tangent to the circle at that instant, not toward the center and not outward along the radius. Diagnostic prompt: ask what happens to a ball on a string the instant the string snaps, and require justification in terms of the direction of velocity at that instant.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مفهوم خاطئ: 'السرعة المتجهة تتجه نحو المركز' أو 'إذا انقطع الخيط، يطير الجسم نحو المركز'. التصحيح: السرعة المتجهة مماسّة للمسار في كل لحظة؛ فإن تلاشت القوة المركزية (كأن ينقطع خيط مثلاً)، يستمر الجسم في خط مستقيم مماسّ للدائرة عند تلك اللحظة، لا نحو المركز ولا إلى الخارج على طول نصف القطر. سؤال تشخيصي: اسأل ماذا يحدث لكرة مربوطة بخيط في اللحظة التي ينقطع فيها الخيط، واطلب تبريرًا من حيث اتجاه السرعة المتجهة في تلك اللحظة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مفهوم خاطئ: 'السرعة المتجهة تتجه نحو المركز' أو 'إذا انقطع الخيط، يطير الجسم نحو المركز'. التصحيح: السرعة المتجهة مماسّة للمسار في كل لحظة؛ فإن تلاشت القوة المركزية (كأن ينقطع خيط مثلاً)، يستمر الجسم في خط مستقيم مماسّ للدائرة عند تلك اللحظة، لا نحو المركز ولا إلى الخارج على طول نصف القطر. سؤال تشخيصي: اسأل ماذا يحدث لكرة مربوطة بخيط في اللحظة التي ينقطع فيها الخيط، واطلب تبريرًا من حيث اتجاه السرعة المتجهة في تلك اللحظة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration",
+            "ch01-term-velocity"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-KAHOOT-001",
+            "locatorType": "occurrence",
+            "locatorId": "K1-SCI-009",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Corroborating evidence only that this misconception is worth targeting explicitly; no wording reused."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; directly targets the misconception the approved correction ch01-corr-008 addresses.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t10-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t10",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A person swings a bucket of water in a complete vertical circle at constant speed. At the instant the bucket is at the very top of the circle, in which direction does its centripetal acceleration point? (A) Upward, away from the ground (B) Downward, toward the center of the circle (C) Horizontal, tangent to the path (D) It is zero, since the speed is constant. Correct answer: B. Explanation: centripetal acceleration always points toward the center of the circular path, regardless of where the object currently is on that path. At the top of a vertical circle, the center is below the bucket, so the acceleration points downward at that instant. It is not zero: constant speed does not mean zero acceleration, since the bucket's direction of motion is continuously changing all the way around the circle, including at the top.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يُرجرج شخص دلوًا من الماء في دائرة رأسية كاملة بسرعة ثابتة. عند اللحظة التي يكون فيها الدلو عند أعلى نقطة في الدائرة، في أي اتجاه يتجه تسارعه المركزي؟ (A) إلى الأعلى، بعيدًا عن الأرض (B) إلى الأسفل، نحو مركز الدائرة (C) أفقيًا، مماسًّا للمسار (D) يساوي صفرًا، لأن السرعة ثابتة. الإجابة الصحيحة: B. التفسير: يتجه التسارع المركزي دائمًا نحو مركز المسار الدائري، بصرف النظر عن موضع الجسم الحالي على ذلك المسار. عند أعلى نقطة في الدائرة الرأسية، يكون المركز أسفل الدلو، لذا يتجه التسارع إلى الأسفل في تلك اللحظة. وهو ليس صفرًا: فالسرعة الثابتة لا تعني تسارعًا معدومًا، لأن اتجاه حركة الدلو يتغيّر باستمرار طوال الدائرة، بما في ذلك عند القمة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يُرجرج شخص دلوًا من الماء في دائرة رأسية كاملة بسرعة ثابتة. عند اللحظة التي يكون فيها الدلو عند أعلى نقطة في الدائرة، في أي اتجاه يتجه تسارعه المركزي؟ (A) إلى الأعلى، بعيدًا عن الأرض (B) إلى الأسفل، نحو مركز الدائرة (C) أفقيًا، مماسًّا للمسار (D) يساوي صفرًا، لأن السرعة ثابتة. الإجابة الصحيحة: B. التفسير: يتجه التسارع المركزي دائمًا نحو مركز المسار الدائري، بصرف النظر عن موضع الجسم الحالي على ذلك المسار. عند أعلى نقطة في الدائرة الرأسية، يكون المركز أسفل الدلو، لذا يتجه التسارع إلى الأسفل في تلك اللحظة. وهو ليس صفرًا: فالسرعة الثابتة لا تعني تسارعًا معدومًا، لأن اتجاه حركة الدلو يتغيّر باستمرار طوال الدائرة، بما في ذلك عند القمة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration",
+            "ch01-term-velocity"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-008"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-008"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original review question (vertical-circle bucket scenario), revised during the pilot quality review to diversify away from the string-breaking scenario already covered in this topic's misconception block and instructor-script analogy; tests the same core ideas (acceleration always toward center; constant speed does not mean zero acceleration) via a distinct setup.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "problem",
+      "record": {
+        "problemId": "ch01-prob-110",
+        "topicIds": [
+          "ch01-t10"
+        ],
+        "problemStatement": {
+          "en": {
+            "text": "A centrifuge spins a test tube in a circle of radius 0.15 m. If the centripetal acceleration experienced by the sample must not exceed 500 m/s^2 for safety, find the maximum safe rotational speed (in m/s) of the sample.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يُدوِّر جهاز طرد مركزي أنبوب اختبار في دائرة نصف قطرها 0.15 m. إذا وجب ألا يتجاوز التسارع المركزي الذي تتعرض له العينة 500 m/s^2 لأغراض السلامة، أوجد أقصى سرعة دورانية آمنة (بوحدة m/s) للعينة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "givenValues": [
+          {
+            "symbol": "r",
+            "value": 0.15,
+            "unit": "m",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "a_c_max",
+            "value": 500,
+            "unit": "m/s^2",
+            "exactOrApproximate": "exact"
+          }
+        ],
+        "conceptualInterpretation": {
+          "en": {
+            "text": "This is an inverse application of the centripetal acceleration formula: instead of finding a_c from v and r, we are given a_c and r and must solve for the maximum allowed speed v.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "هذا تطبيق عكسي لعلاقة التسارع المركزي: فبدلاً من إيجاد a_c من v وr، تُعطى لنا a_c وr، ويجب إيجاد أقصى سرعة مسموح بها v.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "equationSelection": [
+          {
+            "equationId": "ch01-t10-eq-centripetal",
+            "reason": "a_c = v^2/r rearranged to solve for v given a_c and r.",
+            "conditionsSatisfied": [
+              "circular motion",
+              "a_c and r both given"
+            ],
+            "conditionsMissing": []
+          }
+        ],
+        "numberedSolution": [
+          {
+            "stepNumber": 1,
+            "purpose": "Rearrange the centripetal acceleration equation for v",
+            "explanation": {
+              "en": {
+                "text": "Starting from a_c = v^2/r, solve for v: v^2 = a_c * r, so v = sqrt(a_c * r).",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "بدءًا من a_c = v^2/r، أوجد v: v^2 = a_c × r، إذن v = sqrt(a_c × r).",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-110-calc-1"
+          },
+          {
+            "stepNumber": 2,
+            "purpose": "Substitute the given values",
+            "explanation": {
+              "en": {
+                "text": "v = sqrt(500 m/s^2 x 0.15 m) = sqrt(75) (approximately) = 8.66 m/s (approximately).",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "v = sqrt(500 m/s^2 × 0.15 m) = sqrt(75) (تقريبًا) = 8.66 m/s (تقريبًا).",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-110-calc-2"
+          }
+        ],
+        "calculation": [
+          {
+            "calculationId": "ch01-prob-110-calc-1",
+            "expression": "v = sqrt(a_c * r)",
+            "substitution": "v = sqrt(a_c * r)",
+            "result": null,
+            "unit": null,
+            "roundingRule": null,
+            "significantFigures": null
+          },
+          {
+            "calculationId": "ch01-prob-110-calc-2",
+            "expression": "sqrt(500 x 0.15)",
+            "substitution": "sqrt(500 m/s^2 x 0.15 m)",
+            "result": 8.66,
+            "unit": "m/s",
+            "roundingRule": "two decimal places",
+            "significantFigures": 3
+          }
+        ],
+        "finalAnswer": {
+          "value": 8.66,
+          "unit": "m/s",
+          "direction": "tangent to the circular path (speed only; direction is not requested)",
+          "sign": null,
+          "referencePoint": null,
+          "interpretation": {
+            "en": {
+              "text": "The sample's speed must not exceed approximately 8.66 m/s to keep centripetal acceleration at or below 500 m/s^2.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "ar": {
+              "text": "يجب ألا تتجاوز سرعة العينة نحو 8.66 m/s لإبقاء التسارع المركزي عند 500 m/s^2 أو أقل.",
+              "status": "draft",
+              "language": "ar",
+              "direction": "rtl"
+            }
+          }
+        },
+        "units": [
+          "m",
+          "m/s^2",
+          "m/s"
+        ],
+        "directionSign": {
+          "applicable": false,
+          "note": "Speed is a scalar magnitude; the problem asks only for the maximum safe speed, not a directional velocity."
+        },
+        "intuition": {
+          "en": {
+            "text": "Since centripetal acceleration grows with the square of speed, a large allowed acceleration (500 m/s^2) over a small radius (0.15 m) should still permit only a modest speed (single digits of m/s), because squaring quickly makes v^2/r large even for small v.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بما أن التسارع المركزي يزداد مع مربع السرعة، فإن تسارعًا مسموحًا كبيرًا (500 m/s^2) على نصف قطر صغير (0.15 m) لا يُتيح إلا سرعة متواضعة (آحاد بوحدة m/s)، لأن التربيع يجعل v^2/r كبيرًا بسرعة حتى مع قيم v صغيرة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "commonMistake": [
+          "Forgetting to take the square root after isolating v^2, and reporting v^2's numeric value as if it were v itself."
+        ],
+        "sourceAnswer": {
+          "textRef": null,
+          "value": null,
+          "unit": null,
+          "direction": null,
+          "status": "unknown"
+        },
+        "correctedAnswer": {
+          "value": 8.66,
+          "unit": "m/s",
+          "direction": null,
+          "status": "proposed"
+        },
+        "sourceVariants": [
+          {
+            "variantId": "ch01-prob-110-variant-original",
+            "sourceId": "SRC-CH01-PILOT-ORIGINAL",
+            "problemIds": [],
+            "solutionIds": [],
+            "reviewCardIds": [],
+            "questionIds": [],
+            "pageIds": [],
+            "segmentIds": [],
+            "occurrenceIds": [],
+            "visualIds": [],
+            "answerVariant": "8.66 m/s",
+            "answerStatus": "correct",
+            "correctionRecordIds": [
+              "ch01-corr-008"
+            ],
+            "conflictRecordIds": [
+              "CD-CONF-008"
+            ],
+            "provenanceLinks": []
+          }
+        ],
+        "selectedVariantIds": [
+          "ch01-prob-110-variant-original"
+        ],
+        "selectionRationale": "Only variant; fully original problem (centrifuge safety scenario, an inverse a_c=v^2/r application) authored for this pilot, not derived from any Cengage-copyrighted problem-bank item (P5's ball-on-string/merry-go-round/runner/NASCAR problems, all of which solve directly for a_c rather than inversely for v), per PILOT_RIGHTS_POLICY.json.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يُدوِّر جهاز طرد مركزي أنبوب اختبار في دائرة نصف قطرها 0.15 m. إذا وجب ألا يتجاوز التسارع المركزي الذي تتعرض له العينة 500 m/s^2 لأغراض السلامة، أوجد أقصى سرعة دورانية آمنة (بوحدة m/s) للعينة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-centripetal-acceleration"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Only version; fully original.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    }
+  ]
+}

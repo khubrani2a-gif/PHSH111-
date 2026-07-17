@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="1000" height="820" role="img" aria-labelledby="ch01t01visTitle ch01t01visDesc">
+  <title id="ch01t01visTitle">Fundamental and Derived Quantities: Building Speed (الكميات الأساسية والمشتقة: بناء السرعة)</title>
+  <desc id="ch01t01visDesc">An original schematic diagram showing four labeled boxes for the fundamental quantities used in this chapter: Distance (symbol L), Time (symbol T), and Mass (symbol M), each marked as fundamental and used throughout this chapter, plus a fourth box, Charge, drawn with a dashed border and marked as fundamental but introduced later in the course (deferred, not excluded). Two arrows lead from the Distance and Time boxes downward, converging into a Speed box labeled "Speed (derived)", which explicitly notes that speed is a scalar quantity (magnitude only, with no direction attached), shows the equation v = d / t, the conceptual relationship "Speed = Distance / Time", and a note that this relationship gives the average speed over the stated interval. Beside the Speed box, a separate panel titled "Dimensional Notation" explicitly distinguishes the dimensional symbols L and T (which name the type of quantity) from the measured-variable symbols d and t (the specific measured values used in the equation v = d/t), and states that speed's dimension is L/T. A legend clarifies that a solid border marks a fundamental quantity used in this chapter, while a dashed border marks one deferred to later. Two captions beneath state that distance, time, and mass are the fundamental quantities for this chapter's mechanics specifically, not the only fundamental quantities in all of physics, and that a derived quantity like speed is built by combining fundamentals through multiplication or division, never as an independent unit of its own. Captions are provided in English and Arabic throughout.</desc>
+
+  <defs>
+    <marker id="arrowSlateT01" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="820" fill="#ffffff"/>
+
+  <!-- Title (bilingual) -->
+  <text x="500" y="38" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Fundamental and Derived Quantities: Building Speed</text>
+  <text x="500" y="64" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">الكميات الأساسية والمشتقة: بناء السرعة</text>
+
+  <!-- Box 1: Distance (L) -->
+  <rect x="65" y="95" width="190" height="160" rx="10" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="2.5"/>
+  <text x="160" y="140" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-style="italic" font-weight="700" fill="#0f172a">L</text>
+  <text x="160" y="170" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Distance</text>
+  <text x="160" y="190" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">المسافة</text>
+  <text x="160" y="215" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#334155">fundamental — this chapter</text>
+  <text x="160" y="233" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="10.5" fill="#334155">أساسية — هذا الفصل</text>
+
+  <!-- Box 2: Time (T) -->
+  <rect x="285" y="95" width="190" height="160" rx="10" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="2.5"/>
+  <text x="380" y="140" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-style="italic" font-weight="700" fill="#0f172a">T</text>
+  <text x="380" y="170" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Time</text>
+  <text x="380" y="190" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">الزمن</text>
+  <text x="380" y="215" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#334155">fundamental — this chapter</text>
+  <text x="380" y="233" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="10.5" fill="#334155">أساسية — هذا الفصل</text>
+
+  <!-- Box 3: Mass (M) -->
+  <rect x="505" y="95" width="190" height="160" rx="10" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="2.5"/>
+  <text x="600" y="140" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-style="italic" font-weight="700" fill="#0f172a">M</text>
+  <text x="600" y="170" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Mass</text>
+  <text x="600" y="190" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">الكتلة</text>
+  <text x="600" y="215" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#334155">fundamental — this chapter</text>
+  <text x="600" y="233" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="10.5" fill="#334155">أساسية — هذا الفصل</text>
+
+  <!-- Box 4: Charge — dashed border, no symbol, set apart to show deferred not excluded -->
+  <rect x="755" y="95" width="190" height="160" rx="10" fill="#ffffff" stroke="#1f6f8b" stroke-width="2.5" stroke-dasharray="8,5"/>
+  <text x="850" y="170" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Charge</text>
+  <text x="850" y="190" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">الشحنة</text>
+  <text x="850" y="215" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#334155">fundamental — later</text>
+  <text x="850" y="233" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="10.5" fill="#334155">أساسية — لاحقًا</text>
+
+  <!-- Convergence arrows: Distance and Time combine into Speed (derived) -->
+  <line x1="160" y1="255" x2="200" y2="300" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowSlateT01)"/>
+  <line x1="380" y1="255" x2="340" y2="300" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowSlateT01)"/>
+
+  <!-- Speed (derived) box -->
+  <rect x="164" y="305" width="220" height="260" fill="#1f6f8b" fill-opacity="0.16"/>
+  <rect x="160" y="300" width="220" height="260" rx="10" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="270" y="342" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Speed (derived)</text>
+  <text x="270" y="360" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">السرعة (مشتقة)</text>
+  <text x="270" y="388" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">(scalar — magnitude only)</text>
+  <text x="270" y="404" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">(كمية قياسية — مقدار فقط)</text>
+  <text x="270" y="442" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a"><tspan font-style="italic">v</tspan><tspan> = </tspan><tspan font-style="italic">d</tspan><tspan> / </tspan><tspan font-style="italic">t</tspan></text>
+  <text x="270" y="480" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">= Distance / Time</text>
+  <text x="270" y="496" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">= المسافة / الزمن</text>
+  <text x="270" y="524" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-style="italic" fill="#334155">Average, over the stated interval</text>
+  <text x="270" y="540" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="11" fill="#334155">متوسطة، خلال الفترة المحددة</text>
+
+  <!-- Dimensional Notation panel -->
+  <rect x="433" y="303" width="470" height="200" fill="#1f6f8b" fill-opacity="0.16"/>
+  <rect x="430" y="300" width="470" height="200" rx="10" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="665" y="328" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Dimensional Notation</text>
+  <text x="665" y="346" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">الترميز البعدي</text>
+  <text x="665" y="373" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">L</tspan><tspan>, </tspan><tspan font-style="italic">T</tspan><tspan> name the type of quantity (dimension)</tspan></text>
+  <text x="665" y="391" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" fill="#334155">L، T تُسمّيان نوع الكمية (البُعد)</text>
+  <text x="665" y="418" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">d</tspan><tspan>, </tspan><tspan font-style="italic">t</tspan><tspan> are the measured values used in </tspan><tspan font-style="italic">v = d/t</tspan></text>
+  <text x="665" y="436" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" fill="#334155">d، t هما القيمتان المقيستان في v = d/t</text>
+  <text x="665" y="463" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">Speed's dimension: L/T</text>
+  <text x="665" y="481" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">بُعد السرعة: L/T</text>
+
+  <!-- Legend: border style meaning (no reliance on color alone) -->
+  <line x1="330" y1="590" x2="365" y2="590" stroke="#1f6f8b" stroke-width="2.5"/>
+  <text x="372" y="594" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Solid border — used in this chapter</text>
+  <line x1="620" y1="590" x2="655" y2="590" stroke="#1f6f8b" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <text x="662" y="594" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Dashed border — deferred</text>
+  <text x="500" y="614" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">حد متصل — يُستخدم في هذا الفصل&#160;&#160;&#160;&#160;&#160;حد متقطع — مؤجَّل</text>
+
+  <!-- Caption 1: scope statement (echoes ch01-corr-001) -->
+  <text x="500" y="648" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">Distance, time, and mass are the fundamental quantities for this chapter's mechanics — not the only ones in all of physics.</text>
+  <text x="500" y="668" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">المسافة والزمن والكتلة هي الكميات الأساسية لميكانيكا هذا الفصل — لا الكميات الأساسية الوحيدة في الفيزياء كلها.</text>
+
+  <!-- Caption 2: derived-quantity clarification -->
+  <text x="500" y="696" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">A derived quantity is built by combining fundamentals — never an independent unit of its own.</text>
+  <text x="500" y="716" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">تُبنى الكمية المشتقة بدمج الكميات الأساسية — لا تكون أبدًا وحدة مستقلة بذاتها.</text>
+
+  <!-- Draft / review-required footer band -->
+  <rect x="0" y="778" width="1000" height="40" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="500" y="803" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#b45309">DRAFT — REVIEW REQUIRED — ORIGINAL SCHEMATIC (ch01-t01-visual-001) — Not authorized for student-facing use</text>
+</svg>

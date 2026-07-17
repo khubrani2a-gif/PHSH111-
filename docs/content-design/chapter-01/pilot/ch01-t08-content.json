@@ -1,0 +1,1041 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t08",
+  "topicTitle": "Acceleration, Signs and g",
+  "topicTitleAr": "التسارع والإشارات ومقدار الجاذبية g",
+  "generationStatus": "draft-pilot-generation",
+  "generationNote": "All content in this file is newly authored for the Chapter 1 pilot, built directly from the approved correction ch01-corr-007. No textbook, review-card, problem-bank, slide, or Kahoot wording was copied or closely paraphrased. Provenance links trace conceptual topic lineage only. Nothing in this file is authorized for student-facing display; every record is draft and review-required.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-108",
+        "topicIds": [
+          "ch01-t08"
+        ],
+        "openingHook": {
+          "text": "Ask: 'If I tell you an object's acceleration is negative, is it slowing down?' Take a few answers without correcting them yet, then promise to come back to this after the axis-convention discussion.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "What does the sign of an acceleration value actually tell you, and what does it not tell you?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Acceleration's sign depends entirely on a chosen positive-axis convention, not on gravity itself flipping direction; the magnitude of gravitational acceleration, |g|, is always about 9.8 m/s^2, but whether it's reported as +g or -g depends on which direction was called positive.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "Declare a positive-axis convention before assigning a sign to displacement, velocity, or acceleration.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Distinguish the magnitude |g| from the signed acceleration a = -g or a = +g depending on convention.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Explain why a negative acceleration does not necessarily mean an object is slowing down or moving backward.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "Acceleration describes how quickly velocity changes, and like velocity, it has a direction, which we represent with a sign once we've chosen which direction counts as positive. Near Earth's surface, falling objects — ignoring air resistance — all speed up at the same rate, whose magnitude we write as |g|, approximately 9.8 meters per second squared. But whether that acceleration is reported as positive 9.8 or negative 9.8 depends entirely on which direction you decided to call positive before you started solving the problem — it is not a property of gravity itself flipping sign. If you call upward positive, a falling object's acceleration is a equals negative g, since gravity pulls it in the negative, downward, direction. If you call downward positive instead, that exact same falling object's acceleration is a equals positive g. Whichever convention you pick, you must use it consistently: the object's velocity and displacement must be calculated using that same sign convention, not switched partway through a problem. And here's the point that trips almost everyone up at first: a negative acceleration value tells you the acceleration vector points opposite to whatever you defined as positive. It does not automatically mean the object is slowing down, and it does not automatically mean the object is moving backward. Whether a negative acceleration speeds an object up or slows it down depends on the sign of that object's velocity at the same instant — if velocity and acceleration share the same sign, the object speeds up; if they have opposite signs, it slows down.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [
+          {
+            "cueOrder": 1,
+            "pageIds": [
+              "S3-P031"
+            ],
+            "instruction": {
+              "text": "Reference only for pacing — do not display or reuse this slide; excluded from the pilot per PILOT_RIGHTS_POLICY.json.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "figureCues": [
+          {
+            "visualIds": [
+              "ch01-t08-visual-001"
+            ],
+            "instruction": {
+              "text": "Show the newly designed dual-convention vertical-axis diagram (see contentBlock ch01-t08-block-visual) here.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "fallbackIfUnavailable": "Describe both panels verbally: upward-positive giving a=-g, downward-positive giving a=+g, same physical situation."
+          }
+        ],
+        "intuition": {
+          "text": "The falling object itself doesn't care what you call positive — only the numbers you write down change with your convention, never the physical motion.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [],
+        "levelAdaptations": [
+          "Introductory: focus only on |g| as magnitude versus a = -g/+g as the two convention-dependent signed forms.",
+          "Standard: add the from-rest velocity and displacement equations under a consistent convention.",
+          "Advanced: work the nonzero-initial-velocity example (ball thrown downward) to show the framework extends beyond the from-rest special case."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "If a car's acceleration is reported as -3 m/s^2, is the car necessarily slowing down?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Does |g| change depending on which direction we call positive?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "Not necessarily — it depends on whether the car's velocity is positive or negative at that moment.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "No — |g| is always about 9.8 m/s^2; only the sign of the reported acceleration changes with the convention.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Believing negative acceleration always means slowing down.",
+          "Believing negative acceleration always means moving backward.",
+          "Treating |g| itself as sometimes negative rather than always a magnitude."
+        ],
+        "analogies": [
+          "Choosing a positive direction is like choosing which way is 'up' on a map — the terrain doesn't change, only how you describe directions on it."
+        ],
+        "examples": [
+          "A ball thrown straight down from a rooftop with a nonzero initial speed."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t09",
+            "script": {
+              "text": "Now that we can handle the sign of acceleration carefully, let's apply this directly to the most common accelerated motion near Earth's surface: free fall.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Always require students to state their chosen positive direction explicitly before writing any signed value — this is exactly the discipline the approved correction ch01-corr-007 requires."
+        ],
+        "timing": {
+          "estimatedMinutes": 14,
+          "pauseCues": [
+            "After the opening negative-acceleration question, before revealing the answer depends on velocity's sign too.",
+            "After stating |g| as a magnitude, before showing the two signed forms."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Do not present a = -g or a = +g as 'the' formula for gravity — always pair it with an explicit statement of which direction was chosen positive, per ch01-corr-007."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-007"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG037",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording above is newly authored per ch01-corr-007."
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P031",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تمهيد افتتاحي: اسأل: 'إذا أخبرتكم أن تسارع جسم ما سالب، فهل هذا يعني أنه يتباطأ؟' اجمع بعض الإجابات دون تصحيحها بعد، ثم عِد بالعودة إلى هذا السؤال بعد مناقشة اصطلاح المحور.\n\nالسؤال المحوري: ماذا تُخبرنا إشارة قيمة التسارع فعليًا، وماذا لا تُخبرنا؟\n\nالفكرة الرئيسية: تعتمد إشارة التسارع كليًا على اصطلاح المحور الموجب المُختار، لا على انقلاب اتجاه الجاذبية نفسها؛ ومقدار التسارع الجذبي، |g|، يساوي دائمًا نحو 9.8 m/s^2، لكن ما إذا كان يُكتب بصورة +g أو -g يعتمد على الاتجاه الذي اختير ليكون موجبًا.\n\nأهداف التعلم:\n1. تحديد اصطلاح محور موجب قبل إسناد إشارة إلى الإزاحة أو السرعة المتجهة أو التسارع.\n2. التمييز بين المقدار |g| والتسارع المُوقَّع a = -g أو a = +g بحسب الاصطلاح المُختار.\n3. توضيح أن التسارع السالب لا يعني بالضرورة أن الجسم يتباطأ أو يتحرك إلى الخلف.\n\nالنص الكامل لسكربت التدريس: يصف التسارع مدى سرعة تغيّر السرعة المتجهة، وهو مثلها له اتجاه، نُمثّله بإشارة بمجرد أن نختار الاتجاه الذي يُعدّ موجبًا. بالقرب من سطح الأرض، تتسارع الأجسام الساقطة — متجاهلين مقاومة الهواء — جميعها بالمعدّل نفسه، الذي نكتب مقداره بـ|g|، أي نحو 9.8 متر في الثانية المربعة. لكن ما إذا كان هذا التسارع يُكتب بصورة موجب 9.8 أو سالب 9.8 يعتمد كليًا على الاتجاه الذي قررت تسميته موجبًا قبل أن تبدأ حل المسألة — وليس خاصية للجاذبية نفسها تنقلب إشارتها. فإن اخترت الأعلى موجبًا، فإن تسارع جسم ساقط يساوي a يساوي سالب g، لأن الجاذبية تسحبه في الاتجاه السالب، أي إلى الأسفل. وإن اخترت الأسفل موجبًا بدلاً من ذلك، فإن تسارع الجسم الساقط نفسه يساوي a يساوي موجب g. وأيًّا كان الاصطلاح الذي تختاره، يجب أن تستخدمه باتساق: يجب حساب سرعة الجسم المتجهة وإزاحته باستخدام اصطلاح الإشارة نفسه، دون تبديله في منتصف المسألة. وهنا الجزء الذي يوقع الجميع تقريبًا في الخطأ أول مرة: قيمة التسارع السالبة تُخبرك أن متجه التسارع يشير عكس ما عرّفته موجبًا. وهي لا تعني تلقائيًا أن الجسم يتباطأ، ولا تعني تلقائيًا أنه يتحرك إلى الخلف. وما إذا كان التسارع السالب يُسرّع الجسم أو يُبطئه يعتمد على إشارة سرعة ذلك الجسم المتجهة في اللحظة نفسها — فإن تشاركت السرعة والتسارع الإشارة نفسها، يتسارع الجسم؛ وإن كانت إشارتاهما متعاكستين، يتباطأ.\n\nالحدس: الجسم الساقط نفسه لا يهتم بما تُسمّيه موجبًا — فالأرقام التي تكتبها هي وحدها التي تتغيّر بتغيّر اصطلاحك، لا الحركة الفيزيائية نفسها أبدًا.\n\nأسئلة تُطرح على الطلاب:\n- إذا أُعلن تسارع سيارة بقيمة -3 m/s^2، فهل هذا يعني بالضرورة أن السيارة تتباطأ؟\n- هل يتغيّر مقدار |g| بحسب الاتجاه الذي نسميه موجبًا؟\n\nالإجابات المتوقعة من الطلاب:\n- ليس بالضرورة — يعتمد الأمر على ما إذا كانت سرعة السيارة المتجهة موجبة أو سالبة في تلك اللحظة.\n- لا — |g| يساوي دائمًا نحو 9.8 m/s^2؛ وتتغيّر فقط إشارة التسارع المُعلَن بحسب الاصطلاح.\n\nالمفاهيم الخاطئة المتوقعة: الاعتقاد بأن التسارع السالب يعني دائمًا التباطؤ. الاعتقاد بأن التسارع السالب يعني دائمًا الحركة إلى الخلف. معاملة |g| نفسها على أنها سالبة أحيانًا بدلاً من كونها مقدارًا دائمًا.\n\nتكييف المستوى:\nتمهيدي: التركيز فقط على |g| كمقدار مقابل a = -g/+g بوصفهما الصورتين المُوقَّعتين المعتمدتين على الاصطلاح.\nعادي: إضافة معادلتَي السرعة المتجهة والإزاحة عند الانطلاق من السكون تحت اصطلاح ثابت.\nمتقدم: حلّ مثال بسرعة ابتدائية غير صفرية (كرة تُقذف إلى الأسفل) لإظهار أن الإطار يمتد إلى ما هو أبعد من حالة الانطلاق من السكون الخاصة.\n\nتشبيهات: اختيار الاتجاه الموجب أشبه باختيار أي جهة تمثّل 'الأعلى' على خريطة — فالتضاريس لا تتغيّر، يتغيّر فقط أسلوب وصف الاتجاهات عليها.\n\nأمثلة يستخدمها المعلم: كرة تُقذف رأسيًا إلى الأسفل من سطح مبنى بسرعة ابتدائية غير صفرية.\n\nجملة الانتقال إلى الموضوع التالي: بعد أن أصبحنا قادرين على التعامل بدقة مع إشارة التسارع، لنطبّق ذلك مباشرة على أكثر أنواع الحركة المتسارعة شيوعًا بالقرب من سطح الأرض: السقوط الحر.\n\nملاحظات تشديد للمعلم: اطلب دائمًا من الطلاب ذكر اتجاههم الموجب المُختار صراحةً قبل كتابة أي قيمة مُوقَّعة — فهذا هو الانضباط نفسه الذي يتطلبه التصحيح المعتمد ch01-corr-007.\n\nتنبيهات خاصة بالمعلم: لا تُقدّم a = -g أو a = +g على أنها 'الصيغة' الوحيدة للجاذبية — اقرنها دائمًا ببيان صريح لاتجاه الذي اختير ليكون موجبًا، وفقًا للتصحيح ch01-corr-007.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration",
+            "ch01-term-free-fall"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t08",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "|g| (approximately 9.8 m/s^2) is the magnitude of gravitational acceleration; the signed acceleration is a = -g under an upward-positive convention or a = +g under a downward-positive convention, and the chosen convention must be applied consistently to displacement and velocity too.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "|g| (نحو 9.8 m/s^2) هو مقدار التسارع الجذبي؛ ويكون التسارع المُوقَّع a = -g في حال اصطلاح الأعلى موجبًا، أو a = +g في حال اصطلاح الأسفل موجبًا، ويجب تطبيق الاصطلاح المُختار باتساق على الإزاحة والسرعة المتجهة أيضًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "|g| (نحو 9.8 m/s^2) هو مقدار التسارع الجذبي؛ ويكون التسارع المُوقَّع a = -g في حال اصطلاح الأعلى موجبًا، أو a = +g في حال اصطلاح الأسفل موجبًا، ويجب تطبيق الاصطلاح المُختار باتساق على الإزاحة والسرعة المتجهة أيضًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration",
+            "ch01-term-free-fall"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG037",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-007"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t08",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Acceleration describes how quickly velocity changes, and like velocity, it has a direction, which we represent with a sign once we've chosen which direction counts as positive. Near Earth's surface, falling objects (ignoring air resistance) all speed up at the same rate, whose magnitude is written |g| (approximately 9.8 m/s^2). Whether that acceleration is reported as +9.8 or -9.8 m/s^2 depends entirely on which direction you decided to call positive before you started — it is not a property of gravity itself flipping sign. If you call upward positive, a falling object's acceleration is a = -g, since gravity pulls it in the negative (downward) direction. If you call downward positive instead, the same falling object's acceleration is a = +g. Whichever convention you pick, you must use it consistently: the object's displacement and velocity must be calculated with that same sign convention, not switched partway through a problem.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يصف التسارع مدى سرعة تغيّر السرعة المتجهة، وهو مثلها له اتجاه نُمثّله بإشارة بمجرد أن نختار الاتجاه الذي يُعدّ موجبًا. بالقرب من سطح الأرض، تتسارع الأجسام الساقطة (متجاهلين مقاومة الهواء) جميعها بالمعدّل نفسه، الذي يُكتب مقداره |g| (نحو 9.8 m/s^2). وما إذا كان هذا التسارع يُعلَن بصورة +9.8 أو -9.8 m/s^2 يعتمد كليًا على الاتجاه الذي قررت تسميته موجبًا قبل أن تبدأ — وليس خاصية للجاذبية نفسها تنقلب إشارتها. فإن اخترت الأعلى موجبًا، فإن تسارع الجسم الساقط a = -g، لأن الجاذبية تسحبه في الاتجاه السالب (الأسفل). وإن اخترت الأسفل موجبًا بدلاً من ذلك، فإن تسارع الجسم الساقط نفسه a = +g. وأيًّا كان الاصطلاح الذي تختاره، يجب أن تستخدمه باتساق: يجب حساب إزاحة الجسم وسرعته المتجهة بالاصطلاح نفسه، دون تبديله في منتصف المسألة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يصف التسارع مدى سرعة تغيّر السرعة المتجهة، وهو مثلها له اتجاه نُمثّله بإشارة بمجرد أن نختار الاتجاه الذي يُعدّ موجبًا. بالقرب من سطح الأرض، تتسارع الأجسام الساقطة (متجاهلين مقاومة الهواء) جميعها بالمعدّل نفسه، الذي يُكتب مقداره |g| (نحو 9.8 m/s^2). وما إذا كان هذا التسارع يُعلَن بصورة +9.8 أو -9.8 m/s^2 يعتمد كليًا على الاتجاه الذي قررت تسميته موجبًا قبل أن تبدأ — وليس خاصية للجاذبية نفسها تنقلب إشارتها. فإن اخترت الأعلى موجبًا، فإن تسارع الجسم الساقط a = -g، لأن الجاذبية تسحبه في الاتجاه السالب (الأسفل). وإن اخترت الأسفل موجبًا بدلاً من ذلك، فإن تسارع الجسم الساقط نفسه a = +g. وأيًّا كان الاصطلاح الذي تختاره، يجب أن تستخدمه باتساق: يجب حساب إزاحة الجسم وسرعته المتجهة بالاصطلاح نفسه، دون تبديله في منتصف المسألة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration",
+            "ch01-term-free-fall"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P031",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-007"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t08",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "a = -g (upward-positive convention). a = +g (downward-positive convention). v = v0 + at; if the object starts from rest, v0 = 0, otherwise use its actual initial velocity. dy = v0*t + (1/2)*a*t^2; if the object starts from rest, v0 = 0, otherwise use its actual initial velocity. Displacement, initial velocity, velocity, and acceleration must all follow the same chosen sign convention.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "a = -g (اصطلاح الأعلى موجب). a = +g (اصطلاح الأسفل موجب). v = v0 + at؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية. dy = v0*t + (1/2)*a*t^2؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية. يجب أن تتبع الإزاحة والسرعة المتجهة الابتدائية والسرعة المتجهة والتسارع جميعًا اصطلاح الإشارة المُختار نفسه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "a = -g (اصطلاح الأعلى موجب). a = +g (اصطلاح الأسفل موجب). v = v0 + at؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية. dy = v0*t + (1/2)*a*t^2؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية. يجب أن تتبع الإزاحة والسرعة المتجهة الابتدائية والسرعة المتجهة والتسارع جميعًا اصطلاح الإشارة المُختار نفسه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-007",
+          "ch01-corr-009"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction's equation set, including the displacement equation added during the correction's revision pass. The v0 = 0 conditional clause was clarified per ch01-corr-009 (baselineVersion 1.0.2) to state explicitly that it applies only to release-from-rest, not universally.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-example",
+        "blockType": "example",
+        "topicId": "ch01-t08",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Example: A ball is thrown straight down from a rooftop with an initial speed of 4 m/s. Taking downward as positive, find its velocity after 1.5 s and how far it has fallen in that time. Solution: with downward positive, a = +g = +9.8 m/s^2 and v0 = +4 m/s (already moving downward). v = v0 + at = 4 + 9.8(1.5) = 4 + 14.7 = 18.7 m/s (downward). dy = v0*t + (1/2)*a*t^2 = 4(1.5) + 0.5(9.8)(1.5)^2 = 6 + 11.025 = 17.025 m fallen.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مثال: تُقذف كرة رأسيًا إلى الأسفل من سطح مبنى بسرعة ابتدائية مقدارها 4 m/s. باعتبار الأسفل موجبًا، أوجد سرعتها المتجهة بعد 1.5 s، والمسافة التي سقطتها خلال تلك المدة. الحل: باصطلاح الأسفل موجبًا، a = +g = +9.8 m/s^2 وv0 = +4 m/s (تتحرك بالفعل إلى الأسفل). v = v0 + at = 4 + 9.8(1.5) = 4 + 14.7 = 18.7 m/s (إلى الأسفل). dy = v0*t + (1/2)*a*t^2 = 4(1.5) + 0.5(9.8)(1.5)^2 = 6 + 11.025 = 17.025 m سقطتها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مثال: تُقذف كرة رأسيًا إلى الأسفل من سطح مبنى بسرعة ابتدائية مقدارها 4 m/s. باعتبار الأسفل موجبًا، أوجد سرعتها المتجهة بعد 1.5 s، والمسافة التي سقطتها خلال تلك المدة. الحل: باصطلاح الأسفل موجبًا، a = +g = +9.8 m/s^2 وv0 = +4 m/s (تتحرك بالفعل إلى الأسفل). v = v0 + at = 4 + 9.8(1.5) = 4 + 14.7 = 18.7 m/s (إلى الأسفل). dy = v0*t + (1/2)*a*t^2 = 4(1.5) + 0.5(9.8)(1.5)^2 = 6 + 11.025 = 17.025 m سقطتها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-007"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original example with nonzero initial velocity, extending beyond the from-rest special case in the correction wording itself while staying consistent with its sign-convention rules; distinct from source's sports-car/baseball/drag-car examples.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-visual",
+        "blockType": "visualReference",
+        "topicId": "ch01-t08",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "VISUAL SPECIFICATION (not an image — describes a diagram to be newly designed): Two side-by-side vertical number-line panels showing the identical physical situation (a ball falling). Panel 1 (upward-positive): arrowhead at top labeled '+', a ball icon shown at three time-stamps with a constant-length downward-pointing acceleration arrow labeled 'a = -g' at each position, and a velocity arrow that grows longer at each successive time-stamp. Panel 2 (downward-positive): arrowhead at bottom labeled '+', same ball motion, same constant-length downward acceleration arrow now labeled 'a = +g', same growing velocity arrows. Caption beneath both panels: 'Same physical motion, opposite-signed acceleration values, because the positive direction was chosen differently.' No slide or textbook imagery is to be used; this is an original schematic to be drawn from scratch.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل وصف لرسم تخطيطي سيُصمَّم حديثًا): لوحتان متجاورتان لخط عددي رأسي تُظهران الموقف الفيزيائي نفسه (كرة تسقط). اللوحة 1 (الأعلى موجب): رأس سهم أعلى موسوم بـ'+', ورسم لكرة يظهر عند ثلاث لحظات زمنية مع سهم تسارع ثابت الطول يشير إلى الأسفل موسوم بـ'a = -g' عند كل موضع، وسهم سرعة متجهة يطول تدريجيًا عند كل لحظة تالية. اللوحة 2 (الأسفل موجب): رأس سهم أسفل موسوم بـ'+', حركة الكرة نفسها، سهم التسارع الثابت الطول نفسه المتجه إلى الأسفل، لكنه موسوم الآن بـ'a = +g', وأسهم السرعة المتجهة المتزايدة نفسها. تعليق أسفل اللوحتين: 'الحركة الفيزيائية نفسها، لكن بقيم تسارع متعاكسة الإشارة، لأن الاتجاه الموجب اختير بصورة مختلفة.' يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا رسم تخطيطي أصلي يُرسم من الصفر.\n\nقاعدة وسم العناصر البصرية: الرموز والوحدات العلمية (مثل a، g، +، m/s^2) تبقى بأحرف لاتينية بلا ترجمة وباتجاه من اليسار إلى اليمين (LTR)؛ أما التعليقات والشروحات باللغة الطبيعية فتُترجم إلى العربية؛ وأي معادلة أو تعبير رمزي مختلط الاتجاه يجب عزله صراحةً بتنسيق LTR عند التنفيذ لتفادي أخطاء عرض النص ثنائي الاتجاه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل وصف لرسم تخطيطي سيُصمَّم حديثًا): لوحتان متجاورتان لخط عددي رأسي تُظهران الموقف الفيزيائي نفسه (كرة تسقط). اللوحة 1 (الأعلى موجب): رأس سهم أعلى موسوم بـ'+', ورسم لكرة يظهر عند ثلاث لحظات زمنية مع سهم تسارع ثابت الطول يشير إلى الأسفل موسوم بـ'a = -g' عند كل موضع، وسهم سرعة متجهة يطول تدريجيًا عند كل لحظة تالية. اللوحة 2 (الأسفل موجب): رأس سهم أسفل موسوم بـ'+', حركة الكرة نفسها، سهم التسارع الثابت الطول نفسه المتجه إلى الأسفل، لكنه موسوم الآن بـ'a = +g', وأسهم السرعة المتجهة المتزايدة نفسها. تعليق أسفل اللوحتين: 'الحركة الفيزيائية نفسها، لكن بقيم تسارع متعاكسة الإشارة، لأن الاتجاه الموجب اختير بصورة مختلفة.' يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا رسم تخطيطي أصلي يُرسم من الصفر.\n\nقاعدة وسم العناصر البصرية: الرموز والوحدات العلمية (مثل a، g، +، m/s^2) تبقى بأحرف لاتينية بلا ترجمة وباتجاه من اليسار إلى اليمين (LTR)؛ أما التعليقات والشروحات باللغة الطبيعية فتُترجم إلى العربية؛ وأي معادلة أو تعبير رمزي مختلط الاتجاه يجب عزله صراحةً بتنسيق LTR عند التنفيذ لتفادي أخطاء عرض النص ثنائي الاتجاه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-007"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "visualReferenceIds": [
+          "ch01-t08-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t08-visual-001",
+            "availabilityStatus": "available",
+            "linkageConfidence": "unresolved",
+            "linkageType": "none",
+            "rightsStatus": "approvedInternal",
+            "visualResolutionId": "ch01-t08-visual-validation-001",
+            "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t08-visual-001.svg",
+            "assetFormat": "svg",
+            "assetStatus": "draft",
+            "reviewRequired": true
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Original visual specification; not traced or adapted from any slide or textbook figure.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "unverifiedVisual",
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "visualDesignerAndScientificReviewer",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t08",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception: 'negative acceleration always means slowing down' (or 'moving backward'). Correction: a negative acceleration value means direction opposite the chosen positive convention. Whether that speeds up or slows down the object depends on the sign of the object's own velocity at that instant: same sign as acceleration means speeding up; opposite sign means slowing down. Diagnostic prompt: give students an object with negative velocity and negative acceleration and ask whether it is speeding up or slowing down (correct answer: speeding up, since same-signed velocity and acceleration reinforce each other).",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مفهوم خاطئ: 'التسارع السالب يعني دائمًا التباطؤ' (أو 'الحركة إلى الخلف'). التصحيح: قيمة التسارع السالبة تعني اتجاهًا معاكسًا للاصطلاح الموجب المُختار. وما إذا كان ذلك يُسرّع الجسم أو يُبطئه يعتمد على إشارة سرعة الجسم المتجهة نفسه في تلك اللحظة: فالإشارة نفسها مع التسارع تعني التسارع (الزيادة في السرعة)، والإشارة المعاكسة تعني التباطؤ. سؤال تشخيصي: أعطِ الطلاب جسمًا له سرعة متجهة سالبة وتسارع سالب، واسألهم هل يتسارع أم يتباطأ (الإجابة الصحيحة: يتسارع، لأن السرعة المتجهة والتسارع بالإشارة نفسها يعزّز أحدهما الآخر).",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مفهوم خاطئ: 'التسارع السالب يعني دائمًا التباطؤ' (أو 'الحركة إلى الخلف'). التصحيح: قيمة التسارع السالبة تعني اتجاهًا معاكسًا للاصطلاح الموجب المُختار. وما إذا كان ذلك يُسرّع الجسم أو يُبطئه يعتمد على إشارة سرعة الجسم المتجهة نفسه في تلك اللحظة: فالإشارة نفسها مع التسارع تعني التسارع (الزيادة في السرعة)، والإشارة المعاكسة تعني التباطؤ. سؤال تشخيصي: أعطِ الطلاب جسمًا له سرعة متجهة سالبة وتسارع سالب، واسألهم هل يتسارع أم يتباطأ (الإجابة الصحيحة: يتسارع، لأن السرعة المتجهة والتسارع بالإشارة نفسها يعزّز أحدهما الآخر).",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-007"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; directly targets the misconception the approved correction ch01-corr-007 addresses.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t08-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t08",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A car's acceleration is reported as -3 m/s^2 using a rightward-positive convention. Is the car necessarily slowing down? Explain. Correct answer: not necessarily. The negative sign only means the acceleration points leftward (opposite the chosen positive direction). If the car is moving rightward (positive velocity) at that instant, the leftward acceleration slows it down. But if the car is already moving leftward (negative velocity), the same leftward acceleration would speed it up, since velocity and acceleration share the same sign.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "أُعلن تسارع سيارة بقيمة -3 m/s^2 باستخدام اصطلاح اليمين موجبًا. هل تتباطأ السيارة بالضرورة؟ فسّر إجابتك. الإجابة الصحيحة: ليس بالضرورة. تعني الإشارة السالبة فقط أن التسارع يتجه يسارًا (عكس الاتجاه الموجب المُختار). فإن كانت السيارة تتحرك يمينًا (سرعة متجهة موجبة) في تلك اللحظة، فإن التسارع المتجه يسارًا يُبطئها. أما إن كانت السيارة تتحرك بالفعل يسارًا (سرعة متجهة سالبة)، فإن التسارع نفسه المتجه يسارًا سيُسرّعها، لأن السرعة المتجهة والتسارع يتشاركان الإشارة نفسها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "أُعلن تسارع سيارة بقيمة -3 m/s^2 باستخدام اصطلاح اليمين موجبًا. هل تتباطأ السيارة بالضرورة؟ فسّر إجابتك. الإجابة الصحيحة: ليس بالضرورة. تعني الإشارة السالبة فقط أن التسارع يتجه يسارًا (عكس الاتجاه الموجب المُختار). فإن كانت السيارة تتحرك يمينًا (سرعة متجهة موجبة) في تلك اللحظة، فإن التسارع المتجه يسارًا يُبطئها. أما إن كانت السيارة تتحرك بالفعل يسارًا (سرعة متجهة سالبة)، فإن التسارع نفسه المتجه يسارًا سيُسرّعها، لأن السرعة المتجهة والتسارع يتشاركان الإشارة نفسها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-007"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-007"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original review question, directly testing the corrected misconception rather than a numeric substitution question.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "problem",
+      "record": {
+        "problemId": "ch01-prob-108",
+        "topicIds": [
+          "ch01-t08"
+        ],
+        "problemStatement": {
+          "en": {
+            "text": "A hospital orderly pushes an empty gurney forward at 1.5 m/s down a corridor and then brakes, bringing it to rest uniformly after 3 s. Taking the direction of initial motion as positive, find the gurney's acceleration, and state whether the acceleration's sign indicates the gurney moved backward at any point.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يدفع مساعد تمريض في مستشفى نقالة فارغة إلى الأمام بسرعة 1.5 m/s عبر ممر، ثم يكبح حركتها فتتوقف بانتظام بعد 3 s. باعتبار اتجاه الحركة الابتدائية موجبًا، أوجد تسارع النقالة، وبيّن هل تدل إشارة التسارع على أن النقالة تحركت إلى الخلف في أي لحظة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "givenValues": [
+          {
+            "symbol": "v0",
+            "value": 1.5,
+            "unit": "m/s",
+            "sign": "positive",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "v",
+            "value": 0,
+            "unit": "m/s",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "t",
+            "value": 3,
+            "unit": "s",
+            "exactOrApproximate": "exact"
+          }
+        ],
+        "conceptualInterpretation": {
+          "en": {
+            "text": "With the direction of initial motion defined as positive, the gurney's velocity goes from +1.5 m/s to 0 m/s; the resulting acceleration's sign only reflects that the change in velocity is negative, not that the gurney reversed direction.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بتعريف اتجاه الحركة الابتدائية موجبًا، تنتقل سرعة النقالة المتجهة من +1.5 m/s إلى 0 m/s؛ وإشارة التسارع الناتج تعكس فقط أن التغيّر في السرعة المتجهة سالب، لا أن النقالة عكست اتجاهها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "equationSelection": [
+          {
+            "equationId": "ch01-t08-eq-accel",
+            "reason": "Average acceleration from initial and final velocity over the given time interval.",
+            "conditionsSatisfied": [
+              "uniform deceleration assumed",
+              "consistent sign convention declared (direction of initial motion is positive)"
+            ],
+            "conditionsMissing": []
+          }
+        ],
+        "numberedSolution": [
+          {
+            "stepNumber": 1,
+            "purpose": "Compute the acceleration",
+            "explanation": {
+              "en": {
+                "text": "a = (v - v0) / t = (0 - 1.5) / 3 = -0.5 m/s^2.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "a = (v - v0) / t = (0 - 1.5) / 3 = -0.5 m/s^2.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-108-calc-1"
+          },
+          {
+            "stepNumber": 2,
+            "purpose": "Interpret the sign",
+            "explanation": {
+              "en": {
+                "text": "The negative sign means the acceleration points opposite the direction of initial motion (i.e., backward relative to the chosen positive direction) — this is exactly what is needed to slow a forward-moving gurney to rest. It does NOT indicate that the gurney's velocity itself ever became negative or that it moved backward; the velocity stayed at or above zero throughout, only decreasing from +1.5 m/s to 0 m/s.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "تعني الإشارة السالبة أن التسارع يتجه عكس اتجاه الحركة الابتدائية (أي إلى الخلف بالنسبة إلى الاتجاه الموجب المُختار) — وهذا بالضبط ما يلزم لإبطاء نقالة تتحرك إلى الأمام حتى تتوقف. وهي لا تدل على أن سرعة النقالة المتجهة نفسها أصبحت سالبة في أي وقت أو أنها تحركت إلى الخلف؛ فقد ظلت السرعة عند الصفر أو أعلى منه طوال الوقت، وتناقصت فقط من +1.5 m/s إلى 0 m/s.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": null
+          }
+        ],
+        "calculation": [
+          {
+            "calculationId": "ch01-prob-108-calc-1",
+            "expression": "(0 - 1.5) / 3",
+            "substitution": "(0 m/s - 1.5 m/s) / 3 s",
+            "result": -0.5,
+            "unit": "m/s^2",
+            "roundingRule": "one decimal place",
+            "significantFigures": 1
+          }
+        ],
+        "finalAnswer": {
+          "value": -0.5,
+          "unit": "m/s^2",
+          "direction": "opposite the direction of initial motion",
+          "sign": "negative",
+          "referencePoint": "direction of initial motion defined as positive",
+          "interpretation": {
+            "en": {
+              "text": "The acceleration is -0.5 m/s^2; the negative sign reflects deceleration relative to the chosen positive direction, not that the gurney moved backward.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "ar": {
+              "text": "التسارع يساوي -0.5 m/s^2؛ وتعكس الإشارة السالبة تباطؤًا بالنسبة إلى الاتجاه الموجب المُختار، لا أن النقالة تحركت إلى الخلف.",
+              "status": "draft",
+              "language": "ar",
+              "direction": "rtl"
+            }
+          }
+        },
+        "units": [
+          "m/s",
+          "s",
+          "m/s^2"
+        ],
+        "directionSign": {
+          "applicable": true,
+          "positiveConvention": "direction of initial motion (forward)",
+          "note": "Negative acceleration here indicates deceleration of forward motion, not reversal; velocity never becomes negative in this scenario."
+        },
+        "intuition": {
+          "en": {
+            "text": "Since the gurney goes from a modest positive speed to a full stop, some negative (opposing) acceleration is expected regardless of the specific numbers.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بما أن النقالة تنتقل من سرعة موجبة معتدلة إلى توقف تام، يُتوقّع وجود تسارع سالب (معاكس) بصرف النظر عن الأرقام المحددة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "commonMistake": [
+          "Concluding from the negative acceleration sign alone that the gurney moved backward, without checking the velocity's own sign throughout the interval."
+        ],
+        "sourceAnswer": {
+          "textRef": null,
+          "value": null,
+          "unit": null,
+          "direction": null,
+          "status": "unknown"
+        },
+        "correctedAnswer": {
+          "value": -0.5,
+          "unit": "m/s^2",
+          "direction": "opposite initial motion",
+          "status": "proposed"
+        },
+        "sourceVariants": [
+          {
+            "variantId": "ch01-prob-108-variant-original",
+            "sourceId": "SRC-CH01-PILOT-ORIGINAL",
+            "problemIds": [],
+            "solutionIds": [],
+            "reviewCardIds": [],
+            "questionIds": [],
+            "pageIds": [],
+            "segmentIds": [],
+            "occurrenceIds": [],
+            "visualIds": [],
+            "answerVariant": "-0.5 m/s^2",
+            "answerStatus": "correct",
+            "correctionRecordIds": [
+              "ch01-corr-007"
+            ],
+            "conflictRecordIds": [
+              "CD-CONF-007"
+            ],
+            "provenanceLinks": []
+          }
+        ],
+        "selectedVariantIds": [
+          "ch01-prob-108-variant-original"
+        ],
+        "selectionRationale": "Only variant; fully original problem (hospital gurney scenario, revised for health-science relevance per the pilot quality review, replacing an earlier skateboarder scenario with the same pedagogical structure and a newly computed answer) authored for this pilot, not derived from any Cengage-copyrighted problem-bank item (P5's sports-car/baseball/drag-car problems), per PILOT_RIGHTS_POLICY.json. Directly exercises the corrected misconception from ch01-corr-007.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يدفع مساعد تمريض في مستشفى نقالة فارغة إلى الأمام بسرعة 1.5 m/s عبر ممر، ثم يكبح حركتها فتتوقف بانتظام بعد 3 s. باعتبار اتجاه الحركة الابتدائية موجبًا، أوجد تسارع النقالة، وبيّن هل تدل إشارة التسارع على أن النقالة تحركت إلى الخلف في أي لحظة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-acceleration"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Only version; fully original.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    }
+  ]
+}

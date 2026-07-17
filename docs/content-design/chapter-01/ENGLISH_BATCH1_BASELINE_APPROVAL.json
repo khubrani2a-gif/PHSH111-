@@ -1,0 +1,118 @@
+{
+  "baselineApprovalId": "ch01-english-batch1-baseline-001",
+  "baselineVersion": "1.0.0",
+  "status": "approved",
+  "language": "English",
+  "batchId": "Batch 1",
+  "approvalLevel": "projectOwnerEnglishBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-16",
+  "scope": {
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "notApplicableTo": "All other Chapter 1 topics remain outside this baseline. This is a separate, standalone record — it does not extend, merge with, or modify ENGLISH_PILOT_BASELINE_APPROVAL.json (scope: ch01-t02/ch01-t03/ch01-t08/ch01-t10) or ARABIC_PILOT_BASELINE_APPROVAL.json, both of which remain entirely separate, unmodified governance records with their own independent version sequences."
+  },
+  "approvedDraftFiles": [
+    {
+      "topicId": "ch01-t01",
+      "topicTitle": "Fundamental Quantities",
+      "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+      "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+      "schemaVersion": "2.3.0",
+      "recordCount": 7
+    },
+    {
+      "topicId": "ch01-t04",
+      "topicTitle": "Mass, Inertia and Weight",
+      "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+      "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b",
+      "schemaVersion": "2.3.0",
+      "recordCount": 8
+    }
+  ],
+  "filePreservationNote": "The approved draft files are unmoved, unrenamed, uncopied, and not promoted into docs/content-design/chapter-01/pilot/. Their internal content and governance fields (blocking, visibility, arabic, etc.) were not altered by this approval. This baseline-approval record, external to the files themselves, is what establishes that the exact versions at the checksums above are approved — mirroring the same pattern already used by ENGLISH_PILOT_BASELINE_APPROVAL.json, which likewise approves the pilot content files in place without relocating or renaming them. The files may continue to be structurally labeled 'draft' internally (generationStatus: \"draft-batch1-english-only-generation\") even though this external record now marks them baseline-approved.",
+  "reviewBasis": [
+    "docs/app/PHSH111_BATCH1_CORRECTION_DECISION_BRIEF.md",
+    "docs/app/PHSH111_BATCH1_CORRECTION_CITATION_REPAIR.md",
+    "docs/app/PHSH111_BATCH1_CORRECTION_APPROVAL_RECORD.md",
+    "docs/app/PHSH111_BATCH1_DRAFTING_AUTHORIZATION_RECORD.md",
+    "docs/app/PHSH111_BATCH1_ENGLISH_DRAFT_GENERATION_REPORT.md",
+    "docs/app/PHSH111_BATCH1_ENGLISH_DRAFT_REVIEW.md",
+    "docs/app/PHSH111_BATCH1_ENGLISH_DRAFT_REVISION_REPORT.md",
+    "docs/app/PHSH111_BATCH1_ENGLISH_DRAFT_CLOSURE_REVIEW.md",
+    "docs/app/PHSH111_BATCH1_T04_SCHEMA_CLOSURE_REPORT.md",
+    "docs/app/PHSH111_BATCH1_ENGLISH_BASELINE_DECISION_BRIEF.md"
+  ],
+  "statementOfApproval": "The English-language draft content for ch01-t01 (Fundamental Quantities) and ch01-t04 (Mass, Inertia and Weight), as it exists in the two files listed in approvedDraftFiles at the checksums recorded there, is approved by the project owner as Batch 1 English baseline version 1.0.0. This approval is a project-owner content-readiness decision made on the basis of Claude's completed generation, review, revision, and closure-verification work (see reviewBasis) — it is not an independently derived, third-party human scientific or editorial re-verification beyond that work, and it does not itself authorize Arabic translation, visual production, application integration, or any student-facing use.",
+  "approvedCorrectionIds": ["ch01-corr-001", "ch01-corr-002"],
+  "approvedCorrectionsNote": "Both ch01-corr-001 and ch01-corr-002 carry approvalStatus: \"editoriallyApproved\" in SCIENTIFIC_CORRECTIONS.json (ch01-corr-002 with a recorded qualification on 'apparent weight' terminology), with approvals.scientificReviewer left null on both by explicit project-owner instruction. This baseline approval relies on, and does not re-open or re-litigate, those already-approved correction records.",
+  "perTopicDecision": {
+    "ch01-t01": {
+      "decision": "approvedWithNonBlockingConditions",
+      "nonBlockingConditions": [
+        "Consider refining the distance wording in ch01-t01-block-equations to emphasize distance traveled where pedagogically useful.",
+        "Consider adding a simple numeric illustration of v = d/t in a future revision, if the audited evidence and topic scope come to support one."
+      ]
+    },
+    "ch01-t04": {
+      "decision": "approvedWithNonBlockingConditions",
+      "nonBlockingConditions": [
+        "Consider refining ch01-t04-block-explanation's 'ordinary situation' phrasing to specify equilibrium or zero net force where context requires more precision.",
+        "Add the ch01-term-mass glossary linkage to ch01-t04-block-equations' glossaryTermIds after glossary approval and identifier registration."
+      ]
+    }
+  },
+  "nonBlockingConditionsStatement": "The conditions listed under perTopicDecision above are optional future improvements only. They do not block this baseline approval and are not represented as unresolved scientific defects — none was found in the final drafting, review, revision, or closure-verification passes (see reviewBasis). They were not applied as edits during this approval task and may be considered in a future, separate, controlled baseline revision, following the exact revisionLog pattern already established by ENGLISH_PILOT_BASELINE_APPROVAL.json.",
+  "governanceRestrictions": {
+    "approvalLevelStatement": "This is a project-owner ENGLISH-CONTENT baseline approval only. It is distinct from: (1) editorial approval of a correction record (a narrower action already recorded separately in SCIENTIFIC_CORRECTIONS.json for ch01-corr-001/ch01-corr-002), (2) independent human scientific review (has not occurred, for any topic, at any point in this project), and (3) student-publication authorization (a separate, still-absent gate).",
+    "arabicNotAuthorized": "Arabic content is not generated or approved by this record. Both approved draft files' Arabic fields remain arabic.translationStatus: \"missing\" with null text throughout, unchanged by this approval.",
+    "visualProductionNotAuthorized": "Visual production is not authorized by this record. ch01-t01-visual-001 and ch01-t04-visual-001 remain unproduced (visualGovernance[0].availabilityStatus: \"missing\") and provisional.",
+    "applicationIntegrationNotAuthorized": "Application integration is not authorized by this record. PILOT_AUTHORIZATION.json's applicationBuildAuthorization.applicableTopicIds remains exactly the original four pilot topics, unchanged by this approval.",
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "independentExpertReviewCompleted": false
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to the English content of ch01-t01 or ch01-t04 (instructorScript, contentBlock, or problem records in the two Batch 1 draft files) must be recorded as a controlled revision against this baseline, not made silently.",
+    "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.1.0) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when — following the exact pattern already proven twice in ENGLISH_PILOT_BASELINE_APPROVAL.json's own revisionControlPolicy.revisionLog.",
+    "revisionLog": []
+  },
+  "identifierRegistrationStatus": {
+    "requiredBeforeApplicationIntegration": [
+      "ch01-is-101",
+      "ch01-is-104",
+      "ch01-t01-block-mainidea",
+      "ch01-t01-block-explanation",
+      "ch01-t01-block-equations",
+      "ch01-t01-block-visual",
+      "ch01-t01-block-misconception",
+      "ch01-t01-block-review",
+      "ch01-t04-block-mainidea",
+      "ch01-t04-block-explanation",
+      "ch01-t04-block-equations",
+      "ch01-t04-block-visual",
+      "ch01-t04-block-misconception",
+      "ch01-t04-block-review",
+      "ch01-prob-104",
+      "SRC-CH01-BATCH1-ORIGINAL"
+    ],
+    "provisionalUntilVisualProductionAuthorized": ["ch01-t01-visual-001", "ch01-t04-visual-001"],
+    "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal English baseline approval and was NOT performed as part of it. Registration is required before any future application-integration step. IDENTIFIER_REGISTRY.json was not modified by this approval."
+  },
+  "downstreamStatus": {
+    "arabicStatus": "notGenerated, notAuthorized",
+    "visualStatus": "notProduced, notAuthorized",
+    "applicationIntegrationStatus": "notAuthorized; also not mechanically possible today, since docs/content-design/chapter-01/batch1-drafts/ is outside apps/chapter1-mvp/'s current vite.config.ts server.fs.allow / rawImports.ts import scope",
+    "independentExpertReviewStatus": "notCompleted",
+    "publicationStatus": "notAuthorized"
+  },
+  "unchangedByThisApproval": [
+    "Every instructorScript, contentBlock, and problem record in the two Batch 1 draft files remains in its existing draft/blocked governance state — blocking.blockingStatus, blocking.studentFacingAllowed, arabic.translationStatus, and every other governance/localization field on each record are untouched by this approval.",
+    "The two draft files themselves are unmoved, unrenamed, uncopied, unmodified, and remain at docs/content-design/chapter-01/batch1-drafts/.",
+    "ENGLISH_PILOT_BASELINE_APPROVAL.json and ARABIC_PILOT_BASELINE_APPROVAL.json remain entirely separate and unmodified by this record.",
+    "PILOT_AUTHORIZATION.json's scope.authorizedTopicIds and applicationBuildAuthorization.applicableTopicIds remain exactly the original four pilot topics.",
+    "studentFacingAllowed remains false on every record in every topic.",
+    "studentPublicationAuthorized remains false (global).",
+    "canonicalGenerationAuthorized remains chapter-wide false in PILOT_READINESS.json.",
+    "This approval does not authorize Arabic translation, visual production, or application integration for ch01-t01 or ch01-t04."
+  ]
+}

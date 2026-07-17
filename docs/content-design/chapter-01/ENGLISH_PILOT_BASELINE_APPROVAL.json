@@ -1,0 +1,92 @@
+{
+  "baselineApprovalId": "ch01-english-pilot-baseline-001",
+  "baselineVersion": "1.0.2",
+  "status": "approved",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-15",
+  "scope": {
+    "approvedTopicIds": ["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"],
+    "notApplicableTo": "All other Chapter 1 topics remain outside this baseline; no other topic's content was generated or reviewed."
+  },
+  "reviewBasis": "This approval is based on the completed sequence of Claude read-only reviews of the generated English pilot content: (1) the initial pedagogical and scientific quality review that identified the correctedAnswer.status metadata bug and topic-specific gaps; (2) the revision pass that applied the required fixes (ch01-t02 volume/cubic-unit practice, ch01-t03 explicit wingbeat-cycle definition, the shared correctedAnswer.status correction on all four problems, plus the optional health-science reframings and ch01-t10 review-question diversification); and (3) the final read-only baseline review that re-verified all numerical work independently, re-ran full schema validation, re-confirmed rights-policy compliance, and found no remaining blocking issues on any of the four topics. This is a project-owner approval decision made on the basis of those completed Claude reviews, not an independently re-derived scientific or pedagogical judgment beyond them.",
+  "statementOfApproval": "The English Chapter 1 pilot for ch01-t02, ch01-t03, ch01-t08, and ch01-t10 has completed scientific and pedagogical review. No blocking revisions remain on any of the four topics.",
+  "perTopicDecision": {
+    "ch01-t02": {
+      "decision": "approvedWithMinorNonBlockingNotes",
+      "remainingNonBlockingNotes": [
+        "The area-conversion-factor misconception (distinct from the 'size doesn't change with unit' misconception) has no dedicated misconception content block of its own; it is currently only listed in the instructor script's misconceptionsToAnticipate array.",
+        "The mainIdea and organizedExplanation content blocks overlap substantially in phrasing; a human editor may want to differentiate them further.",
+        "As of baselineVersion 1.0.1: ch01-t02-block-visual's recorded specification was formally revised (see revisionLog below) to describe the produced length/area/volume visual (ch01-t02-visual-001.svg) rather than the original coin/doorway/city-block scale-comparison scene, which is now retained in the spec text only as an optional future supplementary visual."
+      ]
+    },
+    "ch01-t03": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "Only one reviewQuestion content block exists for this topic; additional graduated-difficulty review questions would strengthen formative-assessment coverage."
+      ]
+    },
+    "ch01-t08": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "Only one reviewQuestion content block exists for this topic; additional graduated-difficulty review questions would strengthen formative-assessment coverage.",
+        "As of baselineVersion 1.0.2: ch01-t08-block-equations' v0 = 0 clause was clarified per ch01-corr-009 (see revisionLog below) to state explicitly that it applies only to release-from-rest, not universally — resolving a conceptual-clarity finding from the Phase 4 application review (PH4-001) without changing the sign-convention correction already approved as ch01-corr-007."
+      ]
+    },
+    "ch01-t10": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "The visualReference content block's diagram specification includes a two-frame ('an instant later') structure; whoever executes the artwork should be told explicitly that this is closer to a short two-panel sequence than a single static image."
+      ]
+    }
+  },
+  "downstreamAuthorization": {
+    "sourceTextForTranslation": "This approved baseline (the English localizedContent/wordForWordTeachingScript/problemStatement text as it exists in docs/content-design/chapter-01/pilot/ch01-t02-content.json, ch01-t03-content.json, ch01-t08-content.json, and ch01-t10-content.json at baselineVersion 1.0.0) is now the designated source text for Arabic translation of these four topics.",
+    "sourceSpecForVisualProduction": "The approved visualReference blocks' visual specifications in the same four files are now the designated source specifications for original diagram artwork production for these four topics.",
+    "note": "Designating this baseline as the translation/artwork source text does not itself perform any translation or artwork, and does not authorize student-facing publication of the resulting translated or illustrated content — those remain separate, unauthorized actions."
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to the English content of ch01-t02, ch01-t03, ch01-t08, or ch01-t10 (instructorScript, contentBlock, or problem records in the four pilot files) must be recorded as a controlled revision against this baseline, not made silently.",
+    "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.1.0) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when. Translations and artwork produced against baselineVersion 1.0.0 must be checked for consistency against any later revision.",
+    "revisionLog": [
+      {
+        "revisionId": "ch01-english-baseline-rev-001",
+        "fromVersion": "1.0.0",
+        "toVersion": "1.0.1",
+        "revisedAt": "2026-07-16",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t02-block-visual's localizedContent.en (and its parallel .ar translation and arabic.canonicalArabicTranslation) in docs/content-design/chapter-01/pilot/ch01-t02-content.json. No other record in ch01-t02, and no record in ch01-t03, ch01-t08, or ch01-t10, was changed.",
+        "whatChanged": "ch01-t02-block-visual's recorded visual specification was revised from describing a coin/doorway/city-block scale-comparison scene to describing the length/area/volume/squared-cubed-conversion-factor diagram that was actually produced as ch01-t02-visual-001.svg: three panels (length, area, volume) using health-science-context objects (an examination table, a dressing pad, a sample container), the m/m^2/m^3 unit progression, per-panel linear/squared/cubed conversion examples, a shared 'General rule' summary box, and a closing anti-misconception caption. The original coin/doorway/city-block concept was preserved within the same spec text as an explicitly optional future supplementary visual, not deleted.",
+        "whatWasNotChanged": "No instructional prose, equation, worked example, problem, answer, misconception block, review question, instructor script, Arabic translation of any other record, or content in any topic other than ch01-t02 was touched. ch01-t02's other seven records (the instructorScript and the mainIdea, organizedExplanation, equationSet, example, misconception, and reviewQuestion contentBlocks, plus the ch01-prob-102 problem) remain exactly as approved in baselineVersion 1.0.0.",
+        "rationale": "The produced visual directly supports ch01-t02-block-equations, ch01-t02-block-example, the instructor script's core teaching narrative, and the graded problem ch01-prob-102 — the load-bearing technical content of this topic. The coin/doorway/city-block scale-comparison concept remains part of the approved baseline's instructional narrative (opening hook, explanation) but has no dedicated equation, worked example, or problem of its own, so it was retained as an optional future supplementary visual rather than the current required one. The revised specification now matches the approved primary visual.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/pilot/ch01-t02-content.json — ch01-t02-block-visual.visualGovernance[0].contentScopeResolution",
+          "docs/content-design/chapter-01/pilot/visuals/ch01-t02-visual-001-validation.json — contentScopeDivergence.status = resolved"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; canonicalGenerationAuthorized remains unchanged at both chapter-wide (false) and per-topic levels; ch01-t02-block-visual's blockingStatus remains blocked, blockingReason remains ['unverifiedVisual', 'translationPending', 'other'], and resolutionStatus remains open — this revision resolved only the content-scope question, not the visual's human-review or publication status."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-002",
+        "fromVersion": "1.0.1",
+        "toVersion": "1.0.2",
+        "revisedAt": "2026-07-16",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t08-block-equations' localizedContent.en.text in docs/content-design/chapter-01/pilot/ch01-t08-content.json. No other record in ch01-t08, and no record in ch01-t02, ch01-t03, or ch01-t10, was changed.",
+        "whatChanged": "The two occurrences of the trailing clause ', with v0 = 0 for release from rest' (attached to the v = v0 + at and dy = v0*t + (1/2)*a*t^2 equations) were each replaced with '; if the object starts from rest, v0 = 0, otherwise use its actual initial velocity.' This resolves a conceptual-clarity finding (docs/app/PHSH111_OWNER_REVIEW_PACKET.md, PH4-001) that the original phrasing could be read as claiming v0 = 0 universally, which would contradict the topic's own worked example (v0 = 4 m/s) and original problem (v0 = 1.5 m/s), both of which use a nonzero initial velocity. See docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json, correctionId ch01-corr-009, for the full correction record.",
+        "whatWasNotChanged": "No instructional prose, equation, worked example, problem value, visual reference, record ID, visibility setting, or lineage/provenance metadata was touched. The equations themselves (v = v0 + at, dy = v0*t + (1/2)*a*t^2) are unchanged. ch01-corr-007's already-approved sign-convention correction (a = -g / a = +g and its rationale) was not altered. ch01-t08's other seven records (the instructorScript and the mainIdea, organizedExplanation, example, visual, misconception, and reviewQuestion contentBlocks, plus the ch01-prob-108 problem) remain exactly as approved in baselineVersion 1.0.1.",
+        "rationale": "This is a conceptual-clarity issue, not a change to the physics model — the underlying equations and the sign-convention correction already approved as ch01-corr-007 are unchanged. Making the release-from-rest condition an explicit if/otherwise conditional, rather than a bare descriptive clause, removes the risk that a reader mistakes a special-case formula note for a universal claim.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json — correctionId ch01-corr-009 (new record)",
+          "docs/content-design/chapter-01/pilot/ch01-t08-content.json — ch01-t08-block-equations.scientificCorrectionIds (ch01-corr-009 appended)"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; canonicalGenerationAuthorized remains unchanged at both chapter-wide (false) and per-topic levels; ch01-t08-block-equations' blockingStatus remains blocked, blockingReason remains ['translationPending', 'other'], and resolutionStatus remains open — this revision resolved only the wording-clarity question, not the record's translation-review or publication status."
+      }
+    ]
+  },
+  "unchangedByThisApproval": [
+    "Every instructorScript, contentBlock, and problem record in the four pilot files remains in its existing draft/review-required blocking state (blockingStatus, blockingReason, resolutionStatus, etc. on each record are untouched by this approval).",
+    "studentFacingAllowed remains false on every record and every topic in PILOT_READINESS.json.",
+    "studentPublicationAuthorized remains false (global).",
+    "canonicalGenerationAuthorized remains unchanged at the chapter-wide level (false) and at the per-topic level (as previously granted in PILOT_AUTHORIZATION.json for these four topics only).",
+    "This approval does not authorize student publication, translation, artwork creation, or generation for any other topic."
+  ]
+}

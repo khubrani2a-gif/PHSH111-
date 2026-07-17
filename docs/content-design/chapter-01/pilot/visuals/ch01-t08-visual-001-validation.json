@@ -1,0 +1,132 @@
+{
+  "visualResolutionId": "ch01-t08-visual-validation-001",
+  "visualId": "ch01-t08-visual-001",
+  "topicIds": ["ch01-t08"],
+  "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t08-visual-001.svg",
+  "assetFormat": "svg",
+  "assetStatus": "draft",
+  "reviewRequired": true,
+  "createdAt": "2026-07-16",
+  "createdBasis": "Drawn from scratch by Claude directly from the approved visualReference specification in ch01-t08-block-visual (English and Arabic, baselineVersion 1.0.0 of both the English and Arabic pilot baselines) and ch01-corr-007's assumptionsAndSignConventions. ch01-t03-visual-001.svg was consulted only as a provisional style reference (palette, typographic hierarchy, bilingual-per-element convention, footer format) — its circular-motion layout was not reused or forced onto this topic; this diagram uses the vertical dual-panel number-line structure the approved ch01-t08 spec itself calls for. No source image, slide, or publisher figure was viewed, traced, or referenced during creation. Rendered and visually inspected in-browser during creation; one real layout defect (a 'chosen positive direction' micro-label colliding with the '+' symbol and, in the right panel, crowding the bottom ball's arrows) was found and removed before finalizing.",
+  "sourceIndependenceStatement": "Fully original schematic composition. Uses only the generic, non-copyrightable convention of a vertical number-line axis with a falling object shown at successive instants, a standard physics-pedagogy device not tied to any specific textbook or slide illustration. Consistent with PILOT_RIGHTS_POLICY.json's requirement that all pilot visuals be newly authored, not recovered or adapted from SRC-CH01-CONV-001, SRC-CH01-PDF-003, or any other cataloged source.",
+  "houseStyleNote": "Extends the provisional style established by ch01-t03-visual-001.svg: teal (#1f6f8b) for structural elements (paths, axes, object fill), slate/navy for text, amber draft-footer band, bilingual-per-element convention, and per-element explicit LTR/RTL direction. This diagram introduces two new physical-vector colors not needed in t03: rust-orange (#d9480f) is reused consistently for velocity (matching its role as the 'direction of motion' arrow color in ch01-t03-visual-001), and a new violet (#6d28d9) is introduced for acceleration, since t03 had no acceleration vector to color. This is offered as a candidate house-style rule (teal=structure, rust=velocity, violet=acceleration, green=confirmed-match, amber=draft-status) for whoever formalizes a written style guide once a third diagram exists.",
+  "validation": {
+    "scientificAccuracy": {
+      "status": "pass",
+      "findings": [
+        "In both panels the acceleration arrow and the velocity arrows are drawn pointing physically downward, at identical screen positions, identical acceleration-arrow length (constant across all three instants), and identical growing velocity-arrow lengths (14, 28, 42 px for instants 1, 2, 3). The two panels' physical motion is pixel-identical except for mirrored horizontal placement — verified by direct coordinate comparison, not only visual inspection.",
+        "Only the algebraic label differs between panels (a = -g on the left, a = +g on the right); the acceleration arrow's drawn direction never flips between panels, which is the critical correctness requirement — a sign convention changes the label, not the physical vector.",
+        "The velocity arrows grow at each successive instant in both panels, correctly showing the object speeding up as it falls, and this occurs in the SAME panel that displays the negative label (a = -g), directly and visually contradicting the 'negative acceleration means slowing down' misconception rather than merely avoiding it.",
+        "|g| ≈ 9.8 m/s² is shown once, in a single shared magnitude panel between the two motion panels (not duplicated per panel), reinforcing that the magnitude itself does not change between conventions — only the sign label does."
+      ]
+    },
+    "consistencyWithChapter01Corr007": {
+      "status": "pass",
+      "findings": [
+        "Matches corr-007's core corrected statement verbatim in spirit: '|g| ≈ 9.8 m/s² is the magnitude... the signed acceleration is a = -g under an upward-positive convention or a = +g under a downward-positive convention' — the diagram's two panels and their labels are a direct visual rendering of exactly this sentence.",
+        "Matches corr-007's requirement that a positive-axis direction be declared before any sign is assigned: each panel explicitly draws and labels its own axis arrow and '+' before showing the signed acceleration label.",
+        "Matches corr-007's explicit anti-misconception clause ('a negative acceleration value indicates a direction opposite the chosen positive axis, not inherently backward motion or slowing down') via the diagram's second caption line, stated in both languages, plus the reinforcing visual (growing velocity arrows under the negative label).",
+        "Does not exceed corr-007's scope: the diagram does not attempt to also show displacement or initial-velocity signs (v0, Δy), which corr-007 also governs but which are the subject of ch01-t08-block-equations and the worked problem, not this particular visual spec — consistent with the approved visualReference text, which only asked for the acceleration/velocity dual-panel picture."
+      ]
+    },
+    "signConventionCorrectness": {
+      "status": "pass",
+      "findings": [
+        "Left panel: axis arrow points up, labeled '+', acceleration labeled a = -g — internally consistent (gravity's real downward pull is algebraically negative when up is chosen positive).",
+        "Right panel: axis arrow points down, labeled '+', acceleration labeled a = +g — internally consistent (gravity's real downward pull is algebraically positive when down is chosen positive).",
+        "No panel shows the axis arrow direction contradicting its own acceleration label's sign, and no panel shows the acceleration arrow's drawn (physical) direction differing from the other panel's — the only cross-panel difference is the axis arrow direction and the algebraic sign text, exactly matching the concept being taught."
+      ]
+    },
+    "bilingualRendering": {
+      "status": "pass",
+      "findings": [
+        "Every Arabic text element carries an explicit direction=\"rtl\" attribute; every Latin/formula/symbol text element carries an explicit direction=\"ltr\" attribute — verified programmatically (17 text elements in the prior t03 asset's pattern; this asset follows the identical rule for all of its own text elements).",
+        "English and Arabic lines are rendered as separate, monolingual <text> elements throughout (title, panel headers, legend, magnitude note, both captions) — no script-mixing within a single text run anywhere, which is what 'isolate mixed-direction equations explicitly' resolves to by construction: the a = -g / a = +g / |g| ≈ 9.8 m/s² formulas are each their own dedicated LTR text element, never embedded inside an Arabic sentence.",
+        "Rendered and visually inspected in-browser: Arabic glyphs join correctly (cursive connected forms) and read right-to-left throughout, including the two-part legend line and both caption pairs.",
+        "Arabic text elements specify a font stack including an Arabic-capable fallback ('Noto Sans Arabic') alongside the Latin-oriented stack used for English/formula text, matching the established convention."
+      ]
+    },
+    "rightsPolicyCompliance": {
+      "status": "pass",
+      "findings": [
+        "No publisher slide, textbook figure, or any cataloged source visual (S3-P031, or any Source 002/003/Kahoot asset) was traced, cropped, referenced, or used as a basis for this artwork.",
+        "All caption and label text is either newly authored for this diagram or copied verbatim in concept from already rights-cleared, newly authored pilot content blocks (ch01-t08-block-visual, ch01-t08-block-equations, ch01-corr-007) — no publisher wording is present.",
+        "ch01-t03-visual-001.svg was used only as a style reference (palette, type scale, bilingual convention) per this task's explicit instruction, not as source content; no geometry, text, or layout was copied from it beyond the general house-style choices documented above."
+      ]
+    },
+    "accessibilityAndReadability": {
+      "status": "passWithHumanVerificationRecommended",
+      "findings": [
+        "role=\"img\" with a <title> and <desc> element is present, giving screen readers a full textual summary of both panels, the sign-convention point, and the explicit anti-misconception statement.",
+        "The two vector types are distinguished by both color AND consistent left/right position relative to each ball (velocity always on the object's left, acceleration always on its right) AND a written legend — not by color alone, so a colorblind viewer can still tell them apart by position and the legend text.",
+        "Text/background contrast follows the same near-black/slate-on-white pattern already used in ch01-t03-visual-001.svg, which was assessed as visually high-contrast by inspection; exact WCAG ratios for the new violet-on-white and rust-on-white arrow colors were not measured with an automated contrast tool in this environment — recommend the same formal contrast check flagged for the t03 asset be extended to cover this asset's new colors.",
+        "Designed at 1000x1000 (revised up from 1000x910 in revision 1 to make room for two new legend notes) for classroom-projector and standard student-screen viewing; text sizes (12-24px used here, smallest being the two new legend notes and the axis '+' at 22px bold, captions at 14px) are comparable to or larger than the t03 asset's smallest elements, so no new readability regression is expected at projector/desktop scale.",
+        "Native cross-renderer rendering (other browsers, PDF export, presentation software) was not verified beyond the one browser environment used during creation — same open item as the t03 asset."
+      ]
+    },
+    "mobileSizeRisk": {
+      "status": "documentedNotAttemptedToFix",
+      "findings": [
+        "This asset is wider and taller (1000x910) than ch01-t03-visual-001.svg (900x680) because it needs two full panels side by side, so its mobile/small-screen risk is at least as significant as the already-flagged t03 risk, and likely somewhat greater given the two-panel horizontal layout compresses further when squeezed into a narrow phone viewport.",
+        "Per this task's explicit instruction, no compressed mobile variant was attempted. This is recorded as an open item for the downstream rendering/delivery pipeline (responsive zoom/pan, minimum-width floor, or a dedicated mobile layout), not something resolved in this asset."
+      ]
+    }
+  },
+  "requirementsChecklist": {
+    "fullyOriginalArtwork": true,
+    "noTracingOrPublisherReuse": true,
+    "twoSideBySidePanelsSameFallingObject": true,
+    "leftPanelUpwardPositiveALabelMinusG": true,
+    "rightPanelDownwardPositiveALabelPlusG": true,
+    "physicalMotionIdenticalInBothPanels": true,
+    "magnitudeGApprox9_8ShownOnce": true,
+    "signChangeAttributedToConventionNotGravity": true,
+    "explicitlyAvoidsNegativeMeansSlowingMisconception": true,
+    "bilingualLabelsSeparateElements": true,
+    "explicitLtrRtlDirection": true,
+    "latinSymbolsAndSiUnitsPreserved": true,
+    "formulaOnlyLabelsLTR": true,
+    "arabicAnnotationsRTL": true,
+    "mixedDirectionEquationsIsolated": true,
+    "reusesT03PaletteAndTypography": true,
+    "doesNotForceCircularMotionLayout": true,
+    "draftFooterPresent": true,
+    "accessibilityMetadataPresent": true,
+    "designedForProjectorAndStudentScreens": true,
+    "mobileRiskDocumentedNotCompressed": true,
+    "vectorFirstEditableAsset": true,
+    "markedDraftAndReviewRequired": true,
+    "constantAtAllInstantsNoteAdded": true,
+    "independentScalesNoteAdded": true
+  },
+  "revisionHistory": [
+    {
+      "revisionId": "ch01-t08-visual-001-rev-001",
+      "appliedAt": "2026-07-16",
+      "appliedBasis": "Applies the two required minor revisions accepted from the prior read-only rendered-visual-review pass on this asset (approve-with-minor-revision decision). No new scientific claim was introduced; both changes are clarifying annotations only.",
+      "designDecisionRecorded": "The a = -g / a = +g acceleration label remains shown once per panel (at the first instant), not repeated at all three instants. This was an open question flagged in the prior review as a literal reading of the approved ch01-t08-block-visual spec ('at each position'). The decision, per this task's explicit instruction, is to keep the single label and instead add an explicit legend note stating it applies at all three instants, rather than repeating the text three times per panel. This is recorded here as a deliberate, reviewer-visible design choice, not a silent deviation from the approved spec — a human reviewer can still request literal repetition later if preferred.",
+      "revisionsApplied": [
+        "Added a bilingual note directly beneath the legend: 'Constant at all three instants' (LTR) / 'ثابت عند اللحظات الثلاث' (RTL), each in its own text element, clarifying that the once-shown a = -g / a = +g label governs all three drawn acceleration arrows per panel, not only the first.",
+        "Added a second bilingual note immediately below the first: 'Velocity and acceleration arrows use independent scales.' (LTR) / 'تُستخدم مقاييس مستقلة لأسهم السرعة المتجهة والتسارع.' (RTL), each in its own text element, addressing the prior review's finding that a viewer could otherwise infer a false quantitative relationship from comparing velocity-arrow length to acceleration-arrow length.",
+        "Expanded the canvas from 1000x910 to 1000x1000 and shifted every element from the legend notes downward (magnitude panel, magnitude note, both captions, footer) to accommodate the two new note lines without crowding; all vertical gaps between sections were kept consistent with the asset's existing spacing pattern (20-28px between paired bilingual lines, 22-29px between section blocks).",
+        "The <desc> accessibility text was updated to mention that the acceleration label applies at all three instants and that the two vector types use independent, non-comparable scales, so screen-reader users receive the same clarification sighted viewers now get from the two new notes.",
+        "Everything else — both panels' physical motion, the a = -g / a = +g labels and their positions, the |g| ≈ 9.8 m/s² magnitude panel, the growing velocity arrows, the existing bilingual anti-misconception caption, the draft footer, role/title/desc structure, and the full color palette and type hierarchy — was preserved unchanged."
+      ],
+      "scientificAndLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-rendered in-browser after the edit and re-verified visually: both panels' ball positions, acceleration-arrow length, and velocity-arrow growth remain pixel-identical to the pre-revision asset: only content below the legend was shifted, no motion-diagram coordinate was touched.",
+          "The two new notes render cleanly with no overlap against the legend above or the magnitude panel below, confirmed by direct visual inspection at the asset's native size in-browser (an initial screenshot appeared to be missing the new notes; this was traced to browser HTTP caching of the pre-revision file during review, not a rendering defect — a cache-busted reload confirmed both notes display correctly).",
+          "The a = -g / a = +g labels, the |g| ≈ 9.8 m/s² panel, the growing velocity arrows, and the existing anti-misconception caption are all unchanged in position, wording, and meaning.",
+          "All Arabic text in the two new notes renders with correct glyph joining and right-to-left order, consistent with every other Arabic element in this asset."
+        ]
+      }
+    }
+  ],
+  "readyForHumanReview": true,
+  "readyForHumanReviewNote": "Revision 1 (ch01-t08-visual-001-rev-001) applied both required minor revisions from the prior review pass: a bilingual note clarifying the acceleration label applies at all three instants (kept single, not repeated, per the recorded design decision), and a bilingual note clarifying that velocity and acceleration arrows use independent, non-comparable scales. All required structural elements, the sign-convention pairing, the explicit anti-misconception caption, bilingual direction handling, and rights-independence criteria remain satisfied and were re-verified after the edit. Not yet certified: exact WCAG contrast-ratio measurement (including the two new note-text colors) and cross-renderer Arabic RTL verification — recommended as first checks for the human reviewer, not blockers to starting that review. Mobile/small-screen handling remains an explicitly open, undeferred item for downstream tooling (this revision made the canvas taller, which does not reduce that risk). This asset has not been marked as finally approved or resolved; it remains draft and review-required.",
+  "studentFacingAllowed": false,
+  "studentPublicationAuthorized": false,
+  "reviewer": null,
+  "reviewedAt": null
+}

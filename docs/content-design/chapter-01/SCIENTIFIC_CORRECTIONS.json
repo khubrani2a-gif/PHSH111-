@@ -1,0 +1,354 @@
+{
+  "correctionLayerVersion": "1.1.0",
+  "status": "proposedNotApproved",
+  "studentFacingDefault": "suppressed",
+  "classificationSeverityCrosswalk": {
+    "inaccurate": "Severity is assigned from educational impact; normally high or medium. The wording cannot be student-facing while unresolved.",
+    "needsClarification": "Normally medium or low. Approval requires explicit conditions or scope.",
+    "contextDependent": "Normally medium or low. Approval requires the relevant model, reference frame, sign convention, or operational definition.",
+    "needsVerification": "A fact/evidence status distinct from physics severity. It remains suppressed until evidence is selected and reviewed."
+  },
+  "records": [
+    {
+      "correctionId": "ch01-corr-001",
+      "title": {"text": "Scope the fundamental quantities claim", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t01"],
+      "classification": "needsClarification",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["SCA01", "S3-SCI-001", "S3C-SCI-001", "R1-SCI-001", "K1-SCI-004"],
+      "conflictRecordIds": ["CD-CONF-001"],
+      "originalWording": {
+        "summary": "Distance, time, and mass are presented as though they form the complete universal list of fundamental quantities.",
+        "sourceRecordIds": ["S2-SEG026", "SEG009", "SEG010", "S3-P003", "S3C-Q001", "R1-Q001"]
+      },
+      "correctedWording": {
+        "en": "Distance, time, and mass are the fundamental quantities emphasized in this chapter's treatment of mechanics. Charge is another fundamental property used later in the course.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "The narrower mechanics claim is pedagogically appropriate without making an incorrect claim about all of physics.",
+      "citationRepairNote": "Evidence citations repaired 2026-07-16 per project-owner decision 'Revise' (scope: evidence citation and traceability repair only; classification, severity, correctedWording, and correctionRationale are unchanged). SEG004 removed from sourceRecordIds: docs/content-audits/chapter-01/topic-mapping.json and docs/content-audits/chapter-01/raw-sources/source-001-segments.json both independently confirm SEG004 is linked to ch01-t14, not ch01-t01. Replaced with SEG009 and SEG010, ch01-t01's own verified source segments (topic-mapping.json: ch01-t01.segmentIds = [SEG009, SEG010]). S2-SEG026 reordered to lead the list as the strongest verified evidence (its textbook paragraph already states the corrected framing, including the charge deferral, nearly verbatim). K1-SCI-004 added to scientificAuditRecordIds after independent verification that it is tagged topicId ch01-t01 and directly corroborates SCA01's finding (docs/content-audits/chapter-01/sources/source-kahoot-001/scientific-audit.json). Full before/after citation list and rationale: docs/app/PHSH111_BATCH1_CORRECTION_CITATION_REPAIR.md. Decision basis: docs/app/PHSH111_BATCH1_CORRECTION_DECISION_BRIEF.md. This is a citation-accuracy repair only; approvalStatus remains proposed and approvals remain null pending a separate future approval decision.",
+      "evidenceStatus": "proposedPendingReviewerApproval",
+      "approvalStatus": "editoriallyApproved",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {
+        "scientificReviewer": null,
+        "editorialReviewer": "khubrani2a-gif (project owner)",
+        "approvedAt": "2026-07-16",
+        "approvalBasis": "Approved by the project owner at the editorial level on 2026-07-16 — approval of the scientific-correction direction and the proposed corrected wording, following the project owner's own review of docs/app/PHSH111_BATCH1_CORRECTION_DECISION_BRIEF.md and the citation repair verified in docs/app/PHSH111_BATCH1_CORRECTION_CITATION_REPAIR.md. This is project-owner editorial approval, not independent human subject-matter (physics) review; scientificReviewer is deliberately left null so this record does not represent independent scientific-review approval. Basis: the corrected statement is strongly supported by S2-SEG026; the repaired citation set (S2-SEG026, SEG009, SEG010, S3-P003, S3C-Q001, R1-Q001; SCA01, S3-SCI-001, S3C-SCI-001, R1-SCI-001, K1-SCI-004) now maps correctly to ch01-t01; the prior SEG004 traceability defect is resolved; no unresolved scientific-substance issue remains. This approval covers the correction record only — it does not authorize ch01-t01 canonical content generation, translation, illustration, or student-facing use. See docs/app/PHSH111_BATCH1_CORRECTION_APPROVAL_RECORD.md for full detail."
+      },
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": ["CD-CONF-001"],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
+    },
+    {
+      "correctionId": "ch01-corr-002",
+      "title": {"text": "Distinguish mass, gravitational weight, and apparent weight", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t04"],
+      "classification": "needsClarification",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["SCA02", "SCA03", "S5-SCI-012", "K1-SCI-010"],
+      "conflictRecordIds": ["CD-CONF-002"],
+      "originalWording": {
+        "summary": "Mass is treated primarily as amount of matter, and weight language does not consistently separate gravitational force from apparent weight.",
+        "sourceRecordIds": ["SEG021", "SEG022", "S2-SEG056", "S2-SEG058", "R1-Q004"]
+      },
+      "correctedWording": {
+        "en": "Mass measures an object's inertia. Gravitational weight is the gravitational force on the object, while apparent weight is the support force indicated by a scale or felt by the body.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "The three concepts describe different physical quantities and experiences; conflating them creates later force and acceleration errors.",
+      "evidenceStatus": "proposedPendingReviewerApproval; corroboratedByKahootPositiveContrastFinding",
+      "citationRepairNote": "Evidence citations repaired 2026-07-16 per project-owner decision 'Revise' (scope: evidence citation and traceability repair only; classification, severity, correctedWording, and correctionRationale are unchanged). SEG017 and SEG018 removed from sourceRecordIds: docs/content-audits/chapter-01/raw-sources/source-001-segments.json confirms both are linked to ch01-t03 (Time), not ch01-t04. S5-P033 removed: its own record (docs/content-audits/chapter-01/sources/source-conv-005/problem-inventory.json) carries topicIds [ch01-t08], and source-conv-005's own ch01-t04 topic-mapping entry lists zero problems, so S5-P033 was never actually associated with ch01-t04 in the audited evidence base. Replaced with SEG021 and SEG022, ch01-t04's own verified source segments (topic-mapping.json: ch01-t04.segmentIds = [SEG021, SEG022]), listed first as primary supporting evidence, and R1-Q004, a correctly-tagged ch01-t04 review item (already cited by the linked conflict record CD-CONF-002, but previously absent from this correction's own citation list). K1-SCI-010 added to scientificAuditRecordIds as a positive-contrast corroboration (the same evidentiary pattern already used for the approved ch01-corr-008) confirming the corrected mass/weight framing is the field-standard answer where this Kahoot source states it — not evidence of an original defect. S5-SCI-012 is retained but is tangential/cross-topic evidence: its parent problem (S5-P033) belongs to ch01-t08, and its finding concerns felt horizontal contact force during acceleration, not the gravitational-weight/apparent-weight distinction this correction defines; it is not primary evidence for this correction. Terminology clarification: 'apparent weight' in correctedWording.en is a scientifically standard interpretive term consistent with SCA03's own recommended correction; it is not claimed to be verbatim wording from any audited source, and no source among SEG021, SEG022, S2-SEG056, S2-SEG058, or R1-Q004 uses that exact phrase. Full before/after citation list and rationale: docs/app/PHSH111_BATCH1_CORRECTION_CITATION_REPAIR.md. Decision basis: docs/app/PHSH111_BATCH1_CORRECTION_DECISION_BRIEF.md. This is a citation-accuracy repair only; approvalStatus remains proposed and approvals remain null pending a separate future approval decision.",
+      "approvalStatus": "editoriallyApproved",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {
+        "scientificReviewer": null,
+        "editorialReviewer": "khubrani2a-gif (project owner)",
+        "approvedAt": "2026-07-16",
+        "approvalBasis": "Approved WITH QUALIFICATION by the project owner at the editorial level on 2026-07-16 — approval of the scientific-correction direction and the proposed corrected wording, following the project owner's own review of docs/app/PHSH111_BATCH1_CORRECTION_DECISION_BRIEF.md and the citation repair verified in docs/app/PHSH111_BATCH1_CORRECTION_CITATION_REPAIR.md. This is project-owner editorial approval, not independent human subject-matter (physics) review; scientificReviewer is deliberately left null so this record does not represent independent scientific-review approval. Basis: SEG021 and SEG022 provide primary, topic-correct evidence; the repaired citation set (SEG021, SEG022, S2-SEG056, S2-SEG058, R1-Q004; SCA02, SCA03, S5-SCI-012, K1-SCI-010) now maps correctly to ch01-t04; the prior SEG017/SEG018/S5-P033 miscitation defects are resolved; 'apparent weight' is consistent with established introductory physics. QUALIFICATION (recorded per explicit project-owner instruction; does not alter correctedWording or correctionRationale): 'Apparent weight' is accepted as scientifically valid, project-authored interpretive terminology. It is not represented as verbatim wording from the cited source material — no cited source (SEG021, SEG022, S2-SEG056, S2-SEG058, R1-Q004) uses this exact phrase. This approval covers the correction record only — it does not authorize ch01-t04 canonical content generation, translation, illustration, or student-facing use. See docs/app/PHSH111_BATCH1_CORRECTION_APPROVAL_RECORD.md for full detail."
+      },
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": ["CD-CONF-002"],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
+    },
+    {
+      "correctionId": "ch01-corr-003",
+      "title": {"text": "Explain a resultant perpendicular to one component", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t07"],
+      "classification": "inaccurate",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["S3C-SCI-003", "R1-SCI-003"],
+      "conflictRecordIds": ["CD-CONF-003"],
+      "originalWording": {
+        "summary": "The source explanation claims that right-angle addition itself explains why a resultant can be perpendicular to an original vector.",
+        "sourceRecordIds": ["S3C-SEG004", "S3C-Q009", "R1-Q009"]
+      },
+      "correctedWording": {
+        "en": "A resultant can be perpendicular to one original vector when another vector cancels that original vector's parallel component and adds a perpendicular component. For example, A = (1, 0) and B = (-1, 1) give R = (0, 1), which is perpendicular to A.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "The direction of the resultant follows the component sum, not merely the presence of a right angle between vectors.",
+      "approvalStatus": "proposed",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+    },
+    {
+      "correctionId": "ch01-corr-004",
+      "title": {"text": "Replace ambiguous graph concavity wording", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t13"],
+      "classification": "needsClarification",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["SCA16", "S3C-SCI-007", "R1-SCI-006"],
+      "conflictRecordIds": ["CD-CONF-004"],
+      "originalWording": {
+        "summary": "The graph is described as curving upward without distinguishing increasing vertical value, increasing slope, or concavity.",
+        "sourceRecordIds": ["SEG064", "S3C-SEG008", "S3C-Q017", "R1-Q017"]
+      },
+      "correctedWording": {
+        "en": "Name the axes and sign convention first. For a position-time graph with constant positive acceleration, the graph is concave up and its slope increases with time; for constant negative acceleration, it is concave down.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "Graph shape is meaningful only after the plotted quantity, axis direction, slope, and acceleration sign are specified.",
+      "approvalStatus": "proposed",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+    },
+    {
+      "correctionId": "ch01-corr-005",
+      "title": {"text": "Correct the Usain Bolt event-time pairing", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t05"],
+      "classification": "needsVerification",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["SCA08", "S2-SCI-005"],
+      "conflictRecordIds": ["CD-CONF-005"],
+      "originalWording": {
+        "summary": "The source pairs Berlin 2009 with a 100 m time of 9.69 s.",
+        "sourceRecordIds": ["SEG027", "S2-SEG090", "S2-SEG092"]
+      },
+      "correctedWording": {
+        "en": "Use Berlin 2009 with 9.58 s, or use Beijing 2008 with 9.69 s. Do not combine the Berlin event label with the Beijing time.",
+        "ar": null,
+        "arabicStatus": "notGenerated",
+        "factPairs": [
+          {"event": "Berlin 2009", "timeSeconds": 9.58},
+          {"event": "Beijing 2008", "timeSeconds": 9.69}
+        ]
+      },
+      "correctionRationale": "The event metadata and time must refer to the same race before the example is student-facing.",
+      "evidenceStatus": "acceptedFromClaudeReviewPendingPrimaryCitationSelection",
+      "approvalStatus": "needsEvidence",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+    },
+    {
+      "correctionId": "ch01-corr-006",
+      "title": {"text": "Define period and frequency for a specified periodic process and one complete cycle", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t03"],
+      "classification": "needsClarification",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["SCA04", "SCA05", "K1-SCI-007"],
+      "conflictRecordIds": ["CD-CONF-006"],
+      "originalWording": {
+        "summary": "Period and frequency are presented as universal reciprocals without requiring a named periodic process, and a set of back-and-forth movements is treated as a raw cycle count without confirming that each count is one complete cycle rather than a single one-way pass.",
+        "sourceRecordIds": ["SEG019", "SEG020"]
+      },
+      "correctedWording": {
+        "en": "Period (T) is the time required for one complete cycle of a specified periodic process. Frequency (f) is the number of complete cycles of that same process per unit time. A cycle must be explicitly defined as one full repetition (for example, a complete back-and-forth swing of a pendulum, not a single one-way pass) before period or frequency can be computed. Once a process and its cycle are defined, period and frequency are reciprocals: f = 1/T and T = 1/f, with T measured in seconds (s) and f measured in hertz (Hz), where 1 Hz = 1 cycle per second = 1 s⁻¹.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "Leaving the periodic process unspecified (SCA04) or leaving cycle-counting ambiguous (SCA05, e.g. treating ten back-and-forth movements as ten cycles without confirming each is a full return) allows a factor-of-two or undefined-process error before the reciprocal relationship is even applied. Requiring an explicit process and an explicit one-cycle definition removes that ambiguity without changing the underlying physics.",
+      "equations": [
+        {"equationId": "ch01-corr-006-eq-001", "expression": "f = 1/T", "meaning": "Frequency is the reciprocal of period for a specified periodic process.", "units": ["Hz", "s"]},
+        {"equationId": "ch01-corr-006-eq-002", "expression": "T = 1/f", "meaning": "Period is the reciprocal of frequency for a specified periodic process.", "units": ["s", "Hz"]}
+      ],
+      "assumptionsAndSignConventions": [
+        "A specific periodic process must be named before applying f = 1/T or T = 1/f.",
+        "One complete cycle must be defined as a full repetition of that process, not a single one-way pass or partial motion.",
+        "T is measured in seconds (s); f is measured in hertz (Hz), where 1 Hz = 1 s⁻¹ = 1 cycle per second."
+      ],
+      "affectedContentBlockTypes": ["organizedExplanation", "keyConcept", "equationSet", "example", "reviewQuestion", "instructorScript"],
+      "glossaryTermIds": ["ch01-term-period", "ch01-term-frequency"],
+      "evidenceStatus": "proposedPendingReviewerApproval",
+      "approvalStatus": "editoriallyApproved",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": "khubrani2a-gif (project owner)", "editorialReviewer": "khubrani2a-gif (project owner)", "approvedAt": "2026-07-15", "approvalBasis": "Approved by the project owner based on Claude's completed independent scientific review of ch01-corr-006 (focused correction review pass; see AMENDED_DESIGN_VALIDATION_REPORT.md and the CLAUDE_REREVIEW_HANDOFF.md verification package). This records the project owner's approval decision, not an independently derived physics re-verification beyond that review."},
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": ["CD-CONF-006", "ch01-term-period", "ch01-term-frequency"],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
+    },
+    {
+      "correctionId": "ch01-corr-007",
+      "title": {"text": "Declare an axis sign convention and separate |g| from signed acceleration", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t08"],
+      "classification": "contextDependent",
+      "severity": "medium",
+      "scientificAuditRecordIds": ["SCA12", "S3-SCI-004"],
+      "conflictRecordIds": ["CD-CONF-007"],
+      "originalWording": {
+        "summary": "Acceleration due to gravity is written as a = g with g = 9.8 m/s², and a slide shows a negative acceleration value without stating the sign convention used, leaving the source and meaning of the minus sign undeclared.",
+        "sourceRecordIds": ["SEG037", "S3-P031"]
+      },
+      "correctedWording": {
+        "en": "|g| ≈ 9.8 m/s² is the magnitude of gravitational acceleration. Declare a positive-axis direction before assigning a sign to any displacement (Δy), initial velocity (v0), velocity (v), or acceleration (a) — all four must follow that same chosen sign convention. Under an upward-positive convention, a falling object's acceleration is a = −g (negative, because gravity points downward, opposite the chosen positive direction). Under a downward-positive convention, the same object's acceleration is a = +g. For free-fall motion starting from rest (v0 = 0), velocity and displacement must be computed using that same sign convention as the acceleration: v = v0 + at gives a velocity whose sign matches the chosen positive direction, and Δy = v0 t + (1/2) a t² gives a displacement whose sign likewise matches it. A negative acceleration value indicates direction opposite the chosen positive axis; it does not by itself mean the object is slowing down or moving backward — whether it slows the object depends on the sign of the velocity at that instant.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "Presenting 9.8 m/s² as a signed constant without a declared axis, and displaying a negative acceleration value without explaining the sign source, invites students to treat 'negative acceleration' as synonymous with 'moving backward' or 'slowing down.' Separating the magnitude |g| from the signed, convention-dependent acceleration, and requiring Δy, v0, v, and a to all follow the same declared sign convention, removes that ambiguity.",
+      "equations": [
+        {"equationId": "ch01-corr-007-eq-001", "expression": "a = -g (upward-positive convention)", "meaning": "Signed acceleration of a falling object when upward is chosen as the positive direction.", "units": ["m/s²"]},
+        {"equationId": "ch01-corr-007-eq-002", "expression": "a = +g (downward-positive convention)", "meaning": "Signed acceleration of a falling object when downward is chosen as the positive direction.", "units": ["m/s²"]},
+        {"equationId": "ch01-corr-007-eq-003", "expression": "v = v0 + at, with v0 = 0 for release from rest", "meaning": "Velocity consistent with the same sign convention as the declared acceleration.", "units": ["m/s"]},
+        {"equationId": "ch01-corr-007-eq-004", "expression": "Δy = v0 t + (1/2) a t², with v0 = 0 for release from rest", "meaning": "Displacement consistent with the same sign convention as the declared acceleration and velocity.", "units": ["m"]}
+      ],
+      "assumptionsAndSignConventions": [
+        "A positive-axis direction must be explicitly declared before assigning any sign to displacement (Δy), initial velocity (v0), velocity (v), or acceleration (a) — all four must follow that same chosen sign convention.",
+        "|g| ≈ 9.8 m/s² is the magnitude of gravitational acceleration; the signed acceleration is a = -g under an upward-positive convention or a = +g under a downward-positive convention.",
+        "For motion starting from rest (v0 = 0), v = v0 + at and Δy = v0 t + (1/2) a t² must both be evaluated using the same sign convention as the declared acceleration.",
+        "A negative acceleration value indicates a direction opposite the chosen positive axis, not inherently backward motion or slowing down; whether it causes slowing depends on the sign of the velocity at that instant."
+      ],
+      "affectedContentBlockTypes": ["organizedExplanation", "equationSet", "example", "workedProblem", "instructorScript"],
+      "glossaryTermIds": ["ch01-term-acceleration", "ch01-term-free-fall"],
+      "evidenceStatus": "proposedPendingReviewerApproval",
+      "approvalStatus": "editoriallyApproved",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": "khubrani2a-gif (project owner)", "editorialReviewer": "khubrani2a-gif (project owner)", "approvedAt": "2026-07-15", "approvalBasis": "Approved by the project owner based on Claude's completed independent scientific review of ch01-corr-007, including the displacement-equation revision (focused correction review pass; see AMENDED_DESIGN_VALIDATION_REPORT.md and the CLAUDE_REREVIEW_HANDOFF.md verification package). This records the project owner's approval decision, not an independently derived physics re-verification beyond that review."},
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": ["CD-CONF-007"],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
+    },
+    {
+      "correctionId": "ch01-corr-008",
+      "title": {"text": "Velocity is tangent to the circular path; centripetal acceleration points toward the center", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t10"],
+      "classification": "inaccurate",
+      "severity": "high",
+      "scientificAuditRecordIds": ["SCA11", "S3-SCI-005", "K1-SCI-009"],
+      "conflictRecordIds": ["CD-CONF-008"],
+      "originalWording": {
+        "summary": "A car rounding a curve is described as needing its velocity to keep changing toward the center, conflating the direction of velocity itself with the direction of the acceleration caused by that changing velocity.",
+        "sourceRecordIds": ["SEG041", "S3-P033"]
+      },
+      "correctedWording": {
+        "en": "Velocity remains tangent to the circular path at every instant, even though its direction is continuously changing. Centripetal acceleration is the name for that continuous change in velocity direction, and it points toward the center of the circular path — never along the velocity itself and never outward. Constant speed does not imply constant velocity: an object moving in a circle at constant speed still has a continuously changing velocity, because its direction changes, and that changing velocity is exactly what constitutes the acceleration. It is incorrect to describe velocity itself as directed toward the center; only the acceleration — the rate of change of velocity — points inward.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "Describing velocity as 'changing toward the center' collapses two distinct vectors (velocity, which is tangent, and acceleration, which is inward) into one, and can lead students to expect an object in circular motion to visibly move toward the center rather than continue tangentially unless a centripetal force acts. Cross-referenced Kahoot evidence (K1-SCI-009) independently confirms the corrected framing is the standard, expected answer: across 36 centripetal-motion question occurrences in that source, every one correctly keeps velocity tangent and reserves inward direction for acceleration, including the 'string breaks → object moves tangent to the circle' case.",
+      "equations": [
+        {"equationId": "ch01-corr-008-eq-001", "expression": "a_c = v²/r", "meaning": "Magnitude of centripetal acceleration for uniform circular motion; directed toward the center.", "units": ["m/s²"]}
+      ],
+      "assumptionsAndSignConventions": [
+        "Velocity is tangent to the circular path at every instant; only acceleration points toward the center.",
+        "Constant speed (the magnitude of velocity) does not imply constant velocity when direction is changing.",
+        "Centripetal acceleration exists because the velocity direction is continuously changing, even when speed is constant."
+      ],
+      "affectedContentBlockTypes": ["organizedExplanation", "keyConcept", "equationSet", "example", "misconception", "instructorScript"],
+      "glossaryTermIds": ["ch01-term-centripetal-acceleration", "ch01-term-velocity"],
+      "evidenceStatus": "proposedPendingReviewerApproval; corroboratedByKahootPositiveContrastFinding",
+      "approvalStatus": "editoriallyApproved",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": "khubrani2a-gif (project owner)", "editorialReviewer": "khubrani2a-gif (project owner)", "approvedAt": "2026-07-15", "approvalBasis": "Approved by the project owner based on Claude's completed independent scientific review of ch01-corr-008, including the Kahoot cross-source corroboration (focused correction review pass; see AMENDED_DESIGN_VALIDATION_REPORT.md and the CLAUDE_REREVIEW_HANDOFF.md verification package). This records the project owner's approval decision, not an independently derived physics re-verification beyond that review."},
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": ["CD-CONF-008"],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
+    },
+    {
+      "correctionId": "ch01-corr-009",
+      "title": {"text": "Clarify that v0 = 0 applies only to release from rest, not universally", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t08"],
+      "classification": "needsClarification",
+      "issueType": "conceptualClarity",
+      "severity": "low",
+      "provenanceNote": "Unlike ch01-corr-001 through ch01-corr-008, this correction did not originate from the SCA/S3-SCI content-audit pipeline or an existing CD-CONF conflict-decision record — it originates from a Phase 4 project-owner-directed application review (docs/app/PHSH111_OWNER_REVIEW_PACKET.md, finding PH4-001). scientificAuditRecordIds and conflictRecordIds are therefore both empty by fact, not omission — there is no pre-existing audit or conflict record to cite, and none was fabricated to satisfy this file's stated validationRules.",
+      "scientificAuditRecordIds": [],
+      "conflictRecordIds": [],
+      "originalWording": {
+        "summary": "ch01-t08-block-equations stated 'v = v0 + at, with v0 = 0 for release from rest' and 'dy = v0*t + (1/2)*a*t^2, with v0 = 0 for release from rest' as trailing clauses, immediately followed on the rendered topic page by a worked example (ball thrown downward at 4 m/s) and an original problem (gurney initially moving at 1.5 m/s) that both use a nonzero v0 — creating a real risk that a reader takes the equation panel's 'v0 = 0' clause as a blanket statement rather than the special case it was intended to describe.",
+        "sourceRecordIds": ["ch01-t08-block-equations"]
+      },
+      "correctedWording": {
+        "en": "v = v0 + at; if the object starts from rest, v0 = 0, otherwise use its actual initial velocity. dy = v0*t + (1/2)*a*t^2; if the object starts from rest, v0 = 0, otherwise use its actual initial velocity.",
+        "ar": "v = v0 + at؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية. dy = v0*t + (1/2)*a*t^2؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية.",
+        "arabicStatus": "generated"
+      },
+      "correctionRationale": "This is a conceptual-clarity issue, not a change to the physics model or to the sign-convention correction already approved as ch01-corr-007: the underlying equations (v = v0 + at, dy = v0*t + (1/2)*a*t^2) and ch01-corr-007's sign-convention rules are unchanged. The only change is rephrasing an ambiguous descriptive clause into an explicit if/otherwise conditional, so a reader cannot mistake the general formula's 'release from rest' special case for a universal constraint — matching how the topic's own worked example and problem already use nonzero v0 without contradiction.",
+      "englishImpact": "ch01-t08-block-equations.localizedContent.en.text: the two occurrences of ', with v0 = 0 for release from rest' were each replaced with '; if the object starts from rest, v0 = 0, otherwise use its actual initial velocity.' No other English text in ch01-t08 (mainIdea, explanation, example, visual, misconception, reviewQuestion, problem, or instructorScript) was changed.",
+      "arabicImpact": "ch01-t08-block-equations.localizedContent.ar.text and the identical arabic.canonicalArabicTranslation.text: the two occurrences of '، مع v0 = 0 عند الانطلاق من السكون' were each replaced with '؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية.' No other Arabic text in ch01-t08 was changed.",
+      "affectedRecordAndField": "docs/content-design/chapter-01/pilot/ch01-t08-content.json — record ch01-t08-block-equations (blockType: equationSet) — fields localizedContent.en.text, localizedContent.ar.text, arabic.canonicalArabicTranslation.text only.",
+      "noEffectOnVisualOrAnswers": "ch01-t08-visual-001.svg and its validation record were not touched (this correction is text-only, in a contentBlock the visual does not read from). ch01-prob-108's given values, calculations, and finalAnswer are unchanged (v0 = 1.5 m/s remains the actual initial velocity used, consistent with — not contradicted by — the clarified equation panel). ch01-t08-block-example's worked numbers (v0 = 4 m/s) are unchanged for the same reason.",
+      "affectedContentBlockTypes": ["equationSet"],
+      "glossaryTermIds": ["ch01-term-acceleration"],
+      "evidenceStatus": "notApplicable — conceptual-clarity correction, not a factual/scientific-accuracy correction requiring evidence",
+      "approvalStatus": "editoriallyApproved",
+      "affectedContentBlockIds": ["ch01-t08-block-equations"],
+      "studentFacingSuppression": true,
+      "publicationStatusUnchanged": "studentFacingAllowed remains false and studentPublicationAuthorized remains false, on this record and chapter-wide, exactly as before this correction. This correction changes wording clarity only and does not alter, and was not treated as satisfying, any publication-readiness condition.",
+      "approvals": {"scientificReviewer": "khubrani2a-gif (project owner)", "editorialReviewer": "khubrani2a-gif (project owner)", "approvedAt": "2026-07-16", "approvalBasis": "Approved by the project owner as one of exactly two approved corrections in a narrowly scoped, owner-directed correction task following the Phase 4 review packet (docs/app/PHSH111_OWNER_REVIEW_PACKET.md, finding PH4-001). This records the project owner's explicit approval decision for this specific wording clarification, not an independently derived physics re-verification beyond ch01-corr-007's existing, unmodified scientific review."},
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": [],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
+    }
+  ],
+  "validationRules": [
+    "scientificAuditRecordIds must be non-empty",
+    "conflictRecordIds must be non-empty",
+    "studentFacingSuppression remains true until scientific and editorial approval",
+    "Arabic stays null when no reviewed canonical translation exists",
+    "Original source records are referenced, not rewritten"
+  ]
+}

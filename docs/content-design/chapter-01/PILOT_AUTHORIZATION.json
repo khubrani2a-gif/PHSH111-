@@ -1,0 +1,628 @@
+{
+  "authorizationId": "ch01-pilot-authorization-001",
+  "authorizationVersion": "1.5.0",
+  "status": "granted",
+  "grantedBy": "khubrani2a-gif (project owner)",
+  "grantedAt": "2026-07-15",
+  "lastAmendedAt": "2026-07-17",
+  "lastAmendedBy": "khubrani2a-gif (project owner)",
+  "versionIncrementPolicy": "This record follows the same patch-versus-minor distinction already established elsewhere in this project's own governance versioning (e.g. ENGLISH_PILOT_BASELINE_APPROVAL.json / ARABIC_PILOT_BASELINE_APPROVAL.json's baselineVersion 1.0.0 -> 1.0.1 -> 1.0.2 pattern): a minor version (x.Y.0) is used when new scope or a new authorized action is granted; a patch version (x.y.Z) is used when an already-granted section is corrected, clarified, or formally ratified without adding new scope. 1.3.1 is a patch, not a minor bump, because it corrects defects in the 1.3.0 grant (packaging model, terminology, glossary-enforcement rule) without authorizing anything beyond what 1.3.0 already intended to authorize. 1.3.2 is likewise a patch, not a minor bump: it records the explicit project-owner ratification of the already-corrected 1.3.1 scope, without changing that scope in any way. No technical scope, output path, restriction, or dependency changes at 1.3.2 — only the governance status changes from 'technically corrected but not yet explicitly ratified by the project owner' to 'explicitly ratified by the project owner.'",
+  "versionNote": "1.0.0 authorized draft-form canonical content generation only, for the same four topics, and explicitly did not authorize any application build, packaging, or deployment. 1.1.0 is a controlled, additive amendment that authorizes only a local, internal Chapter 1 MVP application build under apps/chapter1-mvp/, for the same four already-authorized topics. It does not expand topic scope, does not authorize publication or deployment, and does not change any content or governance record's approval status. 1.2.0 is a further controlled, additive amendment that authorizes English-language canonical DRAFTING only (not approval of a baseline, not application build, not publication) for exactly two additional topics — ch01-t01 and ch01-t04 (Batch 1) — following completion of their scientific-reconciliation prerequisite (ch01-corr-001 and ch01-corr-002, both editoriallyApproved in SCIENTIFIC_CORRECTIONS.json). It does not expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds below, both of which remain exactly the original four topics, and does not authorize Arabic content, visual production, application expansion, or student-facing publication for ch01-t01 or ch01-t04. 1.3.0 was a further controlled, additive amendment intended to authorize Arabic candidate-draft generation only (not Arabic baseline approval, not visual production, not application expansion, not publication) for the same two Batch 1 topics — ch01-t01 and ch01-t04 — following completion of the approved English baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0) and of all nine Batch 1 glossary actions (BILINGUAL_GLOSSARY.json v1.3.0, all blocking terms approved). **1.3.0 as originally written contained three material scope defects, corrected in 1.3.1 below: (a) it authorized in-place editing of the approved English baseline files instead of separate candidate copies; (b) it mislabeled the authorized work as \"Arabic canonical generation\" rather than \"Arabic candidate-draft generation,\" risking confusion with canonical/baseline status; (c) it prohibited use of any Arabic terminology outside the nine Batch 1 glossary records, rather than enforcing those nine where applicable while permitting ordinary Arabic language and other already-approved glossary terms.** 1.3.1 is a corrective patch, not a new grant of scope: it replaces the defective packaging model, terminology, and glossary-enforcement rule in batch1ArabicGenerationAuthorization below with a corrected version, without expanding scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, or batch1DraftingAuthorization.applicableTopicIds above, all of which remain unchanged, and without authorizing anything 1.3.0 did not already intend to authorize. 1.3.2 is the explicit project-owner ratification of the corrected 1.3.1 scope. It is important governance history that 1.3.0 was created before the project owner had issued the intended explicit authorization decision, and that 1.3.1 was a technical-correction task rather than that explicit decision; 1.3.2 supplies the explicit project-owner ratification itself. 1.3.2 changes no technical scope, output path, restriction, or dependency established at 1.3.1 — it records the project owner's explicit authorization decision and nothing more. No Arabic content was generated and no candidate directory existed before this ratification. This version does not itself generate any Arabic content. See batch1ArabicGenerationAuthorization (including its projectOwnerRatification block), authorizationHistory, docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md, and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md below. 1.4.0 is a further controlled, additive amendment that authorizes original, rights-safe VISUAL PRODUCTION only (not application integration, not student-facing authorization, not deployment or publication) for exactly two visual IDs — ch01-t01-visual-001 and ch01-t04-visual-001 — following completion of the approved English Batch 1 baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0) and the approved Arabic Batch 1 baseline (ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0). It does not expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds above, both of which remain exactly the original four topics. This version does not itself create any visual asset. See batch1VisualProductionAuthorization and authorizationHistory below. 1.5.0 is a further controlled, additive amendment that authorizes INTERNAL APPLICATION INTEGRATION only (not student-facing release, not public deployment, not publication) for the same two Batch 1 topics — ch01-t01 and ch01-t04 — following completion of the approved English Batch 1 baseline (v1.0.0), the approved Arabic Batch 1 baseline (v1.0.0), the approved Visual Batch 1 baseline (v1.0.0), and the registration of all 18 required Batch 1 identifiers (IDENTIFIER_REGISTRY.json v1.3.0). It does not expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds above, both of which remain exactly the original four topics — ch01-t01 and ch01-t04 gain their own separate, narrower application-integration authorization instead, mirroring how each earlier Batch 1 milestone was recorded in its own dedicated section rather than by modifying the original four-topic grants. This version authorizes a future integration task; it does not itself integrate either topic, add any route, import, or registry entry, modify any application file, or run any build/test/install/deploy command. See batch1ApplicationIntegrationAuthorization and authorizationHistory below.",
+  "scope": {
+    "authorizedTopicIds": ["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"],
+    "notAuthorized": "As of v1.0.0/v1.1.0, all ten non-pilot Chapter 1 topics (ch01-t01, ch01-t04, ch01-t05, ch01-t06, ch01-t07, ch01-t09, ch01-t11, ch01-t12, ch01-t13, ch01-t14) were NOT authorized for any canonical generation under this record, and were NOT within the applicationBuildAuthorization scope added in 1.1.0. As of v1.2.0, this remains true for eight of those ten topics (ch01-t05, ch01-t06, ch01-t07, ch01-t09, ch01-t11, ch01-t12, ch01-t13, ch01-t14) without change. ch01-t01 and ch01-t04 now additionally have a separate, much narrower English-drafting-only authorization — see batch1DraftingAuthorization below — which does NOT place them within authorizedTopicIds above or within applicationBuildAuthorization.applicableTopicIds; the four-topic scope of both of those has not expanded at any version of this record."
+  },
+  "authorizes": [
+    "Draft-form canonical generation only (instructorScript, contentBlock, problem records) for the four scoped topics",
+    "Use of approved scientific corrections (ch01-corr-006, ch01-corr-007, ch01-corr-008) and approved glossary terms (ch01-term-period, ch01-term-frequency) as authoring authority",
+    "Newly authored, original explanations, examples, problems, review questions, and diagrams (described as visual specifications), per PILOT_RIGHTS_POLICY.json"
+  ],
+  "doesNotAuthorize": [
+    "Student-facing publication or display of any generated content (studentFacingAllowed and studentPublicationAuthorized remain false everywhere)",
+    "Canonical generation for any topic outside the four listed",
+    "Application build, packaging, or deployment beyond the scoped local internal MVP explicitly authorized under this record's v1.1.0 applicationBuildAuthorization (apps/chapter1-mvp/ only) — public deployment, external hosting, student release, and production packaging or distribution remain unauthorized at every version of this record, including v1.1.0",
+    "Any modification to docs/content-audits/",
+    "Automatic approval of the generated draft content itself — every generated record is marked draft/review-required and remains blocked pending human scientific and editorial review",
+    "Any action listed under prohibitedActions in the v1.1.0 applicationBuildAuthorization section below (authentication, backend or database services, analytics, cloud synchronization, Git staging/commit/push, and modification of any instructional content, baseline, visual, validation, or governance file)"
+  ],
+  "applicationBuildAuthorization": {
+    "addedInVersion": "1.1.0",
+    "authorizedAt": "2026-07-16",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "reviewBasis": [
+      "docs/app/MVP_PRODUCT_SPEC.md",
+      "docs/app/MVP_IMPLEMENTATION_DECISIONS.json"
+    ],
+    "applicationPath": "apps/chapter1-mvp/",
+    "applicableTopicIds": ["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"],
+    "allowedActions": [
+      "Create an application under apps/chapter1-mvp/",
+      "Create React, Vite, and TypeScript source files",
+      "Create package and configuration files inside that application directory",
+      "Install only dependencies justified by docs/app/MVP_PRODUCT_SPEC.md",
+      "Create a package-lock or equivalent dependency lockfile",
+      "Run a local development server",
+      "Perform local builds",
+      "Run local automated and manual tests",
+      "Read the four approved pilot JSON files and SVG assets",
+      "Create a read-only content adapter",
+      "Render the blocked content in an internal-review environment",
+      "Create internal-only UI components and routes",
+      "Create internal QA records and implementation documentation"
+    ],
+    "prohibitedActions": [
+      "Public deployment",
+      "External hosting",
+      "Student release",
+      "Student publication",
+      "Production packaging or distribution",
+      "Authentication",
+      "Backend services",
+      "Databases",
+      "Analytics",
+      "Cloud synchronization",
+      "Modification of instructional content",
+      "Modification of Arabic or English baselines",
+      "Modification of source SVG assets",
+      "Changing studentFacingAllowed to true",
+      "Changing blocked content to approved",
+      "Chapter-wide content generation",
+      "Topics outside the four-topic pilot",
+      "Staging, committing, or pushing through Git"
+    ],
+    "governanceClarifications": [
+      "Application build authorization is not publication authorization.",
+      "Local internal rendering does not change the governance status of any content record.",
+      "All four topics and visuals remain draft/review-required.",
+      "studentFacingAllowed remains false.",
+      "studentPublicationAuthorized remains false.",
+      "The Draft / Review Required banner must remain visible in the application at all times.",
+      "Content and governance files must be treated as read-only by the application.",
+      "Any content correction must follow the existing baseline revision-control process (a baselineVersion bump plus a revisionLog entry in ENGLISH_PILOT_BASELINE_APPROVAL.json / ARABIC_PILOT_BASELINE_APPROVAL.json), never a silent application-side edit."
+    ],
+    "relationToOriginalAuthorization": "Authorization v1.0.0 (granted 2026-07-15) explicitly did not authorize application build, packaging, or deployment — see authorizationHistory below for the preserved original doesNotAuthorize wording. Version 1.1.0 does not retract or reinterpret that historical fact; it adds a new, narrowly scoped authorization on top of it, limited to a local, internal Chapter 1 MVP application for the same four already-authorized topics, with publication and deployment remaining explicitly unauthorized."
+  },
+  "batch1DraftingAuthorization": {
+    "addedInVersion": "1.2.0",
+    "authorizationRecordId": "ch01-batch1-drafting-authorization-001",
+    "authorizedAt": "2026-07-16",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "reviewBasis": [
+      "docs/app/PHSH111_BATCH1_CORRECTION_DECISION_BRIEF.md",
+      "docs/app/PHSH111_BATCH1_CORRECTION_CITATION_REPAIR.md",
+      "docs/app/PHSH111_BATCH1_CORRECTION_APPROVAL_RECORD.md",
+      "docs/app/PHSH111_BATCH1_DRAFTING_AUTHORIZATION_RECORD.md"
+    ],
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "prerequisiteCorrectionIds": ["ch01-corr-001", "ch01-corr-002"],
+    "prerequisiteCorrectionStatus": {
+      "ch01-corr-001": "editoriallyApproved",
+      "ch01-corr-002": "editoriallyApproved, with a recorded qualification — see SCIENTIFIC_CORRECTIONS.json ch01-corr-002.approvals.approvalBasis: 'apparent weight' is scientifically valid, project-authored interpretive terminology and must not be represented as verbatim source wording."
+    },
+    "scopeNote": "This authorization is English-language canonical DRAFT generation only, for exactly these two topics. It is separate from, additive to, and does not modify scope.authorizedTopicIds above or applicationBuildAuthorization.applicableTopicIds, both of which remain exactly ch01-t02/ch01-t03/ch01-t08/ch01-t10.",
+    "allowedActions": [
+      "Inspect all audited source evidence for ch01-t01 and ch01-t04",
+      "Create English instructorScript records for ch01-t01 and ch01-t04, per CANONICAL_DESIGN_SCHEMA.json schemaVersion 2.3.0",
+      "Create English learner-visible contentBlock records for ch01-t01 and ch01-t04",
+      "Create English instructor-only contentBlock records where justified",
+      "Create original, rights-safe worked examples",
+      "Create original, rights-safe problem records and solutions",
+      "Preserve complete source and scientific-audit lineage via provenanceLinks / sourceReferenceIds, without reproducing copyrighted source text",
+      "Apply ch01-corr-001 exactly as approved to ch01-t01 drafting",
+      "Apply ch01-corr-002 exactly as approved, including its recorded qualification, to ch01-t04 drafting",
+      "Represent Arabic content using CANONICAL_DESIGN_SCHEMA.json's own existing mechanism for untranslated content (arabicSeparation.translationStatus: \"missing\"; localizedText.text: null and localizedText.status: \"missing\" on both originalArabicText and canonicalArabicTranslation) — never a fabricated placeholder and never English text copied into an Arabic field",
+      "Create validation records for the generated draft files, following the existing pilot visual-validation naming and structure convention",
+      "Create textual visual-specification / visual-requirement records as planning metadata only",
+      "Run JSON/schema/content validation against CANONICAL_DESIGN_SCHEMA.json schemaVersion 2.3.0 and against IDENTIFIER_REGISTRY.json's namespace patterns",
+      "Create draft-review documentation"
+    ],
+    "prohibitedActions": [
+      "Arabic translation or Arabic canonical content generation",
+      "Runtime or machine translation of any kind",
+      "Arabic baseline approval",
+      "Final English baseline approval",
+      "SVG or other visual production",
+      "Copying, tracing, redrawing, or adapting publisher artwork",
+      "Application-route or topic-registry expansion",
+      "Rendering ch01-t01 or ch01-t04 inside apps/chapter1-mvp/",
+      "Public deployment",
+      "Student release or student-facing publication",
+      "Claiming independent-expert (physics) review or approval",
+      "Canonical generation for any topic outside ch01-t01 and ch01-t04",
+      "Chapter-wide generation",
+      "Any change to CANONICAL_DESIGN_SCHEMA.json's schemaVersion",
+      "Modification of docs/content-audits/ or any audited source evidence",
+      "Close paraphrase of publisher wording; copying source examples with superficial number changes; copying review-card or Kahoot wording; reproducing publisher tables; tracing or reusing publisher figures; presenting source artwork as original project work",
+      "Git staging, commit, or push"
+    ],
+    "authorizedOutputPaths": {
+      "primary": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json and docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json — a new directory, not yet created by this authorization task itself.",
+      "validationRecords": "docs/content-design/chapter-01/batch1-drafts/ (co-located *-validation.json files, following the existing pilot visual-validation naming convention).",
+      "rationale": "A new, clearly separate directory rather than docs/content-design/chapter-01/pilot/, because \"pilot/\" is already a governance-defined term scoped exactly to the four build-authorized topics (scope.authorizedTopicIds above). Batch 1 drafts are English-only, not build-authorized, and not baseline-approved; keeping them physically separate prevents any future ambiguity about which topics are actually build-authorized for apps/chapter1-mvp/, even though each drafted file would itself be schema-valid against CANONICAL_DESIGN_SCHEMA.json if it were ever placed there."
+    },
+    "rightsRestrictions": [
+      "All student-facing explanations, examples, questions, and solutions must be newly authored — the same substantive originality commitment already made in PILOT_RIGHTS_POLICY.json for the four pilot topics.",
+      "PILOT_RIGHTS_POLICY.json's own scope.appliesToTopicIds does not currently include ch01-t01 or ch01-t04, and this authorization does not amend that file; the same originality requirement is restated here directly for Batch 1 rather than relying on an unamended policy file's scope."
+    ],
+    "validationRequirements": [
+      "Every generated draft record must validate against CANONICAL_DESIGN_SCHEMA.json schemaVersion 2.3.0.",
+      "Every source/audit citation must resolve against IDENTIFIER_REGISTRY.json's namespace patterns and authority files.",
+      "ch01-corr-001's and ch01-corr-002's corrected wording, and ch01-corr-002's recorded qualification, must be applied exactly as they appear in SCIENTIFIC_CORRECTIONS.json, without alteration.",
+      "Any new scientific ambiguity or conflict discovered during drafting must stop work on the affected topic and be documented for a separate review — it must not be silently resolved as an implicit new correction."
+    ],
+    "publicationRestrictions": [
+      "studentFacingAllowed and studentPublicationAuthorized remain false for ch01-t01 and ch01-t04, chapter-wide and per-record, exactly as for all fourteen Chapter 1 topics.",
+      "Draft records produced under this authorization are not an approved English baseline — a separate baseline-approval action, mirroring ENGLISH_PILOT_BASELINE_APPROVAL.json's existing pattern, is required before any further step.",
+      "This authorization does not move ch01-t01 or ch01-t04 into applicationBuildAuthorization.applicableTopicIds above, which remains exactly the original four pilot topics."
+    ],
+    "relationToOriginalAuthorization": "This is an additive amendment, parallel in kind to how v1.1.0 added applicationBuildAuthorization on top of v1.0.0. It does not retract, reinterpret, or expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds, both of which remain exactly ch01-t02/ch01-t03/ch01-t08/ch01-t10. Content drafting authorized here is entirely separate from, and does not by itself authorize, any application implementation work for ch01-t01 or ch01-t04."
+  },
+  "batch1ArabicGenerationAuthorization": {
+    "addedInVersion": "1.3.0",
+    "correctedInVersion": "1.3.1",
+    "authorizationRecordId": "ch01-batch1-arabic-generation-authorization-001",
+    "authorizedAt": "2026-07-17",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "correctedAt": "2026-07-17",
+    "correctedBy": "khubrani2a-gif (project owner)",
+    "correctionNote": "This section was corrected in 1.3.1 before any Arabic content was generated under it. Three defects in the 1.3.0 text were fixed here: (1) an in-place-editing packaging model was replaced with a separate immutable-original / candidate-copy model; (2) 'Arabic canonical generation' terminology was replaced with 'Arabic candidate-draft generation' throughout; (3) an absolute prohibition on any terminology outside the nine Batch 1 glossary records was replaced with a rule enforcing those nine where applicable while permitting ordinary Arabic language and other already-approved glossary terms. See docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md for the full correction record, and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md's own dated correction section for the additively-preserved original text and what superseded it.",
+    "projectOwnerRatification": {
+      "ratifiedInVersion": "1.3.2",
+      "status": "granted",
+      "ratifiedBy": "khubrani2a-gif (project owner)",
+      "ratifiedAt": "2026-07-17",
+      "decision": "The project owner explicitly authorizes controlled Arabic candidate-draft generation for ch01-t01 and ch01-t04 under the corrected authorization model recorded at authorizationVersion 1.3.1 (this batch1ArabicGenerationAuthorization section), PILOT_READINESS.json pilotReadinessVersion 1.8.1, and docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md.",
+      "authorizationType": "controlled Arabic candidate-draft generation",
+      "ratifiedTopicIds": ["ch01-t01", "ch01-t04"],
+      "correctedAuthorizationDependency": "authorizationVersion 1.3.1 (batch1ArabicGenerationAuthorization, as corrected); technical scope, packaging model, output paths, glossary-enforcement rule, and restrictions are unchanged by this ratification",
+      "englishBaselineDependency": {
+        "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+        "baselineVersion": "1.0.0",
+        "status": "approved",
+        "checksums": {
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "verifiedAtRatification": "2026-07-17 — both checksums re-computed and confirmed identical to ENGLISH_BATCH1_BASELINE_APPROVAL.json's approvedDraftFiles values immediately before this ratification. No drift."
+      },
+      "glossaryDependency": "BILINGUAL_GLOSSARY.json, glossaryVersion 1.3.0, all nine Batch 1 glossary actions approved (unchanged)",
+      "candidateOutputPaths": [
+        "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
+        "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json"
+      ],
+      "immutableEnglishBaselineRestriction": "The approved English baseline files at docs/content-design/chapter-01/batch1-drafts/ (ch01-t01-content.json, ch01-t04-content.json) remain immutable and must never be edited by the Arabic candidate-draft generation task, in place or otherwise.",
+      "ratificationDoesNotAuthorize": [
+        "Modification of the approved English baseline files",
+        "Arabic baseline approval (remains unapproved; a separate future ARABIC_BATCH1_BASELINE_APPROVAL.json-style action is required)",
+        "Canonical promotion of any Arabic candidate content",
+        "Visual production",
+        "Application integration or topic-registry expansion",
+        "Student-facing use",
+        "Deployment",
+        "Publication",
+        "Any claim of independent human scientific review (which remains incomplete)"
+      ],
+      "governanceHistoryClarification": "Recorded transparently, not silently rewritten: (a) authorizationVersion 1.3.0 was created before the project owner had issued the intended explicit authorization decision; (b) authorizationVersion 1.3.1 technically corrected 1.3.0's packaging, terminology, and glossary-enforcement defects but was a correction task, not the project-owner ratification itself; (c) this 1.3.2 ratification supplies the explicit project-owner authorization decision for the already-corrected scope; (d) no Arabic content was generated before this ratification; (e) no Arabic candidate directory (docs/content-design/chapter-01/batch1-arabic-drafts/) existed before this ratification.",
+      "ratificationBasis": "Explicit project-owner decision (khubrani2a-gif), formalized in docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md. This is a project-owner governance decision, not an independent human scientific or linguistic review, which remains incomplete."
+    },
+    "reviewBasis": [
+      "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+      "docs/app/PHSH111_BATCH1_ARABIC_READINESS_GLOSSARY_DECISION_BRIEF.md",
+      "docs/app/PHSH111_BATCH1_GLOSSARY_INVENTORY_RECONCILIATION_ADDENDUM.md",
+      "docs/app/PHSH111_BATCH1_GLOSSARY_APPROVAL_RECORD.md",
+      "docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md",
+      "docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md",
+      "docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md"
+    ],
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "prerequisites": {
+      "englishBaselineApproved": "ENGLISH_BATCH1_BASELINE_APPROVAL.json, baselineVersion 1.0.0, status approved, unchanged since approval",
+      "englishBaselineChecksums": {
+        "ch01-t01-content.json": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+        "ch01-t04-content.json": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b",
+        "verifiedAt": "2026-07-17",
+        "verifiedResult": "Both checksums re-computed and confirmed identical to ENGLISH_BATCH1_BASELINE_APPROVAL.json's approvedDraftFiles values, both during the original 1.3.0 grant and again during this 1.3.1 correction. No drift."
+      },
+      "glossaryReconciliationComplete": "BILINGUAL_GLOSSARY.json, glossaryVersion 1.3.0 — all nine Batch 1 glossary actions (two new terms created and approved: ch01-term-fundamental-quantity, ch01-term-derived-quantity; four pending terms approved: ch01-term-speed, ch01-term-scalar, ch01-term-mass, ch01-term-weight; one term approved with revision: ch01-term-apparent-weight; two existing terms topic-extended: ch01-term-distance, ch01-term-acceleration) are complete, per PHSH111_BATCH1_GLOSSARY_APPROVAL_RECORD.md",
+      "allBlockingArabicTerminologyApproved": true
+    },
+    "scopeNote": "This authorization is controlled Arabic candidate-draft generation only, for exactly these two already English-baseline-approved topics. Arabic candidate generation is authorized; Arabic canonical or baseline approval is not. It is separate from, additive to, and does not modify scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, or batch1DraftingAuthorization.applicableTopicIds above, all of which remain unchanged.",
+    "packagingModel": {
+      "principle": "The approved English baseline files are immutable and must never be edited by the Arabic-generation task. Arabic candidate drafts are separate new copies, not in-place edits.",
+      "immutableSourceFiles": [
+        "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json (sha256 a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9)",
+        "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json (sha256 c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b)"
+      ],
+      "authorizedCandidateFiles": [
+        "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
+        "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json"
+      ],
+      "overlayModelConsidered": "An overlay model (an Arabic-only file referencing the English file by ID, without duplicating English content) was considered and not authorized. schemaVersion 2.3.0's contentBlock/instructorScript/problem records are self-contained objects with English and Arabic fields co-located on the same record (per CANONICAL_DESIGN_SCHEMA.json's $defs and the four pilot topics' own precedent) — nothing in the schema demonstrably prevents a full structural copy with only the arabic sub-object populated, so the separate-full-copy model is used instead, consistent with this task's instruction to prefer it unless an overlay is demonstrably required.",
+      "copyingMechanism": "A structural deep copy of the approved English JSON structure (topicId, topicTitle, generationStatus/generationNote restated for the candidate file, and the full records array in the same order), preserving every field byte-for-byte except the arabic sub-object on each record, which is populated in the copy only. This is the same structural-fidelity standard already implied by CANONICAL_DESIGN_SCHEMA.json's own schema validation (a record either matches the schema and its sibling English content, or it does not) — no new copying mechanism or schema field is introduced."
+    },
+    "allowedActions": [
+      "Verify, before any generation work, that both approved English baseline files' checksums still match englishBaselineChecksums above; stop and report if either does not match",
+      "Create the new directory docs/content-design/chapter-01/batch1-arabic-drafts/",
+      "Create docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json and ch01-t04-content.json as new candidate files, each beginning from the exact approved English baseline structure of its docs/content-design/chapter-01/batch1-drafts/ counterpart",
+      "In each candidate file, preserve every English field byte-for-byte (all localizedContent.en / problemStatement.en / etc. text, unit values, symbols), every record ID (instructorScriptId, blockId, problemId), record order, and every source/audit/correction/visibility/governance field (provenanceLinks, sourceTraceability, scientificCorrectionIds, conflictRecordIds, duplicateHandling, blocking, contentLeakTestStatus, visualReferenceIds, visualGovernance) exactly as they appear in the approved English baseline file",
+      "Populate only the authorized Arabic localization structures in the candidate copies: each contentBlock record's arabic.originalArabicText.text and arabic.canonicalArabicTranslation.text, moving arabic.translationStatus from \"missing\" to \"draft\" (the same schema-valid, pilot-precedented value used across all four already-produced pilot topics' own Arabic content; never directly to \"approved\")",
+      "Add an equivalent arabic field (originalArabicText / canonicalArabicTranslation / translationStatus: \"draft\" / translationReviewer: null / terminologyApprovalStatus / glossaryTermIds) to instructorScript and problem records in the candidate copies only, in the same shape already established for contentBlock records",
+      "Populate each candidate record's arabic.glossaryTermIds with the exact approved BILINGUAL_GLOSSARY.json termId values actually used in that record's Arabic text",
+      "Generate Arabic text for every applicable record following the per-record-type strategy already documented in PHSH111_BATCH1_ARABIC_READINESS_GLOSSARY_DECISION_BRIEF.md (direct translation with glossary enforcement for instructorScript, mainIdea, organizedExplanation, misconception, and reviewQuestion content; conceptual adaptation of prose combined with exact preservation of mathematical notation for equationSet and numberedSolution content; a natural Arabic instructional rewrite, not a literal translation, for problem.problemStatement)",
+      "Enforce the nine Batch 1 glossary decisions wherever their specific concept appears (see glossaryEnforcement below), while also drawing on any other already-approved BILINGUAL_GLOSSARY.json term where its concept is relevant, using ordinary Arabic language for anything that is not itself a scientific term needing glossary control, and leaving mathematical symbols/SI units untranslated",
+      "Apply the equation-isolation and bidi handling already confirmed sufficient in PHSH111_BATCH1_ARABIC_READINESS_GLOSSARY_DECISION_BRIEF.md §13/§14 (LTR-isolated spans, italic Latin variables, upright SI units, true superscript exponents, plain-ASCII × multiplication) without inventing any new rendering mechanism",
+      "Preserve ch01-t04's explicit English qualification that \"apparent weight\" is project-authored interpretive terminology, not verbatim source wording, as an explicit Arabic sentence rather than dropping it",
+      "After generation, verify the two original docs/content-design/chapter-01/batch1-drafts/ files remain byte-identical to englishBaselineChecksums above, and verify the English portions inside the new candidate copies match the approved baseline exactly",
+      "Create validation records for the two candidate files, following the existing pilot visual-validation naming convention, co-located in docs/content-design/chapter-01/batch1-arabic-drafts/",
+      "Run JSON/schema validation against CANONICAL_DESIGN_SCHEMA.json schemaVersion 2.3.0 on the candidate files after every edit",
+      "Create Arabic candidate-draft review documentation"
+    ],
+    "glossaryEnforcement": {
+      "rule": "The nine Batch 1 glossary decisions are mandatory wherever their specific concept appears. All other glossary terms already approved in BILINGUAL_GLOSSARY.json may also be used wherever their concept is relevant. Ordinary Arabic language does not require glossary registration. Mathematical symbols and SI units remain untranslated. A new controlled scientific term may not be introduced as canonical terminology without a separate glossary decision. An unregistered ordinary explanatory phrase is permitted when it does not function as a new canonical scientific term.",
+      "mandatoryTermIds": ["ch01-term-fundamental-quantity", "ch01-term-derived-quantity", "ch01-term-speed", "ch01-term-scalar", "ch01-term-mass", "ch01-term-weight", "ch01-term-apparent-weight", "ch01-term-distance", "ch01-term-acceleration"],
+      "otherApprovedTermsMayBeUsed": "Any other BILINGUAL_GLOSSARY.json term with approvalStatus: \"approved\" (e.g. ch01-term-velocity, ch01-term-free-fall, ch01-term-centripetal-acceleration, ch01-term-period, ch01-term-frequency) may be used if its concept is genuinely relevant to a Batch 1 record's Arabic text; none is currently expected to be needed given the two topics' approved English content, but none is prohibited either.",
+      "ordinaryLanguageException": "Ordinary, unambiguous Arabic vocabulary with no competing or confusable scientific term (e.g. \"time\"/الوقت أو الزمن, as already resolved for ch01-t01 in PHSH111_BATCH1_GLOSSARY_INVENTORY_RECONCILIATION_ADDENDUM.md §4/§7) does not require its own glossary entry and is permitted without registration.",
+      "newTermProhibition": "A future generation task may not coin a new controlled scientific term (i.e. present a novel Arabic phrase as if it were the project's official, canonical rendering of a physics concept) without a separate glossary decision, following the existing create/approve pattern already used for the nine Batch 1 terms. It may use an unregistered ordinary explanatory phrase or paraphrase precisely because that phrase is not functioning as new canonical terminology — the distinction is between coining official vocabulary and writing ordinary explanatory prose.",
+      "apparentWeightPreservation": {
+        "primaryTerm": "الوزن الظاهري (ch01-term-apparent-weight, mandatory wherever apparent weight is discussed)",
+        "supportingPhrase": "قراءة الميزان may be used as a supporting explanatory phrase, exactly as already recorded as an alternateArabicTerm in BILINGUAL_GLOSSARY.json",
+        "discouraged": "الوزن الحقيقي remains discouraged and must not be used as the preferred contrast term for apparent weight, per BILINGUAL_GLOSSARY.json's own discouragedTranslations entry and usageNotes."
+      },
+      "discouragedTranslationsRule": "discouragedTranslations recorded on any of the nine mandatory terms (or on any other approved term actually used) must not be used as a substitute for that term's approvedArabicTerm."
+    },
+    "prohibitedActions": [
+      "Any modification whatsoever of docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json or ch01-t04-content.json — these approved English baseline files must remain immutable and are never edited, in place or otherwise, by this authorization",
+      "Arabic baseline approval (an ARABIC_BATCH1_BASELINE_APPROVAL.json-style record is a separate, later, project-owner action, mirroring ARABIC_PILOT_BASELINE_APPROVAL.json's existing pattern)",
+      "Treating any Arabic candidate-draft file or record as canonical, approved, or promoted — candidate files remain draft, blocked, non-student-facing, not Arabic-baseline-approved, not application-authorized, and not publication-authorized until a separate future approval",
+      "Setting any record's arabic.translationStatus directly to \"approved\" or its terminologyApprovalStatus directly to \"approved\"",
+      "Any modification of ENGLISH_BATCH1_BASELINE_APPROVAL.json, its approvedDraftChecksumSha256 values, or its approval status",
+      "Creating, approving, or modifying any BILINGUAL_GLOSSARY.json term",
+      "Coining a new controlled scientific term as if it were approved canonical terminology without a separate glossary decision (see glossaryEnforcement.newTermProhibition above) — this is narrower than, and replaces, 1.3.0's blanket prohibition on any terminology outside the nine Batch 1 terms",
+      "Visual (SVG or raster) production of any kind, or translation of visualReference specification text into Arabic beyond what already exists as internal planning metadata",
+      "Application-route or topic-registry expansion; rendering ch01-t01 or ch01-t04, or their Arabic candidate files, inside apps/chapter1-mvp/",
+      "Public deployment, student release, or any student-facing publication",
+      "Claiming independent human expert (linguistic or scientific) review or approval",
+      "Arabic or English canonical generation for any topic outside ch01-t01 and ch01-t04",
+      "Chapter-wide generation",
+      "Any change to CANONICAL_DESIGN_SCHEMA.json's schemaVersion",
+      "Modification of docs/content-audits/ or any audited source evidence",
+      "Machine translation of any kind in place of authored, glossary-enforced Arabic text",
+      "Git staging, commit, or push"
+    ],
+    "authorizedOutputPaths": {
+      "primary": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json and docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json — new candidate files in a new, separate directory, not yet created by this authorization task itself. docs/content-design/chapter-01/batch1-drafts/ (the approved English baseline) is explicitly NOT an authorized output path for any edit under this authorization.",
+      "validationRecords": "docs/content-design/chapter-01/batch1-arabic-drafts/ (co-located *-validation.json files, following the existing pilot visual-validation naming convention).",
+      "rationale": "Separate from docs/content-design/chapter-01/batch1-drafts/ (so the approved, checksum-verified English baseline can never be silently altered by Arabic-generation work), separate from docs/content-design/chapter-01/pilot/ (already scoped exactly to the four build-authorized topics), and outside apps/chapter1-mvp/ (no application integration is authorized). This corrects 1.3.0's in-place-editing model, which risked silently mutating an approved, checksum-referenced baseline file."
+    },
+    "validationRequirements": [
+      "Verify both approved English baseline files' checksums match englishBaselineChecksums above before any generation work begins.",
+      "Every candidate-file record must remain valid against CANONICAL_DESIGN_SCHEMA.json schemaVersion 2.3.0 after the Arabic fields are populated.",
+      "Every mandatory-term concept (glossaryEnforcement.mandatoryTermIds) must use its approvedArabicTerm.text exactly where that concept appears; discouragedTranslations must not be used as a substitute for any term actually used.",
+      "arabic.translationStatus must read \"draft\" (never \"approved\") on every newly populated candidate record until a separate Arabic baseline approval occurs.",
+      "After generation, re-checksum docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json and ch01-t04-content.json and confirm both are still byte-identical to englishBaselineChecksums above — fail the task if either has changed.",
+      "Verify the English portions inside each Arabic candidate copy (all English text, record IDs, record order, and source/audit/correction/visibility/governance fields) match the approved baseline exactly.",
+      "Any new scientific or terminological ambiguity discovered while generating Arabic text must stop work on the affected record and be documented for a separate review — never silently resolved as an implicit new correction or an ad hoc canonical term."
+    ],
+    "publicationRestrictions": [
+      "studentFacingAllowed and studentPublicationAuthorized remain false for ch01-t01 and ch01-t04, chapter-wide and per-record, exactly as for all fourteen Chapter 1 topics.",
+      "Arabic candidate-draft text produced under this authorization is not an approved Arabic baseline — a separate baseline-approval action, mirroring ARABIC_PILOT_BASELINE_APPROVAL.json's existing pattern, is required before any further step.",
+      "This authorization does not move ch01-t01 or ch01-t04 into applicationBuildAuthorization.applicableTopicIds above, which remains exactly the original four pilot topics."
+    ],
+    "relationToOriginalAuthorization": "This is a corrective patch to the 1.3.0 grant, parallel in kind to how v1.1.0 and v1.2.0 each added a new, additive authorization section — except that 1.3.1 corrects defects within an already-added section rather than adding a new one. It does not retract, reinterpret, or expand scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, or batch1DraftingAuthorization.applicableTopicIds above, all of which remain unchanged. Arabic candidate-draft generation authorized here is entirely separate from, and does not by itself authorize, Arabic canonical promotion, Arabic baseline approval, visual production, or any application implementation work for ch01-t01 or ch01-t04."
+  },
+  "batch1VisualProductionAuthorization": {
+    "addedInVersion": "1.4.0",
+    "authorizationRecordId": "ch01-batch1-visual-production-authorization-001",
+    "authorizedAt": "2026-07-17",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "reviewBasis": [
+      "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+      "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json",
+      "docs/content-design/chapter-01/VISUAL_HOUSE_STYLE.md",
+      "docs/app/PHSH111_BATCH1_VISUAL_PRODUCTION_AUTHORIZATION_RECORD.md"
+    ],
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "authorizedVisualIds": ["ch01-t01-visual-001", "ch01-t04-visual-001"],
+    "prerequisites": {
+      "englishBaselineApproved": "ENGLISH_BATCH1_BASELINE_APPROVAL.json, baselineVersion 1.0.0, status approved",
+      "arabicBaselineApproved": "ARABIC_BATCH1_BASELINE_APPROVAL.json, baselineVersion 1.0.0, status approved",
+      "visualHouseStyleAvailable": "VISUAL_HOUSE_STYLE.md, derived from the four completed pilot visuals, available as a design reference (not itself a governance or approval document)"
+    },
+    "scopeNote": "This authorization is original, rights-safe visual PRODUCTION only, for exactly the two named visual IDs (one per topic). It does not authorize application integration, student-facing use, deployment, or publication, and it does not itself perform any visual production — it authorizes a future, separate visual-production task. It is separate from, additive to, and does not modify scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, batch1DraftingAuthorization.applicableTopicIds, or batch1ArabicGenerationAuthorization.applicableTopicIds above, all of which remain unchanged.",
+    "allowedActions": [
+      "Create exactly one original SVG for ch01-t01 (visualId ch01-t01-visual-001) and exactly one original SVG for ch01-t04 (visualId ch01-t04-visual-001)",
+      "Use only the approved English Batch 1 baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0) and the approved Arabic Batch 1 baseline (ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0) as scientific and textual inputs, specifically each topic's own visualReference content block (ch01-t01-block-visual, ch01-t04-block-visual) and its associated scientific correction (ch01-corr-001, ch01-corr-002)",
+      "Follow the established visual house style (VISUAL_HOUSE_STYLE.md) for color semantics, typography, bilingual rendering, diagram structure, vector conventions, accessibility, and layout, adapting it to each topic's own content rather than forcing an unrelated pilot layout onto it",
+      "Create a visual validation record for each asset, following the exact structure and rigor already established by the four pilot topics' own validation records (docs/content-design/chapter-01/pilot/visuals/*-validation.json)",
+      "Provide English and Arabic labels on each asset where scientifically required, per the bilingual-per-element convention already proven across all four pilot visuals (separate text elements, explicit direction attributes, formula isolated from prose)",
+      "Validate each asset's scientific accuracy against its topic's approved baseline and correction, geometric/mathematical correctness where a spatial or vector relationship is drawn, accessibility (role=img, title/desc, contrast targets), zoom/enlarge-view and mobile-size-risk behavior consistent with the pilot's own documented approach, and rights-safety (fully original artwork, not traced or adapted from any publisher source)",
+      "Run local, read-only visual inspection (e.g. opening the SVG in a browser) as part of validation"
+    ],
+    "prohibitedActions": [
+      "Tracing, copying, redrawing, or adapting any publisher slide, textbook page, review-card, Kahoot, or other cataloged source visual",
+      "Any modification of the approved English or Arabic Batch 1 baseline files (docs/content-design/chapter-01/batch1-drafts/, docs/content-design/chapter-01/batch1-arabic-drafts/) or of ENGLISH_BATCH1_BASELINE_APPROVAL.json / ARABIC_BATCH1_BASELINE_APPROVAL.json",
+      "Application-route or topic-registry expansion; rendering ch01-t01, ch01-t04, or either visual inside apps/chapter1-mvp/",
+      "Authorizing or claiming student-facing use — studentFacingAllowed must remain false on every affected record and in every validation record produced",
+      "Claiming or recording independent human visual or scientific review as having occurred — reviewer and reviewedAt must remain null on both validation records; readyForHumanReview: true (if set) records only that the asset is ready to be reviewed, not that review has happened",
+      "Public deployment, student release, or any student-facing publication",
+      "Producing a visual for any topic other than ch01-t01 and ch01-t04, or any visual ID other than ch01-t01-visual-001 and ch01-t04-visual-001",
+      "Chapter-wide visual production",
+      "Any change to CANONICAL_DESIGN_SCHEMA.json's schemaVersion or to VISUAL_HOUSE_STYLE.md's governance statements",
+      "Modification of docs/content-audits/ or any audited source evidence",
+      "Modification of the four existing pilot visual assets, their validation records, or VISUAL_HOUSE_STYLE.md itself",
+      "Git staging, commit, or push"
+    ],
+    "requiredGovernanceState": {
+      "rule": "Both ch01-t01-visual-001 and ch01-t04-visual-001 must remain in the following state at all times under this authorization, matching the exact convention already established by the four pilot visuals:",
+      "assetStatus": "draft",
+      "blockingStatus": "blocked",
+      "studentFacingAllowed": false,
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "authorizedOutputPaths": {
+      "primary": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg and docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg — a new, separate directory, not yet created by this authorization task itself.",
+      "validationRecords": "docs/content-design/chapter-01/batch1-visuals/ (co-located *-validation.json files, following the existing pilot visual-validation naming and structure convention).",
+      "rationale": "Separate from docs/content-design/chapter-01/pilot/visuals/ (already scoped exactly to the four build-authorized pilot topics) and from apps/chapter1-mvp/ (no application integration is authorized), mirroring the same separate-directory pattern already used for docs/content-design/chapter-01/batch1-drafts/ and docs/content-design/chapter-01/batch1-arabic-drafts/."
+    },
+    "validationRequirements": [
+      "Each SVG must be fully original artwork, independently checked against every cataloged source visual referenced by its topic's audit records to confirm no tracing, cropping, or adaptation occurred.",
+      "Each SVG's scientific content must be independently verified against its topic's approved English and Arabic baseline text and applicable scientific correction (ch01-corr-001 for ch01-t01; ch01-corr-002 for ch01-t04, including its qualification).",
+      "Each SVG must carry role=\"img\" with a full title/desc pair sufficient for a screen-reader user to reconstruct its teaching content.",
+      "Each SVG's bilingual text must follow the established separate-element, explicit-direction, formula-isolated convention documented in VISUAL_HOUSE_STYLE.md §3-4.",
+      "Any new scientific ambiguity or conflict discovered during visual production must stop work on the affected asset and be documented for a separate review — never silently resolved as an implicit new correction."
+    ],
+    "publicationRestrictions": [
+      "studentFacingAllowed and studentPublicationAuthorized remain false for ch01-t01 and ch01-t04, chapter-wide and per-record, exactly as for all fourteen Chapter 1 topics.",
+      "Visual assets produced under this authorization are not independently human-reviewed or approved by virtue of this authorization existing — a separate, future human-review action is required before either asset could be treated as ready for any downstream step.",
+      "This authorization does not move ch01-t01 or ch01-t04 into applicationBuildAuthorization.applicableTopicIds above, which remains exactly the original four pilot topics."
+    ],
+    "relationToOriginalAuthorization": "This is an additive amendment, parallel in kind to how v1.3.0 added batch1ArabicGenerationAuthorization on top of v1.2.0's batch1DraftingAuthorization. It does not retract, reinterpret, or expand scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, batch1DraftingAuthorization.applicableTopicIds, or batch1ArabicGenerationAuthorization.applicableTopicIds above, all of which remain unchanged. Visual production authorized here is entirely separate from, and does not by itself authorize, application implementation work, independent human review, or any student-facing use for ch01-t01 or ch01-t04."
+  },
+  "batch1ApplicationIntegrationAuthorization": {
+    "addedInVersion": "1.5.0",
+    "authorizationRecordId": "ch01-batch1-application-integration-authorization-001",
+    "authorizedAt": "2026-07-17",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "decisionDate": "2026-07-17",
+    "reviewBasis": [
+      "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+      "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json",
+      "docs/content-design/chapter-01/VISUAL_BATCH1_APPROVAL.json",
+      "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json",
+      "docs/app/PHSH111_BATCH1_IDENTIFIER_REGISTRATION_RECORD.md",
+      "docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md"
+    ],
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "prerequisites": {
+      "englishBaselineApproved": "ENGLISH_BATCH1_BASELINE_APPROVAL.json, baselineVersion 1.0.0, status approved",
+      "arabicBaselineApproved": "ARABIC_BATCH1_BASELINE_APPROVAL.json, baselineVersion 1.0.0, status approved",
+      "visualBaselineApproved": "VISUAL_BATCH1_APPROVAL.json, visualBaselineVersion 1.0.0, status approved",
+      "identifierRegistrationComplete": "IDENTIFIER_REGISTRY.json, registryVersion 1.3.0, batch1IdentifierRegistration.totalIdentifiersRegistered: 18",
+      "baselineChecksumsVerifiedAt": "2026-07-17 — all six approved files (2 English, 2 Arabic, 2 SVG) re-checksummed and confirmed byte-identical to their respective approval records immediately before this authorization"
+    },
+    "scopeNote": "This authorization is INTERNAL APPLICATION INTEGRATION AND QA only, for exactly the two named topics. It does not authorize student-facing release, public deployment, or publication, and it does not itself perform any integration — it authorizes a future, separate integration task. It is separate from, additive to, and does not modify scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds above, both of which remain exactly the original four pilot topics.",
+    "selectedIntegrationSourceModel": {
+      "model": "directImportFromApprovedSourcePaths",
+      "rationale": "Mirrors the exact pattern already proven by src/content/rawImports.ts for the four pilot topics: live ES-module imports of the canonical files themselves (via Vite/Rollup's module graph), never a copied or duplicated source of truth. vite.config.ts's existing server.fs.allow already resolves to the parent docs/content-design/chapter-01/ directory (not narrowly to pilot/), so it already covers batch1-drafts/, batch1-arabic-drafts/, and batch1-visuals/ without requiring any config change. Because Batch 1's approved baseline is split across two separate immutable files per topic (English-only and a separately-approved Arabic candidate copy), unlike the four pilot topics' single already-merged file each, the future integration task must add a read-only, in-memory merge step (in the content-loading layer, never writing a merged file to disk) that combines each approved English record with its corresponding approved Arabic record's arabic.canonicalArabicTranslation text, producing the same single-file-shaped structure the existing adapter already expects — without duplicating, copying, or creating any new editable source file.",
+      "rejectedAlternatives": [
+        "App-local immutable integration copies — rejected: would create a second, physically separate copy of already-approved content, reintroducing exactly the duplicate-source-of-truth risk this project's governance has consistently avoided at every prior stage (English/Arabic baseline separation, visual asset immutability).",
+        "A generated manifest/adapter layer that pre-serializes a merged file to disk — rejected for the same reason: any generated artifact becomes a second source that could drift from the approved originals without being caught."
+      ]
+    },
+    "authorizedSourcePaths": {
+      "english": [
+        "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json"
+      ],
+      "arabic": [
+        "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
+        "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json"
+      ],
+      "visuals": [
+        "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg",
+        "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg"
+      ],
+      "visualValidationRecords": [
+        "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json",
+        "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001-validation.json"
+      ]
+    },
+    "integrityRequirements": [
+      "Approved baseline files remain immutable — the integration task must never edit any of the six authorized source paths above.",
+      "No duplicate editable source of truth — no app-local copy, no generated merged file written to disk; any merge must occur in memory at load time.",
+      "Imported content must remain checksum-verifiable — the integration task must add a load-time or test-time checksum check comparing each imported file's bytes against its approval-record checksum, failing loudly (an AdapterDiagnostic error, matching the existing diagnostics pattern in src/content/validate.ts) rather than silently, if any approved file has drifted.",
+      "No silent fallback to unapproved content on a missing or invalid file — matching the existing validate.ts convention of diagnostics-over-silent-omission.",
+      "No runtime machine translation of any kind.",
+      "No remote content fetching — all sources remain local repository files."
+    ],
+    "allowedActions": [
+      "Add ch01-t01 and ch01-t04 to the application's topic registry (src/types/pilotSchema.ts's topic-ID union and topic-order constant, and src/config/topics.ts's re-export), in correct chapter-wide numerical order alongside the existing four pilot topics",
+      "Add internal routes and navigation entries for both topics, using the existing generic dynamic route (chapter/1/topic/:topicId) — no new route pattern is required",
+      "Load the approved English and Arabic topic records via direct import from the six authorized source paths above, merging English and Arabic content in memory at load time as described in selectedIntegrationSourceModel",
+      "Load the approved SVG assets via direct import from the two authorized visual paths above",
+      "Render all authorized record types (instructorScript, contentBlock — mainIdea, organizedExplanation, equationSet, visualReference, misconception, reviewQuestion — and problem) through the existing adapter, extending it only as narrowly as required (see requiredAdapterChanges below)",
+      "Render instructor-only records (visibility: instructor) only in the existing instructor-review panel, never in the learner-facing flow",
+      "Render reviewQuestion content using the existing application-facing label \"Review Card\" / \"بطاقة مراجعة\" — the canonical schema blockType reviewQuestion itself must not be renamed in code or registry",
+      "Render ch01-prob-104 and its numbered solution through the existing ProblemCard/SolutionReveal components; render ch01-t01 (which has no problem record) without an empty problem section, exactly as the existing adapter's optional problem field already supports",
+      "Support English/Arabic switching for both topics via the existing LanguageContext/LanguageToggle",
+      "Preserve RTL/LTR switching and equation isolation for both topics' content",
+      "Provide enlarge, zoom, and pan access for both visuals via the existing VisualViewer dialog component",
+      "Add or update application tests covering both topics (see testingAuthorization below)",
+      "Make narrowly required Vite/TypeScript configuration changes strictly limited to what §selectedIntegrationSourceModel and requiredAdapterChanges identify as necessary — no unrelated configuration change",
+      "Run TypeScript checks, unit/integration tests, a production build, and internal browser-based QA as part of the integration task itself"
+    ],
+    "requiredAdapterChanges": [
+      "Extend the PilotTopicId union type (src/types/pilotSchema.ts) from the current four literals (\"ch01-t02\"|\"ch01-t03\"|\"ch01-t08\"|\"ch01-t10\") to include \"ch01-t01\" and \"ch01-t04\".",
+      "Extend or add a chapter-wide topic-order constant reflecting the correct numerical sequence — ch01-t01, ch01-t02, ch01-t03, ch01-t04, ch01-t08, ch01-t10 — while preserving PILOT_TOPIC_ORDER's existing four-topic meaning for any logic that is specifically pilot-scoped (e.g. the four-topic exact-count assertion in validateTopicSet), since PILOT_TOPIC_ORDER mirrors the chapter-wide-distinct four-topic pilot authorization, not Batch 1's separate authorization.",
+      "Update src/content/rawImports.ts with new import statements for the two approved English files, the two approved Arabic files, the two approved SVGs, and the two approved visual-validation JSON files, following the exact existing import pattern — plus the new in-memory English/Arabic merge step required by selectedIntegrationSourceModel, since Batch 1's baseline (unlike the four pilot topics) is split across two separate approved files per topic.",
+      "Update src/content/validate.ts's validateTopicSet topic-count/order assertions to reflect the new six-topic chapter-wide set, without weakening its existing per-record duplicate-ID, schema-version, or governance-field checks.",
+      "Update ChapterOnePage.tsx's hardcoded introductory text (currently states 'Four pilot topics are available...') to accurately describe six topics, without altering its governance meaning.",
+      "No change is required to ContentBlockType, VisibilityState, BlockingState, or any other structural type — Batch 1 uses only blockTypes already present in KNOWN_BLOCK_TYPES (mainIdea, organizedExplanation, equationSet, visualReference, misconception, reviewQuestion; Batch 1 has no 'example' block, which the adapter already treats as optional).",
+      "No change is required to VisualValidationRecord's type shape — both Batch 1 visual-validation JSON files were independently confirmed to already contain every field that type requires.",
+      "These are the only adapter/configuration changes identified as required by this authorization's own architecture review; the integration task itself must independently re-verify this list before implementation and document any further narrowly-scoped change it discovers as necessary, following this same additive, non-silent pattern."
+    ],
+    "prohibitedActions": [
+      "Any modification of the approved English or Arabic Batch 1 baseline files, the approved SVGs, or either visual-validation record",
+      "Any modification of ENGLISH_BATCH1_BASELINE_APPROVAL.json, ARABIC_BATCH1_BASELINE_APPROVAL.json, VISUAL_BATCH1_APPROVAL.json, or IDENTIFIER_REGISTRY.json",
+      "Creating any app-local copy of approved content or visual assets, or any generated file that duplicates or could drift from an approved source",
+      "Student-facing release, public deployment, or publication of any kind",
+      "Claiming or recording independent human visual, scientific, or expert review as having occurred",
+      "Setting studentFacingAllowed or studentPublicationAuthorized to true anywhere, for any Batch 1 record",
+      "Adding the brick-red force color globally to VISUAL_HOUSE_STYLE.md or to any other topic's visual — it remains approved only within the two approved Batch 1 SVGs",
+      "Unrelated application redesign, refactor, or dependency changes beyond what requiredAdapterChanges identifies",
+      "New topic content, new Arabic translation, or new visual production of any kind",
+      "Runtime machine translation",
+      "Remote content fetching",
+      "Git staging, commit, or push"
+    ],
+    "testingAuthorization": {
+      "authorizedTestScope": [
+        "topic registry (PilotTopicId union / topic-order constant)",
+        "routes and navigation for the two new topics",
+        "topic ordering across all six topics",
+        "approved-file loading (English, Arabic, visuals)",
+        "checksum or manifest validation where implemented",
+        "schema validation for both topics' records",
+        "record rendering for every Batch 1 record type",
+        "missing-problem behavior for ch01-t01",
+        "problem and solution behavior for ch01-t04 (ch01-prob-104)",
+        "English/Arabic switching for both topics",
+        "RTL/LTR correctness for both topics",
+        "Review Card rendering (reviewQuestion)",
+        "instructor-only visibility boundaries for both topics",
+        "SVG resolution for both visuals",
+        "enlarge/zoom/pan interaction for both visuals",
+        "regression protection for the four existing pilot topics"
+      ],
+      "authorizedCommands": ["TypeScript typecheck", "unit/integration tests (vitest)", "production build", "local internal browser-based QA"],
+      "notAuthorized": ["deployment of any kind"]
+    },
+    "visualDeliveryRequirements": [
+      "Resolve each visualReference to its approved SVG via the authorized source paths.",
+      "Provide enlarge/zoom/pan access via the existing VisualViewer dialog.",
+      "Preserve each SVG's accessibility title and description exactly as approved.",
+      "Avoid clipping at mobile/tablet sizes.",
+      "Test cross-browser rendering as part of integration QA (previously performed only in a single Chromium-based preview browser).",
+      "Preserve mixed Arabic/Latin text exactly as approved.",
+      "Not alter SVG content in any way.",
+      "Verify both SVG checksums during integration QA.",
+      "The brick-red force color (#b91c1c) is approved only within the two approved Batch 1 SVGs and must not be added globally to VISUAL_HOUSE_STYLE.md or to any other visual during integration."
+    ],
+    "applicationBehaviorPreservationRequirements": [
+      "PHSH111 app identity (package.json name/description) unchanged.",
+      "Internal pilot / Draft-Review-Required banner remains visible on every route, both languages, for all six topics.",
+      "English/Arabic toggle and correct RTL/LTR switching preserved.",
+      "The existing four pilot topics' identities, content, and behavior remain unchanged — regression-tested, not just assumed.",
+      "Current accessibility behavior (role/title/desc, focus management) preserved.",
+      "Current dialog focus-trap/inertness/Escape-to-close/scroll-lock behavior preserved for the visual-enlarge dialog.",
+      "Current visual enlarge/pan behavior preserved.",
+      "Current Review Card label preserved (application-facing UI label only; canonical blockType remains reviewQuestion).",
+      "Instructor-only visibility boundaries preserved for both new topics and the existing four.",
+      "Blocked/non-student-facing state preserved for all six topics — the two new topics must not appear as publicly released content."
+    ],
+    "topicOrderingRequirement": "The correct chapter-wide numerical sequence, derived from each topic's own numeric suffix, is: ch01-t01, ch01-t02, ch01-t03, ch01-t04, ch01-t08, ch01-t10. The future integration task must place ch01-t01 and ch01-t04 in this exact sequence without changing the established identities, order, or content of the existing four pilot topics, and without inventing any placeholder route for a topic not yet authorized (ch01-t05 through ch01-t07, ch01-t09, ch01-t11 through ch01-t14 remain entirely out of scope and must not appear anywhere in the application).",
+    "requiredGovernanceState": {
+      "rule": "Both ch01-t01 and ch01-t04, and every one of their records and visuals, must remain in the following state at all times under this authorization and throughout integration:",
+      "studentFacingAllowed": false,
+      "studentPublicationAuthorized": false,
+      "independentHumanReviewComplete": false,
+      "applicationApprovalCharacterization": "Application-integration approval must never be represented as scientific, visual, Arabic, or publication approval — those remain separate, already-recorded governance facts (ENGLISH_BATCH1_BASELINE_APPROVAL.json, ARABIC_BATCH1_BASELINE_APPROVAL.json, VISUAL_BATCH1_APPROVAL.json), none of which this authorization changes."
+    },
+    "publicationRestrictions": [
+      "studentFacingAllowed and studentPublicationAuthorized remain false for ch01-t01 and ch01-t04, chapter-wide and per-record, exactly as for all fourteen Chapter 1 topics.",
+      "This authorization does not move ch01-t01 or ch01-t04 into applicationBuildAuthorization.applicableTopicIds above, which remains exactly the original four pilot topics — a separate section was used instead, exactly as batch1DraftingAuthorization, batch1ArabicGenerationAuthorization, and batch1VisualProductionAuthorization each were.",
+      "Public deployment, student release, and publication all remain unauthorized by this record and require their own separate, future, explicit project-owner decisions."
+    ],
+    "relationToOriginalAuthorization": "This is an additive amendment, parallel in kind to how v1.4.0 added batch1VisualProductionAuthorization on top of v1.3.2's batch1ArabicGenerationAuthorization. It does not retract, reinterpret, or expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds above, both of which remain exactly the original four pilot topics (ch01-t02/ch01-t03/ch01-t08/ch01-t10). Application integration authorized here is entirely separate from, and does not by itself authorize, student-facing release, public deployment, publication, or independent human review for ch01-t01 or ch01-t04."
+  },
+  "authorizationHistory": [
+    {
+      "version": "1.0.0",
+      "action": "granted",
+      "date": "2026-07-15",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Original grant: draft-form canonical content generation only, for ch01-t02/ch01-t03/ch01-t08/ch01-t10. Explicitly did not authorize application build, packaging, or deployment.",
+      "doesNotAuthorizeAtThisVersion": [
+        "Student-facing publication or display of any generated content (studentFacingAllowed and studentPublicationAuthorized remain false everywhere)",
+        "Canonical generation for any topic outside the four listed",
+        "Application build, packaging, or deployment",
+        "Any modification to docs/content-audits/",
+        "Automatic approval of the generated draft content itself — every generated record is marked draft/review-required and remains blocked pending human scientific and editorial review"
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "action": "amended",
+      "date": "2026-07-16",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Controlled amendment adding a scoped authorization to build a local, internal-only Chapter 1 MVP application (apps/chapter1-mvp/) for the same four topics. Content-generation scope is unchanged, no topic was added, and every publication restriction from v1.0.0 remains in force. See applicationBuildAuthorization above and docs/app/MVP_IMPLEMENTATION_DECISIONS.json for the binding implementation decisions made on this basis.",
+      "reviewBasis": "docs/app/MVP_PRODUCT_SPEC.md, formalized in docs/app/MVP_IMPLEMENTATION_DECISIONS.json"
+    },
+    {
+      "version": "1.2.0",
+      "action": "amended",
+      "date": "2026-07-16",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Controlled amendment adding a narrowly scoped English-language canonical DRAFTING authorization (not baseline approval, not application build, not publication) for exactly two additional topics: ch01-t01 and ch01-t04 (Batch 1), following completion of their scientific-reconciliation prerequisite (ch01-corr-001 editoriallyApproved; ch01-corr-002 editoriallyApproved with a recorded qualification on 'apparent weight' terminology). The original four-topic scope.authorizedTopicIds and the v1.1.0 applicationBuildAuthorization.applicableTopicIds are both unchanged. Arabic content, visual production, application expansion, English baseline approval, and student-facing publication all remain unauthorized for ch01-t01 and ch01-t04. See batch1DraftingAuthorization above and docs/app/PHSH111_BATCH1_DRAFTING_AUTHORIZATION_RECORD.md for full detail.",
+      "reviewBasis": "docs/app/PHSH111_BATCH1_CORRECTION_APPROVAL_RECORD.md, formalized in docs/app/PHSH111_BATCH1_DRAFTING_AUTHORIZATION_RECORD.md"
+    },
+    {
+      "version": "1.3.0",
+      "action": "amended",
+      "date": "2026-07-17",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Controlled amendment adding a narrowly scoped Arabic-language canonical GENERATION authorization (not Arabic baseline approval, not visual production, not application expansion, not publication) for the same two Batch 1 topics: ch01-t01 and ch01-t04, following completion of the approved English baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0) and of all nine Batch 1 glossary actions (BILINGUAL_GLOSSARY.json v1.3.0). scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, and batch1DraftingAuthorization.applicableTopicIds are all unchanged. Arabic baseline approval, visual production, application expansion, and student-facing publication all remain unauthorized for ch01-t01 and ch01-t04. See batch1ArabicGenerationAuthorization above and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md for full detail.",
+      "reviewBasis": "docs/app/PHSH111_BATCH1_GLOSSARY_APPROVAL_RECORD.md, formalized in docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md"
+    },
+    {
+      "version": "1.3.1",
+      "action": "corrected",
+      "date": "2026-07-17",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Governance-repair correction to the 1.3.0 batch1ArabicGenerationAuthorization section, applied before any Arabic content was generated under it. Three defects were corrected: (1) the packaging model changed from in-place editing of the approved English baseline files to a separate, immutable-original/candidate-copy model — the only authorized Arabic candidate output paths are now docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json and ch01-t04-content.json, and docs/content-design/chapter-01/batch1-drafts/ is now explicitly listed as prohibited to modify; (2) 'Arabic canonical generation' terminology was replaced throughout with 'Arabic candidate-draft generation,' and the record now states explicitly that Arabic candidate generation is authorized while Arabic canonical or baseline approval is not; (3) the absolute prohibition on any terminology outside the nine Batch 1 glossary records was replaced with a rule making those nine mandatory where applicable while permitting other already-approved glossary terms, ordinary unregistered Arabic language, and unregistered explanatory phrases that do not function as new canonical scientific terms. This is a corrective patch, not a new grant of scope — applicableTopicIds remains exactly ch01-t01/ch01-t04, and every restriction already in force (no Arabic baseline approval, no visual production, no application expansion, no publication) remains in force. The superseded 1.3.0 defects are preserved as historical record in the 1.3.0 entry above, in docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md's own dated correction section, and in the dedicated docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md.",
+      "reviewBasis": "Governance-repair task, formalized in docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md's added correction section"
+    },
+    {
+      "version": "1.3.2",
+      "action": "ratified",
+      "date": "2026-07-17",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Explicit project-owner ratification of the corrected 1.3.1 batch1ArabicGenerationAuthorization scope. Governance history recorded transparently: 1.3.0 was created before the project owner had issued the intended explicit authorization decision; 1.3.1 technically corrected 1.3.0's packaging-model, terminology, and glossary-enforcement defects but was a correction task, not the explicit project-owner ratification itself; this 1.3.2 entry supplies that explicit project-owner ratification for the already-corrected scope. It changes no technical scope, output path, restriction, or dependency established at 1.3.1: applicableTopicIds remains exactly ch01-t01/ch01-t04; the authorized Arabic candidate output paths remain docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json and ch01-t04-content.json; the approved English baseline files at docs/content-design/chapter-01/batch1-drafts/ remain immutable; Arabic baseline approval, canonical promotion, visual production, application integration, deployment, and student-facing publication all remain unauthorized; and no independent human scientific review is claimed. No Arabic content was generated, and no docs/content-design/chapter-01/batch1-arabic-drafts/ directory existed, before this ratification. English baseline checksums (ch01-t01 a445f55d...; ch01-t04 c876a6fe...) and glossary version (1.3.0) re-verified unchanged at ratification. See batch1ArabicGenerationAuthorization.projectOwnerRatification above and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md for full detail.",
+      "reviewBasis": "Explicit project-owner decision, formalized in docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md"
+    },
+    {
+      "version": "1.4.0",
+      "action": "amended",
+      "date": "2026-07-17",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Controlled amendment adding a narrowly scoped, original, rights-safe VISUAL PRODUCTION authorization (not application integration, not student-facing authorization, not deployment or publication) for exactly two visual IDs: ch01-t01-visual-001 and ch01-t04-visual-001, following completion of the approved English Batch 1 baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0) and the approved Arabic Batch 1 baseline (ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0). scope.authorizedTopicIds and applicationBuildAuthorization.applicableTopicIds are both unchanged. Application integration, independent human visual/scientific review, and student-facing publication all remain unauthorized/incomplete for ch01-t01 and ch01-t04. Both visuals must remain draft, blocked, studentFacingAllowed: false, reviewer: null, reviewedAt: null at all times under this authorization. See batch1VisualProductionAuthorization above and docs/app/PHSH111_BATCH1_VISUAL_PRODUCTION_AUTHORIZATION_RECORD.md for full detail.",
+      "reviewBasis": "Explicit project-owner decision, formalized in docs/app/PHSH111_BATCH1_VISUAL_PRODUCTION_AUTHORIZATION_RECORD.md"
+    },
+    {
+      "version": "1.5.0",
+      "action": "amended",
+      "date": "2026-07-17",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Controlled amendment adding a narrowly scoped INTERNAL APPLICATION INTEGRATION authorization (not student-facing release, not public deployment, not publication) for the same two Batch 1 topics — ch01-t01 and ch01-t04 — following completion of the approved English Batch 1 baseline (v1.0.0), the approved Arabic Batch 1 baseline (v1.0.0), the approved Visual Batch 1 baseline (v1.0.0), and registration of all 18 required Batch 1 identifiers (IDENTIFIER_REGISTRY.json v1.3.0). scope.authorizedTopicIds and applicationBuildAuthorization.applicableTopicIds are both unchanged. The selected integration-source model is direct import from the six approved source paths (English, Arabic, visuals), with an in-memory English/Arabic merge step, mirroring the existing rawImports.ts pattern with no duplicate editable source of truth. This version authorizes a future integration task; it does not itself integrate either topic, modify any application file, or run any build/test/install/deploy command. Independent human review, student-facing release, deployment, and publication all remain unauthorized/incomplete for ch01-t01 and ch01-t04. See batch1ApplicationIntegrationAuthorization above and docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md for full detail.",
+      "reviewBasis": "Explicit project-owner decision, formalized in docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md"
+    }
+  ],
+  "relatedRecords": {
+    "pilotRightsPolicy": "PILOT_RIGHTS_POLICY.json",
+    "pilotReadiness": "PILOT_READINESS.json",
+    "scientificCorrections": ["ch01-corr-006", "ch01-corr-007", "ch01-corr-008"],
+    "approvedGlossaryTerms": ["ch01-term-period", "ch01-term-frequency"],
+    "mvpProductSpec": "docs/app/MVP_PRODUCT_SPEC.md",
+    "mvpImplementationDecisions": "docs/app/MVP_IMPLEMENTATION_DECISIONS.json",
+    "batch1GlossaryApprovalRecord": "docs/app/PHSH111_BATCH1_GLOSSARY_APPROVAL_RECORD.md",
+    "batch1ArabicGenerationAuthorizationRecord": "docs/app/PHSH111_BATCH1_ARABIC_GENERATION_AUTHORIZATION_RECORD.md",
+    "batch1ArabicAuthorizationCorrectionRecord": "docs/app/PHSH111_BATCH1_ARABIC_AUTHORIZATION_CORRECTION_RECORD.md",
+    "batch1ArabicGenerationRatificationRecord": "docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md",
+    "arabicBatch1BaselineApproval": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+    "batch1VisualProductionAuthorizationRecord": "docs/app/PHSH111_BATCH1_VISUAL_PRODUCTION_AUTHORIZATION_RECORD.md",
+    "visualBatch1Approval": "VISUAL_BATCH1_APPROVAL.json",
+    "batch1IdentifierRegistrationRecord": "docs/app/PHSH111_BATCH1_IDENTIFIER_REGISTRATION_RECORD.md",
+    "batch1ApplicationIntegrationAuthorizationRecord": "docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md"
+  }
+}

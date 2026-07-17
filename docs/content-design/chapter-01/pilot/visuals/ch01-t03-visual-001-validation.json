@@ -1,0 +1,125 @@
+{
+  "visualResolutionId": "ch01-t03-visual-validation-001",
+  "visualId": "ch01-t03-visual-001",
+  "topicIds": ["ch01-t03"],
+  "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t03-visual-001.svg",
+  "assetFormat": "svg",
+  "assetStatus": "draft",
+  "reviewRequired": true,
+  "createdAt": "2026-07-15",
+  "createdBasis": "Drawn from scratch by Claude directly from the approved visualReference specification in ch01-t03-block-visual (English and Arabic, baselineVersion 1.0.0 of both the English and Arabic pilot baselines) plus this task's added requirement to depict the f = 1/T and T = 1/f reciprocal relationship already present in ch01-t03-block-equations. No source image, slide, or publisher figure was viewed, traced, or referenced during creation.",
+  "sourceIndependenceStatement": "Fully original schematic composition. Uses only the generic, non-copyrightable convention of a point moving around a circle with a time axis beneath it, a standard physics-pedagogy device not tied to any specific textbook or slide illustration. Consistent with PILOT_RIGHTS_POLICY.json's requirement that all pilot visuals be newly authored, not recovered or adapted from SRC-CH01-CONV-001, SRC-CH01-PDF-003, or any other cataloged source.",
+  "validation": {
+    "scientificAccuracy": {
+      "status": "pass",
+      "findings": [
+        "The marked point is drawn at the same position (top of the circle) at t=0 and t=T, with matching tangential direction-of-motion arrows (both pointing right), correctly and visually illustrating the corrected definition from ch01-corr-006: one complete cycle requires returning to both the same position and the same direction of motion, not merely a one-way pass.",
+        "At t=T/2 the point is diametrically opposite (bottom of the circle) with its direction-of-motion arrow pointing left — physically consistent with continuous motion in one constant rotational sense (clockwise) around the full circle, not an arbitrary or inconsistent placement.",
+        "The equation panel (f = 1/T, T = 1/f) matches ch01-t03-block-equations' English and Arabic text verbatim; no new numerical claim, value, or relationship is introduced beyond what is already scientifically approved for this topic.",
+        "The diagram is deliberately process-agnostic (a generic circle and point, not a specific pendulum or heartbeat), matching the original approved visual specification, which is itself generic; it illustrates the abstract cycle-definition, not a specific worked numeric example, so no process-naming requirement from ch01-corr-006 is being bypassed."
+      ]
+    },
+    "labelConsistency": {
+      "status": "pass",
+      "findings": [
+        "Panel labels (t = 0, t = T/2, t = T) and timeline tick labels (0, T/2, T) use identical symbols to each other and to ch01-t03-block-equations' T and f notation.",
+        "No symbol was translated, transliterated, or altered from the approved English/Arabic text content.",
+        "The reciprocal-relationship equation text (f = 1/T     T = 1/f) is a verbatim visual rendering of the approved equation block's content."
+      ]
+    },
+    "bilingualRendering": {
+      "status": "pass",
+      "findings": [
+        "Every Arabic text element carries an explicit direction=\"rtl\" attribute; every Latin/formula/symbol text element carries an explicit direction=\"ltr\" attribute.",
+        "English and Arabic lines are rendered as separate, monolingual <text> elements throughout (title, reciprocal note, caption) rather than mixed within a single text run, which avoids the bidi-mirroring risk previously flagged for inline equations embedded inside RTL prose sentences in the JSON translation layer — this diagram carries lower bidi risk than that pattern by construction.",
+        "Arabic text elements specify a font stack including an Arabic-capable fallback ('Noto Sans Arabic') alongside the Latin-oriented stack used for English/formula text."
+      ]
+    },
+    "rightsPolicyCompliance": {
+      "status": "pass",
+      "findings": [
+        "No publisher slide, textbook figure, or any cataloged source visual (S3-P011, or any Source 002/003/Kahoot asset) was traced, cropped, referenced, or used as a basis for this artwork.",
+        "All caption and label text is either newly authored for this diagram or copied verbatim from already rights-cleared, newly authored pilot content blocks (ch01-t03-block-visual, ch01-t03-block-equations) — no publisher wording is present.",
+        "Consistent with VISUAL_RESOLUTION_PLAN.json's ch01-vis-004 pilot policy note, which already designated the ch01-t03 placeholder visuals as 'to be replaced by original, scientifically reviewed diagrams rather than recovered.'"
+      ]
+    },
+    "accessibilityAndReadability": {
+      "status": "passWithHumanVerificationRecommended",
+      "findings": [
+        "role=\"img\" with a <title> and <desc> element is present, giving screen readers a full textual summary of the diagram's content and meaning.",
+        "Direction of motion is conveyed by arrow shape/orientation, not by color alone, so the diagram does not rely on color perception to convey its core physics content.",
+        "Text/background color pairs (near-black slate #0f172a and slate-700 #334155 on white; amber-700 #b45309 on light amber #fff7ed for the draft footer) are visually high-contrast by inspection and are expected to meet WCAG AA for normal text, but no automated contrast-ratio measurement tool was available in this environment to certify exact ratios — recommend a human reviewer run a standard contrast checker before this asset is used beyond internal/instructor contexts.",
+        "Text sizes range from 13px (footer disclaimer) to 26px (equation); legibility is adequate at the diagram's native 900x680 rendering but the smallest text may be hard to read if the asset is scaled down below roughly 600px wide — recommend against shrinking the footer/caption text further.",
+        "Native rendering of the Arabic RTL text across different browsers, PDF exporters, and presentation software was not visually verified pixel-by-pixel in this environment; recommend a human reviewer open the SVG in the actual target rendering pipeline (e.g., the slide/handout tool this pilot will ultimately use) to confirm Arabic glyph shaping and RTL line direction render as intended."
+      ]
+    }
+  },
+  "requirementsChecklist": {
+    "fullyOriginalArtwork": true,
+    "noTracingOrPublisherReuse": true,
+    "showsOnePeriodicCycle": true,
+    "showsPositionsAt0THalfAndT": true,
+    "showsSamePositionAndDirectionAfterOneCycle": true,
+    "showsReciprocalRelationship": true,
+    "preservesLatinSymbolsAndSIUnits": true,
+    "providesBilingualNaturalLanguageLabels": true,
+    "formulaOnlyLabelsAreLTR": true,
+    "arabicAnnotationsAreRTL": true,
+    "cleanInstructionalHealthScienceStyle": true,
+    "vectorFirstEditableAsset": true,
+    "markedDraftAndReviewRequired": true
+  },
+  "revisionHistory": [
+    {
+      "revisionId": "ch01-t03-visual-001-rev-001",
+      "appliedAt": "2026-07-15",
+      "appliedBasis": "Applies the five minor revisions accepted from the prior read-only human-review-preparation pass on this asset (approve-with-minor-revision decision). No new scientific claim was introduced; all changes are labeling, annotation, and styling only.",
+      "revisionsApplied": [
+        "Added a bilingual inline label ('Direction of motion' / 'اتجاه الحركة') with a thin connector line pointing at the first direction-of-motion arrow (t = 0 panel), each language in its own text element with an explicit direction=\"ltr\"/\"rtl\" attribute.",
+        "Added a visual cue that t = 0 and t = T match: both panels' circles now share a light-green fill tint (distinct from t = T/2's neutral tint) and each carries a matching green confirmed-match checkmark badge near its panel label. No new position, direction, or numeric claim was added — this only annotates the already-drawn matching position and direction.",
+        "Italicized the variable symbols t, T, and f everywhere they appear (panel labels, timeline tick labels, timeline axis label, equation panel) using per-character <tspan font-style=\"italic\"> runs, while numeric values (0, 1, 2) and operators (=, /) remain upright.",
+        "Strengthened the reciprocal-equation panel's visual weight with a soft offset shadow rectangle and a heavier border (stroke-width 2 to 3), without enlarging the box or changing its text size, so it reads with slightly more presence but still subordinate to the three motion-diagram circles.",
+        "Draft footer band and all accessibility metadata (role=\"img\", <title>, <desc>) were left byte-for-byte unchanged, per instruction."
+      ],
+      "scientificRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-verified post-revision: the t = 0 and t = T panels remain physically identical (same top position, same rightward tangential arrow), and t = T/2 remains physically consistent with continuous clockwise motion (bottom position, leftward tangential arrow). The new checkmark badges and shared fill tint sit only on the two panels that were already scientifically matching before this revision — no panel's underlying position or arrow direction was altered.",
+          "The equation panel's content (f = 1/T, T = 1/f) is unchanged text, now only styled with italic variable symbols, which is a typographic convention correction (standard physics notation italicizes scalar variables) and introduces no new claim.",
+          "No numeric value, sign, or symbol anywhere in the asset was changed by this revision."
+        ]
+      },
+      "bilingualLabelCheck": {
+        "status": "pass",
+        "findings": [
+          "The new 'Direction of motion' / 'اتجاه الحركة' label follows the asset's established bilingual pattern exactly: English text element with direction=\"ltr\", Arabic text element with direction=\"rtl\", stacked as two separate monolingual text runs (never mixed in one run), same font-stack convention as the rest of the diagram (Arabic-capable fallback included for the Arabic line).",
+          "Rendered and visually inspected in-browser: Arabic glyphs in the new label join correctly (cursive connected forms, not isolated letterforms) and read right-to-left, consistent with the rest of the asset's already-verified Arabic rendering.",
+          "The new label does not duplicate or contradict any existing caption text; it names the arrow that the existing bilingual caption already describes in prose, and does not introduce new terminology outside the approved glossary (السرعة المتجهة/direction vocabulary is not implicated here since this label refers to generic 'motion,' not the velocity-vs-speed distinction governed by ch01-term-velocity)."
+        ]
+      },
+      "accessibilityCheck": {
+        "status": "passWithHumanVerificationStillRecommended",
+        "findings": [
+          "role=\"img\" plus <title>/<desc> were preserved unchanged; the new checkmark badges and direction label are visual annotations only and do not remove or contradict anything the existing <desc> already tells screen-reader users (the <desc> already states that t = 0 and t = T share position and direction).",
+          "The confirmed-match cue does not rely on color alone: it combines a shared fill-tint color AND a checkmark icon shape AND its consistent placement at exactly the two matching panels — a colorblind viewer relying only on the checkmark's shape and position (not its green hue) can still identify the pairing.",
+          "New text sizes (13px for the direction-of-motion label, matching the existing smallest body text) stay within the size range already assessed in the original validation pass; no new smaller text was introduced.",
+          "Not yet certified by this pass either: exact WCAG contrast-ratio measurement for the new green checkmark badges (#15803d fill, white glyph) against the white background, and cross-renderer confirmation that the new label's connector line and italic tspans render identically outside this one browser environment — still recommended as first checks for the human reviewer."
+        ]
+      },
+      "mobileReadabilityRisk": {
+        "status": "unresolvedRequiresDownstreamHandling",
+        "findings": [
+          "This revision did not reduce the mobile/small-screen risk already flagged in the original validation pass, and arguably adds slightly to it: the new direction-of-motion label (13px, two lines) and checkmark badges (11px radius) are additional small elements clustered in the upper third of the canvas, which will compress further if the whole 900x680 asset is scaled down into a narrow phone viewport without zoom.",
+          "This is not something fixable within the SVG's fixed-canvas design alone — recommend the downstream rendering/delivery layer provide responsive handling (pinch-zoom/pan enabled, a minimum-width floor before scaling, or a simplified mobile-specific variant) rather than attempting to shrink this asset's text further, which would harm legibility across the board.",
+          "This remains an explicit open item for whoever builds the student-facing (or instructor-facing) display pipeline, not something this Claude-driven revision pass can resolve by editing the SVG alone."
+        ]
+      }
+    }
+  ],
+  "readyForHumanReview": true,
+  "readyForHumanReviewNote": "Revision 1 (ch01-t03-visual-001-rev-001) applied all five accepted minor revisions from the prior review pass. All required visual elements, bilingual direction handling, and rights-independence criteria remain satisfied on inspection, and the new match-indicator, direction label, italics, and equation-panel weight changes were re-verified against the English/Arabic baselines with no new scientific claim introduced. Not yet certified: exact WCAG contrast-ratio measurement (now including the new green checkmark badges), cross-renderer Arabic RTL verification, and mobile/small-screen responsive handling (see mobileReadabilityRisk above, which downstream tooling — not this asset — must resolve). These remain recommended first checks for the human reviewer, not blockers to starting that review. This asset has not been marked as finally approved or resolved; it remains draft and review-required.",
+  "studentFacingAllowed": false,
+  "studentPublicationAuthorized": false,
+  "reviewer": null,
+  "reviewedAt": null
+}

@@ -1,0 +1,574 @@
+{
+  "registryVersion": "1.3.0",
+  "chapterId": "ch01",
+  "status": "designValidated",
+  "purpose": "Validate identifiers before canonical records are linked. This registry does not rename source-level IDs.",
+  "sourceIds": [
+    {"id": "SRC-CH01-CONV-001", "title": "Chapter 1 teaching-style conversation", "status": "audited"},
+    {"id": "SRC-CH01-CONV-002", "title": "Chapter 1 Outline conversation", "status": "partial-audited"},
+    {"id": "SRC-CH01-PDF-003", "title": "Chapter 1 slides PDF", "status": "audited"},
+    {"id": "SRC-CH01-CONV-003", "title": "Ch1 Review Solved Step-by-Step", "status": "audited"},
+    {"id": "SRC-CH01-CONV-005", "title": "@ch1: problems", "status": "audited"},
+    {"id": "SRC-CH01-REVIEW-001", "title": "Ch1 Review card", "status": "audited"},
+    {"id": "SRC-CH01-KAHOOT-001", "title": "Pasted Kahoot-generation conversation", "status": "audited"}
+  ],
+  "topicIds": [
+    "ch01-t01",
+    "ch01-t02",
+    "ch01-t03",
+    "ch01-t04",
+    "ch01-t05",
+    "ch01-t06",
+    "ch01-t07",
+    "ch01-t08",
+    "ch01-t09",
+    "ch01-t10",
+    "ch01-t11",
+    "ch01-t12",
+    "ch01-t13",
+    "ch01-t14"
+  ],
+  "namespaces": [
+    {
+      "type": "source",
+      "patterns": ["^SRC-CH01-[A-Z0-9-]+$"],
+      "authorityFiles": ["docs/content-audits/chapter-01/SOURCE_REGISTRY.md"],
+      "examples": ["SRC-CH01-CONV-001", "SRC-CH01-PDF-003"]
+    },
+    {
+      "type": "segment",
+      "patterns": ["^SEG[0-9]{3}$", "^S2-SEG[0-9]{3}$", "^S3C-SEG[0-9]{3}$", "^S5-SEG[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/raw-sources/source-001-segments.json",
+        "docs/content-audits/chapter-01/sources/source-002/source-002-segments.json",
+        "docs/content-audits/chapter-01/raw-sources/source-conv-003-segments.json",
+        "docs/content-audits/chapter-01/raw-sources/source-conv-005-segments.json"
+      ],
+      "examples": ["SEG001", "S2-SEG092", "S3C-SEG004", "S5-SEG019"]
+    },
+    {
+      "type": "page",
+      "patterns": ["^S3-P[0-9]{3}$", "^R1-P[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/sources/source-003/page-inventory.json",
+        "docs/content-audits/chapter-01/sources/source-review-001/page-card-inventory.json"
+      ],
+      "examples": ["S3-P026", "R1-P001"]
+    },
+    {
+      "type": "card",
+      "patterns": ["^R1-CARD[0-9]{2}$"],
+      "authorityFiles": ["docs/content-audits/chapter-01/sources/source-review-001/page-card-inventory.json"],
+      "examples": ["R1-CARD01"]
+    },
+    {
+      "type": "problem",
+      "patterns": ["^S5-P[0-9]{3}$", "^ch01-prob-[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/sources/source-conv-005/problem-inventory.json",
+        "docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"
+      ],
+      "examples": ["S5-P012", "ch01-prob-001"]
+    },
+    {
+      "type": "instructorScript",
+      "patterns": ["^ch01-is-[0-9]{3}$"],
+      "authorityFiles": ["docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"],
+      "examples": ["ch01-is-101", "ch01-is-102"],
+      "addedInRegistryVersion": "1.3.0",
+      "note": "This namespace type did not previously exist in this registry, though the ch01-is-NNN ID pattern itself was already established and in use by CANONICAL_DESIGN_SCHEMA.json's own instructorScript record convention, across the four pilot topics (ch01-is-102/103/108/110) and Batch 1 (ch01-is-101/104). Added at registryVersion 1.3.0 to close this gap as part of Batch 1 identifier registration; does not retroactively register the four pilot topics' own instructorScript IDs."
+    },
+    {
+      "type": "contentBlock",
+      "patterns": ["^ch01-t[0-9]{2}-block-[a-z]+$"],
+      "authorityFiles": ["docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"],
+      "examples": ["ch01-t01-block-mainidea", "ch01-t04-block-equations"],
+      "addedInRegistryVersion": "1.3.0",
+      "note": "This namespace type did not previously exist in this registry, though the ch01-tNN-block-<type> ID pattern itself was already established and in use by CANONICAL_DESIGN_SCHEMA.json's own contentBlock record convention, across the four pilot topics and Batch 1. Added at registryVersion 1.3.0 to close this gap as part of Batch 1 identifier registration; does not retroactively register the four pilot topics' own contentBlock IDs."
+    },
+    {
+      "type": "occurrence",
+      "patterns": ["^S5-OCC[0-9]{3}$"],
+      "authorityFiles": ["docs/content-audits/chapter-01/sources/source-conv-005/problem-inventory.json"],
+      "examples": ["S5-OCC001"]
+    },
+    {
+      "type": "solution",
+      "patterns": ["^ch01-sol-[0-9]{3}$"],
+      "authorityFiles": ["docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"],
+      "examples": ["ch01-sol-001"],
+      "status": "reservedCanonicalNamespaceNoSourceLevelSolutionIdsCurrentlyPresent"
+    },
+    {
+      "type": "question",
+      "patterns": ["^R1-Q[0-9]{3}$", "^S3C-Q[0-9]{3}$", "^ch01-quiz-[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/sources/source-review-001/question-inventory.json",
+        "docs/content-audits/chapter-01/sources/source-conv-003/problem-solution-inventory.json"
+      ],
+      "examples": ["R1-Q001", "S3C-Q017"]
+    },
+    {
+      "type": "visual",
+      "patterns": ["^V[0-9]{2}$", "^R1-VIS-[0-9]{3}$", "^S5-VIS-MISSING-[0-9]{3}$", "^ch01-vis-[0-9]{3}$", "^ch01-t[0-9]{2}-visual-[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/visual-inventory.json",
+        "docs/content-audits/chapter-01/sources/source-review-001/visual-inventory.json",
+        "docs/content-audits/chapter-01/sources/source-conv-005/figure-and-graph-inventory.json",
+        "docs/content-design/chapter-01/VISUAL_RESOLUTION_PLAN.json"
+      ],
+      "examples": ["V01", "R1-VIS-001", "S5-VIS-MISSING-001", "ch01-vis-001", "ch01-t01-visual-001"],
+      "patternAddedInRegistryVersion": {
+        "^ch01-t[0-9]{2}-visual-[0-9]{3}$": "1.3.0"
+      },
+      "note": "^ch01-t[0-9]{2}-visual-[0-9]{3}$ was added at registryVersion 1.3.0 to cover the produced visual-asset ID convention already in use by the four pilot topics (ch01-t02-visual-001, ch01-t03-visual-001, ch01-t08-visual-001, ch01-t10-visual-001) and by Batch 1 (ch01-t01-visual-001, ch01-t04-visual-001), which had no matching pattern in this namespace before 1.3.0. This is distinct from ^ch01-vis-[0-9]{3}$, which names visualResolutionId (audit/planning-tracking) records in VISUAL_RESOLUTION_PLAN.json, not produced-asset IDs."
+    },
+    {
+      "type": "scientificAudit",
+      "patterns": ["^SCA[0-9]{2}$", "^S2-SCI-[0-9]{3}$", "^S3-SCI-[0-9]{3}$", "^S3C-SCI-[0-9]{3}$", "^S5-SCI-[0-9]{3}$", "^R1-SCI-[0-9]{3}$", "^K1-SCI-[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/scientific-audit.json",
+        "docs/content-audits/chapter-01/sources/source-002/scientific-audit.json",
+        "docs/content-audits/chapter-01/sources/source-003/scientific-audit.json",
+        "docs/content-audits/chapter-01/sources/source-conv-003/scientific-audit.json",
+        "docs/content-audits/chapter-01/sources/source-conv-005/scientific-audit.json",
+        "docs/content-audits/chapter-01/sources/source-review-001/scientific-audit.json",
+        "docs/content-audits/chapter-01/sources/source-kahoot-001/scientific-audit.json"
+      ],
+      "examples": ["SCA08", "S3C-SCI-003", "R1-SCI-006", "K1-SCI-009"]
+    },
+    {
+      "type": "conflict",
+      "patterns": ["^D[0-9]{2}$", "^C[0-9]{2}$", "^S2-DUP-[0-9]{3}$", "^S5-DUP-[0-9]{3}$", "^S5-CONF-[0-9]{3}$", "^CD-CONF-[0-9]{3}$"],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/duplicates-and-conflicts.json",
+        "docs/content-audits/chapter-01/sources/source-002/duplicate-observations.json",
+        "docs/content-audits/chapter-01/sources/source-conv-005/duplicates-and-conflicts.json",
+        "docs/content-design/chapter-01/DUPLICATE_AND_CONFLICT_DECISIONS.json"
+      ],
+      "examples": ["D01", "C01", "S5-DUP-001", "S5-CONF-001", "CD-CONF-001"],
+      "note": "D[0-9]{2} covers duplicateGroups (D01-D05); C[0-9]{2} covers the separate canonicalConflicts series (C01-C04) in the same source file. Both are audit-layer IDs from docs/content-audits/chapter-01/duplicates-and-conflicts.json and are distinguished by prefix letter only."
+    },
+    {
+      "type": "canonicalCorrection",
+      "patterns": ["^ch01-corr-[0-9]{3}$"],
+      "authorityFiles": ["docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json"],
+      "examples": ["ch01-corr-001"]
+    },
+    {
+      "type": "glossaryTerm",
+      "patterns": ["^ch01-term-[a-z0-9-]+$"],
+      "authorityFiles": ["docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json"],
+      "examples": ["ch01-term-velocity"]
+    }
+  ],
+  "validationRules": [
+    "An ID must match exactly one compatible namespace pattern.",
+    "A matching pattern is insufficient: the ID must also exist in the namespace authority file unless it is a new canonical design ID.",
+    "Locator type and locator namespace must agree.",
+    "Inferred cross-source links retain their original IDs and declare linkageType=inferred.",
+    "Unknown or ambiguous identifiers set blockingReason to conflictingSource or missingSource.",
+    "No source-level identifier is rewritten to fit a canonical namespace."
+  ],
+  "validationResult": {
+    "registryStructure": "valid",
+    "sourceIdCount": 6,
+    "topicIdCount": 14,
+    "unknownPrefixesAllowed": false,
+    "conflictNamespaceFix": {
+      "issue": "C01-C04 (canonicalConflicts in docs/content-audits/chapter-01/duplicates-and-conflicts.json) matched no registered conflict pattern prior to registryVersion 1.1.0.",
+      "resolution": "Added ^C[0-9]{2}$ as a distinct pattern in the conflict namespace.",
+      "collisionCheck": "Checked ^C[0-9]{2}$ against all other registered patterns in every namespace; no existing ID (SEG*, S2-SEG*, S3-P*, R1-P*, R1-CARD*, S5-P*, ch01-prob-*, S5-OCC*, ch01-sol-*, R1-Q*, S3C-Q*, ch01-quiz-*, V*, R1-VIS-*, S5-VIS-MISSING-*, ch01-vis-*, SCA*, S2-SCI-*, S3-SCI-*, S3C-SCI-*, S5-SCI-*, R1-SCI-*, D[0-9]{2}, S2-DUP-*, S5-DUP-*, S5-CONF-*, CD-CONF-*, ch01-corr-*, ch01-term-*) matches ^C[0-9]{2}$, and C01-C04 match no other pattern. Each real ID now matches exactly one namespace pattern."
+    },
+    "batch1NamespaceAdditions": {
+      "issue": "Prior to registryVersion 1.3.0, this registry had no namespace type for instructorScript or contentBlock record IDs at all (despite both being established, in-use CANONICAL_DESIGN_SCHEMA.json record types across the four pilot topics and Batch 1), and its \"visual\" namespace type had no pattern matching the produced visual-asset ID convention ch01-tNN-visual-NNN (as distinct from ch01-vis-NNN, which names a visualResolutionId planning/audit record, not a produced asset).",
+      "resolution": "Added two new namespace types (instructorScript: ^ch01-is-[0-9]{3}$; contentBlock: ^ch01-t[0-9]{2}-block-[a-z]+$) and one new pattern within the existing visual namespace type (^ch01-t[0-9]{2}-visual-[0-9]{3}$), each referencing CANONICAL_DESIGN_SCHEMA.json as authority file, mirroring the existing problem/solution namespace types' own use of that same authority file.",
+      "collisionCheck": "Checked all three new patterns against every ID actually present in the approved Batch 1 files (ch01-is-101, ch01-is-104, all twelve ch01-t01-block-*/ch01-t04-block-* blockIds, ch01-prob-104, SRC-CH01-BATCH1-ORIGINAL, ch01-t01-visual-001, ch01-t04-visual-001) and against every other registered namespace pattern. Result: ch01-prob-104 continues to match only the existing problem pattern; SRC-CH01-BATCH1-ORIGINAL continues to match only the existing source pattern; every instructorScript/contentBlock/visual-asset ID now matches exactly one namespace pattern (its own new one) and matched none previously. No existing registered pattern or ID collides with any of the three additions.",
+      "scopeNote": "These are schema/namespace-validation additions only. They do not themselves register any specific identifier — see batch1IdentifierRegistration below for the actual Batch 1 registration entries. The four pilot topics' own instructorScript/contentBlock/visual-asset IDs, which already conform to these same newly-added patterns, remain unregistered as individual entries; this task registers Batch 1 identifiers only."
+    }
+  },
+  "batch1IdentifierRegistration": {
+    "addedInRegistryVersion": "1.3.0",
+    "registeredAt": "2026-07-17",
+    "registeredBy": "khubrani2a-gif (project owner), via Claude-executed controlled registration task",
+    "registrationBasis": [
+      "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json (baselineVersion 1.0.0, status approved)",
+      "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json (baselineVersion 1.0.0, status approved)",
+      "docs/content-design/chapter-01/VISUAL_BATCH1_APPROVAL.json (visualBaselineVersion 1.0.0, status approved)",
+      "docs/app/PHSH111_BATCH1_ENGLISH_BASELINE_APPROVAL_RECORD.md",
+      "docs/app/PHSH111_BATCH1_ARABIC_BASELINE_APPROVAL_RECORD.md",
+      "docs/app/PHSH111_BATCH1_VISUAL_APPROVAL_RECORD.md",
+      "docs/app/PHSH111_BATCH1_IDENTIFIER_REGISTRATION_RECORD.md"
+    ],
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "totalIdentifiersRegistered": 18,
+    "scopeStatement": "This registers exactly the Batch 1 content, problem, source-marker, and approved visual identifiers required before a future application-integration step. It does not integrate ch01-t01 or ch01-t04 into apps/chapter1-mvp/, does not modify any approved content or visual file, does not authorize student-facing use, and does not authorize publication. Registration is an internal governance bookkeeping action, not a content-approval or application action.",
+    "glossaryTermIdsExcluded": {
+      "statement": "Glossary term IDs are governed inside BILINGUAL_GLOSSARY.json (glossaryVersion 1.3.0) and are deliberately NOT registered as entries in this file, preserving the established decision that glossary identifiers are glossary-local.",
+      "excludedIds": ["ch01-term-fundamental-quantity", "ch01-term-derived-quantity", "ch01-term-speed", "ch01-term-scalar", "ch01-term-mass", "ch01-term-weight", "ch01-term-apparent-weight", "ch01-term-distance", "ch01-term-acceleration"]
+    },
+    "entries": [
+      {
+        "identifier": "ch01-is-101",
+        "identifierType": "instructorScript",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "instructorScript",
+        "blockType": null,
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Same instructorScriptId used, identically, in both the approved English and Arabic candidate files."
+      },
+      {
+        "identifier": "ch01-t01-block-mainidea",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "mainIdea",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": null
+      },
+      {
+        "identifier": "ch01-t01-block-explanation",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "organizedExplanation",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": null
+      },
+      {
+        "identifier": "ch01-t01-block-equations",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "equationSet",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": null
+      },
+      {
+        "identifier": "ch01-t01-block-visual",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "visualReference",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": {"record": "VISUAL_BATCH1_APPROVAL.json", "visualBaselineVersion": "1.0.0", "visualId": "ch01-t01-visual-001"},
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0; VISUAL_BATCH1_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "This contentBlock's own visualGovernance.availabilityStatus field inside the approved topic JSON was NOT modified by this registration; it still reads \"missing\" and is not updated by this task, per instruction not to alter the topic JSON files."
+      },
+      {
+        "identifier": "ch01-t01-block-misconception",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "misconception",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "visibility: instructor in the approved topic JSON; unaffected by this registration."
+      },
+      {
+        "identifier": "ch01-t01-block-review",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "reviewQuestion",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Registered as the canonical schema blockType reviewQuestion. \"Review Card\" is an application-facing UI label only and is not used as the registered identifierType, recordType, or blockType here."
+      },
+      {
+        "identifier": "ch01-is-104",
+        "identifierType": "instructorScript",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "instructorScript",
+        "blockType": null,
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Same instructorScriptId used, identically, in both the approved English and Arabic candidate files."
+      },
+      {
+        "identifier": "ch01-t04-block-mainidea",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "contentBlock",
+        "blockType": "mainIdea",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": null
+      },
+      {
+        "identifier": "ch01-t04-block-explanation",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "contentBlock",
+        "blockType": "organizedExplanation",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": null
+      },
+      {
+        "identifier": "ch01-t04-block-equations",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "contentBlock",
+        "blockType": "equationSet",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": null
+      },
+      {
+        "identifier": "ch01-t04-block-visual",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "contentBlock",
+        "blockType": "visualReference",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": {"record": "VISUAL_BATCH1_APPROVAL.json", "visualBaselineVersion": "1.0.0", "visualId": "ch01-t04-visual-001"},
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0; VISUAL_BATCH1_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "This contentBlock's own visualGovernance.availabilityStatus field inside the approved topic JSON was NOT modified by this registration; it still reads \"missing\" and is not updated by this task, per instruction not to alter the topic JSON files."
+      },
+      {
+        "identifier": "ch01-t04-block-misconception",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "contentBlock",
+        "blockType": "misconception",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "visibility: instructor in the approved topic JSON; unaffected by this registration."
+      },
+      {
+        "identifier": "ch01-t04-block-review",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "contentBlock",
+        "blockType": "reviewQuestion",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Registered as the canonical schema blockType reviewQuestion. \"Review Card\" is an application-facing UI label only and is not used as the registered identifierType, recordType, or blockType here."
+      },
+      {
+        "identifier": "ch01-prob-104",
+        "identifierType": "problem",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "problem",
+        "blockType": null,
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "sourceVariants[0].sourceId references SRC-CH01-BATCH1-ORIGINAL (see that entry below); this problem is fully original, not derived from any audited source's scenario, wording, object, or numbers."
+      },
+      {
+        "identifier": "SRC-CH01-BATCH1-ORIGINAL",
+        "identifierType": "source",
+        "chapterId": "ch01",
+        "topicId": ["ch01-t01", "ch01-t04"],
+        "recordType": "sourceMarker",
+        "blockType": null,
+        "approvedSourcePath": null,
+        "englishBaselineDependency": null,
+        "arabicBaselineDependency": null,
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; used as sourceVariants[0].sourceId on ch01-prob-104",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Registered strictly as a project-authorship/source-lineage marker. It represents newly authored Batch 1 project content. It is NOT an external audited source, NOT a textbook/slide/review-card/publisher source, and must NOT be treated as independent evidence for any scientific claim. It is distinct from an audited source record (e.g. SRC-CH01-CONV-001, SRC-CH01-PDF-003), a scientific-audit record (e.g. SCA01, S3-SCI-004), and a correction record (e.g. ch01-corr-001, ch01-corr-002) — those substantive scientific records retain their own audited source and correction lineage, entirely independent of this marker."
+      },
+      {
+        "identifier": "ch01-t01-visual-001",
+        "identifierType": "visual",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "visualAsset",
+        "blockType": null,
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "visualBaselineDependency": {
+          "record": "VISUAL_BATCH1_APPROVAL.json",
+          "visualBaselineVersion": "1.0.0",
+          "approvedBy": "khubrani2a-gif (project owner)",
+          "assetSha256": "48c73a36fef43644ab810e500045c83777e57ba5bb25d1c1d64f5f887fc67a98",
+          "validationRecordPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json"
+        },
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "VISUAL_BATCH1_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Independent human visual review incomplete (reviewer/reviewedAt remain null on the validation record). Neither the SVG nor its validation record was modified by this registration."
+      },
+      {
+        "identifier": "ch01-t04-visual-001",
+        "identifierType": "visual",
+        "chapterId": "ch01",
+        "topicId": "ch01-t04",
+        "recordType": "visualAsset",
+        "blockType": null,
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "visualBaselineDependency": {
+          "record": "VISUAL_BATCH1_APPROVAL.json",
+          "visualBaselineVersion": "1.0.0",
+          "approvedBy": "khubrani2a-gif (project owner)",
+          "assetSha256": "163b5eaa0269ca96943bf136c913bba0b961247da7ab0b68bbbd22b5a475cec6",
+          "validationRecordPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001-validation.json"
+        },
+        "registrationDate": "2026-07-17",
+        "registrationBasis": "VISUAL_BATCH1_APPROVAL.json v1.0.0",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Independent human visual review incomplete (reviewer/reviewedAt remain null on the validation record). Neither the SVG nor its validation record was modified by this registration."
+      }
+    ],
+    "unchangedByThisRegistration": [
+      "No approved English or Arabic topic JSON file was modified; both remain byte-identical to their baseline-approval checksums.",
+      "Neither approved SVG nor either visual-validation record was modified; both remain byte-identical to VISUAL_BATCH1_APPROVAL.json's recorded checksums.",
+      "BILINGUAL_GLOSSARY.json remains unchanged, still glossaryVersion 1.3.0; no glossary term ID was registered here.",
+      "No route, import, or registry entry was added anywhere in apps/chapter1-mvp/.",
+      "applicationIntegrationAuthorized remains false for both topics.",
+      "studentFacingAllowed and studentPublicationAuthorized remain false everywhere."
+    ]
+  },
+  "registrationHistory": [
+    {
+      "previousRegistryVersion": "1.2.0",
+      "newRegistryVersion": "1.3.0",
+      "decisionDate": "2026-07-17",
+      "scope": "Batch 1 identifier registration (ch01-t01, ch01-t04): registered the 18 identifiers required before application integration (2 instructorScript, 12 contentBlock, 1 problem, 1 source-authorship marker, 2 visual assets), and added the instructorScript and contentBlock namespace types plus the ch01-tNN-visual-NNN pattern within the existing visual namespace type, all previously missing from this registry despite being already-established CANONICAL_DESIGN_SCHEMA.json ID conventions in use by the four pilot topics and Batch 1 alike.",
+      "identifiersRegistered": 18,
+      "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+      "approvalRecordDependencies": [
+        "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json (v1.0.0)",
+        "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json (v1.0.0)",
+        "docs/content-design/chapter-01/VISUAL_BATCH1_APPROVAL.json (v1.0.0)"
+      ],
+      "applicationAndPublicationRestrictions": "This registration does not authorize application integration, student-facing use, or publication for ch01-t01 or ch01-t04. applicationIntegrationAuthorized, studentFacingAllowed, and studentPublicationAuthorized all remain false.",
+      "projectOwnerDecisionBasis": "Project-owner explicit request to register the approved Batch 1 identifiers required before application integration, following the same controlled-registration pattern implied by the existing conflict-namespace precedent (registryVersion 1.1.0) and by each topic's own identifierRegistrationStatus.pending notes in ENGLISH_BATCH1_BASELINE_APPROVAL.json, ARABIC_BATCH1_BASELINE_APPROVAL.json, and VISUAL_BATCH1_APPROVAL.json."
+    }
+  ]
+}
