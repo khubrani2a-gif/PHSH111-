@@ -38,12 +38,17 @@ export function HomePage() {
 
   return (
     <section className="home-page">
-      <h1>{APP_NAME}</h1>
-      <p className="home-page__subtitle">{SUBTITLE[language]}</p>
+      {/* Title/subtitle are already visible in the persistent app header
+          (AppShell) on every route. Repeating them here would duplicate the
+          brand at full hero size on small screens, so they stay for
+          assistive tech / document semantics only. */}
+      <h1 className="visually-hidden">
+        {APP_NAME} — {SUBTITLE[language]}
+      </h1>
       <p className="home-page__release-label" role="status">
         {RELEASE_LABEL[language]}
       </p>
-      <p>{text.intro}</p>
+      <p className="home-page__intro">{text.intro}</p>
       <p className="home-page__scope">{text.scope}</p>
       <Link to="/chapter/1" className="home-page__cta">
         {text.cta}
