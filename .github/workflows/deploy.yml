@@ -40,8 +40,21 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Add SPA fallback for client-side routing
-        run: cp dist/index.html dist/404.html
+      - name: Add Pages entry points for client-side routing
+        run: |
+          cp dist/index.html dist/404.html
+          for route in \
+            chapter/1 \
+            chapter/1/topic/ch01-t01 \
+            chapter/1/topic/ch01-t02 \
+            chapter/1/topic/ch01-t03 \
+            chapter/1/topic/ch01-t04 \
+            chapter/1/topic/ch01-t08 \
+            chapter/1/topic/ch01-t10
+          do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
