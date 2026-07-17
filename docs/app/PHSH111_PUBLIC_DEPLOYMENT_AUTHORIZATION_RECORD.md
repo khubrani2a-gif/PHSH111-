@@ -51,7 +51,7 @@ Identical to the internally built application:
 - `apps/chapter1-mvp/src/app/App.tsx`: added `basename={import.meta.env.BASE_URL}` to `BrowserRouter` — required so client-side routes resolve correctly under the `/PHSH111-/` subpath rather than at domain root. No route, page, or behavior was added, removed, or changed; only the router's base path was made subpath-aware.
 - `apps/chapter1-mvp/package.json`: `description` field updated to reflect the new public-hosting authorization (still states `studentFacingAllowed`/`studentPublicationAuthorized` remain `false`); no dependency or script change.
 - `.github/workflows/deploy.yml`: new workflow — installs dependencies, runs tests, builds `apps/chapter1-mvp/`, copies `dist/index.html` to `dist/404.html` (GitHub Pages SPA-fallback convention, so deep-linked client-side routes don't 404 on direct load/refresh), and deploys `apps/chapter1-mvp/dist/` to GitHub Pages via the official Pages Actions, triggered on push to `main` (and manual `workflow_dispatch`).
-- No file under `docs/content-design/` or `docs/content-audits/` was modified.
+- No instructional content, baseline, candidate, visual, or audit file under `docs/content-design/` or `docs/content-audits/` was modified; the only `docs/content-design/` change is the authorized v1.6.0 amendment to `PILOT_AUTHORIZATION.json` itself.
 - No other application source file was modified.
 
 ## 6. Related records
