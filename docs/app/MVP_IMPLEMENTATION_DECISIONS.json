@@ -1,0 +1,189 @@
+{
+  "decisionRecordId": "ch01-mvp-implementation-decisions-001",
+  "version": "1.0.0",
+  "decidedBy": "khubrani2a-gif (project owner)",
+  "decisionDate": "2026-07-16",
+  "reviewBasis": [
+    "docs/app/MVP_PRODUCT_SPEC.md",
+    "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json (authorizationVersion 1.1.0, applicationBuildAuthorization section)",
+    "docs/content-design/chapter-01/PILOT_READINESS.json",
+    "docs/content-design/chapter-01/PILOT_HANDOFF.md",
+    "docs/content-design/chapter-01/ENGLISH_PILOT_BASELINE_APPROVAL.json",
+    "docs/content-design/chapter-01/ARABIC_PILOT_BASELINE_APPROVAL.json",
+    "docs/content-design/chapter-01/pilot/ch01-t02-content.json, ch01-t03-content.json, ch01-t08-content.json, ch01-t10-content.json",
+    "docs/content-design/chapter-01/pilot/visuals/ch01-t02/t03/t08/t10-visual-001-validation.json"
+  ],
+  "applicableTopicIds": ["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"],
+  "applicationPath": "apps/chapter1-mvp/",
+  "purpose": "Formally resolves the implementation decisions and open questions identified in docs/app/MVP_PRODUCT_SPEC.md, so the implementation phase has one binding reference instead of re-deciding these points ad hoc during coding. This record does not authorize building by itself — see PILOT_AUTHORIZATION.json v1.1.0's applicationBuildAuthorization for the authorization this record relies on.",
+  "decisions": {
+    "A_applicationMode": {
+      "title": "Application mode",
+      "resolved": true,
+      "statements": [
+        "The first application supports only internalReviewer mode.",
+        "It is not a student production mode.",
+        "A persistent Draft / Review Required banner is mandatory and must remain visible on every route.",
+        "Blocked pilot content may be rendered only because the application is an internal review environment, viewed by authorized internal reviewers, instructors, and students in a supervised pilot context — not the general public.",
+        "Rendering content inside this application does not alter its governance status. No record's blockingStatus, studentFacingAllowed, or studentPublicationAuthorized changes as a result of being displayed."
+      ]
+    },
+    "B_visibilityHandling": {
+      "title": "Visibility handling",
+      "resolved": true,
+      "statements": [
+        "In the primary learner-style topic flow, render only content blocks whose visibility permits learner presentation (visibility: \"shared\" or visibility: \"student\", per the source schema).",
+        "Preserve the original visibility metadata on every normalized record; the adapter must not strip or overwrite it.",
+        "Do not silently promote instructor-only material into the main learner flow.",
+        "Records with visibility: \"instructor\" are rendered only inside a separate, collapsed internal-review panel, not in the main learner-style flow.",
+        "That panel is labeled clearly, bilingually: \"Instructor Review Note\" / \"ملاحظة لمراجعة المدرّس\".",
+        "Instructor-visibility records are never presented as ordinary student-facing content, in either language.",
+        "Their source record IDs remain visible in development or reviewer metadata (e.g. a dev-mode inspector or reviewer-only annotation), so internal reviewers can trace exactly which record they are looking at.",
+        "This decision specifically applies to the misconception content blocks in all four topics, which are uniformly visibility: \"instructor\" in the source schema (ch01-t02-block-misconception, ch01-t03-block-misconception, ch01-t08-block-misconception, ch01-t10-block-misconception) — each renders inside the collapsed Instructor Review Note panel, not as a normal page section."
+      ]
+    },
+    "C_learningObjective": {
+      "title": "Learning objective",
+      "resolved": true,
+      "statements": [
+        "No dedicated learner-visible learning-objective content block currently exists in the source schema — it exists only inside instructorScript.learningObjectives[], which has no visibility field distinguishing it from clearly instructor-only fields on the same record.",
+        "Do not synthesize, rewrite, or infer a learning objective from other records.",
+        "instructorScript may supply learning-objective information only within internal reviewer metadata (e.g. the same collapsed internal-review panel used for instructor-visibility content, or an equivalent reviewer-only surface) — never as an ordinary learner-facing section, because no explicit learner-visible field authorizes that use.",
+        "Omit the learning-objective section entirely from the learner-style page when no explicitly authorized learner-visible field exists for it.",
+        "This omission is preferable to inventing content, and is not treated as a defect to silently work around."
+      ]
+    },
+    "D_keyConceptAndSummary": {
+      "title": "Key concept and summary",
+      "resolved": true,
+      "statements": [
+        "Do not synthesize a key concept or summary section from unrelated records.",
+        "Display a summary section only when the adapter finds an explicit, semantically appropriate source record for it.",
+        "None of the four topics' current schemas contain a record explicitly designated as a summary/key-concept block distinct from the mainIdea contentBlock already used earlier in the page (per MVP_PRODUCT_SPEC.md §5, position 3); absent a new explicit field, the summary section is omitted rather than re-deriving or duplicating the mainIdea text under a different heading.",
+        "Otherwise, omit the section cleanly.",
+        "The page layout must support optional sections without leaving empty headings, empty containers, or irregular spacing where an omitted section would have been."
+      ]
+    },
+    "E_equations": {
+      "title": "Equations",
+      "resolved": true,
+      "statements": [
+        "For the first implementation, treat the existing authored equation strings (from each topic's equationSet contentBlock) as source content, rendered as-is, not rewritten or re-derived.",
+        "Render equations inside explicit LTR containers, isolated from surrounding Arabic prose, matching the pattern already proven in the four pilot SVGs.",
+        "Preserve Unicode superscripts and subscripts already present in the source text.",
+        "Preserve italic-variable and upright-unit styling where the source representation supports distinguishing them (e.g. via semantic markup applied during rendering, consistent with MVP_PRODUCT_SPEC.md §9).",
+        "Do not rewrite equation content.",
+        "Do not introduce a general equation parser in the initial implementation.",
+        "Do not add KaTeX or MathJax unless an implementation spike demonstrates that semantic HTML and controlled typography cannot render the actual pilot equations (a_c = v^2/r; a = -g / a = +g; f = 1/T, T = 1/f; the length/area/volume k, k^2, k^3 relationships) accurately.",
+        "Equation-library adoption (KaTeX, MathJax, or equivalent) is documented as an implementation escalation decision to be made and recorded if and when the spike above demonstrates the need — it is not a default dependency of this MVP, and is listed under unresolvedItems below rather than pre-approved here."
+      ]
+    },
+    "F_contentSourceAndAdapter": {
+      "title": "Content source and adapter",
+      "resolved": true,
+      "statements": [
+        "The four pilot JSON files remain the source of truth for all instructional content.",
+        "React components must not contain copied instructional content; components receive normalized data as props only.",
+        "The adapter must be read-only against the content and asset files.",
+        "The adapter must preserve recordId, topicId, blockType, visibility, source/provenance lineage, blocking state, and both English and Arabic localization data for every record it normalizes.",
+        "Unsupported or malformed records must produce internal development diagnostics (console/dev-overlay), not silent omission or a broken render.",
+        "The adapter must not mutate, repair, or write back to any content file under any circumstance.",
+        "No missing field may be silently invented or defaulted to placeholder instructional text; a missing field is surfaced as a missing-content state (per MVP_PRODUCT_SPEC.md §16), not filled in."
+      ]
+    },
+    "G_bilingualBehavior": {
+      "title": "Bilingual behavior",
+      "resolved": true,
+      "statements": [
+        "One language is visible at a time.",
+        "English uses LTR layout.",
+        "Arabic uses RTL layout.",
+        "Equations and SI unit symbols remain LTR even inside Arabic-mode pages.",
+        "Runtime machine translation is prohibited; Arabic content is only ever the authored ar fields already present in the source JSON.",
+        "Side-by-side bilingual mode is deferred, not built or stubbed in this MVP.",
+        "Arabic shaping (cursive glyph joining, correct RTL order) must be tested in the actual supported browser environment during implementation, not assumed from source-code correctness alone."
+      ]
+    },
+    "H_visualBehavior": {
+      "title": "Visual behavior",
+      "resolved": true,
+      "statements": [
+        "Use the four existing SVG files (ch01-t02/t03/t08/t10-visual-001.svg) as read-only assets, embedded as authored.",
+        "Preserve each SVG's internal direction metadata and accessibility metadata (role=\"img\", <title>, <desc>) exactly as authored.",
+        "Keep each SVG's internal amber Draft/Review-Required footer band visible; the application does not crop, mask, or hide it.",
+        "Use a zoomable or fullscreen viewer for narrow screens rather than shrinking the SVG inline to an illegible size.",
+        "Do not create mobile-specific SVG redraws during the initial MVP.",
+        "An SVG being available (assetStatus/availabilityStatus present, asset renders) does not mean it is finally approved — all four visuals remain reviewer: null / reviewedAt: null in their validation records, and the application's chrome must not imply otherwise."
+      ]
+    },
+    "I_applicationLocation": {
+      "title": "Application location",
+      "resolved": true,
+      "statements": [
+        "Use apps/chapter1-mvp/ as the application root.",
+        "Keep all application source, package, configuration, test, and generated dependency-lock files inside this directory where technically practical.",
+        "Do not create application files at the repository root unless a later implementation task demonstrates a concrete technical requirement and receives explicit authorization for that specific exception."
+      ]
+    },
+    "J_statePersistence": {
+      "title": "State and persistence",
+      "resolved": true,
+      "statements": [
+        "Initial MVP state is limited to exactly: current route, active language, open/closed solution-reveal state, open/closed visual-viewer state, and open/closed internal-reviewer-notes state.",
+        "Use local React state and URL routing for all of the above.",
+        "Do not include login, database persistence, cloud state, student progress, grades, or analytics of any kind in this MVP."
+      ]
+    },
+    "K_gitState": {
+      "title": "Git state",
+      "resolved": true,
+      "statements": [
+        "The current docs tree is untracked in Git as of this decision record's date.",
+        "No staging, commit, or push is authorized by this decision record.",
+        "Repository protection through Git (tracking the untracked docs tree, establishing a commit baseline) requires a separate, explicit project-owner authorization, not implied by this record or by PILOT_AUTHORIZATION.json v1.1.0.",
+        "The implementation must not silently perform any version-control operation (no automatic git init, add, commit, or push as a side effect of scaffolding, building, or testing)."
+      ]
+    },
+    "L_publicationState": {
+      "title": "Publication state",
+      "resolved": true,
+      "statements": [
+        "internalMvpBuildAuthorized: true",
+        "localTestingAuthorized: true",
+        "publicDeploymentAuthorized: false",
+        "studentFacingAllowed: false",
+        "studentPublicationAuthorized: false",
+        "These five values are also recorded in machine-readable form in the top-level publicationState field of this document, which is authoritative for tooling; this list restates them for readability."
+      ]
+    }
+  },
+  "unresolvedItems": [
+    {
+      "item": "Whether a math-rendering library (KaTeX, MathJax, or equivalent) becomes necessary",
+      "status": "unresolved",
+      "resolutionPath": "To be decided only after the implementation spike described in decisions.E_equations demonstrates that semantic HTML and controlled typography cannot accurately render the actual pilot equations. Record the outcome as an amendment to this decision record if escalation is needed."
+    },
+    {
+      "item": "Which exact automated accessibility tooling will be installed (e.g. axe-core, eslint-plugin-jsx-a11y, or equivalent)",
+      "status": "unresolved",
+      "resolutionPath": "To be selected during Phase 6 of MVP_PRODUCT_SPEC.md's implementation sequence, subject to the same dependency-justification principle as all other tooling (installed only if it solves a demonstrated need)."
+    },
+    {
+      "item": "Whether repository staging and commit of the docs tree (and later the application code) will be authorized",
+      "status": "unresolved",
+      "resolutionPath": "Requires a separate, explicit project-owner authorization, per decisions.K_gitState. Not decided by this record."
+    },
+    {
+      "item": "What exact conditions will define final student-publication approval",
+      "status": "unresolved",
+      "resolutionPath": "Governed by future, separate project-owner authorization changing studentFacingAllowed / studentPublicationAuthorized to true, following the same explicit governance process used for every other authorization in this repository. MVP_PRODUCT_SPEC.md §22 lists the conditions that must be met before that decision can even be considered; this record does not itself set or predict that decision."
+    }
+  ],
+  "publicationState": {
+    "internalMvpBuildAuthorized": true,
+    "localTestingAuthorized": true,
+    "publicDeploymentAuthorized": false,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false
+  }
+}
