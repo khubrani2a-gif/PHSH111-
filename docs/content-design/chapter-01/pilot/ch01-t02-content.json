@@ -1,0 +1,1129 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t02",
+  "topicTitle": "Distance, Units, Area and Volume",
+  "topicTitleAr": "المسافة والوحدات والمساحة والحجم",
+  "generationStatus": "draft-pilot-generation",
+  "generationNote": "All content in this file is newly authored for the Chapter 1 pilot. No textbook, review-card, problem-bank, slide, or Kahoot wording was copied or closely paraphrased. Provenance links below trace conceptual topic lineage only (which source segments/pages cover this subject area), not wording origin. Nothing in this file is authorized for student-facing display; every record is draft and review-required.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-102",
+        "topicIds": [
+          "ch01-t02"
+        ],
+        "openingHook": {
+          "text": "Ask the class: if I told you a hallway is '1200' long, could you tell me anything useful? Wait for someone to ask 'centimeters or meters?' — that's the whole lesson in one exchange.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "Why do we need so many different units to describe distance, and what do area and volume actually add on top of distance?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Distance measures extent in one dimension; area and volume are built from distance by covering two or three dimensions, so their units are always distance-units squared or cubed.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "State that area and volume are derived from distance, not independent fundamental quantities.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Convert a length between units and correctly convert an area or volume built from that length.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Explain why unit choice depends on the scale of the object, not on the physical quantity itself.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "Let's start with something everyone already has an intuition for: size. When I say a coin is small and a city block is big, I'm really making a distance comparison, just at wildly different scales. That's exactly why we don't use one single unit for all of it — a millimeter is convenient for a coin, a kilometer is convenient for a city, but they're both just labeled amounts of the same underlying thing: distance. Now here's the part that trips people up: the object doesn't change size when you switch units. A 12-meter hallway is still a 12-meter hallway whether you call it 12 m, 1200 cm, or 0.012 km — only the number and the label change, never the hallway. Once we're comfortable with that, we can build upward. Area answers a different question than distance: not 'how far,' but 'how much surface is covered.' If you have a rectangular tabletop, its area is length times width — and notice the units: meters times meters gives square meters. That squaring isn't decoration; it's telling you that area is built from two independent length measurements multiplied together. Volume takes it one step further: length times width times height, giving cubic units, because now three independent length measurements are multiplied together. So whenever you convert a length, and you need to convert an area or volume built from that length, you don't just convert the length once — you have to apply that same conversion factor once for each dimension involved: once for area, twice — squared — and for volume, three times — cubed.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [
+          {
+            "cueOrder": 1,
+            "pageIds": [
+              "S3-P004",
+              "S3-P007"
+            ],
+            "instruction": {
+              "text": "Reference only for pacing — do not display or reuse these slides; they are Cengage-adjacent instructor material excluded from the pilot per PILOT_RIGHTS_POLICY.json.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "figureCues": [
+          {
+            "visualIds": [
+              "ch01-t02-visual-001"
+            ],
+            "instruction": {
+              "text": "Show the newly designed three-panel scale diagram (see contentBlock ch01-t02-block-visual) at this point, not any slide image.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "fallbackIfUnavailable": "Describe the three panels verbally: coin in mm, doorway in m, city block in km."
+          }
+        ],
+        "intuition": {
+          "text": "If a unit choice makes the number awkward (like describing a city in millimeters), that's a convenience problem, not a physics problem — the underlying distance is identical either way.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [
+          "Optionally sketch a two-column table pairing each object (coin, doorway, city block) with its natural unit, built live with student suggestions rather than shown pre-made."
+        ],
+        "levelAdaptations": [
+          "Introductory: focus only on the coin/doorway/city-block scale comparison and the 'nothing physically changes' point.",
+          "Standard: add the squared/cubed unit-conversion rule for area and volume.",
+          "Advanced: ask students to predict, before calculating, whether an area conversion factor will be larger or smaller than the corresponding length conversion factor, to build unit-scaling intuition."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "Did the hallway get shorter when we said 1200 cm instead of 12 m?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "If 1 m = 100 cm, how many square centimeters are in 1 square meter — and why isn't it just 100?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "No — only the number and unit label changed, not the physical hallway.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "10,000, because both the length and the width conversion factors of 100 get multiplied together (100 x 100).",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Believing a physical object's size changes when its unit label changes.",
+          "Assuming an area conversion factor equals the length conversion factor rather than its square."
+        ],
+        "analogies": [
+          "Renaming a person doesn't change who they are; relabeling a distance in a different unit doesn't change how far it is."
+        ],
+        "examples": [
+          "Rectangular clinic examination table: 1.8 m x 0.75 m, converted from square meters to square centimeters.",
+          "Garden plot topsoil volume: converting cubic meters to cubic feet using the cubed length-conversion factor."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t03",
+            "script": {
+              "text": "Now that we can measure how much space something takes up, the next question is how to measure how long something takes to happen — which brings us to time, period, and frequency.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Emphasize 'derived, not fundamental' for area/volume — this sets up the same derived/fundamental distinction used again for speed and acceleration later in the chapter."
+        ],
+        "timing": {
+          "estimatedMinutes": 12,
+          "pauseCues": [
+            "After the hallway question, before revealing that nothing physically changed.",
+            "After introducing area as length times width, before showing the unit-squaring consequence."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Do not conflate 'derived quantity' with 'less important quantity' — some students infer this incorrectly; area and volume are just as physically real, only built differently."
+        ],
+        "scientificCorrectionReferences": [],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG011",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording above is newly authored, not derived from this segment's text."
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P004",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; no slide wording or imagery reused, per PILOT_RIGHTS_POLICY.json."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تمهيد افتتاحي: اسأل الطلاب: لو قلت لكم إن طول ممر ما هو '1200'، هل يمكنكم استنتاج شيء مفيد من هذا الرقم وحده؟ انتظر حتى يسأل أحدهم 'سنتيمترًا أم مترًا؟' — فهذا التبادل وحده يلخص الدرس بأكمله.\n\nالسؤال المحوري: لماذا نحتاج إلى وحدات مختلفة كثيرة لوصف المسافة، وما الذي تضيفه المساحة والحجم فعليًا فوق مفهوم المسافة؟\n\nالفكرة الرئيسية: المسافة تقيس الامتداد في بُعد واحد؛ أما المساحة والحجم فيُبنيان من المسافة بتغطية بُعدين أو ثلاثة أبعاد، لذلك تكون وحداتهما دائمًا وحدة المسافة مرفوعة للقوة الثانية أو الثالثة.\n\nأهداف التعلم:\n1. بيان أن المساحة والحجم مُشتقّان من المسافة، وليسا كميتين أساسيتين مستقلتين.\n2. تحويل طول بين وحدات مختلفة، وتحويل مساحة أو حجم مبنيَّين على ذلك الطول تحويلًا صحيحًا.\n3. توضيح أن اختيار الوحدة يعتمد على حجم الجسم المقاس لا على طبيعة الكمية الفيزيائية نفسها.\n\nالنص الكامل لسكربت التدريس: لنبدأ بشيء يملك الجميع حدسًا عنه بالفعل: المقاس. عندما أقول إن قطعة نقدية صغيرة وإن مربعًا سكنيًا كبير، فأنا في الحقيقة أقارن مسافات، لكن على مقاييس مختلفة جدًا. ولهذا السبب بالتحديد لا نستخدم وحدة واحدة لكل ذلك — فالمليمتر مناسب لقطعة نقدية، والكيلومتر مناسب لمدينة، لكن كلاهما مجرد كمية موسومة من الشيء الأساسي نفسه: المسافة. وهنا يأتي الجزء الذي يوقع الناس في الخطأ: الجسم لا يتغير حجمه عندما تُغيّر الوحدة. فممر طوله 12 مترًا يبقى ممرًا طوله 12 مترًا سواء سميته 12 m أو 1200 cm أو 0.012 km — لا يتغير سوى الرقم والوسم، لا الممر نفسه. وبمجرد أن نستوعب هذه الفكرة، يمكننا البناء عليها. تُجيب المساحة عن سؤال مختلف عن المسافة: ليس 'كم المسافة؟' بل 'كم مقدار السطح المغطى؟'. فإذا كانت لديك طاولة مستطيلة، فمساحة سطحها تساوي الطول × العرض — ولاحظ الوحدات: متر × متر يعطي مترًا مربعًا. وهذا التربيع ليس زخرفة؛ إنه يخبرك أن المساحة مبنية من قياسين مستقلّين للطول يُضربان معًا. أما الحجم فيذهب خطوة أبعد: الطول × العرض × الارتفاع، فينتج عنه وحدات مكعبة، لأن هناك الآن ثلاثة قياسات طول مستقلة تُضرب معًا. لذلك، كلما حوّلت طولًا، واحتجت إلى تحويل مساحة أو حجم مبنيَّين على ذلك الطول، فلا تُحوّل الطول مرة واحدة فحسب — بل يجب أن تُطبّق عامل التحويل نفسه مرة واحدة عن كل بُعد متضمَّن: مرة واحدة للمساحة (أي مربّعًا)، وثلاث مرات للحجم (أي مكعّبًا).\n\nالحدس: إذا كان اختيار الوحدة يجعل الرقم غير عملي (كوصف مدينة بالمليمتر)، فتلك مشكلة تتعلق بالملاءمة العملية لا بالفيزياء — فالمسافة الفعلية واحدة في الحالتين.\n\nأسئلة تُطرح على الطلاب:\n- هل قصُر الممر عندما قلنا 1200 cm بدلاً من 12 m؟\n- إذا كان 1 m = 100 cm، فكم عدد السنتيمترات المربعة في المتر المربع الواحد — ولماذا لا يكون العدد 100 فقط؟\n\nالإجابات المتوقعة من الطلاب:\n- لا — تغيّر الرقم ووسم الوحدة فقط، لا الممر الفعلي.\n- 10,000، لأن عاملَي تحويل الطول والعرض، وكلاهما 100، يُضربان معًا (100 × 100).\n\nالمفاهيم الخاطئة المتوقعة: الاعتقاد بأن حجم الجسم الفعلي يتغيّر عند تغيّر وسم وحدته. افتراض أن عامل تحويل المساحة يساوي عامل تحويل الطول بدلاً من كونه مربعه.\n\nإرشادات الجدول: يمكن اختياريًا رسم جدول من عمودين يقرن كل جسم (قطعة نقدية، باب، حيّ سكني) بوحدته الطبيعية، يُبنى حيًّا باقتراحات الطلاب بدلاً من عرضه جاهزًا مسبقًا.\n\nتكييف المستوى:\nتمهيدي: التركيز فقط على مقارنة مقاييس القطعة النقدية والباب والحيّ السكني، وعلى فكرة 'لا شيء يتغيّر فيزيائيًا'.\nعادي: إضافة قاعدة تحويل الوحدات المربعة/المكعبة للمساحة والحجم.\nمتقدم: اطلب من الطلاب أن يتوقعوا، قبل الحساب، ما إذا كان عامل تحويل المساحة أكبر أم أصغر من عامل تحويل الطول المقابل، لبناء حدس حول تحجيم الوحدات.\n\nتشبيهات: إعادة تسمية شخص لا تغيّر من هو؛ وإعادة وسم مسافة بوحدة مختلفة لا تغيّر مقدار بُعدها.\n\nأمثلة يستخدمها المعلم: طاولة فحص مستطيلة في عيادة: 1.8 m × 0.75 m، محوَّلة من المتر المربع إلى السنتيمتر المربع. حجم التربة السطحية لقطعة أرض حديقة: تحويل المتر المكعب إلى القدم المكعبة باستخدام عامل تحويل الطول مكعَّبًا.\n\nجملة الانتقال إلى الموضوع التالي: بعد أن أصبحنا قادرين على قياس مقدار الحيّز الذي يشغله شيء ما، فإن السؤال التالي هو كيف نقيس طول المدة التي يستغرقها حدوث شيء ما — وهذا ما يقودنا إلى الزمن والدور والتردد.\n\nملاحظات تشديد للمعلم: شدّد على أن المساحة والحجم 'مُشتقّتان لا أساسيتان' — فهذا يمهّد للتمييز نفسه بين المشتق والأساسي الذي سيُستخدم لاحقًا مع السرعة والتسارع في الفصل.\n\nتنبيهات خاصة بالمعلم: لا تخلط بين 'الكمية المشتقة' و'الكمية الأقل أهمية' — بعض الطلاب يستنتجون هذا خطأً؛ فالمساحة والحجم حقيقيتان فيزيائيًا تمامًا مثل المسافة، إلا أنهما مبنيتان بطريقة مختلفة فحسب.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Distance measures extent in one dimension. Area and volume are derived from distance by covering two or three dimensions, so area units are always [length]-squared and volume units are always [length]-cubed.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تقيس المسافة الامتداد في بُعد واحد. أما المساحة والحجم فيُشتقّان من المسافة بتغطية بُعدين أو ثلاثة أبعاد، لذلك تكون وحدات المساحة دائمًا وحدة [الطول] مرفوعة للقوة الثانية، ووحدات الحجم دائمًا وحدة [الطول] مرفوعة للقوة الثالثة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تقيس المسافة الامتداد في بُعد واحد. أما المساحة والحجم فيُشتقّان من المسافة بتغطية بُعدين أو ثلاثة أبعاد، لذلك تكون وحدات المساحة دائمًا وحدة [الطول] مرفوعة للقوة الثانية، ووحدات الحجم دائمًا وحدة [الطول] مرفوعة للقوة الثالثة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG011",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "terminologyPending",
+            "other"
+          ],
+          "blockingRecordIds": [
+            "ch01-term-distance"
+          ],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t02",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Physics needs a way to describe how much space something occupies or spans. Distance describes extent along a single direction — how far apart two points are. Area describes how much surface a two-dimensional region covers. Volume describes how much three-dimensional space a region occupies. Because area and volume are built from distance measured in two and three directions respectively, their units follow directly: area is always reported in squared length units (such as square meters), and volume is always reported in cubed length units (such as cubic meters) — no matter which specific length unit is chosen. Different length units exist (millimeters, meters, kilometers) not because the physics changes, but because human convenience calls for a unit matched to the scale of what's being measured: a coin's diameter is naturally described in millimeters, while the distance between cities is naturally described in kilometers, even though both describe the same underlying kind of quantity.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تحتاج الفيزياء إلى طريقة لوصف مقدار الحيّز الذي يشغله شيء ما أو يمتد فيه. تصف المسافة الامتداد على طول اتجاه واحد — أي المسافة الفاصلة بين نقطتين. أما المساحة فتصف مقدار السطح الذي تغطيه منطقة ثنائية البعد. ويصف الحجم مقدار الحيّز ثلاثي الأبعاد الذي تشغله منطقة ما. ولأن المساحة والحجم يُبنيان من المسافة المقيسة في بُعدين وثلاثة أبعاد على التوالي، فإن وحداتهما تنتج مباشرة من ذلك: تُقاس المساحة دائمًا بوحدات طول مربعة (كالمتر المربع)، ويُقاس الحجم دائمًا بوحدات طول مكعبة (كالمتر المكعب) — أيًّا كانت وحدة الطول المحددة المُختارة. ووجود وحدات طول مختلفة (مليمتر، متر، كيلومتر) لا يرجع إلى تغيّر الفيزياء نفسها، بل إلى أن الملاءمة البشرية تستدعي وحدة تناسب مقياس الشيء المُقاس: فقطر قطعة نقدية يُوصف طبيعيًا بالمليمتر، بينما تُوصف المسافة بين المدن طبيعيًا بالكيلومتر، مع أن كلتيهما تصفان النوع الأساسي نفسه من الكمية.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تحتاج الفيزياء إلى طريقة لوصف مقدار الحيّز الذي يشغله شيء ما أو يمتد فيه. تصف المسافة الامتداد على طول اتجاه واحد — أي المسافة الفاصلة بين نقطتين. أما المساحة فتصف مقدار السطح الذي تغطيه منطقة ثنائية البعد. ويصف الحجم مقدار الحيّز ثلاثي الأبعاد الذي تشغله منطقة ما. ولأن المساحة والحجم يُبنيان من المسافة المقيسة في بُعدين وثلاثة أبعاد على التوالي، فإن وحداتهما تنتج مباشرة من ذلك: تُقاس المساحة دائمًا بوحدات طول مربعة (كالمتر المربع)، ويُقاس الحجم دائمًا بوحدات طول مكعبة (كالمتر المكعب) — أيًّا كانت وحدة الطول المحددة المُختارة. ووجود وحدات طول مختلفة (مليمتر، متر، كيلومتر) لا يرجع إلى تغيّر الفيزياء نفسها، بل إلى أن الملاءمة البشرية تستدعي وحدة تناسب مقياس الشيء المُقاس: فقطر قطعة نقدية يُوصف طبيعيًا بالمليمتر، بينما تُوصف المسافة بين المدن طبيعيًا بالكيلومتر، مع أن كلتيهما تصفان النوع الأساسي نفسه من الكمية.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG011",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG014",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P006",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "terminologyPending",
+            "other"
+          ],
+          "blockingRecordIds": [
+            "ch01-term-distance"
+          ],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Unit conversion: multiply by the ratio equal to 1 (e.g. x_km = x_m / 1000; x_cm = x_m x 100). Area of a rectangle: A = length x width, units of [length]-squared. Volume of a rectangular box: V = length x width x height, units of [length]-cubed. Converting an area requires applying the length conversion factor twice (squared); converting a volume requires applying it three times (cubed).",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تحويل الوحدات: اضرب في نسبة تساوي 1 (مثال: x_km = x_m / 1000؛ x_cm = x_m × 100). مساحة المستطيل: A = الطول × العرض، بوحدة [الطول] مرفوعة للقوة الثانية. حجم الصندوق المستطيل: V = الطول × العرض × الارتفاع، بوحدة [الطول] مرفوعة للقوة الثالثة. يتطلب تحويل المساحة تطبيق عامل تحويل الطول مرتين (أي تربيعه)؛ ويتطلب تحويل الحجم تطبيقه ثلاث مرات (أي تكعيبه).",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تحويل الوحدات: اضرب في نسبة تساوي 1 (مثال: x_km = x_m / 1000؛ x_cm = x_m × 100). مساحة المستطيل: A = الطول × العرض، بوحدة [الطول] مرفوعة للقوة الثانية. حجم الصندوق المستطيل: V = الطول × العرض × الارتفاع، بوحدة [الطول] مرفوعة للقوة الثالثة. يتطلب تحويل المساحة تطبيق عامل تحويل الطول مرتين (أي تربيعه)؛ ويتطلب تحويل الحجم تطبيقه ثلاث مرات (أي تكعيبه).",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P007",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-example",
+        "blockType": "example",
+        "topicId": "ch01-t02",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Example: A rectangular clinic examination table has a tabletop 1.8 m long and 0.75 m wide. Find its surface area in square meters, then convert that area to square centimeters. Solution: A = 1.8 m x 0.75 m = 1.35 m^2. Since 1 m = 100 cm, 1 m^2 = (100 cm)^2 = 10,000 cm^2. So 1.35 m^2 x 10,000 = 13,500 cm^2. Notice the conversion factor for area (10,000) is the square of the conversion factor for length (100), not the same number.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مثال: طاولة فحص مستطيلة في عيادة طولها 1.8 m وعرضها 0.75 m. أوجد مساحة سطحها بالمتر المربع، ثم حوّل هذه المساحة إلى سنتيمتر مربع. الحل: A = 1.8 m × 0.75 m = 1.35 m^2. وبما أن 1 m = 100 cm، فإن 1 m^2 = (100 cm)^2 = 10,000 cm^2. إذن 1.35 m^2 × 10,000 = 13,500 cm^2. لاحظ أن عامل تحويل المساحة (10,000) هو مربّع عامل تحويل الطول (100)، وليس العدد نفسه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مثال: طاولة فحص مستطيلة في عيادة طولها 1.8 m وعرضها 0.75 m. أوجد مساحة سطحها بالمتر المربع، ثم حوّل هذه المساحة إلى سنتيمتر مربع. الحل: A = 1.8 m × 0.75 m = 1.35 m^2. وبما أن 1 m = 100 cm، فإن 1 m^2 = (100 cm)^2 = 10,000 cm^2. إذن 1.35 m^2 × 10,000 = 13,500 cm^2. لاحظ أن عامل تحويل المساحة (10,000) هو مربّع عامل تحويل الطول (100)، وليس العدد نفسه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original example (clinic examination table scenario, revised for health-science relevance per the pilot quality review); not derived from any source problem, none of which involve area-unit conversion.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-visual",
+        "blockType": "visualReference",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "VISUAL SPECIFICATION (not an image — describes the diagram that was drawn; revised 2026-07-16 by project-owner decision to match the produced artwork, per ENGLISH_PILOT_BASELINE_APPROVAL.json baselineVersion 1.0.1): Three side-by-side panels, numbered 1, 2, and 3, showing length, area, and volume respectively, using health-science-context objects. Panel 1 (Length): an examination table, its length dimensioned '1.8 m', converted linearly to '180 cm' (factor x100). Panel 2 (Area): a square dressing pad, dimensioned '0.1 m' on each side, with its area computed as 'A = 0.1 m x 0.1 m = 0.01 m^2' and converted using the squared factor to '100 cm^2' (factor x100^2). Panel 3 (Volume): a small cubic sample container, dimensioned '0.1 m' on each edge, with its volume computed as 'V = 0.1 m x 0.1 m x 0.1 m = 0.001 m^3' and converted using the cubed factor to '1000 cm^3' (factor x100^3). Each panel displays a large unit tag (m, m^2, m^3) linked by small arrows showing the m -> m^2 -> m^3 progression. A shared summary box titled 'General rule' states the general pattern: Length: x k, Area: x k^2, Volume: x k^3, with k = 100 in these examples. A closing caption states that the conversion factor is not the same for length, area, and volume — it is squared for area and cubed for volume. No slide or textbook imagery is to be used; this is an original schematic composition drawn from scratch. Optional future supplementary visual (not currently required): a second diagram illustrating the earlier coin / doorway / city-block scale-comparison concept — three panels at different scales (a coin labeled '19 mm'/'0.019 m', a doorway labeled '2 m'/'2000 mm', a city block labeled '0.5 km'/'500 m'), captioned 'Same kind of quantity (distance), different natural units for different scales.' This remains available as a future addition if resourcing allows, but is not required for the current pilot deliverable.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل تصف الرسم التخطيطي الذي أُنجز؛ نُقّحت في 2026-07-16 بقرار من مالك المشروع لمطابقة العمل الفني المُنتَج، وفق ENGLISH_PILOT_BASELINE_APPROVAL.json الإصدار 1.0.1): ثلاث لوحات متجاورة، مرقّمة 1 و2 و3، تُظهر الطول والمساحة والحجم على التوالي، باستخدام أجسام من سياق علوم الصحة. اللوحة 1 (الطول): منضدة فحص، طولها موسوم بـ'1.8 m'، محوَّل خطيًا إلى '180 cm' (عامل ×100). اللوحة 2 (المساحة): ضمادة شاش مربعة، أبعادها '0.1 m' على كل ضلع، مع حساب مساحتها 'A = 0.1 m × 0.1 m = 0.01 m²' وتحويلها باستخدام العامل مربَّعًا إلى '100 cm²' (عامل ×100²). اللوحة 3 (الحجم): وعاء عينة مكعّب صغير، أبعاده '0.1 m' على كل حرف، مع حساب حجمه 'V = 0.1 m × 0.1 m × 0.1 m = 0.001 m³' وتحويله باستخدام العامل مكعَّبًا إلى '1000 cm³' (عامل ×100³). تعرض كل لوحة وسم وحدة كبيرًا (m، m²، m³) متصلًا بأسهم صغيرة تُظهر تدرّج m ← m² ← m³. صندوق ملخّص مشترك بعنوان 'القاعدة العامة' يذكر النمط العام: الطول: ×k، المساحة: ×k²، الحجم: ×k³، حيث k = 100 في هذه الأمثلة. تعليق ختامي يذكر أن عامل التحويل ليس نفسه للطول والمساحة والحجم — بل يُربَّع للمساحة ويُكعَّب للحجم. يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا تكوين تخطيطي أصلي يُرسم من الصفر. عنصر بصري تكميلي اختياري مستقبلي (غير مطلوب حاليًا): رسم ثانٍ يوضّح مفهوم مقارنة المقاييس السابق (قطعة نقدية/باب/حيّ سكني) — ثلاث لوحات بمقاييس مختلفة (قطعة نقدية موسومة بـ'19 mm'/'0.019 m'، باب موسوم بـ'2 m'/'2000 mm'، حيّ سكني موسوم بـ'0.5 km'/'500 m')، بتعليق 'الكمية نفسها (المسافة)، لكن بوحدات طبيعية مختلفة بحسب المقياس.' يبقى هذا متاحًا كإضافة مستقبلية إذا سمحت الموارد، لكنه غير مطلوب للمُخرَج الحالي للتجربة الاستطلاعية.\n\nقاعدة وسم العناصر البصرية: الرموز والوحدات العلمية (مثل a، g، +، m/s^2) تبقى بأحرف لاتينية بلا ترجمة وباتجاه من اليسار إلى اليمين (LTR)؛ أما التعليقات والشروحات باللغة الطبيعية فتُترجم إلى العربية؛ وأي معادلة أو تعبير رمزي مختلط الاتجاه يجب عزله صراحةً بتنسيق LTR عند التنفيذ لتفادي أخطاء عرض النص ثنائي الاتجاه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل تصف الرسم التخطيطي الذي أُنجز؛ نُقّحت في 2026-07-16 بقرار من مالك المشروع لمطابقة العمل الفني المُنتَج، وفق ENGLISH_PILOT_BASELINE_APPROVAL.json الإصدار 1.0.1): ثلاث لوحات متجاورة، مرقّمة 1 و2 و3، تُظهر الطول والمساحة والحجم على التوالي، باستخدام أجسام من سياق علوم الصحة. اللوحة 1 (الطول): منضدة فحص، طولها موسوم بـ'1.8 m'، محوَّل خطيًا إلى '180 cm' (عامل ×100). اللوحة 2 (المساحة): ضمادة شاش مربعة، أبعادها '0.1 m' على كل ضلع، مع حساب مساحتها 'A = 0.1 m × 0.1 m = 0.01 m²' وتحويلها باستخدام العامل مربَّعًا إلى '100 cm²' (عامل ×100²). اللوحة 3 (الحجم): وعاء عينة مكعّب صغير، أبعاده '0.1 m' على كل حرف، مع حساب حجمه 'V = 0.1 m × 0.1 m × 0.1 m = 0.001 m³' وتحويله باستخدام العامل مكعَّبًا إلى '1000 cm³' (عامل ×100³). تعرض كل لوحة وسم وحدة كبيرًا (m، m²، m³) متصلًا بأسهم صغيرة تُظهر تدرّج m ← m² ← m³. صندوق ملخّص مشترك بعنوان 'القاعدة العامة' يذكر النمط العام: الطول: ×k، المساحة: ×k²، الحجم: ×k³، حيث k = 100 في هذه الأمثلة. تعليق ختامي يذكر أن عامل التحويل ليس نفسه للطول والمساحة والحجم — بل يُربَّع للمساحة ويُكعَّب للحجم. يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا تكوين تخطيطي أصلي يُرسم من الصفر. عنصر بصري تكميلي اختياري مستقبلي (غير مطلوب حاليًا): رسم ثانٍ يوضّح مفهوم مقارنة المقاييس السابق (قطعة نقدية/باب/حيّ سكني) — ثلاث لوحات بمقاييس مختلفة (قطعة نقدية موسومة بـ'19 mm'/'0.019 m'، باب موسوم بـ'2 m'/'2000 mm'، حيّ سكني موسوم بـ'0.5 km'/'500 m')، بتعليق 'الكمية نفسها (المسافة)، لكن بوحدات طبيعية مختلفة بحسب المقياس.' يبقى هذا متاحًا كإضافة مستقبلية إذا سمحت الموارد، لكنه غير مطلوب للمُخرَج الحالي للتجربة الاستطلاعية.\n\nقاعدة وسم العناصر البصرية: الرموز والوحدات العلمية (مثل a، g، +، m/s^2) تبقى بأحرف لاتينية بلا ترجمة وباتجاه من اليسار إلى اليمين (LTR)؛ أما التعليقات والشروحات باللغة الطبيعية فتُترجم إلى العربية؛ وأي معادلة أو تعبير رمزي مختلط الاتجاه يجب عزله صراحةً بتنسيق LTR عند التنفيذ لتفادي أخطاء عرض النص ثنائي الاتجاه.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "visualReferenceIds": [
+          "ch01-t02-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t02-visual-001",
+            "availabilityStatus": "available",
+            "linkageConfidence": "unresolved",
+            "linkageType": "none",
+            "rightsStatus": "approvedInternal",
+            "visualResolutionId": "ch01-t02-visual-validation-001",
+            "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t02-visual-001.svg",
+            "assetFormat": "svg",
+            "assetStatus": "draft",
+            "reviewRequired": true,
+            "contentScopeResolution": {
+              "status": "resolved",
+              "decision": "A — keep ch01-t02-visual-001.svg as the primary required visual for ch01-t02; the recorded specification in this block's localizedContent (English and Arabic) has been formally revised to describe the produced length/area/volume/squared-cubed artwork. The prior coin/doorway/city-block scale-comparison concept is retained in this block's spec text only as an explicitly optional future supplementary visual, not a currently required one.",
+              "authorizedBy": "khubrani2a-gif (project owner)",
+              "resolutionDate": "2026-07-16",
+              "rationale": "The delivered visual directly supports ch01-t02-block-equations, ch01-t02-block-example, the instructor script's teaching narrative, and the graded problem ch01-prob-102, whereas the scale-comparison concept appears only in the instructor script's opening hook and one supporting sentence in the organizedExplanation block, with no dedicated equation, example, or problem built on it.",
+              "controlledRevisionReference": "ENGLISH_PILOT_BASELINE_APPROVAL.json baselineVersion 1.0.1, revisionLog entry scoped to ch01-t02-block-visual."
+            }
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Original visual specification; not traced, cropped, or adapted from any slide or textbook figure, per PILOT_RIGHTS_POLICY.json.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "unverifiedVisual",
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "visualDesignerAndScientificReviewer",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t02",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception: students may believe a physical object's size changes when it is expressed in a different unit (e.g., 'the room got smaller because we said 5 meters instead of 500 centimeters'). Correction: the physical extent is invariant; only its numerical label changes with the chosen unit. Diagnostic prompt: ask students directly whether the hallway got shorter when its length was restated in a different unit, and require them to justify the answer.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مفهوم خاطئ: قد يظن الطلاب أن حجم الجسم الفعلي يتغيّر عند التعبير عنه بوحدة مختلفة (مثل: 'صغرت الغرفة لأننا قلنا 5 أمتار بدلاً من 500 سنتيمتر'). التصحيح: الامتداد الفيزيائي ثابت لا يتغير؛ ويتغيّر وسمه العددي فقط بتغيّر الوحدة المُختارة. سؤال تشخيصي: اسأل الطلاب مباشرة هل قصُر الممر عندما أُعيدت صياغة طوله بوحدة مختلفة، واطلب منهم تبرير الإجابة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مفهوم خاطئ: قد يظن الطلاب أن حجم الجسم الفعلي يتغيّر عند التعبير عنه بوحدة مختلفة (مثل: 'صغرت الغرفة لأننا قلنا 5 أمتار بدلاً من 500 سنتيمتر'). التصحيح: الامتداد الفيزيائي ثابت لا يتغير؛ ويتغيّر وسمه العددي فقط بتغيّر الوحدة المُختارة. سؤال تشخيصي: اسأل الطلاب مباشرة هل قصُر الممر عندما أُعيدت صياغة طوله بوحدة مختلفة، واطلب منهم تبرير الإجابة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t02",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A hallway is 12 m long. Which of the following is a correctly converted value for this same length? (A) 0.12 km (B) 1200 cm (C) 12,000 mm (D) both B and C. Correct answer: D. Explanation: 12 m = 1200 cm (multiply by 100) and 12 m = 12,000 mm (multiply by 1000); both are correct simultaneous re-expressions of the same length. Option A is incorrect because 12 m = 0.012 km, not 0.12 km.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "طول ممر يساوي 12 m. أي مما يلي يمثّل قيمة مُحوَّلة صحيحة لهذا الطول نفسه؟ (A) 0.12 km (B) 1200 cm (C) 12,000 mm (D) كلٌّ من B وC. الإجابة الصحيحة: D. التفسير: 12 m = 1200 cm (بالضرب في 100)، و12 m = 12,000 mm (بالضرب في 1000)؛ وكلتا الصيغتين إعادة تعبير صحيحة ومتزامنة عن الطول نفسه. الخيار A خاطئ لأن 12 m = 0.012 km، وليس 0.12 km.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "طول ممر يساوي 12 m. أي مما يلي يمثّل قيمة مُحوَّلة صحيحة لهذا الطول نفسه؟ (A) 0.12 km (B) 1200 cm (C) 12,000 mm (D) كلٌّ من B وC. الإجابة الصحيحة: D. التفسير: 12 m = 1200 cm (بالضرب في 100)، و12 m = 12,000 mm (بالضرب في 1000)؛ وكلتا الصيغتين إعادة تعبير صحيحة ومتزامنة عن الطول نفسه. الخيار A خاطئ لأن 12 m = 0.012 km، وليس 0.12 km.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original review question; distinct scenario and distractor structure from any Kahoot, review-card, or problem-bank question.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "problem",
+      "record": {
+        "problemId": "ch01-prob-102",
+        "topicIds": [
+          "ch01-t02"
+        ],
+        "problemStatement": {
+          "en": {
+            "text": "A rectangular garden plot measures 4.5 m by 3.2 m. (a) Find its area in square meters. (b) Convert your answer to square feet, given 1 m = 3.28084 ft. (c) A 0.2 m deep layer of topsoil is to be spread evenly over the entire plot. Find the volume of topsoil needed in cubic meters, then convert that volume to cubic feet.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "قطعة أرض حديقة مستطيلة تبلغ أبعادها 4.5 m × 3.2 m. (a) أوجد مساحتها بالمتر المربع. (b) حوّل إجابتك إلى قدم مربعة، مع العلم أن 1 m = 3.28084 ft. (c) يُراد فرش طبقة من التربة السطحية بعمق 0.2 m بالتساوي على كامل القطعة. أوجد حجم التربة اللازمة بالمتر المكعب، ثم حوّل هذا الحجم إلى قدم مكعبة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "givenValues": [
+          {
+            "symbol": "length",
+            "value": 4.5,
+            "unit": "m",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "width",
+            "value": 3.2,
+            "unit": "m",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "depth",
+            "value": 0.2,
+            "unit": "m",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "conversionFactor",
+            "value": 3.28084,
+            "unit": "ft/m",
+            "exactOrApproximate": "approximate"
+          }
+        ],
+        "conceptualInterpretation": {
+          "en": {
+            "text": "Area is computed from the two given lengths in meters first; converting the resulting area to a different unit requires squaring the length-conversion factor, not applying it once. Volume is computed by adding a third length (depth) to the same rectangular footprint; converting the resulting volume to a different unit requires cubing the length-conversion factor, not squaring or applying it once.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تُحسب المساحة أولًا من الطولين المُعطيَين بالمتر؛ ويتطلب تحويل المساحة الناتجة إلى وحدة أخرى تربيع عامل تحويل الطول، لا تطبيقه مرة واحدة. ويُحسب الحجم بإضافة طول ثالث (العمق) إلى المساحة المستطيلة نفسها؛ ويتطلب تحويل الحجم الناتج إلى وحدة أخرى تكعيب عامل تحويل الطول، لا تربيعه أو تطبيقه مرة واحدة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "equationSelection": [
+          {
+            "equationId": "ch01-t02-eq-area",
+            "reason": "Rectangle area formula applies directly to a rectangular plot.",
+            "conditionsSatisfied": [
+              "plot is rectangular",
+              "both dimensions given in the same unit"
+            ],
+            "conditionsMissing": []
+          },
+          {
+            "equationId": "ch01-t02-eq-volume",
+            "reason": "Rectangular-box volume formula applies once a uniform depth is added to the plot's rectangular footprint.",
+            "conditionsSatisfied": [
+              "footprint is rectangular",
+              "depth is uniform across the whole plot",
+              "all three dimensions given in the same unit"
+            ],
+            "conditionsMissing": []
+          }
+        ],
+        "numberedSolution": [
+          {
+            "stepNumber": 1,
+            "purpose": "Compute area in square meters",
+            "explanation": {
+              "en": {
+                "text": "A = length x width = 4.5 m x 3.2 m = 14.4 m^2.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "A = الطول × العرض = 4.5 m × 3.2 m = 14.4 m^2.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-102-calc-1"
+          },
+          {
+            "stepNumber": 2,
+            "purpose": "Convert area to square feet",
+            "explanation": {
+              "en": {
+                "text": "Since 1 m = 3.28084 ft, 1 m^2 = (3.28084 ft)^2 = 10.7639 ft^2 (approximately). Multiply: 14.4 m^2 x 10.7639 ft^2/m^2 = 155.0 ft^2 (approximately).",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "بما أن 1 m = 3.28084 ft، فإن 1 m^2 = (3.28084 ft)^2 = 10.7639 ft^2 (تقريبًا). بالضرب: 14.4 m^2 × 10.7639 ft^2/m^2 = 155.0 ft^2 (تقريبًا).",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-102-calc-2"
+          },
+          {
+            "stepNumber": 3,
+            "purpose": "Compute the topsoil volume in cubic meters",
+            "explanation": {
+              "en": {
+                "text": "V = area x depth = 14.4 m^2 x 0.2 m = 2.88 m^3.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "V = المساحة × العمق = 14.4 m^2 × 0.2 m = 2.88 m^3.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-102-calc-3"
+          },
+          {
+            "stepNumber": 4,
+            "purpose": "Convert volume to cubic feet",
+            "explanation": {
+              "en": {
+                "text": "Since 1 m = 3.28084 ft, 1 m^3 = (3.28084 ft)^3 = 35.3147 ft^3 (approximately) -- the conversion factor is cubed, not squared, because volume is built from three length dimensions. Multiply: 2.88 m^3 x 35.3147 ft^3/m^3 = 101.7 ft^3 (approximately).",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "بما أن 1 m = 3.28084 ft، فإن 1 m^3 = (3.28084 ft)^3 = 35.3147 ft^3 (تقريبًا) -- إذ يُكعَّب عامل التحويل هنا لا يُربَّع، لأن الحجم مبني من ثلاثة أبعاد طول. بالضرب: 2.88 m^3 × 35.3147 ft^3/m^3 = 101.7 ft^3 (تقريبًا).",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-102-calc-4"
+          }
+        ],
+        "calculation": [
+          {
+            "calculationId": "ch01-prob-102-calc-1",
+            "expression": "4.5 x 3.2",
+            "substitution": "4.5 m x 3.2 m",
+            "result": 14.4,
+            "unit": "m^2",
+            "roundingRule": "one decimal place",
+            "significantFigures": 2
+          },
+          {
+            "calculationId": "ch01-prob-102-calc-2",
+            "expression": "14.4 x (3.28084)^2",
+            "substitution": "14.4 m^2 x 10.7639 ft^2/m^2",
+            "result": 155.0,
+            "unit": "ft^2",
+            "roundingRule": "one decimal place",
+            "significantFigures": 3
+          },
+          {
+            "calculationId": "ch01-prob-102-calc-3",
+            "expression": "14.4 x 0.2",
+            "substitution": "14.4 m^2 x 0.2 m",
+            "result": 2.88,
+            "unit": "m^3",
+            "roundingRule": "two decimal places",
+            "significantFigures": 3
+          },
+          {
+            "calculationId": "ch01-prob-102-calc-4",
+            "expression": "2.88 x (3.28084)^3",
+            "substitution": "2.88 m^3 x 35.3147 ft^3/m^3",
+            "result": 101.7,
+            "unit": "ft^3",
+            "roundingRule": "one decimal place",
+            "significantFigures": 4
+          }
+        ],
+        "finalAnswer": {
+          "value": "(a)/(b) 14.4 m^2; approximately 155.0 ft^2. (c) 2.88 m^3; approximately 101.7 ft^3",
+          "unit": "m^2, ft^2, m^3, ft^3",
+          "direction": null,
+          "sign": null,
+          "referencePoint": null,
+          "interpretation": {
+            "en": {
+              "text": "The garden plot's area is 14.4 square meters (about 155.0 square feet). The topsoil needed to cover it 0.2 m deep is 2.88 cubic meters, equivalent to about 101.7 cubic feet.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "ar": {
+              "text": "مساحة قطعة أرض الحديقة 14.4 متر مربع (نحو 155.0 قدم مربعة). وحجم التربة السطحية اللازمة لتغطيتها بعمق 0.2 m هو 2.88 متر مكعب، أي ما يعادل نحو 101.7 قدم مكعبة.",
+              "status": "draft",
+              "language": "ar",
+              "direction": "rtl"
+            }
+          }
+        },
+        "units": [
+          "m",
+          "m^2",
+          "ft",
+          "ft^2",
+          "m^3",
+          "ft^3"
+        ],
+        "directionSign": {
+          "applicable": false,
+          "note": "Area and volume are scalar magnitudes; no direction or sign convention applies."
+        },
+        "intuition": {
+          "en": {
+            "text": "Since 1 meter is a bit more than 3 feet, converting an area from square meters to square feet should multiply the number by roughly 10 (about 3-squared), and converting a volume from cubic meters to cubic feet should multiply by roughly 35 (about 3-cubed) -- both match the results.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بما أن المتر الواحد أكبر قليلًا من 3 أقدام، فإن تحويل مساحة من متر مربع إلى قدم مربعة ينبغي أن يضرب الرقم بمقدار 10 تقريبًا (أي نحو 3 تربيع)، وتحويل حجم من متر مكعب إلى قدم مكعبة ينبغي أن يضربه بمقدار 35 تقريبًا (أي نحو 3 تكعيب) -- وكلا الأمرين يتطابق مع النتائج.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "commonMistake": [
+          "Multiplying the area by 3.28084 once instead of squaring the conversion factor, which undercounts the converted area by a large margin.",
+          "Multiplying the volume by 3.28084 once, or only squaring it, instead of cubing the conversion factor, which severely undercounts the converted volume."
+        ],
+        "sourceAnswer": {
+          "textRef": null,
+          "value": null,
+          "unit": null,
+          "direction": null,
+          "status": "unknown"
+        },
+        "correctedAnswer": {
+          "value": "14.4 m^2; ~155.0 ft^2; 2.88 m^3; ~101.7 ft^3",
+          "unit": "m^2, ft^2, m^3, ft^3",
+          "direction": null,
+          "status": "proposed"
+        },
+        "sourceVariants": [
+          {
+            "variantId": "ch01-prob-102-variant-original",
+            "sourceId": "SRC-CH01-PILOT-ORIGINAL",
+            "problemIds": [],
+            "solutionIds": [],
+            "reviewCardIds": [],
+            "questionIds": [],
+            "pageIds": [],
+            "segmentIds": [],
+            "occurrenceIds": [],
+            "visualIds": [],
+            "answerVariant": "14.4 m^2; ~155.0 ft^2; 2.88 m^3; ~101.7 ft^3",
+            "answerStatus": "correct",
+            "correctionRecordIds": [],
+            "conflictRecordIds": [],
+            "provenanceLinks": []
+          }
+        ],
+        "selectedVariantIds": [
+          "ch01-prob-102-variant-original"
+        ],
+        "selectionRationale": "Only variant; fully original problem authored for this pilot, not derived from any Cengage-copyrighted problem-bank item (P5), per PILOT_RIGHTS_POLICY.json. Extended with part (c), added during the pilot quality review, so the problem also gives students meaningful practice with volume and cubic-unit conversion, matching the topic's equation set which previously went unexercised.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "قطعة أرض حديقة مستطيلة تبلغ أبعادها 4.5 m × 3.2 m. (a) أوجد مساحتها بالمتر المربع. (b) حوّل إجابتك إلى قدم مربعة، مع العلم أن 1 m = 3.28084 ft. (c) يُراد فرش طبقة من التربة السطحية بعمق 0.2 m بالتساوي على كامل القطعة. أوجد حجم التربة اللازمة بالمتر المكعب، ثم حوّل هذا الحجم إلى قدم مكعبة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Only version; fully original.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-labelledby="ch01t10visTitle ch01t10visDesc">
+  <title id="ch01t10visTitle">Tangential Velocity and Centripetal Acceleration (السرعة المماسّة والتسارع المركزي)</title>
+  <desc id="ch01t10visDesc">An original schematic showing one object at a single point on a circular path, marked with a numbered badge "1". A solid rust-orange arrow at that point is tangent to the circle (perpendicular to the radius), labeled v, representing the instantaneous velocity in the direction of travel. A shorter, dashed violet arrow from the same point is directed exactly toward the circle's center, labeled a subscript c, representing centripetal acceleration. A small right-angle indicator marks the two arrows as perpendicular. A dashed radius line from the center to the object is labeled r. The center of the circle is marked with a dot and a small crosshair. A boxed inset in the upper right shows the same circular path at a smaller scale with two labeled instants: instant "1", matching the main panel's point and badge, and instant "2", a moment later further along the path. Comparing instants 1 and 2 shows the velocity arrow has rotated to remain tangent at the new position, while the acceleration arrow still points to the same shared center, demonstrating that velocity direction changes while the center-pointing relationship of acceleration stays fixed. An equation panel shows a subscript c equals v squared over r. Two bilingual captions state that speed can remain constant while velocity still changes because its direction changes, and that centripetal acceleration points toward the center while the object itself does not move toward the center. Captions are provided in English and Arabic.</desc>
+
+  <defs>
+    <marker id="arrowRustT10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9480f"/>
+    </marker>
+    <marker id="arrowVioletT10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="1000" fill="#ffffff"/>
+
+  <!-- Title (bilingual) -->
+  <text x="500" y="38" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Tangential Velocity and Centripetal Acceleration</text>
+  <text x="500" y="64" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">السرعة المماسّة والتسارع المركزي</text>
+
+  <!-- Subtitle for the main panel (bilingual) -->
+  <text x="500" y="95" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Velocity and Centripetal Acceleration at One Instant</text>
+  <text x="500" y="117" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">السرعة المتجهة والتسارع المركزي في لحظة واحدة</text>
+
+  <!-- Main circular path -->
+  <circle cx="340" cy="370" r="170" fill="#eef7fa" stroke="#1f6f8b" stroke-width="3.5"/>
+
+  <!-- Center: dot + crosshair, clearly marked -->
+  <line x1="325" y1="370" x2="355" y2="370" stroke="#1f6f8b" stroke-width="1.5"/>
+  <line x1="340" y1="355" x2="340" y2="385" stroke="#1f6f8b" stroke-width="1.5"/>
+  <circle cx="340" cy="370" r="6" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <text x="340" y="405" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">center</text>
+  <text x="340" y="422" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">المركز</text>
+
+  <!-- Radius line, labeled r (finer dash cadence and stronger neutral contrast than the acceleration arrow, to avoid the two dashed lines being misread as the same element) -->
+  <line x1="340" y1="370" x2="460" y2="250" stroke="#7c8ba1" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="352" y="332" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="19" font-style="italic" fill="#334155">r</text>
+
+  <!-- Object at the selected point on the circle -->
+  <circle cx="460" cy="250" r="10" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Instantaneous velocity: solid rust-orange arrow, exactly tangent (perpendicular to the radius) -->
+  <line x1="460" y1="250" x2="531" y2="321" stroke="#d9480f" stroke-width="3.5" marker-end="url(#arrowRustT10)"/>
+  <text x="540" y="335" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-style="italic" fill="#d2450e">v</text>
+
+  <!-- Centripetal acceleration: dashed violet arrow, exactly toward the center, shorter than the full radius -->
+  <line x1="460" y1="250" x2="407" y2="303" stroke="#6d28d9" stroke-width="3.5" stroke-dasharray="6,4" marker-end="url(#arrowVioletT10)"/>
+  <text x="380" y="278" text-anchor="end" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#6d28d9"><tspan font-style="italic">a</tspan><tspan dy="5" font-size="65%">c</tspan></text>
+
+  <!-- Right-angle cue: velocity and acceleration are perpendicular -->
+  <polyline points="470,260 460,270 450,260" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="460" y="292" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">90&#176;</text>
+
+  <!-- Badge (1): ties the main-panel instant to the inset's first snapshot -->
+  <circle cx="479" cy="231" r="11" fill="#334155"/>
+  <text x="479" y="235" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">1</text>
+
+  <!-- Inset: enlarged local-vector detail, one instant later -->
+  <rect x="590" y="130" width="370" height="345" rx="16" fill="#f3f9fb" stroke="#1f6f8b" stroke-width="1.5"/>
+  <text x="775" y="157" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">A Moment Later</text>
+  <text x="775" y="177" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">بعد لحظة</text>
+
+  <circle cx="775" cy="305" r="85" fill="#eef7fa" stroke="#1f6f8b" stroke-width="2.5"/>
+  <circle cx="775" cy="305" r="4" fill="#1f6f8b" stroke="#ffffff" stroke-width="1.5"/>
+
+  <!-- Inset instant 1 (same instant as the main panel) -->
+  <circle cx="829.6" cy="239.9" r="7" fill="#1f6f8b" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="829.6" y1="239.9" x2="858.7" y2="264.3" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowRustT10)"/>
+  <line x1="829.6" y1="239.9" x2="802.6" y2="272.1" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrowVioletT10)"/>
+  <circle cx="846" cy="217" r="9" fill="#334155"/>
+  <text x="846" y="220" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff">1</text>
+
+  <!-- Inset instant 2: velocity has rotated to stay tangent; acceleration still points to the same center -->
+  <circle cx="858.7" cy="319.8" r="7" fill="#1f6f8b" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="858.7" y1="319.8" x2="852.1" y2="357.2" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowRustT10)"/>
+  <line x1="858.7" y1="319.8" x2="817.3" y2="312.5" stroke="#6d28d9" stroke-width="2.5" stroke-dasharray="5,3" marker-end="url(#arrowVioletT10)"/>
+  <circle cx="885" cy="335" r="9" fill="#334155"/>
+  <text x="885" y="338" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff">2</text>
+
+  <text x="775" y="435" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-style="italic" fill="#334155">Velocity rotates; acceleration still points to the same center.</text>
+  <text x="775" y="454" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="12" fill="#334155">تدور السرعة المتجهة، ويظل التسارع يشير إلى المركز نفسه.</text>
+
+  <!-- Legend: color key (English, per-item) -->
+  <line x1="110" y1="655" x2="140" y2="655" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="148" y="659" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">r</tspan><tspan> — radius</tspan></text>
+
+  <line x1="400" y1="655" x2="430" y2="655" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRustT10)"/>
+  <text x="438" y="659" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">v</tspan><tspan> — tangential velocity</tspan></text>
+
+  <line x1="680" y1="655" x2="710" y2="655" stroke="#6d28d9" stroke-width="3" stroke-dasharray="5,3" marker-end="url(#arrowVioletT10)"/>
+  <text x="718" y="659" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155"><tspan font-style="italic">a</tspan><tspan dy="4" font-size="65%">c</tspan><tspan dy="-4"> — centripetal acceleration</tspan></text>
+
+  <!-- Legend (Arabic, combined line) -->
+  <text x="500" y="682" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" fill="#334155">r — نصف القطر&#160;&#160;&#160;&#160;&#160;v — السرعة المماسّة&#160;&#160;&#160;&#160;&#160;a_c — التسارع المركزي (نحو المركز)</text>
+
+  <!-- Equation panel -->
+  <rect x="354" y="709" width="300" height="70" rx="12" fill="#1f6f8b" fill-opacity="0.18"/>
+  <rect x="350" y="705" width="300" height="70" rx="12" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="500" y="750" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a"><tspan font-style="italic">a</tspan><tspan dy="6" font-size="65%">c</tspan><tspan dy="-6"> = </tspan><tspan font-style="italic">v</tspan><tspan dy="-9" font-size="60%">2</tspan><tspan dy="9">/</tspan><tspan font-style="italic">r</tspan></text>
+
+  <text x="500" y="800" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#334155">Centripetal acceleration depends on speed squared and radius</text>
+  <text x="500" y="822" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="15" fill="#334155">يعتمد التسارع المركزي على مربع السرعة ونصف القطر</text>
+
+  <!-- Caption 1: constant speed does not mean constant velocity -->
+  <text x="500" y="855" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">Speed can stay constant while velocity still changes, because its direction keeps changing.</text>
+  <text x="500" y="877" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">قد تبقى السرعة (المقدار) ثابتة بينما تتغيّر السرعة المتجهة باستمرار، لأن اتجاهها يتغيّر باستمرار.</text>
+
+  <!-- Caption 2: explicit anti-misconception note -->
+  <text x="500" y="902" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">Misconception check: centripetal acceleration points toward the center — the object itself does not move toward the center.</text>
+  <text x="500" y="924" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">تصحيح مفهوم خاطئ: التسارع المركزي يتجه نحو المركز — أما الجسم نفسه فلا يتحرك نحو المركز.</text>
+
+  <!-- Draft / review-required footer band -->
+  <rect x="0" y="955" width="1000" height="40" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="500" y="980" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#b45309">DRAFT — REVIEW REQUIRED — ORIGINAL SCHEMATIC (ch01-t10-visual-001) — Not authorized for student-facing use</text>
+</svg>

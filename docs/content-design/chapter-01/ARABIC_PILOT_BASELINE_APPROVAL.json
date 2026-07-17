@@ -1,0 +1,89 @@
+{
+  "baselineApprovalId": "ch01-arabic-pilot-baseline-001",
+  "baselineVersion": "1.0.2",
+  "status": "approved",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-15",
+  "scope": {
+    "approvedTopicIds": ["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"],
+    "recordScope": "All 36 records across the four pilot content files (4 instructorScript, 28 contentBlock, 4 problem), each record's Arabic translation layer (localizedContent.ar, problemStatement.ar and other per-field .ar siblings, and the arabic.canonicalArabicTranslation slot).",
+    "notApplicableTo": "All other Chapter 1 topics remain outside this baseline; no Arabic translation was generated or reviewed for any topic other than these four."
+  },
+  "reviewBasis": "This approval is based on the completed sequence of Claude read-only and generation passes on the Arabic translation layer: (1) initial Arabic translation generation for all 36 records against the approved English pilot baseline (ENGLISH_PILOT_BASELINE_APPROVAL.json, baselineVersion 1.0.0) and the approved glossary terms in BILINGUAL_GLOSSARY.json; (2) an Arabic translation validation pass confirming completeness, terminology consistency, and numerical/equation integrity; (3) a full Arabic scientific and linguistic review across all ten required assessment dimensions per topic, which identified required revisions (incomplete instructor-script subsections, inconsistent unit-symbol style, one term-collision in ch01-t02, and visual panel-label style) alongside non-blocking notes; (4) a revision pass applying every required fix, re-verified against the frozen English baseline with a programmatic byte-for-byte equality check on every English text value; and (5) a final read-only Arabic baseline review re-confirming, record by record, that all 36 Arabic layers are complete, terminologically consistent, numerically identical to English, and free of blocking issues. This is a project-owner approval decision made on the basis of those completed Claude reviews, not an independently re-derived linguistic or scientific verification beyond them.",
+  "statementOfApproval": "The Arabic translation layer for the Chapter 1 pilot topics ch01-t02, ch01-t03, ch01-t08, and ch01-t10 has completed scientific and linguistic review. All 36 Arabic translation layers are complete and terminologically consistent with the approved glossary. No blocking revisions remain on any of the four topics.",
+  "perTopicDecision": {
+    "ch01-t02": {
+      "decision": "approvedWithNonBlockingProductionNote",
+      "remainingNonBlockingNotes": [
+        "ch01-t02-block-visual's appended visual-label production rule reuses ch01-t08's illustrative example symbols '(مثل a، g، +، m/s^2)' verbatim; ch01-t02's own diagram uses mm/m/km, not a/g/+/m/s^2. The general rule stated is correct and safely applies, but the parenthetical example should be updated to '(مثل mm، m، km)' to match this topic's own diagram content.",
+        "The instructor script's added tableGuidance (إرشادات الجدول), levelAdaptations (تكييف المستوى), analogies (تشبيهات), and examples (أمثلة يستخدمها المعلم) sections live inside the single schema-provided arabic.canonicalArabicTranslation field rather than per-field slots, since CANONICAL_DESIGN_SCHEMA.json provides no per-subfield Arabic slot for instructorScript records; this is a structural characteristic of the schema, not a content gap."
+      ]
+    },
+    "ch01-t03": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "Same structural note as ch01-t02 regarding the single combined arabic.canonicalArabicTranslation slot for instructor-script subsections; ch01-t03 has no tableGuidance section because the English source has none to translate, which is correct, not a gap."
+      ]
+    },
+    "ch01-t08": {
+      "decision": "approvedWithNonBlockingProductionNote",
+      "remainingNonBlockingNotes": [
+        "ch01-t08-block-visual's appended visual-label production rule is correct for this topic's own diagram (a, g, +, m/s^2 are exactly the symbols used), but it was copy-pasted into ch01-t02's visual block as well, where the example does not match that topic's diagram content (see ch01-t02's note).",
+        "Same structural note as ch01-t02 regarding the single combined arabic.canonicalArabicTranslation slot for instructor-script subsections.",
+        "As of baselineVersion 1.0.2: ch01-t08-block-equations' Arabic v0 = 0 clause was clarified per ch01-corr-009 (see revisionLog below), mirroring the English revision, to state explicitly that it applies only to release-from-rest, not universally."
+      ]
+    },
+    "ch01-t10": {
+      "decision": "approvedAsDrafted",
+      "remainingNonBlockingNotes": [
+        "ch01-t10-block-visual and ch01-t03-block-visual do not carry the written visual-label production rule text (it was added only to ch01-t02 and ch01-t08 per the explicit scope of the revision that introduced it). Both specs already conform to the rule in practice (symbolic labels stay Latin, natural-language annotations are translated) — folding the documented rule text into these two specs is worth doing whenever they are next touched, but nothing in them is currently incorrect.",
+        "Same structural note as ch01-t02 regarding the single combined arabic.canonicalArabicTranslation slot for instructor-script subsections."
+      ]
+    }
+  },
+  "downstreamAuthorization": {
+    "sourceForVisualProduction": "This approved Arabic baseline (the arabic.canonicalArabicTranslation and localizedContent.ar / .ar-sibling text as it exists in docs/content-design/chapter-01/pilot/ch01-t02-content.json, ch01-t03-content.json, ch01-t08-content.json, and ch01-t10-content.json at baselineVersion 1.0.0), together with the already-approved English visualReference specifications, is now the designated bilingual source for original diagram artwork production for these four topics, including the visual-label production rule (Latin symbols/LTR isolation for formulas, Arabic for natural-language annotations) documented in ch01-t02-block-visual and ch01-t08-block-visual.",
+    "sourceForFutureBilingualRendering": "This approved Arabic baseline is now the designated source text for any future bilingual (English/Arabic) rendering, layout, or display work on these four topics.",
+    "note": "Designating this baseline as the visual-production and bilingual-rendering source text does not itself perform any artwork creation or rendering, and does not authorize student-facing publication of the resulting bilingual or illustrated content — those remain separate, unauthorized actions requiring explicit future authorization."
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to the Arabic content of ch01-t02, ch01-t03, ch01-t08, or ch01-t10 (any .ar text field, or arabic.canonicalArabicTranslation, in the instructorScript, contentBlock, or problem records in the four pilot files) must be recorded as a controlled revision against this baseline, not made silently.",
+    "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.1.0) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when. Visual artwork and bilingual-rendering work produced against baselineVersion 1.0.0 must be checked for consistency against any later revision.",
+    "revisionLog": [
+      {
+        "revisionId": "ch01-arabic-baseline-rev-001",
+        "fromVersion": "1.0.0",
+        "toVersion": "1.0.1",
+        "revisedAt": "2026-07-16",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t02-block-visual's localizedContent.ar and arabic.canonicalArabicTranslation in docs/content-design/chapter-01/pilot/ch01-t02-content.json, translating the same revised English spec recorded in ENGLISH_PILOT_BASELINE_APPROVAL.json revisionLog entry ch01-english-baseline-rev-001. No other record's Arabic text in ch01-t02, and no Arabic text in ch01-t03, ch01-t08, or ch01-t10, was changed.",
+        "whatChanged": "The Arabic translation of ch01-t02-block-visual's visual specification was revised to describe the produced length/area/volume/squared-cubed-conversion-factor diagram (ch01-t02-visual-001.svg) instead of the original coin/doorway/city-block scale-comparison scene. The original concept was preserved within the same Arabic text as an explicitly optional future supplementary visual, not deleted. The pre-existing trailing paragraph documenting the visual-label production rule (قاعدة وسم العناصر البصرية) was kept unchanged, including its already-noted non-blocking mismatch (see ch01-t02's remainingNonBlockingNotes above).",
+        "whatWasNotChanged": "No other Arabic translation layer in any of the 36 records across the four pilot topics was touched. Terminology, glossary-term usage, and unit-symbol conventions in the new Arabic text follow the same house style already established and reviewed for this file's baselineVersion 1.0.0.",
+        "rationale": "Mirrors the English baseline revision (ENGLISH_PILOT_BASELINE_APPROVAL.json, baselineVersion 1.0.1): the Arabic spec text must describe the same visual the English spec text now describes, since both are the same bilingual record.",
+        "translationStatus": "draft — this new Arabic text has not itself been through a dedicated linguistic/scientific review pass; it carries the same draft/review-required status as the rest of this record and the asset it describes."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-002",
+        "fromVersion": "1.0.1",
+        "toVersion": "1.0.2",
+        "revisedAt": "2026-07-16",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t08-block-equations' localizedContent.ar and arabic.canonicalArabicTranslation in docs/content-design/chapter-01/pilot/ch01-t08-content.json, translating the same revised English wording recorded in ENGLISH_PILOT_BASELINE_APPROVAL.json revisionLog entry ch01-english-baseline-rev-002. No other Arabic text in ch01-t08, and no Arabic text in ch01-t02, ch01-t03, or ch01-t10, was changed.",
+        "whatChanged": "The two occurrences of the trailing clause '، مع v0 = 0 عند الانطلاق من السكون' were each replaced with '؛ إذا بدأ الجسم من السكون فإن v0 = 0، وإلا فتُستخدم القيمة الفعلية للسرعة الابتدائية.' This mirrors the English clarification (see ch01-english-baseline-rev-002) resolving PH4-001. See SCIENTIFIC_CORRECTIONS.json, correctionId ch01-corr-009, for the full correction record.",
+        "whatWasNotChanged": "No other Arabic translation layer in any of ch01-t08's records, and no Arabic text in any other topic, was touched. The Latin equation tokens (v0, at, dy, t^2) remain unchanged and LTR-isolated exactly as before; only the Arabic connector prose around them was revised.",
+        "rationale": "Mirrors the English baseline revision (ENGLISH_PILOT_BASELINE_APPROVAL.json, baselineVersion 1.0.2): the Arabic text must state the same clarified conditional the English text now states, since both are the same bilingual record.",
+        "translationStatus": "draft — this new Arabic text has not itself been through a dedicated linguistic/scientific review pass; it carries the same draft/review-required status as the rest of this record."
+      }
+    ]
+  },
+  "unchangedByThisApproval": [
+    "Every instructorScript, contentBlock, and problem record in the four pilot files remains in its existing draft/review-required state: every Arabic text field's status remains \"draft\", arabic.translationStatus remains \"draft\", and arabic.translationReviewer remains null on every record.",
+    "blocking.blockingStatus, blocking.studentFacingAllowed (false on every record), and all other blocking fields are untouched by this approval.",
+    "studentFacingAllowed remains false on every record and every topic in PILOT_READINESS.json.",
+    "studentPublicationAuthorized remains false (global).",
+    "canonicalGenerationAuthorized remains unchanged at the chapter-wide level (false) and at the per-topic level (as previously granted in PILOT_AUTHORIZATION.json for these four topics only).",
+    "The frozen English pilot baseline (ENGLISH_PILOT_BASELINE_APPROVAL.json, baselineVersion 1.0.0) and the English text in the four pilot content files are entirely untouched by this approval.",
+    "docs/content-audits/ remains untouched.",
+    "This approval does not authorize student publication, artwork creation, or Arabic-translation generation for any topic other than these four."
+  ]
+}

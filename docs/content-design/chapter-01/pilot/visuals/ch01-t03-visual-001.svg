@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="900" height="680" role="img" aria-labelledby="ch01t03visTitle ch01t03visDesc">
+  <title id="ch01t03visTitle">One Complete Cycle: Period and Frequency (دورة كاملة واحدة: الدور والتردد)</title>
+  <desc id="ch01t03visDesc">An original schematic showing a point moving clockwise around a circle at three instants: t=0, t=T/2, and t=T. At t=0 and t=T the point is at the same position with the same tangential direction of motion, illustrating one complete cycle. A timeline beneath the panels marks 0, T/2, and T. An equation panel shows f = 1/T and T = 1/f. Captions are provided in English and Arabic.</desc>
+
+  <defs>
+    <marker id="arrowRust" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9480f"/>
+    </marker>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="680" fill="#ffffff"/>
+
+  <!-- Title (bilingual) -->
+  <text x="450" y="40" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">One Complete Cycle: Period and Frequency</text>
+  <text x="450" y="68" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">دورة كاملة واحدة: الدور والتردد</text>
+
+  <!-- Panel labels (formula-only, LTR; variable symbols italicized, values upright) -->
+  <text x="180" y="118" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#0f172a"><tspan font-style="italic">t</tspan><tspan> = 0</tspan></text>
+  <text x="450" y="118" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#0f172a"><tspan font-style="italic">t</tspan><tspan> = </tspan><tspan font-style="italic">T</tspan><tspan>/2</tspan></text>
+  <text x="720" y="118" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#0f172a"><tspan font-style="italic">t</tspan><tspan> = </tspan><tspan font-style="italic">T</tspan></text>
+
+  <!-- Match indicator: t = 0 and t = T share a highlight tint (panel 2 keeps the neutral tint) and a confirmed-match badge -->
+  <!-- Panel 1: t = 0, dot at top, moving right (clockwise) -->
+  <circle cx="180" cy="220" r="80" fill="#eafaf0" stroke="#1f6f8b" stroke-width="3"/>
+  <line x1="180" y1="300" x2="180" y2="382" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="180" cy="140" r="9" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <line x1="196" y1="140" x2="238" y2="140" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRust)"/>
+
+  <!-- Bilingual inline label naming the direction-of-motion arrow -->
+  <line x1="300" y1="122" x2="232" y2="136" stroke="#94a3b8" stroke-width="1.25"/>
+  <text x="305" y="102" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155">Direction of motion</text>
+  <text x="305" y="118" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" fill="#334155">اتجاه الحركة</text>
+
+  <!-- Confirmed-match badge for t = 0 -->
+  <circle cx="135" cy="100" r="11" fill="#15803d"/>
+  <path d="M 129 100 L 133 104 L 141 95" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Panel 2: t = T/2, dot at bottom, moving left (clockwise) -->
+  <circle cx="450" cy="220" r="80" fill="#eef7fa" stroke="#1f6f8b" stroke-width="3"/>
+  <line x1="450" y1="300" x2="450" y2="382" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="450" cy="300" r="9" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <line x1="438" y1="300" x2="396" y2="300" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRust)"/>
+
+  <!-- Panel 3: t = T, dot back at top, moving right (same direction as t = 0) -->
+  <circle cx="720" cy="220" r="80" fill="#eafaf0" stroke="#1f6f8b" stroke-width="3"/>
+  <line x1="720" y1="300" x2="720" y2="382" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="720" cy="140" r="9" fill="#1f6f8b" stroke="#ffffff" stroke-width="2"/>
+  <line x1="732" y1="140" x2="774" y2="140" stroke="#d9480f" stroke-width="3" marker-end="url(#arrowRust)"/>
+
+  <!-- Confirmed-match badge for t = T (same green as t = 0's badge: shared highlight) -->
+  <circle cx="765" cy="100" r="11" fill="#15803d"/>
+  <path d="M 759 100 L 763 104 L 771 95" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Timeline -->
+  <line x1="100" y1="390" x2="810" y2="390" stroke="#334155" stroke-width="2" marker-end="url(#arrowSlate)"/>
+  <text x="828" y="396" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-style="italic" fill="#0f172a">t</text>
+
+  <line x1="180" y1="382" x2="180" y2="398" stroke="#334155" stroke-width="2"/>
+  <line x1="450" y1="382" x2="450" y2="398" stroke="#334155" stroke-width="2"/>
+  <line x1="720" y1="382" x2="720" y2="398" stroke="#334155" stroke-width="2"/>
+
+  <text x="180" y="422" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#0f172a">0</text>
+  <text x="450" y="422" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#0f172a"><tspan font-style="italic">T</tspan><tspan>/2</tspan></text>
+  <text x="720" y="422" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#0f172a"><tspan font-style="italic">T</tspan></text>
+
+  <!-- Reciprocal-relationship equation panel (slightly strengthened weight: soft shadow + heavier border) -->
+  <rect x="304" y="455" width="300" height="68" rx="12" fill="#1f6f8b" fill-opacity="0.18"/>
+  <rect x="300" y="450" width="300" height="68" rx="12" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="450" y="494" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a"><tspan font-style="italic">f</tspan><tspan> = 1/</tspan><tspan font-style="italic">T</tspan><tspan>&#160;&#160;&#160;&#160;&#160;</tspan><tspan font-style="italic">T</tspan><tspan> = 1/</tspan><tspan font-style="italic">f</tspan></text>
+
+  <text x="450" y="543" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#334155">Frequency and period are reciprocals</text>
+  <text x="450" y="566" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="16" fill="#334155">التردد والدور مقلوبان لبعضهما</text>
+
+  <!-- Core cycle-definition caption (bilingual) -->
+  <text x="450" y="598" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-style="italic" fill="#334155">One complete cycle means returning to both the same position and the same direction of motion.</text>
+  <text x="450" y="621" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="15" fill="#334155">الدورة الكاملة الواحدة تعني العودة إلى الموضع نفسه واتجاه الحركة نفسه معًا.</text>
+
+  <!-- Draft / review-required footer band -->
+  <rect x="0" y="640" width="900" height="40" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="450" y="665" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#b45309">DRAFT — REVIEW REQUIRED — ORIGINAL SCHEMATIC (ch01-t03-visual-001) — Not authorized for student-facing use</text>
+</svg>

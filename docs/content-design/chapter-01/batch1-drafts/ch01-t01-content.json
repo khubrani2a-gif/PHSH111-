@@ -1,0 +1,690 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t01",
+  "topicTitle": "Fundamental Quantities",
+  "topicTitleAr": null,
+  "generationStatus": "draft-batch1-english-only-generation",
+  "generationNote": "All content in this file is newly authored under PILOT_AUTHORIZATION.json v1.2.0's batch1DraftingAuthorization, built directly from the approved correction ch01-corr-001 (approvalStatus: editoriallyApproved; approvals.scientificReviewer: null — project-owner editorial approval, not independent physics review). No textbook, review-card, problem-bank, slide, or Kahoot wording was copied or closely paraphrased. Provenance links trace conceptual topic lineage only. This is an ENGLISH-ONLY DRAFT: every record's Arabic content is explicitly represented as missing (arabic.translationStatus: \"missing\"), not omitted silently, not machine-translated, and not copied from the English text. This file is NOT located under docs/content-design/chapter-01/pilot/ and is NOT read by apps/chapter1-mvp/ — it is a controlled draft artifact only, not an approved canonical baseline, not application-facing content, and not authorized for student-facing use in any form.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-101",
+        "topicIds": [
+          "ch01-t01"
+        ],
+        "openingHook": {
+          "text": "Ask students to name a few different things a clinician might measure in a single shift: a patient's height, the timing between pulse beats, the mass of a medication dose. List them on the board, then ask whether these are really as different as they look, or whether they all trace back to a small, shared set of basic ideas.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "Out of everything that could be measured, is there a smallest set of basic quantities that everything else is built from — and is that set the same everywhere in physics, or does it depend on what part of physics you're doing?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Physics builds its full vocabulary of measurable quantities from a small set of fundamental quantities that are not themselves defined in terms of anything simpler. For the mechanics content in this chapter, three fundamental quantities are used throughout: distance, time, and mass. A fourth fundamental property, charge, exists but is introduced later, once electrical phenomena are covered.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "Distinguish a fundamental physical quantity from a quantity that is derived by combining fundamental quantities.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "State the three fundamental quantities this chapter's mechanics content relies on, and identify charge as a fourth fundamental property introduced later in the course.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Show how a simple derived quantity is constructed from fundamental quantities, using speed as the example.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "Before we can measure anything precisely, we need to agree on the smallest set of basic ideas everything else is built from. Physics calls these the fundamental quantities: ones that are not defined by combining other quantities — they are simply the starting building blocks. For the mechanics we cover in this chapter, three fundamental quantities do all the work: distance, time, and mass. Distance answers 'how far.' Time answers 'how long.' Mass answers 'how much matter, and how much resistance to being sped up or slowed down.' There is a fourth fundamental property in physics as a whole, called charge, but we are going to set it aside for now — it belongs to electrical phenomena, which come later in the course. That's an important detail: when we say distance, time, and mass are 'the' fundamental quantities in this chapter, we mean they are the ones this chapter's mechanics content is built from — not that nothing else in physics is ever treated as fundamental. Once we have these three (or, later, four) fundamentals, every other quantity we use is derived: built by combining fundamentals through multiplication or division, never by inventing a brand-new independent unit. Speed is the simplest example — it is distance divided by time. It does not need its own separate fundamental unit; it borrows the units of distance and time and combines them.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [],
+        "figureCues": [
+          {
+            "visualIds": [
+              "ch01-t01-visual-001"
+            ],
+            "instruction": {
+              "text": "Show the fundamental-versus-derived quantity diagram here (see contentBlock ch01-t01-block-visual). This visual has not yet been produced; use the fallback below until it exists.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "fallbackIfUnavailable": "Describe the four fundamental quantities verbally, then verbally build 'speed' from distance and time on the board."
+          }
+        ],
+        "intuition": {
+          "text": "If you are ever unsure whether a quantity is fundamental or derived, ask: can it be built by combining distance, time, mass (or, later, charge) through multiplication or division? If yes, it is derived, no matter how commonly it is used.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [],
+        "levelAdaptations": [
+          "Introductory: focus on the idea that a small number of basic quantities builds everything else, using speed as the one worked example, before naming L/T/M symbols.",
+          "Standard: introduce the L, T, M symbols and explicitly state the chapter's mechanics scope qualifier.",
+          "Advanced: ask students to propose other derived quantities they already know (e.g. area) and identify which fundamentals each is built from, without working the unit algebra in detail (unit/area/volume mechanics belong to the next topic)."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "Is speed a fundamental quantity or a derived one? How do you know?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "If someone said 'distance, time, and mass are the only fundamental quantities in all of physics,' would that be an accurate statement? Why or why not?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "Derived — it's built by dividing distance by time, not defined independently.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Not accurate as a claim about all of physics — it's accurate only as a description of what this chapter's mechanics content uses; charge is another fundamental property, introduced later.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Treating distance, time, and mass as the complete list of fundamental quantities in all of physics, rather than the set this chapter's mechanics content is specifically built from.",
+          "Assuming a derived quantity like speed must have its own independent fundamental unit, rather than recognizing it is built from distance and time."
+        ],
+        "analogies": [
+          "A small alphabet of letters can spell an enormous number of words; a small set of fundamental quantities can build an enormous number of derived quantities."
+        ],
+        "examples": [
+          "Building speed from distance and time (the chapter's own worked example).",
+          "A brief forward-pointer that area and volume — covered in the next topic — are also derived directly from distance, without working through their unit-conversion details here."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t02",
+            "script": {
+              "text": "Now that we know distance, time, and mass are our chapter's fundamental building blocks, let's take a closer look at the first of them — distance — and see how it combines with itself to build area and volume.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Always pair 'distance, time, and mass are the fundamental quantities' with the explicit scope qualifier 'emphasized in this chapter's mechanics treatment' — this is the exact gap the approved correction ch01-corr-001 addresses.",
+          "Always mention charge as the fourth fundamental property, deferred rather than omitted."
+        ],
+        "timing": {
+          "estimatedMinutes": 8,
+          "pauseCues": [
+            "After the opening-hook list, before revealing that they trace back to a shared set of ideas.",
+            "After naming charge as deferred, before moving to the derived-quantity example."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Do not let students leave this lesson believing distance, time, and mass are the only fundamental quantities in all of physics — always state the mechanics-scope qualifier and name charge explicitly, per ch01-corr-001.",
+          "Do not develop area or volume mechanics here — that belongs to the next topic; use speed only as the derived-quantity example."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-001"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG009",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only (this is ch01-t01's own mapped segment); wording above is newly authored per ch01-corr-001, not derived from this segment's text."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG010",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only (this is ch01-t01's own mapped segment); wording above is newly authored, not derived from this segment's text."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-002",
+            "locatorType": "segment",
+            "locatorId": "S2-SEG026",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Primary supporting evidence per the citation-repair task; textbook paragraph already states the corrected scope-and-deferral framing. Wording above is newly authored, not copied or closely paraphrased."
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P003",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; the derived-quantity example (speed = distance/time) mirrors this page's own choice of example, reworded originally."
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Physics organizes everything it measures around a small set of fundamental quantities that are not themselves defined in terms of anything simpler. For the mechanics covered in this chapter, three fundamental quantities are used throughout: distance, time, and mass. A fourth fundamental property, charge, is introduced later in the course, once electrical phenomena are covered. Every other quantity used in this chapter — including derived quantities like speed — is built by combining these fundamentals, not by defining a new fundamental quantity from scratch.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-002",
+            "locatorType": "segment",
+            "locatorId": "S2-SEG026",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Primary supporting evidence; this source already states the scope-and-deferral framing the corrected wording preserves."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-001"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-001"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording (ch01-corr-001).",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Physics describes the material world in terms of a few basic aspects: how far apart things are, how long processes take, and how much matter (and, for electrical phenomena covered later, how much charge) something has. To make these aspects measurable, physics assigns each one a fundamental quantity: distance (symbol L) for 'how far,' time (symbol T) for 'how long,' and mass (symbol M) for the amount of matter and, more precisely, the amount of resistance to a change in motion. These three are treated as fundamental for this chapter's mechanics content specifically — they are not derived from each other or from anything simpler within that scope. A fourth fundamental property, charge, also exists in physics as a whole, but this chapter defers it to a later part of the course, once electrical phenomena are the topic. Saying 'distance, time, and mass are the fundamental quantities' should always be understood with that scope in mind — it describes what this chapter's mechanics content is built from, not a claim that nothing else in physics is ever treated as fundamental. Every other quantity used in this chapter is a derived quantity: one built by combining fundamental quantities through multiplication or division, rather than by introducing an independent unit of its own. The clearest early example is speed, which is built entirely from distance and time. Later topics in this chapter build further derived quantities — such as area and volume (covered next, from distance alone) — the same way: by combining fundamentals, never by inventing a new fundamental.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG009",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording newly authored."
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG010",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording newly authored."
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P002",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; this page's fuller paragraph (which names charge) informed the scope described here."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-001"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-001"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording; expands the scope-and-deferral framing into a full explanation.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A derived quantity is formed by combining fundamental quantities through multiplication and/or division, without introducing a new independent unit. In dimensional notation, distance has dimension L and time has dimension T — the same symbols introduced above for the fundamental quantities themselves — so speed, being distance divided by time, has dimension L/T. The simplest example in this chapter is speed: speed = distance / time, or v = d / t, where v is speed (a scalar quantity — magnitude only, with no direction attached), d is the measured distance for the interval (a scalar length, measured in meters, m), and t is the elapsed time for that same interval (measured in seconds, s). Here, d and t are the specific measured-variable symbols used in this equation; they correspond to, but are distinct from, the dimensional symbols L and T, which name the type of quantity rather than a particular measured value. This gives speed the combined unit meters per second (m/s), built directly from distance's and time's own units, with no separate 'speed unit' ever defined. This relationship gives the average speed over the specified distance and time interval; a signed, directional version of this idea (velocity) is developed in a later topic once direction and vectors are introduced.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P003",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; this page's own choice of speed = L/T as the illustrative derived quantity informed this equation's selection, reworded originally."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-001"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-001"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; illustrates the fundamental-versus-derived distinction with the same derived quantity (speed) the audited source uses as its own example.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-visual",
+        "blockType": "visualReference",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "VISUAL REQUIREMENT (planning metadata only — this visual has NOT been produced, NOT been reviewed, and is NOT student-facing; separate visual-production authorization is required before any asset is created). Instructional purpose: help a learner see, at a glance, which quantities this chapter treats as fundamental and how a derived quantity is built from them. Concept to visualize: four labeled boxes — 'Distance (L)', 'Time (T)', and 'Mass (M)', each marked 'fundamental — used throughout this chapter,' plus a fourth box, 'Charge,' marked 'fundamental — introduced later.' Beside the three chapter-scope boxes, show one derived-quantity example built from two of them: 'Speed = Distance / Time,' with arrows from the Distance and Time boxes converging into a 'Speed (derived)' box. Required labels: bilingual title and caption (English now; Arabic to be added only once a separate Arabic-generation authorization exists), each fundamental quantity's name and symbol, the one derived-quantity example with its equation. Relationships to show: fundamental quantities as independent building blocks; a derived quantity as a combination of two fundamentals, not an independent unit of its own; charge visually set apart to show it is deferred, not excluded. Accessibility intent: role=img with a full title/desc pair sufficient for a screen-reader user to reconstruct the diagram's teaching content, following the same accessibility pattern already proven in the four pilot topics' visuals (see VISUAL_HOUSE_STYLE.md). Rights-safe originality requirement: any asset eventually produced from this specification must be entirely original artwork, not traced, cropped, or adapted from any slide, textbook page, or other publisher source.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-001"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-001"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Original visual specification; not traced or adapted from any slide or textbook figure. No asset has been produced.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "missingVisual",
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "visualDesignerAndScientificReviewer",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "visualReferenceIds": [
+          "ch01-t01-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t01-visual-001",
+            "availabilityStatus": "missing",
+            "linkageConfidence": "unresolved",
+            "linkageType": "none",
+            "rightsStatus": "pendingReview",
+            "visualResolutionId": null
+          }
+        ]
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t01",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception: believing distance, time, and mass are the complete list of fundamental quantities in all of physics, rather than the set this chapter's mechanics content specifically relies on. Correction: always state the mechanics-scope qualifier explicitly, and name charge as a fourth fundamental property, deferred to a later chapter rather than excluded. A related, milder misconception: assuming a commonly used derived quantity (like speed) must have its own independent fundamental unit rather than being built by combining distance and time.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-001"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-001"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; directly targets the gap addressed by ch01-corr-001, independently corroborated by scientific-audit records SCA01, S3-SCI-001, S3C-SCI-001, R1-SCI-001, and K1-SCI-004.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t01",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A classmate says: 'Distance, time, and mass are the fundamental quantities — so those are the only fundamental quantities in physics.' Is the first half of that sentence accurate? Is the conclusion drawn from it accurate? Explain, and name the additional fundamental property this chapter sets aside for later. Correct answer: The first half is accurate for this chapter's mechanics content, but the conclusion drawn from it is not — physics recognizes a fourth fundamental property, charge, which this chapter defers to a later part of the course covering electrical phenomena. 'Distance, time, and mass are the fundamental quantities' should always be read as scoped to this chapter's mechanics treatment, not as a claim about all of physics.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-001"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-001"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original review question; distinct in form (explanation-based, not multiple-choice) from the audited sources' multiple-choice items on this same scope question, and targets the scope qualifier directly.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1065 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t03",
+  "topicTitle": "Time, Period and Frequency",
+  "topicTitleAr": "الزمن والدور والتردد",
+  "generationStatus": "draft-pilot-generation",
+  "generationNote": "All content in this file is newly authored for the Chapter 1 pilot, built directly from the approved correction ch01-corr-006 and the approved glossary terms ch01-term-period/ch01-term-frequency. No textbook, review-card, problem-bank, slide, or Kahoot wording was copied or closely paraphrased. Provenance links trace conceptual topic lineage only. Nothing in this file is authorized for student-facing display; every record is draft and review-required.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-103",
+        "topicIds": [
+          "ch01-t03"
+        ],
+        "openingHook": {
+          "text": "Ask the class to clap once every time they think one second has passed, for about ten seconds, then compare how many claps different students produced for the 'same' ten seconds — a light-hearted way into the idea that repeating processes need a precise, shared definition of 'one repetition' before we can time them meaningfully.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "What does it actually mean to say something happens 'twice as fast,' and how do we measure that precisely?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Period is the time for one complete cycle of a named periodic process; frequency is how many complete cycles happen per unit time; the two are reciprocals only once 'one complete cycle' is clearly defined.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "Define period and frequency precisely, including the requirement to name the periodic process and define one complete cycle.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Apply f = 1/T and T = 1/f correctly, including unit handling (seconds and hertz).",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Avoid miscounting cycles (e.g. counting a one-way pass as a full cycle).",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "Some things in the world repeat themselves in a regular, recognizable pattern: a heartbeat, a swinging pendulum, a spinning fan blade. To describe how fast such a process repeats, physics uses two related but different quantities. The period, which we write as T, is how long ONE full repetition takes. The frequency, which we write as f, is how many full repetitions happen in one unit of time — conventionally, one second. Here's the part that's easy to get wrong: before you can compute either quantity, you have to pin down exactly what counts as 'one complete cycle' for the specific process you're describing. For a swinging pendulum, one complete cycle means a full back-and-forth swing that returns to the starting position and the starting direction of motion — not just one pass in one direction. If you only count the one-way pass, you'll get a period that's half of what it should be, and a frequency that's double what it should be. Once you've correctly identified one complete cycle for your specific process, period and frequency become simple reciprocals of each other: f equals one over T, and T equals one over f. Frequency is measured in hertz, abbreviated Hz, where one hertz literally means one complete cycle per second. Period is measured in seconds.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [
+          {
+            "cueOrder": 1,
+            "pageIds": [
+              "S3-P011"
+            ],
+            "instruction": {
+              "text": "Reference only for pacing — do not display or reuse this slide; excluded from the pilot per PILOT_RIGHTS_POLICY.json.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "figureCues": [
+          {
+            "visualIds": [
+              "ch01-t03-visual-001"
+            ],
+            "instruction": {
+              "text": "Show the newly designed rotating-disk cycle diagram (see contentBlock ch01-t03-block-visual) here.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "fallbackIfUnavailable": "Describe the three snapshots verbally: start, halfway, and back to start."
+          }
+        ],
+        "intuition": {
+          "text": "A short period (little time per cycle) always corresponds to a high frequency (many cycles per second) for the same process, and vice versa — the two move in opposite directions.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [],
+        "levelAdaptations": [
+          "Introductory: focus on 'one complete cycle' with a single concrete example (pendulum) before introducing symbols.",
+          "Standard: add f = 1/T, T = 1/f with unit handling.",
+          "Advanced: ask students to predict the effect of doubling frequency on period algebraically before computing it, to test the inverse relationship conceptually rather than just numerically."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "If a pendulum swings from left to right in 0.5 s, is its period 0.5 s? Why or why not?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "If frequency doubles, what happens to period?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "No — 0.5 s is only the one-way pass; the full period also includes the swing back, so the period is 1.0 s.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Period is cut in half.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Counting a one-way pass as a full cycle, halving the true period.",
+          "Believing a higher period means faster repetition (it means the opposite)."
+        ],
+        "analogies": [
+          "A round trip to the mailbox and back is one 'cycle'; walking only to the mailbox is half of one."
+        ],
+        "examples": [
+          "A patient's pulse of 72 beats per minute, converted to frequency in hertz and period in seconds."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t04",
+            "script": {
+              "text": "Now that we can measure how long a repeating process takes, let's shift from timing motion to describing what's actually moving — starting with mass.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Emphasize 'name the process, define one complete cycle' every single time period/frequency is introduced — this is the exact gap the approved correction ch01-corr-006 addresses."
+        ],
+        "timing": {
+          "estimatedMinutes": 10,
+          "pauseCues": [
+            "After the clapping activity, before revealing why claps differed.",
+            "After defining one complete cycle, before introducing f = 1/T."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Do not let students move to f = 1/T before they can correctly state what one complete cycle means for the process in the current example — this ordering is the whole point of the approved correction."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-006"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG019",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Topic-area lineage only; wording above is newly authored per ch01-corr-006, not derived from this segment's text."
+          },
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P011",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تمهيد افتتاحي: اطلب من الطلاب أن يصفّقوا مرة واحدة كل مرة يظنون أن ثانية واحدة قد مرّت، لمدة نحو عشر ثوانٍ، ثم قارن عدد التصفيقات التي أنتجها طلاب مختلفون لـ'العشر ثوانٍ نفسها' — طريقة خفيفة للدخول إلى فكرة أن العمليات المتكررة تحتاج إلى تعريف دقيق ومشترك لمعنى 'تكرار واحد' قبل أن نتمكّن من قياس زمنها بشكل ذي معنى.\n\nالسؤال المحوري: ماذا يعني فعليًا أن نقول إن شيئًا يحدث 'بضعف السرعة'، وكيف نقيس ذلك بدقة؟\n\nالفكرة الرئيسية: الدور هو زمن دورة كاملة واحدة لعملية دورية مُسمّاة؛ والتردد هو عدد الدورات الكاملة التي تحدث في وحدة الزمن؛ ولا تكون الكميتان مقلوبتين لبعضهما إلا بعد تحديد معنى 'دورة كاملة واحدة' بوضوح.\n\nأهداف التعلم:\n1. تعريف الدور والتردد تعريفًا دقيقًا، بما يشمل ضرورة تسمية العملية الدورية وتحديد معنى الدورة الكاملة الواحدة.\n2. تطبيق العلاقتين f = 1/T وT = 1/f تطبيقًا صحيحًا، بما يشمل التعامل الصحيح مع الوحدات (الثانية والهرتز).\n3. تجنّب عدّ الدورات خطأً (مثل عدّ مسار باتجاه واحد فقط على أنه دورة كاملة).\n\nالنص الكامل لسكربت التدريس: بعض الأشياء في العالم تتكرر بنمط منتظم يمكن التعرّف عليه: نبضة قلب، تأرجح بندول، دوران ريشة مروحة. ولوصف مدى سرعة تكرار مثل هذه العملية، تستخدم الفيزياء كميتين مترابطتين لكن مختلفتين. الدور، ونرمز له بـ T، هو المدة التي تستغرقها دورة كاملة واحدة. أما التردد، ونرمز له بـ f، فهو عدد الدورات الكاملة التي تحدث في وحدة زمن واحدة — وهي عادةً ثانية واحدة. وهنا يأتي الجزء الذي يسهل الوقوع في خطئه: قبل أن تتمكن من حساب أيٍّ من الكميتين، يجب أن تُحدّد بدقة ما الذي يُعدّ 'دورة كاملة واحدة' للعملية المحددة التي تصفها. فبالنسبة إلى بندول متأرجح، فإن الدورة الكاملة الواحدة تعني تأرجحًا كاملاً ذهابًا وإيابًا يعود فيه البندول إلى موضع البداية واتجاه حركته الأصلي — وليس مجرد مسار واحد باتجاه واحد. فإن اكتفيت بعدّ المسار أحادي الاتجاه فقط، فستحصل على دور يساوي نصف القيمة الصحيحة، وتردد يساوي ضعف القيمة الصحيحة. وبمجرد أن تُحدّد بشكل صحيح معنى الدورة الكاملة الواحدة للعملية المحددة لديك، يصبح الدور والتردد مقلوبَين بسيطَين لبعضهما: f يساوي واحدًا مقسومًا على T، وT يساوي واحدًا مقسومًا على f. يُقاس التردد بالهرتز، ويُرمز له بـ Hz، حيث يعني الهرتز الواحد حرفيًا دورة كاملة واحدة في الثانية. ويُقاس الدور بالثانية.\n\nالحدس: الدور القصير (زمن قليل لكل دورة) يقابل دائمًا ترددًا مرتفعًا (دورات كثيرة في الثانية) للعملية نفسها، والعكس صحيح — فالكميتان تتحركان في اتجاهين متعاكسين.\n\nأسئلة تُطرح على الطلاب:\n- إذا تأرجح بندول من اليسار إلى اليمين في 0.5 s، فهل دوره 0.5 s؟ ولماذا أو لماذا لا؟\n- إذا تضاعف التردد، فماذا يحدث للدور؟\n\nالإجابات المتوقعة من الطلاب:\n- لا — فـ0.5 s هي زمن المسار أحادي الاتجاه فقط؛ ويشمل الدور الكامل أيضًا رحلة العودة، لذا فإن الدور الفعلي هو 1.0 s.\n- يُصبح الدور نصف قيمته السابقة.\n\nالمفاهيم الخاطئة المتوقعة: عدّ مسار باتجاه واحد فقط على أنه دورة كاملة، مما يجعل الدور الحقيقي نصف قيمته. الاعتقاد بأن دورًا أكبر يعني تكرارًا أسرع (والصحيح هو العكس تمامًا).\n\nتكييف المستوى:\nتمهيدي: التركيز على 'الدورة الكاملة الواحدة' بمثال واحد ملموس (البندول) قبل تقديم الرموز.\nعادي: إضافة f = 1/T وT = 1/f مع التعامل الصحيح مع الوحدات.\nمتقدم: اطلب من الطلاب توقّع أثر مضاعفة التردد على الدور جبريًا قبل حسابه، لاختبار العلاقة العكسية مفاهيميًا لا عدديًا فقط.\n\nتشبيهات: الرحلة ذهابًا وإيابًا إلى صندوق البريد والعودة منه 'دورة' واحدة؛ والذهاب إلى صندوق البريد فقط نصف دورة.\n\nأمثلة يستخدمها المعلم: نبض مريض بمعدّل 72 نبضة في الدقيقة، يُحوَّل إلى تردد بالهرتز ودور بالثواني.\n\nجملة الانتقال إلى الموضوع التالي: بعد أن أصبحنا قادرين على قياس المدة التي تستغرقها عملية متكررة، فلننتقل من توقيت الحركة إلى وصف ما يتحرك فعليًا — بدءًا من الكتلة.\n\nملاحظات تشديد للمعلم: شدّد على 'تسمية العملية وتحديد معنى الدورة الكاملة الواحدة' في كل مرة يُطرح فيها مفهوما الدور والتردد — فهذه هي الثغرة نفسها التي يعالجها التصحيح المعتمد ch01-corr-006.\n\nتنبيهات خاصة بالمعلم: لا تدع الطلاب ينتقلون إلى f = 1/T قبل أن يتمكنوا من بيان معنى الدورة الكاملة الواحدة بشكل صحيح للعملية في المثال الحالي — فهذا الترتيب هو جوهر التصحيح المعتمد بالكامل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Period is the time for one complete cycle of a specified periodic process; frequency is the number of complete cycles of that process per unit time. The two are reciprocals only once one complete cycle has been defined.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "الدور هو زمن دورة كاملة واحدة لعملية دورية محددة؛ والتردد هو عدد الدورات الكاملة لتلك العملية في وحدة الزمن. ولا تكون الكميتان مقلوبتين لبعضهما إلا بعد تحديد معنى الدورة الكاملة الواحدة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "الدور هو زمن دورة كاملة واحدة لعملية دورية محددة؛ والتردد هو عدد الدورات الكاملة لتلك العملية في وحدة الزمن. ولا تكون الكميتان مقلوبتين لبعضهما إلا بعد تحديد معنى الدورة الكاملة الواحدة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG019",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t03",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Some physical processes repeat themselves in a regular, recognizable pattern — a heartbeat, a pendulum's swing, a rotating fan blade. To describe how fast such a repeating process is, physics uses two related but distinct quantities. The period (T) is how long one full repetition takes. The frequency (f) is how many full repetitions happen in one unit of time (conventionally, one second). Before either quantity can be computed, you must first pin down exactly what counts as 'one full repetition' for the specific process you're describing — a pendulum's period is the time for a complete back-and-forth swing that returns to its starting position and direction of motion, not just one one-way pass.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بعض العمليات الفيزيائية تتكرر بنمط منتظم يمكن التعرّف عليه — نبضة قلب، تأرجح بندول، دوران ريشة مروحة. ولوصف مدى سرعة عملية متكررة كهذه، تستخدم الفيزياء كميتين مترابطتين لكن مختلفتين. الدور (T) هو المدة التي تستغرقها دورة كاملة واحدة. والتردد (f) هو عدد الدورات الكاملة التي تحدث في وحدة زمن واحدة (وهي عادةً ثانية واحدة). وقبل أن يمكن حساب أيٍّ من الكميتين، يجب أولًا تحديد ما الذي يُعدّ 'دورة كاملة واحدة' للعملية المحددة التي تصفها بدقة — فدور البندول هو زمن تأرجح كامل ذهابًا وإيابًا يعود فيه إلى موضعه الابتدائي واتجاه حركته الأصلي، لا مجرد مسار واحد باتجاه واحد.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "بعض العمليات الفيزيائية تتكرر بنمط منتظم يمكن التعرّف عليه — نبضة قلب، تأرجح بندول، دوران ريشة مروحة. ولوصف مدى سرعة عملية متكررة كهذه، تستخدم الفيزياء كميتين مترابطتين لكن مختلفتين. الدور (T) هو المدة التي تستغرقها دورة كاملة واحدة. والتردد (f) هو عدد الدورات الكاملة التي تحدث في وحدة زمن واحدة (وهي عادةً ثانية واحدة). وقبل أن يمكن حساب أيٍّ من الكميتين، يجب أولًا تحديد ما الذي يُعدّ 'دورة كاملة واحدة' للعملية المحددة التي تصفها بدقة — فدور البندول هو زمن تأرجح كامل ذهابًا وإيابًا يعود فيه إلى موضعه الابتدائي واتجاه حركته الأصلي، لا مجرد مسار واحد باتجاه واحد.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG019",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          },
+          {
+            "sourceId": "SRC-CH01-CONV-001",
+            "locatorType": "segment",
+            "locatorId": "SEG020",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction wording.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "f = 1/T (frequency equals the reciprocal of period, for a specified periodic process and defined cycle). T = 1/f (period equals the reciprocal of frequency). T is measured in seconds (s). f is measured in hertz (Hz), where 1 Hz = 1 cycle per second = 1 s^-1.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "f = 1/T (التردد يساوي مقلوب الدور، لعملية دورية محددة ودورة معرَّفة). T = 1/f (الدور يساوي مقلوب التردد). يُقاس T بالثانية (s). ويُقاس f بالهرتز (Hz)، حيث 1 Hz = دورة واحدة في الثانية = 1 s^-1.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "f = 1/T (التردد يساوي مقلوب الدور، لعملية دورية محددة ودورة معرَّفة). T = 1/f (الدور يساوي مقلوب التردد). يُقاس T بالثانية (s). ويُقاس f بالهرتز (Hz)، حيث 1 Hz = دورة واحدة في الثانية = 1 s^-1.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P011",
+            "linkageType": "explicit",
+            "confidence": "medium",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly"
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored directly from the approved correction's equation pair.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-example",
+        "blockType": "example",
+        "topicId": "ch01-t03",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Example: A patient's pulse is measured at 72 beats per minute. Here, one complete cycle is one full heartbeat (one complete contraction-and-relaxation of the heart). Find the frequency in hertz and the period (the time between beats) in seconds. Solution: first convert to a per-second rate: f = 72 beats / 60 s = 1.2 Hz. Then T = 1/f = 1/1.2 Hz = 0.83 s (approximately) between beats.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مثال: قِيس نبض أحد المرضى فكان 72 نبضة في الدقيقة. هنا، الدورة الكاملة الواحدة هي نبضة قلب واحدة كاملة (انقباض وانبساط كاملان للقلب). أوجد التردد بالهرتز، والدور (الزمن الفاصل بين النبضتين) بالثانية. الحل: حوّل أولًا إلى معدّل في الثانية: f = 72 نبضة / 60 s = 1.2 Hz. ثم T = 1/f = 1/1.2 Hz = 0.83 s (تقريبًا) بين النبضتين.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مثال: قِيس نبض أحد المرضى فكان 72 نبضة في الدقيقة. هنا، الدورة الكاملة الواحدة هي نبضة قلب واحدة كاملة (انقباض وانبساط كاملان للقلب). أوجد التردد بالهرتز، والدور (الزمن الفاصل بين النبضتين) بالثانية. الحل: حوّل أولًا إلى معدّل في الثانية: f = 72 نبضة / 60 s = 1.2 Hz. ثم T = 1/f = 1/1.2 Hz = 0.83 s (تقريبًا) بين النبضتين.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original example (patient pulse-rate scenario, revised for health-science relevance per the pilot quality review); distinct from source examples (pendulum, watch, quartz crystal).",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-visual",
+        "blockType": "visualReference",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "VISUAL SPECIFICATION (not an image — describes a diagram to be newly designed): A circle with a marked reference dot at the 12-o'clock position. Show three snapshots side by side: t=0 (dot at 12 o'clock), t=T/2 (dot at 6 o'clock, halfway through the cycle), and t=T (dot back at 12 o'clock, one complete cycle finished). A timeline beneath the three snapshots marks these three instants with tick marks labeled 0, T/2, and T. Caption: 'One complete cycle means returning to both the same position and the same direction of motion.' No slide or textbook imagery is to be used; this is an original schematic to be drawn from scratch.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل وصف لرسم تخطيطي سيُصمَّم حديثًا): دائرة عليها نقطة مرجعية عند موضع الساعة 12. اعرض ثلاث لقطات جنبًا إلى جنب: t=0 (النقطة عند الساعة 12)، وt=T/2 (النقطة عند الساعة 6، في منتصف الدورة)، وt=T (النقطة عادت إلى الساعة 12، انتهت دورة كاملة). خط زمني أسفل اللقطات الثلاث يُحدّد هذه اللحظات الثلاث بعلامات موسومة 0 وT/2 وT. التعليق: 'الدورة الكاملة الواحدة تعني العودة إلى الموضع نفسه واتجاه الحركة نفسه معًا.' يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا رسم تخطيطي أصلي يُرسم من الصفر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "مواصفة العنصر البصري (ليست صورة — بل وصف لرسم تخطيطي سيُصمَّم حديثًا): دائرة عليها نقطة مرجعية عند موضع الساعة 12. اعرض ثلاث لقطات جنبًا إلى جنب: t=0 (النقطة عند الساعة 12)، وt=T/2 (النقطة عند الساعة 6، في منتصف الدورة)، وt=T (النقطة عادت إلى الساعة 12، انتهت دورة كاملة). خط زمني أسفل اللقطات الثلاث يُحدّد هذه اللحظات الثلاث بعلامات موسومة 0 وT/2 وT. التعليق: 'الدورة الكاملة الواحدة تعني العودة إلى الموضع نفسه واتجاه الحركة نفسه معًا.' يُمنع استخدام أي صورة من عرض تقديمي أو كتاب مدرسي؛ هذا رسم تخطيطي أصلي يُرسم من الصفر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "visualReferenceIds": [
+          "ch01-t03-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t03-visual-001",
+            "availabilityStatus": "available",
+            "linkageConfidence": "unresolved",
+            "linkageType": "none",
+            "rightsStatus": "approvedInternal",
+            "visualResolutionId": "ch01-t03-visual-validation-001",
+            "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t03-visual-001.svg",
+            "assetFormat": "svg",
+            "assetStatus": "draft",
+            "reviewRequired": true
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Original visual specification; not traced or adapted from any slide or textbook figure.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "unverifiedVisual",
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "visualDesignerAndScientificReviewer",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t03",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception 1: counting a one-way pass as a full cycle, which halves the true period and doubles the apparent frequency. Correction: always confirm a return to both the starting position and starting direction of motion before counting one cycle. Misconception 2: believing a higher period means faster repetition. Correction: a longer period means slower repetition (more time per cycle); frequency, not period, increases with speed of repetition.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "المفهوم الخاطئ الأول: عدّ مسار باتجاه واحد فقط على أنه دورة كاملة، مما يجعل الدور الحقيقي نصف قيمته والتردد الظاهري ضعف قيمته. التصحيح: تأكّد دائمًا من العودة إلى موضع البداية واتجاه الحركة الأصلي معًا قبل عدّ دورة واحدة. المفهوم الخاطئ الثاني: الاعتقاد بأن الدور الأكبر يعني تكرارًا أسرع. التصحيح: الدور الأطول يعني تكرارًا أبطأ (زمنًا أكبر لكل دورة)؛ والتردد، لا الدور، هو الذي يزداد مع سرعة التكرار.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "المفهوم الخاطئ الأول: عدّ مسار باتجاه واحد فقط على أنه دورة كاملة، مما يجعل الدور الحقيقي نصف قيمته والتردد الظاهري ضعف قيمته. التصحيح: تأكّد دائمًا من العودة إلى موضع البداية واتجاه الحركة الأصلي معًا قبل عدّ دورة واحدة. المفهوم الخاطئ الثاني: الاعتقاد بأن الدور الأكبر يعني تكرارًا أسرع. التصحيح: الدور الأطول يعني تكرارًا أبطأ (زمنًا أكبر لكل دورة)؛ والتردد، لا الدور، هو الذي يزداد مع سرعة التكرار.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored; directly targets the gap addressed by ch01-corr-006.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t03",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A metronome ticks once every 0.5 s. (a) What is its frequency? (b) If the metronome's frequency were doubled, what would happen to its period? Correct answers: (a) f = 1/T = 1/0.5 s = 2.0 Hz. (b) Doubling frequency halves the period (since T = 1/f, doubling f halves T), so the new period would be 0.25 s.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يصدر مترونوم نقرة واحدة كل 0.5 s. (a) ما تردده؟ (b) لو تضاعف تردد المترونوم، فماذا سيحدث لدوره؟ الإجابتان الصحيحتان: (a) f = 1/T = 1/0.5 s = 2.0 Hz. (b) يؤدي تضاعف التردد إلى تنصيف الدور (لأنه بما أن T = 1/f، فإن مضاعفة f تُنصّف T)، لذا يصبح الدور الجديد 0.25 s.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يصدر مترونوم نقرة واحدة كل 0.5 s. (a) ما تردده؟ (b) لو تضاعف تردد المترونوم، فماذا سيحدث لدوره؟ الإجابتان الصحيحتان: (a) f = 1/T = 1/0.5 s = 2.0 Hz. (b) يؤدي تضاعف التردد إلى تنصيف الدور (لأنه بما أن T = 1/f، فإن مضاعفة f تُنصّف T)، لذا يصبح الدور الجديد 0.25 s.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-006"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Fully original review question; distinct scenario from source's watch/crystal numeric-only questions, adds the inverse-relationship conceptual part.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "problem",
+      "record": {
+        "problemId": "ch01-prob-103",
+        "topicIds": [
+          "ch01-t03"
+        ],
+        "problemStatement": {
+          "en": {
+            "text": "A hummingbird beats its wings at a frequency of 50 Hz. Here, one complete wingbeat cycle is defined as one full upward-and-downward wing motion that returns the wing to its starting position. Find the period of one wingbeat, and determine how many wingbeats occur in 3 seconds.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يرفرف طائر الطنان بجناحيه بتردد 50 Hz. هنا، تُعرَّف الدورة الكاملة الواحدة لرفرفة الجناح بأنها حركة كاملة للجناح إلى أعلى ثم إلى أسفل تعيده إلى موضعه الابتدائي. أوجد دور رفرفة واحدة، وحدّد عدد الرفرفات التي تحدث في 3 ثوانٍ.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "givenValues": [
+          {
+            "symbol": "f",
+            "value": 50,
+            "unit": "Hz",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "t",
+            "value": 3,
+            "unit": "s",
+            "exactOrApproximate": "exact"
+          }
+        ],
+        "conceptualInterpretation": {
+          "en": {
+            "text": "One complete wingbeat cycle is the process; frequency tells us how many such cycles occur per second, and its reciprocal gives the time for one cycle.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "الدورة الكاملة الواحدة لرفرفة الجناح هي العملية المعنية؛ ويُخبرنا التردد بعدد هذه الدورات التي تحدث في الثانية، ويُعطي مقلوبه زمن الدورة الواحدة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "equationSelection": [
+          {
+            "equationId": "ch01-t03-eq-period",
+            "reason": "T = 1/f directly gives the period from the given frequency.",
+            "conditionsSatisfied": [
+              "periodic process (wingbeat) specified",
+              "one complete cycle (one full up-and-down beat) explicitly defined in the problem statement, not merely assumed"
+            ],
+            "conditionsMissing": []
+          }
+        ],
+        "numberedSolution": [
+          {
+            "stepNumber": 1,
+            "purpose": "Find the period of one wingbeat",
+            "explanation": {
+              "en": {
+                "text": "T = 1/f = 1/50 Hz = 0.02 s per wingbeat.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "T = 1/f = 1/50 Hz = 0.02 s لكل رفرفة.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-103-calc-1"
+          },
+          {
+            "stepNumber": 2,
+            "purpose": "Find the number of wingbeats in 3 seconds",
+            "explanation": {
+              "en": {
+                "text": "Number of beats = frequency x time = 50 Hz x 3 s = 150 wingbeats.",
+                "status": "draft",
+                "language": "en",
+                "direction": "ltr"
+              },
+              "ar": {
+                "text": "عدد الرفرفات = التردد × الزمن = 50 Hz × 3 s = 150 رفرفة.",
+                "status": "draft",
+                "language": "ar",
+                "direction": "rtl"
+              }
+            },
+            "calculationRef": "ch01-prob-103-calc-2"
+          }
+        ],
+        "calculation": [
+          {
+            "calculationId": "ch01-prob-103-calc-1",
+            "expression": "1/50",
+            "substitution": "1/50 Hz",
+            "result": 0.02,
+            "unit": "s",
+            "roundingRule": "two decimal places",
+            "significantFigures": 1
+          },
+          {
+            "calculationId": "ch01-prob-103-calc-2",
+            "expression": "50 x 3",
+            "substitution": "50 Hz x 3 s",
+            "result": 150,
+            "unit": "wingbeats",
+            "roundingRule": "whole number",
+            "significantFigures": 2
+          }
+        ],
+        "finalAnswer": {
+          "value": "0.02 s; 150 wingbeats",
+          "unit": "s and count",
+          "direction": null,
+          "sign": null,
+          "referencePoint": null,
+          "interpretation": {
+            "en": {
+              "text": "Each wingbeat takes 0.02 seconds, and 150 wingbeats occur in 3 seconds.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "ar": {
+              "text": "تستغرق كل رفرفة 0.02 ثانية، وتحدث 150 رفرفة خلال 3 ثوانٍ.",
+              "status": "draft",
+              "language": "ar",
+              "direction": "rtl"
+            }
+          }
+        },
+        "units": [
+          "Hz",
+          "s"
+        ],
+        "directionSign": {
+          "applicable": false,
+          "note": "Period and frequency are scalar magnitudes; no direction or sign convention applies."
+        },
+        "intuition": {
+          "en": {
+            "text": "50 Hz is a very fast repetition rate, so each individual cycle should be a very short fraction of a second — 0.02 s matches that expectation.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "50 Hz معدّل تكرار سريع جدًا، لذا يُفترض أن تكون كل دورة مفردة جزءًا صغيرًا جدًا من الثانية — وقيمة 0.02 s تتوافق مع هذا التوقّع.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "commonMistake": [
+          "Multiplying frequency by time to try to get the period directly, instead of first taking the reciprocal of frequency."
+        ],
+        "sourceAnswer": {
+          "textRef": null,
+          "value": null,
+          "unit": null,
+          "direction": null,
+          "status": "unknown"
+        },
+        "correctedAnswer": {
+          "value": "0.02 s; 150 wingbeats",
+          "unit": "s, count",
+          "direction": null,
+          "status": "proposed"
+        },
+        "sourceVariants": [
+          {
+            "variantId": "ch01-prob-103-variant-original",
+            "sourceId": "SRC-CH01-PILOT-ORIGINAL",
+            "problemIds": [],
+            "solutionIds": [],
+            "reviewCardIds": [],
+            "questionIds": [],
+            "pageIds": [],
+            "segmentIds": [],
+            "occurrenceIds": [],
+            "visualIds": [],
+            "answerVariant": "0.02 s; 150 wingbeats",
+            "answerStatus": "correct",
+            "correctionRecordIds": [
+              "ch01-corr-006"
+            ],
+            "conflictRecordIds": [
+              "CD-CONF-006"
+            ],
+            "provenanceLinks": []
+          }
+        ],
+        "selectedVariantIds": [
+          "ch01-prob-103-variant-original"
+        ],
+        "selectionRationale": "Only variant; fully original problem authored for this pilot, not derived from any Cengage-copyrighted problem-bank item (P5's watch/quartz-crystal problems), per PILOT_RIGHTS_POLICY.json. Problem statement revised during the pilot quality review to explicitly define one complete wingbeat cycle for the student, rather than leaving that definition only in internal solution metadata.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يرفرف طائر الطنان بجناحيه بتردد 50 Hz. هنا، تُعرَّف الدورة الكاملة الواحدة لرفرفة الجناح بأنها حركة كاملة للجناح إلى أعلى ثم إلى أسفل تعيده إلى موضعه الابتدائي. أوجد دور رفرفة واحدة، وحدّد عدد الرفرفات التي تحدث في 3 ثوانٍ.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Only version; fully original.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    }
+  ]
+}

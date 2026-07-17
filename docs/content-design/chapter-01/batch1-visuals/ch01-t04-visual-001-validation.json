@@ -1,0 +1,252 @@
+{
+  "visualResolutionId": "ch01-t04-visual-validation-001",
+  "visualId": "ch01-t04-visual-001",
+  "topicIds": ["ch01-t04"],
+  "assetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg",
+  "assetFormat": "svg",
+  "assetStatus": "draft",
+  "reviewRequired": true,
+  "createdAt": "2026-07-17",
+  "createdBasis": "Drawn from scratch by Claude directly from the approved visualReference specification in ch01-t04-block-visual (English and Arabic, ENGLISH_BATCH1_BASELINE_APPROVAL.json / ARABIC_BATCH1_BASELINE_APPROVAL.json, both baselineVersion 1.0.0) and ch01-corr-002's approved corrected wording, including its recorded qualification that 'apparent weight' is project-authored interpretive terminology, not verbatim source wording. The four pilot visuals and VISUAL_HOUSE_STYLE.md were consulted only as structural, accessibility, validation, and house-style precedents — no pilot topic-specific composition was reused or imitated; this diagram's three-panel push/lift/scale layout, built around an original equipment-cart icon, is original to ch01-t04's own content and does not match any of the four pilot layouts. No source image, slide, or publisher figure was viewed, traced, or referenced during creation.",
+  "sourceIndependenceStatement": "Fully original schematic composition and original cart/scale iconography (a simple rectangle-plus-two-circles cart silhouette and a plain rectangle-plus-dial scale schematic, both invented for this asset, not copied from any photograph, icon set, or publisher illustration). Uses only generic, non-copyrightable conventions (labeled panels, force arrows, a bordered equation panel) already established as house style, applied to entirely new content (mass/gravitational-weight/apparent-weight) with no counterpart in any of the four pilot diagrams. Consistent with PILOT_RIGHTS_POLICY.json's and this authorization's own requirement that the visual be newly authored, not recovered or adapted from SRC-CH01-CONV-001, SRC-CH01-CONV-002, or any other cataloged source, and deliberately uses a different object (a wheeled equipment cart) than any audited source's own illustration (a suitcase).",
+  "houseStyleNote": "Follows VISUAL_HOUSE_STYLE.md's proven conventions: teal (#1f6f8b) for structural elements (the cart body/wheels, the scale, the equation-panel container), slate/navy for text, amber draft-footer band (unchanged hex values), bilingual-per-element convention, and the same rounded-rect teal-bordered light-teal-fill equation-panel container already reused across all four pilot topics for the central W = mg equation. This diagram introduces one new semantic color not needed in any of the four pilot topics: brick-red (#b91c1c) for force vectors (push, gravitational-weight, support/scale-reading), since this topic's content is fundamentally about forces rather than about velocity or acceleration — the two colors house style already reserves (rust-orange, violet) name specifically 'velocity' and 'acceleration' and would misapply their established meaning if reused for a different physical quantity (force). This mirrors exactly how ch01-t08-visual-001.svg itself originally introduced violet as a new color when its own content first required a second vector type beyond velocity, documented there as a candidate house-style extension; this brick-red 'Force' color is offered the same way here, consistent with VISUAL_HOUSE_STYLE.md §2's own guidance to either reuse an existing semantic color for the same concept or make the case for a new, clearly-documented addition rather than assigning color arbitrarily.",
+  "validation": {
+    "xmlValidity": {
+      "status": "pass",
+      "findings": [
+        "Parsed successfully with Python's xml.etree.ElementTree: exactly one root <svg> element, well-formed XML throughout.",
+        "No duplicate element IDs found.",
+        "The single url(#...) marker reference (arrowForceT04) resolves to a defined <marker> element; no unresolved or broken internal references. An initially-included, later-unused marker definition (arrowSlateT04, originally for a motion-indicator arrow that was removed during layout correction — see revisionHistory) was removed from <defs> so no orphaned, unreferenced definition remains.",
+        "aria-labelledby=\"ch01t04visTitle ch01t04visDesc\" correctly resolves to the <title>/<desc> elements present in the file."
+      ]
+    },
+    "viewBoxAndDimensions": {
+      "status": "pass",
+      "findings": [
+        "viewBox=\"0 0 1000 760\", width=\"1000\", height=\"760\" — consistent, no mismatch.",
+        "Canvas size falls within the same practical range already used across the four pilot assets."
+      ]
+    },
+    "expectedLabels": {
+      "status": "pass",
+      "findings": [
+        "Title (bilingual): 'Mass, Gravitational Weight, and Apparent Weight' / 'الكتلة والوزن الجذبي والوزن الظاهري' — present.",
+        "Three panel headers present: Push/دفع, Lift/رفع, Scale/ميزان — condensed, single-word renderings of the approved spec's fuller action descriptions, with the complete action description preserved in each panel's own caption line and in the accessible <desc>.",
+        "Each panel's caption and 'Reveals:' result tag present, bilingual: 'Push tests mass'/'الدفع يختبر الكتلة' + 'Reveals: Mass (Inertia)'/'يكشف: الكتلة (قصور ذاتي)'; 'Lifting reveals weight'/'الرفع يكشف الوزن' + 'Reveals: Gravitational Weight'/'يكشف: الوزن الجذبي' (with the W = mg equation shown directly on the weight-force arrow); 'Scale shows apparent weight'/'يُظهر الميزان الوزن الظاهري' + 'Reveals: Apparent Weight'/'يكشف: الوزن الظاهري', plus the required non-equivalence clarifier '= gravitational weight at rest only'/'= الوزن الجذبي عند السكون فقط' — matching the approved spec's required panel content exactly.",
+        "Legend present: 'Force (push, weight, support)' swatch and 'Structure (object, scale)' swatch, bilingual.",
+        "Central equation panel present: W = mg, with the bilingual unit gloss 'W = weight (N), m = mass (kg), g ≈ 9.8 m/s²'.",
+        "Two bilingual captions present: the apparent-weight project-authored-terminology qualification (echoing ch01-corr-002's recorded qualification), and the mass-versus-gravitational-weight location-dependence distinction.",
+        "Draft/review-required footer band present, correctly naming this asset's own ID (ch01-t04-visual-001)."
+      ]
+    },
+    "scientificAccuracy": {
+      "status": "pass",
+      "findings": [
+        "Mass and gravitational weight are shown as distinct physical quantities via two different panels (Push/Lift) and two different result tags, matching ch01-corr-002's approved distinction.",
+        "Gravitational weight is explicitly labeled as a force, shown via a downward brick-red force arrow with W = mg directly attached, matching the approved equations-block text.",
+        "Apparent weight is shown as the support-force reading from a scale (third panel), explicitly captioned as equal to gravitational weight only when the object is at rest, not automatically in general — directly matching the required distinction that apparent weight is not automatically identical to gravitational weight.",
+        "Support/normal force is represented implicitly via the scale's upward force arrow (the physical support force the scale exerts and reads) without introducing the term 'normal force' itself, which is correct: the approved English/Arabic Batch 1 baseline never uses the term 'normal force' anywhere (independently re-confirmed by direct text search of both baseline files), so this diagram does not introduce it either.",
+        "No elevator equation, no non-inertial reference-frame derivation, and no accelerating-scale scenario was introduced — confirmed by direct re-reading of the diagram's full text content against the approved baseline and this production task's explicit scope restriction."
+      ]
+    },
+    "apparentWeightRepresentationReview": {
+      "status": "pass",
+      "findings": [
+        "The primary Arabic term for apparent weight, الوزن الظاهري, is used exactly as approved in BILINGUAL_GLOSSARY.json v1.3.0 — the sole rendering used in this diagram.",
+        "قراءة الميزان is not used as a separate on-canvas label in this diagram (the concept is instead conveyed through the panel action 'Scale' and caption 'the support force the scale reads,' matching the glossary's own usageNotes treatment of قراءة الميزان as a supporting explanatory gloss, not a required on-canvas alternate label).",
+        "الوزن الحقيقي does not appear anywhere in this file (confirmed by direct text search) — apparent weight is never contrasted against a 'true weight' framing anywhere in the diagram.",
+        "The clarifying caption 'Apparent weight is this project's own term — a real support-force reading, not always equal to gravitational weight' (and its Arabic equivalent) directly preserves ch01-corr-002's recorded qualification that 'apparent weight' is project-authored interpretive terminology, not verbatim source wording, and preserves the substantive point that apparent weight is a real, measurable quantity, not a lesser or 'fake' one."
+      ]
+    },
+    "equationAndSymbolIntegrity": {
+      "status": "pass",
+      "findings": [
+        "W = mg renders with W, m, g all italic, matching the house-style rule that single-letter variables are italic — used identically in both the weight-arrow inline label and the central equation panel.",
+        "The unit gloss 'W = weight (N), m = mass (kg), g ≈ 9.8 m/s²' keeps N, kg, m/s² upright (non-italic), matching the house-style rule that unit symbols stay upright even adjacent to italic variables.",
+        "m/s² uses a true Unicode superscript-2 character (²), not caret notation or a nested-tspan superscript — chosen deliberately here because this specific unit gloss is a short inline run rather than a dedicated large equation display; the true-tspan-superscript convention (as used in ch01-t08-visual-001.svg's own |g| ≈ 9.8 m/s² panel) remains available and was considered, but the plain Unicode glyph was judged sufficient and renders correctly and legibly at this text's font size, confirmed by direct visual inspection.",
+        "No absolute-value bars, caret exponents, or subscripted quantities appear elsewhere in this diagram."
+      ]
+    },
+    "englishLabelIntegrity": {
+      "status": "pass",
+      "findings": [
+        "Every English text element carries direction=\"ltr\" (programmatically confirmed: 0 of 36 text elements missing an explicit direction attribute).",
+        "Every English label is either a verbatim or a faithfully condensed rendering of the approved English Batch 1 baseline text (ch01-t04-block-visual, ch01-t04-block-equations, ch01-t04-block-explanation, ch01-corr-002) — no wording was invented beyond concise labeling.",
+        "No spelling, grammar, or terminology inconsistency found on re-read."
+      ]
+    },
+    "arabicLabelAndBidiIntegrity": {
+      "status": "pass",
+      "findings": [
+        "Every Arabic text element carries direction=\"rtl\" (programmatically confirmed, 0 missing).",
+        "Every Arabic label is drawn from, or a faithful condensed rendering of, the approved Arabic Batch 1 baseline text — the exact approved glossary terms are used: الكتلة, الوزن, الوزن الظاهري, matching BILINGUAL_GLOSSARY.json v1.3.0 exactly; no discouragedTranslations entry (الوزن as a substitute for mass, الكتلة as a substitute for weight, الوزن الحقيقي as the preferred apparent-weight contrast) appears anywhere.",
+        "Every equation/formula fragment (W = mg, N, kg, m/s²) is isolated in its own dedicated text element or tspan run, never interleaved character-by-character with Arabic prose. Rendered and visually inspected in-browser: Arabic glyphs join correctly and read right-to-left throughout, including the legend's combined Arabic line and the equation panel's bilingual unit gloss.",
+        "English and Arabic are always separate <text> elements throughout (programmatically re-confirmed)."
+      ]
+    },
+    "contrastMeasurement": {
+      "status": "pass",
+      "findings": [
+        "Primary text (#0f172a) on white: 17.85:1 — pass.",
+        "Secondary text (#334155) on white: 10.36:1 — pass.",
+        "Primary text on the light-teal equation-panel fill (#eaf6f8): 16.18:1 — pass.",
+        "Secondary text on the light-teal panel fill: 9.39:1 — pass.",
+        "Teal graphical elements (#1f6f8b, cart/scale outlines, panel border) on white: 5.67:1 (non-text target 3:1) — pass.",
+        "New brick-red force color (#b91c1c) on white: 6.47:1 (both as a graphical arrow element, target 3:1, and conservatively checked against the text threshold 4.5:1, since the W = mg inline label beside the weight arrow uses this same color context nearby) — pass.",
+        "Brick-red on the light-teal panel fill: 5.87:1 — pass.",
+        "Footer text (#b45309) on the amber footer background (#fff7ed): 4.73:1 — pass (identical, unchanged pair already used across all four pilot assets).",
+        "All ratios computed programmatically using the standard WCAG relative-luminance formula before finalizing the color choice, not assessed by eye alone."
+      ]
+    },
+    "textSizeAndReadability": {
+      "status": "pass",
+      "findings": [
+        "Font sizes range from 11px (the smallest clarifying note, 'gravitational weight at rest only') to 26px (the central W = mg equation display), within the same practical range already used across the four pilot assets.",
+        "Visual hierarchy descends consistently: title (24/20px) > central equation (26px) > panel headers (17/15px) > panel captions/result tags (13px) > legend/unit-gloss/clarifying notes (11-12px)."
+      ]
+    },
+    "overlapAndClipping": {
+      "status": "pass",
+      "findings": [
+        "Programmatic check confirmed 0 of 36 text elements fall outside the 0-1000 x 0-760 viewBox.",
+        "An overlap defect was found and corrected during production: the Lift panel's header text ('Lift'/'رفع') initially collided with a small upward lifting-motion-indicator arrow and its '(lifted)' label, placed too close to the header. The indicator arrow and label were removed entirely (the lifting action is already clearly conveyed by the panel header 'Lift' and the caption 'Lifting reveals weight'), and the now-unreferenced marker definition was removed from <defs> — see revisionHistory. Re-inspected after the fix: no remaining overlap anywhere in the file, confirmed by full-canvas visual inspection at desktop scale in a Chromium-based preview browser."
+      ]
+    },
+    "zoomReadability": {
+      "status": "pass",
+      "findings": [
+        "All text is defined with absolute font-size values in a scalable viewBox-based SVG; zooming scales every element proportionally with no loss of relative legibility or layout integrity."
+      ]
+    },
+    "mobileReadability": {
+      "status": "documentedNotAttemptedToFix",
+      "findings": [
+        "Inspected at a 375px-wide mobile viewport (Chromium-based preview, mobile emulation preset): the diagram scales down proportionally; the smallest text (11px clarifying notes) becomes the least legible element, consistent with the same already-documented mobile-legibility risk recorded in every one of the four pilot visuals' own validation records.",
+        "Per this task's own instruction and established house-style precedent, no compressed mobile-specific variant was attempted; recorded as an open, undeferred item for the downstream rendering/delivery pipeline, not resolved within this asset — application integration remains unauthorized in any case."
+      ]
+    },
+    "projectorReadability": {
+      "status": "pass",
+      "findings": [
+        "At native canvas size and at the desktop-scale inspection performed, all text sizes are comparable to or larger than the smallest elements already used successfully across the four pilot assets at classroom-projector scale; no new projector-specific legibility regression is expected."
+      ]
+    },
+    "grayscaleNonColorDependency": {
+      "status": "pass",
+      "findings": [
+        "The three panels are distinguished by position, distinct headers, captions, and result tags — not by color alone; a grayscale rendering remains fully interpretable.",
+        "Force versus structure is distinguished by an explicit legend (shape/label pairing: arrow = force, filled square = structure) in addition to color, and by panel-specific captions naming exactly what each arrow represents, so the distinction survives a grayscale rendering."
+      ]
+    },
+    "accessibilityMetadata": {
+      "status": "pass",
+      "findings": [
+        "role=\"img\" with a <title> and <desc> element is present, wired via aria-labelledby, giving screen-reader users a full textual summary of all three panels, the central equation, and both clarifying captions.",
+        "The <desc> content independently restates the complete, unabridged approved-baseline meaning, including the apparent-weight non-equivalence clarification."
+      ]
+    },
+    "externalDependencyAbsence": {
+      "status": "pass",
+      "findings": [
+        "No <image> element, no base64-encoded data, no <script> element, and no external stylesheet or font link anywhere in the file.",
+        "Font stacks match the exact system-font fallback chains already used across all four pilot assets — no new external font dependency introduced."
+      ]
+    },
+    "rasterContentAbsence": {
+      "status": "pass",
+      "findings": [
+        "The entire asset is built from native SVG vector primitives (rect, line, circle, text, tspan) plus one marker def — no raster image data, embedded or referenced, anywhere in the file."
+      ]
+    },
+    "rightsSafeOriginality": {
+      "status": "pass",
+      "findings": [
+        "No publisher slide, textbook figure, review card, or Kahoot-derived image was traced, cropped, referenced, or used as a compositional basis for this artwork.",
+        "The cart and scale icons are simple, original geometric constructions (rectangle-plus-circles; rectangle-plus-dial) invented for this asset, not sourced from any icon library, photograph, or publisher illustration.",
+        "The composition (three side-by-side push/lift/scale panels around one recurring original object) is original to this task and does not reuse or closely imitate any of the four pilot topics' own layouts (verified by direct side-by-side comparison against all four existing pilot SVGs), and deliberately uses a different example object (an equipment cart) than any audited source's own illustration (a suitcase), matching the same originality commitment already made in the approved English baseline's own visualReference specification.",
+        "All caption and label text is either newly authored for this diagram or a concise, original rendering of already rights-cleared, newly authored Batch 1 baseline content — no publisher wording is present anywhere."
+      ]
+    }
+  },
+  "requirementsChecklist": {
+    "fullyOriginalArtwork": true,
+    "noTracingOrPublisherReuse": true,
+    "doesNotReuseOrImitatePilotComposition": true,
+    "differentObjectThanAnyAuditedSource": true,
+    "threePanelsPushLiftScalePresent": true,
+    "massRevealedByPush": true,
+    "gravitationalWeightRevealedByLift": true,
+    "apparentWeightRevealedByScale": true,
+    "wEqualsMgShown": true,
+    "apparentWeightNotAutomaticallyEqualClarified": true,
+    "noNormalForceTerminologyIntroduced": true,
+    "noElevatorOrNonInertialFrameContent": true,
+    "bilingualLabelsSeparateElements": true,
+    "explicitLtrRtlDirectionOnEveryTextElement": true,
+    "latinSymbolsAndSiUnitsPreserved": true,
+    "formulaOnlyLabelsIsolated": true,
+    "arabicAnnotationsRTL": true,
+    "mixedDirectionEquationsIsolated": true,
+    "apparentWeightGlossaryTermExact": true,
+    "trueWeightContrastNotUsed": true,
+    "measuredContrastAllPairsPass": true,
+    "noOverlapOrClipping": true,
+    "accessibilityMetadataPresent": true,
+    "noExternalDependencies": true,
+    "noRasterContent": true,
+    "draftFooterPresent": true,
+    "designedForProjectorAndStudentScreens": true,
+    "mobileRiskDocumentedNotCompressed": true,
+    "markedDraftAndReviewRequired": true,
+    "studentFacingAllowedFalse": true,
+    "notApplicationIntegrated": true,
+    "notIndependentlyReviewed": true
+  },
+  "revisionHistory": [
+    {
+      "revisionId": "ch01-t04-visual-001-rev-001",
+      "appliedAt": "2026-07-17",
+      "appliedBasis": "Internal self-review during production, before any human review occurred and before this file was first considered complete — an overlap defect was found by in-browser visual inspection immediately after first drawing the asset.",
+      "designDecisionRecorded": "The Lift panel originally included a small dashed upward-pointing 'lifting motion' indicator arrow with a '(lifted)' text label, positioned just above the cart, intended to show the lifting action separately from the downward weight-force arrow. This collided visually with the panel's own bilingual header ('Lift'/'رفع') directly above it. Rather than re-positioning the indicator into an already-crowded panel, it was removed entirely: the lifting action is already unambiguously conveyed by the panel header 'Lift' and the caption 'Lifting reveals weight' immediately below the cart, so the separate motion-indicator arrow was redundant as well as defectively placed.",
+      "revisionsApplied": [
+        "Removed the dashed upward motion-indicator line and its '(lifted)' text label from the Lift panel.",
+        "Removed the now-unreferenced arrowSlateT04 marker definition from <defs>, since no element in the file referenced it after the above removal.",
+        "No other element, coordinate, color, caption, or equation was changed."
+      ],
+      "scientificAndLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-rendered in-browser after the edit: the Lift panel header now renders with no overlap against any other element.",
+          "Full-canvas re-inspection at desktop scale confirmed no other overlap, clipping, or layout defect anywhere in the file.",
+          "The weight-force arrow, W = mg label, cart geometry, captions, legend, equation panel, and both closing captions are all unchanged in position, wording, and meaning.",
+          "Re-ran the full technical validation pass (XML parse, duplicate-ID check, marker-reference resolution, viewBox-bounds check) after the edit — all checks still pass, and the checksum recorded in this validation record is the post-revision file's checksum."
+        ]
+      }
+    },
+    {
+      "revisionId": "ch01-t04-visual-001-rev-002",
+      "appliedAt": "2026-07-17",
+      "appliedBasis": "A consolidated visual review (docs/app/PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md) re-checked this asset against the approved English/Arabic baseline, ch01-corr-002 (including its apparent-weight qualification), VISUAL_HOUSE_STYLE.md, and a detailed topic-specific checklist covering mass/gravitational-weight/support-force/scale-reading/apparent-weight visual distinctness, W = mg's connection to gravitational weight only, the scale panel's non-equivalence caveat, force-arrow directions and labels, and absence of elevator/non-inertial-frame content.",
+      "revisionsApplied": [
+        "None — this review found no defect in ch01-t04-visual-001.svg requiring correction. Every checklist item was independently re-verified and confirmed already satisfied: mass/gravitational-weight/apparent-weight are visually distinct via three panels with distinct captions and result tags; support force and scale reading are correctly treated as the same concept as apparent weight (not a separate fourth idea), matching the approved baseline's own definition of apparent weight as 'the support force indicated by a scale'; W = mg appears only near the Lift panel and the central equation panel, both positioned under Panel 2's own centerline, with no visual proximity suggesting it also applies to apparent weight; the Scale panel's explicit '= gravitational weight at rest only' caption already states the required non-automatic-equivalence; all three force-arrow directions (push rightward into the cart, weight downward from the cart, support upward from the scale into the cart) were independently re-confirmed physically correct; no elevator or non-inertial-frame content appears anywhere in the file.",
+        "This entry documents that the review occurred and its specific findings, for parity with ch01-t01-visual-001's own review-pass record; the file itself, and its checksum, are unchanged from rev-001."
+      ],
+      "scientificAndLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-parsed as XML after the sibling ch01-t01 asset's revision work (to rule out any accidental cross-file change): single root <svg>, 0 duplicate IDs, the one marker reference (arrowForceT04) still resolves, no raster/base64/script/external content.",
+          "Checksum re-verified identical to the value already recorded for rev-001 (163b5eaa...), confirming no unintended modification occurred during this review pass.",
+          "Re-verified the approved English and Arabic Batch 1 baseline files' checksums remain unchanged — this review touched only ch01-t01-visual-001.svg's content; ch01-t04-visual-001.svg was read-reviewed only."
+        ]
+      }
+    }
+  ],
+  "readyForHumanReview": true,
+  "readyForHumanReviewNote": "This asset was drawn from scratch, found to have one layout overlap defect during immediate in-browser self-inspection, corrected the same day (rev-001), and re-validated against the approved English and Arabic Batch 1 baselines and ch01-corr-002 (including its apparent-weight qualification), checked for schema-equivalent structural correctness, measured for WCAG contrast, and visually inspected at desktop, tablet, and mobile scale in a Chromium-based preview browser. A subsequent consolidated review (rev-002) re-checked the asset against a detailed topic-specific scientific and instructional checklist and found no further defect requiring correction. No overlap, clipping, or unresolved reference was found at any point. The mobile-legibility risk remains open and undeferred, matching the exact same accepted risk already documented for all four pilot visuals. This asset has NOT been marked as finally approved or resolved; it remains draft and review-required. A machine or author validation pass, as recorded here, is not independent human visual review.",
+  "studentFacingAllowed": false,
+  "studentPublicationAuthorized": false,
+  "applicationIntegrationAuthorized": false,
+  "reviewer": null,
+  "reviewedAt": null,
+  "fileChecksumSha256": "163b5eaa0269ca96943bf136c913bba0b961247da7ab0b68bbbd22b5a475cec6"
+}

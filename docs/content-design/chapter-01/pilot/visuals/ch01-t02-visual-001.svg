@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="1100" height="850" role="img" aria-labelledby="ch01t02visTitle ch01t02visDesc">
+  <title id="ch01t02visTitle">Length, Area, and Volume: Squaring and Cubing the Conversion Factor (الطول والمساحة والحجم: تربيع عامل التحويل وتكعيبه)</title>
+  <desc id="ch01t02visDesc">An original schematic with three panels, each with a visible bilingual object caption. Panel 1, captioned Examination table, shows the length of an examination table, 1.8 m, converted linearly to 180 cm using a factor of 100. Panel 2, captioned Dressing pad, shows the area of a square dressing pad, 0.1 m by 0.1 m, computed as 0.01 square meters and converted to 100 square centimeters using the conversion factor squared, 100 squared. Panel 3, captioned Sample container, shows the volume of a small cubic sample container, 0.1 m on each side, computed as 0.001 cubic meters and converted to 1000 cubic centimeters using the conversion factor cubed, 100 cubed. A shared summary box, titled General rule, states: length converts by a factor k, area converts by k squared, and volume converts by k cubed, with k equal to 100 in these examples. A closing caption states that the conversion factor is not the same for length, area, and volume — it is squared for area and cubed for volume. Captions are provided in English and Arabic.</desc>
+
+  <defs>
+    <marker id="arrowSlateT02" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="850" fill="#ffffff"/>
+
+  <!-- Title (bilingual) -->
+  <text x="550" y="36" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="23" font-weight="700" fill="#0f172a">Length, Area, and Volume: Squaring and Cubing the Conversion Factor</text>
+  <text x="550" y="62" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="19" font-weight="700" fill="#0f172a">الطول والمساحة والحجم: تربيع عامل التحويل وتكعيبه</text>
+
+  <!-- Panel headers (bilingual, literal digits) -->
+  <text x="190" y="92" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Panel 1 — Length</text>
+  <text x="190" y="111" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">اللوحة 1 — الطول</text>
+  <text x="550" y="92" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Panel 2 — Area</text>
+  <text x="550" y="111" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">اللوحة 2 — المساحة</text>
+  <text x="910" y="92" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Panel 3 — Volume</text>
+  <text x="910" y="111" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">اللوحة 3 — الحجم</text>
+
+  <!-- Panel dividers -->
+  <line x1="370" y1="126" x2="370" y2="500" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="730" y1="126" x2="730" y2="500" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- ============ Panel 1: Length ============ -->
+  <line x1="110" y1="175" x2="270" y2="175" stroke="#334155" stroke-width="2"/>
+  <line x1="110" y1="168" x2="110" y2="182" stroke="#334155" stroke-width="2"/>
+  <line x1="270" y1="168" x2="270" y2="182" stroke="#334155" stroke-width="2"/>
+  <text x="190" y="159" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">1.8 m</text>
+
+  <rect x="110" y="195" width="160" height="16" rx="3" fill="#eef7fa" stroke="#1f6f8b" stroke-width="2.5"/>
+  <line x1="130" y1="211" x2="130" y2="250" stroke="#1f6f8b" stroke-width="4"/>
+  <line x1="250" y1="211" x2="250" y2="250" stroke="#1f6f8b" stroke-width="4"/>
+  <line x1="112" y1="250" x2="268" y2="250" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- Panel 1 object caption (bilingual) -->
+  <text x="190" y="368" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Examination table</text>
+  <text x="190" y="387" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">منضدة الفحص</text>
+
+  <text x="190" y="422" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">m</text>
+  <text x="190" y="497" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">1.8 m &#215; 100 = 180 cm</text>
+
+  <!-- ============ Panel 2: Area ============ -->
+  <rect x="490" y="195" width="120" height="120" rx="10" fill="#eef7fa" stroke="#1f6f8b" stroke-width="2.5"/>
+  <line x1="490" y1="325" x2="610" y2="325" stroke="#334155" stroke-width="2"/>
+  <line x1="490" y1="318" x2="490" y2="332" stroke="#334155" stroke-width="2"/>
+  <line x1="610" y1="318" x2="610" y2="332" stroke="#334155" stroke-width="2"/>
+  <text x="550" y="348" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">0.1 m</text>
+  <line x1="628" y1="195" x2="628" y2="315" stroke="#334155" stroke-width="2"/>
+  <line x1="621" y1="195" x2="635" y2="195" stroke="#334155" stroke-width="2"/>
+  <line x1="621" y1="315" x2="635" y2="315" stroke="#334155" stroke-width="2"/>
+  <text x="642" y="259" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">0.1 m</text>
+
+  <!-- Panel 2 object caption (bilingual) -->
+  <text x="550" y="368" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Dressing pad</text>
+  <text x="550" y="387" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">ضمادة شاش</text>
+
+  <text x="550" y="422" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">m<tspan font-size="18" dy="-12">2</tspan></text>
+  <text x="550" y="461" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a"><tspan font-style="italic">A</tspan><tspan> = 0.1 m &#215; 0.1 m = 0.01 m</tspan><tspan font-size="10" dy="-6">2</tspan></text>
+  <text x="550" y="497" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">0.01 m<tspan font-size="11" dy="-6">2</tspan><tspan dy="6"> &#215; 100</tspan><tspan font-size="11" dy="-6">2</tspan><tspan dy="6"> = 100 cm</tspan><tspan font-size="11" dy="-6">2</tspan></text>
+
+  <!-- ============ Panel 3: Volume ============ -->
+  <polygon points="875,220 895,200 965,200 945,220" fill="#dceef2" stroke="#1f6f8b" stroke-width="2"/>
+  <polygon points="945,220 965,200 965,270 945,290" fill="#c8e2e8" stroke="#1f6f8b" stroke-width="2"/>
+  <rect x="875" y="220" width="70" height="70" fill="#eef7fa" stroke="#1f6f8b" stroke-width="2.5"/>
+
+  <line x1="875" y1="300" x2="945" y2="300" stroke="#334155" stroke-width="2"/>
+  <line x1="875" y1="293" x2="875" y2="307" stroke="#334155" stroke-width="2"/>
+  <line x1="945" y1="293" x2="945" y2="307" stroke="#334155" stroke-width="2"/>
+  <text x="910" y="323" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">0.1 m</text>
+
+  <line x1="860" y1="220" x2="860" y2="290" stroke="#334155" stroke-width="2"/>
+  <line x1="853" y1="220" x2="867" y2="220" stroke="#334155" stroke-width="2"/>
+  <line x1="853" y1="290" x2="867" y2="290" stroke="#334155" stroke-width="2"/>
+  <text x="847" y="259" text-anchor="end" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">0.1 m</text>
+
+  <text x="978" y="207" text-anchor="start" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">0.1 m</text>
+
+  <!-- Panel 3 object caption (bilingual) -->
+  <text x="910" y="368" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Sample container</text>
+  <text x="910" y="387" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">وعاء العينة</text>
+
+  <text x="910" y="422" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">m<tspan font-size="18" dy="-12">3</tspan></text>
+  <text x="910" y="461" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a"><tspan font-style="italic">V</tspan><tspan> = 0.1 m &#215; 0.1 m &#215; 0.1 m = 0.001 m</tspan><tspan font-size="10" dy="-6">3</tspan></text>
+  <text x="910" y="497" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">0.001 m<tspan font-size="11" dy="-6">3</tspan><tspan dy="6"> &#215; 100</tspan><tspan font-size="11" dy="-6">3</tspan><tspan dy="6"> = 1000 cm</tspan><tspan font-size="11" dy="-6">3</tspan></text>
+
+  <!-- Progression connectors: m -> m^2 -> m^3 -->
+  <line x1="350" y1="416" x2="392" y2="416" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowSlateT02)"/>
+  <line x1="710" y1="416" x2="752" y2="416" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowSlateT02)"/>
+
+  <!-- Shared summary box: the conversion-factor rule -->
+  <rect x="304" y="529" width="492" height="175" rx="14" fill="#1f6f8b" fill-opacity="0.18"/>
+  <rect x="300" y="524" width="492" height="175" rx="14" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="3"/>
+  <text x="550" y="550" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">General rule</text>
+  <text x="550" y="568" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">القاعدة العامة</text>
+  <text x="550" y="594" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Length: &#215; <tspan font-style="italic">k</tspan></text>
+  <text x="550" y="619" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Area: &#215; <tspan font-style="italic">k</tspan><tspan font-size="11" dy="-6">2</tspan></text>
+  <text x="550" y="644" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Volume: &#215; <tspan font-style="italic">k</tspan><tspan font-size="11" dy="-6">3</tspan></text>
+  <text x="550" y="668" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-style="italic" fill="#334155">(here <tspan font-style="italic">k</tspan> = 100, since 1 m = 100 cm)</text>
+
+  <!-- Closing caption (bilingual) -->
+  <text x="550" y="737" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-style="italic" fill="#334155">The conversion factor is not the same for length, area, and volume — it is squared for area and cubed for volume.</text>
+  <text x="550" y="757" text-anchor="middle" direction="rtl" font-family="'Segoe UI', 'Noto Sans Arabic', Tahoma, Arial, sans-serif" font-size="14" fill="#334155">عامل التحويل ليس نفسه للطول والمساحة والحجم — بل يُربَّع للمساحة ويُكعَّب للحجم.</text>
+
+  <!-- Draft / review-required footer band -->
+  <rect x="0" y="785" width="1100" height="40" fill="#fff7ed" stroke="#f59e0b" stroke-width="1"/>
+  <text x="550" y="810" text-anchor="middle" direction="ltr" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#b45309">DRAFT — REVIEW REQUIRED — ORIGINAL SCHEMATIC (ch01-t02-visual-001) — Not authorized for student-facing use</text>
+</svg>

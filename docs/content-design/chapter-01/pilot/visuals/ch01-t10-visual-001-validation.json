@@ -1,0 +1,226 @@
+{
+  "visualResolutionId": "ch01-t10-visual-validation-001",
+  "visualId": "ch01-t10-visual-001",
+  "topicIds": ["ch01-t10"],
+  "assetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t10-visual-001.svg",
+  "assetFormat": "svg",
+  "assetStatus": "draft",
+  "reviewRequired": true,
+  "createdAt": "2026-07-16",
+  "createdBasis": "Drawn from scratch by Claude directly from the approved visualReference specification in ch01-t10-block-visual (English and Arabic, baselineVersion 1.0.1 of both the English and Arabic pilot baselines) and ch01-corr-008's assumptionsAndSignConventions and correctedWording. ch01-t02-visual-001.svg, ch01-t03-visual-001.svg, and ch01-t08-visual-001.svg were consulted only as provisional style references (palette, typographic hierarchy, bilingual-per-element convention, footer format, subscript/superscript tspan technique) — their layouts were not forced onto this topic; the single-circle-plus-inset structure follows what the approved ch01-t10 spec itself calls for (one circle with a tangent velocity arrow, a shorter dashed inward acceleration arrow, and a small inset showing a later instant). No source image, slide, or publisher figure was viewed, traced, or referenced during creation. Rendered and visually inspected in-browser during creation (a local static file server was used since this environment's browser tool does not permit file:// navigation); the initial hand-computed inset arrow coordinates (rounded to whole pixels) were then checked programmatically via getBBox/DOM vector math rather than by eye alone, which found a real small defect: the two inset instants' velocity/acceleration arrows were off from exact perpendicularity by about 1 degree (dot product -0.017 and 0.010 instead of 0.000) due to pixel-rounding. This was corrected to one-decimal-place coordinates before finalizing (see revisionHistory).",
+  "sourceIndependenceStatement": "Fully original schematic composition. Uses only the generic, non-copyrightable convention of a circle with a tangent arrow and an inward radial arrow, a standard physics-pedagogy device for uniform circular motion not tied to any specific textbook or slide illustration. Consistent with PILOT_RIGHTS_POLICY.json's requirement that all pilot visuals be newly authored, not recovered or adapted from SRC-CH01-CONV-005, SRC-CH01-REVIEW-001, or any other cataloged/excluded source.",
+  "houseStyleNote": "Extends the provisional style established by ch01-t02-visual-001.svg, ch01-t03-visual-001.svg, and ch01-t08-visual-001.svg: teal (#1f6f8b) for structural/path elements (circle, radius line, center, object fill), rust-orange (#d9480f) for velocity (reusing t03's and t08's role for this color exactly), violet (#6d28d9) for acceleration (reusing t08's role for this color exactly), slate/navy (#334155/#0f172a) for labels and neutral structure, amber (#fff7ed/#f59e0b/#b45309) for the draft footer only. This asset adds one new element not needed in the prior three: a dashed stroke on the acceleration arrow (in addition to its violet color) to give the velocity/acceleration distinction a second, non-color channel, matching the approved ch01-t10-block-visual spec's explicit request for 'a solid line style' for velocity and 'a dashed line style' for acceleration. This is offered as a candidate refinement to the house-style rule (velocity = solid rust, acceleration = dashed violet) for whoever formalizes the written style guide once all four diagrams exist.",
+  "validation": {
+    "scientificAccuracy": {
+      "status": "pass",
+      "findings": [
+        "The object sits exactly on the circular path (distance from center to object = 169.7px against a defined radius of 170px, i.e. equal within floating-point/rounding tolerance), and the velocity and acceleration arrows both originate at that same point, matching the approved spec's requirement that both vectors be drawn 'from that point.'",
+        "The velocity arrow is solid rust-orange and the acceleration arrow is dashed violet, giving the two vectors both a color and a line-style distinction, matching the approved spec's 'solid line style' / 'dashed line style' requirement verbatim.",
+        "The inset shows the object at a second point further along the same circular path, with its velocity arrow rotated to remain tangent at the new position while its acceleration arrow still points to the same shared center — directly implementing the approved spec's inset requirement to 'demonstrate that velocity direction changes while the center-pointing relationship of acceleration stays fixed.'"
+      ]
+    },
+    "tangentVectorCorrectness": {
+      "status": "pass",
+      "findings": [
+        "Verified programmatically, not only by eye: the velocity arrow's direction vector and the outward radius direction vector (center-to-object) were extracted from the live-rendered SVG's DOM line coordinates and their dot product computed. The velocity vector is exactly perpendicular to the radius (dot product 0.00000 in the main panel), which is the algebraic definition of 'tangent to the circle at that point' — the arrow is not tangent by visual approximation, it is tangent by construction and confirmed by computation.",
+        "The same check was repeated for both inset instants after the rev-002 arrow-lengthening edit (see revisionHistory): dot products of -0.00001 and 0.00014, i.e. perpendicular to within roughly 0.008 degrees, consistent with one-decimal-place coordinate rounding and not a real geometric defect. Direction was never altered by the lengthening — only the arrow's magnitude changed, along the same precomputed unit vector."
+      ]
+    },
+    "inwardRadialAccelerationCorrectness": {
+      "status": "pass",
+      "findings": [
+        "Verified programmatically: the acceleration arrow's direction vector and the true direction from the object point to the circle's actual center were compared by dot product. In the main panel this alignment is exactly 1.00000 (perfectly parallel, correct sign — pointing toward, not away from, the center). Both inset instants also score exactly 1.00000 against their own shared inset center, confirming the acceleration arrow points toward the true center at every drawn instant, not merely 'downward-left-ish' by visual approximation.",
+        "The acceleration arrow's length (75px in the main panel, 42px in each inset instant as of rev-002, up from the original 28px) is deliberately shorter than the full radius (170px main, 85px inset), so its arrowhead stops well short of the center dot (43px short in each inset instant) — this avoids any visual suggestion that the object itself travels to the center, keeping the arrow legible as a vector at the object's location rather than a displacement path.",
+        "The acceleration arrow is never drawn along or near the velocity arrow's direction in any of the three drawn instants — confirmed by the same perpendicularity check above, satisfying the explicit safeguard 'do not show centripetal acceleration in the direction of motion.'"
+      ]
+    },
+    "perpendicularityCorrectness": {
+      "status": "pass",
+      "findings": [
+        "A visible right-angle indicator (a small open-cornered polyline sized to the velocity and acceleration directions, plus a '90°' label) is drawn at the object point in the main panel, giving a sighted-viewer-facing visual confirmation of the same relationship verified numerically above.",
+        "The right-angle indicator's two legs were constructed directly from the same unit vectors used for the arrows themselves (not eyeballed separately), so the visible indicator cannot silently disagree with the arrows' actual computed geometry."
+      ]
+    },
+    "radiusLabeling": {
+      "status": "pass",
+      "findings": [
+        "A dashed gray reference line (#7c8ba1, dash cadence 2,2 as of rev-002) runs from the center to the object point, distinct in color, dash cadence, and weight from both the teal circle stroke and the violet dashed acceleration arrow (dash cadence 6,4), and is labeled with an italicized 'r' positioned along the segment closer to the center, outside the span occupied by the (shorter) acceleration arrow near the object — confirmed by bounding-box inspection to not overlap the acceleration arrow, its label, or the center dot/label.",
+        "The center itself is marked with a filled dot plus a short crosshair and a bilingual 'center'/'المركز' label, satisfying 'clearly marked center' independently of the radius line."
+      ]
+    },
+    "equationCorrectness": {
+      "status": "pass",
+      "findings": [
+        "The equation panel renders a subscript c = v superscript 2 / r, matching ch01-corr-008-eq-001 and the approved ch01-t10-block-equations content ('a_c = v^2 / r') exactly, with no extraneous constants or altered exponents.",
+        "Rendering was verified both visually (rendered screenshot shows a clean true subscript under 'a' and a true superscript on 'v', not caret notation or an inline underscore character) and by DOM inspection of each tspan's baseline offset (dy), font-size, and font-style attributes, confirming the subscript 'c' and superscript '2' are upright (not italicized, since they are not themselves variables) while 'a', 'v', and 'r' are italicized."
+      ]
+    },
+    "consistencyWithChapter01Corr008": {
+      "status": "pass",
+      "findings": [
+        "Matches corr-008's core corrected statement directly: 'Velocity remains tangent to the circular path at every instant' is rendered as the tangent velocity arrow (verified perpendicular to the radius, see tangentVectorCorrectness above); 'Centripetal acceleration...points toward the center of the circular path — never along the velocity itself and never outward' is rendered as the inward acceleration arrow (verified aligned with the true center direction, see inwardRadialAccelerationCorrectness above) drawn perpendicular to (never along) the velocity arrow.",
+        "Matches corr-008's 'constant speed does not imply constant velocity' clause via Caption 1 (bilingual, both languages in separate text elements): 'Speed can stay constant while velocity still changes, because its direction keeps changing.' / the equivalent Arabic sentence — and via the inset, which shows the velocity arrow's direction rotating between two instants while its drawn length (speed) is held constant.",
+        "Matches corr-008's equation a_c = v²/r exactly (see equationCorrectness above).",
+        "Does not exceed corr-008's scope: the diagram does not attempt to introduce tangential acceleration, angular velocity, or period/frequency, none of which are part of ch01-t10-block-visual's approved spec or this topic's scoped content."
+      ]
+    },
+    "misconceptionPrevention": {
+      "status": "pass",
+      "findings": [
+        "Caption 2 (bilingual, separate text elements) explicitly states the anti-misconception correction requested by this task and already on record in ch01-t10-block-misconception: 'Misconception check: centripetal acceleration points toward the center — the object itself does not move toward the center.' / the equivalent Arabic sentence.",
+        "No element of the diagram shows the object itself displaced toward the center: the object appears only on the circle's boundary in both the main panel and both inset instants; only the acceleration arrow (a vector at a point, drawn short of reaching the center) points inward, never the object's position.",
+        "No element implies speed increases because acceleration exists: the velocity arrow is drawn the same length in both inset instants (38px each), visually reinforcing Caption 1's 'speed can stay constant' statement rather than contradicting it."
+      ]
+    },
+    "bilingualRendering": {
+      "status": "pass",
+      "findings": [
+        "Verified programmatically across every <text> element in the file: all carry an explicit direction=\"ltr\" or direction=\"rtl\" attribute (0 elements missing this attribute).",
+        "Verified programmatically that no text element mixes Arabic script with a multi-letter Latin word (0 mixed-script issues detected); the only Latin content inside Arabic-direction elements is single-letter symbol references (r, v, a_c) in the combined Arabic legend line, following the exact precedent already established in ch01-t08-visual-001.svg's Arabic legend line. The two dedicated equation/subscript text elements (the equation panel and the two near-arrow symbol labels) are their own standalone LTR-only elements, never embedded inside an Arabic sentence.",
+        "Rendered and visually inspected in-browser: Arabic glyphs join correctly (cursive connected forms) and read right-to-left throughout, including the subtitle, center label, inset title, legend line, equation sub-caption, and both main captions.",
+        "Arabic text elements specify a font stack including an Arabic-capable fallback ('Noto Sans Arabic') alongside the Latin-oriented stack used for English/formula text, matching the established convention."
+      ]
+    },
+    "rightsPolicyCompliance": {
+      "status": "pass",
+      "findings": [
+        "No publisher slide, textbook figure, or any cataloged source visual (including the topics excluded entirely from pilot authoring, SRC-CH01-CONV-005 and SRC-CH01-REVIEW-001) was traced, cropped, referenced, or used as a basis for this artwork.",
+        "All caption and label text is either newly authored for this diagram or drawn in concept from already rights-cleared, newly authored pilot content (ch01-t10-block-visual, ch01-t10-block-mainidea, ch01-t10-block-equations, ch01-corr-008) — no publisher wording is present.",
+        "ch01-t02-visual-001.svg, ch01-t03-visual-001.svg, and ch01-t08-visual-001.svg were used only as style references (palette, type scale, bilingual convention, subscript/superscript technique) per this task's explicit instruction, not as source content; no geometry, wording, or layout was copied from any of them beyond the general house-style choices documented above."
+      ]
+    },
+    "accessibilityAndReadability": {
+      "status": "passWithHumanVerificationRecommended",
+      "findings": [
+        "role=\"img\" with a <title> and <desc> element is present (confirmed by DOM inspection), giving screen readers a full textual summary of the main panel's tangent velocity, inward acceleration, right-angle cue, radius, marked center, the inset's rotating-velocity/fixed-center demonstration, the equation, and both captions.",
+        "The two vector types are distinguished by three independent channels — color (rust vs. violet), line style (solid vs. dashed), and a written legend — not by color alone, so a colorblind viewer can still tell them apart without relying on hue.",
+        "Verified programmatically that no two text elements' bounding boxes overlap by more than 3px in both dimensions anywhere in the diagram (0 overlaps detected across every text element in the file), reducing the risk of illegible crowded text that a purely visual pass could miss.",
+        "Text/background contrast follows the same near-black/slate-on-white pattern already used in the three prior assets, assessed as visually high-contrast by inspection. As of rev-002, two specific color pairs flagged in the visual review were measured directly (WCAG 2.1 relative-luminance formula, computed from the live-rendered colors): the standalone 'v' label is now 4.567:1 on white (was 4.300:1, below the 4.5:1 AA minimum for normal text; now passes), and the radius reference line is now 3.186:1 against the circle's interior tint (was 2.359:1, below the 3:1 non-text minimum; now passes). A full pairwise WCAG audit of every remaining color combination in the diagram was not performed — that broader measurement remains an open recommendation carried forward from all three prior assets.",
+        "Designed at 1000x1000 (matching ch01-t08-visual-001.svg's canvas size) for classroom-projector and standard student-screen viewing; smallest text is 10-12px (inset instant-number badges, the '90°' right-angle label, the inset's bottom caption), comparable to the smallest text sizes already used in the three prior assets.",
+        "Native cross-renderer rendering (other browsers, PDF export, presentation software) was not verified beyond the one browser environment used during creation — same open item carried forward from all three prior assets."
+      ]
+    },
+    "mobileSizeRisk": {
+      "status": "documentedNotAttemptedToFix",
+      "findings": [
+        "This asset combines a full circular main panel with a separate boxed inset panel side by side (1000x1000, matching ch01-t08-visual-001.svg's canvas footprint), so its mobile/small-screen risk is comparable to or greater than the already-flagged risk for the three prior pilot visuals: on a narrow phone viewport, the inset box and its two-instant comparison are the most likely element to become illegible first, since it is already the smallest-scale content in the diagram.",
+        "Per this task's explicit instruction, no compressed mobile variant was attempted. This is recorded as an open item for the downstream rendering/delivery pipeline (responsive zoom/pan, minimum-width floor, or a dedicated mobile layout, and specifically a possible mobile-only decision to drop or simplify the inset), not something resolved in this asset — consistent with how the same risk was handled for the three prior visuals."
+      ]
+    }
+  },
+  "requirementsChecklist": {
+    "fullyOriginalArtwork": true,
+    "noTracingOrPublisherReuse": true,
+    "oneMainCircularPathWithClearlyMarkedCenter": true,
+    "objectShownAtOneSelectedPoint": true,
+    "velocityArrowExactlyTangent": true,
+    "accelerationArrowExactlyTowardCenter": true,
+    "rightAngleCuePresent": true,
+    "enlargedLocalVectorInsetPresent": true,
+    "radiusLabeledR": true,
+    "equationACEqualsVSquaredOverRIncluded": true,
+    "bilingualConstantSpeedVelocityChangesStatement": true,
+    "bilingualMisconceptionCorrectionStatement": true,
+    "vARItalic": true,
+    "trueSubscriptInAC": true,
+    "unitsUpright": true,
+    "equationsIsolatedAsLTR": true,
+    "arabicNaturalLanguageLabelsRTL": true,
+    "bilingualLabelsSeparateElements": true,
+    "noMixedArabicProseAndEquationInOneElement": true,
+    "tealForCircleAndStructure": true,
+    "rustOrangeForVelocity": true,
+    "violetForAcceleration": true,
+    "slateNavyForLabels": true,
+    "amberDraftFooterOnly": true,
+    "reusesEstablishedPaletteAndHierarchy": true,
+    "doesNotShowAccelerationAlongVelocity": true,
+    "doesNotImplyInwardDisplacementOfObject": true,
+    "doesNotImplySpeedIncreaseFromAcceleration": true,
+    "consistentWithCh01Corr008": true,
+    "draftFooterPresent": true,
+    "accessibilityMetadataPresent": true,
+    "designedForProjectorAndStudentScreens": true,
+    "mobileRiskDocumentedNotCompressed": true,
+    "vectorFirstEditableAsset": true,
+    "markedDraftAndReviewRequired": true,
+    "insetAccelerationShaftClearlyVisibleBeforeArrowhead": true,
+    "vLabelMeetsWCAGAANormalTextContrast": true
+  },
+  "revisionHistory": [
+    {
+      "revisionId": "ch01-t10-visual-001-rev-001",
+      "appliedAt": "2026-07-16",
+      "appliedBasis": "A precision correction found by programmatic (not visual) inspection immediately after the initial render, applied before this asset was ever presented as finished. No content, wording, layout, or scientific claim changed — only the numeric coordinates of the inset's two vector pairs.",
+      "designDecisionRecorded": "The initial inset arrow endpoints were hand-computed from exact trigonometric unit vectors but then rounded to whole-pixel integer coordinates for authoring convenience. A post-render DOM-level check (dot product of the live SVG's actual line coordinates) showed this rounding introduced a small perpendicularity error of about 1 degree in both inset instants (acceptable to the eye, but not exact). Rather than leave an approximately-but-not-exactly-perpendicular pair of vectors in a diagram whose entire teaching point is a precise 90-degree relationship, the coordinates were recomputed to one-decimal-place precision and the check re-run to confirm exactness.",
+      "revisionsApplied": [
+        "Inset instant 1's object point, velocity-arrow endpoint, and acceleration-arrow endpoint were changed from whole-pixel-rounded coordinates (830,240 / 859,264 / 812,261) to one-decimal-place coordinates (829.6,239.9 / 858.7,264.3 / 811.6,261.3), derived directly from sin(40°)/cos(40°) without intermediate rounding.",
+        "Inset instant 2's object point, velocity-arrow endpoint, and acceleration-arrow endpoint were changed from whole-pixel-rounded coordinates (859,320 / 852,357 / 831,315) to one-decimal-place coordinates (858.7,319.8 / 852.1,357.2 / 831.1,314.9), derived directly from sin(100°)/cos(100°) without intermediate rounding.",
+        "The instant-number badge positions, the inset circle, its center dot, the inset title/caption text, the main panel, the legend, the equation panel, both main captions, and the draft footer were all left unchanged — this revision touched only the six coordinate pairs listed above."
+      ],
+      "scientificAndLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-rendered in-browser after the edit (cache-busted reload) and re-ran the same DOM-level dot-product check: perpendicularity for inset instant 1 improved from -0.0173 to -0.00154, and for inset instant 2 from 0.0103 to -0.00103 — both now within roughly 0.09 degrees of exact, consistent with the residual one-decimal-place rounding rather than a geometric defect. The main panel, which was already computed and entered without intermediate integer rounding, measured exactly 0.00000 both before and after this revision.",
+          "Acceleration-to-true-center alignment was re-checked for all three panels (main, inset instant 1, inset instant 2) and remains exactly 1.00000 in every case, both before and after this revision.",
+          "Re-inspected the rendered screenshot after the fix: no visible layout change resulted from the sub-pixel coordinate adjustment; the inset's two-instant comparison reads identically to a human viewer, confirming this was a precision fix, not a visible redesign.",
+          "Re-ran the full text-overlap and missing-direction-attribute checks after the edit: 0 overlaps, 0 missing direction attributes, 0 mixed-script issues — unchanged from before the edit, confirming the coordinate fix did not disturb any text element."
+        ]
+      }
+    },
+    {
+      "revisionId": "ch01-t10-visual-001-rev-002",
+      "appliedAt": "2026-07-16",
+      "appliedBasis": "Applies the two required minor revisions accepted from the read-only rendered-visual-review pass on this asset (approve-with-minor-revision decision): the inset acceleration arrows' shaft-to-arrowhead ratio, and the standalone rust-orange 'v' label's WCAG contrast. Two of the review's three optional low-risk improvements were also applied; one was deliberately declined. No scientific claim changed.",
+      "revisionsApplied": [
+        "Required fix 1 (inset arrowhead-to-shaft ratio): lengthened both inset acceleration-arrow shafts from 28px to 42px, extending each along its already-computed, unchanged inward unit vector (direction untouched — only magnitude changed). Inset instant 1's acceleration-arrow endpoint moved from (811.6, 261.3) to (802.6, 272.1); inset instant 2's moved from (831.1, 314.9) to (817.3, 312.5). Both endpoints remain 43px short of the true inset center (775, 305), preserving the 'shorter than the radius, does not reach the center' safeguard. No object position, velocity arrow, badge, or any other element was moved.",
+        "Required fix 2 (WCAG contrast): changed the standalone near-arrow 'v' label's fill from #d9480f to #d2450e — a small, deliberately minimal darkening (chosen as the least-dark candidate in a step search that still cleared the 4.5:1 AA threshold) — raising its measured contrast on white from 4.300:1 to 4.567:1. This is the only element changed to this darker value; the velocity arrow lines (main panel and both inset instants), the arrowhead marker fill, and the legend swatch line all remain the original #d9480f, since the finding was specific to the standalone text label, not the semantic rust-orange velocity color as a whole.",
+        "Optional improvement applied 1: updated the <desc> accessibility text to state that the main panel's object point carries badge \"1\" and that the inset shows two labeled instants, \"1\" (matching the main panel) and \"2\" (a moment later), so a screen-reader user is told about the same numbered cross-reference a sighted viewer sees. This is a text-only change with no layout or bidi implications.",
+        "Optional improvement applied 2: distinguished the radius reference line from the acceleration arrow by changing its stroke from #94a3b8 (dash 4,4) to #7c8ba1 (dash 2,2) — a finer, visually distinct dash cadence and a darker neutral gray, both chosen so the two dashed lines are no longer easily confused at a glance and so the radius line clears the 3:1 WCAG non-text-contrast minimum against the circle's interior tint (was 2.359:1, now 3.186:1). No geometry, endpoint, or label position changed.",
+        "Optional improvement NOT applied: rendering a_c in the Arabic combined legend line with a true subscript. Declined per this task's explicit instruction to skip optional items that create bidi or layout risk — the Arabic legend is a single RTL text element already mixing three Latin symbol references with Arabic connector words; embedding an LTR-isolated, sub-tspan-shifted 'a_c' inside that RTL run would require nested bidi-isolation plus dy baseline resets interacting with bidi reordering, which is exactly the kind of cross-renderer risk this task flagged as disqualifying. The Arabic legend line is unchanged and still reads 'a_c' as plain text, consistent with how ch01-t08-visual-001.svg's Arabic legend already handles inline Latin symbols."
+      ],
+      "geometryRecheck": {
+        "status": "pass",
+        "findings": [
+          "Re-verified by direct computation on the saved file (Python, parsing the actual <line> coordinates — not a visual estimate): main panel perpendicularity dot product 0.00000, acceleration-to-true-center alignment 1.00000, accel shaft length 75.0px, unchanged from before this revision.",
+          "Inset instant 1 (post-lengthening): perpendicularity dot product -0.00001 (~0.0006° from exact), acceleration-to-true-center alignment 1.00000 (exact), accel shaft length 42.0px (up from 28.0px).",
+          "Inset instant 2 (post-lengthening): perpendicularity dot product 0.00014 (~0.008° from exact), acceleration-to-true-center alignment 1.00000 (exact), accel shaft length 42.0px (up from 28.0px).",
+          "Direction was mathematically unchanged in both inset instants — the new endpoints lie on the exact same ray as the pre-revision endpoints, computed by extending the same precomputed unit vector to a longer magnitude, not by re-deriving a new direction. The tiny sub-0.01° perpendicularity residuals are attributable to the same one-decimal-place coordinate rounding already documented in rev-001, not to this revision's edit.",
+          "Confirmed via direct file inspection: exactly one occurrence of the new label color (#d2450e), scoped to the single standalone 'v' text element; five occurrences of the original #d9480f remain (three velocity-arrow lines, the arrowhead marker fill, and the legend swatch line), confirming the fix was not over-applied to elements the task said not to recolor.",
+          "Confirmed the SVG remains well-formed XML after all edits (parsed successfully with no structural errors)."
+        ]
+      },
+      "contrastRecheck": {
+        "status": "pass",
+        "findings": [
+          "'v' label on white: 4.300:1 before -> 4.567:1 after (AA normal-text minimum is 4.5:1 — now passes; was failing by a small margin).",
+          "Radius reference line on circle interior tint (#eef7fa): 2.359:1 before -> 3.186:1 after (WCAG 1.4.11 non-text-contrast minimum is 3:1 — now passes; was failing).",
+          "Both ratios computed with the standard WCAG 2.1 relative-luminance formula directly from the hex colors present in the saved file, not estimated visually."
+        ]
+      },
+      "renderedLayoutRecheck": {
+        "status": "pass",
+        "findings": [
+          "Rendered in-browser (cache-busted reload via a local static file server, as file:// navigation is not available in this environment) and visually inspected at multiple zoom levels before an intermittent tool-availability interruption ended the session's live-browser access; by that point both required fixes and both applied optional improvements had already been rendered and visually confirmed, and the subsequent geometry/contrast rechecks above were run directly against the saved file to confirm nothing drifted afterward.",
+          "Inset instant 1: visually confirmed 3 full dashed shaft segments are now visible between the object point and the arrowhead (up from roughly 1 partial segment before this revision) — satisfies the 'at least two visible dashed shaft segments' requirement with margin.",
+          "Inset instant 2: same result — 3 full dashed shaft segments now visible before the arrowhead.",
+          "Main panel: the radius line's new finer dash cadence and darker gray render as clearly distinct from the acceleration arrow's coarser violet dashes, both in a medium-zoom full-panel view and in a close-up crop of the object point where the two lines are nearest each other.",
+          "The 'v' label's small color shift is visually indistinguishable as a hue change at normal viewing distance — it still reads unambiguously as the same rust-orange used for the velocity arrow, satisfying 'preserve the established rust-orange semantic role.'",
+          "No new text-to-vector or text-to-text collisions were introduced by any of the four changes; the equation panel, legend, both main captions, the inset title/caption, and the draft footer all remained at their original positions and were unaffected."
+        ]
+      },
+      "remainingCaveats": [
+        "Cross-renderer rendering (other browsers, PDF export, presentation software) has still not been verified beyond the browser environment used during creation and this revision — unchanged open item carried forward from all four pilot visuals.",
+        "Mobile/small-screen legibility remains a confirmed, undeferred risk: a direct 375px-wide viewport simulation during the prior review pass showed the radius label, 90° label, inset captions, legend, and equation sub-caption all fall below legible size. Per this task's explicit instruction, no mobile-specific variant was created or attempted in this revision.",
+        "The broader WCAG contrast audit (every remaining color pair in the diagram, not just the two flagged in the review) has not been performed.",
+        "The Arabic legend's 'a_c' remains plain text rather than a true subscript, by deliberate decision (see revisionsApplied above), for whoever formalizes the eventual style guide to revisit if a lower-risk technique is identified."
+      ]
+    }
+  ],
+  "readyForHumanReview": true,
+  "readyForHumanReviewNote": "All required structural elements from this task's specification are present and were verified both visually (in-browser rendering, screenshots at multiple zoom levels) and programmatically (DOM-level and file-level vector math for tangency and center-alignment, bounding-box overlap checks for text, attribute checks for direction/italic/subscript/superscript, WCAG contrast-ratio computation). Revision 1 corrected a small pixel-rounding-induced perpendicularity error in the inset. Revision 2 applied both required minor revisions from the subsequent read-only rendered-visual-review pass — lengthened the inset acceleration-arrow shafts (28px to 42px) so at least two dashed segments are clearly visible before the arrowhead, and darkened the standalone 'v' label (#d9480f to #d2450e) so its contrast on white clears the WCAG AA 4.5:1 threshold (4.300 to 4.567) — plus two of the review's three optional low-risk improvements (an enhanced <desc>, and a distinguishing dash cadence/contrast change for the radius line, which also brought it above the 3:1 non-text-contrast minimum). The third optional improvement (true subscript for a_c in the Arabic legend) was deliberately not applied due to bidi/layout risk, per this task's explicit instruction. All geometry (perpendicularity, center-alignment, direction) was re-verified after revision 2 and remains exact within sub-0.01-degree rounding tolerance. Not yet certified: a full pairwise WCAG contrast audit beyond the two specifically-flagged color pairs, and cross-renderer Arabic RTL verification — open items carried forward from all four pilot visuals and recommended as first checks for the human reviewer, not blockers to starting that review. Mobile/small-screen handling remains an explicitly open, undeferred item for downstream tooling, confirmed concretely via a direct 375px-viewport simulation during the review pass. This asset has not been marked as finally approved or resolved; it remains draft and review-required.",
+  "studentFacingAllowed": false,
+  "studentPublicationAuthorized": false,
+  "reviewer": null,
+  "reviewedAt": null
+}

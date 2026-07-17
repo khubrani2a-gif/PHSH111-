@@ -1,0 +1,161 @@
+{
+  "approvalId": "ch01-visual-batch1-approval-001",
+  "visualBaselineVersion": "1.0.0",
+  "status": "approved",
+  "batchId": "Batch 1",
+  "approvalLevel": "projectOwnerInternalVisualBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-17",
+  "scope": {
+    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "approvedVisualIds": ["ch01-t01-visual-001", "ch01-t04-visual-001"],
+    "notApplicableTo": "All other Chapter 1 topics and all four existing pilot visuals (ch01-t02, ch01-t03, ch01-t08, ch01-t10) remain outside this record. This is a separate, standalone record — it does not extend, merge with, or modify any pilot visual-governance record, ENGLISH_BATCH1_BASELINE_APPROVAL.json, or ARABIC_BATCH1_BASELINE_APPROVAL.json, all of which remain entirely separate, unmodified governance records with their own independent version sequences."
+  },
+  "approvedVisualAssets": [
+    {
+      "topicId": "ch01-t01",
+      "topicTitle": "Fundamental Quantities",
+      "visualId": "ch01-t01-visual-001",
+      "assetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg",
+      "sha256": "48c73a36fef43644ab810e500045c83777e57ba5bb25d1c1d64f5f887fc67a98",
+      "validationRecordPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json",
+      "viewBox": "0 0 1000 820"
+    },
+    {
+      "topicId": "ch01-t04",
+      "topicTitle": "Mass, Inertia and Weight",
+      "visualId": "ch01-t04-visual-001",
+      "assetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg",
+      "sha256": "163b5eaa0269ca96943bf136c913bba0b961247da7ab0b68bbbd22b5a475cec6",
+      "validationRecordPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001-validation.json",
+      "viewBox": "0 0 1000 760"
+    }
+  ],
+  "assetPreservationNote": "The approved SVG assets and their validation records are unmoved, unrenamed, and were not rewritten to produce this approval. Their internal content, assetStatus (\"draft\"), reviewer (null), reviewedAt (null), studentFacingAllowed (false), studentPublicationAuthorized (false), and applicationIntegrationAuthorized (false) fields were not altered by this approval. This external, standalone approval record is what establishes that the exact files at the checksums above are approved as the internal Batch 1 visual baseline — mirroring the same pattern already used by ENGLISH_BATCH1_BASELINE_APPROVAL.json and ARABIC_BATCH1_BASELINE_APPROVAL.json, which likewise approve their respective content files in place without relocating, renaming, or internally rewriting them.",
+  "englishBaselineDependency": {
+    "record": "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+    "baselineVersion": "1.0.0",
+    "status": "approved",
+    "note": "Both visuals were produced using the approved English Batch 1 baseline's visualReference content blocks (ch01-t01-block-visual, ch01-t04-block-visual) and applicable scientific corrections (ch01-corr-001, ch01-corr-002) as scientific and textual input. This approval relies on, and does not re-open or re-litigate, that existing English baseline approval.",
+    "verifiedChecksums": {
+      "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+      "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b",
+      "verifiedAt": "2026-07-17",
+      "verifiedResult": "Both re-computed and confirmed byte-identical to ENGLISH_BATCH1_BASELINE_APPROVAL.json's recorded values immediately before this visual approval. Neither file was modified by visual production, review, or this approval."
+    }
+  },
+  "arabicBaselineDependency": {
+    "record": "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json",
+    "baselineVersion": "1.0.0",
+    "status": "approved",
+    "note": "Both visuals' Arabic labels were produced using the approved Arabic Batch 1 baseline as source text. This approval relies on, and does not re-open or re-litigate, that existing Arabic baseline approval.",
+    "verifiedChecksums": {
+      "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0",
+      "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371",
+      "verifiedAt": "2026-07-17",
+      "verifiedResult": "Both re-computed and confirmed byte-identical to ARABIC_BATCH1_BASELINE_APPROVAL.json's recorded values immediately before this visual approval. Neither file was modified by visual production, review, or this approval."
+    }
+  },
+  "visualProductionAuthorizationDependency": {
+    "record": "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json",
+    "authorizationVersion": "1.4.0",
+    "section": "batch1VisualProductionAuthorization",
+    "note": "This approval relies on, and does not modify, the visual-production authorization granted at PILOT_AUTHORIZATION.json v1.4.0. authorizationVersion remains 1.4.0, unchanged by this approval."
+  },
+  "productionAndReviewReferences": [
+    "docs/app/PHSH111_BATCH1_VISUAL_PRODUCTION_AUTHORIZATION_RECORD.md",
+    "docs/app/PHSH111_BATCH1_VISUAL_PRODUCTION_REPORT.md",
+    "docs/app/PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md",
+    "docs/app/PHSH111_BATCH1_VISUAL_APPROVAL_RECORD.md"
+  ],
+  "statementOfApproval": "The two visual assets listed in approvedVisualAssets above, at the exact SVG checksums recorded there, are approved by the project owner as the internal Batch 1 visual baseline, version 1.0.0. This approval is a project-owner content-readiness decision made on the basis of Claude's completed production and consolidated review-and-revision work (see productionAndReviewReferences) — it is not independent human visual or scientific approval, not application-integration authorization, not student-facing authorization, and not deployment or publication authorization.",
+  "perVisualDecision": {
+    "ch01-t01-visual-001": {
+      "decision": "approvedAsRevised",
+      "note": "Approved at the exact checksum recorded above, reflecting the two scientific-completeness additions (scalar-quantity qualifier, average-speed qualifier) and the shadow-rect house-style fix applied during the consolidated review-and-revision pass. See PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md §4."
+    },
+    "ch01-t04-visual-001": {
+      "decision": "approvedAsProduced",
+      "note": "Approved at the exact checksum recorded above, unchanged since original production — the consolidated review found no defect requiring correction. See PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md §3."
+    }
+  },
+  "assessmentResults": {
+    "rightsSafety": {
+      "result": "pass",
+      "note": "Both assets are fully original artwork, independently checked against every cataloged source visual referenced in each topic's audit records; no publisher slide, textbook figure, or other cataloged source visual was traced, cropped, or adapted. See PHSH111_BATCH1_VISUAL_PRODUCTION_REPORT.md §11 and PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md §7."
+    },
+    "accessibility": {
+      "result": "pass",
+      "note": "Both assets carry role=\"img\" with a full title/desc pair; measured WCAG contrast clears the 4.5:1 (text) / 3:1 (graphical) thresholds; zero text elements fall outside either viewBox; zero missing explicit direction attributes; no color-alone dependency. See PHSH111_BATCH1_VISUAL_PRODUCTION_REPORT.md §6/§10 and PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md §6."
+    },
+    "scientificAccuracy": {
+      "result": "pass",
+      "note": "Both assets independently re-verified against the approved English/Arabic Batch 1 baselines and applicable scientific corrections (ch01-corr-001, ch01-corr-002); the two ch01-t01 gaps identified during review (scalar-quantity notation, average-speed identification) were corrected by restating already-approved baseline wording, introducing no new scientific content; ch01-t04 required no correction. See PHSH111_BATCH1_VISUAL_REVIEW_AND_REVISION_REPORT.md §2-§4."
+    }
+  },
+  "nonBlockingConditions": [
+    {
+      "id": "mobile-legibility-deferred",
+      "condition": "Mobile text at 375px width relies on the future application's enlarge/zoom interaction; the smallest text elements become the least legible at that scale.",
+      "status": "deferredNotBlocking",
+      "resolutionRequired": "Before student-facing use, via a future application-integration QA pass, not by revising either SVG itself."
+    },
+    {
+      "id": "cross-browser-rendering-unverified",
+      "condition": "Only a single Chromium-based preview browser was used to inspect both assets; no cross-browser or cross-renderer verification of Arabic glyph shaping or general rendering fidelity has been performed.",
+      "status": "deferredNotBlocking",
+      "resolutionRequired": "Must be checked during a future application-integration QA pass."
+    },
+    {
+      "id": "brick-red-force-color-scope-limited",
+      "condition": "The brick-red force color (#b91c1c) introduced for ch01-t04 is approved for use in these two assets only.",
+      "status": "acceptedAsScopedException",
+      "resolutionRequired": "Not applicable beyond these two assets. This approval does not amend VISUAL_HOUSE_STYLE.md or establish a chapter-wide palette extension; any broader adoption requires a separate, future house-style decision."
+    },
+    {
+      "id": "house-style-not-amended",
+      "condition": "VISUAL_HOUSE_STYLE.md has not been amended to formally ratify the brick-red color or any other observation from this approval.",
+      "status": "deferredNotBlocking",
+      "resolutionRequired": "A separate, future house-style documentation action, outside the scope of this approval."
+    }
+  ],
+  "identifierRegistrationStatus": {
+    "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal visual baseline approval and was NOT performed as part of it. Registration remains required before any future application-integration step, unchanged from the status already recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json, ARABIC_BATCH1_BASELINE_APPROVAL.json, and PILOT_READINESS.json. IDENTIFIER_REGISTRY.json was not modified by this approval."
+  },
+  "governanceRestrictions": {
+    "approvalLevelStatement": "This is a project-owner internal VISUAL baseline approval only. It approves the exact reviewed SVG checksums as the internal visual baseline. It is distinct from: (1) independent human visual or scientific approval (has not occurred, for either asset, at any point in this project), (2) application-integration authorization (a separate, still-absent gate), (3) student-facing authorization (a separate, still-absent gate), and (4) deployment or publication authorization (a separate, still-absent gate).",
+    "independentHumanVisualOrScientificApprovalCompleted": false,
+    "applicationIntegrationAuthorized": false,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "deploymentAuthorized": false,
+    "publicationAuthorized": false
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to either approved SVG or its validation record must be recorded as a controlled revision against this visual baseline, not made silently.",
+    "mechanism": "A controlled revision increments visualBaselineVersion (e.g. 1.0.0 -> 1.0.1 for a correction, or 1.0.0 -> 1.1.0 for new scope) and appends an entry to revisionHistory below recording what changed, why, who authorized it, and when — following the exact pattern already proven in ENGLISH_BATCH1_BASELINE_APPROVAL.json / ARABIC_BATCH1_BASELINE_APPROVAL.json's own revision-control conventions.",
+    "revisionHistory": [
+      {
+        "version": "1.0.0",
+        "action": "approved",
+        "date": "2026-07-17",
+        "approvedBy": "khubrani2a-gif (project owner)",
+        "summary": "Initial project-owner internal visual approval of ch01-t01-visual-001 and ch01-t04-visual-001, at the checksums recorded in approvedVisualAssets above, as Visual Batch 1 baseline version 1.0.0."
+      }
+    ]
+  },
+  "unchangedByThisApproval": [
+    "Both approved SVG assets and both validation records remain byte-identical to their pre-approval checksums recorded above; neither was moved, renamed, or rewritten by this approval.",
+    "Both validation records' reviewer and reviewedAt fields remain null — independent human visual review has not occurred and is not claimed by this approval.",
+    "Both validation records' assetStatus remains \"draft\"; blockingStatus remains \"blocked\".",
+    "studentFacingAllowed and studentPublicationAuthorized remain false on both assets and chapter-wide in PILOT_READINESS.json.",
+    "applicationIntegrationAuthorized remains false on both assets.",
+    "VISUAL_HOUSE_STYLE.md remains unmodified — the brick-red force color remains a provisional candidate for these two assets only, not a ratified chapter-wide palette extension.",
+    "ENGLISH_BATCH1_BASELINE_APPROVAL.json and ARABIC_BATCH1_BASELINE_APPROVAL.json remain entirely separate and unmodified by this record.",
+    "PILOT_AUTHORIZATION.json remains at authorizationVersion 1.4.0, unmodified by this approval.",
+    "BILINGUAL_GLOSSARY.json remains unchanged, still glossaryVersion 1.3.0.",
+    "IDENTIFIER_REGISTRY.json remains unchanged.",
+    "canonicalGenerationAuthorized and studentPublicationAuthorized remain chapter-wide false in PILOT_READINESS.json.",
+    "This approval does not authorize application integration, identifier registration, deployment, or any student-facing use for ch01-t01 or ch01-t04."
+  ]
+}

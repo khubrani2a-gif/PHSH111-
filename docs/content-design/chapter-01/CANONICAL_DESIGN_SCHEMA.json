@@ -1,0 +1,390 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://phsh111.local/schemas/chapter-01/canonical-design.schema.json",
+  "title": "PHSH111 Chapter 1 Canonical Design Schema",
+  "description": "Design-only schema. It does not contain generated canonical Chapter 1 content.",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "record"],
+  "properties": {
+    "schemaVersion": {"const": "2.3.0"},
+    "recordType": {
+      "enum": ["contentBlock", "instructorScript", "problem", "correction"]
+    },
+    "record": {
+      "oneOf": [
+        {"$ref": "#/$defs/contentBlock"},
+        {"$ref": "#/$defs/instructorScript"},
+        {"$ref": "#/$defs/problem"},
+        {"$ref": "#/$defs/correction"}
+      ]
+    }
+  },
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "required": ["text", "status", "language", "direction"],
+      "properties": {
+        "text": {"type": ["string", "null"]},
+        "status": {
+          "enum": ["missing", "sourceSupplied", "notAuthored", "draft", "reviewed", "approved"]
+        },
+        "language": {"enum": ["en", "ar"]},
+        "direction": {"enum": ["ltr", "rtl"]},
+        "sourceReferenceIds": {"type": "array", "items": {"type": "string"}},
+        "reviewer": {"type": ["string", "null"]},
+        "reviewedAt": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "arabicSeparation": {
+      "type": "object",
+      "required": [
+        "originalArabicText",
+        "canonicalArabicTranslation",
+        "translationStatus",
+        "translationReviewer",
+        "terminologyApprovalStatus"
+      ],
+      "properties": {
+        "originalArabicText": {"$ref": "#/$defs/localizedText"},
+        "canonicalArabicTranslation": {"$ref": "#/$defs/localizedText"},
+        "translationStatus": {
+          "enum": ["notRequired", "missing", "sourceSuppliedOnly", "draft", "reviewed", "approved"]
+        },
+        "translationReviewer": {"type": ["string", "null"]},
+        "terminologyApprovalStatus": {
+          "enum": ["notStarted", "pending", "partiallyApproved", "approved"]
+        },
+        "glossaryTermIds": {"type": "array", "items": {"type": "string", "pattern": "^ch01-term-[a-z0-9-]+$"}, "uniqueItems": true},
+        "languagePreferenceDecisionIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "provenanceLink": {
+      "type": "object",
+      "required": ["sourceId", "locatorType", "locatorId", "linkageType", "confidence", "rightsStatus"],
+      "properties": {
+        "sourceId": {"type": "string", "pattern": "^SRC-CH01-[A-Z0-9-]+$"},
+        "locatorType": {
+          "enum": ["segment", "page", "card", "problem", "occurrence", "solution", "question", "visual", "file"]
+        },
+        "locatorId": {"type": "string", "minLength": 1},
+        "linkageType": {"enum": ["explicit", "inferred"]},
+        "confidence": {"enum": ["confirmed", "high", "medium", "low", "unresolved"]},
+        "contribution": {
+          "enum": ["wording", "concept", "equation", "example", "answer", "solution", "visual", "translation", "teachingMethod", "formatPreference"]
+        },
+        "scientificAuditRecordIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "conflictRecordIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "visualReferenceIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "rightsStatus": {"enum": ["restricted", "pendingReview", "approvedInternal", "approvedPublic", "unknown"]},
+        "allowedUse": {"enum": ["referenceOnly", "internalExcerpt", "publicExcerpt", "adaptationAllowed", "unknown"]},
+        "evidence": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "duplicateHandling": {
+      "type": "object",
+      "required": [
+        "duplicateGroupIds",
+        "revisionGroupId",
+        "canonicalPreferenceStatus",
+        "preferredSourceRecordId",
+        "preferenceReason",
+        "supersededBy",
+        "retainedForHistoricalTrace"
+      ],
+      "properties": {
+        "duplicateGroupIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "revisionGroupId": {"type": ["string", "null"]},
+        "canonicalPreferenceStatus": {
+          "enum": ["notEvaluated", "candidate", "preferred", "notPreferred", "superseded", "retainedOnlyForTrace"]
+        },
+        "preferredSourceRecordId": {"type": ["string", "null"]},
+        "preferenceReason": {"type": ["string", "null"]},
+        "supersededBy": {"type": ["string", "null"]},
+        "retainedForHistoricalTrace": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "blockingWorkflow": {
+      "type": "object",
+      "required": [
+        "blockingStatus",
+        "blockingReason",
+        "blockingRecordIds",
+        "studentFacingAllowed",
+        "instructorFacingAllowed",
+        "resolutionRequired",
+        "resolutionOwner",
+        "resolutionStatus"
+      ],
+      "properties": {
+        "blockingStatus": {"enum": ["notBlocked", "partiallyBlocked", "blocked"]},
+        "blockingReason": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "scientificCorrection",
+              "conflictingSource",
+              "missingVisual",
+              "unverifiedVisual",
+              "rightsPending",
+              "translationPending",
+              "terminologyPending",
+              "missingSource",
+              "answerValidation",
+              "contentLeakRisk",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "blockingRecordIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "studentFacingAllowed": {"type": "boolean"},
+        "instructorFacingAllowed": {"type": "boolean"},
+        "resolutionRequired": {"type": "boolean"},
+        "resolutionOwner": {"type": ["string", "null"]},
+        "resolutionStatus": {"enum": ["notRequired", "open", "inProgress", "resolved", "acceptedLimitation"]}
+      },
+      "additionalProperties": false
+    },
+    "visualGovernance": {
+      "type": "object",
+      "required": ["visualId", "availabilityStatus", "linkageConfidence", "linkageType", "rightsStatus"],
+      "properties": {
+        "visualId": {"type": "string"},
+        "availabilityStatus": {"enum": ["available", "missing", "candidateSourceAvailable", "redrawRequired", "notRequired"]},
+        "linkageConfidence": {"enum": ["confirmed", "high", "medium", "low", "unresolved"]},
+        "linkageType": {"enum": ["explicit", "inferred", "candidateMatch", "none"]},
+        "rightsStatus": {"enum": ["restricted", "pendingReview", "approvedInternal", "approvedPublic", "unknown"]},
+        "visualResolutionId": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "reviewCardLinkage": {
+      "type": "object",
+      "required": ["originalCardSourceRefs", "solvedReviewSourceRefs", "questionIds"],
+      "properties": {
+        "originalCardSourceRefs": {"type": "array", "items": {"$ref": "#/$defs/provenanceLink"}},
+        "solvedReviewSourceRefs": {"type": "array", "items": {"$ref": "#/$defs/provenanceLink"}},
+        "questionIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "quizSeedEligible": {"type": "boolean"},
+        "kahootExportStatus": {"enum": ["notEvaluated", "notCompatible", "candidate", "validated"]}
+      },
+      "additionalProperties": false
+    },
+    "instructorScript": {
+      "type": "object",
+      "required": [
+        "instructorScriptId",
+        "topicIds",
+        "openingHook",
+        "meaningfulQuestion",
+        "mainIdea",
+        "learningObjectives",
+        "wordForWordTeachingScript",
+        "slidePageCues",
+        "figureCues",
+        "questionsToAskStudents",
+        "expectedStudentResponses",
+        "misconceptionsToAnticipate",
+        "intuition",
+        "analogies",
+        "examples",
+        "graphGuidance",
+        "tableGuidance",
+        "levelAdaptations",
+        "transitions",
+        "emphasisNotes",
+        "timing",
+        "instructorOnlyCautions",
+        "scientificCorrectionReferences",
+        "sourceTraceability",
+        "duplicateHandling",
+        "blocking"
+      ],
+      "properties": {
+        "instructorScriptId": {"type": "string", "pattern": "^ch01-is-[0-9]{3}$"},
+        "topicIds": {"type": "array", "items": {"type": "string", "pattern": "^ch01-t(0[1-9]|1[0-4])$"}, "minItems": 1, "uniqueItems": true},
+        "openingHook": {"$ref": "#/$defs/localizedText"},
+        "meaningfulQuestion": {"$ref": "#/$defs/localizedText"},
+        "mainIdea": {"$ref": "#/$defs/localizedText"},
+        "learningObjectives": {"type": "array", "items": {"$ref": "#/$defs/localizedText"}},
+        "wordForWordTeachingScript": {"$ref": "#/$defs/localizedText"},
+        "slidePageCues": {"type": "array", "items": {"type": "object", "required": ["cueOrder", "pageIds", "instruction"], "properties": {"cueOrder": {"type": "integer", "minimum": 1}, "pageIds": {"type": "array", "items": {"type": "string"}}, "instruction": {"$ref": "#/$defs/localizedText"}}}},
+        "figureCues": {"type": "array", "items": {"type": "object", "required": ["visualIds", "instruction"], "properties": {"visualIds": {"type": "array", "items": {"type": "string"}}, "instruction": {"$ref": "#/$defs/localizedText"}, "fallbackIfUnavailable": {"type": ["string", "null"]}}}},
+        "intuition": {"$ref": "#/$defs/localizedText"},
+        "graphGuidance": {"type": "array", "items": {"type": "string"}},
+        "tableGuidance": {"type": "array", "items": {"type": "string"}},
+        "levelAdaptations": {"type": "array", "items": {"type": "string"}},
+        "questionsToAskStudents": {"type": "array", "items": {"$ref": "#/$defs/localizedText"}},
+        "expectedStudentResponses": {"type": "array", "items": {"$ref": "#/$defs/localizedText"}},
+        "misconceptionsToAnticipate": {"type": "array", "items": {"type": "string"}},
+        "analogies": {"type": "array", "items": {"type": "string"}},
+        "examples": {"type": "array", "items": {"type": "string"}},
+        "transitions": {"type": "array", "items": {"type": "object", "required": ["targetTopicId", "script"], "properties": {"targetTopicId": {"type": "string"}, "script": {"$ref": "#/$defs/localizedText"}}}},
+        "emphasisNotes": {"type": "array", "items": {"type": "string"}},
+        "timing": {"type": "object", "required": ["estimatedMinutes", "pauseCues"], "properties": {"estimatedMinutes": {"type": ["number", "null"], "minimum": 0}, "pauseCues": {"type": "array", "items": {"type": "string"}}}},
+        "instructorOnlyCautions": {"type": "array", "items": {"type": "string"}},
+        "scientificCorrectionReferences": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "sourceTraceability": {"type": "array", "items": {"$ref": "#/$defs/provenanceLink"}},
+        "arabic": {"$ref": "#/$defs/arabicSeparation"},
+        "duplicateHandling": {"$ref": "#/$defs/duplicateHandling"},
+        "blocking": {"$ref": "#/$defs/blockingWorkflow"},
+        "visibility": {"const": "instructor"}
+      },
+      "additionalProperties": false
+    },
+    "sourceVariant": {
+      "type": "object",
+      "required": ["variantId", "sourceId", "answerVariant", "correctionRecordIds", "conflictRecordIds"],
+      "properties": {
+        "variantId": {"type": "string"},
+        "sourceId": {"type": "string"},
+        "problemIds": {"type": "array", "items": {"type": "string"}},
+        "solutionIds": {"type": "array", "items": {"type": "string"}},
+        "reviewCardIds": {"type": "array", "items": {"type": "string"}},
+        "questionIds": {"type": "array", "items": {"type": "string"}},
+        "pageIds": {"type": "array", "items": {"type": "string"}},
+        "segmentIds": {"type": "array", "items": {"type": "string"}},
+        "occurrenceIds": {"type": "array", "items": {"type": "string"}},
+        "visualIds": {"type": "array", "items": {"type": "string"}},
+        "answerVariant": {"type": ["string", "null"]},
+        "answerStatus": {"enum": ["unknown", "correct", "incorrect", "partiallyCorrect", "unverified"]},
+        "correctionRecordIds": {"type": "array", "items": {"type": "string"}},
+        "conflictRecordIds": {"type": "array", "items": {"type": "string"}},
+        "provenanceLinks": {"type": "array", "items": {"$ref": "#/$defs/provenanceLink"}}
+      },
+      "additionalProperties": false
+    },
+    "problem": {
+      "type": "object",
+      "required": [
+        "problemId",
+        "topicIds",
+        "problemStatement",
+        "givenValues",
+        "conceptualInterpretation",
+        "equationSelection",
+        "numberedSolution",
+        "calculation",
+        "finalAnswer",
+        "units",
+        "directionSign",
+        "intuition",
+        "commonMistake",
+        "sourceAnswer",
+        "correctedAnswer",
+        "sourceVariants",
+        "selectedVariantIds",
+        "selectionRationale",
+        "duplicateHandling",
+        "blocking"
+      ],
+      "properties": {
+        "problemId": {"type": "string", "pattern": "^ch01-prob-[0-9]{3}$"},
+        "topicIds": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "problemStatement": {"type": "object"},
+        "givenValues": {"type": "array"},
+        "conceptualInterpretation": {"type": "object"},
+        "equationSelection": {"type": "array"},
+        "numberedSolution": {"type": "array"},
+        "calculation": {"type": "array"},
+        "finalAnswer": {"type": "object"},
+        "units": {"type": "array"},
+        "directionSign": {"type": "object"},
+        "intuition": {"type": "object"},
+        "commonMistake": {"type": "array"},
+        "sourceAnswer": {"type": "object"},
+        "correctedAnswer": {"type": "object"},
+        "sourceVariants": {"type": "array", "items": {"$ref": "#/$defs/sourceVariant"}, "minItems": 1},
+        "selectedVariantIds": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "selectionRationale": {"type": ["string", "null"]},
+        "arabic": {"$ref": "#/$defs/arabicSeparation"},
+        "duplicateHandling": {"$ref": "#/$defs/duplicateHandling"},
+        "blocking": {"$ref": "#/$defs/blockingWorkflow"}
+      },
+      "additionalProperties": false
+    },
+    "correction": {
+      "type": "object",
+      "required": [
+        "correctionId",
+        "title",
+        "topicIds",
+        "scientificAuditRecordIds",
+        "conflictRecordIds",
+        "originalWording",
+        "correctedWording",
+        "correctionRationale",
+        "approvalStatus",
+        "affectedContentBlockIds",
+        "studentFacingSuppression"
+      ],
+      "properties": {
+        "correctionId": {"type": "string", "pattern": "^ch01-corr-[0-9]{3}$"},
+        "title": {"$ref": "#/$defs/localizedText"},
+        "topicIds": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "classification": {"enum": ["inaccurate", "needsClarification", "contextDependent", "needsVerification"]},
+        "severity": {"enum": ["high", "medium", "low", "validationOnly"]},
+        "scientificAuditRecordIds": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "conflictRecordIds": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "originalWording": {"type": "object"},
+        "correctedWording": {"type": "object"},
+        "correctionRationale": {"type": "string", "minLength": 1},
+        "approvalStatus": {"enum": ["flagged", "proposed", "scientificReview", "scientificallyApproved", "editorialReview", "editoriallyApproved", "studentPublishable", "rejected", "needsEvidence"]},
+        "affectedContentBlockIds": {"type": "array", "items": {"type": "string"}},
+        "affectedContentBlockTypes": {"type": "array", "items": {"type": "string"}},
+        "studentFacingSuppression": {"type": "boolean"},
+        "approvals": {"type": "object"},
+        "provenanceLinks": {"type": "array", "items": {"$ref": "#/$defs/provenanceLink"}},
+        "equations": {"type": "array", "items": {"type": "object", "required": ["expression", "meaning"], "properties": {"equationId": {"type": "string"}, "expression": {"type": "string"}, "meaning": {"type": "string"}, "units": {"type": "array", "items": {"type": "string"}}}}},
+        "assumptionsAndSignConventions": {"type": "array", "items": {"type": "string"}},
+        "glossaryTermIds": {"type": "array", "items": {"type": "string", "pattern": "^ch01-term-[a-z0-9-]+$"}, "uniqueItems": true},
+        "blocking": {"$ref": "#/$defs/blockingWorkflow"},
+        "evidenceStatus": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "contentBlock": {
+      "type": "object",
+      "required": [
+        "blockId",
+        "blockType",
+        "topicId",
+        "visibility",
+        "localizedContent",
+        "arabic",
+        "provenanceLinks",
+        "scientificCorrectionIds",
+        "conflictRecordIds",
+        "duplicateHandling",
+        "blocking",
+        "contentLeakTestStatus"
+      ],
+      "properties": {
+        "blockId": {"type": "string"},
+        "blockType": {"type": "string"},
+        "topicId": {"type": "string"},
+        "visibility": {"enum": ["student", "instructor", "shared", "internalAudit"]},
+        "localizedContent": {"type": "object"},
+        "arabic": {"$ref": "#/$defs/arabicSeparation"},
+        "provenanceLinks": {"type": "array", "items": {"$ref": "#/$defs/provenanceLink"}},
+        "scientificCorrectionIds": {"type": "array", "items": {"type": "string"}},
+        "conflictRecordIds": {"type": "array", "items": {"type": "string"}},
+        "visualReferenceIds": {"type": "array", "items": {"type": "string"}},
+        "visualGovernance": {"type": "array", "items": {"$ref": "#/$defs/visualGovernance"}},
+        "reviewCardLinkages": {"type": "array", "items": {"$ref": "#/$defs/reviewCardLinkage"}},
+        "quizSeedSourceIds": {"type": "array", "items": {"type": "string"}},
+        "formatPreferenceIds": {"type": "array", "items": {"type": "string"}},
+        "bilingualRuleIds": {"type": "array", "items": {"type": "string"}},
+        "duplicateHandling": {"$ref": "#/$defs/duplicateHandling"},
+        "blocking": {"$ref": "#/$defs/blockingWorkflow"},
+        "contentLeakTestStatus": {"enum": ["notRun", "passed", "failed", "notApplicable"]},
+        "reverseIndexRecordIds": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  }
+}
