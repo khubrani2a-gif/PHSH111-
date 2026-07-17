@@ -39,6 +39,9 @@ export function HomePage() {
   return (
     <section className="home-page">
       <h1>{APP_NAME}</h1>
+      <p className="home-page__mobile-test-note">
+        Mobile editing test — successfully updated from a cloud environment.
+      </p>
       <p className="home-page__subtitle">{SUBTITLE[language]}</p>
       <p className="home-page__release-label" role="status">
         {RELEASE_LABEL[language]}
