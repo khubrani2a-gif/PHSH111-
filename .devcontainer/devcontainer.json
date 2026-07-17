@@ -1,0 +1,19 @@
+{
+  "name": "PHSH111 Chapter 1",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  "postCreateCommand": "npm --prefix apps/chapter1-mvp ci",
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "PHSH111 Vite app",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.cwd": "${workspaceFolder}/apps/chapter1-mvp"
+      }
+    }
+  }
+}
