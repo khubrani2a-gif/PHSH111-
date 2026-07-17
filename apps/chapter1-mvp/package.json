@@ -2,7 +2,7 @@
   "name": "phsh111",
   "private": true,
   "version": "0.1.0",
-  "description": "PHSH111 (Physics for Health Sciences) — Chapter 1 Internal Pilot. Not authorized for student-facing or public deployment. See docs/content-design/chapter-01/PILOT_AUTHORIZATION.json and docs/app/MVP_IMPLEMENTATION_DECISIONS.json. Application directory intentionally remains apps/chapter1-mvp/ pending a separately authorized path migration.",
+  "description": "PHSH111 (Physics for Health Sciences) — Chapter 1 Internal Pilot. Publicly hosted for review/demonstration only (PILOT_AUTHORIZATION.json v1.6.0); not authorized as student-facing publication — studentFacingAllowed/studentPublicationAuthorized remain false for every topic. See docs/content-design/chapter-01/PILOT_AUTHORIZATION.json and docs/app/MVP_IMPLEMENTATION_DECISIONS.json. Application directory intentionally remains apps/chapter1-mvp/ pending a separately authorized path migration.",
   "type": "module",
   "scripts": {
     "dev": "vite",

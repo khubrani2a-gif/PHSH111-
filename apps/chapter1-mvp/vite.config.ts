@@ -16,7 +16,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // setting — Rollup reads source files directly from disk at build time.
 const CANONICAL_CONTENT_DIR = resolve(__dirname, "../../docs/content-design/chapter-01");
 
+// GitHub Pages serves this repository at /PHSH111-/ (repo name), so built
+// asset URLs must be rooted there rather than at "/". See
+// docs/content-design/chapter-01/PILOT_AUTHORIZATION.json v1.6.0
+// publicDeploymentAuthorization for the deployment authorization this base
+// path serves.
 export default defineConfig({
+  base: "/PHSH111-/",
   plugins: [react()],
   server: {
     fs: {
