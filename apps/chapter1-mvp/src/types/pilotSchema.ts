@@ -1,0 +1,358 @@
+// Raw-schema TypeScript types for the four canonical pilot content JSON
+// files under docs/content-design/chapter-01/pilot/.
+//
+// These types describe the schema as it actually exists in the repository
+// (schemaVersion "2.3.0", verified identical across ch01-t02/t03/t08/t10 as
+// of this phase's inspection). They are intentionally NOT the shape the UI
+// consumes directly — see src/types/normalized.ts for that. Keeping the raw
+// shape separate lets validation/parsing stay honest about what the source
+// actually contains before any adapter decisions are applied.
+//
+// Known, verified schema facts baked into these types (see Phase 2 report
+// for the full inspection):
+// - localizedContent.ar and arabic.canonicalArabicTranslation are always
+//   kept in sync (0 mismatches found across all 36+ records inspected).
+// - File-level topicTitle/topicTitleAr are PLAIN STRINGS, not the
+//   {text,status,language,direction} shape used everywhere else in the
+//   schema — a real, deliberate shape inconsistency, not a typo, so it is
+//   modeled as its own distinct pair of fields rather than forced into
+//   LocalizedContent.
+// - contentBlock's 12-key shape (blockId, blockType, topicId, visibility,
+//   localizedContent, arabic, provenanceLinks, scientificCorrectionIds,
+//   conflictRecordIds, duplicateHandling, blocking, contentLeakTestStatus)
+//   is identical across all seven blockTypes and all four topics.
+// - instructorScript has NO visibility field at all, unlike every
+//   contentBlock — a real asymmetry the adapter must account for
+//   explicitly rather than assume a default.
+
+export const PILOT_SCHEMA_VERSION = "2.3.0" as const;
+
+// Extended from the original four-literal pilot union (ch01-t02/t03/t08/t10)
+// under PILOT_AUTHORIZATION.json v1.5.0's batch1ApplicationIntegrationAuthorization
+// to also include the two Batch 1 topics (ch01-t01, ch01-t04) — see
+// docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md §11.
+export type PilotTopicId =
+  | "ch01-t01"
+  | "ch01-t02"
+  | "ch01-t03"
+  | "ch01-t04"
+  | "ch01-t08"
+  | "ch01-t10";
+
+// The original four-topic, application-BUILD-authorized set (mirrors
+// PILOT_READINESS.json's chapter-wide `pilotTopicOrder`). This is a
+// distinct, narrower governance concept than Batch 1's own separate
+// authorization — it is NOT extended to six topics, so any logic that is
+// specifically scoped to the four originally build-authorized pilot
+// topics (rather than to "every topic the running application currently
+// renders") keeps working against exactly this set. Nothing in the running
+// application iterates this constant anymore for topic loading — see
+// APP_TOPIC_ORDER below for that.
+export const PILOT_TOPIC_ORDER: readonly PilotTopicId[] = [
+  "ch01-t02",
+  "ch01-t03",
+  "ch01-t08",
+  "ch01-t10",
+] as const;
+
+// Batch 1's own two topics, in the order used throughout their own
+// governance records (ENGLISH_BATCH1_BASELINE_APPROVAL.json,
+// ARABIC_BATCH1_BASELINE_APPROVAL.json, VISUAL_BATCH1_APPROVAL.json,
+// IDENTIFIER_REGISTRY.json's batch1IdentifierRegistration, all list
+// ch01-t01 before ch01-t04).
+export const BATCH1_TOPIC_ORDER: readonly PilotTopicId[] = [
+  "ch01-t01",
+  "ch01-t04",
+] as const;
+
+// The correct, chapter-wide numerical sequence the running application
+// actually displays and loads, derived from each topic's own numeric
+// suffix (01 < 02 < 03 < 04 < 08 < 10) — see
+// docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md
+// §10. This is what src/content/adapter.ts's loadAllTopics() and
+// src/content/validate.ts's validateTopicSet() now iterate/check against,
+// not PILOT_TOPIC_ORDER. No placeholder topic (ch01-t05–t07, t09,
+// t11–t14) is included — those remain entirely out of scope.
+export const APP_TOPIC_ORDER: readonly PilotTopicId[] = [
+  "ch01-t01",
+  "ch01-t02",
+  "ch01-t03",
+  "ch01-t04",
+  "ch01-t08",
+  "ch01-t10",
+] as const;
+
+// ---- Shared leaf shapes ------------------------------------------------
+
+export type LanguageStatus = "draft" | "reviewed" | "approved" | string;
+
+/** The {text,status,language,direction} shape repeated throughout the schema. */
+export interface LocalizedText {
+  text: string | null;
+  status: LanguageStatus | "missing";
+  language: "en" | "ar";
+  direction: "ltr" | "rtl";
+}
+
+export interface LocalizedContent {
+  en: LocalizedText;
+  ar: LocalizedText;
+}
+
+export interface ArabicGovernance {
+  originalArabicText: LocalizedText;
+  canonicalArabicTranslation: LocalizedText;
+  translationStatus: string;
+  translationReviewer: string | null;
+  terminologyApprovalStatus: string;
+  glossaryTermIds: string[];
+}
+
+export type VisibilityState = "shared" | "student" | "instructor";
+
+export type BlockingReason =
+  | "translationPending"
+  | "terminologyPending"
+  | "answerValidation"
+  | "unverifiedVisual"
+  | "missingVisual"
+  | "other"
+  | string;
+
+export interface BlockingState {
+  blockingStatus: "blocked" | "notBlocked" | string;
+  blockingReason: BlockingReason[];
+  blockingRecordIds: string[];
+  studentFacingAllowed: boolean;
+  instructorFacingAllowed: boolean;
+  resolutionRequired: boolean;
+  resolutionOwner: string;
+  resolutionStatus: string;
+}
+
+export interface DuplicateHandling {
+  duplicateGroupIds: string[];
+  revisionGroupId: string | null;
+  canonicalPreferenceStatus: string;
+  preferredSourceRecordId: string | null;
+  preferenceReason: string;
+  supersededBy: string | null;
+  retainedForHistoricalTrace: boolean;
+}
+
+export interface ProvenanceLink {
+  sourceId: string;
+  locatorType: string;
+  locatorId: string;
+  linkageType: string;
+  confidence: string;
+  contribution: string;
+  rightsStatus: string;
+  allowedUse: string;
+  evidence?: string;
+}
+
+export interface VisualGovernanceEntry {
+  visualId: string;
+  availabilityStatus: string;
+  linkageConfidence: string;
+  linkageType: string;
+  rightsStatus: string;
+  visualResolutionId: string | null;
+  assetPath?: string;
+  assetFormat?: string;
+  assetStatus?: string;
+  reviewRequired?: boolean;
+  // t02's visualGovernance entry additionally carries a resolved
+  // contentScopeResolution object; the other three topics do not. Kept
+  // optional and untyped-deep here deliberately — the adapter never reads
+  // into it, it only needs to know the entry exists.
+  contentScopeResolution?: unknown;
+}
+
+// ---- contentBlock record -------------------------------------------------
+
+export type ContentBlockType =
+  | "mainIdea"
+  | "organizedExplanation"
+  | "equationSet"
+  | "example"
+  | "visualReference"
+  | "misconception"
+  | "reviewQuestion";
+
+export interface ContentBlockRecord {
+  blockId: string;
+  blockType: ContentBlockType;
+  topicId: PilotTopicId;
+  visibility: VisibilityState;
+  localizedContent: LocalizedContent;
+  arabic: ArabicGovernance;
+  provenanceLinks: ProvenanceLink[];
+  scientificCorrectionIds: string[];
+  conflictRecordIds: string[];
+  visualGovernance?: VisualGovernanceEntry[];
+  duplicateHandling: DuplicateHandling;
+  blocking: BlockingState;
+  contentLeakTestStatus: string;
+}
+
+// ---- instructorScript record --------------------------------------------
+//
+// Deliberately NOT given a `visibility` field — the source schema does not
+// have one. The adapter's own allow-list (see src/content/adapter.ts)
+// decides which sub-fields are safe to surface anywhere in the UI, since
+// this record mixes learner-adjacent fields (learningObjectives, mainIdea,
+// intuition) with clearly instructor-only fields (instructorOnlyCautions,
+// wordForWordTeachingScript, slidePageCues) with no schema-level marker
+// distinguishing them.
+
+export interface InstructorScriptRecord {
+  instructorScriptId: string;
+  topicIds: PilotTopicId[];
+  openingHook: LocalizedText;
+  meaningfulQuestion: LocalizedText;
+  mainIdea: LocalizedText;
+  learningObjectives: LocalizedText[];
+  wordForWordTeachingScript: LocalizedText;
+  slidePageCues: unknown[];
+  figureCues: unknown[];
+  intuition: LocalizedText;
+  graphGuidance: unknown[];
+  tableGuidance: unknown[];
+  levelAdaptations: string[];
+  questionsToAskStudents: LocalizedText[];
+  expectedStudentResponses: LocalizedText[];
+  misconceptionsToAnticipate: string[];
+  analogies: string[];
+  examples: string[];
+  transitions: unknown[];
+  emphasisNotes: string[];
+  timing: { estimatedMinutes: number; pauseCues: string[] };
+  instructorOnlyCautions: string[];
+  scientificCorrectionReferences: string[];
+  sourceTraceability: ProvenanceLink[];
+  arabic: ArabicGovernance;
+  duplicateHandling: DuplicateHandling;
+  blocking: BlockingState;
+}
+
+// ---- problem record -------------------------------------------------------
+
+export interface GivenValue {
+  symbol: string;
+  value: number;
+  unit: string;
+  exactOrApproximate: "exact" | "approximate" | string;
+}
+
+export interface EquationSelection {
+  equationId: string;
+  reason: string;
+  conditionsSatisfied: string[];
+  conditionsMissing: string[];
+}
+
+export interface NumberedSolutionStep {
+  stepNumber: number;
+  purpose: string;
+  explanation: LocalizedContent;
+  calculationRef: string | null;
+}
+
+export interface CalculationEntry {
+  calculationId: string;
+  expression: string;
+  substitution: string;
+  /** Nullable: intermediate symbolic steps carry no numeric result. */
+  result: number | null;
+  unit: string | null;
+  roundingRule: string | null;
+  significantFigures: number | null;
+}
+
+export interface FinalAnswer {
+  value: number | null;
+  unit: string | null;
+  direction: string | null;
+  sign: string | null;
+  referencePoint: string | null;
+  interpretation: LocalizedContent;
+}
+
+export interface DirectionSign {
+  applicable: boolean;
+  note: string;
+}
+
+export interface SourceVariant {
+  variantId: string;
+  sourceId: string;
+  answerVariant: string;
+  answerStatus: string;
+  correctionRecordIds: string[];
+  conflictRecordIds: string[];
+  [key: string]: unknown;
+}
+
+export interface ProblemRecord {
+  problemId: string;
+  topicIds: PilotTopicId[];
+  problemStatement: LocalizedContent;
+  givenValues: GivenValue[];
+  conceptualInterpretation: LocalizedContent;
+  equationSelection: EquationSelection[];
+  numberedSolution: NumberedSolutionStep[];
+  calculation: CalculationEntry[];
+  finalAnswer: FinalAnswer;
+  units: string[];
+  directionSign: DirectionSign;
+  intuition: LocalizedContent;
+  commonMistake: string[];
+  sourceAnswer: unknown;
+  correctedAnswer: unknown;
+  sourceVariants: SourceVariant[];
+  selectedVariantIds: string[];
+  selectionRationale: string;
+  arabic: ArabicGovernance;
+  duplicateHandling: DuplicateHandling;
+  blocking: BlockingState;
+}
+
+// ---- top-level record envelope + file -------------------------------------
+
+export type PilotRecord =
+  | { recordType: "instructorScript"; record: InstructorScriptRecord }
+  | { recordType: "contentBlock"; record: ContentBlockRecord }
+  | { recordType: "problem"; record: ProblemRecord };
+
+export interface PilotTopicFile {
+  schemaVersion: string;
+  topicId: PilotTopicId;
+  /** Plain string — NOT LocalizedText. See file header note. */
+  topicTitle: string;
+  /** Plain string — NOT LocalizedText. See file header note. */
+  topicTitleAr: string;
+  generationStatus: string;
+  generationNote: string;
+  records: PilotRecord[];
+}
+
+// ---- visual validation record ----------------------------------------------
+
+export interface VisualValidationRecord {
+  visualResolutionId: string;
+  visualId: string;
+  topicIds: PilotTopicId[];
+  assetPath: string;
+  assetFormat: string;
+  assetStatus: string;
+  reviewRequired: boolean;
+  readyForHumanReview: boolean;
+  readyForHumanReviewNote?: string;
+  studentFacingAllowed: boolean;
+  studentPublicationAuthorized: boolean;
+  reviewer: string | null;
+  reviewedAt: string | null;
+  revisionHistory: unknown[];
+}
