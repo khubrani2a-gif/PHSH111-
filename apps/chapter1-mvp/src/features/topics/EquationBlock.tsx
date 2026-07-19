@@ -8,9 +8,16 @@ const MISSING = {
   ar: "لا يتوفر نص عربي لهذه المعادلة.",
 } as const;
 
+const COLLAPSE_LABEL = {
+  en: "Collapse or expand the equation explanation",
+  ar: "طيّ شرح المعادلة أو توسيعه",
+} as const;
+
 interface EquationBlockProps {
   text: NormalizedText;
   italicTokens: readonly string[];
+  sectionId?: string;
+  collapsible?: boolean;
 }
 
 /**
@@ -22,14 +29,30 @@ interface EquationBlockProps {
  * the formula, which risks dropping explanatory content the block's own
  * governance record (visibility: "shared") intends to be shown.
  */
-export function EquationBlock({ text, italicTokens }: EquationBlockProps) {
+export function EquationBlock({
+  text,
+  italicTokens,
+  sectionId,
+  collapsible = false,
+}: EquationBlockProps) {
   const { language, direction } = useLanguage();
   const value = text[language];
 
   return (
-    <section className="equation-block" aria-labelledby="equation-block-heading">
+    <section
+      id={sectionId}
+      className="equation-block"
+      aria-labelledby="equation-block-heading"
+    >
       <h2 id="equation-block-heading">{HEADING[language]}</h2>
-      {value ? (
+      {value && collapsible ? (
+        <details className="content-disclosure" open>
+          <summary>{COLLAPSE_LABEL[language]}</summary>
+          <p className="equation-block__text" dir={direction}>
+            {renderEquationText(value, italicTokens)}
+          </p>
+        </details>
+      ) : value ? (
         <p className="equation-block__text" dir={direction}>
           {renderEquationText(value, italicTokens)}
         </p>

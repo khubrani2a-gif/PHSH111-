@@ -6,6 +6,9 @@ import { renderEquationText, EQUATION_ITALIC_TOKENS_BY_TOPIC, EQUATION_ITALIC_TO
 import { ProblemCard } from "../features/topics/ProblemCard";
 import { ReviewQuestion } from "../features/topics/ReviewQuestion";
 import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel";
+import { ContentSection } from "../features/topics/ContentSection";
+import { EquationBlock } from "../features/topics/EquationBlock";
+import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
 import { LanguageProvider } from "../app/LanguageContext";
 
 /**
@@ -114,6 +117,60 @@ describe("ch01-t01 — loading and rendering", () => {
     expect(eq).toContain("L/T");
     expect(eq).toContain("scalar quantity");
     expect(eq).toContain("average speed");
+  });
+});
+
+describe("ch01-t01 — interactive presentation without content rewriting", () => {
+  const topic = getTopic("ch01-t01")!;
+
+  it("renders a five-step section guide linked only to existing topic sections", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <TopicReadingGuide />
+      </LanguageProvider>,
+    );
+    for (const id of [
+      "topic-main-idea",
+      "topic-explanation",
+      "topic-equation",
+      "topic-visual",
+      "topic-review",
+    ]) {
+      expect(markup).toContain(`href="#${id}"`);
+    }
+  });
+
+  it("keeps the approved explanation verbatim while making its display collapsible and open by default", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <ContentSection
+          blockType="organizedExplanation"
+          text={topic.explanation!.text}
+          italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+          sectionId="topic-explanation"
+          collapsible
+        />
+      </LanguageProvider>,
+    );
+    expect(markup).toContain("<details");
+    expect(markup).toContain("open");
+    expect(textOnly(markup)).toContain(topic.explanation!.text.en!);
+  });
+
+  it("keeps the approved equation text verbatim while making its display collapsible and open by default", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <EquationBlock
+          text={topic.equations!.text}
+          italicTokens={EQUATION_ITALIC_TOKENS_BY_TOPIC["ch01-t01"]}
+          sectionId="topic-equation"
+          collapsible
+        />
+      </LanguageProvider>,
+    );
+    expect(markup).toContain("<details");
+    expect(markup).toContain("open");
+    expect(textOnly(markup)).toContain(topic.equations!.text.en!.replace(/[\^_]/g, ""));
   });
 });
 

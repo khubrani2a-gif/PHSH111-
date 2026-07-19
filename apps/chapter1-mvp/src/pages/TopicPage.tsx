@@ -14,6 +14,7 @@ import { ReviewQuestion } from "../features/topics/ReviewQuestion";
 import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel";
 import { InternalStatusPanel } from "../features/topics/InternalStatusPanel";
 import { TopicNavigation } from "../features/topics/TopicNavigation";
+import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
 import { DiagnosticsPanel } from "../features/topics/DiagnosticsPanel";
 import type { PilotTopicId } from "../types/pilotSchema";
 
@@ -60,6 +61,7 @@ export function TopicPage() {
   const proseTokens = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC[topic.topicId] ?? [];
   const title = topic.title[language] ?? UNTITLED[language];
   const topicDiagnostics = diagnostics.filter((d) => d.topicId === topic.topicId);
+  const usesGuidedPresentation = topic.topicId === "ch01-t01";
 
   return (
     <article className="topic-page" dir={direction}>
@@ -67,21 +69,40 @@ export function TopicPage() {
 
       <h1>{title}</h1>
 
+      {usesGuidedPresentation ? <TopicReadingGuide /> : null}
+
       {topic.mainIdea ? (
-        <ContentSection blockType="mainIdea" text={topic.mainIdea.text} italicTokens={proseTokens} />
+        <ContentSection
+          blockType="mainIdea"
+          text={topic.mainIdea.text}
+          italicTokens={proseTokens}
+          sectionId={usesGuidedPresentation ? "topic-main-idea" : undefined}
+        />
       ) : null}
       {topic.explanation ? (
         <ContentSection
           blockType="organizedExplanation"
           text={topic.explanation.text}
           italicTokens={proseTokens}
+          sectionId={usesGuidedPresentation ? "topic-explanation" : undefined}
+          collapsible={usesGuidedPresentation}
         />
       ) : null}
       {topic.equations ? (
-        <EquationBlock text={topic.equations.text} italicTokens={equationTokens} />
+        <EquationBlock
+          text={topic.equations.text}
+          italicTokens={equationTokens}
+          sectionId={usesGuidedPresentation ? "topic-equation" : undefined}
+          collapsible={usesGuidedPresentation}
+        />
       ) : null}
 
-      <VisualViewer visual={topic.visual} />
+      <div
+        id={usesGuidedPresentation ? "topic-visual" : undefined}
+        className={usesGuidedPresentation ? "topic-reading-anchor" : undefined}
+      >
+        <VisualViewer visual={topic.visual} />
+      </div>
 
       {topic.workedExample ? (
         <ContentSection blockType="example" text={topic.workedExample.text} italicTokens={proseTokens} />
@@ -90,7 +111,12 @@ export function TopicPage() {
       <ProblemCard problem={topic.problem} proseTokens={proseTokens} symbolTokens={equationTokens} />
 
       {topic.reviewQuestion ? (
-        <ReviewQuestion section={topic.reviewQuestion} italicTokens={proseTokens} />
+        <div
+          id={usesGuidedPresentation ? "topic-review" : undefined}
+          className={usesGuidedPresentation ? "topic-reading-anchor" : undefined}
+        >
+          <ReviewQuestion section={topic.reviewQuestion} italicTokens={proseTokens} />
+        </div>
       ) : null}
 
       <InstructorReviewPanel
