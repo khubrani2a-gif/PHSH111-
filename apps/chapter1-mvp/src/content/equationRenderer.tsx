@@ -267,3 +267,35 @@ export function renderEquationText(
     ),
   );
 }
+
+/**
+ * Same rendering as renderEquationText, plus a purely visual highlight
+ * around one exact, verified substring (e.g. ch01-t01's "v = d / t") —
+ * used to draw attention to a specific relationship within a longer
+ * equationSet paragraph without extracting, summarizing, or hiding any of
+ * the surrounding authored text (see EquationBlock's header comment on why
+ * extraction itself is avoided). If highlightPhrase does not occur in text
+ * (verbatim, case-sensitive), this falls back to plain renderEquationText
+ * with no highlight — it never alters or drops a character either way:
+ * the three slices concatenated back together equal the input exactly.
+ */
+export function renderEquationTextWithHighlight(
+  text: string,
+  italicTokens: readonly string[],
+  highlightPhrase: string,
+): ReactNode {
+  const index = text.indexOf(highlightPhrase);
+  if (index < 0) return renderEquationText(text, italicTokens);
+
+  const before = text.slice(0, index);
+  const match = text.slice(index, index + highlightPhrase.length);
+  const after = text.slice(index + highlightPhrase.length);
+
+  return (
+    <>
+      {renderEquationText(before, italicTokens)}
+      <mark className="equation-highlight">{renderEquationText(match, italicTokens)}</mark>
+      {renderEquationText(after, italicTokens)}
+    </>
+  );
+}

@@ -1,11 +1,19 @@
 import {
   createContext,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
 import type { Language } from "../types/language";
+import { readPersistedString, writePersistedString } from "./persistedState";
+
+const LANGUAGE_STORAGE_KEY = "language";
+
+function isLanguage(value: string): value is Language {
+  return value === "en" || value === "ar";
+}
 
 interface LanguageContextValue {
   language: Language;
@@ -21,9 +29,20 @@ function directionFor(language: Language): "ltr" | "rtl" {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Session-local React state only — no persistence, no backend, no
-  // state-management library. See MVP_IMPLEMENTATION_DECISIONS.json, decision G.
-  const [language, setLanguage] = useState<Language>("en");
+  // React state only, no backend and no state-management library (see
+  // MVP_IMPLEMENTATION_DECISIONS.json, decision G). The initial value and
+  // subsequent changes are persisted to localStorage only (see
+  // src/app/persistedState.ts's header comment for the scoped amendment
+  // to decision J this represents) so a returning visitor keeps their
+  // chosen language across a reload.
+  const [language, setLanguage] = useState<Language>(() => {
+    const stored = readPersistedString(LANGUAGE_STORAGE_KEY, "en");
+    return isLanguage(stored) ? stored : "en";
+  });
+
+  useEffect(() => {
+    writePersistedString(LANGUAGE_STORAGE_KEY, language);
+  }, [language]);
 
   const value = useMemo<LanguageContextValue>(() => {
     const direction = directionFor(language);

@@ -10,7 +10,7 @@ import { ContentSection } from "../features/topics/ContentSection";
 import { EquationBlock } from "../features/topics/EquationBlock";
 import { VisualViewer } from "../features/topics/VisualViewer";
 import { ProblemCard } from "../features/topics/ProblemCard";
-import { ReviewQuestion } from "../features/topics/ReviewQuestion";
+import { ReviewQuestion, REVIEW_ANSWER_MARKER_BY_TOPIC } from "../features/topics/ReviewQuestion";
 import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel";
 import { InternalStatusPanel } from "../features/topics/InternalStatusPanel";
 import { TopicNavigation } from "../features/topics/TopicNavigation";
@@ -63,6 +63,16 @@ export function TopicPage() {
   const topicDiagnostics = diagnostics.filter((d) => d.topicId === topic.topicId);
   const usesGuidedPresentation = topic.topicId === "ch01-t01";
 
+  // ch01-t01-only interaction wiring (verified, per-topic — see each
+  // component's own header comment for why these are opt-in props rather
+  // than generic behavior applied to every topic). The review-answer
+  // marker itself lives centrally in
+  // ReviewQuestion.REVIEW_ANSWER_MARKER_BY_TOPIC, not as a literal here.
+  //  - EQUATION_HIGHLIGHT_PHRASE: the literal "v = d / t" substring,
+  //    confirmed present verbatim in ch01-t01's actual equationSet text in
+  //    both languages (Latin notation stays untranslated per house style).
+  const EQUATION_HIGHLIGHT_PHRASE = "v = d / t";
+
   return (
     <article className="topic-page" dir={direction}>
       <InternalStatusPanel governance={topic.governance} />
@@ -86,6 +96,7 @@ export function TopicPage() {
           italicTokens={proseTokens}
           sectionId={usesGuidedPresentation ? "topic-explanation" : undefined}
           collapsible={usesGuidedPresentation}
+          persistKey={usesGuidedPresentation ? "ch01-t01.section.explanation.open" : undefined}
         />
       ) : null}
       {topic.equations ? (
@@ -94,6 +105,8 @@ export function TopicPage() {
           italicTokens={equationTokens}
           sectionId={usesGuidedPresentation ? "topic-equation" : undefined}
           collapsible={usesGuidedPresentation}
+          persistKey={usesGuidedPresentation ? "ch01-t01.section.equation.open" : undefined}
+          highlightPhrase={usesGuidedPresentation ? EQUATION_HIGHLIGHT_PHRASE : undefined}
         />
       ) : null}
 
@@ -101,7 +114,7 @@ export function TopicPage() {
         id={usesGuidedPresentation ? "topic-visual" : undefined}
         className={usesGuidedPresentation ? "topic-reading-anchor" : undefined}
       >
-        <VisualViewer visual={topic.visual} />
+        <VisualViewer visual={topic.visual} size={usesGuidedPresentation ? "large" : "default"} />
       </div>
 
       {topic.workedExample ? (
@@ -115,7 +128,12 @@ export function TopicPage() {
           id={usesGuidedPresentation ? "topic-review" : undefined}
           className={usesGuidedPresentation ? "topic-reading-anchor" : undefined}
         >
-          <ReviewQuestion section={topic.reviewQuestion} italicTokens={proseTokens} />
+          <ReviewQuestion
+            section={topic.reviewQuestion}
+            italicTokens={proseTokens}
+            revealMarker={usesGuidedPresentation ? REVIEW_ANSWER_MARKER_BY_TOPIC[topic.topicId] : undefined}
+            persistKey={usesGuidedPresentation ? "ch01-t01.review.revealed" : undefined}
+          />
         </div>
       ) : null}
 

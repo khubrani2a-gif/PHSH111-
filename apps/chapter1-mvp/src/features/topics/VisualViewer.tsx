@@ -22,6 +22,14 @@ const LABELS = {
 
 interface VisualViewerProps {
   visual: NormalizedVisual | undefined;
+  /**
+   * "large" applies a wider enlarge-dialog max-size and bigger touch
+   * targets on the enlarge/close buttons, scoped via the
+   * `visual-viewer--large` modifier class — every other topic (the
+   * default, "default") renders byte-identical markup/CSS to before this
+   * prop existed.
+   */
+  size?: "default" | "large";
 }
 
 /**
@@ -56,10 +64,11 @@ interface VisualViewerProps {
  * listener (attached only while open) rather than relying solely on the
  * dialog's native light-dismiss behavior, for the same reason.
  */
-export function VisualViewer({ visual }: VisualViewerProps) {
+export function VisualViewer({ visual, size = "default" }: VisualViewerProps) {
   const { language } = useLanguage();
   const text = LABELS[language];
   const [isOpen, setIsOpen] = useState(false);
+  const sizeModifierClass = size === "large" ? " visual-viewer--large" : "";
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -143,7 +152,7 @@ export function VisualViewer({ visual }: VisualViewerProps) {
   }
 
   return (
-    <section className="visual-viewer">
+    <section className={`visual-viewer${sizeModifierClass}`}>
       <h2>{text.heading}</h2>
       <p className="visual-viewer__draft-note">{text.draftNote}</p>
 
@@ -170,7 +179,7 @@ export function VisualViewer({ visual }: VisualViewerProps) {
       {isOpen && (
         <dialog
           ref={dialogRef}
-          className="visual-viewer__dialog"
+          className={`visual-viewer__dialog${sizeModifierClass}`}
           aria-labelledby={titleId}
           onClick={onDialogClick}
         >
