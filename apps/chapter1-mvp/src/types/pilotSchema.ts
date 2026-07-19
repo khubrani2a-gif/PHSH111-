@@ -179,7 +179,15 @@ export type ContentBlockType =
   | "example"
   | "visualReference"
   | "misconception"
-  | "reviewQuestion";
+  | "reviewQuestion"
+  // Added for ch01-t01 only (see docs/content-design/chapter-01/batch1-drafts
+  // /batch1-arabic-drafts's ch01-t01-block-opening record): an introductory
+  // block that precedes mainIdea, built around a project-owner-supplied
+  // source slide. New, unreviewed AI-authored content — see that record's
+  // own blocking/arabic governance fields for its actual review status,
+  // which is intentionally NOT "approved"/"reviewed" like the rest of this
+  // topic's batch-authored content.
+  | "openingConcept";
 
 export interface ContentBlockRecord {
   blockId: string;

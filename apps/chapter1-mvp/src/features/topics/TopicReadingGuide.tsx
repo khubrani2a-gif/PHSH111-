@@ -7,14 +7,28 @@ const COPY = {
     heading: "Explore the topic",
     description:
       "Move between the original sections. The detailed explanation and equation can be collapsed whenever you want a shorter reading view.",
-    steps: ["Main Idea", "Explanation", "Key Equation", "Scientific Visual", "Review Card"],
+    steps: [
+      "Fundamental Physical Quantities",
+      "Main Idea",
+      "Explanation",
+      "Key Equation",
+      "Scientific Visual",
+      "Review Card",
+    ],
   },
   ar: {
     label: "دليل أقسام موضوع الكميات الأساسية",
     heading: "استكشف الموضوع",
     description:
       "تنقّل بين الأقسام الأصلية. ويمكنك طيّ الشرح التفصيلي والمعادلة عندما تريد عرضًا أقصر للقراءة.",
-    steps: ["الفكرة الرئيسية", "الشرح", "المعادلة الأساسية", "العنصر البصري العلمي", "بطاقة المراجعة"],
+    steps: [
+      "الكميات الفيزيائية الأساسية",
+      "الفكرة الرئيسية",
+      "الشرح",
+      "المعادلة الأساسية",
+      "العنصر البصري العلمي",
+      "بطاقة المراجعة",
+    ],
   },
 } as const;
 
@@ -24,6 +38,7 @@ const PROGRESS_LABEL = {
 } as const;
 
 const SECTION_IDS = [
+  "topic-opening",
   "topic-main-idea",
   "topic-explanation",
   "topic-equation",

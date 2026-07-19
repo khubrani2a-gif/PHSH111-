@@ -29,7 +29,9 @@ function sha256(path: string): string {
 const APPROVED = {
   englishT01: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json"),
-    sha256: "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+    // Baseline v1.1.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog (rev-003): adds ch01-t01-block-opening.
+    sha256: "54f312ef362e08d673e1a89c838c7741fd991232f38f2ba75dceed0313401c68",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -37,7 +39,9 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    sha256: "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0",
+    // Baseline v1.0.1 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog (rev-001): adds the Arabic side of ch01-t01-block-opening.
+    sha256: "ea702af93c5581613a09ed0f07bf908c34c5f772c930f73719df5ae1d869bfa9",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

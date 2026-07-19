@@ -38,6 +38,7 @@ const KNOWN_BLOCK_TYPES: readonly ContentBlockType[] = [
   "visualReference",
   "misconception",
   "reviewQuestion",
+  "openingConcept",
 ];
 
 const KNOWN_VISIBILITY: readonly VisibilityState[] = [

@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.0",
+  "baselineVersion": "1.0.1",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -17,9 +17,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0",
+      "sha256": "ea702af93c5581613a09ed0f07bf908c34c5f772c930f73719df5ae1d869bfa9",
       "schemaVersion": "2.3.0",
-      "recordCount": 7
+      "recordCount": 8
     },
     {
       "topicId": "ch01-t04",
@@ -91,7 +91,24 @@
   "revisionControlPolicy": {
     "rule": "Any future edit to the Arabic content of ch01-t01 or ch01-t04 (any .ar text field, or arabic.canonicalArabicTranslation, in the instructorScript, contentBlock, or problem records in the two Batch 1 Arabic candidate files) must be recorded as a controlled revision against this baseline, not made silently.",
     "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.0.1) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when — following the exact pattern already proven in ENGLISH_PILOT_BASELINE_APPROVAL.json / ARABIC_PILOT_BASELINE_APPROVAL.json's own revisionControlPolicy.revisionLog.",
-    "revisionLog": []
+    "revisionLog": [
+      {
+        "revisionId": "ch01-arabic-baseline-rev-001",
+        "fromVersion": "1.0.0",
+        "toVersion": "1.0.1",
+        "revisedAt": "2026-07-19",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening (blockType \"openingConcept\"), as the first record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json, matching the corresponding English-file revision recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json's revisionLog (rev-003, baselineVersion 1.0.0 -> 1.1.0) at the same record position. No existing record was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic side of the new opening block: an Arabic translation of the project-owner-supplied source slide's original English text (also supplied directly by the project owner) plus a newly authored Arabic translation of the accompanying explanatory prose (Claude's own translation, not independently reviewed). arabic.translationStatus on this new record is \"draft-ai-generated-unreviewed\" — deliberately distinguished from this file's other seven records, whose arabic.translationStatus is \"draft\" following this baseline's own already-completed generation/correction/review-and-revision pass (see reviewBasis).",
+        "whatWasNotChanged": "No .ar text, canonicalArabicTranslation, or any other field on ch01-t01's seven pre-existing records was touched. No record in ch01-t04 was touched. The corresponding English file's seven pre-existing records were likewise untouched by the paired English-side revision.",
+        "rationale": "Requested by the project owner as new opening scientific content for the Fundamental Quantities topic; the Arabic translation is required alongside the English addition to keep the bilingual application's existing 'one language visible at a time, both always present' behavior (MVP_IMPLEMENTATION_DECISIONS.json decision G) intact for this new block too.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening appended at index 0",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-003"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. This new record's Arabic translation has NOT been through the generation/correction/review-and-revision sequence the rest of this baseline's Arabic content went through (see reviewBasis) — it is explicitly marked draft-ai-generated-unreviewed, distinct from the rest of this file's already-reviewed 'draft' records, and terminologyApprovalStatus is 'pending' rather than 'approved'. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      }
+    ]
   },
   "identifierRegistrationStatus": {
     "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal Arabic baseline approval and was NOT performed as part of it. Registration remains required before any future application-integration step, unchanged from the status already recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json and PILOT_READINESS.json. IDENTIFIER_REGISTRY.json was not modified by this approval."

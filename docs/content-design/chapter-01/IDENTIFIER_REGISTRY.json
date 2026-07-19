@@ -227,6 +227,24 @@
         "notes": "Same instructorScriptId used, identically, in both the approved English and Arabic candidate files."
       },
       {
+        "identifier": "ch01-t01-block-opening",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "openingConcept",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.1.0", "sha256": "54f312ef362e08d673e1a89c838c7741fd991232f38f2ba75dceed0313401c68"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.1", "sha256": "ea702af93c5581613a09ed0f07bf908c34c5f772c930f73719df5ae1d869bfa9"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-19",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.1.0 revisionLog rev-003; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.1 revisionLog rev-001",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "New blockType (\"openingConcept\", not one of the original seven ContentBlockType values) introduced specifically for this record — see src/types/pilotSchema.ts's ContentBlockType header note. Unlike this topic's other six contentBlock identifiers, this one was not covered by a dedicated separate PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md-style document at registration time; its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it (same conversation/session as the two revisionLog entries cited above), consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
+      },
+      {
         "identifier": "ch01-t01-block-mainidea",
         "identifierType": "contentBlock",
         "chapterId": "ch01",

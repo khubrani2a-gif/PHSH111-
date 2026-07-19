@@ -265,6 +265,7 @@ describe("ContentSection — persisted collapsible-section state (ch01-t01 only)
 
 describe("TopicReadingGuide — active-section highlight and progress indicator", () => {
   const SECTION_IDS = [
+    "topic-opening",
     "topic-main-idea",
     "topic-explanation",
     "topic-equation",
@@ -299,7 +300,7 @@ describe("TopicReadingGuide — active-section highlight and progress indicator"
     expect(container.querySelector(".topic-reading-guide__progress-text")).toBeNull();
   });
 
-  it("highlights the third step and shows 'Step 3 of 5' once the equation section is reported intersecting", () => {
+  it("highlights the fourth step and shows 'Step 4 of 6' once the equation section is reported intersecting", () => {
     mountSectionStubs();
     act(() => {
       root.render(
@@ -310,7 +311,7 @@ describe("TopicReadingGuide — active-section highlight and progress indicator"
     });
 
     const observer = MockIntersectionObserver.instances[0];
-    expect(observer.observed).toHaveLength(5);
+    expect(observer.observed).toHaveLength(6);
 
     const equationEl = document.getElementById("topic-equation")!;
     act(() => {
@@ -323,7 +324,7 @@ describe("TopicReadingGuide — active-section highlight and progress indicator"
     expect(activeLink).toBeTruthy();
     expect(activeLink.getAttribute("href")).toBe("#topic-equation");
     expect(container.querySelector(".topic-reading-guide__progress-text")?.textContent).toBe(
-      "Step 3 of 5",
+      "Step 4 of 6",
     );
   });
 });

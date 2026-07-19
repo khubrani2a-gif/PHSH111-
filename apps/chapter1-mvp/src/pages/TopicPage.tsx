@@ -81,6 +81,16 @@ export function TopicPage() {
 
       {usesGuidedPresentation ? <TopicReadingGuide /> : null}
 
+      {topic.openingConcept ? (
+        <ContentSection
+          blockType="openingConcept"
+          text={topic.openingConcept.text}
+          italicTokens={proseTokens}
+          sectionId={usesGuidedPresentation ? "topic-opening" : undefined}
+          headingLevel="h2"
+        />
+      ) : null}
+
       {topic.mainIdea ? (
         <ContentSection
           blockType="mainIdea"

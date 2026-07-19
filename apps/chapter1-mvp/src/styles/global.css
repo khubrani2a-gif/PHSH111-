@@ -553,6 +553,15 @@ button:focus-visible {
 .problem-card__statement {
   line-height: 1.65;
   font-size: 1.05rem;
+  margin: 0 0 1rem;
+}
+
+/* Multi-paragraph content blocks (currently: ch01-t01's openingConcept)
+   render one .content-section__text per paragraph — this only removes
+   the trailing gap after the last one, matching how a single-paragraph
+   block already looked before multi-paragraph rendering existed. */
+.content-section__text:last-child {
+  margin-bottom: 0;
 }
 
 .content-section__missing,

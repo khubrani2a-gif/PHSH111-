@@ -112,6 +112,12 @@ export interface NormalizedGovernance {
 export interface NormalizedTopic {
   topicId: PilotTopicId;
   title: NormalizedText;
+  /**
+   * ch01-t01-only introductory block (blockType "openingConcept") that
+   * precedes mainIdea when present. See src/types/pilotSchema.ts's
+   * ContentBlockType header note on its provenance/review status.
+   */
+  openingConcept?: NormalizedSection;
   mainIdea?: NormalizedSection;
   explanation?: NormalizedSection;
   equations?: NormalizedSection;
