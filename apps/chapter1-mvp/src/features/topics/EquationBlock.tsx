@@ -1,5 +1,7 @@
+import { useState, type SyntheticEvent } from "react";
 import { useLanguage } from "../../app/LanguageContext";
-import { renderEquationText } from "../../content/equationRenderer";
+import { renderEquationText, renderEquationTextWithHighlight } from "../../content/equationRenderer";
+import { readPersistedBoolean, writePersistedBoolean } from "../../app/persistedState";
 import type { NormalizedText } from "../../types/normalized";
 
 const HEADING = { en: "Key Equation", ar: "المعادلة الأساسية" } as const;
@@ -18,6 +20,15 @@ interface EquationBlockProps {
   italicTokens: readonly string[];
   sectionId?: string;
   collapsible?: boolean;
+  /** localStorage key for the collapsible open/closed state; omit to keep it session-only (React state, resets on reload — the original decision-J behavior). */
+  persistKey?: string;
+  /**
+   * One exact, verified substring (e.g. "v = d / t") to visually highlight
+   * within the rendered text — see
+   * src/content/equationRenderer.tsx's renderEquationTextWithHighlight for
+   * why this never alters, drops, or reorders any authored character.
+   */
+  highlightPhrase?: string;
 }
 
 /**
@@ -34,9 +45,26 @@ export function EquationBlock({
   italicTokens,
   sectionId,
   collapsible = false,
+  persistKey,
+  highlightPhrase,
 }: EquationBlockProps) {
   const { language, direction } = useLanguage();
   const value = text[language];
+  const [open, setOpen] = useState<boolean>(() =>
+    persistKey ? readPersistedBoolean(persistKey, true) : true,
+  );
+
+  function handleToggle(e: SyntheticEvent<HTMLDetailsElement>) {
+    const next = e.currentTarget.open;
+    setOpen(next);
+    if (persistKey) writePersistedBoolean(persistKey, next);
+  }
+
+  const rendered = value
+    ? highlightPhrase
+      ? renderEquationTextWithHighlight(value, italicTokens, highlightPhrase)
+      : renderEquationText(value, italicTokens)
+    : null;
 
   return (
     <section
@@ -46,15 +74,15 @@ export function EquationBlock({
     >
       <h2 id="equation-block-heading">{HEADING[language]}</h2>
       {value && collapsible ? (
-        <details className="content-disclosure" open>
+        <details className="content-disclosure" open={open} onToggle={handleToggle}>
           <summary>{COLLAPSE_LABEL[language]}</summary>
           <p className="equation-block__text" dir={direction}>
-            {renderEquationText(value, italicTokens)}
+            {rendered}
           </p>
         </details>
       ) : value ? (
         <p className="equation-block__text" dir={direction}>
-          {renderEquationText(value, italicTokens)}
+          {rendered}
         </p>
       ) : (
         <p className="equation-block__missing" role="status">

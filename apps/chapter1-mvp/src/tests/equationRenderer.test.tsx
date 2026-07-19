@@ -4,6 +4,7 @@ import {
   EQUATION_ITALIC_TOKENS_BY_TOPIC,
   EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC,
   renderEquationText,
+  renderEquationTextWithHighlight,
 } from "../content/equationRenderer";
 import { getTopic } from "../content/adapter";
 
@@ -173,5 +174,51 @@ describe("renderEquationText — real equation strings from all six topics", () 
     const markup = renderToStaticMarkup(<>{renderEquationText(original, tokens)}</>);
     expect(markup).toContain("<em>g</em>");
     expect(markup).toContain("<em>W</em>");
+  });
+});
+
+describe("renderEquationTextWithHighlight — ch01-t01's highlighted v = d / t relationship", () => {
+  const tokens = EQUATION_ITALIC_TOKENS_BY_TOPIC["ch01-t01"];
+
+  it("wraps the exact matched phrase in a <mark class=\"equation-highlight\"> without dropping or reordering any other character", () => {
+    const topic = getTopic("ch01-t01");
+    const original = topic?.equations?.text.en ?? "";
+    expect(original).toContain("v = d / t");
+
+    const highlighted = renderToStaticMarkup(
+      <>{renderEquationTextWithHighlight(original, tokens, "v = d / t")}</>,
+    );
+    const plain = renderToStaticMarkup(<>{renderEquationText(original, tokens)}</>);
+
+    expect(highlighted).toContain('<mark class="equation-highlight">');
+    // Same text content either way — the highlight is markup-only.
+    expect(textOnly(highlighted)).toBe(textOnly(plain));
+  });
+
+  it("still italicizes v, d, t inside the highlighted phrase itself", () => {
+    const markup = renderToStaticMarkup(
+      <>{renderEquationTextWithHighlight("v = d / t", tokens, "v = d / t")}</>,
+    );
+    expect(markup).toContain("<em>v</em>");
+    expect(markup).toContain("<em>d</em>");
+    expect(markup).toContain("<em>t</em>");
+  });
+
+  it("falls back to plain renderEquationText (no <mark>, no crash) when the phrase does not occur in the text", () => {
+    const markup = renderToStaticMarkup(
+      <>{renderEquationTextWithHighlight("no notation here", [], "v = d / t")}</>,
+    );
+    expect(markup).not.toContain("<mark");
+    expect(textOnly(markup)).toBe("no notation here");
+  });
+
+  it("also finds and highlights the same Latin phrase embedded in the Arabic equationSet text", () => {
+    const topic = getTopic("ch01-t01");
+    const originalAr = topic?.equations?.text.ar ?? "";
+    expect(originalAr).toContain("v = d / t");
+    const markup = renderToStaticMarkup(
+      <>{renderEquationTextWithHighlight(originalAr, tokens, "v = d / t")}</>,
+    );
+    expect(markup).toContain('<mark class="equation-highlight">');
   });
 });

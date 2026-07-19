@@ -42,6 +42,14 @@
 
   --color-danger-text: #b91c1c;
 
+  /* ch01-t01-only "highlighted relationship" accent (the v = d / t
+     equation) — a green distinct from every other semantic hue already in
+     use here (focus/link teal, draft amber, reviewer indigo, review
+     fuchsia, danger red), so it reads as its own "look here" cue rather
+     than colliding with any of those existing meanings. */
+  --color-highlight-bg: #dcfce7;
+  --color-highlight-border: #16a34a;
+
   --font-sans: "Segoe UI", system-ui, Arial, sans-serif;
   --font-sans-arabic: "Segoe UI", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
 
@@ -331,12 +339,48 @@ button:focus-visible {
 }
 
 /* ch01-t01 presentation guide: navigation and disclosure only. The
-   canonical instructional strings remain in their existing components. */
+   canonical instructional strings remain in their existing components.
+   Sticky so the reader keeps their place/progress while scrolling a long
+   topic page — pinned just under the (non-sticky) app header/banner once
+   scrolled past them. */
 .topic-reading-guide {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1rem;
+}
+
+.topic-reading-guide__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+}
+
+.topic-reading-guide__progress-track {
+  flex: 1;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.topic-reading-guide__progress-fill {
+  height: 100%;
+  background: var(--color-focus);
+  transition: width 0.2s ease;
+}
+
+.topic-reading-guide__progress-text {
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .topic-reading-guide__intro h2 {
@@ -379,6 +423,36 @@ button:focus-visible {
   background: var(--color-surface-muted);
 }
 
+.topic-reading-guide__step--active {
+  border-color: var(--color-focus);
+  background: var(--color-surface-muted);
+}
+
+.topic-reading-guide__step--active .topic-reading-guide__number {
+  background: var(--color-text);
+}
+
+/* Mobile: a sticky card wide enough for the full grid of five steps
+   would consume too much of the viewport, so the step list becomes a
+   single horizontally-scrollable row instead. */
+@media (max-width: 767px) {
+  .topic-reading-guide__steps {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.15rem;
+  }
+
+  .topic-reading-guide__steps li {
+    flex: 0 0 auto;
+  }
+
+  .topic-reading-guide__steps a {
+    white-space: nowrap;
+  }
+}
+
 .topic-reading-guide__number {
   display: inline-grid;
   flex: 0 0 1.65rem;
@@ -394,7 +468,10 @@ button:focus-visible {
 .topic-reading-anchor,
 .content-section[id],
 .equation-block[id] {
-  scroll-margin-top: 1rem;
+  /* Generous enough to clear the sticky .topic-reading-guide bar above
+     (~9rem tall including its progress row) so an anchor jump doesn't
+     land a section's heading underneath it. */
+  scroll-margin-top: 9rem;
 }
 
 .content-disclosure {
@@ -402,6 +479,9 @@ button:focus-visible {
 }
 
 .content-disclosure summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   width: fit-content;
   cursor: pointer;
   color: var(--color-link);
@@ -416,6 +496,56 @@ button:focus-visible {
 .content-disclosure .content-section__text,
 .content-disclosure .equation-block__text {
   margin-bottom: 0;
+}
+
+/* ch01-t01's highlighted "v = d / t" relationship — additive emphasis
+   only; the surrounding equationSet text is unchanged either side of it. */
+.equation-highlight {
+  background: var(--color-highlight-bg);
+  border-block-end: 2px solid var(--color-highlight-border);
+  color: inherit;
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+}
+
+.review-question__reveal-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.85rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--color-review-border);
+  background: var(--color-surface);
+  color: var(--color-review-text);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.review-question__reveal-toggle:hover,
+.review-question__reveal-toggle:focus-visible {
+  background: var(--color-review-bg);
+}
+
+.review-question__answer {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-block-start: 1px dashed var(--color-review-border);
+}
+
+/* ch01-t01's enlarged visual dialog — a wider size cap and bigger touch
+   targets than the shared default; every other topic's VisualViewer
+   keeps the unmodified .visual-viewer/.visual-viewer__dialog rules above. */
+.visual-viewer__dialog.visual-viewer--large {
+  max-width: min(98vw, 1600px);
+  max-height: 96vh;
+}
+
+.visual-viewer--large .visual-viewer__enlarge,
+.visual-viewer__dialog.visual-viewer--large .visual-viewer__close {
+  min-height: 44px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
 }
 
 .content-section__text,

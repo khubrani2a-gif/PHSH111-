@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useLanguage } from "../../app/LanguageContext";
 import { renderEquationText } from "../../content/equationRenderer";
+import { readPersistedBoolean, writePersistedBoolean } from "../../app/persistedState";
 import type { NormalizedSection } from "../../types/normalized";
 
 const LABELS = {
@@ -15,10 +17,28 @@ const LABELS = {
   },
 } as const;
 
+const REVEAL_LABELS = {
+  en: { show: "Show answer", hide: "Hide answer" },
+  ar: { show: "إظهار الإجابة", hide: "إخفاء الإجابة" },
+} as const;
+
 interface ReviewQuestionProps {
   section: NormalizedSection;
   /** Prose-safe italic-variable whitelist (see src/content/equationRenderer.tsx) — review-question text is natural-language prose, not bare symbolic notation. */
   italicTokens?: readonly string[];
+  /**
+   * One exact, per-language, per-topic-verified marker string (e.g.
+   * "Correct answer:" / "الإجابة الصحيحة:") already present verbatim in
+   * the authored text, at which the answer is hidden behind a show/hide
+   * toggle. Omit to keep the default behavior below (full text always
+   * shown, no toggle) — this is NOT a generic split rule; see this
+   * component's header comment for why a shared, un-verified split would
+   * be unsafe, and src/pages/TopicPage.tsx for the one verified marker
+   * pair currently supplied (ch01-t01 only).
+   */
+  revealMarker?: { en: string; ar: string };
+  /** localStorage key for the answer-reveal state; omit to keep it session-only. */
+  persistKey?: string;
 }
 
 /**
@@ -54,11 +74,46 @@ interface ReviewQuestionProps {
  * deliberately does not reuse ProblemCard/SolutionReveal, whose reveal
  * behavior is built on the `problem` record's own genuinely separate
  * fields.
+ *
+ * `revealMarker` is a narrow, opt-in exception to the paragraph above: for
+ * ch01-t01 only, the literal marker text "Correct answer:" / "الإجابة
+ * الصحيحة:" was directly verified (by inspection, not inferred) to occur
+ * exactly once in that one topic's actual authored text, in both
+ * languages. When supplied, everything from that exact substring onward
+ * is hidden behind a show/hide toggle; nothing before or after it is
+ * summarized, reworded, or dropped — the shown and hidden slices
+ * concatenate back to the original string exactly. Every other topic
+ * (revealMarker omitted) keeps the always-shown, no-toggle behavior
+ * described above, unchanged.
  */
-export function ReviewQuestion({ section, italicTokens = [] }: ReviewQuestionProps) {
+export function ReviewQuestion({
+  section,
+  italicTokens = [],
+  revealMarker,
+  persistKey,
+}: ReviewQuestionProps) {
   const { language, direction } = useLanguage();
   const text = LABELS[language];
+  const revealText = REVEAL_LABELS[language];
   const value = section.text[language];
+
+  const marker = revealMarker?.[language];
+  const markerIndex = marker && value ? value.indexOf(marker) : -1;
+  const hasAnswerToggle = markerIndex >= 0;
+  const questionPart = hasAnswerToggle ? value!.slice(0, markerIndex) : value;
+  const answerPart = hasAnswerToggle ? value!.slice(markerIndex) : null;
+
+  const [revealed, setRevealed] = useState<boolean>(() =>
+    persistKey ? readPersistedBoolean(persistKey, false) : false,
+  );
+
+  function toggleRevealed() {
+    setRevealed((current) => {
+      const next = !current;
+      if (persistKey) writePersistedBoolean(persistKey, next);
+      return next;
+    });
+  }
 
   return (
     <section
@@ -71,9 +126,28 @@ export function ReviewQuestion({ section, italicTokens = [] }: ReviewQuestionPro
         <span className="review-question__badge">{text.badge}</span>
       </div>
       {value ? (
-        <p className="review-question__text" dir={direction}>
-          {renderEquationText(value, italicTokens)}
-        </p>
+        <>
+          <p className="review-question__text" dir={direction}>
+            {renderEquationText(questionPart!, italicTokens)}
+          </p>
+          {hasAnswerToggle && (
+            <>
+              <button
+                type="button"
+                className="review-question__reveal-toggle"
+                aria-expanded={revealed}
+                onClick={toggleRevealed}
+              >
+                {revealed ? revealText.hide : revealText.show}
+              </button>
+              {revealed && (
+                <p className="review-question__text review-question__answer" dir={direction}>
+                  {renderEquationText(answerPart!, italicTokens)}
+                </p>
+              )}
+            </>
+          )}
+        </>
       ) : (
         <p className="review-question__missing" role="status">
           {text.missing}

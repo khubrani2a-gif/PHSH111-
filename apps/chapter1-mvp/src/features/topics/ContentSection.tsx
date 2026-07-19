@@ -1,5 +1,7 @@
+import { useState, type SyntheticEvent } from "react";
 import { useLanguage } from "../../app/LanguageContext";
 import { renderEquationText } from "../../content/equationRenderer";
+import { readPersistedBoolean, writePersistedBoolean } from "../../app/persistedState";
 import type { ContentBlockType } from "../../types/pilotSchema";
 import type { NormalizedText } from "../../types/normalized";
 
@@ -24,6 +26,8 @@ interface ContentSectionProps {
   text: NormalizedText;
   sectionId?: string;
   collapsible?: boolean;
+  /** localStorage key for the collapsible open/closed state; omit to keep it session-only (React state, resets on reload — the original decision-J behavior). */
+  persistKey?: string;
   /** Set for elements (e.g. h2) that should not repeat if a heading already exists nearby. */
   headingLevel?: "h1" | "h2";
   /**
@@ -50,6 +54,7 @@ export function ContentSection({
   text,
   sectionId,
   collapsible = false,
+  persistKey,
   headingLevel = "h2",
   italicTokens = [],
 }: ContentSectionProps) {
@@ -57,12 +62,21 @@ export function ContentSection({
   const heading = SECTION_HEADING[blockType];
   const value = text[language];
   const Heading = headingLevel;
+  const [open, setOpen] = useState<boolean>(() =>
+    persistKey ? readPersistedBoolean(persistKey, true) : true,
+  );
+
+  function handleToggle(e: SyntheticEvent<HTMLDetailsElement>) {
+    const next = e.currentTarget.open;
+    setOpen(next);
+    if (persistKey) writePersistedBoolean(persistKey, next);
+  }
 
   return (
     <section id={sectionId} className={`content-section content-section--${blockType}`}>
       {heading ? <Heading>{heading[language]}</Heading> : null}
       {value && collapsible ? (
-        <details className="content-disclosure" open>
+        <details className="content-disclosure" open={open} onToggle={handleToggle}>
           <summary>{COLLAPSE_LABEL[language]}</summary>
           <p className="content-section__text" dir={direction}>
             {renderEquationText(value, italicTokens)}
