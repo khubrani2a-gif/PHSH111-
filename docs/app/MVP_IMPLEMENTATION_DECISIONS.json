@@ -1,8 +1,9 @@
 {
   "decisionRecordId": "ch01-mvp-implementation-decisions-001",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "decidedBy": "khubrani2a-gif (project owner)",
   "decisionDate": "2026-07-16",
+  "lastAmendedDate": "2026-07-19",
   "reviewBasis": [
     "docs/app/MVP_PRODUCT_SPEC.md",
     "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json (authorizationVersion 1.1.0, applicationBuildAuthorization section)",
@@ -131,8 +132,10 @@
       "statements": [
         "Initial MVP state is limited to exactly: current route, active language, open/closed solution-reveal state, open/closed visual-viewer state, and open/closed internal-reviewer-notes state.",
         "Use local React state and URL routing for all of the above.",
-        "Do not include login, database persistence, cloud state, student progress, grades, or analytics of any kind in this MVP."
-      ]
+        "Do not include login, database persistence, cloud state, student progress, grades, or analytics of any kind in this MVP.",
+        "AMENDED by amendments[0] (ch01-mvp-implementation-decisions-001-amendment-001, 2026-07-19): the statements above remain the default for every topic and every piece of state not explicitly listed in that amendment. See amendments[0] for the one narrow, additional exception it authorizes."
+      ],
+      "amendedBy": ["ch01-mvp-implementation-decisions-001-amendment-001"]
     },
     "K_gitState": {
       "title": "Git state",
@@ -157,6 +160,25 @@
       ]
     }
   },
+  "amendments": [
+    {
+      "amendmentId": "ch01-mvp-implementation-decisions-001-amendment-001",
+      "amendedDecision": "J_statePersistence",
+      "date": "2026-07-19",
+      "decidedBy": "khubrani2a-gif (project owner)",
+      "title": "Scoped localStorage persistence for language and ch01-t01's interactive-presentation UI state",
+      "requestContext": "Approved as part of the ch01-t01 (Fundamental Quantities) interactive-presentation feature request implemented in apps/chapter1-mvp/ PR #5 (branch feature/fundamental-quantities-interactions).",
+      "statements": [
+        "In addition to decisions.J_statePersistence's original session-only state, the following two, and only these two, pieces of UI state may also be persisted to the browser's own localStorage, read and written client-side only: (1) the active language, app-wide; and (2), for ch01-t01 (Fundamental Quantities) only, its collapsible-section open/closed state and its review-card answer-reveal state.",
+        "Every other topic's solution-reveal, visual-viewer, and internal-reviewer-notes state remains exactly as decisions.J_statePersistence originally specified: local React state only, reset each session, no persistence.",
+        "This persistence is local-browser-storage only (the browser's own localStorage API): no user account, no authentication, no server-side or cloud synchronization, and no data ever leaves the device.",
+        "No student progress, grades, scores, correctness records, or analytics of any kind are persisted or transmitted by this amendment — only UI display preferences (which language is selected, which sections are currently expanded, whether an answer is currently shown).",
+        "This amendment does not change, and has no bearing on, studentFacingAllowed, studentPublicationAuthorized, publicDeploymentAuthorized, or any other governance/publication flag recorded in decisions.L_publicationState, this document's own publicationState field, or PILOT_AUTHORIZATION.json.",
+        "This amendment does not authorize login, a database, cloud state, or any analytics tooling of any kind in this MVP — decisions.J_statePersistence's prohibition on those remains fully in force.",
+        "Implementation reference: apps/chapter1-mvp/src/app/persistedState.ts (the single, guarded read/write helper used for every persisted value this amendment covers)."
+      ]
+    }
+  ],
   "unresolvedItems": [
     {
       "item": "Whether a math-rendering library (KaTeX, MathJax, or equivalent) becomes necessary",

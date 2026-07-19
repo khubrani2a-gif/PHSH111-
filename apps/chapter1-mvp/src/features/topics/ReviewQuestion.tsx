@@ -3,6 +3,7 @@ import { useLanguage } from "../../app/LanguageContext";
 import { renderEquationText } from "../../content/equationRenderer";
 import { readPersistedBoolean, writePersistedBoolean } from "../../app/persistedState";
 import type { NormalizedSection } from "../../types/normalized";
+import type { PilotTopicId } from "../../types/pilotSchema";
 
 const LABELS = {
   en: {
@@ -22,22 +23,81 @@ const REVEAL_LABELS = {
   ar: { show: "إظهار الإجابة", hide: "إخفاء الإجابة" },
 } as const;
 
+/**
+ * Single, central source of truth for every topic's answer-reveal marker
+ * — never inline/scattered as a magic string at any call site. Each entry
+ * is one exact, per-language, per-topic string directly verified (by
+ * inspection, not inferred) to occur in that topic's actual authored
+ * reviewQuestion text. Adding a topic here is itself the review step: do
+ * not add one without first confirming the marker's exact wording and
+ * single occurrence in that topic's real source JSON, in both languages —
+ * see splitReviewAnswer below for the runtime safety net if that
+ * verification was ever wrong or the source text changes later.
+ *
+ * TEMPORARY, ch01-t01-specific implementation choice: this is not a
+ * generalized "every topic's answer looks like this" rule. A future topic
+ * needs its own verified entry (or may not be able to use this feature at
+ * all, if its answer isn't introduced by a single, unambiguous marker).
+ */
+export const REVIEW_ANSWER_MARKER_BY_TOPIC: Partial<Record<PilotTopicId, { en: string; ar: string }>> = {
+  "ch01-t01": { en: "Correct answer:", ar: "الإجابة الصحيحة:" },
+};
+
+interface ReviewAnswerSplit {
+  question: string;
+  answer: string;
+}
+
+/**
+ * Attempts to split `text` at the exact `marker` substring into a
+ * question part (shown first) and an answer part (hidden behind the
+ * show/hide toggle). Returns null — meaning "render the full text,
+ * always visible, no toggle", the pre-existing default behavior — unless
+ * ALL of the following hold, so a missing, duplicated, or malformed
+ * marker can never cause content to be lost, hidden incorrectly,
+ * rewritten, or reordered:
+ *
+ *  - the marker occurs in the text, and occurs EXACTLY ONCE (a duplicated
+ *    marker is ambiguous — this never guesses "use the first one"),
+ *  - there is at least one non-whitespace character before the marker
+ *    (a marker at/near the very start would mean an empty "question"),
+ *  - there is at least one non-whitespace character after the marker (a
+ *    marker with nothing following it would mean an empty "answer").
+ *
+ * When it does split, `question + answer === text` exactly, character
+ * for character — nothing is ever summarized, reworded, or dropped.
+ */
+export function splitReviewAnswer(text: string, marker: string): ReviewAnswerSplit | null {
+  if (!marker) return null;
+  const firstIndex = text.indexOf(marker);
+  if (firstIndex < 0) return null;
+
+  const secondIndex = text.indexOf(marker, firstIndex + marker.length);
+  if (secondIndex >= 0) return null; // duplicated marker — ambiguous, don't split
+
+  const question = text.slice(0, firstIndex);
+  const answer = text.slice(firstIndex);
+  if (question.trim().length === 0) return null; // marker at/near the start — no real question part
+  if (answer.trim().length <= marker.trim().length) return null; // nothing follows the marker
+
+  return { question, answer };
+}
+
 interface ReviewQuestionProps {
   section: NormalizedSection;
   /** Prose-safe italic-variable whitelist (see src/content/equationRenderer.tsx) — review-question text is natural-language prose, not bare symbolic notation. */
   italicTokens?: readonly string[];
   /**
-   * One exact, per-language, per-topic-verified marker string (e.g.
-   * "Correct answer:" / "الإجابة الصحيحة:") already present verbatim in
-   * the authored text, at which the answer is hidden behind a show/hide
-   * toggle. Omit to keep the default behavior below (full text always
-   * shown, no toggle) — this is NOT a generic split rule; see this
-   * component's header comment for why a shared, un-verified split would
-   * be unsafe, and src/pages/TopicPage.tsx for the one verified marker
-   * pair currently supplied (ch01-t01 only).
+   * A marker pair from REVIEW_ANSWER_MARKER_BY_TOPIC above (e.g.
+   * REVIEW_ANSWER_MARKER_BY_TOPIC["ch01-t01"]). Omit to keep the default
+   * behavior below (full text always shown, no toggle) — this is NOT a
+   * generic split rule; see this component's header comment for why a
+   * shared, un-verified split would be unsafe, and splitReviewAnswer's
+   * own header comment for the exact safety conditions that must hold
+   * before any split is actually applied at render time.
    */
   revealMarker?: { en: string; ar: string };
-  /** localStorage key for the answer-reveal state; omit to keep it session-only. */
+  /** localStorage key for the answer-reveal state (see src/app/persistedState.ts and MVP_IMPLEMENTATION_DECISIONS.json amendments[0]); omit to keep it session-only. */
   persistKey?: string;
 }
 
@@ -76,15 +136,21 @@ interface ReviewQuestionProps {
  * fields.
  *
  * `revealMarker` is a narrow, opt-in exception to the paragraph above: for
- * ch01-t01 only, the literal marker text "Correct answer:" / "الإجابة
- * الصحيحة:" was directly verified (by inspection, not inferred) to occur
- * exactly once in that one topic's actual authored text, in both
- * languages. When supplied, everything from that exact substring onward
- * is hidden behind a show/hide toggle; nothing before or after it is
- * summarized, reworded, or dropped — the shown and hidden slices
- * concatenate back to the original string exactly. Every other topic
- * (revealMarker omitted) keeps the always-shown, no-toggle behavior
- * described above, unchanged.
+ * ch01-t01 only (see REVIEW_ANSWER_MARKER_BY_TOPIC), the literal marker
+ * text "Correct answer:" / "الإجابة الصحيحة:" was directly verified (by
+ * inspection, not inferred) to occur exactly once in that one topic's
+ * actual authored text, in both languages. When supplied AND
+ * splitReviewAnswer's runtime safety conditions hold, everything from
+ * that exact substring onward is hidden behind a show/hide toggle;
+ * nothing before or after it is summarized, reworded, or dropped — the
+ * shown and hidden slices concatenate back to the original string
+ * exactly. If those conditions do NOT hold (marker missing, duplicated,
+ * or leaving an empty question/answer side), this transparently falls
+ * back to the always-shown, no-toggle behavior described above — the
+ * exact same rendering as when revealMarker is omitted entirely. This is
+ * a TEMPORARY, ch01-t01-specific implementation choice, not a permanent
+ * general mechanism; see REVIEW_ANSWER_MARKER_BY_TOPIC's own header
+ * comment before extending it to another topic.
  */
 export function ReviewQuestion({
   section,
@@ -98,10 +164,10 @@ export function ReviewQuestion({
   const value = section.text[language];
 
   const marker = revealMarker?.[language];
-  const markerIndex = marker && value ? value.indexOf(marker) : -1;
-  const hasAnswerToggle = markerIndex >= 0;
-  const questionPart = hasAnswerToggle ? value!.slice(0, markerIndex) : value;
-  const answerPart = hasAnswerToggle ? value!.slice(markerIndex) : null;
+  const split = marker && value ? splitReviewAnswer(value, marker) : null;
+  const hasAnswerToggle = split !== null;
+  const questionPart = hasAnswerToggle ? split.question : value;
+  const answerPart = hasAnswerToggle ? split.answer : null;
 
   const [revealed, setRevealed] = useState<boolean>(() =>
     persistKey ? readPersistedBoolean(persistKey, false) : false,

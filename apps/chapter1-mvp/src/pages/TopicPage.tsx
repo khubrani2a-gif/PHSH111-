@@ -10,7 +10,7 @@ import { ContentSection } from "../features/topics/ContentSection";
 import { EquationBlock } from "../features/topics/EquationBlock";
 import { VisualViewer } from "../features/topics/VisualViewer";
 import { ProblemCard } from "../features/topics/ProblemCard";
-import { ReviewQuestion } from "../features/topics/ReviewQuestion";
+import { ReviewQuestion, REVIEW_ANSWER_MARKER_BY_TOPIC } from "../features/topics/ReviewQuestion";
 import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel";
 import { InternalStatusPanel } from "../features/topics/InternalStatusPanel";
 import { TopicNavigation } from "../features/topics/TopicNavigation";
@@ -65,14 +65,12 @@ export function TopicPage() {
 
   // ch01-t01-only interaction wiring (verified, per-topic — see each
   // component's own header comment for why these are opt-in props rather
-  // than generic behavior applied to every topic):
-  //  - REVIEW_ANSWER_MARKER: the literal "Correct answer:" / "الإجابة
-  //    الصحيحة:" marker, confirmed present verbatim in ch01-t01's actual
-  //    reviewQuestion text in both languages (see ReviewQuestion.tsx).
+  // than generic behavior applied to every topic). The review-answer
+  // marker itself lives centrally in
+  // ReviewQuestion.REVIEW_ANSWER_MARKER_BY_TOPIC, not as a literal here.
   //  - EQUATION_HIGHLIGHT_PHRASE: the literal "v = d / t" substring,
   //    confirmed present verbatim in ch01-t01's actual equationSet text in
   //    both languages (Latin notation stays untranslated per house style).
-  const REVIEW_ANSWER_MARKER = { en: "Correct answer:", ar: "الإجابة الصحيحة:" } as const;
   const EQUATION_HIGHLIGHT_PHRASE = "v = d / t";
 
   return (
@@ -133,7 +131,7 @@ export function TopicPage() {
           <ReviewQuestion
             section={topic.reviewQuestion}
             italicTokens={proseTokens}
-            revealMarker={usesGuidedPresentation ? REVIEW_ANSWER_MARKER : undefined}
+            revealMarker={usesGuidedPresentation ? REVIEW_ANSWER_MARKER_BY_TOPIC[topic.topicId] : undefined}
             persistKey={usesGuidedPresentation ? "ch01-t01.review.revealed" : undefined}
           />
         </div>

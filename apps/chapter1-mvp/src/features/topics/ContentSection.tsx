@@ -26,7 +26,7 @@ interface ContentSectionProps {
   text: NormalizedText;
   sectionId?: string;
   collapsible?: boolean;
-  /** localStorage key for the collapsible open/closed state; omit to keep it session-only (React state, resets on reload — the original decision-J behavior). */
+  /** localStorage key for the collapsible open/closed state (see src/app/persistedState.ts and MVP_IMPLEMENTATION_DECISIONS.json amendments[0]); omit to keep it session-only (React state, resets on reload — the original decision-J behavior). */
   persistKey?: string;
   /** Set for elements (e.g. h2) that should not repeat if a heading already exists nearby. */
   headingLevel?: "h1" | "h2";

@@ -2,9 +2,11 @@
 // Quantities) interactive presentation and the app-wide language toggle.
 // MVP_IMPLEMENTATION_DECISIONS.json decision J originally scoped this
 // MVP's state to session-local React state only, with no persistence
-// across reloads. This module is a deliberate, narrowly-scoped amendment
-// to that decision — authorized for exactly: the active language, and
-// (for ch01-t01 only) collapsible-section open/closed state and the
+// across reloads. This module implements the formal, narrowly-scoped
+// exception recorded in that same document's
+// amendments[0] (ch01-mvp-implementation-decisions-001-amendment-001,
+// 2026-07-19) — authorized for exactly: the active language, and (for
+// ch01-t01 only) collapsible-section open/closed state and the
 // review-card answer-reveal state. It still adds no login, database,
 // cloud state, student progress, grades, or analytics of any kind.
 //

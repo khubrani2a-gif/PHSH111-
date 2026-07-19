@@ -20,7 +20,7 @@ interface EquationBlockProps {
   italicTokens: readonly string[];
   sectionId?: string;
   collapsible?: boolean;
-  /** localStorage key for the collapsible open/closed state; omit to keep it session-only (React state, resets on reload — the original decision-J behavior). */
+  /** localStorage key for the collapsible open/closed state (see src/app/persistedState.ts and MVP_IMPLEMENTATION_DECISIONS.json amendments[0]); omit to keep it session-only (React state, resets on reload — the original decision-J behavior). */
   persistKey?: string;
   /**
    * One exact, verified substring (e.g. "v = d / t") to visually highlight

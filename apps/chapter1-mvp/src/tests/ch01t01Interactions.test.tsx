@@ -17,7 +17,7 @@ import { beforeEach, afterEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { LanguageProvider, useLanguage } from "../app/LanguageContext";
-import { ReviewQuestion } from "../features/topics/ReviewQuestion";
+import { ReviewQuestion, REVIEW_ANSWER_MARKER_BY_TOPIC } from "../features/topics/ReviewQuestion";
 import { ContentSection } from "../features/topics/ContentSection";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
 import { VisualViewer } from "../features/topics/VisualViewer";
@@ -90,7 +90,7 @@ const REVIEW_SECTION: NormalizedSection = {
   },
 };
 
-const REVEAL_MARKER = { en: "Correct answer:", ar: "الإجابة الصحيحة:" } as const;
+const REVEAL_MARKER = REVIEW_ANSWER_MARKER_BY_TOPIC["ch01-t01"]!;
 
 describe("ReviewQuestion — show/hide answer toggle (ch01-t01 only)", () => {
   it("hides the answer by default and reveals it on click, without altering the underlying text", () => {
@@ -159,6 +159,51 @@ describe("ReviewQuestion — show/hide answer toggle (ch01-t01 only)", () => {
     });
     expect(container.textContent).toContain("Correct answer: Charge.");
     expect(container.querySelector(".review-question__reveal-toggle")).toBeNull();
+  });
+
+  it("falls back to the always-visible full text (no toggle) when the marker is duplicated in the source text", () => {
+    const duplicatedMarkerSection: NormalizedSection = {
+      ...REVIEW_SECTION,
+      text: {
+        en: "Correct answer: first. Then, Correct answer: second.",
+        ar: REVIEW_SECTION.text.ar,
+      },
+    };
+    act(() => {
+      root.render(
+        <LanguageProvider>
+          <ReviewQuestion section={duplicatedMarkerSection} revealMarker={REVEAL_MARKER} />
+        </LanguageProvider>,
+      );
+    });
+    expect(container.querySelector(".review-question__reveal-toggle")).toBeNull();
+    expect(container.textContent).toContain(
+      "Correct answer: first. Then, Correct answer: second.",
+    );
+  });
+
+  it("works end-to-end in Arabic: hides the answer behind the Arabic-labeled toggle, reveals the exact Arabic answer text on click", () => {
+    // Force the LanguageProvider to start in Arabic via the same persisted
+    // language mechanism the real app uses (see LanguageContext.tsx).
+    window.localStorage.setItem("phsh111:language", "ar");
+    act(() => {
+      root.render(
+        <LanguageProvider>
+          <ReviewQuestion section={REVIEW_SECTION} revealMarker={REVEAL_MARKER} />
+        </LanguageProvider>,
+      );
+    });
+
+    expect(container.textContent).toContain("ما هي الخاصية الأساسية الرابعة؟");
+    expect(container.textContent).not.toContain("الشحنة.");
+
+    const button = container.querySelector(".review-question__reveal-toggle") as HTMLButtonElement;
+    expect(button.textContent).toBe("إظهار الإجابة");
+
+    act(() => button.click());
+
+    expect(button.textContent).toBe("إخفاء الإجابة");
+    expect(container.textContent).toContain("الإجابة الصحيحة: الشحنة.");
   });
 });
 
