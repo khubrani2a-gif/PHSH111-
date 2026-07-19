@@ -14,9 +14,16 @@ const MISSING_TEXT = {
   ar: "لا يتوفر نص عربي لهذا القسم.",
 } as const;
 
+const COLLAPSE_LABEL = {
+  en: "Collapse or expand this detailed section",
+  ar: "طيّ هذا القسم التفصيلي أو توسيعه",
+} as const;
+
 interface ContentSectionProps {
   blockType: ContentBlockType;
   text: NormalizedText;
+  sectionId?: string;
+  collapsible?: boolean;
   /** Set for elements (e.g. h2) that should not repeat if a heading already exists nearby. */
   headingLevel?: "h1" | "h2";
   /**
@@ -41,6 +48,8 @@ interface ContentSectionProps {
 export function ContentSection({
   blockType,
   text,
+  sectionId,
+  collapsible = false,
   headingLevel = "h2",
   italicTokens = [],
 }: ContentSectionProps) {
@@ -50,9 +59,16 @@ export function ContentSection({
   const Heading = headingLevel;
 
   return (
-    <section className={`content-section content-section--${blockType}`}>
+    <section id={sectionId} className={`content-section content-section--${blockType}`}>
       {heading ? <Heading>{heading[language]}</Heading> : null}
-      {value ? (
+      {value && collapsible ? (
+        <details className="content-disclosure" open>
+          <summary>{COLLAPSE_LABEL[language]}</summary>
+          <p className="content-section__text" dir={direction}>
+            {renderEquationText(value, italicTokens)}
+          </p>
+        </details>
+      ) : value ? (
         <p className="content-section__text" dir={direction}>
           {renderEquationText(value, italicTokens)}
         </p>
