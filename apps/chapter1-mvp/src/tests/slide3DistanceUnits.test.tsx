@@ -390,25 +390,98 @@ describe("11. The table clarification states that rows are not equivalent conver
 });
 
 describe("12. The example conversion 2 m = 200 cm is correct", () => {
-  it("English Simple Example states 2 m = 200 cm and shows the distinct calculation block", () => {
+  it("English Simple Example states 2 m = 200 cm and shows the labeled dimensions block", () => {
     const en = slide3.text.en ?? "";
     expect(en).toContain("2 m = 200 cm");
-    expect(en).toContain("200 cm × 80 cm × 75 cm");
+    expect(en).toContain("Dimensions: 200 cm × 80 cm × 75 cm");
   });
 
-  it("Arabic Simple Example states the same conversion and calculation block (untranslated Latin notation)", () => {
+  it("Arabic Simple Example states the same conversion and labeled dimensions block (untranslated Latin notation)", () => {
     const ar = slide3.text.ar ?? "";
     expect(ar).toContain("2 m = 200 cm");
-    expect(ar).toContain("200 cm × 80 cm × 75 cm");
+    expect(ar).toContain("الأبعاد: 200 cm × 80 cm × 75 cm");
   });
 
-  it("renders the calculation as a distinct equation block in the DOM", () => {
+  it("renders the dimensions as a distinct, labeled block in the DOM (not an unexplained multiplication)", () => {
     renderGenericSlides(false);
     const slide3Section = container.querySelectorAll(".slide")[2];
     const blocks = Array.from(slide3Section.querySelectorAll(".structured-slide__equation-block")).map(
       (el) => el.textContent,
     );
-    expect(blocks).toEqual(["200 cm × 80 cm × 75 cm"]);
+    expect(blocks).toEqual(["Dimensions: 200 cm × 80 cm × 75 cm"]);
+  });
+});
+
+describe("Pedagogical correction — labeled dimensions, not an implied volume calculation", () => {
+  it("1. the dimensions block is labeled 'Dimensions:' / 'الأبعاد:' in both languages", () => {
+    expect(slide3.text.en ?? "").toContain("Dimensions: 200 cm × 80 cm × 75 cm");
+    expect(slide3.text.ar ?? "").toContain("الأبعاد: 200 cm × 80 cm × 75 cm");
+  });
+
+  it("2. explicitly states that no volume calculation is required, both languages", () => {
+    expect(slide3.text.en ?? "").toContain(
+      "The multiplication signs separate the three dimensions here; no volume calculation is required in this example.",
+    );
+    expect(slide3.text.ar ?? "").toContain(
+      "تُستخدم علامات الضرب هنا للفصل بين الأبعاد الثلاثة، ولا يتطلب هذا المثال حساب الحجم.",
+    );
+  });
+
+  it("3. the old 'comparing or combining them' / 'مقارنتها أو الجمع بينها' phrasing is absent", () => {
+    expect(slide3.text.en ?? "").not.toContain("Before comparing or combining them, their units must be made consistent");
+    expect(slide3.text.ar ?? "").not.toContain("وقبل مقارنتها أو الجمع بينها، يجب توحيد وحداتها");
+    expect(slide3.text.en ?? "").toContain(
+      "Before comparing these measurements or using them together in a calculation, their units should be made consistent: 2 m = 200 cm.",
+    );
+    expect(slide3.text.ar ?? "").toContain(
+      "قبل مقارنة هذه القياسات أو استخدامها معًا في عملية حسابية، ينبغي توحيد وحداتها: 2 m = 200 cm.",
+    );
+  });
+
+  it("4. the refined Scientific Note appears exactly in both languages", () => {
+    expect(slide3.text.en ?? "").toContain(
+      "Scientific Note: The meter is the SI unit of length. The millimeter and centimeter are decimal submultiples of the meter, while the kilometer is a decimal multiple of it.",
+    );
+    expect(slide3.text.en ?? "").not.toContain("metric multiples or submultiples of the meter");
+    expect(slide3.text.ar ?? "").toContain(
+      "ملاحظة علمية: المتر هو وحدة الطول في النظام الدولي للوحدات. والمليمتر والسنتيمتر أجزاء عشرية من المتر، بينما الكيلومتر من مضاعفاته.",
+    );
+    expect(slide3.text.ar ?? "").not.toContain("مضاعفات أو أجزاء مترية من المتر");
+  });
+
+  it("5. the source table and original quotation remain unchanged", () => {
+    expect(slide3.text.en ?? "").toContain("1.1 Fundamental Physical Quantities: Distance");
+    expect(slide3.text.en ?? "").toContain(
+      "The following table lists the common distance units of measure, in both the metric and English systems and their abbreviations.",
+    );
+    expect(slide3.table?.en).toEqual({
+      headers: ["Physical Quantity", "Metric Units", "English Units"],
+      rows: [
+        ["Distance d (or l, w, h)", "meter (m)", "foot (ft)"],
+        [null, "millimeter (mm)", "inch (in.)"],
+        [null, "centimeter (cm)", "mile (mi)"],
+        [null, "kilometer (km)", null],
+      ],
+    });
+  });
+
+  it("6. Slides 1 and 2 remain unchanged", () => {
+    expect(slide1.text.en).toContain("In physics, there are three basic aspects");
+    expect(slide2.text.en).toContain(
+      "L represents the dimension of length. Distance is one physical quantity that has the dimension of length.",
+    );
+    expect(slide2.text.ar).toContain("أما وحدة القياس فهي معيار محدد يُستخدم للتعبير عن مقدار الكمية، مثل المتر أو الكيلوجرام أو الثانية.");
+    expect(slide1.blocking.studentFacingAllowed).toBe(false);
+    expect(slide2.blocking.studentFacingAllowed).toBe(false);
+  });
+
+  it("renders the no-volume-calculation clarification in the DOM, both languages", () => {
+    renderGenericSlides(false);
+    expect(container.textContent).toContain("no volume calculation is required in this example");
+    act(() => root.unmount());
+    root = createRoot(container);
+    renderGenericSlides(true);
+    expect(container.textContent).toContain("ولا يتطلب هذا المثال حساب الحجم");
   });
 });
 
@@ -444,7 +517,7 @@ describe("Reusability — Slide 3 proves the architecture scales without per-sli
     expect(equationBlocks).toEqual([
       "v = d / t = 100 m / 5 s = 20 m/s",
       "Speed = 120 miles / 2 h = 60 miles/h",
-      "200 cm × 80 cm × 75 cm",
+      "Dimensions: 200 cm × 80 cm × 75 cm",
     ]);
   });
 

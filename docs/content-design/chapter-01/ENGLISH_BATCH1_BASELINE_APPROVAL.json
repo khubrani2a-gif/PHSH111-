@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.7.0",
+  "baselineVersion": "1.8.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,7 +19,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "f6657628fc275f05bc329da0df119e0293a819b3e57adc49aa6551b5a329ee49",
+      "sha256": "67644102383cf2b82fa038f27586af6d6b6e4fac01aaed3f43eeff64c517236b",
       "schemaVersion": "2.3.0",
       "recordCount": 10
     },
@@ -197,6 +197,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-3"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. Unlike Slide 2's original addition, no 'missingVisual' reason is present: the uploaded source table was fully available and used (reconstructed as a semantic table), so no visual asset remains missing. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-010",
+        "fromVersion": "1.7.0",
+        "toVersion": "1.8.0",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Three pedagogical wording corrections to ch01-t01-block-opening-3's (Slide 3) localizedContent.en.text (Simple Example, the dimensions calculation block, and the Scientific Note) in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. The original quoted slide text, the reconstructed source table, the five numbered steps, the Table Explanation, the Common Misconception, the Key Concept, and the Connection section were NOT touched. No record in ch01-t01 other than Slide 3, and no record in ch01-t04, was touched.",
+        "whatChanged": "(1) The Simple Example's unit-consistency sentence was revised from 'Before comparing or combining them, their units must be made consistent: 2 m = 200 cm.' to 'Before comparing these measurements or using them together in a calculation, their units should be made consistent: 2 m = 200 cm.' (2) The bare calculation paragraph '200 cm × 80 cm × 75 cm' was relabeled 'Dimensions: 200 cm × 80 cm × 75 cm' to avoid implying an unlabeled multiplication result, and a new clarifying sentence was added immediately after it: 'The multiplication signs separate the three dimensions here; no volume calculation is required in this example.' (3) The Scientific Note was refined from 'Millimeter, centimeter, and kilometer are metric multiples or submultiples of the meter.' to the more precise 'The millimeter and centimeter are decimal submultiples of the meter, while the kilometer is a decimal multiple of it.'",
+        "whatWasNotChanged": "The verbatim quoted original English slide text ('1.1 Fundamental Physical Quantities: Distance...'), the reconstructed source table (tableEn, unchanged), all five numbered steps, the Table Explanation subsection, the Common Misconception, the Key Concept, and the Connection to the Next Slide are unchanged. Slides 1 and 2 (ch01-t01-block-opening, ch01-t01-block-opening-2) are entirely untouched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Project-owner pedagogical wording review of Slide 3 (rev-009) found: the original unit-consistency sentence read ambiguously ('comparing or combining' could suggest arithmetic combination beyond unit conversion); the bare '200 cm × 80 cm × 75 cm' calculation block, with no label, could be misread by a student as an implied volume calculation, which is outside this example's scope (the example only demonstrates unit consistency across three distance measurements, not a volume computation); and the Scientific Note's 'metric multiples or submultiples' phrasing did not specify which unit was a multiple versus a submultiple. This revision clarifies all three without altering any scientific claim already present.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening-3.localizedContent.en.text revised (Simple Example, dimensions block, Scientific Note)",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-008",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-3 entry's checksums updated"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-3's blocking.blockingStatus remains 'blocked' (blockingReason still translationPending, scientificReviewPending, other — no missingVisual, unchanged from rev-009), unaffected by this wording-only revision. Slides 1 and 2's governance fields are entirely unchanged."
       }
     ]
   },

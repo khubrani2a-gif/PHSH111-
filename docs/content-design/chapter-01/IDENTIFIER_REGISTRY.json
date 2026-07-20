@@ -912,21 +912,21 @@
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
         "englishBaselineDependency": {
           "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.7.0",
-          "sha256": "f6657628fc275f05bc329da0df119e0293a819b3e57adc49aa6551b5a329ee49"
+          "baselineVersion": "1.8.0",
+          "sha256": "67644102383cf2b82fa038f27586af6d6b6e4fac01aaed3f43eeff64c517236b"
         },
         "arabicBaselineDependency": {
           "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.0.7",
-          "sha256": "d463e9aec42ae98cb871a1659c110bad6f903b81d5cfae72aa9ecea02d4433d7"
+          "baselineVersion": "1.0.8",
+          "sha256": "d72423ced8e164bdf106b1432c50d8886de36308f5593e4e9c3d63a977ee6dcc"
         },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-20",
-        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.7.0 revisionLog rev-009; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.7 revisionLog rev-007",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.8.0 revisionLog rev-010; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.8 revisionLog rev-008",
         "status": "registered",
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
-        "notes": "Generic, reusable \"slide\" blockType (shared with ch01-t01-block-opening and ch01-t01-block-opening-2 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 3, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, or TopicPage conditional, demonstrating the reusable-slide architecture established by rev-008/ch01-arabic-baseline-rev-006. Also introduces generic tableEn/tableAr fields (see src/types/pilotSchema.ts's SourceTable), a mechanism available to any content-block record, used here to reconstruct the project owner's uploaded source table (Physical Quantity / Metric Units / English Units) as a real semantic <table> rather than the screenshot itself. Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-DISTANCE-UNITS-TABLE\" (an uploaded project-owner slide image, following the same free-form ad hoc source-marker convention already used by ch01-t01-block-opening / ch01-t01-block-opening-2). blocking.blockingReason does not include 'missingVisual': the uploaded source table was fully available and used, so no visual asset remains missing. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
+        "notes": "Generic, reusable \"slide\" blockType (shared with ch01-t01-block-opening and ch01-t01-block-opening-2 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 3, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, or TopicPage conditional, demonstrating the reusable-slide architecture established by rev-008/ch01-arabic-baseline-rev-006. Also introduces generic tableEn/tableAr fields (see src/types/pilotSchema.ts's SourceTable), a mechanism available to any content-block record, used here to reconstruct the project owner's uploaded source table (Physical Quantity / Metric Units / English Units) as a real semantic <table> rather than the screenshot itself. Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-DISTANCE-UNITS-TABLE\" (an uploaded project-owner slide image, following the same free-form ad hoc source-marker convention already used by ch01-t01-block-opening / ch01-t01-block-opening-2). blocking.blockingReason does not include 'missingVisual': the uploaded source table was fully available and used, so no visual asset remains missing. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry. Updated by rev-010/rev-008: pedagogical wording review clarified the Simple Example's unit-consistency sentence, relabeled the dimensions calculation block (now 'Dimensions:' / 'الأبعاد:' with an added no-volume-calculation clarification sentence, avoiding any implied volume computation), and refined the Scientific Note's decimal-multiple/submultiple wording — no change to the original quotation, the source table, the steps, the Table Explanation, the Common Misconception, or the Key Concept."
       }
     ],
     "unchangedByThisRegistration": [

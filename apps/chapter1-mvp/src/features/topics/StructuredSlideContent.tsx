@@ -35,7 +35,14 @@ export interface StructuredSlideConfig {
   keyConceptMarker?: Marker;
   /** Optional — when present, an additional "Table Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no source table (e.g. Slides 1 and 2). */
   tableExplanationMarker?: Marker;
-  /** Exact phrase (identical in both languages — untranslated Latin notation) rendered in a distinct equation-block style within Simple Example. */
+  /**
+   * Untranslated Latin notation, identical in both languages, that marks a
+   * paragraph within Simple Example for distinct equation-block styling.
+   * Matched as a substring (not full equality) so a per-language label may
+   * precede it in the authored text (e.g. "Dimensions: 200 cm × 80 cm ×
+   * 75 cm" / "الأبعاد: 200 cm × 80 cm × 75 cm" both match the phrase "200
+   * cm × 80 cm × 75 cm") while the notation itself stays untranslated.
+   */
   equationBlockPhrase?: string;
   /**
    * Per-language pattern identifying the start of one numbered-step
@@ -197,7 +204,7 @@ function renderEquationAwareParagraphs(
   equationBlockPhrase: string | undefined,
 ) {
   return paragraphs.map((paragraph, i) =>
-    equationBlockPhrase && paragraph === equationBlockPhrase ? (
+    equationBlockPhrase && paragraph.includes(equationBlockPhrase) ? (
       <div className="structured-slide__equation-block" dir={direction} key={i}>
         {renderEquationText(paragraph, italicTokens)}
       </div>
