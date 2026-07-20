@@ -41,7 +41,7 @@ function renderStructured(text: NormalizedText = topic.openingConcept!.text) {
   act(() => {
     root.render(
       <LanguageProvider>
-        <StructuredSlideContent topicId="ch01-t01" text={text} italicTokens={PROSE_TOKENS} />
+        <StructuredSlideContent blockId={topic.openingConcept!.recordId} text={text} italicTokens={PROSE_TOKENS} />
       </LanguageProvider>,
     );
   });
@@ -189,7 +189,7 @@ describe("StructuredSlideContent — reusability for future slides", () => {
       root.render(
         <LanguageProvider>
           <StructuredSlideContent
-            topicId="ch01-t04"
+            blockId={otherTopic.mainIdea!.recordId}
             text={{ en: "First paragraph.\n\nSecond paragraph.", ar: "الفقرة الأولى.\n\nالفقرة الثانية." }}
           />
         </LanguageProvider>,

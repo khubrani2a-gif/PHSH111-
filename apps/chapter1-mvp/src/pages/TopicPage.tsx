@@ -91,11 +91,26 @@ export function TopicPage() {
             id={usesGuidedPresentation ? "topic-opening" : undefined}
           >
             <StructuredSlideContent
-              topicId={topic.topicId}
+              blockId={topic.openingConcept.recordId}
               text={topic.openingConcept.text}
               italicTokens={proseTokens}
             />
           </Slide>
+          {topic.openingConceptSlide2 ? (
+            <Slide
+              number={2}
+              title={{
+                en: "How Are Physical Quantities Built from Distance, Mass, and Time?",
+                ar: "كيف تُبنى الكميات الفيزيائية من المسافة والكتلة والزمن؟",
+              }}
+            >
+              <StructuredSlideContent
+                blockId={topic.openingConceptSlide2.recordId}
+                text={topic.openingConceptSlide2.text}
+                italicTokens={proseTokens}
+              />
+            </Slide>
+          ) : null}
         </SlidesSection>
       ) : null}
 

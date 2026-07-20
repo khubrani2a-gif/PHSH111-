@@ -48,7 +48,11 @@ function renderSlide1(arabic: boolean) {
   act(() => {
     root.render(
       <LanguageProvider>
-        <StructuredSlideContent topicId="ch01-t01" text={topic.openingConcept!.text} italicTokens={PROSE_TOKENS} />
+        <StructuredSlideContent
+          blockId={topic.openingConcept!.recordId}
+          text={topic.openingConcept!.text}
+          italicTokens={PROSE_TOKENS}
+        />
       </LanguageProvider>,
     );
   });

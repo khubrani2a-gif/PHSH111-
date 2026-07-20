@@ -237,6 +237,7 @@ export function normalizeTopic(
   diagnostics: AdapterDiagnostic[],
 ): NormalizedTopic {
   const openingConceptBlock = findContentBlock(file, "openingConcept");
+  const openingConceptSlide2Block = findContentBlock(file, "openingConceptSlide2");
   const mainIdeaBlock = findContentBlock(file, "mainIdea");
   const explanationBlock = findContentBlock(file, "organizedExplanation");
   const equationsBlock = findContentBlock(file, "equationSet");
@@ -258,6 +259,7 @@ export function normalizeTopic(
     topicId,
     title: { en: file.topicTitle, ar: file.topicTitleAr },
     openingConcept: openingConceptBlock ? normalizeSection(openingConceptBlock) : undefined,
+    openingConceptSlide2: openingConceptSlide2Block ? normalizeSection(openingConceptSlide2Block) : undefined,
     mainIdea: mainIdeaBlock ? normalizeSection(mainIdeaBlock) : undefined,
     explanation: explanationBlock ? normalizeSection(explanationBlock) : undefined,
     equations: equationsBlock ? normalizeSection(equationsBlock) : undefined,

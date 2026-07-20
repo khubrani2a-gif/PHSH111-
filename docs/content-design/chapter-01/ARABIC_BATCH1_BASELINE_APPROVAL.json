@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.4",
+  "baselineVersion": "1.0.5",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -17,9 +17,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "165845cf8c1fd98ef9827050ed89afd68f3911a4c349f7343523e11c03204fd0",
+      "sha256": "3bad1d4aca4ad12118cd5ec95d3db36a2871298408d72ff6cebf8af0c92ecde0",
       "schemaVersion": "2.3.0",
-      "recordCount": 8
+      "recordCount": 9
     },
     {
       "topicId": "ch01-t04",
@@ -160,6 +160,23 @@
           "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-006"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. blocking.blockingStatus on this record remains 'blocked', unchanged by this wording revision."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-005",
+        "fromVersion": "1.0.4",
+        "toVersion": "1.0.5",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening-2 (blockType \"openingConceptSlide2\"), as the second record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json, matching the corresponding English-file revision recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json's revisionLog (rev-007, baselineVersion 1.4.0 -> 1.5.0) at the same record position. No existing record was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic side of the new Slide 2 opening block: the project owner's exact Arabic translation of the verbatim source-slide quotation ('1.1 الكميات الفيزيائية الأساسية: المسافة'), the project owner's exact required Arabic wording for the Common Misconception, Scientific Note, Key Concept, and Connection sections, plus newly authored Arabic translations (Claude's own translation, not independently reviewed) of the Main Idea, the five numbered steps, and the Simple Example's surrounding explanatory sentences. arabic.translationStatus on this new record is \"draft-ai-generated-unreviewed\" — deliberately distinguished from this file's other eight records, whose arabic.translationStatus is \"draft\" following this baseline's own already-completed generation/correction/review-and-revision pass (see reviewBasis).",
+        "whatWasNotChanged": "No .ar text, canonicalArabicTranslation, or any other field on ch01-t01's eight pre-existing records (including ch01-t01-block-opening / Slide 1, entirely byte-for-byte unchanged) was touched. No record in ch01-t04 was touched. The corresponding English file's eight pre-existing records were likewise untouched by the paired English-side revision.",
+        "rationale": "Requested by the project owner as new Slide 2 content for the Fundamental Quantities topic; the Arabic translation is required alongside the English addition to keep the bilingual application's existing 'one language visible at a time, both always present' behavior (MVP_IMPLEMENTATION_DECISIONS.json decision G) intact for this new block too.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-2 appended at index 1",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-007",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-2"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. This new record's Arabic translation has NOT been through the generation/correction/review-and-revision sequence the rest of this baseline's Arabic content went through (see reviewBasis) — it is explicitly marked draft-ai-generated-unreviewed, distinct from the rest of this file's already-reviewed 'draft' records, and terminologyApprovalStatus is 'pending' rather than 'approved'. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
       }
     ]
   },

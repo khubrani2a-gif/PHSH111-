@@ -201,7 +201,7 @@
       "docs/app/PHSH111_BATCH1_IDENTIFIER_REGISTRATION_RECORD.md"
     ],
     "applicableTopicIds": ["ch01-t01", "ch01-t04"],
-    "totalIdentifiersRegistered": 18,
+    "totalIdentifiersRegistered": 19,
     "scopeStatement": "This registers exactly the Batch 1 content, problem, source-marker, and approved visual identifiers required before a future application-integration step. It does not integrate ch01-t01 or ch01-t04 into apps/chapter1-mvp/, does not modify any approved content or visual file, does not authorize student-facing use, and does not authorize publication. Registration is an internal governance bookkeeping action, not a content-approval or application action.",
     "glossaryTermIdsExcluded": {
       "statement": "Glossary term IDs are governed inside BILINGUAL_GLOSSARY.json (glossaryVersion 1.3.0) and are deliberately NOT registered as entries in this file, preserving the established decision that glossary identifiers are glossary-local.",
@@ -234,15 +234,33 @@
         "recordType": "contentBlock",
         "blockType": "openingConcept",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.3.0", "sha256": "596577121cea1d6972846b5cfc90ae308f994e5af26788561ad50a3d5048a1ad"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.3", "sha256": "5741673098592924d1c5ad8960d37a171b943e59cea0cb4afc06ba5cd5bbf620"},
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.5.0", "sha256": "3f55c17973ebe0b94cbb1a8b8658b1e2efa194d05f347581e484396229806081"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.5", "sha256": "3bad1d4aca4ad12118cd5ec95d3db36a2871298408d72ff6cebf8af0c92ecde0"},
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-19",
-        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.3.0 revisionLog rev-003/rev-004/rev-005; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.3 revisionLog rev-001/rev-002/rev-003",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.5.0 revisionLog rev-003/rev-004/rev-005/rev-006 (rev-007 does not touch this record); ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.5 revisionLog rev-001/rev-002/rev-003/rev-004 (rev-005 does not touch this record)",
         "status": "registered",
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
-        "notes": "New blockType (\"openingConcept\", not one of the original seven ContentBlockType values) introduced specifically for this record — see src/types/pilotSchema.ts's ContentBlockType header note. Unlike this topic's other six contentBlock identifiers, this one was not covered by a dedicated separate PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md-style document at registration time; its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it (same conversation/session as the two revisionLog entries cited above), consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
+        "notes": "New blockType (\"openingConcept\", not one of the original seven ContentBlockType values) introduced specifically for this record — see src/types/pilotSchema.ts's ContentBlockType header note. Unlike this topic's other six original contentBlock identifiers, this one was not covered by a dedicated separate PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md-style document at registration time; its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry. The englishBaselineDependency/arabicBaselineDependency checksums above are kept current with this record's own latest revision (rev-006/rev-004) even though the file's overall baselineVersion has since advanced further via the sibling ch01-t01-block-opening-2 addition (rev-007/rev-005), which does not modify this record."
+      },
+      {
+        "identifier": "ch01-t01-block-opening-2",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "openingConceptSlide2",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.5.0", "sha256": "3f55c17973ebe0b94cbb1a8b8658b1e2efa194d05f347581e484396229806081"},
+        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.5", "sha256": "3bad1d4aca4ad12118cd5ec95d3db36a2871298408d72ff6cebf8af0c92ecde0"},
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-20",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.5.0 revisionLog rev-007; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.5 revisionLog rev-005",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "New blockType (\"openingConceptSlide2\", sibling to \"openingConcept\") introduced specifically for this record — see src/types/pilotSchema.ts's ContentBlockType header note. Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-DISTANCE\" (an uploaded project-owner slide reference, following the same free-form ad hoc source-marker convention already used by ch01-t01-block-opening's \"SRC-OWNER-SLIDE-1.1\" — neither is registered under the ^SRC-CH01-[A-Z0-9-]+$ namespace pattern, since that pattern is reserved for the chapter's independently audited sources, not project-owner-supplied slide references). A requested Figure Explanation subsection (an uploaded slide figure of racing vehicles using parachutes) could not be produced in this registration task because the referenced image could not be located/extracted; the record's blocking.blockingReason includes 'missingVisual' and visualBaselineDependency remains null pending a future, separate visual-registration action once the image is supplied. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
       },
       {
         "identifier": "ch01-t01-block-mainidea",

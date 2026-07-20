@@ -187,7 +187,15 @@ export type ContentBlockType =
   // own blocking/arabic governance fields for its actual review status,
   // which is intentionally NOT "approved"/"reviewed" like the rest of this
   // topic's batch-authored content.
-  | "openingConcept";
+  | "openingConcept"
+  // Added for ch01-t01 only (see ch01-t01-block-opening-2): a second
+  // opening/introductory slide, sibling to "openingConcept" (Slide 1) —
+  // presents distance/mass/time as fundamental quantities via the L/M/T
+  // dimensional symbols. Same review-status caveat as "openingConcept":
+  // new, unreviewed AI-authored explanatory prose and Arabic translation,
+  // pending project-owner review (see that record's own blocking/arabic
+  // governance fields).
+  | "openingConceptSlide2";
 
 export interface ContentBlockRecord {
   blockId: string;

@@ -118,6 +118,12 @@ export interface NormalizedTopic {
    * ContentBlockType header note on its provenance/review status.
    */
   openingConcept?: NormalizedSection;
+  /**
+   * ch01-t01-only second opening/introductory block (blockType
+   * "openingConceptSlide2"), sibling to openingConcept (Slide 1) — see
+   * src/types/pilotSchema.ts's ContentBlockType header note.
+   */
+  openingConceptSlide2?: NormalizedSection;
   mainIdea?: NormalizedSection;
   explanation?: NormalizedSection;
   equations?: NormalizedSection;
