@@ -16,6 +16,7 @@ import { InternalStatusPanel } from "../features/topics/InternalStatusPanel";
 import { TopicNavigation } from "../features/topics/TopicNavigation";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
 import { SlidesSection, Slide } from "../features/topics/Slides";
+import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
 import { DiagnosticsPanel } from "../features/topics/DiagnosticsPanel";
 import type { PilotTopicId } from "../types/pilotSchema";
 
@@ -89,8 +90,8 @@ export function TopicPage() {
             title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
             id={usesGuidedPresentation ? "topic-opening" : undefined}
           >
-            <ContentSection
-              blockType="openingConcept"
+            <StructuredSlideContent
+              topicId={topic.topicId}
               text={topic.openingConcept.text}
               italicTokens={proseTokens}
             />
