@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.3",
+  "baselineVersion": "1.0.4",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -17,7 +17,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "5741673098592924d1c5ad8960d37a171b943e59cea0cb4afc06ba5cd5bbf620",
+      "sha256": "165845cf8c1fd98ef9827050ed89afd68f3911a4c349f7343523e11c03204fd0",
       "schemaVersion": "2.3.0",
       "recordCount": 8
     },
@@ -145,6 +145,21 @@
           "note": "Matches ENGLISH_BATCH1_BASELINE_APPROVAL.json revisionLog rev-005's identical status-change rationale: 'draft' is the pre-existing status value every other record in this file already carries, and was never itself a claim of independent review in this schema. The change reflects that the project owner has now directly performed two rounds of scientific and linguistic review on this record (across rev-001/rev-002/this rev-003), removing the need for Claude's own '-ai-generated-unreviewed' marker — without claiming the independent third-party review the rest of this file's content received. terminologyApprovalStatus remains 'pending' (unchanged) — this revision does not claim glossary-level terminology approval."
         },
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. blocking.blockingStatus on this record remains 'blocked' — the translationStatus wording change above reflects the project owner's own direct review, not independent third-party review, and does not itself lift the block."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-004",
+        "fromVersion": "1.0.3",
+        "toVersion": "1.0.4",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening's localizedContent.ar.text and arabic.canonicalArabicTranslation.text (the Scientific Note paragraph only) in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json, matching the paired English-file revision ch01-english-baseline-rev-006 (1.3.0 -> 1.4.0). The Arabic translation of the verbatim quoted slide text, the Main Idea, all five numbered steps, the Simple Example (including the worked v = d / t = 100 m / 5 s = 20 m/s equation), the Common Misconception, and the Connection to the Next Part are unchanged.",
+        "whatChanged": "Removed the sentence 'أما الشحنة الكهربائية فهي كمية مشتقة، تُحسب من ضرب التيار الكهربائي في الزمن: Q = I t.' and replaced the entire Arabic Scientific Note paragraph with the project owner's exact replacement wording: 'ملاحظة علمية: يتبع هذا السلايد الإطار التمهيدي الذي يعتمده الكتاب للكميات المطروحة في هذا الفصل. ويحتوي نظام الوحدات الدولي الحديث على سبع كميات أساسية.' The prior sentence naming electric current (not charge) as one of the seven SI base quantities, alongside the full list of the other six base quantities, was also removed as part of the full-paragraph replacement.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-006): explicit project-owner educational revision removing the electric-charge-derivation statement (Q = I t) as outside the instructional scope of this introductory slide.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening.localizedContent.ar.text and arabic.canonicalArabicTranslation.text revised (Scientific Note paragraph only)",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-006"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. blocking.blockingStatus on this record remains 'blocked', unchanged by this wording revision."
       }
     ]
   },

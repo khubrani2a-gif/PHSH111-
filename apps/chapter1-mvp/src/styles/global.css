@@ -578,19 +578,6 @@ button:focus-visible {
   border-inline-start-color: var(--color-reviewer-border);
 }
 
-/* Distinct inline equation style for "Q = I t" within the Scientific Note
-   subsection — a solid accent chip, visually different from the
-   underline-style .equation-highlight used elsewhere for "v = d / t" so
-   the two highlighting meanings (attention vs. distinct-equation-style)
-   don't collide. Reuses the existing --color-focus/--color-surface tokens. */
-.equation-inline {
-  background: var(--color-focus);
-  color: var(--color-surface);
-  padding: 0.05em 0.35em;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
 .content-disclosure {
   margin-top: 0.75rem;
 }

@@ -99,18 +99,21 @@ describe("StructuredSlideContent — English", () => {
     expect(block?.innerHTML).toContain("<em>t</em>");
   });
 
-  it("5. visually distinguishes Common Misconception and Scientific Note with distinct callout classes, and highlights Q = I t inline", () => {
+  it("5. visually distinguishes Common Misconception and Scientific Note with distinct callout classes", () => {
     renderStructured();
     const misconception = container.querySelector(".structured-slide__callout--misconception");
     const scientificNote = container.querySelector(".structured-slide__callout--scientific-note");
     expect(misconception).toBeTruthy();
     expect(scientificNote).toBeTruthy();
     expect(misconception?.className).not.toBe(scientificNote?.className);
-    const inlineEquation = scientificNote?.querySelector("mark.equation-inline");
-    expect(inlineEquation?.textContent).toBe("Q = I t");
+    // Q = I t was removed from the approved content (outside this
+    // introductory slide's instructional scope) — no inline equation chip
+    // should render inside the Scientific Note callout.
+    expect(scientificNote?.querySelector("mark.equation-inline")).toBeNull();
+    expect(scientificNote?.querySelector("mark")).toBeNull();
   });
 
-  it("6. preserves every approved English sentence verbatim (no rewritten, shortened, or expanded wording)", () => {
+  it("6. preserves every approved English sentence verbatim (no rewritten, shortened, or expanded wording), and confirms Q = I t was deliberately removed", () => {
     renderStructured();
     const text = container.textContent ?? "";
     expect(text).toContain(
@@ -119,11 +122,14 @@ describe("StructuredSlideContent — English", () => {
     expect(text).toContain("Main idea: physics describes the physical universe through measurements");
     expect(text).toContain("v = d / t = 100 m / 5 s = 20 m/s");
     expect(text).toContain("Common misconception: space and distance are exactly the same thing.");
-    expect(text).toContain("seven base quantities");
-    expect(text).toContain("Q = I t.");
+    expect(text).toContain(
+      "Scientific Note: This slide follows the textbook's introductory framework for the quantities discussed in this chapter. The complete modern SI system contains seven base quantities.",
+    );
     expect(text).toContain(
       "Connection to the next part: after identifying these physical quantities",
     );
+    expect(text).not.toContain("Q = I t");
+    expect(text).not.toContain("Electric charge is a derived quantity");
   });
 });
 
@@ -141,6 +147,10 @@ describe("StructuredSlideContent — Arabic / RTL", () => {
     expect(text).toContain("الصلة بالشريحة التالية");
     expect(text).toContain("الفكرة الأساسية: تصف الفيزياء الكون المادي");
     expect(text).toContain("v = d / t = 100 m / 5 s = 20 m/s");
+    expect(text).toContain(
+      "ملاحظة علمية: يتبع هذا السلايد الإطار التمهيدي الذي يعتمده الكتاب للكميات المطروحة في هذا الفصل. ويحتوي نظام الوحدات الدولي الحديث على سبع كميات أساسية.",
+    );
+    expect(text).not.toContain("Q = I t");
   });
 
   it("7. renders Arabic paragraphs with dir=\"rtl\", numbering and Latin notation intact", () => {
@@ -203,7 +213,7 @@ describe("StructuredSlideContent — reusability for future slides", () => {
         "2. Second fabricated step.\n\n" +
         "Simple example: a fabricated example with no numbers at all.\n\n" +
         "Common misconception: a fabricated misconception.\n\n" +
-        "Scientific note: a fabricated scientific note.\n\n" +
+        "Scientific Note: a fabricated scientific note.\n\n" +
         "Connection to the next part: a fabricated connection sentence.",
       ar: null,
     };

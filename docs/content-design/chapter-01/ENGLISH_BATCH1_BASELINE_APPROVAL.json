@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.3.0",
+  "baselineVersion": "1.4.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -16,7 +16,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "596577121cea1d6972846b5cfc90ae308f994e5af26788561ad50a3d5048a1ad",
+      "sha256": "8582ea4ddfaa129556f833300f0dc78f3bf52cd2b74a3fb65c5efa718cf3a93b",
       "schemaVersion": "2.3.0",
       "recordCount": 8
     },
@@ -125,6 +125,21 @@
           "note": "\"draft\" is the exact, pre-existing status value this file already uses for every one of ch01-t01's other seven records — all of which also went through this project's own generation/review/revision process without becoming 'independently reviewed' or 'approved' in the stricter sense (see governanceRestrictions.independentExpertReviewCompleted: false, unchanged). It was never the case that 'draft' meant 'unreviewed' in this schema; the custom '-ai-generated-unreviewed' suffix was Claude's own invented marker (added when this record was first authored, with no independent or project-owner review yet performed) and is no longer accurate now that the project owner has directly performed two rounds of scientific and linguistic review on this record's wording (rev-004 and this rev-005). This is NOT equivalent to the independent third-party scientific/linguistic review the rest of this baseline's content went through, and does not change blocking.blockingStatus ('blocked', unchanged), studentFacingAllowed (false, unchanged), or studentPublicationAuthorized (false, unchanged)."
         },
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This record's blocking.blockingStatus remains 'blocked' (blockingReason still includes 'scientificReviewPending') despite the translationStatus wording change described above — that change reflects the project owner's own direct review, not the independent third-party review this baseline's other content went through, and does not itself lift the block."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-006",
+        "fromVersion": "1.3.0",
+        "toVersion": "1.4.0",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening's localizedContent.en.text (the Scientific Note paragraph only) in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. The verbatim quoted slide text, the Main Idea, all five numbered steps, the Simple Example (including the worked v = d / t = 100 m / 5 s = 20 m/s equation), the Common Misconception, and the Connection to the Next Part are unchanged. No other record in ch01-t01 or ch01-t04 was touched.",
+        "whatChanged": "Removed the sentence 'Electric charge is a derived quantity, obtained from current multiplied by time: Q = I t.' from the Scientific Note paragraph, and replaced the entire Scientific Note paragraph with a shorter project-owner-authored replacement: 'Scientific Note: This slide follows the textbook's introductory framework for the quantities discussed in this chapter. The complete modern SI system contains seven base quantities.' The prior sentence '...electric current — not electric charge — is one of the seven base quantities, alongside length, time, mass, thermodynamic temperature, amount of substance, and luminous intensity.' was also removed as part of the full-paragraph replacement, since the replacement text states the SI base-quantity count without itemizing the individual quantities or the current-vs-charge contrast.",
+        "rationale": "Explicit project-owner educational revision: the electric-charge-derivation statement (Q = I t) was deliberately removed because it is outside the instructional scope of this introductory slide, which is meant to introduce space/time/matter and the fundamental-vs-derived-quantity distinction, not the SI current-vs-charge base-quantity distinction.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening.localizedContent.en.text revised (Scientific Note paragraph only)",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-004"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false; blocking.blockingStatus on this record remains 'blocked' (blockingReason still includes 'scientificReviewPending'), unchanged by this wording revision."
       }
     ]
   },
