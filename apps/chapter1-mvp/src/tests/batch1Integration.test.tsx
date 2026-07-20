@@ -241,7 +241,26 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     );
     expect(en).not.toContain("every physical quantity used here ultimately traces back");
     expect(en).toContain("seven base quantities");
-    expect(en).toContain("Q = I t");
+  });
+
+  it("removes the electric-charge-derivation statement (Q = I t) — outside this introductory slide's instructional scope (ch01-english-baseline-rev-006)", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(en).not.toContain("Q = I t");
+    expect(en).not.toContain("Electric charge is a derived quantity, obtained from current multiplied by time");
+    expect(ar).not.toContain("Q = I t");
+    expect(ar).not.toContain("أما الشحنة الكهربائية فهي كمية مشتقة");
+  });
+
+  it("replaces the Scientific Note with the project owner's exact shortened wording, in both languages", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(en).toContain(
+      "Scientific Note: This slide follows the textbook's introductory framework for the quantities discussed in this chapter. The complete modern SI system contains seven base quantities.",
+    );
+    expect(ar).toContain(
+      "ملاحظة علمية: يتبع هذا السلايد الإطار التمهيدي الذي يعتمده الكتاب للكميات المطروحة في هذا الفصل. ويحتوي نظام الوحدات الدولي الحديث على سبع كميات أساسية.",
+    );
   });
 
   it("uses the corrected space-vs-distance sentence, not the old overly narrow one", () => {
@@ -263,7 +282,7 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     expect(en).toContain("Main idea:");
     expect(en).toContain("Simple example:");
     expect(en).toContain("Common misconception:");
-    expect(en).toContain("Scientific note:");
+    expect(en).toContain("Scientific Note:");
     expect(en).toContain("Connection to the next part:");
     for (const step of ["1.", "2.", "3.", "4.", "5."]) {
       expect(en).toContain(step);
@@ -278,11 +297,16 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     expect(ar).not.toContain("الجمع بين القياسين");
   });
 
-  it("Arabic: uses the exact corrected distance-vs-space sentence and the clarified SI temperature term", () => {
+  it("Arabic: uses the exact corrected distance-vs-space sentence", () => {
     const ar = topic.openingConcept?.text.ar ?? "";
     expect(ar).toContain("المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان");
-    expect(ar).toContain("درجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة)");
     expect(ar).not.toContain("الجواهر");
+  });
+
+  it("Arabic: the SI base-quantity list (including the thermodynamic temperature clarification) was removed along with the Q = I t derivation (ch01-arabic-baseline-rev-004)", () => {
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(ar).not.toContain("درجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة)");
+    expect(ar).not.toContain("التيار الكهربائي");
   });
 
   it("contains the worked car example (100 m in 5 s) and the v = d / t = 20 m/s derived-quantity equation", () => {
@@ -381,7 +405,7 @@ describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides
     expect(text).toContain("In physics, there are three basic aspects of the material universe");
     expect(text).toContain("v = d / t = 100 m / 5 s = 20 m/s");
     expect(text).toContain("Main idea:");
-    expect(text).toContain("Scientific note:");
+    expect(text).toContain("Scientific Note:");
   });
 
   it("supports a second slide as an additional sibling, without altering Slide 1's content or id", () => {

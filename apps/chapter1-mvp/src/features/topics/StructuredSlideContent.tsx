@@ -1,5 +1,5 @@
 import { useLanguage } from "../../app/LanguageContext";
-import { renderEquationText, renderEquationTextWithHighlight } from "../../content/equationRenderer";
+import { renderEquationText } from "../../content/equationRenderer";
 import type { NormalizedText } from "../../types/normalized";
 import type { PilotTopicId } from "../../types/pilotSchema";
 
@@ -32,8 +32,6 @@ export interface StructuredSlideConfig {
   connectionMarker: Marker;
   /** Exact phrase (identical in both languages — untranslated Latin notation) rendered in a distinct equation-block style within Simple Example. */
   equationBlockPhrase?: string;
-  /** Exact phrase rendered in a distinct inline equation style within Scientific Note. */
-  inlineEquationPhrase?: string;
 }
 
 /**
@@ -51,10 +49,9 @@ export const STRUCTURED_SLIDE_CONFIG_BY_TOPIC: Partial<Record<PilotTopicId, Stru
     mainIdeaMarker: { en: "Main idea:", ar: "الفكرة الأساسية:" },
     simpleExampleMarker: { en: "Simple example:", ar: "مثال بسيط:" },
     misconceptionMarker: { en: "Common misconception:", ar: "مفهوم خاطئ شائع:" },
-    scientificNoteMarker: { en: "Scientific note:", ar: "ملاحظة علمية:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
     connectionMarker: { en: "Connection to the next part:", ar: "الصلة بالجزء التالي:" },
     equationBlockPhrase: "v = d / t = 100 m / 5 s = 20 m/s",
-    inlineEquationPhrase: "Q = I t",
   },
 };
 
@@ -135,21 +132,6 @@ function renderEquationAwareParagraphs(
       </p>
     ),
   );
-}
-
-function renderScientificNoteParagraphs(
-  paragraphs: string[],
-  italicTokens: readonly string[],
-  direction: "ltr" | "rtl",
-  inlineEquationPhrase: string | undefined,
-) {
-  return paragraphs.map((paragraph, i) => (
-    <p className="content-section__text" dir={direction} key={i}>
-      {inlineEquationPhrase
-        ? renderEquationTextWithHighlight(paragraph, italicTokens, inlineEquationPhrase, "equation-inline")
-        : renderEquationText(paragraph, italicTokens)}
-    </p>
-  ));
 }
 
 function renderSteps(paragraphs: string[], italicTokens: readonly string[], direction: "ltr" | "rtl") {
@@ -249,7 +231,7 @@ export function StructuredSlideContent({ topicId, text, italicTokens = [] }: Str
 
       <section className="structured-slide__section structured-slide__callout structured-slide__callout--scientific-note">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.scientificNote[language]}</h4>
-        {renderScientificNoteParagraphs(sections.scientificNote, italicTokens, direction, config?.inlineEquationPhrase)}
+        {renderPlainParagraphs(sections.scientificNote, italicTokens, direction)}
       </section>
 
       <section className="structured-slide__section">

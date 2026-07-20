@@ -283,7 +283,6 @@ export function renderEquationTextWithHighlight(
   text: string,
   italicTokens: readonly string[],
   highlightPhrase: string,
-  className = "equation-highlight",
 ): ReactNode {
   const index = text.indexOf(highlightPhrase);
   if (index < 0) return renderEquationText(text, italicTokens);
@@ -295,7 +294,7 @@ export function renderEquationTextWithHighlight(
   return (
     <>
       {renderEquationText(before, italicTokens)}
-      <mark className={className}>{renderEquationText(match, italicTokens)}</mark>
+      <mark className="equation-highlight">{renderEquationText(match, italicTokens)}</mark>
       {renderEquationText(after, italicTokens)}
     </>
   );
