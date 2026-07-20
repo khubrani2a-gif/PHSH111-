@@ -83,34 +83,18 @@ export function TopicPage() {
 
       {usesGuidedPresentation ? <TopicReadingGuide /> : null}
 
-      {topic.openingConcept ? (
+      {topic.slides.length > 0 ? (
         <SlidesSection>
-          <Slide
-            number={1}
-            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
-            id={usesGuidedPresentation ? "topic-opening" : undefined}
-          >
-            <StructuredSlideContent
-              blockId={topic.openingConcept.recordId}
-              text={topic.openingConcept.text}
-              italicTokens={proseTokens}
-            />
-          </Slide>
-          {topic.openingConceptSlide2 ? (
+          {topic.slides.map((slide) => (
             <Slide
-              number={2}
-              title={{
-                en: "How Are Physical Quantities Built from Distance, Mass, and Time?",
-                ar: "كيف تُبنى الكميات الفيزيائية من المسافة والكتلة والزمن؟",
-              }}
+              key={slide.recordId}
+              number={slide.slideNumber}
+              title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
+              id={usesGuidedPresentation && slide.slideNumber === 1 ? "topic-opening" : undefined}
             >
-              <StructuredSlideContent
-                blockId={topic.openingConceptSlide2.recordId}
-                text={topic.openingConceptSlide2.text}
-                italicTokens={proseTokens}
-              />
+              <StructuredSlideContent blockId={slide.recordId} text={slide.text} italicTokens={proseTokens} />
             </Slide>
-          ) : null}
+          ))}
         </SlidesSection>
       ) : null}
 

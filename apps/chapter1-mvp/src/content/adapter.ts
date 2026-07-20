@@ -27,6 +27,7 @@ import type {
   NormalizedInstructorNote,
   NormalizedProblem,
   NormalizedSection,
+  NormalizedSlide,
   NormalizedSolutionStep,
   NormalizedText,
   NormalizedTopic,
@@ -78,6 +79,28 @@ function normalizeSection(block: ContentBlockRecord): NormalizedSection {
     text: toNormalizedText(block.localizedContent),
     blocking: block.blocking,
   };
+}
+
+/**
+ * Collects every blockType "slide" record in a topic's file into an
+ * ordered array, sorted by each record's own slideNumber field. Generic
+ * over however many slide records exist — adding a new slide to a topic's
+ * source file (with the next slideNumber) requires no change here.
+ */
+function normalizeSlides(file: PilotTopicFile): NormalizedSlide[] {
+  return file.records
+    .filter((r): r is Extract<typeof r, { recordType: "contentBlock" }> => r.recordType === "contentBlock")
+    .map((r) => r.record)
+    .filter((block) => block.blockType === "slide")
+    .map((block) => ({
+      recordId: block.blockId,
+      slideNumber: block.slideNumber ?? 0,
+      title: { en: block.slideTitleEn ?? null, ar: block.slideTitleAr ?? null },
+      visibility: block.visibility,
+      text: toNormalizedText(block.localizedContent),
+      blocking: block.blocking,
+    }))
+    .sort((a, b) => a.slideNumber - b.slideNumber);
 }
 
 function normalizeInstructorNote(block: ContentBlockRecord): NormalizedInstructorNote {
@@ -236,8 +259,6 @@ export function normalizeTopic(
   topicId: PilotTopicId,
   diagnostics: AdapterDiagnostic[],
 ): NormalizedTopic {
-  const openingConceptBlock = findContentBlock(file, "openingConcept");
-  const openingConceptSlide2Block = findContentBlock(file, "openingConceptSlide2");
   const mainIdeaBlock = findContentBlock(file, "mainIdea");
   const explanationBlock = findContentBlock(file, "organizedExplanation");
   const equationsBlock = findContentBlock(file, "equationSet");
@@ -258,8 +279,7 @@ export function normalizeTopic(
   const topic: NormalizedTopic = {
     topicId,
     title: { en: file.topicTitle, ar: file.topicTitleAr },
-    openingConcept: openingConceptBlock ? normalizeSection(openingConceptBlock) : undefined,
-    openingConceptSlide2: openingConceptSlide2Block ? normalizeSection(openingConceptSlide2Block) : undefined,
+    slides: normalizeSlides(file),
     mainIdea: mainIdeaBlock ? normalizeSection(mainIdeaBlock) : undefined,
     explanation: explanationBlock ? normalizeSection(explanationBlock) : undefined,
     equations: equationsBlock ? normalizeSection(equationsBlock) : undefined,

@@ -176,8 +176,9 @@ describe("ch01-t01 — interactive presentation without content rewriting", () =
   });
 });
 
-describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () => {
+describe("ch01-t01 — new slide block (ch01-t01-block-opening)", () => {
   const topic = getTopic("ch01-t01")!;
+  const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 
   const VERBATIM_ENGLISH_QUOTE =
     "In physics, there are three basic aspects of the material universe that we must describe and quantify in various ways:\n\n" +
@@ -191,33 +192,34 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     "جميع الكميات الفيزيائية المستخدمة هنا تتضمن قياسات، أو مجموعات من القياسات، للمكان والزمن وخصائص المادة.\n\n" +
     "يمكن إرجاع وحدات قياس جميع هذه الكميات إلى وحدات قياس المسافة والزمن، وإلى خاصيتين من خصائص المادة تُسمّيان الكتلة والشحنة.";
 
-  it("loads as a distinct record with its own blockId and blockType", () => {
-    expect(topic.openingConcept).toBeDefined();
-    expect(topic.openingConcept?.recordId).toBe("ch01-t01-block-opening");
-    expect(topic.openingConcept?.blockType).toBe("openingConcept");
+  it("loads as a distinct record, first in the topic's ordered slides collection", () => {
+    expect(slide1).toBeDefined();
+    expect(slide1?.recordId).toBe("ch01-t01-block-opening");
+    expect(slide1?.slideNumber).toBe(1);
+    expect(topic.slides[0]?.recordId).toBe("ch01-t01-block-opening");
   });
 
-  it("is learner-visible (present on topic.openingConcept, not folded into instructorNotes)", () => {
-    expect(topic.openingConcept?.visibility).not.toBe("instructor");
+  it("is learner-visible (present on slide1, not folded into instructorNotes)", () => {
+    expect(slide1?.visibility).not.toBe("instructor");
     expect(topic.instructorNotes.some((n) => n.recordId === "ch01-t01-block-opening")).toBe(false);
   });
 
   it("preserves the supplied original English slide text exactly, character for character", () => {
-    expect(topic.openingConcept?.text.en).toContain(VERBATIM_ENGLISH_QUOTE);
+    expect(slide1?.text.en).toContain(VERBATIM_ENGLISH_QUOTE);
   });
 
   it("preserves the supplied original Arabic translation of the slide text exactly, character for character", () => {
-    expect(topic.openingConcept?.text.ar).toContain(VERBATIM_ARABIC_QUOTE);
+    expect(slide1?.text.ar).toContain(VERBATIM_ARABIC_QUOTE);
   });
 
   it("keeps studentFacingAllowed/studentPublicationAuthorized false, same as the rest of this topic", () => {
-    expect(topic.openingConcept?.blocking.studentFacingAllowed).toBe(false);
+    expect(slide1?.blocking.studentFacingAllowed).toBe(false);
     expect(topic.governance.studentFacingAllowed).toBe(false);
     expect(topic.governance.studentPublicationAuthorized).toBe(false);
   });
 
   it("does not duplicate the wording of the already-approved mainIdea, organizedExplanation, or misconception blocks", () => {
-    const openingText = topic.openingConcept?.text.en ?? "";
+    const openingText = slide1?.text.en ?? "";
     const mainIdeaText = topic.mainIdea?.text.en ?? "";
     const explanationText = topic.explanation?.text.en ?? "";
     const misconception = topic.instructorNotes.find((n) => n.blockType === "misconception");
@@ -232,7 +234,7 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("scopes distance/time/mass/charge to this chapter's introductory framework, not a universal SI claim, and includes the SI scientific note", () => {
-    const en = topic.openingConcept?.text.en ?? "";
+    const en = slide1?.text.en ?? "";
     expect(en).toContain(
       "introduces distance, time, mass, and charge as important measurable quantities within its introductory framework",
     );
@@ -244,8 +246,8 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("removes the electric-charge-derivation statement (Q = I t) — outside this introductory slide's instructional scope (ch01-english-baseline-rev-006)", () => {
-    const en = topic.openingConcept?.text.en ?? "";
-    const ar = topic.openingConcept?.text.ar ?? "";
+    const en = slide1?.text.en ?? "";
+    const ar = slide1?.text.ar ?? "";
     expect(en).not.toContain("Q = I t");
     expect(en).not.toContain("Electric charge is a derived quantity, obtained from current multiplied by time");
     expect(ar).not.toContain("Q = I t");
@@ -253,8 +255,8 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("replaces the Scientific Note with the project owner's exact shortened wording, in both languages", () => {
-    const en = topic.openingConcept?.text.en ?? "";
-    const ar = topic.openingConcept?.text.ar ?? "";
+    const en = slide1?.text.en ?? "";
+    const ar = slide1?.text.ar ?? "";
     expect(en).toContain(
       "Scientific Note: This slide follows the textbook's introductory framework for the quantities discussed in this chapter. The complete modern SI system contains seven base quantities.",
     );
@@ -264,13 +266,13 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("uses the corrected space-vs-distance sentence, not the old overly narrow one", () => {
-    const en = topic.openingConcept?.text.en ?? "";
+    const en = slide1?.text.en ?? "";
     expect(en).toContain("Distance is one measurable way of describing separation within space.");
     expect(en).not.toContain("Distance is the measurable aspect of space.");
   });
 
   it("states speed's derived unit (m/s) exactly once, not twice — no repeated explanation", () => {
-    const en = topic.openingConcept?.text.en ?? "";
+    const en = slide1?.text.en ?? "";
     const occurrences = (en.match(/formed from the units of distance and time/g) ?? []).length;
     expect(occurrences).toBe(1);
     expect(en).not.toContain("without needing any unit of its own");
@@ -278,7 +280,7 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("is structured as a compact Main Idea / numbered-steps / Example / Misconception / Scientific Note / Connection sequence", () => {
-    const en = topic.openingConcept?.text.en ?? "";
+    const en = slide1?.text.en ?? "";
     expect(en).toContain("Main idea:");
     expect(en).toContain("Simple example:");
     expect(en).toContain("Common misconception:");
@@ -290,7 +292,7 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("Arabic: uses the exact corrected car-example wording, not the division-as-addition phrasing", () => {
-    const ar = topic.openingConcept?.text.ar ?? "";
+    const ar = slide1?.text.ar ?? "";
     expect(ar).toContain(
       "قطعت السيارة مسافة مقدارها 100 متر خلال زمن قدره 5 ثوانٍ. وبدمج قياسي المسافة والزمن نحسب سرعة السيارة:",
     );
@@ -298,19 +300,19 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
   });
 
   it("Arabic: uses the exact corrected distance-vs-space sentence", () => {
-    const ar = topic.openingConcept?.text.ar ?? "";
+    const ar = slide1?.text.ar ?? "";
     expect(ar).toContain("المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان");
     expect(ar).not.toContain("الجواهر");
   });
 
   it("Arabic: the SI base-quantity list (including the thermodynamic temperature clarification) was removed along with the Q = I t derivation (ch01-arabic-baseline-rev-004)", () => {
-    const ar = topic.openingConcept?.text.ar ?? "";
+    const ar = slide1?.text.ar ?? "";
     expect(ar).not.toContain("درجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة)");
     expect(ar).not.toContain("التيار الكهربائي");
   });
 
   it("contains the worked car example (100 m in 5 s) and the v = d / t = 20 m/s derived-quantity equation", () => {
-    const en = topic.openingConcept?.text.en ?? "";
+    const en = slide1?.text.en ?? "";
     expect(en).toContain("100 m");
     expect(en).toContain("5 s");
     expect(en).toContain("v = d / t = 100 m / 5 s = 20 m/s");
@@ -320,8 +322,8 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     const markup = renderToStaticMarkup(
       <LanguageProvider>
         <ContentSection
-          blockType="openingConcept"
-          text={topic.openingConcept!.text}
+          blockType="slide"
+          text={slide1!.text}
           italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
           sectionId="topic-opening"
         />
@@ -336,8 +338,8 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     const markup = renderToStaticMarkup(
       <LanguageProvider>
         <ContentSection
-          blockType="openingConcept"
-          text={topic.openingConcept!.text}
+          blockType="slide"
+          text={slide1!.text}
           italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
         />
       </LanguageProvider>,
@@ -351,13 +353,14 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     // src/pages/TopicPage.tsx renders openingConcept immediately before
     // mainIdea's ContentSection, matching this block's position as the
     // first contentBlock record in the source file.
-    expect(topic.openingConcept?.recordId).toBe("ch01-t01-block-opening");
+    expect(slide1?.recordId).toBe("ch01-t01-block-opening");
     expect(topic.mainIdea?.recordId).toBe("ch01-t01-block-mainidea");
   });
 });
 
-describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides -> Slide 1', internal blockType unchanged)", () => {
+describe("Slides / Slide presentation wrapper ('slide' renders as 'Slides -> Slide 1', generic blockType)", () => {
   const topic = getTopic("ch01-t01")!;
+  const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 
   function renderSlide1() {
     return renderToStaticMarkup(
@@ -369,8 +372,8 @@ describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides
             id="topic-opening"
           >
             <ContentSection
-              blockType="openingConcept"
-              text={topic.openingConcept!.text}
+              blockType="slide"
+              text={slide1.text}
               italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
             />
           </Slide>
@@ -395,8 +398,9 @@ describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides
     expect(textOnly(markup)).toContain("Slide 1 — Fundamental Physical Quantities");
   });
 
-  it("keeps the internal blockType as 'openingConcept' — no schema rename", () => {
-    expect(topic.openingConcept?.blockType).toBe("openingConcept");
+  it("is first (slideNumber 1) in the topic's generic ordered slides collection", () => {
+    expect(slide1.slideNumber).toBe(1);
+    expect(topic.slides[0]?.recordId).toBe("ch01-t01-block-opening");
   });
 
   it("still contains the full, unchanged Slide 1 educational content (verbatim quote, worked equation) inside the new wrapper", () => {
@@ -418,8 +422,8 @@ describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides
             id="topic-opening"
           >
             <ContentSection
-              blockType="openingConcept"
-              text={topic.openingConcept!.text}
+              blockType="slide"
+              text={slide1.text}
               italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
             />
           </Slide>

@@ -10,7 +10,9 @@
       "recordType": "contentBlock",
       "record": {
         "blockId": "ch01-t01-block-opening",
-        "blockType": "openingConcept",
+        "blockType": "slide",
+        "slideNumber": 1,
+        "slideTitleEn": "Fundamental Physical Quantities",
         "topicId": "ch01-t01",
         "visibility": "shared",
         "localizedContent": {
@@ -84,12 +86,14 @@
       "recordType": "contentBlock",
       "record": {
         "blockId": "ch01-t01-block-opening-2",
-        "blockType": "openingConceptSlide2",
+        "blockType": "slide",
+        "slideNumber": 2,
+        "slideTitleEn": "How Are Physical Quantities Built from Distance, Mass, and Time?",
         "topicId": "ch01-t01",
         "visibility": "shared",
         "localizedContent": {
           "en": {
-            "text": "1.1 Fundamental Physical Quantities: Distance\n\nMostly all quantities can be classified in terms of the fundamental physical quantities:\n\nDistance (L)\n\nMass (M)\n\nTime (T)\n\nFor example, speed has the unit of miles per hour (L/T).\n\nMain Idea: Many quantities used in mechanics can be described by combining three fundamental quantities: distance, mass, and time.\n\nStep 1 — Distance is represented by L\n* Distance describes how far one position is from another.\n* L represents the dimension of length or distance.\n* Common units include meters, kilometers, miles, and centimeters.\n\nStep 2 — Mass is represented by M\n* Mass describes the amount of matter in an object and its resistance to changes in motion.\n* M represents the dimension of mass.\n* Common units include kilograms and grams.\n\nStep 3 — Time is represented by T\n* Time describes the duration of an event or motion.\n* T represents the dimension of time.\n* Common units include seconds, minutes, and hours.\n\nStep 4 — Derived quantities combine fundamental quantities\n* A derived quantity is formed by mathematically combining fundamental quantities.\n* L, M, and T represent dimensions, not individual units.\n* Different units may represent the same dimensional relationship.\n\nStep 5 — Speed combines distance and time\n* Speed describes distance traveled per unit time.\n* Its dimensional form is L/T.\n* Examples of units are m/s, km/h, and miles/h.\n* Each unit represents distance divided by time.\n\nSimple Example: a racing car travels 120 miles in 2 hours. Speed = distance / time.\n\nSpeed = 120 miles / 2 h = 60 miles/h\n\nmiles/h is the unit; L/T is the dimensional form.\n\nMisconception: L, M, and T are units. Correction: they are symbols for physical dimensions. A unit is something specific such as meter, kilogram, or second.\n\nScientific Note: This classification applies mainly to mechanics. Many mechanics quantities can be expressed using length, mass, and time, but the complete SI system contains seven base quantities.\n\nKey Concept: Distance, mass, and time form the dimensional foundation of many quantities in mechanics, while quantities such as speed are derived by combining them.\n\nConnection to the Next Slide: After identifying distance as a fundamental quantity, the next step is to examine its units and how distances are measured and converted.",
+            "text": "1.1 Fundamental Physical Quantities: Distance\n\nMostly all quantities can be classified in terms of the fundamental physical quantities:\n\nDistance (L)\n\nMass (M)\n\nTime (T)\n\nFor example, speed has the unit of miles per hour (L/T).\n\nMain Idea: Many quantities used in mechanics can be described using the three base dimensions of length, mass, and time.\n\nStep 1 — Distance is represented by L\n* Distance describes how far one position is from another.\n* L represents the dimension of length. Distance is one physical quantity that has the dimension of length.\n* Common units include meters, kilometers, miles, and centimeters.\n\nStep 2 — Mass is represented by M\n* Mass describes the amount of matter in an object and its resistance to changes in motion.\n* M represents the dimension of mass.\n* Common units include kilograms and grams.\n\nStep 3 — Time is represented by T\n* Time describes the duration of an event or motion.\n* T represents the dimension of time.\n* Common units include seconds, minutes, and hours.\n\nStep 4 — Derived quantities combine fundamental quantities\n* A derived quantity is formed by mathematically combining fundamental quantities.\n* L, M, and T represent dimensions, not individual units.\n* Different units may represent the same dimensional relationship.\n\nStep 5 — Speed combines distance and time\n* Speed describes distance traveled per unit time.\n* Its dimensional form is L/T.\n* Examples of units are m/s, km/h, and miles/h.\n* Each unit represents distance divided by time.\n\nSimple Example: a racing car travels 120 miles in 2 hours. Speed = distance / time.\n\nSpeed = 120 miles / 2 h = 60 miles/h\n\nmiles/h is the unit; L/T is the dimensional form.\n\nMisconception: L, M, and T are units. Correction: they are symbols for physical dimensions. A unit is something specific such as meter, kilogram, or second.\n\nScientific Note: This classification applies mainly to mechanics. Many mechanics quantities can be expressed using length, mass, and time, but the complete SI system contains seven base quantities.\n\nKey Concept: Length, mass, and time form the dimensional foundation of many quantities in mechanics, while quantities such as speed are derived by combining them.\n\nConnection to the Next Slide: After identifying distance as a fundamental quantity, the next step is to examine its units and how distances are measured and converted.",
             "status": "draft",
             "language": "en",
             "direction": "ltr"
@@ -123,7 +127,7 @@
             "contribution": "concept",
             "rightsStatus": "pendingReview",
             "allowedUse": "referenceOnly",
-            "evidence": "Project owner supplied this slide's exact original English text (the '1.1 Fundamental Physical Quantities: Distance' quotation, including the L/M/T dimensional-symbol list and the miles-per-hour speed example), its Arabic translation, and the exact required wording for the Common Misconception, Scientific Note, Key Concept, and Connection sections in both languages, directly in the implementation task. The Main Idea, the five numbered steps, and the Simple Example's surrounding explanatory sentences (English and Arabic) were newly authored/translated by Claude from the task's requested structure, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. The project owner also referenced an uploaded slide figure (racing vehicles using parachutes) for a Figure Explanation subsection; that image could not be located/extracted in this implementation session, so the Figure Explanation subsection was omitted from this revision rather than inventing or substituting a different image — see blockingReason 'missingVisual' below."
+            "evidence": "Project owner supplied this slide's exact original English text (the '1.1 Fundamental Physical Quantities: Distance' quotation, including the L/M/T dimensional-symbol list and the miles-per-hour speed example), its Arabic translation, and the exact required wording for the Common Misconception, Scientific Note, Key Concept, and Connection sections in both languages, directly in the implementation task. The Main Idea, the five numbered steps, and the Simple Example's surrounding explanatory sentences (English and Arabic) were newly authored/translated by Claude from the task's requested structure, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. The project owner initially referenced an uploaded slide figure (racing vehicles using parachutes) for a Figure Explanation subsection; that image could not be located/extracted in an earlier implementation session. The project owner subsequently made an explicit decision that the figure is illustrative and not required for understanding this slide's concept, and directed that the Figure Explanation subsection be omitted intentionally on that basis — not as an unresolved gap. No visual asset is referenced by this record and no provisional visual record was created for it."
           }
         ],
         "scientificCorrectionIds": [],
@@ -142,7 +146,6 @@
           "blockingReason": [
             "translationPending",
             "scientificReviewPending",
-            "missingVisual",
             "other"
           ],
           "blockingRecordIds": [],

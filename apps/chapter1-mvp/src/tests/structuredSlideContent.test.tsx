@@ -35,13 +35,14 @@ afterEach(() => {
 });
 
 const topic = getTopic("ch01-t01")!;
+const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
 
-function renderStructured(text: NormalizedText = topic.openingConcept!.text) {
+function renderStructured(text: NormalizedText = slide1.text) {
   act(() => {
     root.render(
       <LanguageProvider>
-        <StructuredSlideContent blockId={topic.openingConcept!.recordId} text={text} italicTokens={PROSE_TOKENS} />
+        <StructuredSlideContent blockId={slide1.recordId} text={text} italicTokens={PROSE_TOKENS} />
       </LanguageProvider>,
     );
   });
@@ -238,6 +239,6 @@ describe("StructuredSlideContent — governance untouched", () => {
     renderStructured();
     expect(topic.governance.studentFacingAllowed).toBe(false);
     expect(topic.governance.studentPublicationAuthorized).toBe(false);
-    expect(topic.openingConcept?.blocking.studentFacingAllowed).toBe(false);
+    expect(slide1.blocking.studentFacingAllowed).toBe(false);
   });
 });

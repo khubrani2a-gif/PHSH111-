@@ -33,6 +33,7 @@ afterEach(() => {
 });
 
 const topic = getTopic("ch01-t01")!;
+const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
 
 const NEW_SCIENTIFIC_NOTE_EN =
@@ -49,8 +50,8 @@ function renderSlide1(arabic: boolean) {
     root.render(
       <LanguageProvider>
         <StructuredSlideContent
-          blockId={topic.openingConcept!.recordId}
-          text={topic.openingConcept!.text}
+          blockId={slide1!.recordId}
+          text={slide1!.text}
           italicTokens={PROSE_TOKENS}
         />
       </LanguageProvider>,
@@ -60,8 +61,8 @@ function renderSlide1(arabic: boolean) {
 
 describe("1. Q = I t no longer appears in the English or Arabic Slide 1 content", () => {
   it("is absent from the raw approved English and Arabic source text", () => {
-    expect(topic.openingConcept?.text.en ?? "").not.toContain("Q = I t");
-    expect(topic.openingConcept?.text.ar ?? "").not.toContain("Q = I t");
+    expect(slide1?.text.en ?? "").not.toContain("Q = I t");
+    expect(slide1?.text.ar ?? "").not.toContain("Q = I t");
   });
 
   it("is absent from the rendered English DOM", () => {
@@ -77,19 +78,19 @@ describe("1. Q = I t no longer appears in the English or Arabic Slide 1 content"
 
 describe("2. The old charge-derivation sentence is absent in both languages", () => {
   it("English sentence is fully absent from source and render", () => {
-    expect(topic.openingConcept?.text.en ?? "").not.toContain(OLD_CHARGE_SENTENCE_EN);
+    expect(slide1?.text.en ?? "").not.toContain(OLD_CHARGE_SENTENCE_EN);
     renderSlide1(false);
     expect(container.textContent).not.toContain(OLD_CHARGE_SENTENCE_EN);
   });
 
   it("Arabic sentence is fully absent from source and render", () => {
-    expect(topic.openingConcept?.text.ar ?? "").not.toContain(OLD_CHARGE_SENTENCE_AR);
+    expect(slide1?.text.ar ?? "").not.toContain(OLD_CHARGE_SENTENCE_AR);
     renderSlide1(true);
     expect(container.textContent).not.toContain(OLD_CHARGE_SENTENCE_AR);
   });
 
   it("the surrounding SI base-quantity itemization sentence (current vs. charge) is also gone, not just the final clause", () => {
-    const en = topic.openingConcept?.text.en ?? "";
+    const en = slide1?.text.en ?? "";
     expect(en).not.toContain("electric current — not electric charge");
     expect(en).not.toContain("thermodynamic temperature, amount of substance, and luminous intensity");
   });
@@ -97,13 +98,13 @@ describe("2. The old charge-derivation sentence is absent in both languages", ()
 
 describe("3. The replacement Scientific Note appears exactly in both languages", () => {
   it("English replacement text matches exactly", () => {
-    expect(topic.openingConcept?.text.en ?? "").toContain(NEW_SCIENTIFIC_NOTE_EN);
+    expect(slide1?.text.en ?? "").toContain(NEW_SCIENTIFIC_NOTE_EN);
     renderSlide1(false);
     expect(container.textContent).toContain(NEW_SCIENTIFIC_NOTE_EN);
   });
 
   it("Arabic replacement text matches exactly", () => {
-    expect(topic.openingConcept?.text.ar ?? "").toContain(NEW_SCIENTIFIC_NOTE_AR);
+    expect(slide1?.text.ar ?? "").toContain(NEW_SCIENTIFIC_NOTE_AR);
     renderSlide1(true);
     expect(container.textContent).toContain(NEW_SCIENTIFIC_NOTE_AR);
   });
@@ -197,7 +198,7 @@ describe("8. Governance/publication flags remain unchanged", () => {
   it("studentFacingAllowed and studentPublicationAuthorized stay false; blocking status untouched", () => {
     expect(topic.governance.studentFacingAllowed).toBe(false);
     expect(topic.governance.studentPublicationAuthorized).toBe(false);
-    expect(topic.openingConcept?.blocking.studentFacingAllowed).toBe(false);
-    expect(topic.openingConcept?.blocking.blockingStatus).toBe("blocked");
+    expect(slide1?.blocking.studentFacingAllowed).toBe(false);
+    expect(slide1?.blocking.blockingStatus).toBe("blocked");
   });
 });

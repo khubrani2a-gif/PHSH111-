@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.5",
+  "baselineVersion": "1.0.6",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -17,7 +17,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "3bad1d4aca4ad12118cd5ec95d3db36a2871298408d72ff6cebf8af0c92ecde0",
+      "sha256": "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4",
       "schemaVersion": "2.3.0",
       "recordCount": 9
     },
@@ -177,6 +177,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-2"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. This new record's Arabic translation has NOT been through the generation/correction/review-and-revision sequence the rest of this baseline's Arabic content went through (see reviewBasis) — it is explicitly marked draft-ai-generated-unreviewed, distinct from the rest of this file's already-reviewed 'draft' records, and terminologyApprovalStatus is 'pending' rather than 'approved'. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-006",
+        "fromVersion": "1.0.5",
+        "toVersion": "1.0.6",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-007 -> rev-008 (1.5.0 -> 1.6.0): three Arabic wording corrections to ch01-t01-block-opening-2 (Slide 2), the missingVisual blocking-reason removal, and the blockType/slideNumber/slideTitleAr architecture change applied to both ch01-t01-block-opening and ch01-t01-block-opening-2. No .ar text on ch01-t01-block-opening (Slide 1) was touched.",
+        "whatChanged": "(1) Step 1's second bullet was revised from 'يمثّل الرمز L بُعد الطول أو المسافة.' to 'يمثّل الرمز L بُعد الطول، والمسافة إحدى الكميات الفيزيائية التي تمتلك بُعد الطول.' (2) The Main Idea sentence was revised from 'يمكن وصف كثير من الكميات المستخدمة في الميكانيكا بدمج ثلاث كميات أساسية: المسافة والكتلة والزمن.' to 'يمكن وصف كثير من الكميات المستخدمة في الميكانيكا باستخدام الأبعاد الأساسية الثلاثة: الطول والكتلة والزمن.' (3) The Key Concept sentence was revised from 'تشكّل المسافة والكتلة والزمن الأساس البُعدي...' to 'يشكّل الطول والكتلة والزمن الأساس البُعدي...' (verb agreement corrected to masculine to match the new masculine first noun الطول). (4) The Misconception's unit definition was revised from 'أما الوحدة فهي مقدار محدد مثل المتر أو الكيلوجرام أو الثانية.' to 'أما وحدة القياس فهي معيار محدد يُستخدم للتعبير عن مقدار الكمية، مثل المتر أو الكيلوجرام أو الثانية.' (5) 'missingVisual' was removed from ch01-t01-block-opening-2's blocking.blockingReason, matching the English-side governance correction. (6) blockType on both ch01-t01-block-opening and ch01-t01-block-opening-2 was changed to the generic 'slide' value, and each record gained slideNumber/slideTitleEn/slideTitleAr fields, matching the English-file architecture change.",
+        "whatWasNotChanged": "No .ar text on ch01-t01-block-opening (Slide 1) was touched — only its blockType/slide-metadata tagging. Slide 2's original verbatim Arabic quotation, all five Arabic step titles other than Step 1's corrected second bullet, the Simple Example calculation, the Common Misconception's core claim (only the final unit-definition clause was reworded), the Scientific Note, and the Connection sentence are otherwise unchanged. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-008): project-owner scientific, linguistic, and governance review of the initial Arabic Slide 2 translation (rev-005) identified the same length-vs-distance conflation, an imprecise Arabic unit definition, an unnecessary blocking reason, and a non-reusable schema design. This revision applies the project owner's exact corrected Arabic wording and the same architecture change as the English file.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening.blockType/slideNumber/slideTitleEn/slideTitleAr added; ch01-t01-block-opening-2.localizedContent.ar.text and arabic.canonicalArabicTranslation.text (Step 1, Main Idea, Key Concept, Misconception) and blocking.blockingReason revised, blockType/slideNumber/slideTitleEn/slideTitleAr added",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-008",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — both entries updated (blockType, checksums)"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-2 remains 'draft-ai-generated-unreviewed' — unchanged by this revision. ch01-t01-block-opening's Arabic governance fields are entirely unchanged."
       }
     ]
   },

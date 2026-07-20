@@ -38,8 +38,7 @@ const KNOWN_BLOCK_TYPES: readonly ContentBlockType[] = [
   "visualReference",
   "misconception",
   "reviewQuestion",
-  "openingConcept",
-  "openingConceptSlide2",
+  "slide",
 ];
 
 const KNOWN_VISIBILITY: readonly VisibilityState[] = [
@@ -188,6 +187,17 @@ function validateContentBlock(
   if (!isBlockingState(raw.blocking)) {
     diag(diagnostics, "error", "missing-governance", "blocking/governance metadata is missing or malformed", topicId, blockId);
     return null;
+  }
+
+  if (raw.blockType === "slide") {
+    if (typeof raw.slideNumber !== "number" || raw.slideNumber < 1) {
+      diag(diagnostics, "error", "malformed-slide", "slide record is missing a valid slideNumber", topicId, blockId);
+      return null;
+    }
+    if (typeof raw.slideTitleEn !== "string" || raw.slideTitleEn.length === 0) {
+      diag(diagnostics, "error", "malformed-slide", "slide record is missing slideTitleEn", topicId, blockId);
+      return null;
+    }
   }
 
   checkLocalizationComplete(

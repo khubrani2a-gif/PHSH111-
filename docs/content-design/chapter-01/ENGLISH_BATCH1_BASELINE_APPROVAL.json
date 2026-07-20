@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.5.0",
+  "baselineVersion": "1.6.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -16,7 +16,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "3f55c17973ebe0b94cbb1a8b8658b1e2efa194d05f347581e484396229806081",
+      "sha256": "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e",
       "schemaVersion": "2.3.0",
       "recordCount": 9
     },
@@ -157,6 +157,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-2"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending' and 'missingVisual', reflecting that its scientific accuracy has been checked only by Claude's own authoring process (not a separate review pass) and that its figure is not yet available. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-008",
+        "fromVersion": "1.5.0",
+        "toVersion": "1.6.0",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Four corrections to ch01-t01-block-opening-2 (Slide 2) and one structural/architecture change applied to both ch01-t01-block-opening (Slide 1) and ch01-t01-block-opening-2 (Slide 2) in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. No instructional prose in ch01-t01-block-opening (Slide 1) was changed — only its blockType/slide-metadata tagging (see 'Architecture change' below). No record in ch01-t04 was touched.",
+        "whatChanged": "(1) Scientific correction — length vs. distance: in Slide 2's Step 1, 'L represents the dimension of length or distance.' was replaced with 'L represents the dimension of length. Distance is one physical quantity that has the dimension of length.', clarifying that length is the base dimension and distance is a quantity that has that dimension. The Main Idea sentence was revised from 'combining three fundamental quantities: distance, mass, and time' to 'using the three base dimensions of length, mass, and time.' The Key Concept sentence's 'Distance, mass, and time form the dimensional foundation...' was revised to 'Length, mass, and time form the dimensional foundation...' for the same reason. The original quoted slide text ('Distance (L)', 'For example, speed has the unit of miles per hour (L/T).') was NOT altered. (2) Governance correction — missingVisual removed: 'missingVisual' was removed from ch01-t01-block-opening-2's blocking.blockingReason. The Figure Explanation subsection was intentionally omitted by explicit project-owner decision because the figure is illustrative and not required for understanding Slide 2's concept — not because the image remains an unresolved gap. No provisional visual record was created; provenanceLinks[0].evidence now documents this explicit decision. All other blocking reasons (translationPending, scientificReviewPending, other) and all publication flags are unchanged. (3) Architecture change — reusable slide collection: the blockType of both ch01-t01-block-opening and ch01-t01-block-opening-2 was changed from the per-slide values 'openingConcept'/'openingConceptSlide2' to one generic, reusable 'slide' blockType, and each record gained slideNumber (1 and 2 respectively) and slideTitleEn fields recording its display order and bilingual title. This is a schema/tagging change only — no character of either slide's approved instructional text was altered by it, and both blockIds (ch01-t01-block-opening, ch01-t01-block-opening-2) are unchanged. The application's normalized model now exposes topic.slides as an ordered array (see src/types/normalized.ts's NormalizedSlide / src/content/adapter.ts's normalizeSlides), so a future Slide 3 requires only a new 'slide'-typed record with the next slideNumber — no new ContentBlockType, no new NormalizedTopic field, no adapter or TopicPage wiring specific to that slide.",
+        "whatWasNotChanged": "No word of Slide 1's approved instructional prose was reworded, shortened, reordered, or removed — only its blockType tag and new slideNumber/slideTitleEn metadata fields were added, alongside its existing, unchanged blockId and text. Slide 2's original verbatim quotation, all five step titles, the Simple Example calculation, the Common Misconception's core claim, the Scientific Note's mechanics-only scope, and the Connection sentence are otherwise unchanged. ch01-t01-visual-001.svg was not touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Project-owner scientific, governance, and architecture review of the initial Slide 2 addition (rev-007) identified: a conflation of the length dimension with the distance quantity in the newly authored explanation; an unnecessary 'missingVisual' blocking reason for a figure the project owner decided is not instructionally required; and a schema design (one new ContentBlockType and one new NormalizedTopic field per slide) that would not scale to a third slide without further schema changes. This revision applies the project owner's exact corrected wording, removes the unneeded blocking reason with its rationale documented in provenance, and replaces the per-slide schema with a generic, reusable slide collection.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening.blockType/slideNumber/slideTitleEn added; ch01-t01-block-opening-2.localizedContent.en.text (Step 1, Main Idea, Key Concept) and blocking.blockingReason revised, blockType/slideNumber/slideTitleEn added",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-006",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — both ch01-t01-block-opening and ch01-t01-block-opening-2 entries updated (blockType, checksums)"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-2's blocking.blockingStatus remains 'blocked' (blockingReason now translationPending, scientificReviewPending, other — missingVisual removed per the explicit project-owner decision described above, not because review status changed). ch01-t01-block-opening's blocking fields are entirely unchanged."
       }
     ]
   },

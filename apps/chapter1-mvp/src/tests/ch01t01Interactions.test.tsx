@@ -408,6 +408,7 @@ describe("VisualViewer — size=\"large\" modifier (ch01-t01 only)", () => {
 
 describe("Slides / Slide — Arabic label and RTL rendering (ch01-t01 only)", () => {
   const topic = getTopic("ch01-t01")!;
+  const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 
   function renderSlide1() {
     act(() => {
@@ -420,8 +421,8 @@ describe("Slides / Slide — Arabic label and RTL rendering (ch01-t01 only)", ()
               id="topic-opening"
             >
               <ContentSection
-                blockType="openingConcept"
-                text={topic.openingConcept!.text}
+                blockType="slide"
+                text={slide1.text}
                 italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
               />
             </Slide>
