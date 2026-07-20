@@ -10,7 +10,10 @@
       "recordType": "contentBlock",
       "record": {
         "blockId": "ch01-t01-block-opening",
-        "blockType": "openingConcept",
+        "blockType": "slide",
+        "slideNumber": 1,
+        "slideTitleEn": "Fundamental Physical Quantities",
+        "slideTitleAr": "الكميات الفيزيائية الأساسية",
         "topicId": "ch01-t01",
         "visibility": "shared",
         "localizedContent": {
@@ -71,6 +74,95 @@
           "canonicalPreferenceStatus": "preferred",
           "preferredSourceRecordId": null,
           "preferenceReason": "Newly authored opening/introductory content for ch01-t01, positioned before the existing mainIdea block. Deliberately distinct in wording from the already-approved mainIdea, organizedExplanation, and misconception blocks (which remain unmodified) — not a duplicate or replacement of any of them.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-2",
+        "blockType": "slide",
+        "slideNumber": 2,
+        "slideTitleEn": "How Are Physical Quantities Built from Distance, Mass, and Time?",
+        "slideTitleAr": "كيف تُبنى الكميات الفيزيائية من المسافة والكتلة والزمن؟",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Distance\n\nMostly all quantities can be classified in terms of the fundamental physical quantities:\n\nDistance (L)\n\nMass (M)\n\nTime (T)\n\nFor example, speed has the unit of miles per hour (L/T).\n\nMain Idea: Many quantities used in mechanics can be described using the three base dimensions of length, mass, and time.\n\nStep 1 — Distance is represented by L\n* Distance describes how far one position is from another.\n* L represents the dimension of length. Distance is one physical quantity that has the dimension of length.\n* Common units include meters, kilometers, miles, and centimeters.\n\nStep 2 — Mass is represented by M\n* Mass describes the amount of matter in an object and its resistance to changes in motion.\n* M represents the dimension of mass.\n* Common units include kilograms and grams.\n\nStep 3 — Time is represented by T\n* Time describes the duration of an event or motion.\n* T represents the dimension of time.\n* Common units include seconds, minutes, and hours.\n\nStep 4 — Derived quantities combine fundamental quantities\n* A derived quantity is formed by mathematically combining fundamental quantities.\n* L, M, and T represent dimensions, not individual units.\n* Different units may represent the same dimensional relationship.\n\nStep 5 — Speed combines distance and time\n* Speed describes distance traveled per unit time.\n* Its dimensional form is L/T.\n* Examples of units are m/s, km/h, and miles/h.\n* Each unit represents distance divided by time.\n\nSimple Example: a racing car travels 120 miles in 2 hours. Speed = distance / time.\n\nSpeed = 120 miles / 2 h = 60 miles/h\n\nmiles/h is the unit; L/T is the dimensional form.\n\nMisconception: L, M, and T are units. Correction: they are symbols for physical dimensions. A unit is something specific such as meter, kilogram, or second.\n\nScientific Note: This classification applies mainly to mechanics. Many mechanics quantities can be expressed using length, mass, and time, but the complete SI system contains seven base quantities.\n\nKey Concept: Length, mass, and time form the dimensional foundation of many quantities in mechanics, while quantities such as speed are derived by combining them.\n\nConnection to the Next Slide: After identifying distance as a fundamental quantity, the next step is to examine its units and how distances are measured and converted.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: المسافة\n\nيمكن تصنيف معظم الكميات من حيث الكميات الفيزيائية الأساسية:\n\nالمسافة (L)\n\nالكتلة (M)\n\nالزمن (T)\n\nعلى سبيل المثال، للسرعة وحدة الميل لكل ساعة (L/T).\n\nالفكرة الرئيسية: يمكن وصف كثير من الكميات المستخدمة في الميكانيكا باستخدام الأبعاد الأساسية الثلاثة: الطول والكتلة والزمن.\n\nالخطوة 1 — تُمثّل المسافة بالرمز L\n* تصف المسافة مدى بُعد أحد المواضع عن موضع آخر.\n* يمثّل الرمز L بُعد الطول، والمسافة إحدى الكميات الفيزيائية التي تمتلك بُعد الطول.\n* من الوحدات الشائعة لها المتر والكيلومتر والميل والسنتيمتر.\n\nالخطوة 2 — تُمثّل الكتلة بالرمز M\n* تصف الكتلة مقدار المادة في الجسم ومقاومته لتغيّر حالة حركته.\n* يمثّل الرمز M بُعد الكتلة.\n* من الوحدات الشائعة لها الكيلوجرام والجرام.\n\nالخطوة 3 — يُمثّل الزمن بالرمز T\n* يصف الزمن مدة استمرار حدث أو حركة.\n* يمثّل الرمز T بُعد الزمن.\n* من الوحدات الشائعة له الثانية والدقيقة والساعة.\n\nالخطوة 4 — الكميات المشتقة تجمع بين الكميات الأساسية\n* تتكوّن الكمية المشتقة من دمج الكميات الأساسية رياضيًّا.\n* ترمز L وM وT إلى أبعاد فيزيائية، لا إلى وحدات قياس بعينها.\n* قد تمثّل وحدات مختلفة العلاقة البعدية نفسها.\n\nالخطوة 5 — تجمع السرعة بين المسافة والزمن\n* تصف السرعة المسافة المقطوعة في وحدة الزمن.\n* صورتها البعدية هي L/T.\n* من أمثلة وحداتها m/s وkm/h وmiles/h.\n* تمثّل كل وحدة منها المسافة مقسومة على الزمن.\n\nمثال بسيط: تقطع سيارة سباق مسافة 120 ميلًا خلال ساعتين. السرعة = المسافة / الزمن.\n\nSpeed = 120 miles / 2 h = 60 miles/h\n\nالميل في الساعة (miles/h) هو الوحدة؛ أما L/T فهي الصورة البعدية.\n\nمفهوم خاطئ: إن L وM وT وحدات قياس. التصحيح: هي رموز للأبعاد الفيزيائية، أما وحدة القياس فهي معيار محدد يُستخدم للتعبير عن مقدار الكمية، مثل المتر أو الكيلوجرام أو الثانية.\n\nملاحظة علمية: ينطبق هذا التصنيف بصورة أساسية على الميكانيكا. ويمكن التعبير عن كثير من كميات الميكانيكا باستخدام الطول والكتلة والزمن، بينما يحتوي نظام الوحدات الدولي الكامل على سبع كميات أساسية.\n\nالمفهوم الأساسي: يشكّل الطول والكتلة والزمن الأساس البُعدي لكثير من كميات الميكانيكا، بينما تُشتق كميات مثل السرعة من خلال دمجها.\n\nالصلة بالشريحة التالية: بعد تحديد المسافة بوصفها كمية أساسية، تكون الخطوة التالية هي دراسة وحداتها وكيفية قياس المسافات وتحويلها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: المسافة\n\nيمكن تصنيف معظم الكميات من حيث الكميات الفيزيائية الأساسية:\n\nالمسافة (L)\n\nالكتلة (M)\n\nالزمن (T)\n\nعلى سبيل المثال، للسرعة وحدة الميل لكل ساعة (L/T).\n\nالفكرة الرئيسية: يمكن وصف كثير من الكميات المستخدمة في الميكانيكا باستخدام الأبعاد الأساسية الثلاثة: الطول والكتلة والزمن.\n\nالخطوة 1 — تُمثّل المسافة بالرمز L\n* تصف المسافة مدى بُعد أحد المواضع عن موضع آخر.\n* يمثّل الرمز L بُعد الطول، والمسافة إحدى الكميات الفيزيائية التي تمتلك بُعد الطول.\n* من الوحدات الشائعة لها المتر والكيلومتر والميل والسنتيمتر.\n\nالخطوة 2 — تُمثّل الكتلة بالرمز M\n* تصف الكتلة مقدار المادة في الجسم ومقاومته لتغيّر حالة حركته.\n* يمثّل الرمز M بُعد الكتلة.\n* من الوحدات الشائعة لها الكيلوجرام والجرام.\n\nالخطوة 3 — يُمثّل الزمن بالرمز T\n* يصف الزمن مدة استمرار حدث أو حركة.\n* يمثّل الرمز T بُعد الزمن.\n* من الوحدات الشائعة له الثانية والدقيقة والساعة.\n\nالخطوة 4 — الكميات المشتقة تجمع بين الكميات الأساسية\n* تتكوّن الكمية المشتقة من دمج الكميات الأساسية رياضيًّا.\n* ترمز L وM وT إلى أبعاد فيزيائية، لا إلى وحدات قياس بعينها.\n* قد تمثّل وحدات مختلفة العلاقة البعدية نفسها.\n\nالخطوة 5 — تجمع السرعة بين المسافة والزمن\n* تصف السرعة المسافة المقطوعة في وحدة الزمن.\n* صورتها البعدية هي L/T.\n* من أمثلة وحداتها m/s وkm/h وmiles/h.\n* تمثّل كل وحدة منها المسافة مقسومة على الزمن.\n\nمثال بسيط: تقطع سيارة سباق مسافة 120 ميلًا خلال ساعتين. السرعة = المسافة / الزمن.\n\nSpeed = 120 miles / 2 h = 60 miles/h\n\nالميل في الساعة (miles/h) هو الوحدة؛ أما L/T فهي الصورة البعدية.\n\nمفهوم خاطئ: إن L وM وT وحدات قياس. التصحيح: هي رموز للأبعاد الفيزيائية، أما وحدة القياس فهي معيار محدد يُستخدم للتعبير عن مقدار الكمية، مثل المتر أو الكيلوجرام أو الثانية.\n\nملاحظة علمية: ينطبق هذا التصنيف بصورة أساسية على الميكانيكا. ويمكن التعبير عن كثير من كميات الميكانيكا باستخدام الطول والكتلة والزمن، بينما يحتوي نظام الوحدات الدولي الكامل على سبع كميات أساسية.\n\nالمفهوم الأساسي: يشكّل الطول والكتلة والزمن الأساس البُعدي لكثير من كميات الميكانيكا، بينما تُشتق كميات مثل السرعة من خلال دمجها.\n\nالصلة بالشريحة التالية: بعد تحديد المسافة بوصفها كمية أساسية، تكون الخطوة التالية هي دراسة وحداتها وكيفية قياس المسافات وتحويلها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft-ai-generated-unreviewed",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "pending",
+          "glossaryTermIds": [
+            "ch01-term-fundamental-quantity",
+            "ch01-term-derived-quantity",
+            "ch01-term-distance",
+            "ch01-term-mass",
+            "ch01-term-speed"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-DISTANCE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-distance",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner supplied this slide's exact original English text (the '1.1 Fundamental Physical Quantities: Distance' quotation, including the L/M/T dimensional-symbol list and the miles-per-hour speed example), its Arabic translation, and the exact required wording for the Common Misconception, Scientific Note, Key Concept, and Connection sections in both languages, directly in the implementation task. The Main Idea, the five numbered steps, and the Simple Example's surrounding explanatory sentences (English and Arabic) were newly authored/translated by Claude from the task's requested structure, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. The project owner initially referenced an uploaded slide figure (racing vehicles using parachutes) for a Figure Explanation subsection; that image could not be located/extracted in an earlier implementation session. The project owner subsequently made an explicit decision that the figure is illustrative and not required for understanding this slide's concept, and directed that the Figure Explanation subsection be omitted intentionally on that basis — not as an unresolved gap. No visual asset is referenced by this record and no provisional visual record was created for it."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored second opening/introductory slide for ch01-t01, positioned as a sibling of ch01-t01-block-opening (Slide 1) rather than a replacement — Slide 1's record is entirely unmodified by this addition. Deliberately distinct in wording from Slide 1 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
           "supersededBy": null,
           "retainedForHistoricalTrace": true
         },

@@ -18,6 +18,10 @@
 // (see the implementation-task's own static review), that the ONLY fields
 // that legitimately differ between the English and Arabic files are:
 //   - file-level `topicTitleAr` (English: null; Arabic: the real title)
+//   - each blockType-"slide" record's own `slideTitleAr` (English: absent;
+//     Arabic: the real title) — its `slideNumber`/`slideTitleEn` are
+//     structural metadata, not translated content, and so are verified
+//     byte-identical like every other non-Arabic field below
 //   - file-level `generationStatus`/`generationNote` (each file describes
 //     its own generation step; the merge synthesizes a new, clearly-labeled
 //     merged value rather than picking one)
@@ -177,6 +181,14 @@ function mergeContentBlockRecord(
   assertEqual(enRec.contentLeakTestStatus, arRec.contentLeakTestStatus, `${path}.contentLeakTestStatus`);
   assertEqual(enRec.visualReferenceIds, arRec.visualReferenceIds, `${path}.visualReferenceIds`);
   assertEqual(enRec.visualGovernance, arRec.visualGovernance, `${path}.visualGovernance`);
+  // blockType "slide" only: slideNumber/slideTitleEn are structural
+  // metadata (not translated content), so — like topicTitle — they must be
+  // byte-identical between the two files; slideTitleAr (like topicTitleAr)
+  // is supplied only by the Arabic file.
+  if (enRec.blockType === "slide") {
+    assertEqual(enRec.slideNumber, arRec.slideNumber, `${path}.slideNumber`);
+    assertEqual(enRec.slideTitleEn, arRec.slideTitleEn, `${path}.slideTitleEn`);
+  }
 
   const localizedContent = mergeLocalizedContentField(
     enRec.localizedContent,
@@ -189,6 +201,7 @@ function mergeContentBlockRecord(
     ...(enRec as unknown as ContentBlockRecord),
     localizedContent,
     arabic: arabic as ContentBlockRecord["arabic"],
+    slideTitleAr: (arRec.slideTitleAr as string | undefined) ?? undefined,
   };
 }
 

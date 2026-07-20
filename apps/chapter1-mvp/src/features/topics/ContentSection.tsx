@@ -9,8 +9,8 @@ const SECTION_HEADING: Record<string, { en: string; ar: string }> = {
   mainIdea: { en: "Main Idea", ar: "الفكرة الرئيسية" },
   organizedExplanation: { en: "Explanation", ar: "الشرح" },
   example: { en: "Worked Example", ar: "مثال محلول" },
-  // openingConcept deliberately has no entry here: it renders inside the
-  // Slides/Slide wrapper (see Slides.tsx), which owns its own "Slide 1 —
+  // "slide" deliberately has no entry here: it renders inside the
+  // Slides/Slide wrapper (see Slides.tsx), which owns its own "Slide N —
   // ..." heading — an extra heading here would duplicate it.
 };
 

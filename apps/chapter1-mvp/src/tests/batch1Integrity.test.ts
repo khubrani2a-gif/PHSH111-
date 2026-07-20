@@ -29,14 +29,18 @@ function sha256(path: string): string {
 const APPROVED = {
   englishT01: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json"),
-    // Baseline v1.4.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.6.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-003 adds ch01-t01-block-opening; rev-004 corrects
     // its explanatory prose (SI base-quantity accuracy, speed's derived
     // unit, qualitative-vs-quantitative wording); rev-005 restructures it
     // into a compact instructional format and removes a duplicated
     // explanation; rev-006 removes the electric-charge-derivation
-    // sentence (Q = I t) and replaces the Scientific Note paragraph.
-    sha256: "8582ea4ddfaa129556f833300f0dc78f3bf52cd2b74a3fb65c5efa718cf3a93b",
+    // sentence (Q = I t) and replaces the Scientific Note paragraph;
+    // rev-007 adds ch01-t01-block-opening-2 (Slide 2); rev-008 corrects
+    // Slide 2's length-vs-distance wording, removes the missingVisual
+    // blocking reason, and migrates both slides to the generic "slide"
+    // blockType with slideNumber/slideTitleEn metadata.
+    sha256: "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -44,15 +48,19 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    // Baseline v1.0.4 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.0.6 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-001 adds the Arabic side of ch01-t01-block-opening;
     // rev-002 corrects its translation to match the English rev-004 fixes;
     // rev-003 restructures it to match the English rev-005 compact format
     // and updates arabic.translationStatus from
     // "draft-ai-generated-unreviewed" to "draft"; rev-004 removes the
     // electric-charge-derivation sentence (Q = I t) and replaces the
-    // Scientific Note paragraph, matching English rev-006.
-    sha256: "165845cf8c1fd98ef9827050ed89afd68f3911a4c349f7343523e11c03204fd0",
+    // Scientific Note paragraph, matching English rev-006; rev-005 adds
+    // ch01-t01-block-opening-2 (Slide 2), matching English rev-007;
+    // rev-006 corrects Slide 2's Arabic wording, removes the missingVisual
+    // blocking reason, and migrates both slides to the generic "slide"
+    // blockType, matching English rev-008.
+    sha256: "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

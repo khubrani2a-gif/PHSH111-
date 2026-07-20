@@ -180,14 +180,20 @@ export type ContentBlockType =
   | "visualReference"
   | "misconception"
   | "reviewQuestion"
-  // Added for ch01-t01 only (see docs/content-design/chapter-01/batch1-drafts
-  // /batch1-arabic-drafts's ch01-t01-block-opening record): an introductory
-  // block that precedes mainIdea, built around a project-owner-supplied
-  // source slide. New, unreviewed AI-authored content — see that record's
-  // own blocking/arabic governance fields for its actual review status,
-  // which is intentionally NOT "approved"/"reviewed" like the rest of this
+  // Generic, reusable slide blockType (see docs/content-design/chapter-01
+  // /batch1-drafts/batch1-arabic-drafts's ch01-t01-block-opening and
+  // ch01-t01-block-opening-2 records, ch01-t01 only): an ordered,
+  // presentation-oriented slide that precedes mainIdea, built around a
+  // project-owner-supplied source slide. Any number of "slide" records may
+  // exist per topic — they are collected, ordered by slideNumber, and
+  // rendered generically (see src/content/adapter.ts's normalizeSlides and
+  // src/pages/TopicPage.tsx); adding another slide requires no new
+  // ContentBlockType, no new NormalizedTopic field, and no per-slide
+  // wiring. New, unreviewed AI-authored content — see each record's own
+  // blocking/arabic governance fields for its actual review status, which
+  // is intentionally NOT "approved"/"reviewed" like the rest of this
   // topic's batch-authored content.
-  | "openingConcept";
+  | "slide";
 
 export interface ContentBlockRecord {
   blockId: string;
@@ -202,6 +208,19 @@ export interface ContentBlockRecord {
   visualGovernance?: VisualGovernanceEntry[];
   duplicateHandling: DuplicateHandling;
   blocking: BlockingState;
+  /**
+   * Present only when blockType is "slide": this record's 1-based display
+   * order among its topic's slide records, and its bilingual display
+   * title (rendered as "Slide N — {slideTitleEn}" / "الشريحة N — {slideTitleAr}"
+   * by src/features/topics/Slides.tsx — see NormalizedSlide.title). Mirrors
+   * the existing topicTitle/topicTitleAr convention: the English-only
+   * baseline file supplies slideNumber and slideTitleEn only; the Arabic
+   * candidate file supplies the identical slideNumber/slideTitleEn (byte-
+   * checked by src/content/batch1Merge.ts) plus the real slideTitleAr.
+   */
+  slideNumber?: number;
+  slideTitleEn?: string;
+  slideTitleAr?: string;
   contentLeakTestStatus: string;
 }
 

@@ -47,6 +47,22 @@ export interface NormalizedSection {
   blocking: BlockingState;
 }
 
+/**
+ * One ordered, presentation-oriented slide (blockType "slide") — see
+ * src/types/pilotSchema.ts's ContentBlockType header note. topic.slides is
+ * a generic, arbitrary-length collection: rendering code maps over it
+ * rather than referencing individual slides by field name, so a new slide
+ * requires no NormalizedTopic change and no adapter/TopicPage wiring.
+ */
+export interface NormalizedSlide {
+  recordId: string;
+  slideNumber: number;
+  title: NormalizedText;
+  visibility: VisibilityState;
+  text: NormalizedText;
+  blocking: BlockingState;
+}
+
 /** An instructor-only record (currently: misconception), never shown in the learner flow. */
 export interface NormalizedInstructorNote {
   recordId: string;
@@ -113,11 +129,14 @@ export interface NormalizedTopic {
   topicId: PilotTopicId;
   title: NormalizedText;
   /**
-   * ch01-t01-only introductory block (blockType "openingConcept") that
-   * precedes mainIdea when present. See src/types/pilotSchema.ts's
-   * ContentBlockType header note on its provenance/review status.
+   * ch01-t01-only ordered collection of introductory slides (blockType
+   * "slide"), rendered before mainIdea. Always sorted by slideNumber.
+   * Empty (never undefined) for topics with no slide records. See
+   * src/types/pilotSchema.ts's ContentBlockType header note — this is a
+   * generic collection, not one field per slide, so adding another slide
+   * to a topic never requires a NormalizedTopic change.
    */
-  openingConcept?: NormalizedSection;
+  slides: NormalizedSlide[];
   mainIdea?: NormalizedSection;
   explanation?: NormalizedSection;
   equations?: NormalizedSection;
