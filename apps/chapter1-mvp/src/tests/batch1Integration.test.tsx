@@ -230,6 +230,60 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     }
   });
 
+  it("scopes distance/time/mass/charge to this chapter's introductory framework, not a universal SI claim, and includes the SI scientific note", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain(
+      "introduces distance, time, mass, and charge as important measurable quantities within its introductory framework",
+    );
+    expect(en).not.toContain(
+      "treats distance, time, mass, and charge as the quantities used to describe them in this context",
+    );
+    expect(en).not.toContain("every physical quantity used here ultimately traces back");
+    expect(en).toContain("seven base quantities");
+    expect(en).toContain("Q = I t");
+  });
+
+  it("uses the corrected space-vs-distance sentence, not the old overly narrow one", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain("Distance is one measurable way of describing separation within space.");
+    expect(en).not.toContain("Distance is the measurable aspect of space.");
+  });
+
+  it("states speed's derived unit (m/s) exactly once, not twice — no repeated explanation", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    const occurrences = (en.match(/formed from the units of distance and time/g) ?? []).length;
+    expect(occurrences).toBe(1);
+    expect(en).not.toContain("without needing any unit of its own");
+    expect(en).not.toContain("rather than requiring an independent unit of its own");
+  });
+
+  it("is structured as a compact Main Idea / numbered-steps / Example / Misconception / Scientific Note / Connection sequence", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain("Main idea:");
+    expect(en).toContain("Simple example:");
+    expect(en).toContain("Common misconception:");
+    expect(en).toContain("Scientific note:");
+    expect(en).toContain("Connection to the next part:");
+    for (const step of ["1.", "2.", "3.", "4.", "5."]) {
+      expect(en).toContain(step);
+    }
+  });
+
+  it("Arabic: uses the exact corrected car-example wording, not the division-as-addition phrasing", () => {
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(ar).toContain(
+      "قطعت السيارة مسافة مقدارها 100 متر خلال زمن قدره 5 ثوانٍ. وبدمج قياسي المسافة والزمن نحسب سرعة السيارة:",
+    );
+    expect(ar).not.toContain("الجمع بين القياسين");
+  });
+
+  it("Arabic: uses the exact corrected distance-vs-space sentence and the clarified SI temperature term", () => {
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(ar).toContain("المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان");
+    expect(ar).toContain("درجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة)");
+    expect(ar).not.toContain("الجواهر");
+  });
+
   it("contains the worked car example (100 m in 5 s) and the v = d / t = 20 m/s derived-quantity equation", () => {
     const en = topic.openingConcept?.text.en ?? "";
     expect(en).toContain("100 m");

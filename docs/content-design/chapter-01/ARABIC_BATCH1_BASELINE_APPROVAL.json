@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.2",
+  "baselineVersion": "1.0.3",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -17,7 +17,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "81023df61605a919796ac2183e4d6d87cdbfbd7ce6a42842f60a6c879c0d27e2",
+      "sha256": "5741673098592924d1c5ad8960d37a171b943e59cea0cb4afc06ba5cd5bbf620",
       "schemaVersion": "2.3.0",
       "recordCount": 8
     },
@@ -123,6 +123,28 @@
           "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-004"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on this record remains 'draft-ai-generated-unreviewed' and terminologyApprovalStatus remains 'pending' — this revision is the project owner's own review pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record to that status."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-003",
+        "fromVersion": "1.0.2",
+        "toVersion": "1.0.3",
+        "revisedAt": "2026-07-19",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening's localizedContent.ar.text and arabic.canonicalArabicTranslation.text in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json, matching the paired English-file revision ch01-english-baseline-rev-005 (1.2.0 -> 1.3.0), plus a governance-status field change on the same record (see governanceStatusChange below). The Arabic translation of the verbatim quoted slide text itself, and every other record, is unchanged.",
+        "whatChanged": "Re-translated the explanatory prose to match rev-005's restructured English wording: compact Main Idea / five numbered steps / Simple Example / Common Misconception / Scientific Note / Connection-to-next-part format, replacing the longer paragraph sequence from rev-002. Removed the duplicated Arabic explanation of speed's derived unit (m/s), now stated once. Used the project owner's exact required phrasing for the distance/space clarification ('المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان') and the car example ('قطعت السيارة مسافة مقدارها 100 متر خلال زمن قدره 5 ثوانٍ. وبدمج قياسي المسافة والزمن نحسب سرعة السيارة:'), replacing the earlier 'الجمع بين القياسين' phrasing (which implied addition rather than division). Added '(درجة الحرارة المطلقة)' after 'درجة الحرارة الديناميكية الحرارية' in the Arabic scientific note, per the project owner's requested clarification for beginning students. No scientific idea from rev-002 was removed — only shortened, de-duplicated, and re-phrased per the exact wording the project owner supplied.",
+        "whatWasNotChanged": "The Arabic translation of the verbatim quoted original slide text is unchanged. No .ar text on any of ch01-t01's seven pre-existing records was touched. No record in ch01-t04 was touched.",
+        "rationale": "Project-owner pedagogical and linguistic review found the rev-002 Arabic translation, like its English counterpart, too long and repetitive for an introductory slide, and identified specific remaining Arabic wording issues (the mathematical-operation implication of 'الجمع بين القياسين', and a beginner-readability gap in the SI temperature term). This revision applies the project owner's exact requested Arabic wording throughout.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening.localizedContent.ar.text and arabic.canonicalArabicTranslation.text revised",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-005"
+        ],
+        "governanceStatusChange": {
+          "field": "ch01-t01-block-opening.arabic.translationStatus",
+          "from": "draft-ai-generated-unreviewed",
+          "to": "draft",
+          "note": "Matches ENGLISH_BATCH1_BASELINE_APPROVAL.json revisionLog rev-005's identical status-change rationale: 'draft' is the pre-existing status value every other record in this file already carries, and was never itself a claim of independent review in this schema. The change reflects that the project owner has now directly performed two rounds of scientific and linguistic review on this record (across rev-001/rev-002/this rev-003), removing the need for Claude's own '-ai-generated-unreviewed' marker — without claiming the independent third-party review the rest of this file's content received. terminologyApprovalStatus remains 'pending' (unchanged) — this revision does not claim glossary-level terminology approval."
+        },
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. blocking.blockingStatus on this record remains 'blocked' — the translationStatus wording change above reflects the project owner's own direct review, not independent third-party review, and does not itself lift the block."
       }
     ]
   },
