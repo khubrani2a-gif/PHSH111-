@@ -8,7 +8,7 @@ const COPY = {
     description:
       "Move between the original sections. The detailed explanation and equation can be collapsed whenever you want a shorter reading view.",
     steps: [
-      "Fundamental Physical Quantities",
+      "Slides",
       "Main Idea",
       "Explanation",
       "Key Equation",
@@ -22,7 +22,7 @@ const COPY = {
     description:
       "تنقّل بين الأقسام الأصلية. ويمكنك طيّ الشرح التفصيلي والمعادلة عندما تريد عرضًا أقصر للقراءة.",
     steps: [
-      "الكميات الفيزيائية الأساسية",
+      "الشرائح",
       "الفكرة الرئيسية",
       "الشرح",
       "المعادلة الأساسية",

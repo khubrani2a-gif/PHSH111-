@@ -15,6 +15,7 @@ import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel"
 import { InternalStatusPanel } from "../features/topics/InternalStatusPanel";
 import { TopicNavigation } from "../features/topics/TopicNavigation";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
+import { SlidesSection, Slide } from "../features/topics/Slides";
 import { DiagnosticsPanel } from "../features/topics/DiagnosticsPanel";
 import type { PilotTopicId } from "../types/pilotSchema";
 
@@ -82,13 +83,19 @@ export function TopicPage() {
       {usesGuidedPresentation ? <TopicReadingGuide /> : null}
 
       {topic.openingConcept ? (
-        <ContentSection
-          blockType="openingConcept"
-          text={topic.openingConcept.text}
-          italicTokens={proseTokens}
-          sectionId={usesGuidedPresentation ? "topic-opening" : undefined}
-          headingLevel="h2"
-        />
+        <SlidesSection>
+          <Slide
+            number={1}
+            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
+            id={usesGuidedPresentation ? "topic-opening" : undefined}
+          >
+            <ContentSection
+              blockType="openingConcept"
+              text={topic.openingConcept.text}
+              italicTokens={proseTokens}
+            />
+          </Slide>
+        </SlidesSection>
       ) : null}
 
       {topic.mainIdea ? (

@@ -20,7 +20,10 @@ import { LanguageProvider, useLanguage } from "../app/LanguageContext";
 import { ReviewQuestion, REVIEW_ANSWER_MARKER_BY_TOPIC } from "../features/topics/ReviewQuestion";
 import { ContentSection } from "../features/topics/ContentSection";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
+import { SlidesSection, Slide } from "../features/topics/Slides";
 import { VisualViewer } from "../features/topics/VisualViewer";
+import { getTopic } from "../content/adapter";
+import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
 import type { NormalizedSection } from "../types/normalized";
 import type { NormalizedVisual } from "../types/normalized";
 
@@ -400,5 +403,55 @@ describe("VisualViewer — size=\"large\" modifier (ch01-t01 only)", () => {
       );
     });
     expect(container.querySelector(".visual-viewer--large")).toBeNull();
+  });
+});
+
+describe("Slides / Slide — Arabic label and RTL rendering (ch01-t01 only)", () => {
+  const topic = getTopic("ch01-t01")!;
+
+  function renderSlide1() {
+    act(() => {
+      root.render(
+        <LanguageProvider>
+          <SlidesSection>
+            <Slide
+              number={1}
+              title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
+              id="topic-opening"
+            >
+              <ContentSection
+                blockType="openingConcept"
+                text={topic.openingConcept!.text}
+                italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+              />
+            </Slide>
+          </SlidesSection>
+        </LanguageProvider>,
+      );
+    });
+  }
+
+  it("shows the Arabic parent label 'الشرائح' and Slide 1's exact Arabic label 'الشريحة 1 — الكميات الفيزيائية الأساسية'", () => {
+    window.localStorage.setItem("phsh111:language", "ar");
+    renderSlide1();
+    expect(container.textContent).toContain("الشرائح");
+    expect(container.textContent).toContain("الشريحة 1 — الكميات الفيزيائية الأساسية");
+  });
+
+  it("renders the slide content with dir=\"rtl\" and correct heading nesting (h2 Slides > h3 Slide 1) in Arabic", () => {
+    window.localStorage.setItem("phsh111:language", "ar");
+    renderSlide1();
+    const rtlNode = container.querySelector('[dir="rtl"]');
+    expect(rtlNode).toBeTruthy();
+    const h2 = container.querySelector("h2#slides-heading");
+    const h3 = container.querySelector("h3#slide-1-heading");
+    expect(h2?.textContent).toBe("الشرائح");
+    expect(h3?.textContent).toBe("الشريحة 1 — الكميات الفيزيائية الأساسية");
+  });
+
+  it("keeps the English label and LTR layout intact when language is not persisted as Arabic (desktop/mobile-agnostic — no viewport dependency)", () => {
+    renderSlide1();
+    expect(container.textContent).toContain("Slides");
+    expect(container.textContent).toContain("Slide 1 — Fundamental Physical Quantities");
   });
 });

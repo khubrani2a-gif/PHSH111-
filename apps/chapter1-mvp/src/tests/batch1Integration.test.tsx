@@ -9,6 +9,7 @@ import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel"
 import { ContentSection } from "../features/topics/ContentSection";
 import { EquationBlock } from "../features/topics/EquationBlock";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
+import { SlidesSection, Slide } from "../features/topics/Slides";
 import { LanguageProvider } from "../app/LanguageContext";
 
 /**
@@ -328,6 +329,104 @@ describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () =>
     // first contentBlock record in the source file.
     expect(topic.openingConcept?.recordId).toBe("ch01-t01-block-opening");
     expect(topic.mainIdea?.recordId).toBe("ch01-t01-block-mainidea");
+  });
+});
+
+describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides -> Slide 1', internal blockType unchanged)", () => {
+  const topic = getTopic("ch01-t01")!;
+
+  function renderSlide1() {
+    return renderToStaticMarkup(
+      <LanguageProvider>
+        <SlidesSection>
+          <Slide
+            number={1}
+            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
+            id="topic-opening"
+          >
+            <ContentSection
+              blockType="openingConcept"
+              text={topic.openingConcept!.text}
+              italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+            />
+          </Slide>
+        </SlidesSection>
+      </LanguageProvider>,
+    );
+  }
+
+  it("renders a visible 'Slides' parent heading", () => {
+    const markup = renderSlide1();
+    expect(markup).toContain('class="slides-section"');
+    expect(textOnly(markup)).toContain("Slides");
+  });
+
+  it("nests Slide 1 inside the Slides parent, with the exact English label 'Slide 1 — Fundamental Physical Quantities'", () => {
+    const markup = renderSlide1();
+    // Slide 1's heading id/aria-labelledby only exists inside .slides-section's markup.
+    const slidesSectionStart = markup.indexOf('class="slides-section"');
+    const slideStart = markup.indexOf('id="topic-opening"');
+    expect(slidesSectionStart).toBeGreaterThanOrEqual(0);
+    expect(slideStart).toBeGreaterThan(slidesSectionStart);
+    expect(textOnly(markup)).toContain("Slide 1 — Fundamental Physical Quantities");
+  });
+
+  it("keeps the internal blockType as 'openingConcept' — no schema rename", () => {
+    expect(topic.openingConcept?.blockType).toBe("openingConcept");
+  });
+
+  it("still contains the full, unchanged Slide 1 educational content (verbatim quote, worked equation) inside the new wrapper", () => {
+    const markup = renderSlide1();
+    const text = textOnly(markup);
+    expect(text).toContain("In physics, there are three basic aspects of the material universe");
+    expect(text).toContain("v = d / t = 100 m / 5 s = 20 m/s");
+    expect(text).toContain("Main idea:");
+    expect(text).toContain("Scientific note:");
+  });
+
+  it("supports a second slide as an additional sibling, without altering Slide 1's content or id", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <SlidesSection>
+          <Slide
+            number={1}
+            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
+            id="topic-opening"
+          >
+            <ContentSection
+              blockType="openingConcept"
+              text={topic.openingConcept!.text}
+              italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+            />
+          </Slide>
+          <Slide number={2} title={{ en: "Units of Measurement", ar: "وحدات القياس" }} id="topic-slide-2">
+            <p>placeholder future-slide content</p>
+          </Slide>
+        </SlidesSection>
+      </LanguageProvider>,
+    );
+    const text = textOnly(markup);
+    expect(text).toContain("Slide 1 — Fundamental Physical Quantities");
+    expect(text).toContain("Slide 2 — Units of Measurement");
+    expect(markup).toContain('id="topic-opening"');
+    expect(markup).toContain('id="topic-slide-2"');
+  });
+});
+
+describe("TopicReadingGuide — first step is now the generic 'Slides' label", () => {
+  it("English: step 1 reads 'Slides', not the old topic-specific title", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <TopicReadingGuide />
+      </LanguageProvider>,
+    );
+    expect(markup).toContain('href="#topic-opening"');
+    // The old per-slide title must not appear as a *nav step* label —
+    // it still appears deeper on the page as the Slide 1 heading itself,
+    // so this checks the reading-guide markup specifically.
+    const guideOnly = markup.slice(0, markup.indexOf("</nav>"));
+    expect(textOnly(guideOnly)).toContain("Slides");
+    expect(textOnly(guideOnly)).not.toContain("Fundamental Physical Quantities");
   });
 });
 
