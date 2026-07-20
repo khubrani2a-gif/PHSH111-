@@ -9,6 +9,9 @@ const SECTION_HEADING: Record<string, { en: string; ar: string }> = {
   mainIdea: { en: "Main Idea", ar: "الفكرة الرئيسية" },
   organizedExplanation: { en: "Explanation", ar: "الشرح" },
   example: { en: "Worked Example", ar: "مثال محلول" },
+  // openingConcept deliberately has no entry here: it renders inside the
+  // Slides/Slide wrapper (see Slides.tsx), which owns its own "Slide 1 —
+  // ..." heading — an extra heading here would duplicate it.
 };
 
 const MISSING_TEXT = {
@@ -20,6 +23,31 @@ const COLLAPSE_LABEL = {
   en: "Collapse or expand this detailed section",
   ar: "طيّ هذا القسم التفصيلي أو توسيعه",
 } as const;
+
+/**
+ * Splits on a blank line (two consecutive newlines) into separate
+ * paragraphs, each still rendered through the unmodified
+ * renderEquationText — so italics/sup/sub/bidi handling is identical
+ * per paragraph, and the concatenation of every paragraph's text content
+ * is exactly the input string (only the "\n\n" separators themselves are
+ * consumed as structural breaks, matching how the existing tokenizer
+ * already consumes ^/_ delimiters into real markup rather than dropping
+ * content). Text with no blank line (every topic before ch01-t01's
+ * opening-concept block) renders as a single paragraph as before.
+ */
+function renderParagraphs(
+  value: string,
+  italicTokens: readonly string[],
+  direction: "ltr" | "rtl",
+  className: string,
+) {
+  const paragraphs = value.split(/\n{2,}/);
+  return paragraphs.map((paragraph, i) => (
+    <p className={className} dir={direction} key={i}>
+      {renderEquationText(paragraph, italicTokens)}
+    </p>
+  ));
+}
 
 interface ContentSectionProps {
   blockType: ContentBlockType;
@@ -78,14 +106,10 @@ export function ContentSection({
       {value && collapsible ? (
         <details className="content-disclosure" open={open} onToggle={handleToggle}>
           <summary>{COLLAPSE_LABEL[language]}</summary>
-          <p className="content-section__text" dir={direction}>
-            {renderEquationText(value, italicTokens)}
-          </p>
+          {renderParagraphs(value, italicTokens, direction, "content-section__text")}
         </details>
       ) : value ? (
-        <p className="content-section__text" dir={direction}>
-          {renderEquationText(value, italicTokens)}
-        </p>
+        renderParagraphs(value, italicTokens, direction, "content-section__text")
       ) : (
         <p className="content-section__missing" role="status">
           {MISSING_TEXT[language]}

@@ -7,6 +7,91 @@
   "generationNote": "This file is a controlled ARABIC CANDIDATE DRAFT, generated under PILOT_AUTHORIZATION.json v1.3.2's batch1ArabicGenerationAuthorization (corrected at v1.3.1, explicitly project-owner ratified at v1.3.2) and docs/app/PHSH111_BATCH1_ARABIC_GENERATION_RATIFICATION_RECORD.md. It begins from the exact structure of the approved English Batch 1 baseline (ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0, this topic's approved checksum: a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9), with every English field, record ID, record order, and source/audit/correction/visibility/governance field preserved unchanged. Only the authorized Arabic localization structures (contentBlock.localizedContent.ar, every record's arabic sub-object, and problem-level ar fields on problemStatement / conceptualInterpretation / numberedSolution[].explanation / finalAnswer.interpretation) were newly populated, using BILINGUAL_GLOSSARY.json v1.3.0 as terminology authority. Every populated arabic.translationStatus reads \"draft\", never \"approved\" -- this is NOT an approved Arabic baseline. This file is NOT located under docs/content-design/chapter-01/batch1-drafts/ or docs/content-design/chapter-01/pilot/, and is NOT read by apps/chapter1-mvp/ -- it is a controlled candidate-draft artifact only, not application-facing content, and not authorized for student-facing use in any form. The approved English source file this candidate was copied from was not modified by this task.",
   "records": [
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening",
+        "blockType": "openingConcept",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "In physics, there are three basic aspects of the material universe that we must describe and quantify in various ways:\n\nspace, time, and matter.\n\nAll physical quantities used here involve measurements (or combinations of measurements) of space, time, and the properties of matter.\n\nThe units of measure of all of these quantities can be traced back to the units of measure of distance, time, and two properties of matter called mass and charge.\n\nMain idea: physics describes the physical universe through measurements related to space, time, and matter.\n\n1. Space, time, and matter are the three basic aspects introduced above — not measurements themselves. Space is about where things are and how far apart they are; time is about when events occur and how long they last; matter is the physical substance and the objects that make up everything around us.\n\n2. Physics turns each aspect into something that can be measured: a physical quantity, expressed as a numerical value together with a unit. The word \"far\" is qualitative, whereas \"100 m\" gives a quantitative physical description.\n\n3. Some physical quantities are direct measurements of one of these aspects — distance for space, a time interval for time. Other physical quantities combine more than one measurement, such as speed.\n\n4. The passage above introduces distance, time, mass, and charge as important measurable quantities within its introductory framework — not as a complete, universal list of every fundamental quantity in physics.\n\n5. Quantities built by combining measurements are called derived quantities. Speed, for example, has a derived unit, m/s, formed from the units of distance and time; area, volume, and density are further examples, covered in more detail in later sections.\n\nSimple example: a car travels a distance of 100 m in 5 s. Combining the distance and time measurements gives the car's speed:\n\nv = d / t = 100 m / 5 s = 20 m/s\n\nThis example shows how a derived quantity is formed by combining two measured quantities.\n\nCommon misconception: space and distance are exactly the same thing. Correction: space is a broad aspect of the universe. Distance is one measurable way of describing separation within space. It is expressed as a numerical value and a unit such as meters.\n\nScientific note: this framing follows the textbook's introductory approach for the quantities discussed in this chapter. In the modern International System of Units (SI), electric current — not electric charge — is one of the seven base quantities, alongside length, time, mass, thermodynamic temperature, amount of substance, and luminous intensity. Electric charge is a derived quantity, obtained from current multiplied by time: Q = I t.\n\nConnection to the next part: after identifying these physical quantities, the next step is to understand the standard units used to measure distance, time, mass, and other quantities consistently.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "في الفيزياء، توجد ثلاثة جوانب أساسية للكون المادي يجب أن نصفها ونقيسها بطرق مختلفة:\n\nالمكان، والزمن، والمادة.\n\nجميع الكميات الفيزيائية المستخدمة هنا تتضمن قياسات، أو مجموعات من القياسات، للمكان والزمن وخصائص المادة.\n\nيمكن إرجاع وحدات قياس جميع هذه الكميات إلى وحدات قياس المسافة والزمن، وإلى خاصيتين من خصائص المادة تُسمّيان الكتلة والشحنة.\n\nالفكرة الأساسية: تصف الفيزياء الكون المادي من خلال قياسات مرتبطة بالمكان والزمن والمادة.\n\n1. المكان والزمن والمادة هي الجوانب الثلاثة الأساسية المذكورة أعلاه — وليست قياسات بحد ذاتها. فالمكان يتعلق بمكان وجود الأشياء ومدى تباعدها؛ والزمن يتعلق بموعد وقوع الأحداث ومدة استمرارها؛ والمادة هي الأشياء والمواد الفيزيائية التي يتكوّن منها العالم من حولنا.\n\n2. تحوّل الفيزياء كل جانب إلى ما يمكن قياسه: كمية فيزيائية، تُعبَّر عنها بقيمة عددية مقترنة بوحدة قياس. فكلمة \"بعيد\" وصف نوعي، أما \"100 متر\" فهي وصف كمي يمكن قياسه ومقارنته.\n\n3. بعض الكميات الفيزيائية قياسات مباشرة لأحد هذه الجوانب — كالمسافة للمكان، والفاصل الزمني للزمن. وكميات أخرى تجمع بين أكثر من قياس واحد، كالسرعة.\n\n4. يُقدّم المقطع أعلاه المسافة والزمن والكتلة والشحنة بوصفها كميات مهمة قابلة للقياس ضمن إطاره التمهيدي — لا بوصفها قائمة شاملة لكل كمية أساسية في الفيزياء.\n\n5. تُسمّى الكميات المبنية بدمج قياسات بالكميات المشتقة. فللسرعة، على سبيل المثال، وحدة مشتقة هي متر/ثانية (m/s)، مكوّنة من وحدتي المسافة والزمن؛ والمساحة والحجم والكثافة أمثلة أخرى، وسيتناولها الشرح بمزيد من التفصيل في أقسام لاحقة.\n\nمثال بسيط: قطعت السيارة مسافة مقدارها 100 متر خلال زمن قدره 5 ثوانٍ. وبدمج قياسي المسافة والزمن نحسب سرعة السيارة:\n\nv = d / t = 100 m / 5 s = 20 m/s\n\nيوضّح هذا المثال كيف تتكوّن الكمية المشتقة بدمج كميتين مقيستين.\n\nمفهوم خاطئ شائع: المكان والمسافة هما الشيء نفسه تمامًا. التصحيح: المكان جانب واسع من الكون. المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان، وتُعبَّر عنها بقيمة عددية ووحدة قياس مثل المتر.\n\nملاحظة علمية: يتبع هذا الطرح الإطار التمهيدي الذي يعتمده الكتاب لتقديم الكميات المطروحة في هذا الفصل. وفي نظام الوحدات الدولي (SI) الحديث، يُعَدّ التيار الكهربائي — لا الشحنة الكهربائية — إحدى الكميات الأساسية السبع، إلى جانب الطول والزمن والكتلة ودرجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة) وكمية المادة وشدة الإضاءة. أما الشحنة الكهربائية فهي كمية مشتقة، تُحسب من ضرب التيار الكهربائي في الزمن: Q = I t.\n\nالصلة بالجزء التالي: بعد تحديد هذه الكميات الفيزيائية، تكون الخطوة التالية هي فهم وحدات القياس القياسية المستخدمة لقياس المسافة والزمن والكتلة، وغيرها من الكميات، بطريقة متسقة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "في الفيزياء، توجد ثلاثة جوانب أساسية للكون المادي يجب أن نصفها ونقيسها بطرق مختلفة:\n\nالمكان، والزمن، والمادة.\n\nجميع الكميات الفيزيائية المستخدمة هنا تتضمن قياسات، أو مجموعات من القياسات، للمكان والزمن وخصائص المادة.\n\nيمكن إرجاع وحدات قياس جميع هذه الكميات إلى وحدات قياس المسافة والزمن، وإلى خاصيتين من خصائص المادة تُسمّيان الكتلة والشحنة.\n\nالفكرة الأساسية: تصف الفيزياء الكون المادي من خلال قياسات مرتبطة بالمكان والزمن والمادة.\n\n1. المكان والزمن والمادة هي الجوانب الثلاثة الأساسية المذكورة أعلاه — وليست قياسات بحد ذاتها. فالمكان يتعلق بمكان وجود الأشياء ومدى تباعدها؛ والزمن يتعلق بموعد وقوع الأحداث ومدة استمرارها؛ والمادة هي الأشياء والمواد الفيزيائية التي يتكوّن منها العالم من حولنا.\n\n2. تحوّل الفيزياء كل جانب إلى ما يمكن قياسه: كمية فيزيائية، تُعبَّر عنها بقيمة عددية مقترنة بوحدة قياس. فكلمة \"بعيد\" وصف نوعي، أما \"100 متر\" فهي وصف كمي يمكن قياسه ومقارنته.\n\n3. بعض الكميات الفيزيائية قياسات مباشرة لأحد هذه الجوانب — كالمسافة للمكان، والفاصل الزمني للزمن. وكميات أخرى تجمع بين أكثر من قياس واحد، كالسرعة.\n\n4. يُقدّم المقطع أعلاه المسافة والزمن والكتلة والشحنة بوصفها كميات مهمة قابلة للقياس ضمن إطاره التمهيدي — لا بوصفها قائمة شاملة لكل كمية أساسية في الفيزياء.\n\n5. تُسمّى الكميات المبنية بدمج قياسات بالكميات المشتقة. فللسرعة، على سبيل المثال، وحدة مشتقة هي متر/ثانية (m/s)، مكوّنة من وحدتي المسافة والزمن؛ والمساحة والحجم والكثافة أمثلة أخرى، وسيتناولها الشرح بمزيد من التفصيل في أقسام لاحقة.\n\nمثال بسيط: قطعت السيارة مسافة مقدارها 100 متر خلال زمن قدره 5 ثوانٍ. وبدمج قياسي المسافة والزمن نحسب سرعة السيارة:\n\nv = d / t = 100 m / 5 s = 20 m/s\n\nيوضّح هذا المثال كيف تتكوّن الكمية المشتقة بدمج كميتين مقيستين.\n\nمفهوم خاطئ شائع: المكان والمسافة هما الشيء نفسه تمامًا. التصحيح: المكان جانب واسع من الكون. المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان، وتُعبَّر عنها بقيمة عددية ووحدة قياس مثل المتر.\n\nملاحظة علمية: يتبع هذا الطرح الإطار التمهيدي الذي يعتمده الكتاب لتقديم الكميات المطروحة في هذا الفصل. وفي نظام الوحدات الدولي (SI) الحديث، يُعَدّ التيار الكهربائي — لا الشحنة الكهربائية — إحدى الكميات الأساسية السبع، إلى جانب الطول والزمن والكتلة ودرجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة) وكمية المادة وشدة الإضاءة. أما الشحنة الكهربائية فهي كمية مشتقة، تُحسب من ضرب التيار الكهربائي في الزمن: Q = I t.\n\nالصلة بالجزء التالي: بعد تحديد هذه الكميات الفيزيائية، تكون الخطوة التالية هي فهم وحدات القياس القياسية المستخدمة لقياس المسافة والزمن والكتلة، وغيرها من الكميات، بطريقة متسقة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "pending",
+          "glossaryTermIds": [
+            "ch01-term-fundamental-quantity",
+            "ch01-term-derived-quantity",
+            "ch01-term-distance",
+            "ch01-term-speed"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner supplied this slide's exact original English text and its Arabic translation directly in the implementation task; the surrounding organized explanation, example walkthrough, misconception, key concept, and transition paragraphs were newly authored by Claude from the task's requested structure, not copied from any other source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored opening/introductory content for ch01-t01, positioned before the existing mainIdea block. Deliberately distinct in wording from the already-approved mainIdea, organizedExplanation, and misconception blocks (which remain unmodified) — not a duplicate or replacement of any of them.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

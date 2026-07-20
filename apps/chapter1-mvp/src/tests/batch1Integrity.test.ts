@@ -29,7 +29,13 @@ function sha256(path: string): string {
 const APPROVED = {
   englishT01: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json"),
-    sha256: "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9",
+    // Baseline v1.3.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog: rev-003 adds ch01-t01-block-opening; rev-004 corrects
+    // its explanatory prose (SI base-quantity accuracy, speed's derived
+    // unit, qualitative-vs-quantitative wording); rev-005 restructures it
+    // into a compact instructional format and removes a duplicated
+    // explanation.
+    sha256: "596577121cea1d6972846b5cfc90ae308f994e5af26788561ad50a3d5048a1ad",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -37,7 +43,13 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    sha256: "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0",
+    // Baseline v1.0.3 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog: rev-001 adds the Arabic side of ch01-t01-block-opening;
+    // rev-002 corrects its translation to match the English rev-004 fixes;
+    // rev-003 restructures it to match the English rev-005 compact format
+    // and updates arabic.translationStatus from
+    // "draft-ai-generated-unreviewed" to "draft".
+    sha256: "5741673098592924d1c5ad8960d37a171b943e59cea0cb4afc06ba5cd5bbf620",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
@@ -80,6 +92,28 @@ describe("Batch 1 integrity — SVG markup bundled by the app matches the approv
     const bundled = RAW_SVG_MARKUP_BY_TOPIC["ch01-t04"];
     const hash = createHash("sha256").update(bundled, "utf8").digest("hex");
     expect(hash).toBe(APPROVED.svgT04.sha256);
+  });
+});
+
+describe("ch01-t01-block-opening — governance-status transition (ARABIC_BATCH1_BASELINE_APPROVAL.json revisionLog rev-003)", () => {
+  it("arabic.translationStatus is 'draft' (not 'draft-ai-generated-unreviewed', not 'approved')", () => {
+    const ar = JSON.parse(readFileSync(APPROVED.arabicT01.path, "utf8"));
+    const opening = ar.records.find((r: any) => r.record.blockId === "ch01-t01-block-opening");
+    expect(opening).toBeDefined();
+    expect(opening.record.arabic.translationStatus).toBe("draft");
+  });
+
+  it("terminologyApprovalStatus remains 'pending' — this revision did not claim glossary-level approval", () => {
+    const ar = JSON.parse(readFileSync(APPROVED.arabicT01.path, "utf8"));
+    const opening = ar.records.find((r: any) => r.record.blockId === "ch01-t01-block-opening");
+    expect(opening.record.arabic.terminologyApprovalStatus).toBe("pending");
+  });
+
+  it("blocking.blockingStatus remains 'blocked' — the translationStatus wording change does not lift the block", () => {
+    const en = JSON.parse(readFileSync(APPROVED.englishT01.path, "utf8"));
+    const opening = en.records.find((r: any) => r.record.blockId === "ch01-t01-block-opening");
+    expect(opening.record.blocking.blockingStatus).toBe("blocked");
+    expect(opening.record.blocking.studentFacingAllowed).toBe(false);
   });
 });
 

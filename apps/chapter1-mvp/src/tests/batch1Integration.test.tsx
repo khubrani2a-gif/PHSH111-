@@ -9,6 +9,7 @@ import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel"
 import { ContentSection } from "../features/topics/ContentSection";
 import { EquationBlock } from "../features/topics/EquationBlock";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
+import { SlidesSection, Slide } from "../features/topics/Slides";
 import { LanguageProvider } from "../app/LanguageContext";
 
 /**
@@ -123,13 +124,14 @@ describe("ch01-t01 — loading and rendering", () => {
 describe("ch01-t01 — interactive presentation without content rewriting", () => {
   const topic = getTopic("ch01-t01")!;
 
-  it("renders a five-step section guide linked only to existing topic sections", () => {
+  it("renders a six-step section guide linked only to existing topic sections", () => {
     const markup = renderToStaticMarkup(
       <LanguageProvider>
         <TopicReadingGuide />
       </LanguageProvider>,
     );
     for (const id of [
+      "topic-opening",
       "topic-main-idea",
       "topic-explanation",
       "topic-equation",
@@ -171,6 +173,260 @@ describe("ch01-t01 — interactive presentation without content rewriting", () =
     expect(markup).toContain("<details");
     expect(markup).toContain("open");
     expect(textOnly(markup)).toContain(topic.equations!.text.en!.replace(/[\^_]/g, ""));
+  });
+});
+
+describe("ch01-t01 — new openingConcept block (ch01-t01-block-opening)", () => {
+  const topic = getTopic("ch01-t01")!;
+
+  const VERBATIM_ENGLISH_QUOTE =
+    "In physics, there are three basic aspects of the material universe that we must describe and quantify in various ways:\n\n" +
+    "space, time, and matter.\n\n" +
+    "All physical quantities used here involve measurements (or combinations of measurements) of space, time, and the properties of matter.\n\n" +
+    "The units of measure of all of these quantities can be traced back to the units of measure of distance, time, and two properties of matter called mass and charge.";
+
+  const VERBATIM_ARABIC_QUOTE =
+    "في الفيزياء، توجد ثلاثة جوانب أساسية للكون المادي يجب أن نصفها ونقيسها بطرق مختلفة:\n\n" +
+    "المكان، والزمن، والمادة.\n\n" +
+    "جميع الكميات الفيزيائية المستخدمة هنا تتضمن قياسات، أو مجموعات من القياسات، للمكان والزمن وخصائص المادة.\n\n" +
+    "يمكن إرجاع وحدات قياس جميع هذه الكميات إلى وحدات قياس المسافة والزمن، وإلى خاصيتين من خصائص المادة تُسمّيان الكتلة والشحنة.";
+
+  it("loads as a distinct record with its own blockId and blockType", () => {
+    expect(topic.openingConcept).toBeDefined();
+    expect(topic.openingConcept?.recordId).toBe("ch01-t01-block-opening");
+    expect(topic.openingConcept?.blockType).toBe("openingConcept");
+  });
+
+  it("is learner-visible (present on topic.openingConcept, not folded into instructorNotes)", () => {
+    expect(topic.openingConcept?.visibility).not.toBe("instructor");
+    expect(topic.instructorNotes.some((n) => n.recordId === "ch01-t01-block-opening")).toBe(false);
+  });
+
+  it("preserves the supplied original English slide text exactly, character for character", () => {
+    expect(topic.openingConcept?.text.en).toContain(VERBATIM_ENGLISH_QUOTE);
+  });
+
+  it("preserves the supplied original Arabic translation of the slide text exactly, character for character", () => {
+    expect(topic.openingConcept?.text.ar).toContain(VERBATIM_ARABIC_QUOTE);
+  });
+
+  it("keeps studentFacingAllowed/studentPublicationAuthorized false, same as the rest of this topic", () => {
+    expect(topic.openingConcept?.blocking.studentFacingAllowed).toBe(false);
+    expect(topic.governance.studentFacingAllowed).toBe(false);
+    expect(topic.governance.studentPublicationAuthorized).toBe(false);
+  });
+
+  it("does not duplicate the wording of the already-approved mainIdea, organizedExplanation, or misconception blocks", () => {
+    const openingText = topic.openingConcept?.text.en ?? "";
+    const mainIdeaText = topic.mainIdea?.text.en ?? "";
+    const explanationText = topic.explanation?.text.en ?? "";
+    const misconception = topic.instructorNotes.find((n) => n.blockType === "misconception");
+
+    expect(mainIdeaText.length).toBeGreaterThan(0);
+    expect(explanationText.length).toBeGreaterThan(0);
+    expect(openingText).not.toContain(mainIdeaText);
+    expect(openingText).not.toContain(explanationText);
+    if (misconception?.text.en) {
+      expect(openingText).not.toContain(misconception.text.en);
+    }
+  });
+
+  it("scopes distance/time/mass/charge to this chapter's introductory framework, not a universal SI claim, and includes the SI scientific note", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain(
+      "introduces distance, time, mass, and charge as important measurable quantities within its introductory framework",
+    );
+    expect(en).not.toContain(
+      "treats distance, time, mass, and charge as the quantities used to describe them in this context",
+    );
+    expect(en).not.toContain("every physical quantity used here ultimately traces back");
+    expect(en).toContain("seven base quantities");
+    expect(en).toContain("Q = I t");
+  });
+
+  it("uses the corrected space-vs-distance sentence, not the old overly narrow one", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain("Distance is one measurable way of describing separation within space.");
+    expect(en).not.toContain("Distance is the measurable aspect of space.");
+  });
+
+  it("states speed's derived unit (m/s) exactly once, not twice — no repeated explanation", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    const occurrences = (en.match(/formed from the units of distance and time/g) ?? []).length;
+    expect(occurrences).toBe(1);
+    expect(en).not.toContain("without needing any unit of its own");
+    expect(en).not.toContain("rather than requiring an independent unit of its own");
+  });
+
+  it("is structured as a compact Main Idea / numbered-steps / Example / Misconception / Scientific Note / Connection sequence", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain("Main idea:");
+    expect(en).toContain("Simple example:");
+    expect(en).toContain("Common misconception:");
+    expect(en).toContain("Scientific note:");
+    expect(en).toContain("Connection to the next part:");
+    for (const step of ["1.", "2.", "3.", "4.", "5."]) {
+      expect(en).toContain(step);
+    }
+  });
+
+  it("Arabic: uses the exact corrected car-example wording, not the division-as-addition phrasing", () => {
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(ar).toContain(
+      "قطعت السيارة مسافة مقدارها 100 متر خلال زمن قدره 5 ثوانٍ. وبدمج قياسي المسافة والزمن نحسب سرعة السيارة:",
+    );
+    expect(ar).not.toContain("الجمع بين القياسين");
+  });
+
+  it("Arabic: uses the exact corrected distance-vs-space sentence and the clarified SI temperature term", () => {
+    const ar = topic.openingConcept?.text.ar ?? "";
+    expect(ar).toContain("المسافة إحدى الطرق القابلة للقياس لوصف مقدار الفصل بين المواضع داخل المكان");
+    expect(ar).toContain("درجة الحرارة الديناميكية الحرارية (درجة الحرارة المطلقة)");
+    expect(ar).not.toContain("الجواهر");
+  });
+
+  it("contains the worked car example (100 m in 5 s) and the v = d / t = 20 m/s derived-quantity equation", () => {
+    const en = topic.openingConcept?.text.en ?? "";
+    expect(en).toContain("100 m");
+    expect(en).toContain("5 s");
+    expect(en).toContain("v = d / t = 100 m / 5 s = 20 m/s");
+  });
+
+  it("renders as multiple paragraphs (not one giant run-on paragraph) via ContentSection", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <ContentSection
+          blockType="openingConcept"
+          text={topic.openingConcept!.text}
+          italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+          sectionId="topic-opening"
+        />
+      </LanguageProvider>,
+    );
+    const paragraphCount = (markup.match(/<p class="content-section__text"/g) ?? []).length;
+    expect(paragraphCount).toBeGreaterThan(5);
+    expect(textOnly(markup)).toContain("v = d / t = 100 m / 5 s = 20 m/s");
+  });
+
+  it("italicizes v, d, t inside the worked-example equation using the existing ch01-t01 prose-safe whitelist", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <ContentSection
+          blockType="openingConcept"
+          text={topic.openingConcept!.text}
+          italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+        />
+      </LanguageProvider>,
+    );
+    expect(markup).toContain("<em>v</em>");
+    expect(markup).toContain("<em>d</em>");
+    expect(markup).toContain("<em>t</em>");
+  });
+
+  it("normalizes to its own distinct recordId, separate from mainIdea/explanation/equations", () => {
+    // src/pages/TopicPage.tsx renders openingConcept immediately before
+    // mainIdea's ContentSection, matching this block's position as the
+    // first contentBlock record in the source file.
+    expect(topic.openingConcept?.recordId).toBe("ch01-t01-block-opening");
+    expect(topic.mainIdea?.recordId).toBe("ch01-t01-block-mainidea");
+  });
+});
+
+describe("Slides / Slide presentation wrapper (openingConcept renders as 'Slides -> Slide 1', internal blockType unchanged)", () => {
+  const topic = getTopic("ch01-t01")!;
+
+  function renderSlide1() {
+    return renderToStaticMarkup(
+      <LanguageProvider>
+        <SlidesSection>
+          <Slide
+            number={1}
+            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
+            id="topic-opening"
+          >
+            <ContentSection
+              blockType="openingConcept"
+              text={topic.openingConcept!.text}
+              italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+            />
+          </Slide>
+        </SlidesSection>
+      </LanguageProvider>,
+    );
+  }
+
+  it("renders a visible 'Slides' parent heading", () => {
+    const markup = renderSlide1();
+    expect(markup).toContain('class="slides-section"');
+    expect(textOnly(markup)).toContain("Slides");
+  });
+
+  it("nests Slide 1 inside the Slides parent, with the exact English label 'Slide 1 — Fundamental Physical Quantities'", () => {
+    const markup = renderSlide1();
+    // Slide 1's heading id/aria-labelledby only exists inside .slides-section's markup.
+    const slidesSectionStart = markup.indexOf('class="slides-section"');
+    const slideStart = markup.indexOf('id="topic-opening"');
+    expect(slidesSectionStart).toBeGreaterThanOrEqual(0);
+    expect(slideStart).toBeGreaterThan(slidesSectionStart);
+    expect(textOnly(markup)).toContain("Slide 1 — Fundamental Physical Quantities");
+  });
+
+  it("keeps the internal blockType as 'openingConcept' — no schema rename", () => {
+    expect(topic.openingConcept?.blockType).toBe("openingConcept");
+  });
+
+  it("still contains the full, unchanged Slide 1 educational content (verbatim quote, worked equation) inside the new wrapper", () => {
+    const markup = renderSlide1();
+    const text = textOnly(markup);
+    expect(text).toContain("In physics, there are three basic aspects of the material universe");
+    expect(text).toContain("v = d / t = 100 m / 5 s = 20 m/s");
+    expect(text).toContain("Main idea:");
+    expect(text).toContain("Scientific note:");
+  });
+
+  it("supports a second slide as an additional sibling, without altering Slide 1's content or id", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <SlidesSection>
+          <Slide
+            number={1}
+            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
+            id="topic-opening"
+          >
+            <ContentSection
+              blockType="openingConcept"
+              text={topic.openingConcept!.text}
+              italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+            />
+          </Slide>
+          <Slide number={2} title={{ en: "Units of Measurement", ar: "وحدات القياس" }} id="topic-slide-2">
+            <p>placeholder future-slide content</p>
+          </Slide>
+        </SlidesSection>
+      </LanguageProvider>,
+    );
+    const text = textOnly(markup);
+    expect(text).toContain("Slide 1 — Fundamental Physical Quantities");
+    expect(text).toContain("Slide 2 — Units of Measurement");
+    expect(markup).toContain('id="topic-opening"');
+    expect(markup).toContain('id="topic-slide-2"');
+  });
+});
+
+describe("TopicReadingGuide — first step is now the generic 'Slides' label", () => {
+  it("English: step 1 reads 'Slides', not the old topic-specific title", () => {
+    const markup = renderToStaticMarkup(
+      <LanguageProvider>
+        <TopicReadingGuide />
+      </LanguageProvider>,
+    );
+    expect(markup).toContain('href="#topic-opening"');
+    // The old per-slide title must not appear as a *nav step* label —
+    // it still appears deeper on the page as the Slide 1 heading itself,
+    // so this checks the reading-guide markup specifically.
+    const guideOnly = markup.slice(0, markup.indexOf("</nav>"));
+    expect(textOnly(guideOnly)).toContain("Slides");
+    expect(textOnly(guideOnly)).not.toContain("Fundamental Physical Quantities");
   });
 });
 

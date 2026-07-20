@@ -467,11 +467,40 @@ button:focus-visible {
 
 .topic-reading-anchor,
 .content-section[id],
-.equation-block[id] {
+.equation-block[id],
+.slide[id] {
   /* Generous enough to clear the sticky .topic-reading-guide bar above
      (~9rem tall including its progress row) so an anchor jump doesn't
      land a section's heading underneath it. */
   scroll-margin-top: 9rem;
+}
+
+/* Slides / Slide — parent "Slides" section plus one bordered card per
+   slide, so the parent and each individual slide read as clearly
+   distinct, and additional slides (Slide 2, 3, ...) can be added as
+   further .slide siblings without any new CSS. */
+.slides-section {
+  margin-bottom: 1.5rem;
+}
+
+.slides-section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.slide {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  background: var(--color-surface);
+}
+
+.slide__title {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
 }
 
 .content-disclosure {
@@ -553,6 +582,15 @@ button:focus-visible {
 .problem-card__statement {
   line-height: 1.65;
   font-size: 1.05rem;
+  margin: 0 0 1rem;
+}
+
+/* Multi-paragraph content blocks (currently: ch01-t01's openingConcept)
+   render one .content-section__text per paragraph — this only removes
+   the trailing gap after the last one, matching how a single-paragraph
+   block already looked before multi-paragraph rendering existed. */
+.content-section__text:last-child {
+  margin-bottom: 0;
 }
 
 .content-section__missing,
