@@ -579,6 +579,37 @@ button:focus-visible {
   border-inline-start-color: var(--color-reviewer-border);
 }
 
+/* A slide's optional source table (see StructuredSlideContent's
+   renderSourceTable): the wrapper scrolls horizontally on narrow
+   viewports instead of letting the table overlap surrounding text or
+   forcing the whole page wider; `dir` on the wrapper (set from the
+   current language) gives correct RTL column order and start-aligned
+   cell text in Arabic. */
+.structured-slide__table-wrapper {
+  overflow-x: auto;
+  margin: 0.25rem 0;
+}
+
+.structured-slide__table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 26rem;
+  font-size: 0.95rem;
+}
+
+.structured-slide__table th,
+.structured-slide__table td {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.structured-slide__table thead th {
+  background: var(--color-surface);
+  font-weight: 700;
+}
+
 .content-disclosure {
   margin-top: 0.75rem;
 }

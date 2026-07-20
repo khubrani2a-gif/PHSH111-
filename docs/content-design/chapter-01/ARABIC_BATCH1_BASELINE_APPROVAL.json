@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.6",
+  "baselineVersion": "1.0.7",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -8,7 +8,10 @@
   "approvedBy": "khubrani2a-gif (project owner)",
   "approvedAt": "2026-07-17",
   "scope": {
-    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "applicableTopicIds": [
+      "ch01-t01",
+      "ch01-t04"
+    ],
     "notApplicableTo": "All other Chapter 1 topics remain outside this baseline. This is a separate, standalone record — it does not extend, merge with, or modify ARABIC_PILOT_BASELINE_APPROVAL.json (scope: ch01-t02/ch01-t03/ch01-t08/ch01-t10) or ENGLISH_BATCH1_BASELINE_APPROVAL.json, both of which remain entirely separate, unmodified governance records with their own independent version sequences."
   },
   "approvedCandidateFiles": [
@@ -17,9 +20,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4",
+      "sha256": "d463e9aec42ae98cb871a1659c110bad6f903b81d5cfae72aa9ecea02d4433d7",
       "schemaVersion": "2.3.0",
-      "recordCount": 9
+      "recordCount": 10
     },
     {
       "topicId": "ch01-t04",
@@ -194,6 +197,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — both entries updated (blockType, checksums)"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-2 remains 'draft-ai-generated-unreviewed' — unchanged by this revision. ch01-t01-block-opening's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-007",
+        "fromVersion": "1.0.6",
+        "toVersion": "1.0.7",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-008 -> rev-009 (1.6.0 -> 1.7.0): adds the Arabic side of the new third slide, ch01-t01-block-opening-3 (blockType \"slide\", slideNumber 3, slideTitleAr \"كيف تُقاس المسافة في النظامين المتري والإنجليزي؟\"), as the third record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic translation of Slide 3's full structure — the source slide's Arabic prose translation, Main Idea, five numbered steps, Simple Example, Table Explanation, Common Misconception, Scientific Note, Key Concept, and Connection to the Next Slide — plus tableAr (the source table's headers/rows translated into Arabic, same row/column shape as tableEn, verified structurally byte-identical on the tableEn side by src/content/batch1Merge.ts).",
+        "whatWasNotChanged": "No .ar text on ch01-t01-block-opening (Slide 1) or ch01-t01-block-opening-2 (Slide 2) was touched. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-009): project-owner request for a third slide, translated into Arabic using the project's established terminology (ch01-term-distance) and verb-agreement conventions.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-3 appended at index 2",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-009",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-3"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. ch01-t01-block-opening and ch01-t01-block-opening-2's Arabic governance fields are entirely unchanged."
       }
     ]
   },

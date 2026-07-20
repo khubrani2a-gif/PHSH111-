@@ -184,6 +184,149 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-3",
+        "blockType": "slide",
+        "slideNumber": 3,
+        "slideTitleEn": "How Is Distance Measured in Metric and English Units?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Distance\n\nDistance represents a measure of space in one dimension.\n\nLength, width, and height are examples of distance measurements\n\nThe following table lists the common distance units of measure, in both the metric and English systems and their abbreviations.\n\nMain Idea: Distance measures separation or extent in one dimension and can be expressed using different units from the metric or English systems.\n\nStep 1 — Distance is a one-dimensional measurement\n* Distance tells us how much space exists between two positions.\n* It can also describe the extent of an object along one direction.\n* A one-dimensional measurement requires one numerical value and one unit.\n\nStep 2 — Length, width, and height are distance measurements\n* Length measures an object from one end to the other.\n* Width measures its side-to-side extent.\n* Height measures its vertical extent.\n* These names describe different directions, but each is still a distance measurement.\n\nStep 3 — Symbols depend on the situation\n* d commonly represents distance.\n* l commonly represents length.\n* w commonly represents width.\n* h commonly represents height.\n* All have the physical dimension of length L.\n\nStep 4 — The metric system uses powers of ten\n* Common metric units are mm, cm, m, and km.\n* These units are related through powers of ten.\n* This makes metric conversion systematic.\n\nStep 5 — The English system uses different units\n* Common English distance units include inch, foot, yard, and mile.\n* Their relationships are not generally based on powers of ten.\n\nSimple Example: A table has a length of 2 m, a width of 80 cm, and a height of 75 cm. All three are distance measurements, each describing the table's extent in a different direction. Before comparing or combining them, their units must be made consistent: 2 m = 200 cm.\n\n200 cm × 80 cm × 75 cm\n\nTable Explanation: The table presents examples of common units in two measurement systems. Units appearing on the same row are not necessarily equivalent. It should not be interpreted as a conversion table. For example, 1 m ≠ 1 ft, and 1 cm ≠ 1 mi.\n\nMisconception: length, width, and height are different physical dimensions. Correction: they describe distance in different directions, but all have the physical dimension of length L.\n\nScientific Note: The meter is the SI unit of length. Millimeter, centimeter, and kilometer are metric multiples or submultiples of the meter.\n\nKey Concept: Distance, length, width, and height all describe one-dimensional extent and share the same physical dimension L, even when expressed using different units.\n\nConnection to the Next Slide: After identifying common distance units, the next step is to learn how to convert between units within the same measurement system and between metric and English units.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: المسافة\n\nتمثل المسافة قياسًا للمكان في بُعد واحد.\n\nالطول والعرض والارتفاع أمثلة على قياسات المسافة.\n\nيوضح الجدول الآتي وحدات قياس المسافة الشائعة في كل من النظام المتري والنظام الإنجليزي، مع اختصاراتها.\n\nالفكرة الرئيسية: تقيس المسافة مقدار الفصل أو الامتداد في بُعد واحد، ويمكن التعبير عنها باستخدام وحدات مختلفة من النظام المتري أو النظام الإنجليزي.\n\nالخطوة 1 — المسافة قياس أحادي البعد\n* توضح المسافة مقدار الحيز بين موضعين.\n* ويمكنها أيضًا وصف امتداد جسم في اتجاه واحد.\n* يحتاج القياس أحادي البعد إلى قيمة عددية واحدة ووحدة قياس واحدة.\n\nالخطوة 2 — الطول والعرض والارتفاع قياسات للمسافة\n* يقيس الطول امتداد الجسم من أحد طرفيه إلى الآخر.\n* يقيس العرض امتداده من جانب إلى جانب.\n* يقيس الارتفاع امتداده الرأسي.\n* تصف هذه الأسماء اتجاهات مختلفة، لكنها جميعًا قياسات للمسافة.\n\nالخطوة 3 — الرموز تعتمد على السياق\n* يرمز d عادةً إلى المسافة.\n* يرمز l عادةً إلى الطول.\n* يرمز w عادةً إلى العرض.\n* يرمز h عادةً إلى الارتفاع.\n* تمتلك جميعها البُعد الفيزيائي نفسه، وهو بُعد الطول L.\n\nالخطوة 4 — يعتمد النظام المتري على قوى العدد عشرة\n* من الوحدات المترية الشائعة mm وcm وm وkm.\n* ترتبط هذه الوحدات بقوى العدد عشرة.\n* وهذا يجعل التحويل بين الوحدات المترية منتظمًا.\n\nالخطوة 5 — يستخدم النظام الإنجليزي وحدات مختلفة\n* تشمل وحدات المسافة الإنجليزية الشائعة البوصة والقدم والياردة والميل.\n* لا تعتمد العلاقات بينها عادةً على قوى العدد عشرة.\n\nمثال بسيط: طاولة طولها 2 m، وعرضها 80 cm، وارتفاعها 75 cm. وكلها قياسات للمسافة، تصف امتداد الطاولة في اتجاه مختلف. وقبل مقارنتها أو الجمع بينها، يجب توحيد وحداتها: 2 m = 200 cm.\n\n200 cm × 80 cm × 75 cm\n\nشرح الجدول: يعرض الجدول أمثلة على وحدات شائعة في نظامي قياس مختلفين. والوحدات الموجودة في الصف نفسه ليست بالضرورة متكافئة، لذلك لا ينبغي تفسير الجدول على أنه جدول تحويل. على سبيل المثال: 1 m ≠ 1 ft، و1 cm ≠ 1 mi.\n\nمفهوم خاطئ: الطول والعرض والارتفاع أبعاد فيزيائية مختلفة. التصحيح: هي قياسات للمسافة في اتجاهات مختلفة، لكنها جميعًا تمتلك بُعد الطول L.\n\nملاحظة علمية: المتر هو وحدة الطول في النظام الدولي للوحدات. والمليمتر والسنتيمتر والكيلومتر مضاعفات أو أجزاء مترية من المتر.\n\nالمفهوم الأساسي: تصف المسافة والطول والعرض والارتفاع امتدادًا أحادي البعد، وتشترك جميعها في البُعد الفيزيائي نفسه L، حتى عند التعبير عنها بوحدات مختلفة.\n\nالصلة بالشريحة التالية: بعد التعرف على وحدات المسافة الشائعة، تكون الخطوة التالية هي تعلم التحويل بين الوحدات داخل نظام القياس نفسه وبين النظامين المتري والإنجليزي.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Physical Quantity",
+            "Metric Units",
+            "English Units"
+          ],
+          "rows": [
+            [
+              "Distance d (or l, w, h)",
+              "meter (m)",
+              "foot (ft)"
+            ],
+            [
+              null,
+              "millimeter (mm)",
+              "inch (in.)"
+            ],
+            [
+              null,
+              "centimeter (cm)",
+              "mile (mi)"
+            ],
+            [
+              null,
+              "kilometer (km)",
+              null
+            ]
+          ]
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: المسافة\n\nتمثل المسافة قياسًا للمكان في بُعد واحد.\n\nالطول والعرض والارتفاع أمثلة على قياسات المسافة.\n\nيوضح الجدول الآتي وحدات قياس المسافة الشائعة في كل من النظام المتري والنظام الإنجليزي، مع اختصاراتها.\n\nالفكرة الرئيسية: تقيس المسافة مقدار الفصل أو الامتداد في بُعد واحد، ويمكن التعبير عنها باستخدام وحدات مختلفة من النظام المتري أو النظام الإنجليزي.\n\nالخطوة 1 — المسافة قياس أحادي البعد\n* توضح المسافة مقدار الحيز بين موضعين.\n* ويمكنها أيضًا وصف امتداد جسم في اتجاه واحد.\n* يحتاج القياس أحادي البعد إلى قيمة عددية واحدة ووحدة قياس واحدة.\n\nالخطوة 2 — الطول والعرض والارتفاع قياسات للمسافة\n* يقيس الطول امتداد الجسم من أحد طرفيه إلى الآخر.\n* يقيس العرض امتداده من جانب إلى جانب.\n* يقيس الارتفاع امتداده الرأسي.\n* تصف هذه الأسماء اتجاهات مختلفة، لكنها جميعًا قياسات للمسافة.\n\nالخطوة 3 — الرموز تعتمد على السياق\n* يرمز d عادةً إلى المسافة.\n* يرمز l عادةً إلى الطول.\n* يرمز w عادةً إلى العرض.\n* يرمز h عادةً إلى الارتفاع.\n* تمتلك جميعها البُعد الفيزيائي نفسه، وهو بُعد الطول L.\n\nالخطوة 4 — يعتمد النظام المتري على قوى العدد عشرة\n* من الوحدات المترية الشائعة mm وcm وm وkm.\n* ترتبط هذه الوحدات بقوى العدد عشرة.\n* وهذا يجعل التحويل بين الوحدات المترية منتظمًا.\n\nالخطوة 5 — يستخدم النظام الإنجليزي وحدات مختلفة\n* تشمل وحدات المسافة الإنجليزية الشائعة البوصة والقدم والياردة والميل.\n* لا تعتمد العلاقات بينها عادةً على قوى العدد عشرة.\n\nمثال بسيط: طاولة طولها 2 m، وعرضها 80 cm، وارتفاعها 75 cm. وكلها قياسات للمسافة، تصف امتداد الطاولة في اتجاه مختلف. وقبل مقارنتها أو الجمع بينها، يجب توحيد وحداتها: 2 m = 200 cm.\n\n200 cm × 80 cm × 75 cm\n\nشرح الجدول: يعرض الجدول أمثلة على وحدات شائعة في نظامي قياس مختلفين. والوحدات الموجودة في الصف نفسه ليست بالضرورة متكافئة، لذلك لا ينبغي تفسير الجدول على أنه جدول تحويل. على سبيل المثال: 1 m ≠ 1 ft، و1 cm ≠ 1 mi.\n\nمفهوم خاطئ: الطول والعرض والارتفاع أبعاد فيزيائية مختلفة. التصحيح: هي قياسات للمسافة في اتجاهات مختلفة، لكنها جميعًا تمتلك بُعد الطول L.\n\nملاحظة علمية: المتر هو وحدة الطول في النظام الدولي للوحدات. والمليمتر والسنتيمتر والكيلومتر مضاعفات أو أجزاء مترية من المتر.\n\nالمفهوم الأساسي: تصف المسافة والطول والعرض والارتفاع امتدادًا أحادي البعد، وتشترك جميعها في البُعد الفيزيائي نفسه L، حتى عند التعبير عنها بوحدات مختلفة.\n\nالصلة بالشريحة التالية: بعد التعرف على وحدات المسافة الشائعة، تكون الخطوة التالية هي تعلم التحويل بين الوحدات داخل نظام القياس نفسه وبين النظامين المتري والإنجليزي.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft-ai-generated-unreviewed",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "pending",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-DISTANCE-UNITS-TABLE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-distance-units-table",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (a table titled 'Physical Quantity / Metric Units / English Units', listing Distance d (or l, w, h) with meter/millimeter/centimeter/kilometer as metric units and foot/inch/mile as English units) together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Distance...'), directly in the implementation task. The uploaded image itself is recorded here as this record's source and is NOT used as the student-facing table — the table is reconstructed as semantic HTML from its text (headers/rows), preserving the same rows and empty cells verbatim. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, and the Table Explanation clarification (English and Arabic) were newly authored/translated by Claude from the task's requested structure, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. No visual asset beyond the reconstructed semantic table is referenced by this record."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored third opening/introductory slide for ch01-t01, positioned as a sibling of ch01-t01-block-opening (Slide 1) and ch01-t01-block-opening-2 (Slide 2) rather than a replacement — neither prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1 and 2 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "tableAr": {
+          "headers": [
+            "الكمية الفيزيائية",
+            "الوحدات المترية",
+            "الوحدات الإنجليزية"
+          ],
+          "rows": [
+            [
+              "المسافة d (أو l، w، h)",
+              "متر (m)",
+              "قدم (ft)"
+            ],
+            [
+              null,
+              "مليمتر (mm)",
+              "بوصة (in.)"
+            ],
+            [
+              null,
+              "سنتيمتر (cm)",
+              "ميل (mi)"
+            ],
+            [
+              null,
+              "كيلومتر (km)",
+              null
+            ]
+          ]
+        },
+        "slideTitleAr": "كيف تُقاس المسافة في النظامين المتري والإنجليزي؟"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

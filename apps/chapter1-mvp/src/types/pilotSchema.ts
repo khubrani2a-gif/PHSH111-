@@ -152,6 +152,18 @@ export interface ProvenanceLink {
   evidence?: string;
 }
 
+/**
+ * A small source table quoted/reconstructed from an original slide —
+ * generic to any contentBlock (not tied to any specific blockType or
+ * slide number). `rows[i][j]` is `null` for a genuinely empty source
+ * cell (e.g. a merged/blank cell in the original table), never an
+ * empty string standing in for "no value".
+ */
+export interface SourceTable {
+  headers: string[];
+  rows: (string | null)[][];
+}
+
 export interface VisualGovernanceEntry {
   visualId: string;
   availabilityStatus: string;
@@ -221,6 +233,20 @@ export interface ContentBlockRecord {
   slideNumber?: number;
   slideTitleEn?: string;
   slideTitleAr?: string;
+  /**
+   * Present only on records that reproduce an explicit table quoted from
+   * an original source slide — generic to any contentBlock, independent
+   * of blockType (a future non-"slide" record could carry one too).
+   * Mirrors the slideTitleEn/slideTitleAr convention: the English-only
+   * baseline file supplies tableEn (the source table's own headers/cell
+   * text, verbatim); the Arabic candidate file supplies its own copy of
+   * tableEn (byte-checked identical by src/content/batch1Merge.ts,
+   * confirming the two files agree on the source table's English content
+   * and shape) plus tableAr, the translated labels/units in the same
+   * row/column shape.
+   */
+  tableEn?: SourceTable;
+  tableAr?: SourceTable;
   contentLeakTestStatus: string;
 }
 

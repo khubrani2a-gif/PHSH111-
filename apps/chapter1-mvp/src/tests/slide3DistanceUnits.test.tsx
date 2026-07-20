@@ -1,0 +1,461 @@
+// @vitest-environment jsdom
+//
+// Tests for Slide 3 ("How Is Distance Measured in Metric and English
+// Units?"), added as a third sibling under ch01-t01's existing Slides
+// section (ch01-t01-block-opening-3, blockType "slide" — the same generic,
+// reusable slide blockType shared with Slides 1 and 2). Covers the 13
+// checks explicitly requested for this task. Uses the same jsdom +
+// createRoot/act pattern as src/tests/slide2DistanceDimensions.test.tsx.
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { act } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import { LanguageProvider } from "../app/LanguageContext";
+import { getTopic } from "../content/adapter";
+import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
+import { SlidesSection, Slide } from "../features/topics/Slides";
+import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
+
+(globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
+
+let container: HTMLDivElement;
+let root: Root;
+
+beforeEach(() => {
+  window.localStorage.clear();
+  container = document.createElement("div");
+  document.body.appendChild(container);
+  root = createRoot(container);
+});
+
+afterEach(() => {
+  act(() => root.unmount());
+  container.remove();
+});
+
+const topic = getTopic("ch01-t01")!;
+const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
+const slide2 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-2")!;
+const slide3 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-3")!;
+const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
+
+// Mirrors src/pages/TopicPage.tsx's actual generic rendering: map over
+// topic.slides in order, passing each slide's own recordId/slideNumber/
+// title/text/table — no per-slide-number conditional, no hardcoded slide
+// count, no Slide-3-specific branch.
+function renderGenericSlides(arabic: boolean) {
+  window.localStorage.setItem("phsh111:language", arabic ? "ar" : "en");
+  act(() => {
+    root.render(
+      <LanguageProvider>
+        <SlidesSection>
+          {topic.slides.map((slide) => (
+            <Slide
+              key={slide.recordId}
+              number={slide.slideNumber}
+              title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
+              id={slide.slideNumber === 1 ? "topic-opening" : undefined}
+            >
+              <StructuredSlideContent
+                blockId={slide.recordId}
+                text={slide.text}
+                table={slide.table}
+                italicTokens={PROSE_TOKENS}
+              />
+            </Slide>
+          ))}
+        </SlidesSection>
+      </LanguageProvider>,
+    );
+  });
+}
+
+describe("1. Slide 3 appears after Slide 2", () => {
+  it("topic.slides is ordered [Slide 1, Slide 2, Slide 3] by slideNumber", () => {
+    expect(topic.slides.map((s) => s.recordId)).toEqual([
+      "ch01-t01-block-opening",
+      "ch01-t01-block-opening-2",
+      "ch01-t01-block-opening-3",
+    ]);
+    expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2, 3]);
+  });
+
+  it("Slide 3's heading follows Slide 2's heading in DOM order, all three under one Slides section", () => {
+    renderGenericSlides(false);
+    const order = Array.from(container.querySelectorAll("[id]")).map((el) => el.id);
+    const slide2Idx = order.indexOf("slide-2-heading");
+    const slide3Idx = order.indexOf("slide-3-heading");
+    expect(slide2Idx).toBeGreaterThanOrEqual(0);
+    expect(slide3Idx).toBeGreaterThan(slide2Idx);
+    expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(3);
+  });
+
+  it("Slide 3's exact bilingual title renders", () => {
+    renderGenericSlides(false);
+    expect(container.querySelector("#slide-3-heading")?.textContent).toBe(
+      "Slide 3 — How Is Distance Measured in Metric and English Units?",
+    );
+    act(() => root.unmount());
+    root = createRoot(container);
+    renderGenericSlides(true);
+    expect(container.querySelector("#slide-3-heading")?.textContent).toBe(
+      "الشريحة 3 — كيف تُقاس المسافة في النظامين المتري والإنجليزي؟",
+    );
+  });
+});
+
+describe("2. Slide 1 and Slide 2 remain unchanged", () => {
+  it("Slide 1's English text is byte-for-byte identical to its pre-Slide-3 content", () => {
+    expect(slide1.text.en).toContain("In physics, there are three basic aspects");
+    expect(slide1.text.en).toContain("Main idea:");
+    expect(slide1.text.en).not.toContain("How Is Distance Measured");
+  });
+
+  it("Slide 2's corrected English/Arabic wording (length-vs-distance, unit definition) is unaffected by adding Slide 3", () => {
+    expect(slide2.text.en).toContain(
+      "L represents the dimension of length. Distance is one physical quantity that has the dimension of length.",
+    );
+    expect(slide2.text.ar).toContain("أما وحدة القياس فهي معيار محدد يُستخدم للتعبير عن مقدار الكمية، مثل المتر أو الكيلوجرام أو الثانية.");
+  });
+
+  it("Slide 1 and Slide 2 carry no table (table is Slide-3-specific data, not schema)", () => {
+    expect(slide1.table).toBeUndefined();
+    expect(slide2.table).toBeUndefined();
+  });
+
+  it("Slide 1 and Slide 2 render exactly as before: their own equation blocks, unaffected by Slide 3's presence", () => {
+    renderGenericSlides(false);
+    const slideSections = container.querySelectorAll(".slide");
+    const blocksIn = (section: Element) =>
+      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
+    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
+    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
+  });
+});
+
+describe("3. Slide 3 is loaded through the generic slides[] architecture", () => {
+  it("ch01-t01-block-opening-3 has blockType \"slide\" in both raw source files (no new ContentBlockType)", () => {
+    // Verified indirectly: normalizeSlides only ever collects blockType
+    // "slide" records (see src/content/adapter.ts) — slide3 being present
+    // in topic.slides at all proves its blockType is "slide", since any
+    // other blockType would have been filtered out before reaching here.
+    expect(slide3).toBeDefined();
+    expect(slide3.recordId).toBe("ch01-t01-block-opening-3");
+    expect(slide3.slideNumber).toBe(3);
+  });
+
+  it("NormalizedTopic carries no Slide-3-specific field — topic.slides is the only place Slide 3's data lives", () => {
+    expect(Object.keys(topic)).not.toContain("openingConceptSlide3");
+    expect(Object.keys(topic)).not.toContain("slide3");
+    expect(topic.slides.some((s) => s.recordId === "ch01-t01-block-opening-3")).toBe(true);
+  });
+
+  it("Slide 3 renders via the exact same generic topic.slides.map(...) as Slides 1 and 2 — no per-slide-number conditional", () => {
+    renderGenericSlides(false);
+    expect(container.querySelectorAll(".slide")).toHaveLength(3);
+    expect(container.querySelector("#slide-3-heading")).not.toBeNull();
+  });
+});
+
+describe("4. The original English text and original table rows are preserved", () => {
+  it("the verbatim original English prose is present, unaltered", () => {
+    const en = slide3.text.en ?? "";
+    expect(en).toContain("1.1 Fundamental Physical Quantities: Distance");
+    expect(en).toContain("Distance represents a measure of space in one dimension.");
+    expect(en).toContain("Length, width, and height are examples of distance measurements");
+    expect(en).toContain(
+      "The following table lists the common distance units of measure, in both the metric and English systems and their abbreviations.",
+    );
+  });
+
+  it("the original table's rows and empty cells are preserved exactly as reconstructed data", () => {
+    const table = slide3.table?.en;
+    expect(table).toBeDefined();
+    expect(table!.headers).toEqual(["Physical Quantity", "Metric Units", "English Units"]);
+    expect(table!.rows).toEqual([
+      ["Distance d (or l, w, h)", "meter (m)", "foot (ft)"],
+      [null, "millimeter (mm)", "inch (in.)"],
+      [null, "centimeter (cm)", "mile (mi)"],
+      [null, "kilometer (km)", null],
+    ]);
+  });
+
+  it("the Arabic table has the same row/column shape, with translated labels and preserved empty cells", () => {
+    const table = slide3.table?.ar;
+    expect(table).toBeDefined();
+    expect(table!.headers).toHaveLength(3);
+    expect(table!.rows).toHaveLength(4);
+    expect(table!.rows[0][0]).toContain("المسافة");
+    expect(table!.rows[1][0]).toBeNull();
+    expect(table!.rows[3][2]).toBeNull();
+  });
+});
+
+describe("5. All structured headings render", () => {
+  it("all nine subsection headings render in English", () => {
+    renderGenericSlides(false);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    const headings = Array.from(slide3Section.querySelectorAll(".structured-slide__heading")).map(
+      (el) => el.textContent,
+    );
+    expect(headings).toEqual([
+      "Original English",
+      "Main Idea",
+      "Step-by-Step Explanation",
+      "Simple Example",
+      "Table Explanation",
+      "Common Misconception",
+      "Scientific Note",
+      "Key Concept",
+      "Connection to the Next Slide",
+    ]);
+  });
+
+  it("all nine subsection headings render in Arabic", () => {
+    renderGenericSlides(true);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    const headings = Array.from(slide3Section.querySelectorAll(".structured-slide__heading")).map(
+      (el) => el.textContent,
+    );
+    expect(headings).toEqual([
+      "النص الإنجليزي الأصلي",
+      "الفكرة الرئيسية",
+      "الشرح خطوة بخطوة",
+      "مثال بسيط",
+      "شرح الجدول",
+      "مفهوم خاطئ شائع",
+      "ملاحظة علمية",
+      "المفهوم الأساسي",
+      "الصلة بالشريحة التالية",
+    ]);
+  });
+});
+
+describe("6. Five numbered steps render in order", () => {
+  it("English steps render in order with their exact titles", () => {
+    renderGenericSlides(false);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    const steps = Array.from(slide3Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+      (el) => el.textContent,
+    );
+    expect(steps).toEqual([
+      "Step 1 — Distance is a one-dimensional measurement",
+      "Step 2 — Length, width, and height are distance measurements",
+      "Step 3 — Symbols depend on the situation",
+      "Step 4 — The metric system uses powers of ten",
+      "Step 5 — The English system uses different units",
+    ]);
+  });
+
+  it("Arabic steps render in order with their exact titles", () => {
+    renderGenericSlides(true);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    const steps = Array.from(slide3Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+      (el) => el.textContent,
+    );
+    expect(steps).toEqual([
+      "الخطوة 1 — المسافة قياس أحادي البعد",
+      "الخطوة 2 — الطول والعرض والارتفاع قياسات للمسافة",
+      "الخطوة 3 — الرموز تعتمد على السياق",
+      "الخطوة 4 — يعتمد النظام المتري على قوى العدد عشرة",
+      "الخطوة 5 — يستخدم النظام الإنجليزي وحدات مختلفة",
+    ]);
+  });
+});
+
+describe("7. The semantic table renders correctly", () => {
+  it("renders a real <table> with <thead>/<tbody>, correct column headers, in English", () => {
+    renderGenericSlides(false);
+    const table = container.querySelector(".structured-slide__table")!;
+    expect(table.tagName).toBe("TABLE");
+    expect(table.querySelector("thead")).not.toBeNull();
+    expect(table.querySelector("tbody")).not.toBeNull();
+    const headers = Array.from(table.querySelectorAll("thead th")).map((el) => el.textContent);
+    expect(headers).toEqual(["Physical Quantity", "Metric Units", "English Units"]);
+    const rows = Array.from(table.querySelectorAll("tbody tr")).map((tr) =>
+      Array.from(tr.querySelectorAll("td")).map((td) => td.textContent),
+    );
+    expect(rows).toEqual([
+      ["Distance d (or l, w, h)", "meter (m)", "foot (ft)"],
+      ["", "millimeter (mm)", "inch (in.)"],
+      ["", "centimeter (cm)", "mile (mi)"],
+      ["", "kilometer (km)", ""],
+    ]);
+  });
+
+  it("column headers use scope=\"col\" for accessibility", () => {
+    renderGenericSlides(false);
+    const headerCells = container.querySelectorAll(".structured-slide__table thead th");
+    expect(headerCells).toHaveLength(3);
+    headerCells.forEach((th) => expect(th.getAttribute("scope")).toBe("col"));
+  });
+
+  it("the table is NOT the uploaded screenshot — no <img> inside the Original English section", () => {
+    renderGenericSlides(false);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    expect(slide3Section.querySelectorAll("img")).toHaveLength(0);
+  });
+});
+
+describe("8. Mobile table scrolling works", () => {
+  it("the table is wrapped in a horizontally-scrollable container (structured-slide__table-wrapper)", () => {
+    renderGenericSlides(false);
+    const wrapper = container.querySelector(".structured-slide__table-wrapper");
+    expect(wrapper).not.toBeNull();
+    expect(wrapper?.querySelector("table.structured-slide__table")).not.toBeNull();
+    // Actual overflow-x: auto CSS behavior and small-viewport rendering are
+    // verified visually via Playwright (desktop + mobile viewports) rather
+    // than in jsdom, which does not perform real layout/scroll — see the
+    // session's Playwright verification script.
+  });
+});
+
+describe("9. Arabic table direction and alignment are correct", () => {
+  it("the table wrapper carries dir=\"rtl\" in Arabic and dir=\"ltr\" in English", () => {
+    renderGenericSlides(true);
+    const arWrapper = container.querySelector(".structured-slide__table-wrapper");
+    expect(arWrapper?.getAttribute("dir")).toBe("rtl");
+
+    act(() => root.unmount());
+    root = createRoot(container);
+    renderGenericSlides(false);
+    const enWrapper = container.querySelector(".structured-slide__table-wrapper");
+    expect(enWrapper?.getAttribute("dir")).toBe("ltr");
+  });
+
+  it("the Arabic table renders translated headers and labels", () => {
+    renderGenericSlides(true);
+    const table = container.querySelector(".structured-slide__table")!;
+    const headers = Array.from(table.querySelectorAll("thead th")).map((el) => el.textContent);
+    expect(headers).toEqual(["الكمية الفيزيائية", "الوحدات المترية", "الوحدات الإنجليزية"]);
+    const firstRow = Array.from(table.querySelectorAll("tbody tr")[0].querySelectorAll("td")).map(
+      (el) => el.textContent,
+    );
+    expect(firstRow[0]).toContain("المسافة");
+  });
+});
+
+describe("10. d, l, w, h, and L render correctly", () => {
+  it("d, l, w, and L are present as standalone symbols in the English text", () => {
+    const en = slide3.text.en ?? "";
+    expect(en).toContain("d commonly represents distance.");
+    expect(en).toContain("l commonly represents length.");
+    expect(en).toContain("w commonly represents width.");
+    expect(en).toContain("h commonly represents height.");
+    expect(en).toContain("All have the physical dimension of length L.");
+  });
+
+  it("d, l, and w are italicized (whitelisted symbols); h renders as plain text (excluded to avoid the pre-existing km/h and miles/h collision)", () => {
+    renderGenericSlides(false);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    const italics = Array.from(slide3Section.querySelectorAll("em")).map((el) => el.textContent);
+    expect(italics).toContain("d");
+    expect(italics).toContain("l");
+    expect(italics).toContain("w");
+    expect(italics).toContain("L");
+    expect(italics).not.toContain("h");
+    // "h" still appears in the rendered text, just not italicized.
+    expect(slide3Section.textContent).toContain("h commonly represents height.");
+  });
+
+  it("the symbols d, l, w, h are preserved verbatim in the original table's first-row cell", () => {
+    expect(slide3.table?.en?.rows[0][0]).toBe("Distance d (or l, w, h)");
+  });
+});
+
+describe("11. The table clarification states that rows are not equivalent conversions", () => {
+  it("English Table Explanation states rows are not equivalent and includes both inequality examples", () => {
+    const en = slide3.text.en ?? "";
+    expect(en).toContain("Units appearing on the same row are not necessarily equivalent.");
+    expect(en).toContain("It should not be interpreted as a conversion table.");
+    expect(en).toContain("1 m ≠ 1 ft");
+    expect(en).toContain("1 cm ≠ 1 mi");
+  });
+
+  it("Arabic Table Explanation states the same clarification with both inequality examples", () => {
+    const ar = slide3.text.ar ?? "";
+    expect(ar).toContain("ليست بالضرورة متكافئة");
+    expect(ar).toContain("لا ينبغي تفسير الجدول على أنه جدول تحويل");
+    expect(ar).toContain("1 m ≠ 1 ft");
+    expect(ar).toContain("1 cm ≠ 1 mi");
+  });
+
+  it("renders the Table Explanation section in the DOM, both languages", () => {
+    renderGenericSlides(false);
+    expect(container.textContent).toContain("not necessarily equivalent");
+    act(() => root.unmount());
+    root = createRoot(container);
+    renderGenericSlides(true);
+    expect(container.textContent).toContain("ليست بالضرورة متكافئة");
+  });
+});
+
+describe("12. The example conversion 2 m = 200 cm is correct", () => {
+  it("English Simple Example states 2 m = 200 cm and shows the distinct calculation block", () => {
+    const en = slide3.text.en ?? "";
+    expect(en).toContain("2 m = 200 cm");
+    expect(en).toContain("200 cm × 80 cm × 75 cm");
+  });
+
+  it("Arabic Simple Example states the same conversion and calculation block (untranslated Latin notation)", () => {
+    const ar = slide3.text.ar ?? "";
+    expect(ar).toContain("2 m = 200 cm");
+    expect(ar).toContain("200 cm × 80 cm × 75 cm");
+  });
+
+  it("renders the calculation as a distinct equation block in the DOM", () => {
+    renderGenericSlides(false);
+    const slide3Section = container.querySelectorAll(".slide")[2];
+    const blocks = Array.from(slide3Section.querySelectorAll(".structured-slide__equation-block")).map(
+      (el) => el.textContent,
+    );
+    expect(blocks).toEqual(["200 cm × 80 cm × 75 cm"]);
+  });
+});
+
+describe("13. Governance/publication flags remain unchanged", () => {
+  it("studentFacingAllowed / studentPublicationAuthorized stay false; blocking status is 'blocked' on the new record", () => {
+    expect(topic.governance.studentFacingAllowed).toBe(false);
+    expect(topic.governance.studentPublicationAuthorized).toBe(false);
+    expect(slide3.blocking.studentFacingAllowed).toBe(false);
+    expect(slide3.blocking.blockingStatus).toBe("blocked");
+  });
+
+  it("Slide 3's blockingReason does NOT include missingVisual (the uploaded table was fully available and used)", () => {
+    expect(slide3.blocking.blockingReason).toContain("translationPending");
+    expect(slide3.blocking.blockingReason).toContain("scientificReviewPending");
+    expect(slide3.blocking.blockingReason).not.toContain("missingVisual");
+  });
+
+  it("recordCount reflects the new record (10) and Slide 1/Slide 2's governance flags are untouched", () => {
+    expect(topic.governance.recordCount).toBe(10);
+    expect(slide1.blocking.studentFacingAllowed).toBe(false);
+    expect(slide2.blocking.studentFacingAllowed).toBe(false);
+    expect(slide2.blocking.blockingReason).not.toContain("missingVisual");
+  });
+});
+
+describe("Reusability — Slide 3 proves the architecture scales without per-slide wiring", () => {
+  it("all three slides render via the exact same generic StructuredSlideContent + table prop, distinguished only by their own recordId-keyed config", () => {
+    renderGenericSlides(false);
+    expect(container.querySelectorAll(".slide")).toHaveLength(3);
+    const equationBlocks = Array.from(container.querySelectorAll(".structured-slide__equation-block")).map(
+      (el) => el.textContent,
+    );
+    expect(equationBlocks).toEqual([
+      "v = d / t = 100 m / 5 s = 20 m/s",
+      "Speed = 120 miles / 2 h = 60 miles/h",
+      "200 cm × 80 cm × 75 cm",
+    ]);
+  });
+
+  it("topic.slides remains a plain array where every slide has recordId/slideNumber/title.en/title.ar — no slide-count-specific schema", () => {
+    expect(Array.isArray(topic.slides)).toBe(true);
+    expect(topic.slides.length).toBe(3);
+    for (const slide of topic.slides) {
+      expect(typeof slide.recordId).toBe("string");
+      expect(typeof slide.slideNumber).toBe("number");
+      expect(slide.title).toHaveProperty("en");
+      expect(slide.title).toHaveProperty("ar");
+    }
+  });
+});

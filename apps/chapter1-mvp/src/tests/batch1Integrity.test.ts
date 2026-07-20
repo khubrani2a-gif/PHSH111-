@@ -29,7 +29,7 @@ function sha256(path: string): string {
 const APPROVED = {
   englishT01: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json"),
-    // Baseline v1.6.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.7.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-003 adds ch01-t01-block-opening; rev-004 corrects
     // its explanatory prose (SI base-quantity accuracy, speed's derived
     // unit, qualitative-vs-quantitative wording); rev-005 restructures it
@@ -39,8 +39,11 @@ const APPROVED = {
     // rev-007 adds ch01-t01-block-opening-2 (Slide 2); rev-008 corrects
     // Slide 2's length-vs-distance wording, removes the missingVisual
     // blocking reason, and migrates both slides to the generic "slide"
-    // blockType with slideNumber/slideTitleEn metadata.
-    sha256: "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e",
+    // blockType with slideNumber/slideTitleEn metadata; rev-009 adds
+    // ch01-t01-block-opening-3 (Slide 3, distance units table) via the
+    // same generic slide architecture plus new generic tableEn/tableAr
+    // fields.
+    sha256: "f6657628fc275f05bc329da0df119e0293a819b3e57adc49aa6551b5a329ee49",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -48,7 +51,7 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    // Baseline v1.0.6 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.0.7 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-001 adds the Arabic side of ch01-t01-block-opening;
     // rev-002 corrects its translation to match the English rev-004 fixes;
     // rev-003 restructures it to match the English rev-005 compact format
@@ -59,8 +62,9 @@ const APPROVED = {
     // ch01-t01-block-opening-2 (Slide 2), matching English rev-007;
     // rev-006 corrects Slide 2's Arabic wording, removes the missingVisual
     // blocking reason, and migrates both slides to the generic "slide"
-    // blockType, matching English rev-008.
-    sha256: "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4",
+    // blockType, matching English rev-008; rev-007 adds the Arabic side of
+    // ch01-t01-block-opening-3 (Slide 3), matching English rev-009.
+    sha256: "d463e9aec42ae98cb871a1659c110bad6f903b81d5cfae72aa9ecea02d4433d7",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

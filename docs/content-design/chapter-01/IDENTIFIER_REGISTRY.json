@@ -4,13 +4,41 @@
   "status": "designValidated",
   "purpose": "Validate identifiers before canonical records are linked. This registry does not rename source-level IDs.",
   "sourceIds": [
-    {"id": "SRC-CH01-CONV-001", "title": "Chapter 1 teaching-style conversation", "status": "audited"},
-    {"id": "SRC-CH01-CONV-002", "title": "Chapter 1 Outline conversation", "status": "partial-audited"},
-    {"id": "SRC-CH01-PDF-003", "title": "Chapter 1 slides PDF", "status": "audited"},
-    {"id": "SRC-CH01-CONV-003", "title": "Ch1 Review Solved Step-by-Step", "status": "audited"},
-    {"id": "SRC-CH01-CONV-005", "title": "@ch1: problems", "status": "audited"},
-    {"id": "SRC-CH01-REVIEW-001", "title": "Ch1 Review card", "status": "audited"},
-    {"id": "SRC-CH01-KAHOOT-001", "title": "Pasted Kahoot-generation conversation", "status": "audited"}
+    {
+      "id": "SRC-CH01-CONV-001",
+      "title": "Chapter 1 teaching-style conversation",
+      "status": "audited"
+    },
+    {
+      "id": "SRC-CH01-CONV-002",
+      "title": "Chapter 1 Outline conversation",
+      "status": "partial-audited"
+    },
+    {
+      "id": "SRC-CH01-PDF-003",
+      "title": "Chapter 1 slides PDF",
+      "status": "audited"
+    },
+    {
+      "id": "SRC-CH01-CONV-003",
+      "title": "Ch1 Review Solved Step-by-Step",
+      "status": "audited"
+    },
+    {
+      "id": "SRC-CH01-CONV-005",
+      "title": "@ch1: problems",
+      "status": "audited"
+    },
+    {
+      "id": "SRC-CH01-REVIEW-001",
+      "title": "Ch1 Review card",
+      "status": "audited"
+    },
+    {
+      "id": "SRC-CH01-KAHOOT-001",
+      "title": "Pasted Kahoot-generation conversation",
+      "status": "audited"
+    }
   ],
   "topicIds": [
     "ch01-t01",
@@ -31,93 +59,173 @@
   "namespaces": [
     {
       "type": "source",
-      "patterns": ["^SRC-CH01-[A-Z0-9-]+$"],
-      "authorityFiles": ["docs/content-audits/chapter-01/SOURCE_REGISTRY.md"],
-      "examples": ["SRC-CH01-CONV-001", "SRC-CH01-PDF-003"]
+      "patterns": [
+        "^SRC-CH01-[A-Z0-9-]+$"
+      ],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/SOURCE_REGISTRY.md"
+      ],
+      "examples": [
+        "SRC-CH01-CONV-001",
+        "SRC-CH01-PDF-003"
+      ]
     },
     {
       "type": "segment",
-      "patterns": ["^SEG[0-9]{3}$", "^S2-SEG[0-9]{3}$", "^S3C-SEG[0-9]{3}$", "^S5-SEG[0-9]{3}$"],
+      "patterns": [
+        "^SEG[0-9]{3}$",
+        "^S2-SEG[0-9]{3}$",
+        "^S3C-SEG[0-9]{3}$",
+        "^S5-SEG[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/raw-sources/source-001-segments.json",
         "docs/content-audits/chapter-01/sources/source-002/source-002-segments.json",
         "docs/content-audits/chapter-01/raw-sources/source-conv-003-segments.json",
         "docs/content-audits/chapter-01/raw-sources/source-conv-005-segments.json"
       ],
-      "examples": ["SEG001", "S2-SEG092", "S3C-SEG004", "S5-SEG019"]
+      "examples": [
+        "SEG001",
+        "S2-SEG092",
+        "S3C-SEG004",
+        "S5-SEG019"
+      ]
     },
     {
       "type": "page",
-      "patterns": ["^S3-P[0-9]{3}$", "^R1-P[0-9]{3}$"],
+      "patterns": [
+        "^S3-P[0-9]{3}$",
+        "^R1-P[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/sources/source-003/page-inventory.json",
         "docs/content-audits/chapter-01/sources/source-review-001/page-card-inventory.json"
       ],
-      "examples": ["S3-P026", "R1-P001"]
+      "examples": [
+        "S3-P026",
+        "R1-P001"
+      ]
     },
     {
       "type": "card",
-      "patterns": ["^R1-CARD[0-9]{2}$"],
-      "authorityFiles": ["docs/content-audits/chapter-01/sources/source-review-001/page-card-inventory.json"],
-      "examples": ["R1-CARD01"]
+      "patterns": [
+        "^R1-CARD[0-9]{2}$"
+      ],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/sources/source-review-001/page-card-inventory.json"
+      ],
+      "examples": [
+        "R1-CARD01"
+      ]
     },
     {
       "type": "problem",
-      "patterns": ["^S5-P[0-9]{3}$", "^ch01-prob-[0-9]{3}$"],
+      "patterns": [
+        "^S5-P[0-9]{3}$",
+        "^ch01-prob-[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/sources/source-conv-005/problem-inventory.json",
         "docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"
       ],
-      "examples": ["S5-P012", "ch01-prob-001"]
+      "examples": [
+        "S5-P012",
+        "ch01-prob-001"
+      ]
     },
     {
       "type": "instructorScript",
-      "patterns": ["^ch01-is-[0-9]{3}$"],
-      "authorityFiles": ["docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"],
-      "examples": ["ch01-is-101", "ch01-is-102"],
+      "patterns": [
+        "^ch01-is-[0-9]{3}$"
+      ],
+      "authorityFiles": [
+        "docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"
+      ],
+      "examples": [
+        "ch01-is-101",
+        "ch01-is-102"
+      ],
       "addedInRegistryVersion": "1.3.0",
       "note": "This namespace type did not previously exist in this registry, though the ch01-is-NNN ID pattern itself was already established and in use by CANONICAL_DESIGN_SCHEMA.json's own instructorScript record convention, across the four pilot topics (ch01-is-102/103/108/110) and Batch 1 (ch01-is-101/104). Added at registryVersion 1.3.0 to close this gap as part of Batch 1 identifier registration; does not retroactively register the four pilot topics' own instructorScript IDs."
     },
     {
       "type": "contentBlock",
-      "patterns": ["^ch01-t[0-9]{2}-block-[a-z]+$"],
-      "authorityFiles": ["docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"],
-      "examples": ["ch01-t01-block-mainidea", "ch01-t04-block-equations"],
+      "patterns": [
+        "^ch01-t[0-9]{2}-block-[a-z]+$"
+      ],
+      "authorityFiles": [
+        "docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"
+      ],
+      "examples": [
+        "ch01-t01-block-mainidea",
+        "ch01-t04-block-equations"
+      ],
       "addedInRegistryVersion": "1.3.0",
       "note": "This namespace type did not previously exist in this registry, though the ch01-tNN-block-<type> ID pattern itself was already established and in use by CANONICAL_DESIGN_SCHEMA.json's own contentBlock record convention, across the four pilot topics and Batch 1. Added at registryVersion 1.3.0 to close this gap as part of Batch 1 identifier registration; does not retroactively register the four pilot topics' own contentBlock IDs."
     },
     {
       "type": "occurrence",
-      "patterns": ["^S5-OCC[0-9]{3}$"],
-      "authorityFiles": ["docs/content-audits/chapter-01/sources/source-conv-005/problem-inventory.json"],
-      "examples": ["S5-OCC001"]
+      "patterns": [
+        "^S5-OCC[0-9]{3}$"
+      ],
+      "authorityFiles": [
+        "docs/content-audits/chapter-01/sources/source-conv-005/problem-inventory.json"
+      ],
+      "examples": [
+        "S5-OCC001"
+      ]
     },
     {
       "type": "solution",
-      "patterns": ["^ch01-sol-[0-9]{3}$"],
-      "authorityFiles": ["docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"],
-      "examples": ["ch01-sol-001"],
+      "patterns": [
+        "^ch01-sol-[0-9]{3}$"
+      ],
+      "authorityFiles": [
+        "docs/content-design/chapter-01/CANONICAL_DESIGN_SCHEMA.json"
+      ],
+      "examples": [
+        "ch01-sol-001"
+      ],
       "status": "reservedCanonicalNamespaceNoSourceLevelSolutionIdsCurrentlyPresent"
     },
     {
       "type": "question",
-      "patterns": ["^R1-Q[0-9]{3}$", "^S3C-Q[0-9]{3}$", "^ch01-quiz-[0-9]{3}$"],
+      "patterns": [
+        "^R1-Q[0-9]{3}$",
+        "^S3C-Q[0-9]{3}$",
+        "^ch01-quiz-[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/sources/source-review-001/question-inventory.json",
         "docs/content-audits/chapter-01/sources/source-conv-003/problem-solution-inventory.json"
       ],
-      "examples": ["R1-Q001", "S3C-Q017"]
+      "examples": [
+        "R1-Q001",
+        "S3C-Q017"
+      ]
     },
     {
       "type": "visual",
-      "patterns": ["^V[0-9]{2}$", "^R1-VIS-[0-9]{3}$", "^S5-VIS-MISSING-[0-9]{3}$", "^ch01-vis-[0-9]{3}$", "^ch01-t[0-9]{2}-visual-[0-9]{3}$"],
+      "patterns": [
+        "^V[0-9]{2}$",
+        "^R1-VIS-[0-9]{3}$",
+        "^S5-VIS-MISSING-[0-9]{3}$",
+        "^ch01-vis-[0-9]{3}$",
+        "^ch01-t[0-9]{2}-visual-[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/visual-inventory.json",
         "docs/content-audits/chapter-01/sources/source-review-001/visual-inventory.json",
         "docs/content-audits/chapter-01/sources/source-conv-005/figure-and-graph-inventory.json",
         "docs/content-design/chapter-01/VISUAL_RESOLUTION_PLAN.json"
       ],
-      "examples": ["V01", "R1-VIS-001", "S5-VIS-MISSING-001", "ch01-vis-001", "ch01-t01-visual-001"],
+      "examples": [
+        "V01",
+        "R1-VIS-001",
+        "S5-VIS-MISSING-001",
+        "ch01-vis-001",
+        "ch01-t01-visual-001"
+      ],
       "patternAddedInRegistryVersion": {
         "^ch01-t[0-9]{2}-visual-[0-9]{3}$": "1.3.0"
       },
@@ -125,7 +233,15 @@
     },
     {
       "type": "scientificAudit",
-      "patterns": ["^SCA[0-9]{2}$", "^S2-SCI-[0-9]{3}$", "^S3-SCI-[0-9]{3}$", "^S3C-SCI-[0-9]{3}$", "^S5-SCI-[0-9]{3}$", "^R1-SCI-[0-9]{3}$", "^K1-SCI-[0-9]{3}$"],
+      "patterns": [
+        "^SCA[0-9]{2}$",
+        "^S2-SCI-[0-9]{3}$",
+        "^S3-SCI-[0-9]{3}$",
+        "^S3C-SCI-[0-9]{3}$",
+        "^S5-SCI-[0-9]{3}$",
+        "^R1-SCI-[0-9]{3}$",
+        "^K1-SCI-[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/scientific-audit.json",
         "docs/content-audits/chapter-01/sources/source-002/scientific-audit.json",
@@ -135,31 +251,61 @@
         "docs/content-audits/chapter-01/sources/source-review-001/scientific-audit.json",
         "docs/content-audits/chapter-01/sources/source-kahoot-001/scientific-audit.json"
       ],
-      "examples": ["SCA08", "S3C-SCI-003", "R1-SCI-006", "K1-SCI-009"]
+      "examples": [
+        "SCA08",
+        "S3C-SCI-003",
+        "R1-SCI-006",
+        "K1-SCI-009"
+      ]
     },
     {
       "type": "conflict",
-      "patterns": ["^D[0-9]{2}$", "^C[0-9]{2}$", "^S2-DUP-[0-9]{3}$", "^S5-DUP-[0-9]{3}$", "^S5-CONF-[0-9]{3}$", "^CD-CONF-[0-9]{3}$"],
+      "patterns": [
+        "^D[0-9]{2}$",
+        "^C[0-9]{2}$",
+        "^S2-DUP-[0-9]{3}$",
+        "^S5-DUP-[0-9]{3}$",
+        "^S5-CONF-[0-9]{3}$",
+        "^CD-CONF-[0-9]{3}$"
+      ],
       "authorityFiles": [
         "docs/content-audits/chapter-01/duplicates-and-conflicts.json",
         "docs/content-audits/chapter-01/sources/source-002/duplicate-observations.json",
         "docs/content-audits/chapter-01/sources/source-conv-005/duplicates-and-conflicts.json",
         "docs/content-design/chapter-01/DUPLICATE_AND_CONFLICT_DECISIONS.json"
       ],
-      "examples": ["D01", "C01", "S5-DUP-001", "S5-CONF-001", "CD-CONF-001"],
+      "examples": [
+        "D01",
+        "C01",
+        "S5-DUP-001",
+        "S5-CONF-001",
+        "CD-CONF-001"
+      ],
       "note": "D[0-9]{2} covers duplicateGroups (D01-D05); C[0-9]{2} covers the separate canonicalConflicts series (C01-C04) in the same source file. Both are audit-layer IDs from docs/content-audits/chapter-01/duplicates-and-conflicts.json and are distinguished by prefix letter only."
     },
     {
       "type": "canonicalCorrection",
-      "patterns": ["^ch01-corr-[0-9]{3}$"],
-      "authorityFiles": ["docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json"],
-      "examples": ["ch01-corr-001"]
+      "patterns": [
+        "^ch01-corr-[0-9]{3}$"
+      ],
+      "authorityFiles": [
+        "docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json"
+      ],
+      "examples": [
+        "ch01-corr-001"
+      ]
     },
     {
       "type": "glossaryTerm",
-      "patterns": ["^ch01-term-[a-z0-9-]+$"],
-      "authorityFiles": ["docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json"],
-      "examples": ["ch01-term-velocity"]
+      "patterns": [
+        "^ch01-term-[a-z0-9-]+$"
+      ],
+      "authorityFiles": [
+        "docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json"
+      ],
+      "examples": [
+        "ch01-term-velocity"
+      ]
     }
   ],
   "validationRules": [
@@ -200,12 +346,25 @@
       "docs/app/PHSH111_BATCH1_VISUAL_APPROVAL_RECORD.md",
       "docs/app/PHSH111_BATCH1_IDENTIFIER_REGISTRATION_RECORD.md"
     ],
-    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
-    "totalIdentifiersRegistered": 19,
+    "applicableTopicIds": [
+      "ch01-t01",
+      "ch01-t04"
+    ],
+    "totalIdentifiersRegistered": 21,
     "scopeStatement": "This registers exactly the Batch 1 content, problem, source-marker, and approved visual identifiers required before a future application-integration step. It does not integrate ch01-t01 or ch01-t04 into apps/chapter1-mvp/, does not modify any approved content or visual file, does not authorize student-facing use, and does not authorize publication. Registration is an internal governance bookkeeping action, not a content-approval or application action.",
     "glossaryTermIdsExcluded": {
       "statement": "Glossary term IDs are governed inside BILINGUAL_GLOSSARY.json (glossaryVersion 1.3.0) and are deliberately NOT registered as entries in this file, preserving the established decision that glossary identifiers are glossary-local.",
-      "excludedIds": ["ch01-term-fundamental-quantity", "ch01-term-derived-quantity", "ch01-term-speed", "ch01-term-scalar", "ch01-term-mass", "ch01-term-weight", "ch01-term-apparent-weight", "ch01-term-distance", "ch01-term-acceleration"]
+      "excludedIds": [
+        "ch01-term-fundamental-quantity",
+        "ch01-term-derived-quantity",
+        "ch01-term-speed",
+        "ch01-term-scalar",
+        "ch01-term-mass",
+        "ch01-term-weight",
+        "ch01-term-apparent-weight",
+        "ch01-term-distance",
+        "ch01-term-acceleration"
+      ]
     },
     "entries": [
       {
@@ -216,8 +375,16 @@
         "recordType": "instructorScript",
         "blockType": null,
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -234,8 +401,16 @@
         "recordType": "contentBlock",
         "blockType": "slide",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.6.0", "sha256": "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.6", "sha256": "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.6.0",
+          "sha256": "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.6",
+          "sha256": "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-19",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.6.0 revisionLog rev-003/rev-004/rev-005/rev-006 (rev-007/rev-008 do not change this record's own text, only its blockType/slideNumber/slideTitleEn tagging); ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.6 revisionLog rev-001/rev-002/rev-003/rev-004 (rev-005/rev-006 do not change this record's own text, only its blockType/slideNumber/slideTitleEn/slideTitleAr tagging)",
@@ -252,8 +427,16 @@
         "recordType": "contentBlock",
         "blockType": "slide",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.6.0", "sha256": "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.6", "sha256": "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.6.0",
+          "sha256": "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.6",
+          "sha256": "a6392440e091eefb5258d3ffbaf621d373d0f57e37cb4a56cb1b79372503fec4"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-20",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.6.0 revisionLog rev-007/rev-008; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.6 revisionLog rev-005/rev-006",
@@ -270,8 +453,16 @@
         "recordType": "contentBlock",
         "blockType": "mainIdea",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -288,8 +479,16 @@
         "recordType": "contentBlock",
         "blockType": "organizedExplanation",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -306,8 +505,16 @@
         "recordType": "contentBlock",
         "blockType": "equationSet",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -324,9 +531,21 @@
         "recordType": "contentBlock",
         "blockType": "visualReference",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
-        "visualBaselineDependency": {"record": "VISUAL_BATCH1_APPROVAL.json", "visualBaselineVersion": "1.0.0", "visualId": "ch01-t01-visual-001"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
+        "visualBaselineDependency": {
+          "record": "VISUAL_BATCH1_APPROVAL.json",
+          "visualBaselineVersion": "1.0.0",
+          "visualId": "ch01-t01-visual-001"
+        },
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0; VISUAL_BATCH1_APPROVAL.json v1.0.0",
         "status": "registered",
@@ -342,8 +561,16 @@
         "recordType": "contentBlock",
         "blockType": "misconception",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -360,8 +587,16 @@
         "recordType": "contentBlock",
         "blockType": "reviewQuestion",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -378,8 +613,16 @@
         "recordType": "instructorScript",
         "blockType": null,
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -396,8 +639,16 @@
         "recordType": "contentBlock",
         "blockType": "mainIdea",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -414,8 +665,16 @@
         "recordType": "contentBlock",
         "blockType": "organizedExplanation",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -432,8 +691,16 @@
         "recordType": "contentBlock",
         "blockType": "equationSet",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -450,9 +717,21 @@
         "recordType": "contentBlock",
         "blockType": "visualReference",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
-        "visualBaselineDependency": {"record": "VISUAL_BATCH1_APPROVAL.json", "visualBaselineVersion": "1.0.0", "visualId": "ch01-t04-visual-001"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
+        "visualBaselineDependency": {
+          "record": "VISUAL_BATCH1_APPROVAL.json",
+          "visualBaselineVersion": "1.0.0",
+          "visualId": "ch01-t04-visual-001"
+        },
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0; VISUAL_BATCH1_APPROVAL.json v1.0.0",
         "status": "registered",
@@ -468,8 +747,16 @@
         "recordType": "contentBlock",
         "blockType": "misconception",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -486,8 +773,16 @@
         "recordType": "contentBlock",
         "blockType": "reviewQuestion",
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -504,8 +799,16 @@
         "recordType": "problem",
         "blockType": null,
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-17",
         "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0",
@@ -518,7 +821,10 @@
         "identifier": "SRC-CH01-BATCH1-ORIGINAL",
         "identifierType": "source",
         "chapterId": "ch01",
-        "topicId": ["ch01-t01", "ch01-t04"],
+        "topicId": [
+          "ch01-t01",
+          "ch01-t04"
+        ],
         "recordType": "sourceMarker",
         "blockType": null,
         "approvedSourcePath": null,
@@ -540,8 +846,16 @@
         "recordType": "visualAsset",
         "blockType": null,
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "a445f55de091ed0a2f7b3093ba0a186e01f94b1f46f0a9fcdbc7833e52ec87d9"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "3955df7510ec86ef33379b4086792e1fc6fbcdddfe7b10fb4ab5535ced6c23c0"
+        },
         "visualBaselineDependency": {
           "record": "VISUAL_BATCH1_APPROVAL.json",
           "visualBaselineVersion": "1.0.0",
@@ -564,8 +878,16 @@
         "recordType": "visualAsset",
         "blockType": null,
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg",
-        "englishBaselineDependency": {"record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"},
-        "arabicBaselineDependency": {"record": "ARABIC_BATCH1_BASELINE_APPROVAL.json", "baselineVersion": "1.0.0", "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"},
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.0",
+          "sha256": "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371"
+        },
         "visualBaselineDependency": {
           "record": "VISUAL_BATCH1_APPROVAL.json",
           "visualBaselineVersion": "1.0.0",
@@ -579,6 +901,32 @@
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
         "notes": "Independent human visual review incomplete (reviewer/reviewedAt remain null on the validation record). Neither the SVG nor its validation record was modified by this registration."
+      },
+      {
+        "identifier": "ch01-t01-block-opening-3",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "slide",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.7.0",
+          "sha256": "f6657628fc275f05bc329da0df119e0293a819b3e57adc49aa6551b5a329ee49"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.7",
+          "sha256": "d463e9aec42ae98cb871a1659c110bad6f903b81d5cfae72aa9ecea02d4433d7"
+        },
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-20",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.7.0 revisionLog rev-009; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.7 revisionLog rev-007",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Generic, reusable \"slide\" blockType (shared with ch01-t01-block-opening and ch01-t01-block-opening-2 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 3, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, or TopicPage conditional, demonstrating the reusable-slide architecture established by rev-008/ch01-arabic-baseline-rev-006. Also introduces generic tableEn/tableAr fields (see src/types/pilotSchema.ts's SourceTable), a mechanism available to any content-block record, used here to reconstruct the project owner's uploaded source table (Physical Quantity / Metric Units / English Units) as a real semantic <table> rather than the screenshot itself. Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-DISTANCE-UNITS-TABLE\" (an uploaded project-owner slide image, following the same free-form ad hoc source-marker convention already used by ch01-t01-block-opening / ch01-t01-block-opening-2). blocking.blockingReason does not include 'missingVisual': the uploaded source table was fully available and used, so no visual asset remains missing. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
       }
     ],
     "unchangedByThisRegistration": [
@@ -597,7 +945,10 @@
       "decisionDate": "2026-07-17",
       "scope": "Batch 1 identifier registration (ch01-t01, ch01-t04): registered the 18 identifiers required before application integration (2 instructorScript, 12 contentBlock, 1 problem, 1 source-authorship marker, 2 visual assets), and added the instructorScript and contentBlock namespace types plus the ch01-tNN-visual-NNN pattern within the existing visual namespace type, all previously missing from this registry despite being already-established CANONICAL_DESIGN_SCHEMA.json ID conventions in use by the four pilot topics and Batch 1 alike.",
       "identifiersRegistered": 18,
-      "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+      "applicableTopicIds": [
+        "ch01-t01",
+        "ch01-t04"
+      ],
       "approvalRecordDependencies": [
         "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json (v1.0.0)",
         "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json (v1.0.0)",

@@ -47,6 +47,12 @@ export interface NormalizedSection {
   blocking: BlockingState;
 }
 
+/** A small source table, one language's headers/cell text. `null` cells are genuinely empty in the source (a merged/blank cell), never a placeholder for missing data. */
+export interface NormalizedSourceTable {
+  headers: string[];
+  rows: (string | null)[][];
+}
+
 /**
  * One ordered, presentation-oriented slide (blockType "slide") — see
  * src/types/pilotSchema.ts's ContentBlockType header note. topic.slides is
@@ -60,6 +66,13 @@ export interface NormalizedSlide {
   title: NormalizedText;
   visibility: VisibilityState;
   text: NormalizedText;
+  /**
+   * Present only when the underlying record carries a source table
+   * (pilotSchema.ts's tableEn/tableAr) — generic to any slide, not tied
+   * to a specific slide number. Absent (undefined) for slides with no
+   * table, same convention as every other optional field here.
+   */
+  table?: { en: NormalizedSourceTable | null; ar: NormalizedSourceTable | null };
   blocking: BlockingState;
 }
 
