@@ -27,6 +27,7 @@ import {
   type PilotTopicFile,
   type PilotTopicId,
   type ProblemRecord,
+  type SourceTable,
   type VisibilityState,
 } from "../types/pilotSchema";
 
@@ -75,6 +76,15 @@ function isLocalizedText(x: unknown): x is LocalizedText {
 function isLocalizedContent(x: unknown): x is LocalizedContent {
   if (!isRecord(x)) return false;
   return isLocalizedText(x.en) && isLocalizedText(x.ar);
+}
+
+function isSourceTable(x: unknown): x is SourceTable {
+  if (!isRecord(x)) return false;
+  if (!Array.isArray(x.headers) || !x.headers.every((h) => typeof h === "string")) return false;
+  if (!Array.isArray(x.rows)) return false;
+  return x.rows.every(
+    (row) => Array.isArray(row) && row.every((cell) => typeof cell === "string" || cell === null),
+  );
 }
 
 function isBlockingState(x: unknown): x is BlockingState {
@@ -198,6 +208,18 @@ function validateContentBlock(
       diag(diagnostics, "error", "malformed-slide", "slide record is missing slideTitleEn", topicId, blockId);
       return null;
     }
+  }
+
+  // Generic to any blockType (not gated on "slide") — tableEn/tableAr are a
+  // reusable, blockType-independent field (see pilotSchema.ts's SourceTable
+  // header note), only validated when present.
+  if (raw.tableEn !== undefined && !isSourceTable(raw.tableEn)) {
+    diag(diagnostics, "error", "malformed-table", "tableEn is present but not a well-formed table", topicId, blockId);
+    return null;
+  }
+  if (raw.tableAr !== undefined && !isSourceTable(raw.tableAr)) {
+    diag(diagnostics, "error", "malformed-table", "tableAr is present but not a well-formed table", topicId, blockId);
+    return null;
   }
 
   checkLocalizationComplete(

@@ -92,7 +92,12 @@ export function TopicPage() {
               title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
               id={usesGuidedPresentation && slide.slideNumber === 1 ? "topic-opening" : undefined}
             >
-              <StructuredSlideContent blockId={slide.recordId} text={slide.text} italicTokens={proseTokens} />
+              <StructuredSlideContent
+                blockId={slide.recordId}
+                text={slide.text}
+                table={slide.table}
+                italicTokens={proseTokens}
+              />
             </Slide>
           ))}
         </SlidesSection>

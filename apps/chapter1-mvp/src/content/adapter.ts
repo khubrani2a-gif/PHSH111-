@@ -98,6 +98,7 @@ function normalizeSlides(file: PilotTopicFile): NormalizedSlide[] {
       title: { en: block.slideTitleEn ?? null, ar: block.slideTitleAr ?? null },
       visibility: block.visibility,
       text: toNormalizedText(block.localizedContent),
+      table: block.tableEn || block.tableAr ? { en: block.tableEn ?? null, ar: block.tableAr ?? null } : undefined,
       blocking: block.blocking,
     }))
     .sort((a, b) => a.slideNumber - b.slideNumber);

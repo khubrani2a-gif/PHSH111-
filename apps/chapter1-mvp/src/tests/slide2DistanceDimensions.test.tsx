@@ -68,9 +68,15 @@ function renderGenericSlides(arabic: boolean) {
 }
 
 describe("1. Slide 2 appears after Slide 1", () => {
-  it("topic.slides is ordered [Slide 1, Slide 2] by slideNumber", () => {
-    expect(topic.slides.map((s) => s.recordId)).toEqual(["ch01-t01-block-opening", "ch01-t01-block-opening-2"]);
-    expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2]);
+  it("topic.slides is ordered [Slide 1, Slide 2, ...] by slideNumber", () => {
+    // Only the first two entries are asserted here — a later slide (e.g.
+    // Slide 3, see src/tests/slide3DistanceUnits.test.tsx) may legitimately
+    // extend this array without breaking this Slide-2-scoped test.
+    expect(topic.slides.slice(0, 2).map((s) => s.recordId)).toEqual([
+      "ch01-t01-block-opening",
+      "ch01-t01-block-opening-2",
+    ]);
+    expect(topic.slides.slice(0, 2).map((s) => s.slideNumber)).toEqual([1, 2]);
   });
 
   it("Slide 2's heading follows Slide 1's heading in DOM order, both under one Slides section", () => {
@@ -80,7 +86,9 @@ describe("1. Slide 2 appears after Slide 1", () => {
     const slide2Idx = order.indexOf("slide-2-heading");
     expect(slide1Idx).toBeGreaterThanOrEqual(0);
     expect(slide2Idx).toBeGreaterThan(slide1Idx);
-    expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(2);
+    // At least Slide 1 and Slide 2 — a later slide (e.g. Slide 3) may
+    // legitimately add more without breaking this assertion.
+    expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(2);
   });
 
   it("Slide 2's exact bilingual title renders", () => {
@@ -336,8 +344,12 @@ describe("12. Governance and publication flags remain unchanged", () => {
     expect(slide2.blocking.blockingStatus).toBe("blocked");
   });
 
-  it("recordCount reflects the new record (9), with no problem record for ch01-t01", () => {
-    expect(topic.governance.recordCount).toBe(9);
+  it("recordCount includes the new record, with no problem record for ch01-t01", () => {
+    // 9 at the time this record was added, now 10 with Slide 3 also present
+    // (see src/tests/slide3DistanceUnits.test.tsx) — no problem record
+    // exists for ch01-t01, so this count is exactly the contentBlock +
+    // instructorScript records.
+    expect(topic.governance.recordCount).toBe(10);
   });
 });
 
@@ -407,10 +419,15 @@ describe("Reusability — generic Slide/StructuredSlideContent architecture over
     // both rendered by the exact same StructuredSlideContent component,
     // driven purely by topic.slides.map (see renderGenericSlides above),
     // with no per-slide-number conditional anywhere in the render path.
-    const blocks = Array.from(container.querySelectorAll(".structured-slide__equation-block")).map(
-      (el) => el.textContent,
-    );
-    expect(blocks).toEqual(["v = d / t = 100 m / 5 s = 20 m/s", "Speed = 120 miles / 2 h = 60 miles/h"]);
+    // Scoped to Slide 1 and Slide 2's own <section class="slide"> elements
+    // specifically, so a later slide's equation block (e.g. Slide 3, see
+    // src/tests/slide3DistanceUnits.test.tsx) doesn't affect this
+    // Slide-1/Slide-2-scoped assertion.
+    const slideSections = container.querySelectorAll(".slide");
+    const blocksIn = (section: Element) =>
+      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
+    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
+    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
   });
 
   it("topic.slides is a plain array — adding a third slide would only require a new source record, not new NormalizedTopic fields or adapter wiring", () => {

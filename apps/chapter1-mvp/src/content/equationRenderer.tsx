@@ -42,12 +42,22 @@ import type { PilotTopicId } from "../types/pilotSchema";
  * topic's content — never as an English word or an operator. See the
  * header comment above for the "x" and "a" ambiguities this avoids.
  */
-// ch01-t01 (v, d, t, L, T, M): verified by direct inspection of every
+// ch01-t01 (v, d, t, L, T, M, l, w): verified by direct inspection of every
 // rendered field in the approved English baseline — each token appears
 // only as a standalone dimensional/measured-variable symbol, never as an
 // English word, unit abbreviation, or operator. No unit abbreviation
 // collision exists (distance/time/mass are spelled out as "meters, m" /
 // "seconds, s" — "m" and "s" are deliberately NOT in this whitelist).
+// Lowercase "l" and "w" (Slide 3: "l commonly represents length" / "w
+// commonly represents width") were independently re-verified against the
+// full topic text and found to occur only as those two standalone
+// symbols — no fused-abbreviation or English-word collision. Lowercase
+// "h" ("h commonly represents height") was deliberately NOT added: it
+// collides with the existing "h" in "km/h" and "miles/h" (Slide 2's
+// speed example/scientific note) and the standalone "2 h" duration in
+// that same equation — a genuine ambiguity of exactly the kind this
+// whitelist's own house rule exists to catch, so "h" renders as plain
+// (non-italic) text everywhere in this topic, including in Slide 3.
 //
 // ch01-t04 (g, W only — "m" deliberately excluded): "m" appears in the
 // approved baseline BOTH as the mass variable ("m is its mass", "Mass
@@ -65,7 +75,7 @@ import type { PilotTopicId } from "../types/pilotSchema";
 // found to appear only as their intended physics symbols, with no
 // colliding occurrence.
 export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
-  "ch01-t01": ["v", "d", "t", "L", "T", "M"],
+  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w"],
   "ch01-t02": ["A", "V"],
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],
@@ -95,11 +105,12 @@ export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
 // ch01-t01 and ch01-t04 use the identical token set in both maps below:
 // no prose-specific ambiguity (an English-word or fused-abbreviation
 // collision, comparable to t08's "a" or t04's own excluded "m") was found
-// for any of v/d/t/L/T/M (t01) or g/W (t04) in either the equation-only
+// for any of v/d/t/L/T/M/l/w (t01) or g/W (t04) in either the equation-only
 // fields or the natural-language prose fields — see the header comment on
-// EQUATION_ITALIC_TOKENS_BY_TOPIC above for the full per-token verification.
+// EQUATION_ITALIC_TOKENS_BY_TOPIC above for the full per-token verification,
+// including why "h" is excluded from ch01-t01's whitelist.
 export const EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC: Record<PilotTopicId, string[]> = {
-  "ch01-t01": ["v", "d", "t", "L", "T", "M"],
+  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w"],
   "ch01-t02": ["A", "V"],
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],

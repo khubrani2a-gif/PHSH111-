@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.6.0",
+  "baselineVersion": "1.8.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -8,7 +8,10 @@
   "approvedBy": "khubrani2a-gif (project owner)",
   "approvedAt": "2026-07-16",
   "scope": {
-    "applicableTopicIds": ["ch01-t01", "ch01-t04"],
+    "applicableTopicIds": [
+      "ch01-t01",
+      "ch01-t04"
+    ],
     "notApplicableTo": "All other Chapter 1 topics remain outside this baseline. This is a separate, standalone record — it does not extend, merge with, or modify ENGLISH_PILOT_BASELINE_APPROVAL.json (scope: ch01-t02/ch01-t03/ch01-t08/ch01-t10) or ARABIC_PILOT_BASELINE_APPROVAL.json, both of which remain entirely separate, unmodified governance records with their own independent version sequences."
   },
   "approvedDraftFiles": [
@@ -16,9 +19,9 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "c8c40c19478290f87094883b7052b34a31937e2f0b9bc298db6b568845ed773e",
+      "sha256": "67644102383cf2b82fa038f27586af6d6b6e4fac01aaed3f43eeff64c517236b",
       "schemaVersion": "2.3.0",
-      "recordCount": 9
+      "recordCount": 10
     },
     {
       "topicId": "ch01-t04",
@@ -43,7 +46,10 @@
     "docs/app/PHSH111_BATCH1_ENGLISH_BASELINE_DECISION_BRIEF.md"
   ],
   "statementOfApproval": "The English-language draft content for ch01-t01 (Fundamental Quantities) and ch01-t04 (Mass, Inertia and Weight), as it exists in the two files listed in approvedDraftFiles at the checksums recorded there, is approved by the project owner as Batch 1 English baseline version 1.0.0. This approval is a project-owner content-readiness decision made on the basis of Claude's completed generation, review, revision, and closure-verification work (see reviewBasis) — it is not an independently derived, third-party human scientific or editorial re-verification beyond that work, and it does not itself authorize Arabic translation, visual production, application integration, or any student-facing use.",
-  "approvedCorrectionIds": ["ch01-corr-001", "ch01-corr-002"],
+  "approvedCorrectionIds": [
+    "ch01-corr-001",
+    "ch01-corr-002"
+  ],
   "approvedCorrectionsNote": "Both ch01-corr-001 and ch01-corr-002 carry approvalStatus: \"editoriallyApproved\" in SCIENTIFIC_CORRECTIONS.json (ch01-corr-002 with a recorded qualification on 'apparent weight' terminology), with approvals.scientificReviewer left null on both by explicit project-owner instruction. This baseline approval relies on, and does not re-open or re-litigate, those already-approved correction records.",
   "perTopicDecision": {
     "ch01-t01": {
@@ -174,6 +180,40 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — both ch01-t01-block-opening and ch01-t01-block-opening-2 entries updated (blockType, checksums)"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-2's blocking.blockingStatus remains 'blocked' (blockingReason now translationPending, scientificReviewPending, other — missingVisual removed per the explicit project-owner decision described above, not because review status changed). ch01-t01-block-opening's blocking fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-009",
+        "fromVersion": "1.6.0",
+        "toVersion": "1.7.0",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening-3 (blockType \"slide\", slideNumber 3), as the third record in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json (immediately after ch01-t01-block-opening-2). No existing record (ch01-t01-block-opening, ch01-t01-block-opening-2, ch01-is-101, ch01-t01-block-mainidea, ch01-t01-block-explanation, ch01-t01-block-equations, ch01-t01-block-visual, ch01-t01-block-misconception, ch01-t01-block-review) was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "A third opening/introductory content block was added as a sibling of ch01-t01-block-opening (Slide 1) and ch01-t01-block-opening-2 (Slide 2), rendered as 'Slide 3' via the existing generic topic.slides[] collection — no new ContentBlockType, no new NormalizedTopic field, no Slide-3-specific adapter branch or TopicPage conditional was added (see the reusable-slide architecture established by rev-008). It presents distance measurement in metric and English units, built around a project-owner-uploaded source slide image (a table titled 'Physical Quantity / Metric Units / English Units') whose exact original English prose ('1.1 Fundamental Physical Quantities: Distance...') is preserved verbatim within the new block's text, and whose table data is reconstructed as a real semantic <table> (headers/rows) rather than the screenshot itself, added via new generic tableEn/tableAr fields on ContentBlockRecord (see src/types/pilotSchema.ts's SourceTable) — a mechanism available to any content-block record, not specific to this slide. The Main Idea, the five numbered steps (one-dimensional measurement; length/width/height as distance; symbol conventions d/l/w/h/L; metric powers-of-ten; English-unit relationships), the Simple Example (a 2 m x 80 cm x 75 cm table, with the unit-consistency conversion 2 m = 200 cm and a distinct '200 cm x 80 cm x 75 cm' calculation block), the new Table Explanation subsection (clarifying that same-row units are not equivalent conversions, e.g. 1 m != 1 ft and 1 cm != 1 mi), the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide were authored/translated by Claude from the project owner's requested structure and exact required wording, not copied from any other source.",
+        "whatWasNotChanged": "No instructional prose, equation, visual reference, misconception, or review question in any of ch01-t01's nine pre-existing records (including Slides 1 and 2, entirely byte-for-byte unchanged) was reworded, shortened, reordered relative to one another, or removed. The uploaded source table's rows and empty cells are preserved exactly as reconstructed, not reordered or reinterpreted. ch01-t01-visual-001.svg was not touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Requested by the project owner as a third slide for the Fundamental Quantities topic, extending the reusable slide collection established by rev-008 to demonstrate that a new slide requires only a new source record — proving out the generic architecture in practice.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-3 appended at index 2",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-007",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-3"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. Unlike Slide 2's original addition, no 'missingVisual' reason is present: the uploaded source table was fully available and used (reconstructed as a semantic table), so no visual asset remains missing. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-010",
+        "fromVersion": "1.7.0",
+        "toVersion": "1.8.0",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Three pedagogical wording corrections to ch01-t01-block-opening-3's (Slide 3) localizedContent.en.text (Simple Example, the dimensions calculation block, and the Scientific Note) in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. The original quoted slide text, the reconstructed source table, the five numbered steps, the Table Explanation, the Common Misconception, the Key Concept, and the Connection section were NOT touched. No record in ch01-t01 other than Slide 3, and no record in ch01-t04, was touched.",
+        "whatChanged": "(1) The Simple Example's unit-consistency sentence was revised from 'Before comparing or combining them, their units must be made consistent: 2 m = 200 cm.' to 'Before comparing these measurements or using them together in a calculation, their units should be made consistent: 2 m = 200 cm.' (2) The bare calculation paragraph '200 cm × 80 cm × 75 cm' was relabeled 'Dimensions: 200 cm × 80 cm × 75 cm' to avoid implying an unlabeled multiplication result, and a new clarifying sentence was added immediately after it: 'The multiplication signs separate the three dimensions here; no volume calculation is required in this example.' (3) The Scientific Note was refined from 'Millimeter, centimeter, and kilometer are metric multiples or submultiples of the meter.' to the more precise 'The millimeter and centimeter are decimal submultiples of the meter, while the kilometer is a decimal multiple of it.'",
+        "whatWasNotChanged": "The verbatim quoted original English slide text ('1.1 Fundamental Physical Quantities: Distance...'), the reconstructed source table (tableEn, unchanged), all five numbered steps, the Table Explanation subsection, the Common Misconception, the Key Concept, and the Connection to the Next Slide are unchanged. Slides 1 and 2 (ch01-t01-block-opening, ch01-t01-block-opening-2) are entirely untouched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Project-owner pedagogical wording review of Slide 3 (rev-009) found: the original unit-consistency sentence read ambiguously ('comparing or combining' could suggest arithmetic combination beyond unit conversion); the bare '200 cm × 80 cm × 75 cm' calculation block, with no label, could be misread by a student as an implied volume calculation, which is outside this example's scope (the example only demonstrates unit consistency across three distance measurements, not a volume computation); and the Scientific Note's 'metric multiples or submultiples' phrasing did not specify which unit was a multiple versus a submultiple. This revision clarifies all three without altering any scientific claim already present.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening-3.localizedContent.en.text revised (Simple Example, dimensions block, Scientific Note)",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-008",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-3 entry's checksums updated"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-3's blocking.blockingStatus remains 'blocked' (blockingReason still translationPending, scientificReviewPending, other — no missingVisual, unchanged from rev-009), unaffected by this wording-only revision. Slides 1 and 2's governance fields are entirely unchanged."
       }
     ]
   },
@@ -196,7 +236,10 @@
       "ch01-prob-104",
       "SRC-CH01-BATCH1-ORIGINAL"
     ],
-    "provisionalUntilVisualProductionAuthorized": ["ch01-t01-visual-001", "ch01-t04-visual-001"],
+    "provisionalUntilVisualProductionAuthorized": [
+      "ch01-t01-visual-001",
+      "ch01-t04-visual-001"
+    ],
     "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal English baseline approval and was NOT performed as part of it. Registration is required before any future application-integration step. IDENTIFIER_REGISTRY.json was not modified by this approval."
   },
   "downstreamStatus": {
