@@ -29,9 +29,11 @@ function sha256(path: string): string {
 const APPROVED = {
   englishT01: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json"),
-    // Baseline v1.1.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
-    // revisionLog (rev-003): adds ch01-t01-block-opening.
-    sha256: "54f312ef362e08d673e1a89c838c7741fd991232f38f2ba75dceed0313401c68",
+    // Baseline v1.2.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog: rev-003 adds ch01-t01-block-opening; rev-004 corrects
+    // its explanatory prose (SI base-quantity accuracy, speed's derived
+    // unit, qualitative-vs-quantitative wording).
+    sha256: "084a584721e35033c062a52ff4e43146522dca33c66ff48e7c71069b8be156b6",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -39,9 +41,10 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    // Baseline v1.0.1 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
-    // revisionLog (rev-001): adds the Arabic side of ch01-t01-block-opening.
-    sha256: "ea702af93c5581613a09ed0f07bf908c34c5f772c930f73719df5ae1d869bfa9",
+    // Baseline v1.0.2 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog: rev-001 adds the Arabic side of ch01-t01-block-opening;
+    // rev-002 corrects its translation to match the English rev-004 fixes.
+    sha256: "81023df61605a919796ac2183e4d6d87cdbfbd7ce6a42842f60a6c879c0d27e2",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

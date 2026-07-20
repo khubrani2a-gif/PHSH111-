@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.1.0",
+  "baselineVersion": "1.2.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -16,7 +16,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "54f312ef362e08d673e1a89c838c7741fd991232f38f2ba75dceed0313401c68",
+      "sha256": "084a584721e35033c062a52ff4e43146522dca33c66ff48e7c71069b8be156b6",
       "schemaVersion": "2.3.0",
       "recordCount": 8
     },
@@ -89,6 +89,21 @@
           "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — new record ch01-t01-block-opening appended at index 0"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. Unlike the other revisions logged above, this new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through (see reviewBasis) — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', and it carries no scientificCorrectionIds, reflecting that its scientific accuracy has been checked only by Claude's own authoring process, not by a separate review pass. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file — not any elevated review or approval status beyond that."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-004",
+        "fromVersion": "1.1.0",
+        "toVersion": "1.2.0",
+        "revisedAt": "2026-07-19",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening's localizedContent.en.text (the explanatory prose added after the verbatim source-slide quotation) in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. The verbatim quoted slide text itself, and every other record in ch01-t01/ch01-t04, is unchanged.",
+        "whatChanged": "A project-owner scientific/linguistic review of rev-003's explanatory prose (recorded via ch01-english-baseline-rev-003) identified several inaccuracies and revised the wording accordingly: (1) distance/time/mass/charge are now explicitly scoped as 'the quantities this chapter's introductory framework builds its early examples from', not a universal list of every fundamental quantity in physics; (2) the claim that 'every physical quantity...ultimately traces back to' those four was replaced with a context-limited statement; (3) added a new closing 'Scientific note' paragraph stating that in the modern SI system, electric current (not charge) is one of the seven base quantities and charge is derived (Q = I t); (4) 'speed...without needing any unit of its own' was replaced with an explicit statement that speed's derived unit is m/s, formed from distance's and time's own units; (5) 'Saying \"far\" is not physics; saying \"100 m\" is' was replaced with a qualitative-vs-quantitative framing; (6) the area/volume/density mentions were trimmed to a brief one-sentence mention (deferred to later sections) rather than developed in this opening slide. The verbatim source-slide quotation at the start of the block is byte-for-byte unchanged from rev-003.",
+        "whatWasNotChanged": "The verbatim quoted original English slide text ('In physics, there are three basic aspects...distance, time, and two properties of matter called mass and charge.') is unchanged. No instructional prose, equation, visual reference, misconception, or review question in any of ch01-t01's seven pre-existing records was touched. ch01-t01-visual-001.svg was not touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Project-owner scientific and linguistic review of the draft-ai-generated-unreviewed content added in rev-003 found it presented a textbook-introductory simplification (charge as a 'fundamental' quantity alongside distance/time/mass) as if it were the complete, universal SI base-quantity list, and contained two overstated/imprecise sentences (the 'no unit of its own' claim for speed, and the 'far is not physics' framing). This revision corrects the wording and adds an explicit SI scientific note, without altering the preserved verbatim slide quotation.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening.localizedContent.en.text revised"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This record's blocking.blockingStatus remains 'blocked' (blockingReason still includes 'scientificReviewPending') — this revision is the project owner's own review pass on Claude's authored wording, not the independent third-party scientific review the rest of this baseline's content went through, and does not elevate this record to that status."
       }
     ]
   },

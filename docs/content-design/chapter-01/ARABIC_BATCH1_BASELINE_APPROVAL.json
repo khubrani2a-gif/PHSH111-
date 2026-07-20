@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.1",
+  "baselineVersion": "1.0.2",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -17,7 +17,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "ea702af93c5581613a09ed0f07bf908c34c5f772c930f73719df5ae1d869bfa9",
+      "sha256": "81023df61605a919796ac2183e4d6d87cdbfbd7ce6a42842f60a6c879c0d27e2",
       "schemaVersion": "2.3.0",
       "recordCount": 8
     },
@@ -107,6 +107,22 @@
           "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-003"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. This new record's Arabic translation has NOT been through the generation/correction/review-and-revision sequence the rest of this baseline's Arabic content went through (see reviewBasis) — it is explicitly marked draft-ai-generated-unreviewed, distinct from the rest of this file's already-reviewed 'draft' records, and terminologyApprovalStatus is 'pending' rather than 'approved'. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-002",
+        "fromVersion": "1.0.1",
+        "toVersion": "1.0.2",
+        "revisedAt": "2026-07-19",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening's localizedContent.ar.text and arabic.canonicalArabicTranslation.text (the Arabic translation of the explanatory prose added after the verbatim source-slide quotation) in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json, matching the paired English-file revision ch01-english-baseline-rev-004 (1.1.0 -> 1.2.0). The Arabic translation of the verbatim quoted slide text itself, and every other record, is unchanged.",
+        "whatChanged": "Re-translated the explanatory prose to match rev-004's corrected English wording: (1) distance/time/mass/charge now explicitly scoped as this chapter's introductory-framework examples, not a universal physics list; (2) the 'traces back to' overstatement removed; (3) added the Arabic translation of the new closing scientific note on SI base quantities and electric current vs. charge (Q = I t); (4) corrected the car-example sentence, which previously used 'المكان' (space) to describe what the distance measurement shows — corrected to 'تصف المسافة مقدار الحركة التي قطعتها السيارة، ويصف الزمن المدة التي استغرقتها' so distance, not space, is credited with describing the car's motion; (5) corrected the speed-unit sentence to state explicitly that speed's derived unit is m/s; (6) replaced the word 'الجواهر' in the definition of matter with clearer wording ('المادة هي الأشياء والمواد الفيزيائية التي يتكوّن منها العالم من حولنا'); (7) trimmed the area/volume/density mention to one brief sentence.",
+        "whatWasNotChanged": "The Arabic translation of the verbatim quoted original slide text ('في الفيزياء، توجد ثلاثة جوانب أساسية...وإلى خاصيتين من خصائص المادة تُسمّيان الكتلة والشحنة.') is unchanged. No .ar text on any of ch01-t01's seven pre-existing records was touched. No record in ch01-t04 was touched.",
+        "rationale": "Project-owner scientific and linguistic review found the rev-001 Arabic translation carried over the same textbook-simplification imprecision as the English rev-003 text, plus two Arabic-specific wording issues (the car-example sentence incorrectly attributing the description of motion to 'space' rather than 'distance', and an unnatural word choice — 'الجواهر' — in the definition of matter). This revision applies the project owner's exact corrected Arabic wording for both issues, and re-translates the other corrected English sentences to match.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening.localizedContent.ar.text and arabic.canonicalArabicTranslation.text revised",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-004"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on this record remains 'draft-ai-generated-unreviewed' and terminologyApprovalStatus remains 'pending' — this revision is the project owner's own review pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record to that status."
       }
     ]
   },
