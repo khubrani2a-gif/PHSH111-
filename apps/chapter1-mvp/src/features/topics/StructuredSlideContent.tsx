@@ -15,6 +15,7 @@ const SUBSECTION_LABEL = {
   simpleExample: { en: "Simple Example", ar: "مثال بسيط" },
   tableExplanation: { en: "Table Explanation", ar: "شرح الجدول" },
   figureExplanation: { en: "Figure Explanation", ar: "شرح الشكل" },
+  conversionFactorExplanation: { en: "Conversion-Factor Explanation", ar: "شرح عامل التحويل" },
   misconception: { en: "Common Misconception", ar: "مفهوم خاطئ شائع" },
   scientificNote: { en: "Scientific Note", ar: "ملاحظة علمية" },
   keyConcept: { en: "Key Concept", ar: "المفهوم الأساسي" },
@@ -37,8 +38,10 @@ export interface StructuredSlideConfig {
   keyConceptMarker?: Marker;
   /** Optional — when present, an additional "Table Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no source table (e.g. Slides 1 and 2). Mutually exclusive with figureExplanationMarker in current usage — both occupy the same slot. */
   tableExplanationMarker?: Marker;
-  /** Optional — when present, an additional "Figure Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no embedded figure. Mutually exclusive with tableExplanationMarker in current usage — both occupy the same slot. */
+  /** Optional — when present, an additional "Figure Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no embedded figure. Mutually exclusive with tableExplanationMarker/conversionFactorExplanationMarker in current usage — all three occupy the same slot. */
   figureExplanationMarker?: Marker;
+  /** Optional — when present, an additional "Conversion-Factor Explanation" subsection is parsed between Simple Example and Common Misconception. Used by slides with neither a source table nor an embedded figure that still need a labeled explanatory subsection there (e.g. a unit-conversion slide explaining why its conversion factor is valid). Mutually exclusive with tableExplanationMarker/figureExplanationMarker in current usage — all three occupy the same slot. */
+  conversionFactorExplanationMarker?: Marker;
   /**
    * Untranslated Latin notation, identical in both languages, that marks a
    * paragraph within Simple Example for distinct equation-block styling.
@@ -155,6 +158,20 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
     },
   },
+  "ch01-t01-block-opening-7": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    conversionFactorExplanationMarker: { en: "Conversion-Factor Explanation:", ar: "شرح عامل التحويل:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: ["23 m × (3.28084 ft / 1 m)", "5.00 m × (3.28084 ft / 1 m) = 16.4042 ft"],
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
@@ -176,6 +193,7 @@ interface ParsedSections {
   simpleExample: string[];
   tableExplanation: string[];
   figureExplanation: string[];
+  conversionFactorExplanation: string[];
   misconception: string[];
   scientificNote: string[];
   keyConcept: string[];
@@ -206,6 +224,9 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   const figureExplanationIdx = config.figureExplanationMarker
     ? paragraphs.findIndex((p) => p.startsWith(config.figureExplanationMarker![lang]))
     : -1;
+  const conversionFactorExplanationIdx = config.conversionFactorExplanationMarker
+    ? paragraphs.findIndex((p) => p.startsWith(config.conversionFactorExplanationMarker![lang]))
+    : -1;
   const misconceptionIdx = paragraphs.findIndex((p) => p.startsWith(config.misconceptionMarker[lang]));
   const scientificNoteIdx = paragraphs.findIndex((p) => p.startsWith(config.scientificNoteMarker[lang]));
   const keyConceptIdx = config.keyConceptMarker
@@ -216,6 +237,7 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   const ordered = [mainIdeaIdx, firstStepIdx, simpleExampleIdx];
   if (config.tableExplanationMarker) ordered.push(tableExplanationIdx);
   if (config.figureExplanationMarker) ordered.push(figureExplanationIdx);
+  if (config.conversionFactorExplanationMarker) ordered.push(conversionFactorExplanationIdx);
   ordered.push(misconceptionIdx, scientificNoteIdx);
   if (config.keyConceptMarker) ordered.push(keyConceptIdx);
   ordered.push(connectionIdx);
@@ -226,16 +248,20 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   const stepParagraphs = paragraphs.slice(firstStepIdx, simpleExampleIdx);
   if (!stepParagraphs.every((p) => stepPattern.test(p))) return null;
 
-  // Table Explanation and Figure Explanation are mutually exclusive in
-  // current usage (each slide has at most a source table OR an embedded
-  // figure, never both) — both occupy the same slot immediately after
-  // Simple Example, so whichever is configured determines where Simple
-  // Example ends and itself ends at Common Misconception.
+  // Table Explanation, Figure Explanation, and Conversion-Factor Explanation
+  // are mutually exclusive in current usage (each slide has at most a
+  // source table, an embedded figure, or neither and instead a plain
+  // explanatory subsection, never more than one) — all three occupy the
+  // same slot immediately after Simple Example, so whichever is configured
+  // determines where Simple Example ends and itself ends at Common
+  // Misconception.
   const simpleExampleEnd = config.tableExplanationMarker
     ? tableExplanationIdx
     : config.figureExplanationMarker
       ? figureExplanationIdx
-      : misconceptionIdx;
+      : config.conversionFactorExplanationMarker
+        ? conversionFactorExplanationIdx
+        : misconceptionIdx;
   const scientificNoteEnd = config.keyConceptMarker ? keyConceptIdx : connectionIdx;
 
   return {
@@ -245,6 +271,9 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
     simpleExample: paragraphs.slice(simpleExampleIdx, simpleExampleEnd),
     tableExplanation: config.tableExplanationMarker ? paragraphs.slice(tableExplanationIdx, misconceptionIdx) : [],
     figureExplanation: config.figureExplanationMarker ? paragraphs.slice(figureExplanationIdx, misconceptionIdx) : [],
+    conversionFactorExplanation: config.conversionFactorExplanationMarker
+      ? paragraphs.slice(conversionFactorExplanationIdx, misconceptionIdx)
+      : [],
     misconception: paragraphs.slice(misconceptionIdx, scientificNoteIdx),
     scientificNote: paragraphs.slice(scientificNoteIdx, scientificNoteEnd),
     keyConcept: config.keyConceptMarker ? paragraphs.slice(keyConceptIdx, connectionIdx) : [],
@@ -291,6 +320,7 @@ function renderSteps(
   italicTokens: readonly string[],
   direction: "ltr" | "rtl",
   stepPattern: RegExp,
+  equationBlockPhrase: string | string[] | undefined,
 ) {
   return (
     <ol className="structured-slide__steps">
@@ -305,10 +335,22 @@ function renderSteps(
             <strong className="structured-slide__step-number">{title}</strong>
             {clauses.length > 1 ? (
               <ul className="structured-slide__step-clauses">
-                {clauses.map((clause, j) => (
-                  <li key={j}>{renderEquationText(clause, italicTokens)}</li>
-                ))}
+                {clauses.map((clause, j) =>
+                  matchesEquationBlockPhrase(clause, equationBlockPhrase) ? (
+                    <li key={j}>
+                      <div className="structured-slide__equation-block" dir={direction}>
+                        {renderEquationText(clause, italicTokens)}
+                      </div>
+                    </li>
+                  ) : (
+                    <li key={j}>{renderEquationText(clause, italicTokens)}</li>
+                  ),
+                )}
               </ul>
+            ) : matchesEquationBlockPhrase(rest, equationBlockPhrase) ? (
+              <div className="structured-slide__equation-block" dir={direction}>
+                {renderEquationText(rest, italicTokens)}
+              </div>
             ) : (
               <span>{renderEquationText(rest, italicTokens)}</span>
             )}
@@ -458,7 +500,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, italicTok
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.steps[language]}</h4>
-        {renderSteps(sections.steps, italicTokens, direction, stepPattern)}
+        {renderSteps(sections.steps, italicTokens, direction, stepPattern, config?.equationBlockPhrase)}
       </section>
 
       <section className="structured-slide__section">
@@ -478,6 +520,13 @@ export function StructuredSlideContent({ blockId, text, table, figure, italicTok
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figureExplanation[language]}</h4>
           {figure ? <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} /> : null}
           {renderPlainParagraphs(sections.figureExplanation, italicTokens, direction)}
+        </section>
+      ) : null}
+
+      {sections.conversionFactorExplanation.length > 0 ? (
+        <section className="structured-slide__section">
+          <h4 className="structured-slide__heading">{SUBSECTION_LABEL.conversionFactorExplanation[language]}</h4>
+          {renderPlainParagraphs(sections.conversionFactorExplanation, italicTokens, direction)}
         </section>
       ) : null}
 

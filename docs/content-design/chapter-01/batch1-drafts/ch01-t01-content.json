@@ -546,6 +546,82 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-7",
+        "blockType": "slide",
+        "slideNumber": 7,
+        "slideTitleEn": "How Do We Convert 23 Meters to Feet Correctly?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Converting Distance Measurements\n\nExample: Convert 23 meters to feet.\n\nMain Idea: To convert a distance from one unit system to another, multiply the given measurement by a conversion factor that expresses how many units of the target system equal one unit of the original system. The original unit cancels, leaving the answer in the desired unit.\n\nStep 1 — Identify the given measurement\n* The measurement to convert is 23 meters.\n* Meters (m) are the given unit, and feet (ft) are the target unit.\n* Both units measure the same physical quantity: distance.\n\nStep 2 — Choose the correct conversion relationship\n* The metric-to-English conversion relationship for length is 1 m ≈ 3.28084 ft.\n* This relationship comes from the exact definition 1 ft = 0.3048 m.\n* The conversion factor must be arranged so that meters cancel and feet remain.\n\nStep 3 — Multiply by the conversion factor\n* We multiply the original measurement by the conversion factor.\n* 23 m × (3.28084 ft / 1 m)\n\nStep 4 — Cancel the original unit\n* The unit \"m\" appears in the numerator of the given measurement and in the denominator of the conversion factor.\n* Writing them together, m / m = 1, so the meter units cancel.\n* Only \"ft\" remains attached to the numerical result.\n\nStep 5 — Calculate and round appropriately\n* 23 × 3.28084 = 75.45932\n* 23 m = 75.45932 ft\n* The calculated value is 75.45932 ft. Rounded to one decimal place, it is 75.5 ft. However, because the original measurement 23 m is written with two significant figures, the result based strictly on significant figures is approximately 75 ft.\n* 23 m ≈ 75.5 ft (rounded to one decimal place)\n* 23 m ≈ 75 ft (rounded to two significant figures)\n\nSimple Example: Convert 5.00 m to feet.\n\n5.00 m × (3.28084 ft / 1 m) = 16.4042 ft\n\n5.00 m ≈ 16.4 ft\n\nThis result is rounded to three significant figures, matching the three significant figures in 5.00 m.\n\nConversion-Factor Explanation: A conversion factor is formed from two equivalent measurements. The exact relation is 1 ft = 0.3048 m. Its reciprocal is approximately 1 m = 3.28084 ft, so the displayed conversion factor represents unity to the precision shown and changes only the unit representation.\n\nMisconception: Some students believe that multiplying by a conversion factor makes the measured distance larger, since 75.5 is a bigger number than 23. Correction: the physical distance itself never changes — only the unit used to express it changes, because the conversion factor is equal to 1.\n\n23 m × (3.28084 ft / 1 m)\n\nThis calculation only re-expresses the same physical distance in feet instead of meters; 23 m and 75.5 ft describe the identical length.\n\nScientific Note: 1 in = 2.54 cm exactly, and 1 ft = 0.3048 m exactly — these are defined values, not measured approximations.\n\n1 m ≈ 3.28084 ft is the rounded reciprocal of 1 ft = 0.3048 m (1 / 0.3048 = 3.280839895..., rounded to six decimal places).\n\nKey Concept: Converting between unit systems means multiplying by a conversion factor equal to 1, which changes the unit used to express a measurement without changing the physical quantity itself.\n\nConnection to the Next Slide: After converting a single distance measurement between unit systems, the next step is to apply the same conversion-factor method to other physical quantities, such as mass and time.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-METERS-TO-FEET-CONVERSION",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-meters-to-feet-conversion",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/FD0DBBAC-B9AF-4138-A220-563B0F999D48.png) directly in the implementation task, together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Converting Distance Measurements... Example: Convert 23 meters to feet.') to preserve verbatim. The uploaded image contains only a title and the conversion question, with no instructional figure of any kind — it is recorded here as this record's source only and is explicitly NOT rendered as a student-facing screenshot or figure, and no figure/diagram asset is created or referenced by this record, since none is needed to understand this slide. The Main Idea, the five numbered steps, the Simple Example, the Conversion-Factor Explanation, the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide were newly authored/translated by Claude from the task's requested structure and exact required wording (including the required equations '23 m × (3.28084 ft / 1 m)', '23 × 3.28084 = 75.45932', '23 m ≈ 75.5 ft', and the Simple Example's '5 m × (3.28084 ft / 1 m) = 16.4042 ft' / '5 m ≈ 16.4 ft'), not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. No visual asset is referenced by this record."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored seventh opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-6 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-6 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

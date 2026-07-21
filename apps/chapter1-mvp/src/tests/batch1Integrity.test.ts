@@ -52,8 +52,17 @@ const APPROVED = {
     // SVG figure reusing the same generic figure fields; rev-013 adds
     // ch01-t01-block-opening-6 (Slide 6, area/volume measurement units)
     // with a reconstructed semantic table plus two new generic
-    // blockType-independent fields, tableCaptionEn/tableCaptionAr.
-    sha256: "6547e89ad5fb6852f8d3c9f07103197d3962b6de6d8477430cac53e8274be134",
+    // blockType-independent fields, tableCaptionEn/tableCaptionAr;
+    // rev-014 adds ch01-t01-block-opening-7 (Slide 7, converting meters to
+    // feet) with a new generic, reusable conversionFactorExplanationMarker
+    // subsection slot; rev-015 is a project-owner scientific-precision
+    // review correcting Slide 7's significant-figures explanation (no
+    // longer presenting 75.5 ft as simultaneously rounded to three
+    // significant figures when 23 m has only two), the Simple Example
+    // (Convert 5.00 m, matching significant figures), and the
+    // Conversion-Factor Explanation (no longer implying the rounded
+    // decimal ratio is itself mathematically exact).
+    sha256: "8b290658b785516c4a96c5ee147d74a4e2f9b105ede4fdfb186efd03eabc5f92",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -88,7 +97,12 @@ const APPROVED = {
     // bullets, revised for grammatical consistency). English text and the
     // figure are unchanged. rev-013 adds the Arabic side of
     // ch01-t01-block-opening-6 (Slide 6), matching English rev-013.
-    sha256: "250429ddd548ac07fc76035ad1de6cc7cc09b3a4edd2c22ed943e6c801e016bc",
+    // rev-014 adds the Arabic side of ch01-t01-block-opening-7 (Slide 7),
+    // matching English rev-014, including Step 5's single-combined-
+    // sentence Arabic rendering (rather than three separate bullets).
+    // rev-015 matches English rev-015's scientific-precision corrections
+    // (Step 5, Simple Example, Conversion-Factor Explanation).
+    sha256: "6e0a46b69d6c614b9ff6fbbb5c5cf72f2c4d07f7a16fa4db36590f47310ed896",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

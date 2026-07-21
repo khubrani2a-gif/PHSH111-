@@ -57,8 +57,10 @@ function remount() {
 }
 
 describe("1. Slide 6 appears sixth", () => {
-  it("topic.slides is ordered [Slide 1, ..., Slide 6] by slideNumber", () => {
-    expect(topic.slides.map((s) => s.recordId)).toEqual([
+  it("topic.slides is ordered [Slide 1, ..., Slide 6, ...] by slideNumber, with Slide 6 sixth", () => {
+    // Sliced to the first six, not an exact-length equality: a later slide
+    // (e.g. Slide 7, see slide7MetersToFeet.test.tsx) may follow Slide 6.
+    expect(topic.slides.slice(0, 6).map((s) => s.recordId)).toEqual([
       "ch01-t01-block-opening",
       "ch01-t01-block-opening-2",
       "ch01-t01-block-opening-3",
@@ -66,7 +68,7 @@ describe("1. Slide 6 appears sixth", () => {
       "ch01-t01-block-opening-5",
       "ch01-t01-block-opening-6",
     ]);
-    expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(topic.slides.slice(0, 6).map((s) => s.slideNumber)).toEqual([1, 2, 3, 4, 5, 6]);
   });
 
   it("Slide 6's header follows Slide 5's header in DOM order, all six under one Slides section", () => {
@@ -76,7 +78,9 @@ describe("1. Slide 6 appears sixth", () => {
     const slide6Idx = order.indexOf("slide-6-header");
     expect(slide5Idx).toBeGreaterThanOrEqual(0);
     expect(slide6Idx).toBeGreaterThan(slide5Idx);
-    expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(6);
+    // >= 6, not exactly 6: a later slide (e.g. Slide 7, see
+    // slide7MetersToFeet.test.tsx) may have been added since.
+    expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(6);
   });
 
   it("Slide 6's exact bilingual title renders inside its expanded panel", () => {
@@ -150,7 +154,7 @@ describe("3. Slide 6 loads through the generic slides[] architecture", () => {
 
   it("Slide 6 renders via the exact same generic topic.slides.map(...) as Slides 1-5 — no per-slide-number conditional", () => {
     renderSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(6);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(6);
     expect(container.querySelector("#slide-6-header")).not.toBeNull();
   });
 
@@ -169,28 +173,29 @@ describe("3. Slide 6 loads through the generic slides[] architecture", () => {
   });
 });
 
-describe("4. Accordion count and jump options update to 6", () => {
-  it("6 accordion headers render, numbered 1-6", () => {
+describe("4. Accordion count and jump options include at least 6", () => {
+  it("at least 6 accordion headers render, numbered 1-6 in order (later slides, e.g. Slide 7, may follow)", () => {
     renderSlides(false);
     const numbers = Array.from(container.querySelectorAll(".slide-accordion__number")).map(
       (el) => el.textContent,
     );
-    expect(numbers).toEqual(["1", "2", "3", "4", "5", "6"]);
+    expect(numbers.slice(0, 6)).toEqual(["1", "2", "3", "4", "5", "6"]);
   });
 
-  it("the jump select offers 6 options, including Slide 6", () => {
+  it("the jump select offers at least 6 options, including Slide 6", () => {
     renderSlides(false);
     const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
-    expect(select.options.length).toBe(6);
+    expect(select.options.length).toBeGreaterThanOrEqual(6);
     const values = Array.from(select.options).map((o) => o.value);
     expect(values).toContain("ch01-t01-block-opening-6");
   });
 
-  it("the viewed-progress denominator is 6", () => {
+  it("the viewed-progress denominator is at least 6", () => {
     renderSlides(false);
-    expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 1 of 6",
-    );
+    const text = container.querySelector(".slides-section__progress")?.textContent ?? "";
+    const match = /Slides viewed: 1 of (\d+)/.exec(text);
+    expect(match).not.toBeNull();
+    expect(Number(match?.[1])).toBeGreaterThanOrEqual(6);
   });
 });
 
@@ -223,15 +228,17 @@ describe("6. Slide 6's Previous button opens Slide 5", () => {
   });
 });
 
-describe("7. Slide 6's Next button is disabled (final slide)", () => {
-  it("Next is disabled and the pager reads 'Slide 6 of 6'", () => {
+describe("7. Slide 6's Next button opens Slide 7 (Slide 6 is no longer the final slide)", () => {
+  it("Next is enabled on Slide 6 and opens Slide 7 — the final-slide-disabled behavior now belongs to Slide 7 (see slide7MetersToFeet.test.tsx and slidesAccordion.test.tsx's dynamic final-slide check)", () => {
     renderSlides(false, 6);
     const panel6 = getSlidePanel(container, 6)!;
     const nextButton = Array.from(panel6.querySelectorAll("button")).find(
       (b) => b.textContent === "Next Slide",
     ) as HTMLButtonElement;
-    expect(nextButton.disabled).toBe(true);
-    expect(panel6.querySelector(".slide-accordion__pager-progress")?.textContent).toBe("Slide 6 of 6");
+    expect(nextButton.disabled).toBe(false);
+    act(() => nextButton.click());
+    expect(getSlideHeader(container, 7)?.getAttribute("aria-expanded")).toBe("true");
+    expect(getSlideHeader(container, 6)?.getAttribute("aria-expanded")).toBe("false");
   });
 });
 
@@ -516,7 +523,9 @@ describe("17. Governance and publication flags remain correctly blocked", () => 
   });
 
   it("recordCount reflects the new record and Slides 1-5's governance flags are untouched", () => {
-    expect(topic.governance.recordCount).toBe(13);
+    // 13 at the time this record was added, now 14 with Slide 7 also
+    // present (see src/tests/slide7MetersToFeet.test.tsx).
+    expect(topic.governance.recordCount).toBe(14);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);
@@ -537,12 +546,12 @@ describe("17. Governance and publication flags remain correctly blocked", () => 
 describe("Reusability — Slide 6 proves the architecture scales to a captioned, grouped-row-header table without per-slide wiring", () => {
   it("all six slides render via the exact same generic StructuredSlideContent, distinguished only by their own recordId-keyed config", () => {
     renderSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(6);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(6);
   });
 
   it("topic.slides remains a plain array where every slide has recordId/slideNumber/title.en/title.ar — no slide-count-specific schema", () => {
     expect(Array.isArray(topic.slides)).toBe(true);
-    expect(topic.slides.length).toBe(6);
+    expect(topic.slides.length).toBeGreaterThanOrEqual(6);
     for (const slide of topic.slides) {
       expect(typeof slide.recordId).toBe("string");
       expect(typeof slide.slideNumber).toBe("number");
