@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.9.0",
+  "baselineVersion": "1.10.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,9 +19,9 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "51df4d808ebffcded263929ec1e678e74c6276d1a942f180e04d0b06f67c99f1",
+      "sha256": "f9aac7100441c860dad751fc6822baadaa96425d1f31b91968b0b5e623ac4c3b",
       "schemaVersion": "2.3.0",
-      "recordCount": 11
+      "recordCount": 12
     },
     {
       "topicId": "ch01-t04",
@@ -232,6 +232,24 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-4"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the uploaded figure was fully available and used directly. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-012",
+        "fromVersion": "1.9.0",
+        "toVersion": "1.10.0",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening-5 (blockType \"slide\", slideNumber 5), as the fifth record in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json (immediately after ch01-t01-block-opening-4). No existing record was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "A fifth opening/introductory content block was added as a sibling of Slides 1-4, rendered as 'Slide 5' via the existing generic topic.slides[] collection — no new ContentBlockType, no new NormalizedTopic field, no Slide-5-specific adapter branch or TopicPage conditional was added. It presents how area (L²) and volume (L³) are derived from length, built around a project-owner-referenced source slide ('1.1 Fundamental Physical Quantities: Area and Volume...') whose exact original English prose is preserved verbatim within the new block's text, including the rectangle labels ('1 ft', '1.96 ft') as literal quoted lines. The record's figure is a hand-authored SVG diagram (docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-5-figure.svg) recreating only the rectangle (height 1 ft, width 1.96 ft) using the application's existing diagram design tokens (matching ch01-t01-visual-001.svg's fill/stroke/font conventions) rather than retaining a raster crop of the source photograph — the source image's coin fragment (a remnant of the adjacent, already-integrated Slide 4) and the basketball are deliberately NOT included, per explicit project-owner instruction. The figure is wired through the same generic figureAssetPath/figureAltEn (English file) and figureAltAr (Arabic file) fields introduced for Slide 4 in rev-011 (see pilotSchema.ts's header note) and the same blockId-keyed src/content/rawImports.ts RAW_FIGURE_URL_BY_BLOCK_ID map, extended with one new entry — no schema or adapter change was needed. The Main Idea, the five numbered steps, the Simple Example (a 4 m × 3 m rectangular floor, A = l × w = (4 m)(3 m) = 12 m²), and the Figure Explanation prose (English and Arabic) were authored/translated by Claude from the project owner's requested structure and exact required wording, not copied from any other source.",
+        "whatWasNotChanged": "No instructional prose, equation, visual reference, misconception, or review question in any of ch01-t01's eleven pre-existing records (including Slides 1-4, entirely byte-for-byte unchanged) was reworded, shortened, reordered relative to one another, or removed. The uploaded source slide's rectangle dimensions and labels are preserved exactly as reconstructed, not reordered or reinterpreted. ch01-t01-visual-001.svg and the Slide 4 figure asset were not touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Requested by the project owner as a fifth slide for the Fundamental Quantities topic, extending the reusable slide collection and the generic figure mechanism established by rev-011 to a hand-authored SVG diagram (rather than only raster photographs), and demonstrating that an adjacent slide's unrelated photographic remnant can be excluded from a recreated figure without retaining an unnecessary raster crop.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-5 appended at index 4",
+          "docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-5-figure.svg — new figure asset (hand-authored, recreated from the source slide, coin fragment and basketball intentionally excluded)",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-011",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-5"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the rectangle diagram was fully reconstructable from the source slide's own dimensions and was used directly. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
       }
     ]
   },

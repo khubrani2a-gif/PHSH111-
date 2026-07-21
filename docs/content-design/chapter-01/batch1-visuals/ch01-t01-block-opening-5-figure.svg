@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 245" width="420" height="245" role="img" aria-labelledby="ch01t01block5FigTitle ch01t01block5FigDesc">
+  <title id="ch01t01block5FigTitle">Rectangle diagram: 1 ft by 1.96 ft</title>
+  <desc id="ch01t01block5FigDesc">A labeled rectangle diagram, recreated from the source slide's rectangle-and-basketball comparison (the basketball and the source photograph's coin fragment are intentionally omitted as not instructionally relevant here). The rectangle's height is labeled 1 ft and its width is labeled 1.96 ft, illustrating that its area equals 1.96 square feet.</desc>
+
+  <rect x="0" y="0" width="420" height="245" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrowSlateT01Block5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- Width dimension line (top): 1.96 ft -->
+  <line x1="110" y1="60" x2="306" y2="60" stroke="#334155" stroke-width="1.5" marker-start="url(#arrowSlateT01Block5)" marker-end="url(#arrowSlateT01Block5)"/>
+  <text x="208" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">1.96 ft</text>
+
+  <!-- Height dimension line (left): 1 ft -->
+  <line x1="80" y1="70" x2="80" y2="170" stroke="#334155" stroke-width="1.5" marker-start="url(#arrowSlateT01Block5)" marker-end="url(#arrowSlateT01Block5)"/>
+  <text x="60" y="125" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a" transform="rotate(-90 60 125)">1 ft</text>
+
+  <!-- The rectangle itself -->
+  <rect x="110" y="70" width="196" height="100" fill="#eaf6f8" stroke="#1f6f8b" stroke-width="2.5"/>
+  <text x="208" y="126" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="17" fill="#0f172a">Area = 1.96 ft²</text>
+
+  <!-- Caption -->
+  <text x="208" y="220" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155">A = l × w = (1 ft)(1.96 ft) = 1.96 ft²</text>
+</svg>

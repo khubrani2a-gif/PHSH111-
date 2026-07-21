@@ -505,9 +505,10 @@ describe("13. Governance/publication flags remain unchanged", () => {
   });
 
   it("recordCount reflects the new record and Slide 1/Slide 2's governance flags are untouched", () => {
-    // 10 at the time this record was added, now 11 with Slide 4 also
-    // present (see src/tests/slide4DifferentUnits.test.tsx).
-    expect(topic.governance.recordCount).toBe(11);
+    // 10 at the time this record was added, now 12 with Slides 4-5 also
+    // present (see src/tests/slide4DifferentUnits.test.tsx and
+    // slide5AreaVolume.test.tsx).
+    expect(topic.governance.recordCount).toBe(12);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.blockingReason).not.toContain("missingVisual");
@@ -518,17 +519,16 @@ describe("Reusability — Slide 3 proves the architecture scales without per-sli
   it("all three slides render via the exact same generic StructuredSlideContent + table prop, distinguished only by their own recordId-keyed config", () => {
     renderGenericSlides(false);
     expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(3);
-    // Scoped to exactly the three phrases Slides 1-3 render — a later
-    // slide with no equationBlockPhrase configured (e.g. Slide 4) adds no
-    // entry here, so this stays a precise equality check.
-    const equationBlocks = Array.from(container.querySelectorAll(".structured-slide__equation-block")).map(
-      (el) => el.textContent,
-    );
-    expect(equationBlocks).toEqual([
-      "v = d / t = 100 m / 5 s = 20 m/s",
-      "Speed = 120 miles / 2 h = 60 miles/h",
-      "Dimensions: 200 cm × 80 cm × 75 cm",
-    ]);
+    // Scoped to Slides 1-3's own <section class="slide"> elements
+    // specifically, so a later slide's equation block (e.g. Slide 5, which
+    // also configures one) doesn't affect this Slide-1/2/3-scoped
+    // assertion.
+    const slideSections = container.querySelectorAll(".slide");
+    const blocksIn = (section: Element) =>
+      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
+    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
+    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
+    expect(blocksIn(slideSections[2])).toEqual(["Dimensions: 200 cm × 80 cm × 75 cm"]);
   });
 
   it("topic.slides remains a plain array where every slide has recordId/slideNumber/title.en/title.ar — no slide-count-specific schema", () => {

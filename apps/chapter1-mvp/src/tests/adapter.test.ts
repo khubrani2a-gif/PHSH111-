@@ -68,8 +68,8 @@ describe("content adapter — real canonical data (four pilot topics + Batch 1)"
     }
   });
 
-  it("counts the correct, different record totals for Batch 1's two topics (ch01-t01: 11, includes ch01-t01-block-opening through ch01-t01-block-opening-4, no problem; ch01-t04: 8, includes ch01-prob-104)", () => {
-    expect(getTopic("ch01-t01")?.governance.recordCount).toBe(11);
+  it("counts the correct, different record totals for Batch 1's two topics (ch01-t01: 12, includes ch01-t01-block-opening through ch01-t01-block-opening-5, no problem; ch01-t04: 8, includes ch01-prob-104)", () => {
+    expect(getTopic("ch01-t01")?.governance.recordCount).toBe(12);
     expect(getTopic("ch01-t04")?.governance.recordCount).toBe(8);
   });
 
