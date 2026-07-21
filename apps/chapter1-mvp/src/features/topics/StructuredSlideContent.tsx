@@ -45,9 +45,12 @@ export interface StructuredSlideConfig {
    * Matched as a substring (not full equality) so a per-language label may
    * precede it in the authored text (e.g. "Dimensions: 200 cm × 80 cm ×
    * 75 cm" / "الأبعاد: 200 cm × 80 cm × 75 cm" both match the phrase "200
-   * cm × 80 cm × 75 cm") while the notation itself stays untranslated.
+   * cm × 80 cm × 75 cm") while the notation itself stays untranslated. A
+   * slide with more than one worked calculation in its Simple Example
+   * (e.g. Slide 6's separate area and volume examples) supplies an array
+   * — a paragraph matching ANY entry gets equation-block styling.
    */
-  equationBlockPhrase?: string;
+  equationBlockPhrase?: string | string[];
   /**
    * Per-language pattern identifying the start of one numbered-step
    * paragraph. Defaults to DEFAULT_STEP_PATTERN ("1. ", "2. ", ...,
@@ -133,6 +136,20 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
     connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
     equationBlockPhrase: "A = (4 m)(3 m) = 12 m²",
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+  },
+  "ch01-t01-block-opening-6": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    tableExplanationMarker: { en: "Table Explanation:", ar: "شرح الجدول:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: ["A = (5 m)(4 m) = 20 m²", "V = (2 m)(1 m)(0.5 m) = 1 m³"],
     stepPattern: {
       en: /^Step\s+\d+\s+—[^\n]*/,
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
@@ -243,14 +260,21 @@ function renderPlainParagraphs(paragraphs: string[], italicTokens: readonly stri
   ));
 }
 
+function matchesEquationBlockPhrase(paragraph: string, equationBlockPhrase: string | string[] | undefined): boolean {
+  if (!equationBlockPhrase) return false;
+  return Array.isArray(equationBlockPhrase)
+    ? equationBlockPhrase.some((phrase) => paragraph.includes(phrase))
+    : paragraph.includes(equationBlockPhrase);
+}
+
 function renderEquationAwareParagraphs(
   paragraphs: string[],
   italicTokens: readonly string[],
   direction: "ltr" | "rtl",
-  equationBlockPhrase: string | undefined,
+  equationBlockPhrase: string | string[] | undefined,
 ) {
   return paragraphs.map((paragraph, i) =>
-    equationBlockPhrase && paragraph.includes(equationBlockPhrase) ? (
+    matchesEquationBlockPhrase(paragraph, equationBlockPhrase) ? (
       <div className="structured-slide__equation-block" dir={direction} key={i}>
         {renderEquationText(paragraph, italicTokens)}
       </div>
@@ -296,17 +320,48 @@ function renderSteps(
 }
 
 /**
+ * For each row, how many rows (including itself) its first cell should
+ * span: a non-null first cell starts a new row-group and its span grows
+ * by one for every immediately-following row whose own first cell is
+ * null (the established convention for a "continuation" row — see e.g.
+ * Slide 3's table, whose first column is null on every row after its
+ * first). A continuation row's own span is 0 (it contributes no
+ * `<th>` cell of its own; it's covered by the group's rowSpan).
+ */
+function computeRowGroupSpans(rows: NormalizedSourceTable["rows"]): number[] {
+  const spans = rows.map(() => 0);
+  let groupStart = -1;
+  for (let i = 0; i < rows.length; i++) {
+    if (rows[i][0] !== null) {
+      groupStart = i;
+      spans[i] = 1;
+    } else if (groupStart >= 0) {
+      spans[groupStart] += 1;
+    }
+  }
+  return spans;
+}
+
+/**
  * Renders a source table (see NormalizedSlide.table) as a real, accessible
  * <table> — semantic markup reconstructed from the source's headers/rows,
  * never the original screenshot/image itself. Wrapped in a scrollable
  * container so a wide table degrades to horizontal scroll on narrow
  * viewports instead of overlapping text; `dir` on the wrapper gives correct
  * RTL column order and cell alignment in Arabic.
+ *
+ * The first column is treated as a grouped row header: a row whose first
+ * cell is non-null renders it as a `<th scope="rowgroup">` spanning every
+ * immediately-following row whose own first cell is null (the existing
+ * null-as-continuation convention already used by every table-bearing
+ * slide's data) — generic to any table, not specific to any one slide.
  */
 function renderSourceTable(table: NormalizedSourceTable, direction: "ltr" | "rtl") {
+  const rowGroupSpans = computeRowGroupSpans(table.rows);
   return (
     <div className="structured-slide__table-wrapper" dir={direction}>
       <table className="structured-slide__table">
+        {table.caption ? <caption>{table.caption}</caption> : null}
         <thead>
           <tr>
             {table.headers.map((header, i) => (
@@ -319,9 +374,17 @@ function renderSourceTable(table: NormalizedSourceTable, direction: "ltr" | "rtl
         <tbody>
           {table.rows.map((row, i) => (
             <tr key={i}>
-              {row.map((cell, j) => (
-                <td key={j}>{cell ?? ""}</td>
-              ))}
+              {row.map((cell, j) =>
+                j === 0 ? (
+                  cell !== null ? (
+                    <th scope="rowgroup" rowSpan={rowGroupSpans[i]} key={j}>
+                      {cell}
+                    </th>
+                  ) : null
+                ) : (
+                  <td key={j}>{cell ?? ""}</td>
+                ),
+              )}
             </tr>
           ))}
         </tbody>

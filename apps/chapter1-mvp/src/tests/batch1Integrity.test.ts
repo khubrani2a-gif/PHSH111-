@@ -49,8 +49,11 @@ const APPROVED = {
     // scales) with a new generic embedded raster figure (figureAssetPath/
     // figureAltEn/figureAltAr); rev-012 adds ch01-t01-block-opening-5
     // (Slide 5, area/volume derived from distance) with a hand-authored
-    // SVG figure reusing the same generic figure fields.
-    sha256: "f9aac7100441c860dad751fc6822baadaa96425d1f31b91968b0b5e623ac4c3b",
+    // SVG figure reusing the same generic figure fields; rev-013 adds
+    // ch01-t01-block-opening-6 (Slide 6, area/volume measurement units)
+    // with a reconstructed semantic table plus two new generic
+    // blockType-independent fields, tableCaptionEn/tableCaptionAr.
+    sha256: "6547e89ad5fb6852f8d3c9f07103197d3962b6de6d8477430cac53e8274be134",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -83,8 +86,9 @@ const APPROVED = {
     // volume — and could be confused with the separate Volume quantity
     // this same slide defines; and the two Step 1 area/volume derivation
     // bullets, revised for grammatical consistency). English text and the
-    // figure are unchanged.
-    sha256: "ee1c3269890643bf2b7d6cc3c3085bf96de1f8a6c4f61a254936647150a5d231",
+    // figure are unchanged. rev-013 adds the Arabic side of
+    // ch01-t01-block-opening-6 (Slide 6), matching English rev-013.
+    sha256: "250429ddd548ac07fc76035ad1de6cc7cc09b3a4edd2c22ed943e6c801e016bc",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

@@ -248,6 +248,20 @@ export interface ContentBlockRecord {
   tableEn?: SourceTable;
   tableAr?: SourceTable;
   /**
+   * Present only on records whose source table carries an explicit,
+   * authored caption — generic to any contentBlock, independent of
+   * blockType. Mirrors the slideTitleEn/slideTitleAr convention exactly
+   * (not the tableEn/tableAr structural-data convention): the
+   * English-only baseline file supplies tableCaptionEn; the Arabic
+   * candidate file supplies the identical tableCaptionEn (byte-checked by
+   * src/content/batch1Merge.ts) plus the real tableCaptionAr translation.
+   * Omitted entirely (both undefined) for tables with no authored
+   * caption — src/features/topics/StructuredSlideContent.tsx's
+   * <table> only renders a <caption> when one is present.
+   */
+  tableCaptionEn?: string;
+  tableCaptionAr?: string;
+  /**
    * Present only on records with an embedded raster figure (a photo, not
    * an SVG diagram) — generic to any contentBlock, independent of
    * blockType. The actual image file is resolved at build time via a

@@ -259,15 +259,29 @@ describe("7. The semantic table renders correctly", () => {
     expect(table.querySelector("tbody")).not.toBeNull();
     const headers = Array.from(table.querySelectorAll("thead th")).map((el) => el.textContent);
     expect(headers).toEqual(["Physical Quantity", "Metric Units", "English Units"]);
+    // The first column's non-null cell ("Distance d (or l, w, h)") is a
+    // grouped row header (<th scope="rowgroup">, see
+    // StructuredSlideContent's renderSourceTable), spanning the three
+    // continuation rows beneath it — so only the remaining two data
+    // columns render as <td> on every row.
     const rows = Array.from(table.querySelectorAll("tbody tr")).map((tr) =>
       Array.from(tr.querySelectorAll("td")).map((td) => td.textContent),
     );
     expect(rows).toEqual([
-      ["Distance d (or l, w, h)", "meter (m)", "foot (ft)"],
-      ["", "millimeter (mm)", "inch (in.)"],
-      ["", "centimeter (cm)", "mile (mi)"],
-      ["", "kilometer (km)", ""],
+      ["meter (m)", "foot (ft)"],
+      ["millimeter (mm)", "inch (in.)"],
+      ["centimeter (cm)", "mile (mi)"],
+      ["kilometer (km)", ""],
     ]);
+  });
+
+  it("groups the row header under a single <th scope=\"rowgroup\"> spanning all four rows", () => {
+    renderSlides(false, 3);
+    const table = container.querySelector(".structured-slide__table")!;
+    const rowHeaders = table.querySelectorAll('tbody th[scope="rowgroup"]');
+    expect(rowHeaders).toHaveLength(1);
+    expect(rowHeaders[0].textContent).toBe("Distance d (or l, w, h)");
+    expect(rowHeaders[0].getAttribute("rowSpan")).toBe("4");
   });
 
   it("column headers use scope=\"col\" for accessibility", () => {
@@ -315,10 +329,10 @@ describe("9. Arabic table direction and alignment are correct", () => {
     const table = container.querySelector(".structured-slide__table")!;
     const headers = Array.from(table.querySelectorAll("thead th")).map((el) => el.textContent);
     expect(headers).toEqual(["الكمية الفيزيائية", "الوحدات المترية", "الوحدات الإنجليزية"]);
-    const firstRow = Array.from(table.querySelectorAll("tbody tr")[0].querySelectorAll("td")).map(
-      (el) => el.textContent,
-    );
-    expect(firstRow[0]).toContain("المسافة");
+    // The translated row header (<th scope="rowgroup">) carries the
+    // "المسافة" label; the first row's remaining data cells are <td>.
+    const rowHeader = table.querySelector('tbody th[scope="rowgroup"]');
+    expect(rowHeader?.textContent).toContain("المسافة");
   });
 });
 
@@ -488,10 +502,10 @@ describe("13. Governance/publication flags remain unchanged", () => {
   });
 
   it("recordCount reflects the new record and Slide 1/Slide 2's governance flags are untouched", () => {
-    // 10 at the time this record was added, now 12 with Slides 4-5 also
-    // present (see src/tests/slide4DifferentUnits.test.tsx and
-    // slide5AreaVolume.test.tsx).
-    expect(topic.governance.recordCount).toBe(12);
+    // 10 at the time this record was added, now 13 with Slides 4-6 also
+    // present (see src/tests/slide4DifferentUnits.test.tsx,
+    // slide5AreaVolume.test.tsx, and slide6AreaVolumeUnits.test.tsx).
+    expect(topic.governance.recordCount).toBe(13);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.blockingReason).not.toContain("missingVisual");

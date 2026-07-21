@@ -23,6 +23,7 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t01-block-opening-3": { en: "Distance Units", ar: "وحدات المسافة" },
   "ch01-t01-block-opening-4": { en: "Choosing Units", ar: "اختيار الوحدة المناسبة" },
   "ch01-t01-block-opening-5": { en: "Area and Volume", ar: "المساحة والحجم" },
+  "ch01-t01-block-opening-6": { en: "Area and Volume Units", ar: "وحدات المساحة والحجم" },
 };
 
 /**

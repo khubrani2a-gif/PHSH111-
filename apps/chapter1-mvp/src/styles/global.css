@@ -753,6 +753,26 @@ button:focus-visible {
   font-weight: 700;
 }
 
+/* Row-group header (the first column's th[scope="rowgroup"], spanning
+   every continuation row beneath it — see renderSourceTable's
+   computeRowGroupSpans) — visually distinguished from ordinary data
+   cells, matching the same weight/background convention as the column
+   headers above. */
+.structured-slide__table tbody th[scope="rowgroup"] {
+  background: var(--color-surface);
+  font-weight: 700;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.structured-slide__table caption {
+  caption-side: top;
+  text-align: start;
+  padding-block-end: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
 /* A slide's optional embedded raster figure (see SlideFigure.tsx) — same
    accessible-dialog visual language as .visual-viewer's SVG viewer above,
    sized for a photo rather than a diagram. */

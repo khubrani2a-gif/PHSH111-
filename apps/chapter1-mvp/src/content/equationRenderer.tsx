@@ -59,6 +59,17 @@ import type { PilotTopicId } from "../types/pilotSchema";
 // whitelist's own house rule exists to catch, so "h" renders as plain
 // (non-italic) text everywhere in this topic, including in Slide 3.
 //
+// "V" (Slide 6's volume symbol, "V = l × w × h") was added after
+// confirming zero occurrences anywhere in ch01-t01's approved English
+// baseline prior to Slide 6 — no English-word or unit-abbreviation
+// collision is possible for a token that didn't previously appear.
+// Uppercase "A" (Slide 5's/Slide 6's area symbol, "A = l × w") was
+// deliberately NOT added, for the same reason "h" was excluded: it
+// collides with the English indefinite article "A", which opens many
+// sentences throughout this topic's authored prose (Slide 5's "A
+// surface extends...", Slide 6's "A rectangular floor...", etc.) — so
+// "A" renders as plain (non-italic) text everywhere in this topic.
+//
 // ch01-t04 (g, W only — "m" deliberately excluded): "m" appears in the
 // approved baseline BOTH as the mass variable ("m is its mass", "Mass
 // (m)", the givenValues entry "m = 45 kg") AND as the meters-per-second-
@@ -75,7 +86,7 @@ import type { PilotTopicId } from "../types/pilotSchema";
 // found to appear only as their intended physics symbols, with no
 // colliding occurrence.
 export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
-  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w"],
+  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w", "V"],
   "ch01-t02": ["A", "V"],
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],
@@ -110,7 +121,7 @@ export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
 // EQUATION_ITALIC_TOKENS_BY_TOPIC above for the full per-token verification,
 // including why "h" is excluded from ch01-t01's whitelist.
 export const EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC: Record<PilotTopicId, string[]> = {
-  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w"],
+  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w", "V"],
   "ch01-t02": ["A", "V"],
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],

@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.10.0",
+  "baselineVersion": "1.11.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,9 +19,9 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "f9aac7100441c860dad751fc6822baadaa96425d1f31b91968b0b5e623ac4c3b",
+      "sha256": "6547e89ad5fb6852f8d3c9f07103197d3962b6de6d8477430cac53e8274be134",
       "schemaVersion": "2.3.0",
-      "recordCount": 12
+      "recordCount": 13
     },
     {
       "topicId": "ch01-t04",
@@ -250,6 +250,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-5"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the rectangle diagram was fully reconstructable from the source slide's own dimensions and was used directly. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-013",
+        "fromVersion": "1.10.0",
+        "toVersion": "1.11.0",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening-6 (blockType \"slide\", slideNumber 6), as the sixth record in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json (immediately after ch01-t01-block-opening-5). No existing record was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "A sixth opening/introductory content block was added as a sibling of Slides 1-5, rendered as 'Slide 6' via the existing generic topic.slides[] collection and the single-open accordion (src/features/topics/Slides.tsx) — no new ContentBlockType, no new NormalizedTopic field, no Slide-6-specific adapter branch, TopicPage conditional, or per-slide accordion JSX was added. It presents the common area and volume units of measure in the metric and English systems, built around a project-owner-uploaded source slide image (/mnt/data/9AD6874A-B410-4B74-8778-4F50F0B1E444.png) whose exact original English prose and unit abbreviations are preserved verbatim within the new block's text (plain source notation, e.g. 'm2', 'cm2', 'ft2', preserved unaltered in the quoted Original English prose). The uploaded screenshot itself is NOT used as the student-facing visual — the table is reconstructed as accessible semantic HTML via the existing generic tableEn/tableAr mechanism (introduced for Slide 3 in rev-009/rev-010's paired Arabic revisions), extended in this revision with two new generic, blockType-independent fields (tableCaptionEn/tableCaptionAr, mirroring the slideTitleEn/slideTitleAr convention) so the reconstructed table carries a <caption>, plus a presentation-only enhancement to src/features/topics/StructuredSlideContent.tsx's table renderer giving the first column's non-null cells (e.g. 'Area (A)', 'Volume (V)') semantic <th scope=\"rowgroup\"> grouping via rowSpan — a generic accessibility improvement applying to any table-bearing slide's existing null-as-continuation row data, not slide-6-specific logic. The reconstructed table uses scientifically formatted superscripts (m², cm², m³, etc.), distinct from the plain source notation retained in the Original English prose. The Main Idea, the five numbered steps, the two Simple Example calculations (a 5 m × 4 m floor, A = l × w = (5 m)(4 m) = 20 m²; and a 2 m × 1 m × 0.5 m container, V = l × w × h = (2 m)(1 m)(0.5 m) = 1 m³), the Table Explanation, the Common Misconception's m/m²/m³ illustration, and the Scientific Note's cc/cm³/mL equivalence (English and Arabic) were authored/translated by Claude from the project owner's requested structure and exact required wording, not copied from any other source. The uppercase symbol 'V' was added to ch01-t01's per-topic equation-italics whitelist (src/content/equationRenderer.tsx) after confirming zero prior occurrences anywhere in the topic's approved baseline; uppercase 'A' remains deliberately excluded (collides with the English indefinite article, per the same house rule already applied to exclude 'h').",
+        "whatWasNotChanged": "No instructional prose, equation, table, visual reference, misconception, or review question in any of ch01-t01's twelve pre-existing records (including Slides 1-5, entirely byte-for-byte unchanged) was reworded, shortened, reordered relative to one another, or removed. The uploaded source slide's unit labels and abbreviations are preserved exactly as reconstructed, not reordered or reinterpreted. No existing visual asset (ch01-t01-visual-001.svg, the Slide 4 figure, or the Slide 5 SVG) was touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Requested by the project owner as a sixth slide for the Fundamental Quantities topic, extending the reusable slide collection, the generic source-table mechanism, and the single-open accordion navigation (added in the immediately preceding feature) to a sixth record purely through data, proving the architecture requires no per-slide code for a new slide to appear correctly.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-6 appended at index 5",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-012",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-6"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the table was fully reconstructable from the source slide's own listed units and was used directly. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
       }
     ]
   },
