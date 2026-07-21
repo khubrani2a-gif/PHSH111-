@@ -60,12 +60,18 @@ import ch01t04Validation from "../../../../docs/content-design/chapter-01/batch1
 import ch01t01Svg from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg?raw";
 import ch01t04Svg from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg?raw";
 
-// Batch 1 — per-slide raster figures (not the topic-singular SVG above).
+// Batch 1 — per-slide embedded figures (not the topic-singular SVG above).
 // Keyed by blockId (not topicId), since any number of slide records across
 // any topic may carry their own embedded figure — generic, not specific to
-// any one slide. A plain (non-`?raw`) image import resolves to the
-// build-time-hashed asset URL Vite emits, suitable for a real <img src>.
+// any one slide. A plain (non-`?raw`) import resolves to the
+// build-time-hashed asset URL Vite emits, suitable for a real <img src> —
+// this applies equally to a raster photo (ch01-t01-block-opening-4's JPEG)
+// or a hand-authored SVG diagram (ch01-t01-block-opening-5's SVG,
+// recreated cleanly from a source slide rather than kept as a raster crop
+// containing an unrelated adjacent-slide remnant); the figure mechanism
+// itself is agnostic to which.
 import ch01t01BlockOpening4Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-4-figure.jpg";
+import ch01t01BlockOpening5Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-5-figure.svg";
 
 import type { PilotTopicId } from "../types/pilotSchema";
 import { mergeEnglishAndArabicTopicFile } from "./batch1Merge";
@@ -120,4 +126,5 @@ export const RAW_SVG_MARKUP_BY_TOPIC: Record<PilotTopicId, string> = {
  */
 export const RAW_FIGURE_URL_BY_BLOCK_ID: Record<string, string> = {
   "ch01-t01-block-opening-4": ch01t01BlockOpening4Figure,
+  "ch01-t01-block-opening-5": ch01t01BlockOpening5Figure,
 };

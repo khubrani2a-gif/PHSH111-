@@ -90,14 +90,17 @@ function renderGenericSlides(arabic: boolean) {
 }
 
 describe("1. Slide 4 appears after Slide 3", () => {
-  it("topic.slides is ordered [Slide 1, Slide 2, Slide 3, Slide 4] by slideNumber", () => {
-    expect(topic.slides.map((s) => s.recordId)).toEqual([
+  it("topic.slides is ordered [Slide 1, Slide 2, Slide 3, Slide 4, ...] by slideNumber", () => {
+    // Only the first four entries are asserted here — a later slide (e.g.
+    // Slide 5, see src/tests/slide5AreaVolume.test.tsx) may legitimately
+    // extend this array without breaking this Slide-4-scoped test.
+    expect(topic.slides.slice(0, 4).map((s) => s.recordId)).toEqual([
       "ch01-t01-block-opening",
       "ch01-t01-block-opening-2",
       "ch01-t01-block-opening-3",
       "ch01-t01-block-opening-4",
     ]);
-    expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2, 3, 4]);
+    expect(topic.slides.slice(0, 4).map((s) => s.slideNumber)).toEqual([1, 2, 3, 4]);
   });
 
   it("Slide 4's heading follows Slide 3's heading in DOM order, all four under one Slides section", () => {
@@ -107,7 +110,9 @@ describe("1. Slide 4 appears after Slide 3", () => {
     const slide4Idx = order.indexOf("slide-4-heading");
     expect(slide3Idx).toBeGreaterThanOrEqual(0);
     expect(slide4Idx).toBeGreaterThan(slide3Idx);
-    expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(4);
+    // At least Slides 1-4 — a later slide (e.g. Slide 5) may legitimately
+    // add more without breaking this assertion.
+    expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(4);
   });
 
   it("Slide 4's exact bilingual title renders", () => {
@@ -167,7 +172,7 @@ describe("3. Slide 4 loads through the generic slides[] architecture", () => {
 
   it("Slide 4 renders via the exact same generic topic.slides.map(...) as Slides 1-3 — no per-slide-number conditional", () => {
     renderGenericSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(4);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(4);
     expect(container.querySelector("#slide-4-heading")).not.toBeNull();
   });
 });
@@ -427,7 +432,9 @@ describe("13. Governance and publication flags remain unchanged", () => {
   });
 
   it("recordCount reflects the new record and Slides 1-3's governance flags are untouched", () => {
-    expect(topic.governance.recordCount).toBe(11);
+    // 11 at the time this record was added, now 12 with Slide 5 also
+    // present (see src/tests/slide5AreaVolume.test.tsx).
+    expect(topic.governance.recordCount).toBe(12);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);
@@ -438,12 +445,12 @@ describe("13. Governance and publication flags remain unchanged", () => {
 describe("Reusability — Slide 4 proves the architecture scales to a slide-embedded figure without per-slide wiring", () => {
   it("all four slides render via the exact same generic StructuredSlideContent, distinguished only by their own recordId-keyed config", () => {
     renderGenericSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(4);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(4);
   });
 
   it("topic.slides remains a plain array where every slide has recordId/slideNumber/title.en/title.ar — no slide-count-specific schema", () => {
     expect(Array.isArray(topic.slides)).toBe(true);
-    expect(topic.slides.length).toBe(4);
+    expect(topic.slides.length).toBeGreaterThanOrEqual(4);
     for (const slide of topic.slides) {
       expect(typeof slide.recordId).toBe("string");
       expect(typeof slide.slideNumber).toBe("number");

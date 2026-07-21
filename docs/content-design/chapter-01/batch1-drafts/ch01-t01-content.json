@@ -342,6 +342,84 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-5",
+        "blockType": "slide",
+        "slideNumber": 5,
+        "slideTitleEn": "How Are Area and Volume Derived from Distance?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Area and Volume\n\nTwo other physical quantities that are closely related to distance are area and volume.\n\nArea and volume are examples of physical quantities that are based on other physical quantities—in this case, just distance.\n\nArea commonly refers to the size of a surface.\n\nExample: the floor in a room or the outer skin of a basketball.\n\nThe concept of area can apply to surfaces that are not flat and to “empty,” two-dimensional spaces such as holes and open windows\n\nEvery surface, whether it is flat or curved, has an area. The area of this rectangle and the area of the surface of the basketball are equal\n\n1 ft\n\n1.96 ft\n\nMain Idea: Area and volume are derived physical quantities constructed from measurements of length. Area describes two-dimensional extent, while volume describes three-dimensional space.\n\nStep 1 — Area and volume are derived from length\n* Length is a fundamental dimension represented by L.\n* Area is formed by multiplying two lengths.\n* Volume is formed by multiplying three lengths.\n* The dimensions are L² for area and L³ for volume.\n\nStep 2 — Area measures the size of a surface\n* A surface extends in two independent directions.\n* For a rectangle, these directions are commonly length and width.\n* Area is expressed in square units such as m², cm², and ft².\n\nStep 3 — Area applies to flat and curved surfaces\n* A room floor is a flat surface.\n* The outer skin of a basketball is a curved surface.\n* Both have measurable areas.\n\nStep 4 — Empty regions can also have area\n* An open window has an area even though its opening contains no solid material.\n* A hole has an area determined by its boundary.\n* Area describes a two-dimensional region rather than the amount of material inside it.\n\nStep 5 — Volume describes three-dimensional space\n* Volume describes the space occupied or enclosed by an object.\n* It requires three length measurements.\n* It is expressed in cubic units such as m³, cm³, and ft³.\n\nSimple Example: A rectangular floor has a length of 4 m and a width of 3 m.\n\nA = l × w\n\nA = (4 m)(3 m) = 12 m²\n\nThe unit is squared because two length measurements are multiplied.\n\nFigure Explanation: The rectangle has dimensions 1 ft by 1.96 ft, so its area is 1.96 ft². According to the source slide, this flat rectangular area is equal to the curved surface area of the basketball. This shows that two surfaces can have the same area even when their shapes are different.\n\nMisconception: only flat solid surfaces have area. Correction: flat surfaces, curved surfaces, and bounded openings can all have area. Area measures two-dimensional extent, not whether a region is flat, curved, solid, or empty.\n\nScientific Note: Area has the physical dimension L², while volume has the physical dimension L³. Square units and cubic units must not be used interchangeably.\n\nKey Concept: Area is derived from two length measurements and is expressed in square units, while volume is derived from three length measurements and is expressed in cubic units.\n\nConnection to the Next Slide: After understanding area as a two-dimensional quantity, the next step is to examine how volume represents three-dimensional space and how its units are derived.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "figureAssetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-5-figure.svg",
+        "figureAltEn": "A rectangle diagram labeled with a height of 1 foot and a width of 1.96 feet, illustrating an area of 1.96 square feet.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-AREA-VOLUME",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-area-volume",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner referenced an uploaded source slide (a rectangle-and-basketball area comparison, with a coin-photo fragment and a partial '0.000019 km' label visibly bleeding in from the adjacent, already-integrated Slide 4 at the image's upper right) together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Area and Volume...'), directly in the implementation task. Per the task's own explicit instruction, the coin fragment and the basketball were NOT retained or recreated in the student-facing figure: only the rectangle diagram (height 1 ft, width 1.96 ft) was reconstructed, as a hand-authored SVG using the application's existing diagram design tokens (matching ch01-t01-visual-001.svg's fill/stroke/font conventions) rather than an unnecessary raster crop of the source photograph. The Main Idea, the five numbered steps, the Simple Example, and the Figure Explanation (English and Arabic) were newly authored/translated by Claude from the task's requested structure, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored fifth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-4 rather than a replacement — none of the prior four slides' records is modified by this addition. Deliberately distinct in wording from Slides 1-4 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",
