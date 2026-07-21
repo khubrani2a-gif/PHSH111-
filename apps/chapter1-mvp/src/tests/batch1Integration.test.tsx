@@ -9,7 +9,7 @@ import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel"
 import { ContentSection } from "../features/topics/ContentSection";
 import { EquationBlock } from "../features/topics/EquationBlock";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
-import { SlidesSection, Slide } from "../features/topics/Slides";
+import { SlidesSection } from "../features/topics/Slides";
 import { LanguageProvider } from "../app/LanguageContext";
 
 /**
@@ -358,43 +358,51 @@ describe("ch01-t01 — new slide block (ch01-t01-block-opening)", () => {
   });
 });
 
-describe("Slides / Slide presentation wrapper ('slide' renders as 'Slides -> Slide 1', generic blockType)", () => {
+describe("Slides / Slide presentation wrapper (generic blockType, rendered as a single-open accordion)", () => {
   const topic = getTopic("ch01-t01")!;
   const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 
-  function renderSlide1() {
+  function renderSlide1Only() {
     return renderToStaticMarkup(
       <LanguageProvider>
-        <SlidesSection>
-          <Slide
-            number={1}
-            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
-            id="topic-opening"
-          >
-            <ContentSection
-              blockType="slide"
-              text={slide1.text}
-              italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
-            />
-          </Slide>
-        </SlidesSection>
+        <SlidesSection
+          topicId="ch01-t01"
+          anchorId="topic-opening"
+          slides={[
+            {
+              recordId: slide1.recordId,
+              slideNumber: 1,
+              title: { en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" },
+              content: (
+                <ContentSection
+                  blockType="slide"
+                  text={slide1.text}
+                  italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+                />
+              ),
+            },
+          ]}
+        />
       </LanguageProvider>,
     );
   }
 
   it("renders a visible 'Slides' parent heading", () => {
-    const markup = renderSlide1();
+    const markup = renderSlide1Only();
     expect(markup).toContain('class="slides-section"');
     expect(textOnly(markup)).toContain("Slides");
   });
 
-  it("nests Slide 1 inside the Slides parent, with the exact English label 'Slide 1 — Fundamental Physical Quantities'", () => {
-    const markup = renderSlide1();
-    // Slide 1's heading id/aria-labelledby only exists inside .slides-section's markup.
-    const slidesSectionStart = markup.indexOf('class="slides-section"');
-    const slideStart = markup.indexOf('id="topic-opening"');
-    expect(slidesSectionStart).toBeGreaterThanOrEqual(0);
-    expect(slideStart).toBeGreaterThan(slidesSectionStart);
+  it("Slide 1 opens by default (no persisted state) and shows the exact English label 'Slide 1 — Fundamental Physical Quantities' inside its expanded panel", () => {
+    const markup = renderSlide1Only();
+    // The anchor id now lives on the Slides section itself (not tied to
+    // any one slide's open/closed state), immediately followed by Slide
+    // 1's expanded panel markup, open by default with nothing persisted.
+    const anchorStart = markup.indexOf('id="topic-opening"');
+    const panelStart = markup.indexOf('id="slide-1-panel"');
+    expect(anchorStart).toBeGreaterThanOrEqual(0);
+    expect(panelStart).toBeGreaterThan(anchorStart);
+    expect(markup).toContain('aria-expanded="true"');
     expect(textOnly(markup)).toContain("Slide 1 — Fundamental Physical Quantities");
   });
 
@@ -403,8 +411,8 @@ describe("Slides / Slide presentation wrapper ('slide' renders as 'Slides -> Sli
     expect(topic.slides[0]?.recordId).toBe("ch01-t01-block-opening");
   });
 
-  it("still contains the full, unchanged Slide 1 educational content (verbatim quote, worked equation) inside the new wrapper", () => {
-    const markup = renderSlide1();
+  it("still contains the full, unchanged Slide 1 educational content (verbatim quote, worked equation) inside the accordion panel", () => {
+    const markup = renderSlide1Only();
     const text = textOnly(markup);
     expect(text).toContain("In physics, there are three basic aspects of the material universe");
     expect(text).toContain("v = d / t = 100 m / 5 s = 20 m/s");
@@ -412,32 +420,47 @@ describe("Slides / Slide presentation wrapper ('slide' renders as 'Slides -> Sli
     expect(text).toContain("Scientific Note:");
   });
 
-  it("supports a second slide as an additional sibling, without altering Slide 1's content or id", () => {
+  it("supports a second slide as an additional sibling — its collapsed header renders automatically, without altering Slide 1's open content or id", () => {
     const markup = renderToStaticMarkup(
       <LanguageProvider>
-        <SlidesSection>
-          <Slide
-            number={1}
-            title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
-            id="topic-opening"
-          >
-            <ContentSection
-              blockType="slide"
-              text={slide1.text}
-              italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
-            />
-          </Slide>
-          <Slide number={2} title={{ en: "Units of Measurement", ar: "وحدات القياس" }} id="topic-slide-2">
-            <p>placeholder future-slide content</p>
-          </Slide>
-        </SlidesSection>
+        <SlidesSection
+          topicId="ch01-t01"
+          anchorId="topic-opening"
+          slides={[
+            {
+              recordId: slide1.recordId,
+              slideNumber: 1,
+              title: { en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" },
+              content: (
+                <ContentSection
+                  blockType="slide"
+                  text={slide1.text}
+                  italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+                />
+              ),
+            },
+            {
+              recordId: "ch01-t01-block-opening-synthetic-2",
+              slideNumber: 2,
+              title: { en: "Units of Measurement", ar: "وحدات القياس" },
+              content: <p>placeholder future-slide content</p>,
+            },
+          ]}
+        />
       </LanguageProvider>,
     );
     const text = textOnly(markup);
     expect(text).toContain("Slide 1 — Fundamental Physical Quantities");
-    expect(text).toContain("Slide 2 — Units of Measurement");
+    // Slide 2's collapsed header (number + title, used here as its own
+    // short-title fallback since no override exists for this synthetic
+    // recordId) still renders automatically — but Slide 1 is open by
+    // default in a single-open accordion, so Slide 2's panel content
+    // (its placeholder body) is not rendered.
+    expect(text).toContain("Units of Measurement");
+    expect(text).not.toContain("placeholder future-slide content");
     expect(markup).toContain('id="topic-opening"');
-    expect(markup).toContain('id="topic-slide-2"');
+    expect(markup).toContain('id="slide-2-header"');
+    expect(markup).toContain('aria-expanded="false"');
   });
 });
 

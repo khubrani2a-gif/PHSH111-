@@ -20,7 +20,7 @@ import { LanguageProvider, useLanguage } from "../app/LanguageContext";
 import { ReviewQuestion, REVIEW_ANSWER_MARKER_BY_TOPIC } from "../features/topics/ReviewQuestion";
 import { ContentSection } from "../features/topics/ContentSection";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
-import { SlidesSection, Slide } from "../features/topics/Slides";
+import { SlidesSection } from "../features/topics/Slides";
 import { VisualViewer } from "../features/topics/VisualViewer";
 import { getTopic } from "../content/adapter";
 import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
@@ -414,40 +414,48 @@ describe("Slides / Slide — Arabic label and RTL rendering (ch01-t01 only)", ()
     act(() => {
       root.render(
         <LanguageProvider>
-          <SlidesSection>
-            <Slide
-              number={1}
-              title={{ en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" }}
-              id="topic-opening"
-            >
-              <ContentSection
-                blockType="slide"
-                text={slide1.text}
-                italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
-              />
-            </Slide>
-          </SlidesSection>
+          <SlidesSection
+            topicId="ch01-t01"
+            anchorId="topic-opening"
+            slides={[
+              {
+                recordId: slide1.recordId,
+                slideNumber: 1,
+                title: { en: "Fundamental Physical Quantities", ar: "الكميات الفيزيائية الأساسية" },
+                content: (
+                  <ContentSection
+                    blockType="slide"
+                    text={slide1.text}
+                    italicTokens={EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]}
+                  />
+                ),
+              },
+            ]}
+          />
         </LanguageProvider>,
       );
     });
   }
 
-  it("shows the Arabic parent label 'الشرائح' and Slide 1's exact Arabic label 'الشريحة 1 — الكميات الفيزيائية الأساسية'", () => {
+  it("shows the Arabic parent label 'الشرائح' and Slide 1's exact Arabic label 'الشريحة 1 — الكميات الفيزيائية الأساسية', open by default", () => {
     window.localStorage.setItem("phsh111:language", "ar");
     renderSlide1();
     expect(container.textContent).toContain("الشرائح");
     expect(container.textContent).toContain("الشريحة 1 — الكميات الفيزيائية الأساسية");
   });
 
-  it("renders the slide content with dir=\"rtl\" and correct heading nesting (h2 Slides > h3 Slide 1) in Arabic", () => {
+  it("renders the slide content with dir=\"rtl\" and correct heading nesting (h2 Slides > h3 accordion header > expanded panel) in Arabic", () => {
     window.localStorage.setItem("phsh111:language", "ar");
     renderSlide1();
     const rtlNode = container.querySelector('[dir="rtl"]');
     expect(rtlNode).toBeTruthy();
     const h2 = container.querySelector("h2#slides-heading");
-    const h3 = container.querySelector("h3#slide-1-heading");
+    const header = container.querySelector<HTMLButtonElement>("#slide-1-header");
+    const panel = container.querySelector("#slide-1-panel");
     expect(h2?.textContent).toBe("الشرائح");
-    expect(h3?.textContent).toBe("الشريحة 1 — الكميات الفيزيائية الأساسية");
+    expect(header).toBeTruthy();
+    expect(header?.getAttribute("aria-expanded")).toBe("true");
+    expect(panel?.textContent).toContain("الشريحة 1 — الكميات الفيزيائية الأساسية");
   });
 
   it("keeps the English label and LTR layout intact when language is not persisted as Arabic (desktop/mobile-agnostic — no viewport dependency)", () => {

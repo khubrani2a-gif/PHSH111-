@@ -468,7 +468,7 @@ button:focus-visible {
 .topic-reading-anchor,
 .content-section[id],
 .equation-block[id],
-.slide[id] {
+.slides-section[id] {
   /* Generous enough to clear the sticky .topic-reading-guide bar above
      (~9rem tall including its progress row) so an anchor jump doesn't
      land a section's heading underneath it. */
@@ -483,6 +483,49 @@ button:focus-visible {
   margin-bottom: 1.5rem;
 }
 
+/* Compact jump-navigator + "Slides viewed: X of Y" progress row, directly
+   under the "Slides" heading — a single <select> works identically well
+   as a desktop compact-select and a mobile dropdown (see Slides.tsx),
+   and never becomes unwieldy as the slide count grows into the 10-20
+   range, unlike a row of per-slide buttons. */
+.slides-section__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.slides-section__jump {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.slides-section__jump label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.slides-section__jump select {
+  font: inherit;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: inherit;
+  max-width: 100%;
+}
+
+.slides-section__progress {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
 .slides-section__list {
   display: flex;
   flex-direction: column;
@@ -490,16 +533,116 @@ button:focus-visible {
   margin-top: 0.75rem;
 }
 
+/* One accordion card per slide — bordered container holding a clickable
+   header (button) and a conditionally-rendered panel. Only one card's
+   panel is open at a time (see Slides.tsx); this same card structure
+   applies uniformly whether the topic has 5 slides or 20, so no CSS
+   change is needed as the collection grows. */
 .slide {
   border: 1px solid var(--color-border);
   border-radius: 10px;
-  padding: 1.25rem;
   background: var(--color-surface);
+  overflow: hidden;
 }
 
-.slide__title {
-  margin-top: 0;
+.slide-accordion__card-heading {
+  margin: 0;
+}
+
+.slide-accordion__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.slide-accordion__header:hover {
+  background: var(--color-surface-muted, rgba(31, 111, 139, 0.06));
+}
+
+.slide-accordion__header[aria-expanded="true"] {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.slide-accordion__number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--color-focus);
+  color: var(--color-surface);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.slide-accordion__short-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.slide-accordion__viewed-badge {
+  color: var(--color-focus);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.slide-accordion__indicator {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.slide-accordion__panel {
+  padding: 1.25rem;
+}
+
+.slide-accordion__full-title {
+  margin: 0 0 0.75rem;
   font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.slide-accordion__pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.slide-accordion__pager-btn {
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: inherit;
+  cursor: pointer;
+}
+
+.slide-accordion__pager-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slide-accordion__pager-progress {
+  font-size: 0.85rem;
   color: var(--color-text-muted);
 }
 
@@ -1231,6 +1374,24 @@ button:focus-visible {
     max-width: 100vw;
     max-height: 100vh;
     border-radius: 0;
+  }
+
+  .slides-section__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .slides-section__jump select {
+    width: 100%;
+  }
+
+  .slide-accordion__pager {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .slide-accordion__pager-btn {
+    width: 100%;
   }
 }
 
