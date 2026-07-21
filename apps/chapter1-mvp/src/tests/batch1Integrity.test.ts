@@ -55,8 +55,14 @@ const APPROVED = {
     // blockType-independent fields, tableCaptionEn/tableCaptionAr;
     // rev-014 adds ch01-t01-block-opening-7 (Slide 7, converting meters to
     // feet) with a new generic, reusable conversionFactorExplanationMarker
-    // subsection slot.
-    sha256: "5153b73b44a43227969d4ecf98cab2b4f59d75eda6d97922416df78cc0309771",
+    // subsection slot; rev-015 is a project-owner scientific-precision
+    // review correcting Slide 7's significant-figures explanation (no
+    // longer presenting 75.5 ft as simultaneously rounded to three
+    // significant figures when 23 m has only two), the Simple Example
+    // (Convert 5.00 m, matching significant figures), and the
+    // Conversion-Factor Explanation (no longer implying the rounded
+    // decimal ratio is itself mathematically exact).
+    sha256: "8b290658b785516c4a96c5ee147d74a4e2f9b105ede4fdfb186efd03eabc5f92",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -94,7 +100,9 @@ const APPROVED = {
     // rev-014 adds the Arabic side of ch01-t01-block-opening-7 (Slide 7),
     // matching English rev-014, including Step 5's single-combined-
     // sentence Arabic rendering (rather than three separate bullets).
-    sha256: "8d38361c1a5ff123a12b686e6d029a6c946ffca0b3b37f71210dc9fff27c6a5a",
+    // rev-015 matches English rev-015's scientific-precision corrections
+    // (Step 5, Simple Example, Conversion-Factor Explanation).
+    sha256: "6e0a46b69d6c614b9ff6fbbb5c5cf72f2c4d07f7a16fa4db36590f47310ed896",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

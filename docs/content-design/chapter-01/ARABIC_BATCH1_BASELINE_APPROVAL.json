@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.14",
+  "baselineVersion": "1.0.15",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "8d38361c1a5ff123a12b686e6d029a6c946ffca0b3b37f71210dc9fff27c6a5a",
+      "sha256": "6e0a46b69d6c614b9ff6fbbb5c5cf72f2c4d07f7a16fa4db36590f47310ed896",
       "schemaVersion": "2.3.0",
       "recordCount": 14
     },
@@ -332,6 +332,24 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-7"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-6's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-015",
+        "fromVersion": "1.0.14",
+        "toVersion": "1.0.15",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-014 -> rev-015 (1.12.0 -> 1.13.0): a project-owner scientific-precision review, strictly limited to the Arabic translations of Step 5's rounding explanation, the Simple Example, and the Conversion-Factor Explanation within ch01-t01-block-opening-7's localizedContent.ar.text and arabic.canonicalArabicTranslation.text in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. The record's localizedContent.en.text was also synced to match the corrected English file byte-for-byte (a structural requirement verified by src/content/batch1Merge.ts, not a new Arabic-side translation decision). No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "(1) Step 5's Arabic explanation was revised from 'الخطوة 5 — احسب النتيجة وقرّبها بالشكل المناسب / 23 × 3.28084 = 75.45932، أي أن 23 m = 75.45932 ft، وبعد التقريب إلى ثلاثة أرقام معنويّة يكون 23 m ≈ 75.5 ft.' to the corrected combined sentence: 'القيمة المحسوبة هي 75.45932 ft. وعند التقريب إلى منزلة عشرية واحدة تصبح 75.5 ft. لكن بما أن القياس الأصلي 23 m مكتوب برقمين معنويين، فإن الناتج وفق قاعدة الأرقام المعنوية يساوي تقريبًا 75 ft.', followed by the two explicitly labeled results 'والنتيجتان الموسومتان بوضوح هما: 23 m ≈ 75.5 ft (مقرّبة إلى منزلة عشرية واحدة)، و23 m ≈ 75 ft (مقرّبة إلى رقمين معنويين).' — matching the English file's correction of the same significant-figures inconsistency, and preserving the single-combined-sentence Arabic rendering convention established for this step in rev-013/rev-014. (2) The Simple Example was revised from 'مثال بسيط: حوّل 5 m إلى أقدام.' / '5 m × (3.28084 ft / 1 m) = 16.4042 ft' / '5 m ≈ 16.4 ft' to 'مثال بسيط: حوّل 5.00 m إلى أقدام.' / '5.00 m × (3.28084 ft / 1 m) = 16.4042 ft' / '5.00 m ≈ 16.4 ft', with a new closing sentence 'هذا الناتج مقرّب إلى ثلاثة أرقام معنوية، بما يتوافق مع الأرقام المعنوية الثلاثة في 5.00 m.' added, matching the English file's revision. (3) The Conversion-Factor Explanation was revised from 'شرح عامل التحويل: عامل التحويل هو نسبة تساوي 1 تربط بين وحدتين مختلفتين لنفس الكمية الفيزيائية. وبما أن 1 ft = 0.3048 m بالضبط، فإن قسمة الطرفين على 0.3048 m تعطي 1 = 3.28084 ft / 1 m. ...' to 'شرح عامل التحويل: يتكوّن عامل التحويل من قياسين متكافئين. والعلاقة الدقيقة هي 1 ft = 0.3048 m، أما مقلوبها فهو تقريبًا 1 m = 3.28084 ft. لذلك يمثل عامل التحويل المعروض الواحد ضمن الدقة المبينة، ويغيّر طريقة تمثيل الوحدة فقط.', matching the English file's correction.",
+        "whatWasNotChanged": "No .ar text on Slides 1-6 was touched. The verbatim original Arabic quotation, the Main Idea, Steps 1-4, the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide are unchanged. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-015): project-owner scientific-precision review found the same significant-figures and conversion-factor-precision issues in the Arabic translation as in the English text, and corrected both to match, preserving the established single-combined-sentence convention for Step 5's Arabic rendering.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening-7.localizedContent.ar.text and arabic.canonicalArabicTranslation.text revised (Step 5, Simple Example, Conversion-Factor Explanation); localizedContent.en.text synced to the corrected English file",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-015",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-7 entry's checksums updated",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 pinned sha256 updated"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-7 remains 'draft-ai-generated-unreviewed', unchanged by this revision — this is a project-owner scientific-precision correction pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record's status. blocking.blockingStatus remains 'blocked'. Slides 1-6's Arabic governance fields are entirely unchanged."
       }
     ]
   },

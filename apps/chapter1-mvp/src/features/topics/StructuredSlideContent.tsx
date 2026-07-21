@@ -166,7 +166,7 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
     keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
     connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
-    equationBlockPhrase: ["23 m × (3.28084 ft / 1 m)", "5 m × (3.28084 ft / 1 m) = 16.4042 ft"],
+    equationBlockPhrase: ["23 m × (3.28084 ft / 1 m)", "5.00 m × (3.28084 ft / 1 m) = 16.4042 ft"],
     stepPattern: {
       en: /^Step\s+\d+\s+—[^\n]*/,
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,

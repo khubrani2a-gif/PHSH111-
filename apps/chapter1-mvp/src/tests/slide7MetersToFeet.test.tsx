@@ -325,10 +325,19 @@ describe("12. Calculation '23 × 3.28084 = 75.45932' renders", () => {
   });
 });
 
-describe("13. Final rounded result '23 m ≈ 75.5 ft' renders", () => {
-  it("Step 5 rounds to three significant figures", () => {
+describe("13. Final rounded results '23 m ≈ 75.5 ft' and '23 m ≈ 75 ft' both render, explicitly labeled", () => {
+  it("Step 5 does NOT claim 75.5 ft is rounded to three significant figures (23 m has only two)", () => {
     const en = slide7.text.en ?? "";
-    expect(en).toContain("23 m ≈ 75.5 ft");
+    expect(en).not.toContain("Rounded to three significant figures, this becomes 23 m ≈ 75.5 ft");
+    expect(en).toContain(
+      "The calculated value is 75.45932 ft. Rounded to one decimal place, it is 75.5 ft. However, because the original measurement 23 m is written with two significant figures, the result based strictly on significant figures is approximately 75 ft.",
+    );
+  });
+
+  it("renders both labeled results: 75.5 ft rounded to one decimal place, and 75 ft rounded to two significant figures", () => {
+    const en = slide7.text.en ?? "";
+    expect(en).toContain("23 m ≈ 75.5 ft (rounded to one decimal place)");
+    expect(en).toContain("23 m ≈ 75 ft (rounded to two significant figures)");
   });
 
   it("the Common Misconception also includes the '23 m × (3.28084 ft / 1 m)' line, per the required content", () => {
@@ -338,18 +347,32 @@ describe("13. Final rounded result '23 m ≈ 75.5 ft' renders", () => {
     expect(misconceptionSection).toContain("23 m × (3.28084 ft / 1 m)");
   });
 
-  it("renders '23 m ≈ 75.5 ft' in the DOM", () => {
+  it("renders both labeled results in the DOM", () => {
     renderSlides(false, 7);
-    expect(getSlidePanel(container, 7)?.textContent).toContain("23 m ≈ 75.5 ft");
+    const panelText = getSlidePanel(container, 7)?.textContent ?? "";
+    expect(panelText).toContain("23 m ≈ 75.5 ft (rounded to one decimal place)");
+    expect(panelText).toContain("23 m ≈ 75 ft (rounded to two significant figures)");
+  });
+
+  it("the Arabic Step 5 renders the corrected explanation and both labeled results, as a single combined sentence", () => {
+    const ar = slide7.text.ar ?? "";
+    expect(ar).toContain(
+      "القيمة المحسوبة هي 75.45932 ft. وعند التقريب إلى منزلة عشرية واحدة تصبح 75.5 ft. لكن بما أن القياس الأصلي 23 m مكتوب برقمين معنويين، فإن الناتج وفق قاعدة الأرقام المعنوية يساوي تقريبًا 75 ft.",
+    );
+    expect(ar).toContain("23 m ≈ 75.5 ft (مقرّبة إلى منزلة عشرية واحدة)");
+    expect(ar).toContain("23 m ≈ 75 ft (مقرّبة إلى رقمين معنويين)");
   });
 });
 
-describe("14. Simple Example gives '5 m ≈ 16.4 ft'", () => {
-  it("English Simple Example states the question, the worked equation, and the rounded result", () => {
+describe("14. Simple Example gives '5.00 m ≈ 16.4 ft', matched significant figures", () => {
+  it("English Simple Example states the question, the worked equation, and the rounded result, with matching significant figures", () => {
     const en = slide7.text.en ?? "";
-    expect(en).toContain("Simple Example: Convert 5 m to feet.");
-    expect(en).toContain("5 m × (3.28084 ft / 1 m) = 16.4042 ft");
-    expect(en).toContain("5 m ≈ 16.4 ft");
+    expect(en).toContain("Simple Example: Convert 5.00 m to feet.");
+    expect(en).toContain("5.00 m × (3.28084 ft / 1 m) = 16.4042 ft");
+    expect(en).toContain("5.00 m ≈ 16.4 ft");
+    expect(en).toContain(
+      "This result is rounded to three significant figures, matching the three significant figures in 5.00 m.",
+    );
     expect(5 * 3.28084).toBeCloseTo(16.4042, 4);
   });
 
@@ -358,14 +381,34 @@ describe("14. Simple Example gives '5 m ≈ 16.4 ft'", () => {
     const blocks = Array.from(
       getSlidePanel(container, 7)!.querySelectorAll(".structured-slide__equation-block"),
     ).map((el) => el.textContent);
-    expect(blocks).toEqual(["23 m × (3.28084 ft / 1 m)", "5 m × (3.28084 ft / 1 m) = 16.4042 ft"]);
+    expect(blocks).toEqual(["23 m × (3.28084 ft / 1 m)", "5.00 m × (3.28084 ft / 1 m) = 16.4042 ft"]);
   });
 
-  it("the Arabic Simple Example preserves the same equations, untranslated", () => {
+  it("the Arabic Simple Example preserves the same equations, untranslated, with the matching significant-figures sentence", () => {
     const ar = slide7.text.ar ?? "";
-    expect(ar).toContain("مثال بسيط: حوّل 5 m إلى أقدام.");
-    expect(ar).toContain("5 m × (3.28084 ft / 1 m) = 16.4042 ft");
-    expect(ar).toContain("5 m ≈ 16.4 ft");
+    expect(ar).toContain("مثال بسيط: حوّل 5.00 m إلى أقدام.");
+    expect(ar).toContain("5.00 m × (3.28084 ft / 1 m) = 16.4042 ft");
+    expect(ar).toContain("5.00 m ≈ 16.4 ft");
+    expect(ar).toContain(
+      "هذا الناتج مقرّب إلى ثلاثة أرقام معنوية، بما يتوافق مع الأرقام المعنوية الثلاثة في 5.00 m.",
+    );
+  });
+});
+
+describe("Conversion-Factor Explanation no longer implies the rounded ratio is exact", () => {
+  it("states the exact relation (1 ft = 0.3048 m) and its approximate reciprocal (1 m = 3.28084 ft) distinctly", () => {
+    const en = slide7.text.en ?? "";
+    expect(en).toContain(
+      "A conversion factor is formed from two equivalent measurements. The exact relation is 1 ft = 0.3048 m. Its reciprocal is approximately 1 m = 3.28084 ft, so the displayed conversion factor represents unity to the precision shown and changes only the unit representation.",
+    );
+    expect(en).not.toContain("dividing both sides by 0.3048 m gives 1 = 3.28084 ft / 1 m");
+  });
+
+  it("the Arabic Conversion-Factor Explanation matches", () => {
+    const ar = slide7.text.ar ?? "";
+    expect(ar).toContain(
+      "يتكوّن عامل التحويل من قياسين متكافئين. والعلاقة الدقيقة هي 1 ft = 0.3048 m، أما مقلوبها فهو تقريبًا 1 m = 3.28084 ft.",
+    );
   });
 });
 
