@@ -622,6 +622,107 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-8",
+        "blockType": "slide",
+        "slideNumber": 8,
+        "slideTitleEn": "How Is Time Measured Using Repeating Phenomena?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Time\n\nThe measure of time is based on periodic phenomena—processes that repeat over and over at a regular rate.\n\nBoth the metric system and the English system use the same units for time\n\nMain Idea: Time is measured by comparing events with processes that repeat at regular intervals. Unlike many distance and mass units, seconds, minutes, and hours are used in both the metric and English systems.\n\nStep 1 — Time describes duration\n* Time tells us how long an event lasts.\n* It can also describe the interval between two events.\n* The physical symbol commonly used for time is t.\n* Time is a fundamental physical quantity.\n\nStep 2 — Time measurement requires a repeating reference\n* A useful clock must perform the same cycle repeatedly.\n* Each cycle must take approximately the same amount of time.\n* Counting these cycles allows duration to be measured.\n* A repeating process used this way is called a periodic phenomenon.\n\nStep 3 — Periodic phenomena repeat at regular intervals\n* Examples include the swinging of a pendulum, the vibration of a quartz crystal, Earth’s rotation, and atomic oscillations.\n* The repeated cycle provides a consistent time reference.\n* Greater regularity produces more precise time measurement.\n\nStep 4 — Both systems use the same common time units\n* The metric and English systems both use second (s), minute (min), and hour (h).\n* Changing between these systems does not require replacing one set of time units with another.\n* This differs from distance, where meters and feet belong to different systems.\n\nStep 5 — Time units have fixed relationships\n* 1 min = 60 s\n* 1 h = 60 min\n* 1 h = 3600 s\n* These conversions change the numerical representation, not the physical duration.\n\nSimple Example: A lecture lasts 1.5 h.\n\n1.5 h × (60 min / 1 h) = 90 min\n\n90 min × (60 s / 1 min) = 5400 s\n\n1.5 h = 90 min = 5.4 × 10³ s\n\nThe value 5400 s is numerically equivalent, but 5.4 × 10³ s makes the two significant figures inherited from 1.5 h explicit.\n\nThe numerical value changes, but the physical duration remains the same.\n\nTable Explanation: The table shows that the metric and English systems use the same common units for time. A second is suitable for short intervals, a minute contains 60 seconds, and an hour contains 60 minutes. Units aligned in the two system columns are identical rather than approximate equivalents. The blank first-column cells indicate that all three rows belong to the physical quantity time.\n\nMisconception: because the metric and English systems use different units for distance, they must also use different units for time. Correction: both systems commonly use seconds, minutes, and hours.\n\nScientific Note: The second is the SI base unit of time. Modern precision timekeeping is based on a highly regular atomic transition rather than on less stable astronomical or mechanical cycles. Minutes and hours are accepted units used with SI, although they are not decimal multiples of the second.\n\n1 min = 60 s\n\n1 h = 3600 s\n\nKey Concept: Time is measured by counting regular repeated cycles. The second is the fundamental SI unit, while minutes and hours are larger units used in both the metric and English systems.\n\nConnection to the Next Slide: After identifying the common units of time, the next step is to understand period and frequency, which describe how long one repeated cycle takes and how often cycles occur.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Physical Quantity",
+            "Metric Units",
+            "English Units"
+          ],
+          "rows": [
+            [
+              "Time (t)",
+              "second (s)",
+              "second (s)"
+            ],
+            [
+              null,
+              "minute (min)",
+              "minute (min)"
+            ],
+            [
+              null,
+              "hour (h)",
+              "hour (h)"
+            ]
+          ]
+        },
+        "tableCaptionEn": "Common Units of Time",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-TIME-UNITS-TABLE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-time-units-table",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/4131B34E-DBB2-45B1-8298-37A5E023B271.png, a table listing common units of time in the metric and English systems) directly in the implementation task, together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Time...') and the exact table wording to preserve. The uploaded image itself is recorded here as this record's source and is explicitly NOT used as the student-facing visual — the table is reconstructed as semantic HTML (a real <table> with a bilingual <caption>, column headers with scope=\"col\", and a grouped Time (t) row header with scope=\"rowgroup\" spanning all three rows) from its text (headers/rows), preserving the same units and source wording verbatim. The source contains no instructional figure, so no figure asset is created or referenced and blocking.blockingReason does not include 'missingVisual'. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Table Explanation, and the Common Misconception were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored eighth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-7 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-7 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

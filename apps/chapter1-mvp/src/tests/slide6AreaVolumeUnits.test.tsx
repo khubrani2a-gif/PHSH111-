@@ -523,9 +523,10 @@ describe("17. Governance and publication flags remain correctly blocked", () => 
   });
 
   it("recordCount reflects the new record and Slides 1-5's governance flags are untouched", () => {
-    // 13 at the time this record was added, now 14 with Slide 7 also
-    // present (see src/tests/slide7MetersToFeet.test.tsx).
-    expect(topic.governance.recordCount).toBe(14);
+    // 13 at the time this record was added, now 15 with Slides 7-8 also
+    // present (see src/tests/slide7MetersToFeet.test.tsx and
+    // slide8TimeMeasurement.test.tsx).
+    expect(topic.governance.recordCount).toBe(15);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);

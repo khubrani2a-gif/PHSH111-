@@ -25,6 +25,7 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t01-block-opening-5": { en: "Area and Volume", ar: "المساحة والحجم" },
   "ch01-t01-block-opening-6": { en: "Area and Volume Units", ar: "وحدات المساحة والحجم" },
   "ch01-t01-block-opening-7": { en: "Meters to Feet", ar: "التحويل من المتر إلى القدم" },
+  "ch01-t01-block-opening-8": { en: "Time Measurement", ar: "قياس الزمن" },
 };
 
 /**

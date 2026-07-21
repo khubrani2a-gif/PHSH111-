@@ -502,11 +502,11 @@ describe("13. Governance/publication flags remain unchanged", () => {
   });
 
   it("recordCount reflects the new record and Slide 1/Slide 2's governance flags are untouched", () => {
-    // 10 at the time this record was added, now 14 with Slides 4-7 also
+    // 10 at the time this record was added, now 15 with Slides 4-8 also
     // present (see src/tests/slide4DifferentUnits.test.tsx,
-    // slide5AreaVolume.test.tsx, slide6AreaVolumeUnits.test.tsx, and
-    // slide7MetersToFeet.test.tsx).
-    expect(topic.governance.recordCount).toBe(14);
+    // slide5AreaVolume.test.tsx, slide6AreaVolumeUnits.test.tsx,
+    // slide7MetersToFeet.test.tsx, and slide8TimeMeasurement.test.tsx).
+    expect(topic.governance.recordCount).toBe(15);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.blockingReason).not.toContain("missingVisual");
