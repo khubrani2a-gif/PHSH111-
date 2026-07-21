@@ -52,8 +52,11 @@ const APPROVED = {
     // SVG figure reusing the same generic figure fields; rev-013 adds
     // ch01-t01-block-opening-6 (Slide 6, area/volume measurement units)
     // with a reconstructed semantic table plus two new generic
-    // blockType-independent fields, tableCaptionEn/tableCaptionAr.
-    sha256: "6547e89ad5fb6852f8d3c9f07103197d3962b6de6d8477430cac53e8274be134",
+    // blockType-independent fields, tableCaptionEn/tableCaptionAr;
+    // rev-014 adds ch01-t01-block-opening-7 (Slide 7, converting meters to
+    // feet) with a new generic, reusable conversionFactorExplanationMarker
+    // subsection slot.
+    sha256: "5153b73b44a43227969d4ecf98cab2b4f59d75eda6d97922416df78cc0309771",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -88,7 +91,10 @@ const APPROVED = {
     // bullets, revised for grammatical consistency). English text and the
     // figure are unchanged. rev-013 adds the Arabic side of
     // ch01-t01-block-opening-6 (Slide 6), matching English rev-013.
-    sha256: "250429ddd548ac07fc76035ad1de6cc7cc09b3a4edd2c22ed943e6c801e016bc",
+    // rev-014 adds the Arabic side of ch01-t01-block-opening-7 (Slide 7),
+    // matching English rev-014, including Step 5's single-combined-
+    // sentence Arabic rendering (rather than three separate bullets).
+    sha256: "8d38361c1a5ff123a12b686e6d029a6c946ffca0b3b37f71210dc9fff27c6a5a",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

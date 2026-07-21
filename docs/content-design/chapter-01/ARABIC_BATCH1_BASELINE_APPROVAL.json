@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.13",
+  "baselineVersion": "1.0.14",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,9 +20,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "250429ddd548ac07fc76035ad1de6cc7cc09b3a4edd2c22ed943e6c801e016bc",
+      "sha256": "8d38361c1a5ff123a12b686e6d029a6c946ffca0b3b37f71210dc9fff27c6a5a",
       "schemaVersion": "2.3.0",
-      "recordCount": 13
+      "recordCount": 14
     },
     {
       "topicId": "ch01-t04",
@@ -315,6 +315,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-6"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-5's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-014",
+        "fromVersion": "1.0.13",
+        "toVersion": "1.0.14",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-013 -> rev-014 (1.11.0 -> 1.12.0): adds the Arabic side of the new seventh slide, ch01-t01-block-opening-7 (blockType \"slide\", slideNumber 7, slideTitleAr \"كيف نحوّل 23 مترًا إلى أقدام بطريقة صحيحة؟\"), as the seventh record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic translation of Slide 7's full structure — the source slide's Arabic prose translation (preserving the quoted original 'مثال: حوّل 23 مترًا إلى أقدام.' with no solution content added inside that subsection), Main Idea, five numbered steps (Step 3's Arabic explanation sentence 'نضرب القياس الأصلي في عامل التحويل.' immediately preceding the untranslated equation notation '23 m × (3.28084 ft / 1 m)'; Step 5 given as a single combined Arabic sentence per the project owner's exact instruction, rather than three separate bullets as in the English file), Simple Example (preserving the same untranslated equations '5 m × (3.28084 ft / 1 m) = 16.4042 ft' and '5 m ≈ 16.4 ft'), the new Conversion-Factor Explanation subsection, Common Misconception (including the untranslated '23 m × (3.28084 ft / 1 m)' line), Scientific Note, Key Concept, and Connection to the Next Slide. No tableAr/tableCaptionAr/figureAltAr fields are present on this record — Slide 7's source has no table and no figure, matching the English file's own field set for this record.",
+        "whatWasNotChanged": "No .ar text on Slides 1-6 was touched. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-014): project-owner request for a seventh slide, translated into Arabic using the project's established terminology and conventions, with all numerical notation and equations left untranslated per the project's existing convention for embedded Latin/notation fragments.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-7 appended at index 6",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-014",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-7"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-6's Arabic governance fields are entirely unchanged."
       }
     ]
   },
