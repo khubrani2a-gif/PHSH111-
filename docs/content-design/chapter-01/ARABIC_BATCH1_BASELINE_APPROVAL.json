@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.8",
+  "baselineVersion": "1.0.9",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,9 +20,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "d72423ced8e164bdf106b1432c50d8886de36308f5593e4e9c3d63a977ee6dcc",
+      "sha256": "23b7ed6e76f780a779705a1e87bab5876f5ee54a429832d517ce7fdf2678a529",
       "schemaVersion": "2.3.0",
-      "recordCount": 10
+      "recordCount": 11
     },
     {
       "topicId": "ch01-t04",
@@ -231,6 +231,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-3 entry's checksums updated"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-3 remains 'draft-ai-generated-unreviewed', unchanged by this revision. ch01-t01-block-opening and ch01-t01-block-opening-2's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-009",
+        "fromVersion": "1.0.8",
+        "toVersion": "1.0.9",
+        "revisedAt": "2026-07-20",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-010 -> rev-011 (1.8.0 -> 1.9.0): adds the Arabic side of the new fourth slide, ch01-t01-block-opening-4 (blockType \"slide\", slideNumber 4, slideTitleAr \"لماذا نستخدم وحدات مختلفة لمقاييس القياس المختلفة؟\"), as the fourth record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic translation of Slide 4's full structure — the source slide's Arabic prose translation (preserving the '19 mm' / '0.000019 km' figure labels verbatim), Main Idea, five numbered steps, Simple Example, Figure Explanation, Common Misconception, Scientific Note, Key Concept, and Connection to the Next Slide — plus figureAltAr (the coin figure's Arabic alt text). The same figureAssetPath/figureAltEn as the English file are carried on this record too (byte-checked structurally identical by src/content/batch1Merge.ts).",
+        "whatWasNotChanged": "No .ar text on ch01-t01-block-opening (Slide 1), ch01-t01-block-opening-2 (Slide 2), or ch01-t01-block-opening-3 (Slide 3) was touched. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-011): project-owner request for a fourth slide, translated into Arabic using the project's established terminology and verb-agreement conventions.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-4 appended at index 3",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-011",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-4"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. ch01-t01-block-opening, ch01-t01-block-opening-2, and ch01-t01-block-opening-3's Arabic governance fields are entirely unchanged."
       }
     ]
   },

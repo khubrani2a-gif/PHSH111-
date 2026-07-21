@@ -29,7 +29,7 @@ function sha256(path: string): string {
 const APPROVED = {
   englishT01: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json"),
-    // Baseline v1.8.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.9.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-003 adds ch01-t01-block-opening; rev-004 corrects
     // its explanatory prose (SI base-quantity accuracy, speed's derived
     // unit, qualitative-vs-quantitative wording); rev-005 restructures it
@@ -44,8 +44,11 @@ const APPROVED = {
     // same generic slide architecture plus new generic tableEn/tableAr
     // fields; rev-010 applies pedagogical wording corrections to Slide 3
     // (Simple Example clarity, a labeled "Dimensions:" block replacing an
-    // unlabeled multiplication, and a refined Scientific Note).
-    sha256: "67644102383cf2b82fa038f27586af6d6b6e4fac01aaed3f43eeff64c517236b",
+    // unlabeled multiplication, and a refined Scientific Note); rev-011
+    // adds ch01-t01-block-opening-4 (Slide 4, different measurement
+    // scales) with a new generic embedded raster figure (figureAssetPath/
+    // figureAltEn/figureAltAr).
+    sha256: "51df4d808ebffcded263929ec1e678e74c6276d1a942f180e04d0b06f67c99f1",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -53,7 +56,7 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    // Baseline v1.0.8 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.0.9 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-001 adds the Arabic side of ch01-t01-block-opening;
     // rev-002 corrects its translation to match the English rev-004 fixes;
     // rev-003 restructures it to match the English rev-005 compact format
@@ -67,8 +70,9 @@ const APPROVED = {
     // blockType, matching English rev-008; rev-007 adds the Arabic side of
     // ch01-t01-block-opening-3 (Slide 3), matching English rev-009;
     // rev-008 applies the same Slide 3 pedagogical wording corrections,
-    // matching English rev-010.
-    sha256: "d72423ced8e164bdf106b1432c50d8886de36308f5593e4e9c3d63a977ee6dcc",
+    // matching English rev-010; rev-009 adds the Arabic side of
+    // ch01-t01-block-opening-4 (Slide 4), matching English rev-011.
+    sha256: "23b7ed6e76f780a779705a1e87bab5876f5ee54a429832d517ce7fdf2678a529",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

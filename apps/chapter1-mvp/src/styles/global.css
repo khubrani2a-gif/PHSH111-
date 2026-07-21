@@ -610,6 +610,92 @@ button:focus-visible {
   font-weight: 700;
 }
 
+/* A slide's optional embedded raster figure (see SlideFigure.tsx) — same
+   accessible-dialog visual language as .visual-viewer's SVG viewer above,
+   sized for a photo rather than a diagram. */
+.slide-figure__preview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--color-surface);
+  margin: 0.25rem 0;
+}
+
+.slide-figure__img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.slide-figure__enlarge {
+  border: 1px solid var(--color-focus);
+  background: var(--color-surface);
+  color: var(--color-focus);
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.slide-figure__dialog {
+  border: none;
+  padding: 0;
+  border-radius: 10px;
+  max-width: min(95vw, 900px);
+  max-height: 90vh;
+  background: var(--color-surface);
+}
+
+.slide-figure__dialog::backdrop {
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.slide-figure__dialog-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.slide-figure__dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-block-end: 1px solid var(--color-border);
+}
+
+.slide-figure__dialog-title {
+  font-weight: 700;
+}
+
+.slide-figure__close {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+}
+
+.slide-figure__dialog-body {
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.slide-figure__dialog-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .content-disclosure {
   margin-top: 0.75rem;
 }
@@ -1136,6 +1222,12 @@ button:focus-visible {
   }
 
   .visual-viewer__dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .slide-figure__dialog {
     max-width: 100vw;
     max-height: 100vh;
     border-radius: 0;

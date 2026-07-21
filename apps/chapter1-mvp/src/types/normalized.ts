@@ -73,6 +73,14 @@ export interface NormalizedSlide {
    * table, same convention as every other optional field here.
    */
   table?: { en: NormalizedSourceTable | null; ar: NormalizedSourceTable | null };
+  /**
+   * Present only when the underlying record carries an embedded raster
+   * figure — generic to any slide, not tied to a specific slide number.
+   * assetUrl is the build-time-resolved image URL (see
+   * src/content/rawImports.ts's RAW_FIGURE_URL_BY_BLOCK_ID). Absent
+   * (undefined) for slides with no figure.
+   */
+  figure?: { assetUrl: string; alt: NormalizedText };
   blocking: BlockingState;
 }
 

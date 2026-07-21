@@ -35,6 +35,7 @@ import type {
 } from "../types/normalized";
 import {
   RAW_CONTENT_BY_TOPIC,
+  RAW_FIGURE_URL_BY_BLOCK_ID,
   RAW_SVG_MARKUP_BY_TOPIC,
   RAW_VISUAL_VALIDATION_BY_TOPIC,
 } from "./rawImports";
@@ -99,6 +100,13 @@ function normalizeSlides(file: PilotTopicFile): NormalizedSlide[] {
       visibility: block.visibility,
       text: toNormalizedText(block.localizedContent),
       table: block.tableEn || block.tableAr ? { en: block.tableEn ?? null, ar: block.tableAr ?? null } : undefined,
+      figure:
+        RAW_FIGURE_URL_BY_BLOCK_ID[block.blockId] && block.figureAltEn
+          ? {
+              assetUrl: RAW_FIGURE_URL_BY_BLOCK_ID[block.blockId],
+              alt: { en: block.figureAltEn ?? null, ar: block.figureAltAr ?? null },
+            }
+          : undefined,
       blocking: block.blocking,
     }))
     .sort((a, b) => a.slideNumber - b.slideNumber);

@@ -96,6 +96,7 @@ export function TopicPage() {
                 blockId={slide.recordId}
                 text={slide.text}
                 table={slide.table}
+                figure={slide.figure}
                 italicTokens={proseTokens}
               />
             </Slide>

@@ -222,6 +222,20 @@ function validateContentBlock(
     return null;
   }
 
+  // Generic to any blockType (not gated on "slide") — figureAssetPath/
+  // figureAltEn/figureAltAr are a reusable, blockType-independent group
+  // (see pilotSchema.ts's header note), only validated when present.
+  if (raw.figureAssetPath !== undefined) {
+    if (typeof raw.figureAssetPath !== "string" || raw.figureAssetPath.length === 0) {
+      diag(diagnostics, "error", "malformed-figure", "figureAssetPath is present but not a non-empty string", topicId, blockId);
+      return null;
+    }
+    if (typeof raw.figureAltEn !== "string" || raw.figureAltEn.length === 0) {
+      diag(diagnostics, "error", "malformed-figure", "figureAssetPath is present but figureAltEn is missing", topicId, blockId);
+      return null;
+    }
+  }
+
   checkLocalizationComplete(
     raw.localizedContent,
     topicId,

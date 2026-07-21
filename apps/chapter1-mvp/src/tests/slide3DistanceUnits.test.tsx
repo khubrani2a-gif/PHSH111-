@@ -70,13 +70,16 @@ function renderGenericSlides(arabic: boolean) {
 }
 
 describe("1. Slide 3 appears after Slide 2", () => {
-  it("topic.slides is ordered [Slide 1, Slide 2, Slide 3] by slideNumber", () => {
-    expect(topic.slides.map((s) => s.recordId)).toEqual([
+  it("topic.slides is ordered [Slide 1, Slide 2, Slide 3, ...] by slideNumber", () => {
+    // Only the first three entries are asserted here — a later slide (e.g.
+    // Slide 4, see src/tests/slide4DifferentUnits.test.tsx) may legitimately
+    // extend this array without breaking this Slide-3-scoped test.
+    expect(topic.slides.slice(0, 3).map((s) => s.recordId)).toEqual([
       "ch01-t01-block-opening",
       "ch01-t01-block-opening-2",
       "ch01-t01-block-opening-3",
     ]);
-    expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2, 3]);
+    expect(topic.slides.slice(0, 3).map((s) => s.slideNumber)).toEqual([1, 2, 3]);
   });
 
   it("Slide 3's heading follows Slide 2's heading in DOM order, all three under one Slides section", () => {
@@ -86,7 +89,9 @@ describe("1. Slide 3 appears after Slide 2", () => {
     const slide3Idx = order.indexOf("slide-3-heading");
     expect(slide2Idx).toBeGreaterThanOrEqual(0);
     expect(slide3Idx).toBeGreaterThan(slide2Idx);
-    expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(3);
+    // At least Slides 1-3 — a later slide (e.g. Slide 4) may legitimately
+    // add more without breaking this assertion.
+    expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(3);
   });
 
   it("Slide 3's exact bilingual title renders", () => {
@@ -151,7 +156,7 @@ describe("3. Slide 3 is loaded through the generic slides[] architecture", () =>
 
   it("Slide 3 renders via the exact same generic topic.slides.map(...) as Slides 1 and 2 — no per-slide-number conditional", () => {
     renderGenericSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(3);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(3);
     expect(container.querySelector("#slide-3-heading")).not.toBeNull();
   });
 });
@@ -499,8 +504,10 @@ describe("13. Governance/publication flags remain unchanged", () => {
     expect(slide3.blocking.blockingReason).not.toContain("missingVisual");
   });
 
-  it("recordCount reflects the new record (10) and Slide 1/Slide 2's governance flags are untouched", () => {
-    expect(topic.governance.recordCount).toBe(10);
+  it("recordCount reflects the new record and Slide 1/Slide 2's governance flags are untouched", () => {
+    // 10 at the time this record was added, now 11 with Slide 4 also
+    // present (see src/tests/slide4DifferentUnits.test.tsx).
+    expect(topic.governance.recordCount).toBe(11);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.blockingReason).not.toContain("missingVisual");
@@ -510,7 +517,10 @@ describe("13. Governance/publication flags remain unchanged", () => {
 describe("Reusability — Slide 3 proves the architecture scales without per-slide wiring", () => {
   it("all three slides render via the exact same generic StructuredSlideContent + table prop, distinguished only by their own recordId-keyed config", () => {
     renderGenericSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(3);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(3);
+    // Scoped to exactly the three phrases Slides 1-3 render — a later
+    // slide with no equationBlockPhrase configured (e.g. Slide 4) adds no
+    // entry here, so this stays a precise equality check.
     const equationBlocks = Array.from(container.querySelectorAll(".structured-slide__equation-block")).map(
       (el) => el.textContent,
     );
@@ -523,7 +533,7 @@ describe("Reusability — Slide 3 proves the architecture scales without per-sli
 
   it("topic.slides remains a plain array where every slide has recordId/slideNumber/title.en/title.ar — no slide-count-specific schema", () => {
     expect(Array.isArray(topic.slides)).toBe(true);
-    expect(topic.slides.length).toBe(3);
+    expect(topic.slides.length).toBeGreaterThanOrEqual(3);
     for (const slide of topic.slides) {
       expect(typeof slide.recordId).toBe("string");
       expect(typeof slide.slideNumber).toBe("number");

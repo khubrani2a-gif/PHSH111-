@@ -60,6 +60,13 @@ import ch01t04Validation from "../../../../docs/content-design/chapter-01/batch1
 import ch01t01Svg from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001.svg?raw";
 import ch01t04Svg from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg?raw";
 
+// Batch 1 — per-slide raster figures (not the topic-singular SVG above).
+// Keyed by blockId (not topicId), since any number of slide records across
+// any topic may carry their own embedded figure — generic, not specific to
+// any one slide. A plain (non-`?raw`) image import resolves to the
+// build-time-hashed asset URL Vite emits, suitable for a real <img src>.
+import ch01t01BlockOpening4Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-4-figure.jpg";
+
 import type { PilotTopicId } from "../types/pilotSchema";
 import { mergeEnglishAndArabicTopicFile } from "./batch1Merge";
 
@@ -98,4 +105,19 @@ export const RAW_SVG_MARKUP_BY_TOPIC: Record<PilotTopicId, string> = {
   "ch01-t04": ch01t04Svg,
   "ch01-t08": ch01t08Svg,
   "ch01-t10": ch01t10Svg,
+};
+
+/**
+ * Build-time asset URL for a slide's embedded raster figure, keyed by the
+ * content-block record's own blockId — generic, not tied to any specific
+ * slide number or topic. src/content/adapter.ts only attaches a
+ * NormalizedSlide.figure when both this map has an entry for the record's
+ * blockId AND the record itself supplies figureAltEn (see
+ * src/types/pilotSchema.ts's figureAssetPath/figureAltEn/figureAltAr
+ * header note) — adding a future slide's figure requires only a new
+ * import line here plus the matching content-block fields, no adapter or
+ * TopicPage wiring.
+ */
+export const RAW_FIGURE_URL_BY_BLOCK_ID: Record<string, string> = {
+  "ch01-t01-block-opening-4": ch01t01BlockOpening4Figure,
 };
