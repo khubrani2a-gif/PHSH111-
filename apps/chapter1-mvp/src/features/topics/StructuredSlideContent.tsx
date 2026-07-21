@@ -172,6 +172,24 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
     },
   },
+  "ch01-t01-block-opening-8": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    tableExplanationMarker: { en: "Table Explanation:", ar: "شرح الجدول:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: [
+      "1.5 h × (60 min / 1 h) = 90 min",
+      "90 min × (60 s / 1 min) = 5400 s",
+      "1.5 h = 90 min = 5400 s",
+    ],
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */

@@ -61,8 +61,11 @@ const APPROVED = {
     // significant figures when 23 m has only two), the Simple Example
     // (Convert 5.00 m, matching significant figures), and the
     // Conversion-Factor Explanation (no longer implying the rounded
-    // decimal ratio is itself mathematically exact).
-    sha256: "8b290658b785516c4a96c5ee147d74a4e2f9b105ede4fdfb186efd03eabc5f92",
+    // decimal ratio is itself mathematically exact); rev-016 adds
+    // ch01-t01-block-opening-8 (Slide 8, measuring time using periodic
+    // phenomena) with a reconstructed semantic table reusing the generic
+    // tableEn/tableCaptionEn mechanism.
+    sha256: "8b1018887c1244d99f11250690150b2645a7a59b489c9abf0b650691ff01adb0",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -101,8 +104,10 @@ const APPROVED = {
     // matching English rev-014, including Step 5's single-combined-
     // sentence Arabic rendering (rather than three separate bullets).
     // rev-015 matches English rev-015's scientific-precision corrections
-    // (Step 5, Simple Example, Conversion-Factor Explanation).
-    sha256: "6e0a46b69d6c614b9ff6fbbb5c5cf72f2c4d07f7a16fa4db36590f47310ed896",
+    // (Step 5, Simple Example, Conversion-Factor Explanation). rev-016
+    // adds the Arabic side of ch01-t01-block-opening-8 (Slide 8), matching
+    // English rev-016.
+    sha256: "04d5d5e1e5b50e3f6c65ea354d611e5d9e7d3301449cb8f36b81f636979b92d3",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

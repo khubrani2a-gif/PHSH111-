@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.15",
+  "baselineVersion": "1.0.16",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,9 +20,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "6e0a46b69d6c614b9ff6fbbb5c5cf72f2c4d07f7a16fa4db36590f47310ed896",
+      "sha256": "04d5d5e1e5b50e3f6c65ea354d611e5d9e7d3301449cb8f36b81f636979b92d3",
       "schemaVersion": "2.3.0",
-      "recordCount": 14
+      "recordCount": 15
     },
     {
       "topicId": "ch01-t04",
@@ -350,6 +350,23 @@
           "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 pinned sha256 updated"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-7 remains 'draft-ai-generated-unreviewed', unchanged by this revision — this is a project-owner scientific-precision correction pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record's status. blocking.blockingStatus remains 'blocked'. Slides 1-6's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-016",
+        "fromVersion": "1.0.15",
+        "toVersion": "1.0.16",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-015 -> rev-016 (1.13.0 -> 1.14.0): adds the Arabic side of the new eighth slide, ch01-t01-block-opening-8 (blockType \"slide\", slideNumber 8, slideTitleAr \"كيف يُقاس الزمن باستخدام الظواهر المتكررة؟\"), as the eighth record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic translation of Slide 8's full structure — the source slide's Arabic prose translation (preserving the table wording verbatim in both the quoted Original Arabic text and the reconstructed table), Main Idea, five numbered steps, Simple Example (preserving the same untranslated equations '1.5 h × (60 min / 1 h) = 90 min', '90 min × (60 s / 1 min) = 5400 s', and '1.5 h = 90 min = 5400 s'), Table Explanation, Common Misconception, Scientific Note (including the same untranslated '1 min = 60 s' and '1 h = 3600 s' equations), Key Concept, and Connection to the Next Slide — plus tableAr (the source table's headers/rows translated into Arabic, same 3-row/3-column shape as tableEn, grouped under 'الزمن (t)' matching tableEn's 'Time (t)', verified structurally byte-identical on the tableEn side by src/content/batch1Merge.ts) and tableCaptionAr (the table's Arabic caption 'وحدات الزمن الشائعة').",
+        "whatWasNotChanged": "No .ar text on Slides 1-7 was touched. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-016): project-owner request for an eighth slide, translated into Arabic using the project's established terminology and conventions, with all numerical notation and equations left untranslated per the project's existing convention for embedded Latin/notation fragments.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-8 appended at index 7",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-016",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-8"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-7's Arabic governance fields are entirely unchanged."
       }
     ]
   },

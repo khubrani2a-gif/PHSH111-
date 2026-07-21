@@ -350,7 +350,7 @@
       "ch01-t01",
       "ch01-t04"
     ],
-    "totalIdentifiersRegistered": 25,
+    "totalIdentifiersRegistered": 26,
     "scopeStatement": "This registers exactly the Batch 1 content, problem, source-marker, and approved visual identifiers required before a future application-integration step. It does not integrate ch01-t01 or ch01-t04 into apps/chapter1-mvp/, does not modify any approved content or visual file, does not authorize student-facing use, and does not authorize publication. Registration is an internal governance bookkeeping action, not a content-approval or application action.",
     "glossaryTermIdsExcluded": {
       "statement": "Glossary term IDs are governed inside BILINGUAL_GLOSSARY.json (glossaryVersion 1.3.0) and are deliberately NOT registered as entries in this file, preserving the established decision that glossary identifiers are glossary-local.",
@@ -1031,6 +1031,32 @@
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
         "notes": "Generic, reusable \"slide\" blockType (shared with Slides 1-6 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 7, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, TopicPage conditional, or per-slide accordion JSX (renders automatically as the accordion's seventh item through the existing generic topic.slides[] mapping in src/features/topics/Slides.tsx). Introduces one new, generic, reusable subsection slot: an optional conversionFactorExplanationMarker on src/features/topics/StructuredSlideContent.tsx's StructuredSlideConfig, a third mutually-exclusive sibling of the existing tableExplanationMarker/figureExplanationMarker slot, for slides with neither a table nor a figure that still need a labeled explanatory subsection there — not slide-7-specific logic. renderSteps() was also generically extended to render a numbered-step clause matching the existing equationBlockPhrase configuration with the same distinct equation-block styling already used for Simple Example paragraphs, so Step 3's clause ('23 m × (3.28084 ft / 1 m)') renders identically to every other equation block in this topic. Lowercase 'm' (the meter unit) was deliberately NOT added to ch01-t01's per-topic equation-italics whitelist in src/content/equationRenderer.tsx — it was already absent, so it already renders upright everywhere in this topic. The conversion factor is rendered as plain inline text with '/' ('3.28084 ft / 1 m'), matching this topic's existing house-style convention for every other ratio/fraction, not a new stacked-fraction mechanism. The short accordion title ('Meters to Feet' / 'التحويل من المتر إلى القدم') is resolved entirely at the application layer via src/content/slideShortTitles.ts's existing UI-only lookup keyed by this record's blockId — no field for it exists on, or was added to, this approved content record. visualBaselineDependency remains null: the uploaded source image (/mnt/data/FD0DBBAC-B9AF-4138-A220-563B0F999D48.png) contains only a title and the conversion question, with no instructional figure, so no visual asset is created or referenced by this record, and blocking.blockingReason does not include 'missingVisual'. Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-METERS-TO-FEET-CONVERSION\", following the same free-form ad hoc source-marker convention already used by Slides 1-6. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry. Updated by rev-015: a project-owner scientific-precision review corrected Step 5's rounding explanation (no longer presenting 75.5 ft as simultaneously rounded to three significant figures when 23 m itself has only two — now rendering both '23 m ≈ 75.5 ft (rounded to one decimal place)' and '23 m ≈ 75 ft (rounded to two significant figures)' as explicitly labeled results), revised the Simple Example to 'Convert 5.00 m to feet.' / '5.00 m × (3.28084 ft / 1 m) = 16.4042 ft' / '5.00 m ≈ 16.4 ft' with matching significant-figure counts, and revised the Conversion-Factor Explanation so it no longer implies the rounded decimal ratio (3.28084 ft / 1 m) is itself mathematically exact. The equationBlockPhrase config entry in src/features/topics/StructuredSlideContent.tsx was updated to match the revised Simple Example text."
+      },
+      {
+        "identifier": "ch01-t01-block-opening-8",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "slide",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.14.0",
+          "sha256": "8b1018887c1244d99f11250690150b2645a7a59b489c9abf0b650691ff01adb0"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.16",
+          "sha256": "04d5d5e1e5b50e3f6c65ea354d611e5d9e7d3301449cb8f36b81f636979b92d3"
+        },
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-21",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.14.0 revisionLog rev-016; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.16 revisionLog rev-016",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Generic, reusable \"slide\" blockType (shared with Slides 1-7 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 8, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, TopicPage conditional, or per-slide accordion JSX (renders automatically as the accordion's eighth item through the existing generic topic.slides[] mapping in src/features/topics/Slides.tsx). Reuses the generic tableEn/tableAr/tableCaptionEn/tableCaptionAr source-table mechanism introduced for Slide 3/Slide 6 — no schema change needed. The reconstructed table's first column ('Time (t)') groups all three rows under one <th scope=\"rowgroup\" rowSpan={3}> via the same existing null-as-continuation convention. Lowercase 't' (the physical symbol for time) was already present in ch01-t01's per-topic equation-italics whitelist in src/content/equationRenderer.tsx (added for Slide 1's v = d / t), so it already renders italic on this slide with no whitelist change. Lowercase 'h' (the hour unit) was already deliberately excluded from that same whitelist (documented km/h collision), so it already renders upright as a unit symbol here too, with no whitelist change. Lowercase 's' (the second unit) was never whitelisted and continues to render upright. The short accordion title ('Time Measurement' / 'قياس الزمن') is resolved entirely at the application layer via src/content/slideShortTitles.ts's existing UI-only lookup keyed by this record's blockId — no field for it exists on, or was added to, this approved content record. visualBaselineDependency remains null: the uploaded source image (/mnt/data/4131B34E-DBB2-45B1-8298-37A5E023B271.png) contains a table with no instructional figure, so no visual asset is created or referenced by this record, and blocking.blockingReason does not include 'missingVisual'. Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-TIME-UNITS-TABLE\", following the same free-form ad hoc source-marker convention already used by Slides 1-7. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
       }
     ],
     "unchangedByThisRegistration": [
