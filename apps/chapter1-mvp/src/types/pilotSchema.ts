@@ -247,6 +247,23 @@ export interface ContentBlockRecord {
    */
   tableEn?: SourceTable;
   tableAr?: SourceTable;
+  /**
+   * Present only on records with an embedded raster figure (a photo, not
+   * an SVG diagram) — generic to any contentBlock, independent of
+   * blockType. The actual image file is resolved at build time via a
+   * static Vite import in src/content/rawImports.ts's
+   * RAW_FIGURE_URL_BY_BLOCK_ID, keyed by this record's own blockId;
+   * figureAssetPath here is a human-readable governance pointer to that
+   * same file (mirrors visualGovernance[].assetPath's role for the
+   * topic-singular SVG visual), not itself read at runtime. Mirrors the
+   * slideTitleEn/slideTitleAr convention: the English-only baseline
+   * supplies figureAssetPath and figureAltEn; the Arabic file supplies an
+   * identical figureAssetPath/figureAltEn (byte-checked) plus the real
+   * figureAltAr.
+   */
+  figureAssetPath?: string;
+  figureAltEn?: string;
+  figureAltAr?: string;
   contentLeakTestStatus: string;
 }
 

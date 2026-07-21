@@ -1,6 +1,7 @@
 import { useLanguage } from "../../app/LanguageContext";
 import { renderEquationText } from "../../content/equationRenderer";
 import type { NormalizedSourceTable, NormalizedText } from "../../types/normalized";
+import { SlideFigure } from "./SlideFigure";
 
 const MISSING_TEXT = {
   en: "No English text is available for this section.",
@@ -13,6 +14,7 @@ const SUBSECTION_LABEL = {
   steps: { en: "Step-by-Step Explanation", ar: "الشرح خطوة بخطوة" },
   simpleExample: { en: "Simple Example", ar: "مثال بسيط" },
   tableExplanation: { en: "Table Explanation", ar: "شرح الجدول" },
+  figureExplanation: { en: "Figure Explanation", ar: "شرح الشكل" },
   misconception: { en: "Common Misconception", ar: "مفهوم خاطئ شائع" },
   scientificNote: { en: "Scientific Note", ar: "ملاحظة علمية" },
   keyConcept: { en: "Key Concept", ar: "المفهوم الأساسي" },
@@ -33,8 +35,10 @@ export interface StructuredSlideConfig {
   connectionMarker: Marker;
   /** Optional — when present, an additional "Key Concept" subsection is parsed between Scientific Note and Connection. Omitted entirely for slides (e.g. Slide 1) that have no such subsection. */
   keyConceptMarker?: Marker;
-  /** Optional — when present, an additional "Table Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no source table (e.g. Slides 1 and 2). */
+  /** Optional — when present, an additional "Table Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no source table (e.g. Slides 1 and 2). Mutually exclusive with figureExplanationMarker in current usage — both occupy the same slot. */
   tableExplanationMarker?: Marker;
+  /** Optional — when present, an additional "Figure Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no embedded figure. Mutually exclusive with tableExplanationMarker in current usage — both occupy the same slot. */
+  figureExplanationMarker?: Marker;
   /**
    * Untranslated Latin notation, identical in both languages, that marks a
    * paragraph within Simple Example for distinct equation-block styling.
@@ -107,6 +111,19 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
     },
   },
+  "ch01-t01-block-opening-4": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    figureExplanationMarker: { en: "Figure Explanation:", ar: "شرح الشكل:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
@@ -127,6 +144,7 @@ interface ParsedSections {
   steps: string[];
   simpleExample: string[];
   tableExplanation: string[];
+  figureExplanation: string[];
   misconception: string[];
   scientificNote: string[];
   keyConcept: string[];
@@ -154,6 +172,9 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   const tableExplanationIdx = config.tableExplanationMarker
     ? paragraphs.findIndex((p) => p.startsWith(config.tableExplanationMarker![lang]))
     : -1;
+  const figureExplanationIdx = config.figureExplanationMarker
+    ? paragraphs.findIndex((p) => p.startsWith(config.figureExplanationMarker![lang]))
+    : -1;
   const misconceptionIdx = paragraphs.findIndex((p) => p.startsWith(config.misconceptionMarker[lang]));
   const scientificNoteIdx = paragraphs.findIndex((p) => p.startsWith(config.scientificNoteMarker[lang]));
   const keyConceptIdx = config.keyConceptMarker
@@ -163,6 +184,7 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
 
   const ordered = [mainIdeaIdx, firstStepIdx, simpleExampleIdx];
   if (config.tableExplanationMarker) ordered.push(tableExplanationIdx);
+  if (config.figureExplanationMarker) ordered.push(figureExplanationIdx);
   ordered.push(misconceptionIdx, scientificNoteIdx);
   if (config.keyConceptMarker) ordered.push(keyConceptIdx);
   ordered.push(connectionIdx);
@@ -173,7 +195,16 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   const stepParagraphs = paragraphs.slice(firstStepIdx, simpleExampleIdx);
   if (!stepParagraphs.every((p) => stepPattern.test(p))) return null;
 
-  const simpleExampleEnd = config.tableExplanationMarker ? tableExplanationIdx : misconceptionIdx;
+  // Table Explanation and Figure Explanation are mutually exclusive in
+  // current usage (each slide has at most a source table OR an embedded
+  // figure, never both) — both occupy the same slot immediately after
+  // Simple Example, so whichever is configured determines where Simple
+  // Example ends and itself ends at Common Misconception.
+  const simpleExampleEnd = config.tableExplanationMarker
+    ? tableExplanationIdx
+    : config.figureExplanationMarker
+      ? figureExplanationIdx
+      : misconceptionIdx;
   const scientificNoteEnd = config.keyConceptMarker ? keyConceptIdx : connectionIdx;
 
   return {
@@ -182,6 +213,7 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
     steps: stepParagraphs,
     simpleExample: paragraphs.slice(simpleExampleIdx, simpleExampleEnd),
     tableExplanation: config.tableExplanationMarker ? paragraphs.slice(tableExplanationIdx, misconceptionIdx) : [],
+    figureExplanation: config.figureExplanationMarker ? paragraphs.slice(figureExplanationIdx, misconceptionIdx) : [],
     misconception: paragraphs.slice(misconceptionIdx, scientificNoteIdx),
     scientificNote: paragraphs.slice(scientificNoteIdx, scientificNoteEnd),
     keyConcept: config.keyConceptMarker ? paragraphs.slice(keyConceptIdx, connectionIdx) : [],
@@ -290,6 +322,8 @@ interface StructuredSlideContentProps {
   text: NormalizedText;
   /** Present only for slides carrying a source table (see NormalizedSlide.table) — generic to any slide, not tied to a specific slide number. */
   table?: { en: NormalizedSourceTable | null; ar: NormalizedSourceTable | null };
+  /** Present only for slides carrying an embedded figure (see NormalizedSlide.figure) — generic to any slide, not tied to a specific slide number. */
+  figure?: { assetUrl: string; alt: NormalizedText };
   italicTokens?: readonly string[];
 }
 
@@ -308,7 +342,7 @@ interface StructuredSlideContentProps {
  * expected order — so this is safe to use for future slides without
  * per-slide hardcoding.
  */
-export function StructuredSlideContent({ blockId, text, table, italicTokens = [] }: StructuredSlideContentProps) {
+export function StructuredSlideContent({ blockId, text, table, figure, italicTokens = [] }: StructuredSlideContentProps) {
   const { language, direction } = useLanguage();
   const value = text[language];
   const tableForLanguage = table ? table[language] : null;
@@ -359,6 +393,14 @@ export function StructuredSlideContent({ blockId, text, table, italicTokens = []
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.tableExplanation[language]}</h4>
           {renderPlainParagraphs(sections.tableExplanation, italicTokens, direction)}
+        </section>
+      ) : null}
+
+      {sections.figureExplanation.length > 0 ? (
+        <section className="structured-slide__section">
+          <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figureExplanation[language]}</h4>
+          {figure ? <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} /> : null}
+          {renderPlainParagraphs(sections.figureExplanation, italicTokens, direction)}
         </section>
       ) : null}
 

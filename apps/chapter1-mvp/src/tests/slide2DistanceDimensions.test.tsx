@@ -345,11 +345,12 @@ describe("12. Governance and publication flags remain unchanged", () => {
   });
 
   it("recordCount includes the new record, with no problem record for ch01-t01", () => {
-    // 9 at the time this record was added, now 10 with Slide 3 also present
-    // (see src/tests/slide3DistanceUnits.test.tsx) — no problem record
-    // exists for ch01-t01, so this count is exactly the contentBlock +
-    // instructorScript records.
-    expect(topic.governance.recordCount).toBe(10);
+    // 9 at the time this record was added, now 11 with Slides 3 and 4 also
+    // present (see src/tests/slide3DistanceUnits.test.tsx and
+    // slide4DifferentUnits.test.tsx) — no problem record exists for
+    // ch01-t01, so this count is exactly the contentBlock + instructorScript
+    // records.
+    expect(topic.governance.recordCount).toBe(11);
   });
 });
 

@@ -327,6 +327,92 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-4",
+        "blockType": "slide",
+        "slideNumber": 4,
+        "slideTitleEn": "Why Do We Use Different Units for Different Measurement Scales?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities\n\nWhy are there so many different units in each system?\n\nGenerally, it is easier to use a unit that fits the scale of the system being considered. The meter is good for measuring the size of a house, the millimeter for measuring the size of a coin, and the kilometer for measuring the distance between cities.\n\n19 mm\n\n0.000019 km\n\nMain Idea: Different units are used because choosing a unit that matches the size of the object or distance makes the measurement easier to write, understand, and compare.\n\nStep 1 — The physical distance does not change\n* Changing the unit does not change the actual size of the object.\n* Only the numerical value and unit used to express the measurement change.\n* Equivalent measurements describe the same physical length.\n\nStep 2 — Small objects are easier to measure using small units\n* Millimeters are convenient for coins, screws, and thin materials.\n* 19 mm is simple and easy to read.\n* Expressing the same coin diameter in kilometers produces an inconveniently small decimal.\n\nStep 3 — Medium-sized objects are suited to meters\n* Meters are convenient for rooms, doors, tables, and houses.\n* The selected unit should make the numerical value easy to interpret.\n\nStep 4 — Large distances are suited to kilometers\n* Kilometers are convenient for distances between cities and long journeys.\n* Using millimeters for such distances would produce extremely large numbers.\n\nStep 5 — Equivalent units describe the same measurement\n* 1 km = 1,000,000 mm\n* 19 mm = 0.000019 km\n* Both values describe exactly the same physical length.\n\nSimple Example: A classroom has a length of 8 m. 8 m = 8000 mm, and 8 m = 0.008 km. All three forms are equivalent, but 8 m is the most convenient for the size of a classroom.\n\nFigure Explanation: The figure shows the same coin diameter expressed as 19 mm and 0.000019 km. Both values represent the same physical length, but millimeters provide the clearer and more convenient value for an object of this size.\n\nMisconception: changing the unit changes the actual size of the object. Correction: the physical size remains unchanged; only the numerical value and the unit used to express it change.\n\nScientific Note: A convenient unit usually produces a numerical value that is neither extremely large nor extremely small. This improves readability and reduces the chance of errors.\n\nKey Concept: The most useful unit is usually the one that matches the scale of the measurement. Small units suit small objects, while large units suit large distances.\n\nConnection to the Next Slide: After understanding why different units are used, the next step is to learn how to convert accurately between them.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "1.1 الكميات الفيزيائية الأساسية\n\nلماذا توجد وحدات مختلفة كثيرة في كل نظام؟\n\nبوجه عام، يكون من الأسهل استخدام وحدة تناسب مقياس النظام الذي ندرسه. فالمتر مناسب لقياس حجم المنزل، والمليمتر مناسب لقياس حجم قطعة نقدية، والكيلومتر مناسب لقياس المسافة بين المدن.\n\n19 mm\n\n0.000019 km\n\nالفكرة الرئيسية: تُستخدم وحدات مختلفة لأن اختيار وحدة تناسب حجم الجسم أو المسافة يجعل القياس أسهل في الكتابة والفهم والمقارنة.\n\nالخطوة 1 — لا تتغير المسافة الفيزيائية\n* لا يؤدي تغيير الوحدة إلى تغيير الحجم الفعلي للجسم.\n* الذي يتغير هو القيمة العددية والوحدة المستخدمة للتعبير عن القياس.\n* تصف القياسات المتكافئة الطول الفيزيائي نفسه.\n\nالخطوة 2 — يسهل قياس الأجسام الصغيرة باستخدام وحدات صغيرة\n* يناسب المليمتر قياس القطع النقدية والمسامير والمواد الرقيقة.\n* تعد القيمة 19 mm بسيطة وسهلة القراءة.\n* يؤدي التعبير عن قطر القطعة النقدية نفسها بالكيلومترات إلى عدد عشري صغير وغير عملي.\n\nالخطوة 3 — تناسب الأمتار الأجسام متوسطة الحجم\n* يناسب المتر قياس الغرف والأبواب والطاولات والمنازل.\n* ينبغي أن تجعل الوحدة المختارة القيمة العددية سهلة الفهم.\n\nالخطوة 4 — تناسب الكيلومترات المسافات الكبيرة\n* يناسب الكيلومتر قياس المسافات بين المدن والرحلات الطويلة.\n* يؤدي استخدام المليمترات لهذه المسافات إلى قيم عددية كبيرة جدًا.\n\nالخطوة 5 — تصف الوحدات المتكافئة القياس نفسه\n* 1 km = 1,000,000 mm\n* 19 mm = 0.000019 km\n* تصف كلتا القيمتين الطول الفيزيائي نفسه تمامًا.\n\nمثال بسيط: يبلغ طول فصل دراسي 8 m. 8 m = 8000 mm، و8 m = 0.008 km. الطول الفيزيائي للفصل لا يتغير، ويتغير فقط تمثيله العددي.\n\nشرح الشكل: يوضح الشكل قطر القطعة النقدية نفسها بصورتين: 19 mm و0.000019 km. وتمثل القيمتان الطول الفيزيائي نفسه، لكن المليمتر يعطي قيمة أوضح وأكثر ملاءمة لجسم بهذا الحجم.\n\nمفهوم خاطئ: يؤدي تغيير الوحدة إلى تغيير الحجم الفعلي للجسم. التصحيح: يبقى الحجم الفيزيائي ثابتًا، وتتغير فقط القيمة العددية والوحدة المستخدمة للتعبير عنه.\n\nملاحظة علمية: تنتج الوحدة المناسبة عادةً قيمة عددية ليست كبيرة جدًا ولا صغيرة جدًا، مما يحسّن سهولة القراءة ويقلل احتمال وقوع الأخطاء.\n\nالمفهوم الأساسي: تكون الوحدة الأكثر فائدة عادةً هي التي تناسب مقياس القياس؛ فالوحدات الصغيرة تناسب الأجسام الصغيرة، والوحدات الكبيرة تناسب المسافات الكبيرة.\n\nالصلة بالشريحة التالية: بعد فهم سبب استخدام وحدات مختلفة، تكون الخطوة التالية هي تعلم كيفية التحويل بينها بدقة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "figureAssetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-4-figure.jpg",
+        "figureAltEn": "A coin with a diameter labeled as 19 millimeters and the equivalent value 0.000019 kilometers.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "1.1 الكميات الفيزيائية الأساسية\n\nلماذا توجد وحدات مختلفة كثيرة في كل نظام؟\n\nبوجه عام، يكون من الأسهل استخدام وحدة تناسب مقياس النظام الذي ندرسه. فالمتر مناسب لقياس حجم المنزل، والمليمتر مناسب لقياس حجم قطعة نقدية، والكيلومتر مناسب لقياس المسافة بين المدن.\n\n19 mm\n\n0.000019 km\n\nالفكرة الرئيسية: تُستخدم وحدات مختلفة لأن اختيار وحدة تناسب حجم الجسم أو المسافة يجعل القياس أسهل في الكتابة والفهم والمقارنة.\n\nالخطوة 1 — لا تتغير المسافة الفيزيائية\n* لا يؤدي تغيير الوحدة إلى تغيير الحجم الفعلي للجسم.\n* الذي يتغير هو القيمة العددية والوحدة المستخدمة للتعبير عن القياس.\n* تصف القياسات المتكافئة الطول الفيزيائي نفسه.\n\nالخطوة 2 — يسهل قياس الأجسام الصغيرة باستخدام وحدات صغيرة\n* يناسب المليمتر قياس القطع النقدية والمسامير والمواد الرقيقة.\n* تعد القيمة 19 mm بسيطة وسهلة القراءة.\n* يؤدي التعبير عن قطر القطعة النقدية نفسها بالكيلومترات إلى عدد عشري صغير وغير عملي.\n\nالخطوة 3 — تناسب الأمتار الأجسام متوسطة الحجم\n* يناسب المتر قياس الغرف والأبواب والطاولات والمنازل.\n* ينبغي أن تجعل الوحدة المختارة القيمة العددية سهلة الفهم.\n\nالخطوة 4 — تناسب الكيلومترات المسافات الكبيرة\n* يناسب الكيلومتر قياس المسافات بين المدن والرحلات الطويلة.\n* يؤدي استخدام المليمترات لهذه المسافات إلى قيم عددية كبيرة جدًا.\n\nالخطوة 5 — تصف الوحدات المتكافئة القياس نفسه\n* 1 km = 1,000,000 mm\n* 19 mm = 0.000019 km\n* تصف كلتا القيمتين الطول الفيزيائي نفسه تمامًا.\n\nمثال بسيط: يبلغ طول فصل دراسي 8 m. 8 m = 8000 mm، و8 m = 0.008 km. الطول الفيزيائي للفصل لا يتغير، ويتغير فقط تمثيله العددي.\n\nشرح الشكل: يوضح الشكل قطر القطعة النقدية نفسها بصورتين: 19 mm و0.000019 km. وتمثل القيمتان الطول الفيزيائي نفسه، لكن المليمتر يعطي قيمة أوضح وأكثر ملاءمة لجسم بهذا الحجم.\n\nمفهوم خاطئ: يؤدي تغيير الوحدة إلى تغيير الحجم الفعلي للجسم. التصحيح: يبقى الحجم الفيزيائي ثابتًا، وتتغير فقط القيمة العددية والوحدة المستخدمة للتعبير عنه.\n\nملاحظة علمية: تنتج الوحدة المناسبة عادةً قيمة عددية ليست كبيرة جدًا ولا صغيرة جدًا، مما يحسّن سهولة القراءة ويقلل احتمال وقوع الأخطاء.\n\nالمفهوم الأساسي: تكون الوحدة الأكثر فائدة عادةً هي التي تناسب مقياس القياس؛ فالوحدات الصغيرة تناسب الأجسام الصغيرة، والوحدات الكبيرة تناسب المسافات الكبيرة.\n\nالصلة بالشريحة التالية: بعد فهم سبب استخدام وحدات مختلفة، تكون الخطوة التالية هي تعلم كيفية التحويل بينها بدقة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft-ai-generated-unreviewed",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "pending",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-DIFFERENT-UNITS",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-different-units",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (a US one-cent coin photograph with green measurement guide lines labeling its diameter as '19 mm' along the top and the equivalent '0.000019 km' along the bottom) together with the slide's original English prose ('1.1 Fundamental Physical Quantities... Why are there so many different units in each system?...'), directly in the implementation task. The uploaded image is used directly as this record's figure asset (stored at figureAssetPath, resolved at build time via src/content/rawImports.ts's RAW_FIGURE_URL_BY_BLOCK_ID) — it required no cropping, since it was already a clean, tightly-framed photograph of only the coin and its two measurement labels with no other slide content to remove. The Main Idea, the five numbered steps, the Simple Example, and the Figure Explanation (English and Arabic) were newly authored/translated by Claude from the task's requested structure, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored fourth opening/introductory slide for ch01-t01, positioned as a sibling of ch01-t01-block-opening (Slide 1), ch01-t01-block-opening-2 (Slide 2), and ch01-t01-block-opening-3 (Slide 3) rather than a replacement — none of the prior three slides' records is modified by this addition. Deliberately distinct in wording from Slides 1-3 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "figureAltAr": "قطعة نقدية يظهر قطرها بقيمتين متكافئتين: 19 مليمترًا و0.000019 كيلومتر.",
+        "slideTitleAr": "لماذا نستخدم وحدات مختلفة باختلاف مقياس القياس؟"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

@@ -26,6 +26,10 @@
 //     translated table), when the record carries a source table at all —
 //     `tableEn` is structural source content, not translated, and so is
 //     verified byte-identical like `slideTitleEn`
+//   - a content-block record's own `figureAltAr` (English: absent; Arabic:
+//     the translated alt text), when the record carries a figure at all —
+//     `figureAssetPath`/`figureAltEn` are structural source content, not
+//     translated, and so are verified byte-identical like `slideTitleEn`
 //   - file-level `generationStatus`/`generationNote` (each file describes
 //     its own generation step; the merge synthesizes a new, clearly-labeled
 //     merged value rather than picking one)
@@ -200,6 +204,15 @@ function mergeContentBlockRecord(
   if (enRec.tableEn !== undefined || arRec.tableEn !== undefined) {
     assertEqual(enRec.tableEn, arRec.tableEn, `${path}.tableEn`);
   }
+  // Generic to any blockType (not gated on "slide") — figureAssetPath/
+  // figureAltEn are structural source content (not translated), so, like
+  // tableEn, they must be byte-identical between the two files whenever
+  // present; figureAltAr (like tableAr/slideTitleAr) is supplied only by
+  // the Arabic file.
+  if (enRec.figureAssetPath !== undefined || arRec.figureAssetPath !== undefined) {
+    assertEqual(enRec.figureAssetPath, arRec.figureAssetPath, `${path}.figureAssetPath`);
+    assertEqual(enRec.figureAltEn, arRec.figureAltEn, `${path}.figureAltEn`);
+  }
 
   const localizedContent = mergeLocalizedContentField(
     enRec.localizedContent,
@@ -214,6 +227,7 @@ function mergeContentBlockRecord(
     arabic: arabic as ContentBlockRecord["arabic"],
     slideTitleAr: (arRec.slideTitleAr as string | undefined) ?? undefined,
     tableAr: (arRec.tableAr as ContentBlockRecord["tableAr"]) ?? undefined,
+    figureAltAr: (arRec.figureAltAr as string | undefined) ?? undefined,
   };
 }
 
