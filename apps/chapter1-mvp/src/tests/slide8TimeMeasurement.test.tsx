@@ -344,18 +344,21 @@ describe("11. Fixed time-unit relationships render correctly", () => {
   });
 });
 
-describe("12. The lecture example produces 90 min and 5400 s", () => {
-  it("English Simple Example states the question and both worked conversions", () => {
+describe("12. The lecture example produces 90 min and 5.4 × 10³ s (5400 s, with significant figures made explicit)", () => {
+  it("English Simple Example states the question and both worked conversions, with the final equivalence in scientific notation", () => {
     const en = slide8.text.en ?? "";
     expect(en).toContain("Simple Example: A lecture lasts 1.5 h.");
     expect(en).toContain("1.5 h × (60 min / 1 h) = 90 min");
     expect(en).toContain("90 min × (60 s / 1 min) = 5400 s");
-    expect(en).toContain("1.5 h = 90 min = 5400 s");
+    expect(en).toContain("1.5 h = 90 min = 5.4 × 10³ s");
+    expect(en).toContain(
+      "The value 5400 s is numerically equivalent, but 5.4 × 10³ s makes the two significant figures inherited from 1.5 h explicit.",
+    );
     expect(1.5 * 60).toBe(90);
     expect(90 * 60).toBe(5400);
   });
 
-  it("renders all three equations as distinct equation blocks in the DOM", () => {
+  it("renders all three equations as distinct equation blocks in the DOM, the third in scientific notation", () => {
     renderSlides(false, 8);
     const blocks = Array.from(
       getSlidePanel(container, 8)!.querySelectorAll(".structured-slide__equation-block"),
@@ -363,16 +366,19 @@ describe("12. The lecture example produces 90 min and 5400 s", () => {
     expect(blocks).toEqual([
       "1.5 h × (60 min / 1 h) = 90 min",
       "90 min × (60 s / 1 min) = 5400 s",
-      "1.5 h = 90 min = 5400 s",
+      "1.5 h = 90 min = 5.4 × 10³ s",
     ]);
   });
 
-  it("the Arabic Simple Example preserves the same equations, untranslated", () => {
+  it("the Arabic Simple Example preserves the same equations, untranslated, with the matching significant-figures sentence", () => {
     const ar = slide8.text.ar ?? "";
     expect(ar).toContain("مثال بسيط: تستمر محاضرة مدة 1.5 h.");
     expect(ar).toContain("1.5 h × (60 min / 1 h) = 90 min");
     expect(ar).toContain("90 min × (60 s / 1 min) = 5400 s");
-    expect(ar).toContain("1.5 h = 90 min = 5400 s");
+    expect(ar).toContain("1.5 h = 90 min = 5.4 × 10³ s");
+    expect(ar).toContain(
+      "تساوي القيمة 5400 s المقدار نفسه عدديًا، لكن كتابة 5.4 × 10³ s تُظهر بوضوح الرقمين المعنويين الموروثين من 1.5 h.",
+    );
   });
 });
 

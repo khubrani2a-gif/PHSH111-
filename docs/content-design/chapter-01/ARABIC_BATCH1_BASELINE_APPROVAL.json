@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.16",
+  "baselineVersion": "1.0.17",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "04d5d5e1e5b50e3f6c65ea354d611e5d9e7d3301449cb8f36b81f636979b92d3",
+      "sha256": "855fcee64c2f26949fe21573eb7fd4d9d3d210bf95fd2d60046107837964693e",
       "schemaVersion": "2.3.0",
       "recordCount": 15
     },
@@ -367,6 +367,24 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-8"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-7's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-017",
+        "fromVersion": "1.0.16",
+        "toVersion": "1.0.17",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-016 -> rev-017 (1.14.0 -> 1.15.0): a project-owner scientific-precision review, strictly limited to the final equivalence line of Slide 8's Simple Example within ch01-t01-block-opening-8's localizedContent.ar.text and arabic.canonicalArabicTranslation.text in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. The record's localizedContent.en.text was also synced to match the corrected English file byte-for-byte (a structural requirement verified by src/content/batch1Merge.ts, not a new Arabic-side translation decision). No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "The Simple Example's final equivalence line was revised from '1.5 h = 90 min = 5400 s' to '1.5 h = 90 min = 5.4 × 10³ s' (untranslated, matching the English file), and a new Arabic explanatory sentence was added immediately after it: 'تساوي القيمة 5400 s المقدار نفسه عدديًا، لكن كتابة 5.4 × 10³ s تُظهر بوضوح الرقمين المعنويين الموروثين من 1.5 h.' — matching the English file's correction of the same significant-figures point. The intermediate '90 min × (60 s / 1 min) = 5400 s' calculation is unchanged, preserving the arithmetic result students see before it is re-expressed in scientific notation.",
+        "whatWasNotChanged": "No .ar text on Slides 1-7 was touched. The verbatim original Arabic quotation, the reconstructed Arabic table, the Main Idea, all five numbered steps, the Table Explanation, the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide are unchanged. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-017): project-owner scientific-precision review found the same significant-figures presentation issue in the Arabic translation as in the English text, and corrected it to match, while retaining the plain intermediate result for arithmetic clarity.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening-8.localizedContent.ar.text and arabic.canonicalArabicTranslation.text revised (Simple Example's final equivalence line and new explanatory sentence); localizedContent.en.text synced to the corrected English file",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-017",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-8 entry's checksums updated",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 pinned sha256 updated"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-8 remains 'draft-ai-generated-unreviewed', unchanged by this revision — this is a project-owner scientific-precision correction pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record's status. blocking.blockingStatus remains 'blocked'. Slides 1-7's Arabic governance fields are entirely unchanged."
       }
     ]
   },

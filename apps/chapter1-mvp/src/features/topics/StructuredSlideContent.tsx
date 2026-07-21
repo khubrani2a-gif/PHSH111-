@@ -183,7 +183,7 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     equationBlockPhrase: [
       "1.5 h × (60 min / 1 h) = 90 min",
       "90 min × (60 s / 1 min) = 5400 s",
-      "1.5 h = 90 min = 5400 s",
+      "1.5 h = 90 min = 5.4 × 10³ s",
     ],
     stepPattern: {
       en: /^Step\s+\d+\s+—[^\n]*/,
