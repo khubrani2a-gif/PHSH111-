@@ -99,7 +99,13 @@ function normalizeSlides(file: PilotTopicFile): NormalizedSlide[] {
       title: { en: block.slideTitleEn ?? null, ar: block.slideTitleAr ?? null },
       visibility: block.visibility,
       text: toNormalizedText(block.localizedContent),
-      table: block.tableEn || block.tableAr ? { en: block.tableEn ?? null, ar: block.tableAr ?? null } : undefined,
+      table:
+        block.tableEn || block.tableAr
+          ? {
+              en: block.tableEn ? { ...block.tableEn, caption: block.tableCaptionEn } : null,
+              ar: block.tableAr ? { ...block.tableAr, caption: block.tableCaptionAr } : null,
+            }
+          : undefined,
       figure:
         RAW_FIGURE_URL_BY_BLOCK_ID[block.blockId] && block.figureAltEn
           ? {

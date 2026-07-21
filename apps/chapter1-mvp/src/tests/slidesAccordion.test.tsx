@@ -55,13 +55,13 @@ function remount() {
   root = createRoot(container);
 }
 
-describe("1. Five slide headers render in correct order", () => {
-  it("renders exactly 5 accordion headers, numbered 1-5 in order", () => {
+describe("1. Slide headers render in correct order", () => {
+  it("renders one accordion header per slide, numbered 1..N in order", () => {
     renderSlides(false);
     const numbers = Array.from(container.querySelectorAll(".slide-accordion__number")).map(
       (el) => el.textContent,
     );
-    expect(numbers).toEqual(["1", "2", "3", "4", "5"]);
+    expect(numbers).toEqual(topic.slides.map((s) => String(s.slideNumber)));
   });
 
   it("each header shows its short title", () => {
@@ -69,7 +69,10 @@ describe("1. Five slide headers render in correct order", () => {
     const shortTitles = Array.from(container.querySelectorAll(".slide-accordion__short-title")).map(
       (el) => el.textContent,
     );
-    expect(shortTitles).toEqual([
+    // Only the first five entries are asserted here — a later slide (e.g.
+    // Slide 6, see src/tests/slide6AreaVolumeUnits.test.tsx) may
+    // legitimately extend this list without breaking this test.
+    expect(shortTitles.slice(0, 5)).toEqual([
       "Fundamental Quantities",
       "Length, Mass, and Time",
       "Distance Units",
@@ -156,7 +159,9 @@ describe("5. Previous/Next opens the correct slide", () => {
   it("the pager shows 'Slide N of Total' text", () => {
     renderSlides(false, 3);
     const panel = getSlidePanel(container, 3)!;
-    expect(panel.querySelector(".slide-accordion__pager-progress")?.textContent).toBe("Slide 3 of 5");
+    expect(panel.querySelector(".slide-accordion__pager-progress")?.textContent).toBe(
+      `Slide 3 of ${topic.slides.length}`,
+    );
   });
 
   it("the Arabic pager shows the exact required labels", () => {
@@ -165,11 +170,15 @@ describe("5. Previous/Next opens the correct slide", () => {
     const buttons = Array.from(panel.querySelectorAll("button")).map((b) => b.textContent);
     expect(buttons).toContain("الشريحة السابقة");
     expect(buttons).toContain("الشريحة التالية");
-    expect(panel.querySelector(".slide-accordion__pager-progress")?.textContent).toBe("الشريحة 3 من 5");
+    expect(panel.querySelector(".slide-accordion__pager-progress")?.textContent).toBe(
+      `الشريحة 3 من ${topic.slides.length}`,
+    );
   });
 });
 
 describe("6. Boundary buttons are disabled correctly", () => {
+  const finalSlideNumber = topic.slides[topic.slides.length - 1].slideNumber;
+
   it("Previous is disabled on Slide 1", () => {
     renderSlides(false, 1);
     const panel = getSlidePanel(container, 1)!;
@@ -179,16 +188,16 @@ describe("6. Boundary buttons are disabled correctly", () => {
     expect(prevButton.disabled).toBe(true);
   });
 
-  it("Next is disabled on the final slide (Slide 5)", () => {
-    renderSlides(false, 5);
-    const panel = getSlidePanel(container, 5)!;
+  it("Next is disabled on the final slide", () => {
+    renderSlides(false, finalSlideNumber);
+    const panel = getSlidePanel(container, finalSlideNumber)!;
     const nextButton = Array.from(panel.querySelectorAll("button")).find(
       (b) => b.textContent === "Next Slide",
     ) as HTMLButtonElement;
     expect(nextButton.disabled).toBe(true);
   });
 
-  it("Next is enabled on Slide 1 and Previous is enabled on Slide 5", () => {
+  it("Next is enabled on Slide 1 and Previous is enabled on the final slide", () => {
     renderSlides(false, 1);
     const panel1 = getSlidePanel(container, 1)!;
     const next1 = Array.from(panel1.querySelectorAll("button")).find(
@@ -196,12 +205,12 @@ describe("6. Boundary buttons are disabled correctly", () => {
     ) as HTMLButtonElement;
     expect(next1.disabled).toBe(false);
 
-    openSlideByNumber(container, 5);
-    const panel5 = getSlidePanel(container, 5)!;
-    const prev5 = Array.from(panel5.querySelectorAll("button")).find(
+    openSlideByNumber(container, finalSlideNumber);
+    const panelFinal = getSlidePanel(container, finalSlideNumber)!;
+    const prevFinal = Array.from(panelFinal.querySelectorAll("button")).find(
       (b) => b.textContent === "Previous Slide",
     ) as HTMLButtonElement;
-    expect(prev5.disabled).toBe(false);
+    expect(prevFinal.disabled).toBe(false);
   });
 });
 
@@ -218,10 +227,10 @@ describe("7. Jump navigation opens the selected slide", () => {
     expect(getSlideHeader(container, 1)?.getAttribute("aria-expanded")).toBe("false");
   });
 
-  it("the jump select has exactly 5 options, one per slide", () => {
+  it("the jump select has one option per slide", () => {
     renderSlides(false);
     const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
-    expect(select.options.length).toBe(5);
+    expect(select.options.length).toBe(topic.slides.length);
   });
 
   it("the jump select reflects the currently open slide's value", () => {
@@ -232,10 +241,12 @@ describe("7. Jump navigation opens the selected slide", () => {
 });
 
 describe("8. Viewed count updates and persists", () => {
-  it("starts at 'Slides viewed: 1 of 5' (Slide 1 open by default counts as viewed)", () => {
+  const total = topic.slides.length;
+
+  it(`starts at 'Slides viewed: 1 of ${total}' (Slide 1 open by default counts as viewed)`, () => {
     renderSlides(false);
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 1 of 5",
+      `Slides viewed: 1 of ${total}`,
     );
   });
 
@@ -243,7 +254,7 @@ describe("8. Viewed count updates and persists", () => {
     renderSlides(false, 2);
     openSlideByNumber(container, 3);
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 3 of 5",
+      `Slides viewed: 3 of ${total}`,
     );
   });
 
@@ -252,7 +263,7 @@ describe("8. Viewed count updates and persists", () => {
     openSlideByNumber(container, 1);
     openSlideByNumber(container, 2);
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 2 of 5",
+      `Slides viewed: 2 of ${total}`,
     );
   });
 
@@ -262,7 +273,7 @@ describe("8. Viewed count updates and persists", () => {
     remount();
     renderSlides(false);
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 3 of 5",
+      `Slides viewed: 3 of ${total}`,
     );
   });
 
@@ -279,7 +290,7 @@ describe("8. Viewed count updates and persists", () => {
   it("the Arabic progress text matches the exact required wording", () => {
     renderSlides(true, 2);
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "الشرائح المشاهدة: 2 من 5",
+      `الشرائح المشاهدة: 2 من ${total}`,
     );
   });
 });
@@ -320,7 +331,8 @@ describe("9. Focus moves correctly after navigation", () => {
 describe("10. aria-expanded and aria-controls are correct", () => {
   it("every header has aria-expanded reflecting its open state and aria-controls pointing to an existing panel id", () => {
     renderSlides(false, 2);
-    for (const n of [1, 2, 3, 4, 5]) {
+    for (const s of topic.slides) {
+      const n = s.slideNumber;
       const header = getSlideHeader(container, n)!;
       const expanded = header.getAttribute("aria-expanded");
       expect(expanded).toBe(n === 2 ? "true" : "false");
@@ -339,8 +351,8 @@ describe("10. aria-expanded and aria-controls are correct", () => {
 
   it("headers are real <button> elements, not divs with click handlers", () => {
     renderSlides(false);
-    for (const n of [1, 2, 3, 4, 5]) {
-      expect(getSlideHeader(container, n)?.tagName).toBe("BUTTON");
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.tagName).toBe("BUTTON");
     }
   });
 });
@@ -358,7 +370,10 @@ describe("11. Arabic RTL layout works", () => {
     const shortTitles = Array.from(container.querySelectorAll(".slide-accordion__short-title")).map(
       (el) => el.textContent,
     );
-    expect(shortTitles).toEqual([
+    // Only the first five entries are asserted here — a later slide (e.g.
+    // Slide 6, see src/tests/slide6AreaVolumeUnits.test.tsx) may
+    // legitimately extend this list without breaking this test.
+    expect(shortTitles.slice(0, 5)).toEqual([
       "الكميات الأساسية",
       "الطول والكتلة والزمن",
       "وحدات المسافة",
@@ -375,81 +390,93 @@ describe("11. Arabic RTL layout works", () => {
   });
 });
 
-describe("12. A synthetic Slide 6 is automatically supported, with zero new component logic", () => {
-  function renderWithSixSlides(arabic: boolean) {
+describe("12. A synthetic future slide is automatically supported, with zero new component logic", () => {
+  // Deliberately a fully independent, from-scratch descriptor array (not
+  // derived from the real topic.slides, which now genuinely has a
+  // Slide 6 — see src/tests/slide6AreaVolumeUnits.test.tsx) so this test
+  // stays a pure proof of the architecture's generality, unaffected by
+  // however many real slides the topic accumulates over time.
+  const SYNTHETIC_SLIDES: SlideDescriptor[] = [
+    {
+      recordId: "synthetic-slide-1",
+      slideNumber: 1,
+      title: { en: "Synthetic Slide One", ar: "الشريحة الاصطناعية الأولى" },
+      content: <p>synthetic slide 1 body</p>,
+    },
+    {
+      recordId: "synthetic-slide-2",
+      slideNumber: 2,
+      title: { en: "Synthetic Slide Two", ar: "الشريحة الاصطناعية الثانية" },
+      content: <p>synthetic slide 2 body</p>,
+    },
+    {
+      recordId: "synthetic-slide-3",
+      slideNumber: 3,
+      title: { en: "Synthetic Slide Three", ar: "الشريحة الاصطناعية الثالثة" },
+      content: <p>synthetic slide 3 body</p>,
+    },
+  ];
+
+  function renderSynthetic(arabic: boolean) {
     if (arabic) window.localStorage.setItem("phsh111:language", "ar");
-    const descriptors: SlideDescriptor[] = [
-      ...topic.slides.map((slide) => ({
-        recordId: slide.recordId,
-        slideNumber: slide.slideNumber,
-        title: { en: slide.title.en ?? "", ar: slide.title.ar ?? "" },
-        content: <p>{slide.recordId}</p>,
-      })),
-      {
-        recordId: "ch01-t01-block-opening-6-synthetic",
-        slideNumber: 6,
-        title: { en: "Slide Six Full Title", ar: "العنوان الكامل للشريحة السادسة" },
-        content: <p>synthetic slide 6 body</p>,
-      },
-    ];
     act(() => {
       root.render(
         <LanguageProvider>
-          <SlidesSection topicId="ch01-t01" slides={descriptors} />
+          <SlidesSection topicId="synthetic-topic" slides={SYNTHETIC_SLIDES} />
         </LanguageProvider>,
       );
     });
   }
 
-  it("renders 6 headers, numbered 1-6, with no code change to Slides.tsx", () => {
-    renderWithSixSlides(false);
+  it("renders 3 headers, numbered 1-3, with no code change to Slides.tsx", () => {
+    renderSynthetic(false);
     const numbers = Array.from(container.querySelectorAll(".slide-accordion__number")).map(
       (el) => el.textContent,
     );
-    expect(numbers).toEqual(["1", "2", "3", "4", "5", "6"]);
+    expect(numbers).toEqual(["1", "2", "3"]);
   });
 
-  it("Slide 5's Next button now opens the synthetic Slide 6", () => {
-    renderWithSixSlides(false);
-    openSlideByNumber(container, 5);
-    const panel5 = getSlidePanel(container, 5)!;
-    const nextButton = Array.from(panel5.querySelectorAll("button")).find(
+  it("Slide 2's Next button opens the synthetic Slide 3", () => {
+    renderSynthetic(false);
+    openSlideByNumber(container, 2);
+    const panel2 = getSlidePanel(container, 2)!;
+    const nextButton = Array.from(panel2.querySelectorAll("button")).find(
       (b) => b.textContent === "Next Slide",
     ) as HTMLButtonElement;
     expect(nextButton.disabled).toBe(false);
     act(() => nextButton.click());
-    expect(getSlideHeader(container, 6)?.getAttribute("aria-expanded")).toBe("true");
-    expect(getSlidePanel(container, 6)?.textContent).toContain("Slide 6 — Slide Six Full Title");
+    expect(getSlideHeader(container, 3)?.getAttribute("aria-expanded")).toBe("true");
+    expect(getSlidePanel(container, 3)?.textContent).toContain("Slide 3 — Synthetic Slide Three");
   });
 
-  it("Slide 6 becomes the final slide — its Next button is disabled and the pager reads 'Slide 6 of 6'", () => {
-    renderWithSixSlides(false);
-    openSlideByNumber(container, 6);
-    const panel6 = getSlidePanel(container, 6)!;
-    const nextButton = Array.from(panel6.querySelectorAll("button")).find(
+  it("Slide 3 is the final slide — its Next button is disabled and the pager reads 'Slide 3 of 3'", () => {
+    renderSynthetic(false);
+    openSlideByNumber(container, 3);
+    const panel3 = getSlidePanel(container, 3)!;
+    const nextButton = Array.from(panel3.querySelectorAll("button")).find(
       (b) => b.textContent === "Next Slide",
     ) as HTMLButtonElement;
     expect(nextButton.disabled).toBe(true);
-    expect(panel6.querySelector(".slide-accordion__pager-progress")?.textContent).toBe(
-      "Slide 6 of 6",
+    expect(panel3.querySelector(".slide-accordion__pager-progress")?.textContent).toBe(
+      "Slide 3 of 3",
     );
   });
 
-  it("the jump select now offers 6 options and the viewed-progress denominator becomes 6", () => {
-    renderWithSixSlides(false);
+  it("the jump select offers 3 options and the viewed-progress denominator is 3", () => {
+    renderSynthetic(false);
     const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
-    expect(select.options.length).toBe(6);
+    expect(select.options.length).toBe(3);
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 1 of 6",
+      "Slides viewed: 1 of 3",
     );
   });
 
-  it("Slide 6's short title falls back to its full title (no short-title metadata entry exists for it)", () => {
-    renderWithSixSlides(false);
+  it("each synthetic slide's short title falls back to its full title (no short-title metadata entry exists for a synthetic recordId)", () => {
+    renderSynthetic(false);
     const shortTitles = Array.from(container.querySelectorAll(".slide-accordion__short-title")).map(
       (el) => el.textContent,
     );
-    expect(shortTitles[5]).toBe("Slide Six Full Title");
+    expect(shortTitles).toEqual(["Synthetic Slide One", "Synthetic Slide Two", "Synthetic Slide Three"]);
   });
 });
 

@@ -350,7 +350,7 @@
       "ch01-t01",
       "ch01-t04"
     ],
-    "totalIdentifiersRegistered": 23,
+    "totalIdentifiersRegistered": 24,
     "scopeStatement": "This registers exactly the Batch 1 content, problem, source-marker, and approved visual identifiers required before a future application-integration step. It does not integrate ch01-t01 or ch01-t04 into apps/chapter1-mvp/, does not modify any approved content or visual file, does not authorize student-facing use, and does not authorize publication. Registration is an internal governance bookkeeping action, not a content-approval or application action.",
     "glossaryTermIdsExcluded": {
       "statement": "Glossary term IDs are governed inside BILINGUAL_GLOSSARY.json (glossaryVersion 1.3.0) and are deliberately NOT registered as entries in this file, preserving the established decision that glossary identifiers are glossary-local.",
@@ -979,6 +979,32 @@
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
         "notes": "Generic, reusable \"slide\" blockType (shared with Slides 1-4 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 5, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, or TopicPage conditional. Reuses the generic figureAssetPath/figureAltEn/figureAltAr fields and RAW_FIGURE_URL_BY_BLOCK_ID mechanism introduced for Slide 4 (rev-011) — this time with a hand-authored SVG diagram rather than a raster photograph, demonstrating the mechanism is asset-format-agnostic. The SVG recreates only the rectangle (height 1 ft, width 1.96 ft) from the project-owner-referenced source slide; the source photo's coin fragment (bleeding in from the adjacent, already-integrated Slide 4) and the basketball are deliberately excluded, per explicit project-owner instruction, rather than retained as an unnecessary raster crop. visualBaselineDependency remains null (this is a slide-embedded figure, not the topic-singular SVG visual tracked by visualGovernance/VISUAL_BATCH1_APPROVAL.json). Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-AREA-VOLUME\" (a project-owner-referenced slide image, following the same free-form ad hoc source-marker convention already used by Slides 1-4). blocking.blockingReason does not include 'missingVisual': the rectangle diagram was fully reconstructable from the source slide's own labeled dimensions. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry. Updated by rev-012: project-owner Arabic scientific-language review corrected three sentences (size-of-a-surface wording changed from 'حجم السطح' to 'مقدار امتداد السطح' to avoid confusion with the physical quantity Volume; Step 1's area/volume derivation bullets revised for grammatical consistency) — no factual/scientific claim changed, English text and figure unchanged."
+      },
+      {
+        "identifier": "ch01-t01-block-opening-6",
+        "identifierType": "contentBlock",
+        "chapterId": "ch01",
+        "topicId": "ch01-t01",
+        "recordType": "contentBlock",
+        "blockType": "slide",
+        "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
+        "englishBaselineDependency": {
+          "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.11.0",
+          "sha256": "6547e89ad5fb6852f8d3c9f07103197d3962b6de6d8477430cac53e8274be134"
+        },
+        "arabicBaselineDependency": {
+          "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
+          "baselineVersion": "1.0.13",
+          "sha256": "250429ddd548ac07fc76035ad1de6cc7cc09b3a4edd2c22ed943e6c801e016bc"
+        },
+        "visualBaselineDependency": null,
+        "registrationDate": "2026-07-21",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.11.0 revisionLog rev-013; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.13 revisionLog rev-013",
+        "status": "registered",
+        "applicationIntegrationState": "unauthorized",
+        "publicationState": "unauthorized",
+        "notes": "Generic, reusable \"slide\" blockType (shared with Slides 1-5 — see src/types/pilotSchema.ts's ContentBlockType header note and src/content/adapter.ts's normalizeSlides); slideNumber 6, added purely as data with no new ContentBlockType, NormalizedTopic field, adapter branch, TopicPage conditional, or per-slide accordion JSX (renders automatically as the accordion's sixth item through the existing generic topic.slides[] mapping in src/features/topics/Slides.tsx). Reuses the generic tableEn/tableAr source-table mechanism introduced for Slide 3 (rev-009/rev-010), extended in this revision with two new generic, blockType-independent fields (tableCaptionEn/tableCaptionAr — mirroring the slideTitleEn/slideTitleAr convention) so the reconstructed table carries a <caption>, plus a presentation-only, non-slide-specific enhancement to the shared table renderer giving non-null first-column cells (here 'Area (A)'/'Volume (V)') semantic <th scope=\"rowgroup\"> grouping via rowSpan. The reconstructed table uses scientifically formatted superscripts (m², cm², m³, etc.); the verbatim Original English/Arabic quoted prose instead preserves the source's own plain notation (m2, cm2, m3, etc.) unaltered, per explicit project-owner instruction. The short accordion title ('Area and Volume Units' / 'وحدات المساحة والحجم') is resolved entirely at the application layer via src/content/slideShortTitles.ts's existing UI-only lookup keyed by this record's blockId — no field for it exists on, or was added to, this approved content record. visualBaselineDependency remains null (this is a slide-embedded reconstructed table, not the topic-singular SVG visual tracked by visualGovernance/VISUAL_BATCH1_APPROVAL.json). Its provenance source is recorded inline on the record itself via provenanceLinks[0].sourceId = \"SRC-OWNER-SLIDE-1.1-AREA-VOLUME-UNITS-TABLE\" (a project-owner-uploaded slide image at /mnt/data/9AD6874A-B410-4B74-8778-4F50F0B1E444.png, following the same free-form ad hoc source-marker convention already used by Slides 1-5). The uploaded screenshot itself is explicitly NOT used as the student-facing visual. blocking.blockingReason does not include 'missingVisual': the table was fully reconstructable from the source slide's own listed units and was used directly. Its rendering in apps/chapter1-mvp/ is authorized directly by the project owner's request in the implementation task that added it, consistent with applicationIntegrationState remaining 'unauthorized' here in the same historical-snapshot sense as every other entry in this registry."
       }
     ],
     "unchangedByThisRegistration": [

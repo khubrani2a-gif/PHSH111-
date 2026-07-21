@@ -204,6 +204,14 @@ function mergeContentBlockRecord(
   if (enRec.tableEn !== undefined || arRec.tableEn !== undefined) {
     assertEqual(enRec.tableEn, arRec.tableEn, `${path}.tableEn`);
   }
+  // Generic to any blockType — tableCaptionEn, like slideTitleEn (not like
+  // tableEn's raw structural data), is authored English caption text, so
+  // it must be byte-identical between the two files whenever present;
+  // tableCaptionAr (like slideTitleAr/tableAr) is supplied only by the
+  // Arabic file.
+  if (enRec.tableCaptionEn !== undefined || arRec.tableCaptionEn !== undefined) {
+    assertEqual(enRec.tableCaptionEn, arRec.tableCaptionEn, `${path}.tableCaptionEn`);
+  }
   // Generic to any blockType (not gated on "slide") — figureAssetPath/
   // figureAltEn are structural source content (not translated), so, like
   // tableEn, they must be byte-identical between the two files whenever
@@ -227,6 +235,7 @@ function mergeContentBlockRecord(
     arabic: arabic as ContentBlockRecord["arabic"],
     slideTitleAr: (arRec.slideTitleAr as string | undefined) ?? undefined,
     tableAr: (arRec.tableAr as ContentBlockRecord["tableAr"]) ?? undefined,
+    tableCaptionAr: (arRec.tableCaptionAr as string | undefined) ?? undefined,
     figureAltAr: (arRec.figureAltAr as string | undefined) ?? undefined,
   };
 }

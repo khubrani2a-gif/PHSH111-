@@ -420,6 +420,132 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-6",
+        "blockType": "slide",
+        "slideNumber": 6,
+        "slideTitleEn": "What Units Are Used to Measure Area and Volume?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Area and Volume\n\nThe following table lists the common area and volume units of measure, in both the metric and English systems and their abbreviations.\n\nArea\n\nMetric: square meter (m2), square centimeter (cm2), square kilometer (km2), hectare.\n\nEnglish: square foot (ft2), square inch (in.2), square mile (mi2), acre.\n\nVolume\n\nMetric: cubic meter (m3), cubic centimeter (cm3 or cc), liter (L), milliliter (mL).\n\nEnglish: cubic foot (ft3), cubic inch (in.3), quart, pint, cup, teaspoon, tablespoon.\n\nMain Idea: Area and volume use different units because area measures two-dimensional extent, while volume measures three-dimensional space. Area therefore uses square units, whereas volume uses cubic units or capacity units such as liters.\n\nStep 1 — Area is measured in square units\n* Area is derived from multiplying two lengths.\n* Its physical dimension is L².\n* The exponent 2 means that two length dimensions are involved.\n* Examples include m², cm², km², ft², and in².\n\nStep 2 — The unit should match the size of the surface\n* Square centimeters are convenient for small surfaces.\n* Square meters are suitable for rooms, floors, and walls.\n* Square kilometers are suitable for large regions.\n* Hectares and acres are commonly used for land area.\n\nStep 3 — Volume is measured in cubic units\n* Volume is derived from multiplying three lengths.\n* Its physical dimension is L³.\n* The exponent 3 represents three independent spatial dimensions.\n* Examples include m³, cm³, ft³, and in³.\n\nStep 4 — Liters and milliliters also measure volume\n* The liter is commonly used for liquid capacity.\n* The milliliter is useful for smaller liquid quantities.\n* 1 L = 1000 mL\n* 1 mL = 1 cm³\n* 1 L = 1000 cm³\n\nStep 5 — Metric and English units are not automatically equivalent\n* Units listed in the same row are examples from two measurement systems.\n* Their numerical values are generally not equal.\n* 1 m² ≠ 1 ft²\n* 1 m³ ≠ 1 ft³\n* A conversion factor is required when changing systems.\n\nSimple Example: A rectangular floor measures 5 m by 4 m.\n\nA = l × w\n\nA = (5 m)(4 m) = 20 m²\n\nA rectangular container measures 2 m by 1 m by 0.5 m.\n\nV = l × w × h\n\nV = (2 m)(1 m)(0.5 m) = 1 m³\n\nArea uses square units because two lengths are multiplied, whereas volume uses cubic units because three lengths are multiplied.\n\nTable Explanation: The table groups units by physical quantity and measurement system. Area units use the word square or an exponent of 2, while volume units use the word cubic or an exponent of 3. Liters, milliliters, cups, teaspoons, and similar units measure capacity, which is a form of volume. Hectares and acres are specialized units of area. Units placed in the same row are not necessarily equal.\n\nMisconception: meter, square meter, and cubic meter are interchangeable forms of the same unit. Correction: meter measures length, square meter measures area, and cubic meter measures volume. The exponent is essential and cannot be omitted.\n\nm → length\n\nm² → area\n\nm³ → volume\n\nScientific Note: The abbreviation cc is commonly used for cubic centimeter, especially in practical contexts. In formal SI notation, cm³ is preferred.\n\n1 cc = 1 cm³ = 1 mL\n\nKey Concept: Area uses square units because it depends on two length dimensions, while volume uses cubic units or equivalent capacity units because it depends on three dimensions.\n\nConnection to the Next Slide: After identifying common area and volume units, the next step is to learn how to calculate these quantities and convert correctly between their units.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Physical Quantity",
+            "Metric Units",
+            "English Units"
+          ],
+          "rows": [
+            [
+              "Area (A)",
+              "square meter (m²)",
+              "square foot (ft²)"
+            ],
+            [
+              null,
+              "square centimeter (cm²)",
+              "square inch (in²)"
+            ],
+            [
+              null,
+              "square kilometer (km²)",
+              "square mile (mi²)"
+            ],
+            [
+              null,
+              "hectare",
+              "acre"
+            ],
+            [
+              "Volume (V)",
+              "cubic meter (m³)",
+              "cubic foot (ft³)"
+            ],
+            [
+              null,
+              "cubic centimeter (cm³ or cc)",
+              "cubic inch (in³)"
+            ],
+            [
+              null,
+              "liter (L)",
+              "quart, pint, cup"
+            ],
+            [
+              null,
+              "milliliter (mL)",
+              "teaspoon, tablespoon"
+            ]
+          ]
+        },
+        "tableCaptionEn": "Common Area and Volume Units of Measure",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-AREA-VOLUME-UNITS-TABLE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-area-volume-units-table",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/9AD6874A-B410-4B74-8778-4F50F0B1E444.png, a table listing common area and volume units of measure in the metric and English systems) directly in the implementation task, together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Area and Volume...') and the exact unit lists/abbreviations to preserve. The uploaded image itself is recorded here as this record's source and is explicitly NOT used as the student-facing visual — the table is reconstructed as semantic HTML (a real <table> with a <caption>, column headers with scope=\"col\", and grouped Area/Volume row headers with scope=\"rowgroup\") from its text (headers/rows), preserving the same units and source abbreviations verbatim, with scientifically formatted superscripts (m², cm², m³, etc.) in the reconstructed table while the plain source notation (m2, cm2, m3, etc.) is preserved unaltered in the verbatim Original English quoted prose. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Table Explanation, and the Common Misconception's m/m²/m³ illustration were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. No visual asset beyond the reconstructed semantic table is referenced by this record."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored sixth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-5 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-5 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

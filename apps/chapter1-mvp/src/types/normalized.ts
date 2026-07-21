@@ -51,6 +51,8 @@ export interface NormalizedSection {
 export interface NormalizedSourceTable {
   headers: string[];
   rows: (string | null)[][];
+  /** Present only when the source record supplies an authored caption (tableCaptionEn/tableCaptionAr) — omitted for tables with none. */
+  caption?: string;
 }
 
 /**
