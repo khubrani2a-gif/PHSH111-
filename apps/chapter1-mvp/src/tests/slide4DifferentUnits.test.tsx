@@ -119,7 +119,7 @@ describe("1. Slide 4 appears after Slide 3", () => {
     root = createRoot(container);
     renderGenericSlides(true);
     expect(container.querySelector("#slide-4-heading")?.textContent).toBe(
-      "الشريحة 4 — لماذا نستخدم وحدات مختلفة لمقاييس القياس المختلفة؟",
+      "الشريحة 4 — لماذا نستخدم وحدات مختلفة باختلاف مقياس القياس؟",
     );
   });
 });
@@ -351,14 +351,14 @@ describe("10. Bilingual alt text is present", () => {
   it("Arabic alt text matches exactly", () => {
     renderGenericSlides(true);
     const img = container.querySelector(".slide-figure__img") as HTMLImageElement;
-    expect(img.alt).toBe("قطعة نقدية موضح أن قطرها 19 مليمترًا، والقيمة المكافئة له 0.000019 كيلومتر.");
+    expect(img.alt).toBe("قطعة نقدية يظهر قطرها بقيمتين متكافئتين: 19 مليمترًا و0.000019 كيلومتر.");
   });
 
   it("NormalizedSlide.figure.alt carries both languages", () => {
     expect(slide4.figure?.alt.en).toBe(
       "A coin with a diameter labeled as 19 millimeters and the equivalent value 0.000019 kilometers.",
     );
-    expect(slide4.figure?.alt.ar).toBe("قطعة نقدية موضح أن قطرها 19 مليمترًا، والقيمة المكافئة له 0.000019 كيلومتر.");
+    expect(slide4.figure?.alt.ar).toBe("قطعة نقدية يظهر قطرها بقيمتين متكافئتين: 19 مليمترًا و0.000019 كيلومتر.");
   });
 });
 

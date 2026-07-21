@@ -56,7 +56,7 @@ const APPROVED = {
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
-    // Baseline v1.0.9 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // Baseline v1.0.10 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
     // revisionLog: rev-001 adds the Arabic side of ch01-t01-block-opening;
     // rev-002 corrects its translation to match the English rev-004 fixes;
     // rev-003 restructures it to match the English rev-005 compact format
@@ -71,8 +71,10 @@ const APPROVED = {
     // ch01-t01-block-opening-3 (Slide 3), matching English rev-009;
     // rev-008 applies the same Slide 3 pedagogical wording corrections,
     // matching English rev-010; rev-009 adds the Arabic side of
-    // ch01-t01-block-opening-4 (Slide 4), matching English rev-011.
-    sha256: "23b7ed6e76f780a779705a1e87bab5876f5ee54a429832d517ce7fdf2678a529",
+    // ch01-t01-block-opening-4 (Slide 4), matching English rev-011;
+    // rev-010 refines Slide 4's slideTitleAr and figureAltAr wording
+    // (project-owner Arabic language review, no English-side change).
+    sha256: "81e24964d29f9ee9ea80fe8b9475093f0f975de758d11de8ed4fcc52516e05b3",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
