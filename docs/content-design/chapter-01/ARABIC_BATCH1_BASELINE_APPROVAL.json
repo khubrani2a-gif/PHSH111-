@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.11",
+  "baselineVersion": "1.0.12",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "c637483fdedb972303560858a18e649340c238a184778367542cccc63b4d0760",
+      "sha256": "ee1c3269890643bf2b7d6cc3c3085bf96de1f8a6c4f61a254936647150a5d231",
       "schemaVersion": "2.3.0",
       "recordCount": 12
     },
@@ -281,6 +281,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-5"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-4's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-012",
+        "fromVersion": "1.0.11",
+        "toVersion": "1.0.12",
+        "revisedAt": "2026-07-21",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Project-owner Arabic scientific-language review, strictly limited to three sentences within ch01-t01-block-opening-5's (Slide 5) localizedContent.ar.text in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No English text, no English file, no other record's Arabic text, and no other field on this record (slideTitleAr, figureAltAr, blocking, arabic.translationStatus) was touched. Not paired with any English-file revision — the original English quotation and every other English field are unchanged.",
+        "whatChanged": "(1) The Arabic translation of the source sentence 'Area commonly refers to the size of a surface' was revised from 'تشير المساحة عادةً إلى حجم السطح.' to 'تشير المساحة عادةً إلى مقدار امتداد السطح.', removing the word 'حجم' (volume) from this sentence to avoid confusion with the separate physical quantity Volume, which this same slide explicitly defines and distinguishes via its L²/L³ Scientific Note. (2) Step 1's second bullet was revised from '* تتكون المساحة من ضرب قياسي طول.' to '* تنتج المساحة من ضرب قياسين للطول.' — improved grammatical wording for 'Area is formed by multiplying two lengths.' (3) Step 1's third bullet was revised from '* يتكون الحجم من ضرب ثلاثة قياسات للطول.' to '* ينتج الحجم من ضرب ثلاثة قياسات للطول.' — the verb 'يتكون' (is composed of) was replaced with 'ينتج' (results from/is produced by) to match the corrected verb choice used in the area bullet immediately above it, for 'Volume is formed by multiplying three lengths.'",
+        "whatWasNotChanged": "The original English quotation (unchanged, per project-owner instruction to preserve it exactly), the five-step scientific structure (still five steps), the L²/L³ dimensional notation, the floor/12 m² Simple Example, the rectangle figure and its 1 ft / 1.96 ft labels, the Figure Explanation, the Common Misconception, the Scientific Note, the Key Concept, the Connection to the Next Slide, slideTitleAr, figureAltAr, and Slides 1-4 are all unchanged. No English file, English text, or English-side governance record was touched.",
+        "rationale": "Project-owner Arabic scientific-language review identified that 'حجم السطح' ('volume of the surface') for the English phrase 'size of a surface' is scientifically misleading in a slide that itself defines and contrasts Area (L²) against Volume (L³) as physical quantities — a student could misread the sentence as claiming a surface literally has a volume. The step-1 derivation bullets were also reviewed for grammatical naturalness and verb consistency between the paired area/volume statements.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening-5.localizedContent.ar.text revised (three sentences: size-of-a-surface wording, Step 1's area-derivation bullet, Step 1's volume-derivation bullet)",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-5 entry's arabicBaselineDependency checksum updated",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 pinned sha256 updated"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-5 remains 'draft-ai-generated-unreviewed', unchanged by this revision — this is a project-owner scientific-language correction pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record's status. blocking.blockingStatus remains 'blocked'. Slides 1-4's Arabic governance fields are entirely unchanged."
       }
     ]
   },

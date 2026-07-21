@@ -77,8 +77,14 @@ const APPROVED = {
     // rev-010 refines Slide 4's slideTitleAr and figureAltAr wording
     // (project-owner Arabic language review, no English-side change);
     // rev-011 adds the Arabic side of ch01-t01-block-opening-5 (Slide 5),
-    // matching English rev-012.
-    sha256: "c637483fdedb972303560858a18e649340c238a184778367542cccc63b4d0760",
+    // matching English rev-012; rev-012 is a project-owner Arabic
+    // scientific-language review correcting three Slide 5 sentences (the
+    // "size of a surface" translation, which previously used "حجم" —
+    // volume — and could be confused with the separate Volume quantity
+    // this same slide defines; and the two Step 1 area/volume derivation
+    // bullets, revised for grammatical consistency). English text and the
+    // figure are unchanged.
+    sha256: "ee1c3269890643bf2b7d6cc3c3085bf96de1f8a6c4f61a254936647150a5d231",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
