@@ -10,6 +10,11 @@
 // blocking reason, and the generic topic.slides[] collection
 // architecture. Uses the same jsdom + createRoot/act pattern as
 // src/tests/ch01t01Interactions.test.tsx.
+//
+// Rendering now goes through the Slides accordion (see
+// src/features/topics/Slides.tsx and src/tests/testHelpers/slidesTestHelpers.tsx)
+// — only one slide's panel is mounted at a time, so any assertion about a
+// slide's rendered content opens that slide first via openSlideByNumber.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
@@ -17,8 +22,12 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { LanguageProvider } from "../app/LanguageContext";
 import { getTopic } from "../content/adapter";
 import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
-import { SlidesSection, Slide } from "../features/topics/Slides";
 import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
+import {
+  renderGenericSlides as renderGenericSlidesShared,
+  openSlideByNumber,
+  getSlidePanel,
+} from "./testHelpers/slidesTestHelpers";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -42,29 +51,10 @@ const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")
 const slide2 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-2")!;
 const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
 
-// Mirrors src/pages/TopicPage.tsx's actual generic rendering: map over
-// topic.slides in order, using each slide's own recordId/slideNumber/title
-// — no per-slide-number conditional, no hardcoded slide count.
-function renderGenericSlides(arabic: boolean) {
-  if (arabic) window.localStorage.setItem("phsh111:language", "ar");
-  act(() => {
-    root.render(
-      <LanguageProvider>
-        <SlidesSection>
-          {topic.slides.map((slide) => (
-            <Slide
-              key={slide.recordId}
-              number={slide.slideNumber}
-              title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
-              id={slide.slideNumber === 1 ? "topic-opening" : undefined}
-            >
-              <StructuredSlideContent blockId={slide.recordId} text={slide.text} italicTokens={PROSE_TOKENS} />
-            </Slide>
-          ))}
-        </SlidesSection>
-      </LanguageProvider>,
-    );
-  });
+/** Renders the full generic Slides accordion, optionally opening one slide by number (defaults to Slide 1 open, matching a first-time visitor). */
+function renderSlides(arabic: boolean, openSlideNumber?: number) {
+  renderGenericSlidesShared(root, topic, arabic);
+  if (openSlideNumber) openSlideByNumber(container, openSlideNumber);
 }
 
 describe("1. Slide 2 appears after Slide 1", () => {
@@ -79,11 +69,11 @@ describe("1. Slide 2 appears after Slide 1", () => {
     expect(topic.slides.slice(0, 2).map((s) => s.slideNumber)).toEqual([1, 2]);
   });
 
-  it("Slide 2's heading follows Slide 1's heading in DOM order, both under one Slides section", () => {
-    renderGenericSlides(false);
+  it("Slide 2's header follows Slide 1's header in DOM order, both under one Slides section", () => {
+    renderSlides(false);
     const order = Array.from(container.querySelectorAll("[id]")).map((el) => el.id);
-    const slide1Idx = order.indexOf("slide-1-heading");
-    const slide2Idx = order.indexOf("slide-2-heading");
+    const slide1Idx = order.indexOf("slide-1-header");
+    const slide2Idx = order.indexOf("slide-2-header");
     expect(slide1Idx).toBeGreaterThanOrEqual(0);
     expect(slide2Idx).toBeGreaterThan(slide1Idx);
     // At least Slide 1 and Slide 2 — a later slide (e.g. Slide 3) may
@@ -91,15 +81,15 @@ describe("1. Slide 2 appears after Slide 1", () => {
     expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(2);
   });
 
-  it("Slide 2's exact bilingual title renders", () => {
-    renderGenericSlides(false);
-    expect(container.querySelector("#slide-2-heading")?.textContent).toBe(
+  it("Slide 2's exact bilingual title renders inside its expanded panel", () => {
+    renderSlides(false, 2);
+    expect(getSlidePanel(container, 2)?.textContent).toContain(
       "Slide 2 — How Are Physical Quantities Built from Distance, Mass, and Time?",
     );
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
-    expect(container.querySelector("#slide-2-heading")?.textContent).toBe(
+    renderSlides(true, 2);
+    expect(getSlidePanel(container, 2)?.textContent).toContain(
       "الشريحة 2 — كيف تُبنى الكميات الفيزيائية من المسافة والكتلة والزمن؟",
     );
   });
@@ -118,10 +108,12 @@ describe("2. Slide 1 remains byte-for-byte unchanged", () => {
     expect(ar).toContain("في الفيزياء، توجد ثلاثة جوانب أساسية للكون المادي");
   });
 
-  it("Slide 1 renders identically (same headings/steps/equation) alongside Slide 2", () => {
-    renderGenericSlides(false);
-    const slide1El = document.getElementById("topic-opening")!;
-    const headings = Array.from(slide1El.querySelectorAll(".structured-slide__heading")).map((h) => h.textContent);
+  it("Slide 1 renders identically (same headings/steps/equation) alongside Slide 2, open by default", () => {
+    renderSlides(false);
+    const slide1Panel = getSlidePanel(container, 1)!;
+    const headings = Array.from(slide1Panel.querySelectorAll(".structured-slide__heading")).map(
+      (h) => h.textContent,
+    );
     expect(headings).toEqual([
       "Original English",
       "Main Idea",
@@ -131,7 +123,7 @@ describe("2. Slide 1 remains byte-for-byte unchanged", () => {
       "Scientific Note",
       "Connection to the Next Slide",
     ]);
-    expect(slide1El.querySelector(".structured-slide__equation-block")?.textContent).toBe(
+    expect(slide1Panel.querySelector(".structured-slide__equation-block")?.textContent).toBe(
       "v = d / t = 100 m / 5 s = 20 m/s",
     );
   });
@@ -139,7 +131,7 @@ describe("2. Slide 1 remains byte-for-byte unchanged", () => {
 
 describe("3. The original English text appears exactly", () => {
   it("verbatim quotation from the uploaded slide renders unchanged", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 2);
     const text = container.textContent ?? "";
     expect(text).toContain("1.1 Fundamental Physical Quantities: Distance");
     expect(text).toContain("Mostly all quantities can be classified in terms of the fundamental physical quantities:");
@@ -156,7 +148,7 @@ describe("3. The original English text appears exactly", () => {
   });
 
   it("Arabic translation of the original quote renders exactly as supplied", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 2);
     const text = container.textContent ?? "";
     expect(text).toContain("1.1 الكميات الفيزيائية الأساسية: المسافة");
     expect(text).toContain("يمكن تصنيف معظم الكميات من حيث الكميات الفيزيائية الأساسية:");
@@ -168,9 +160,11 @@ describe("3. The original English text appears exactly", () => {
 
 describe("4. All structured headings render", () => {
   it("all 8 English headings render, in order (no Figure Explanation — omitted, see final report)", () => {
-    renderGenericSlides(false);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const headings = Array.from(slide2El.querySelectorAll(".structured-slide__heading")).map((h) => h.textContent);
+    renderSlides(false, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const headings = Array.from(slide2Panel.querySelectorAll(".structured-slide__heading")).map(
+      (h) => h.textContent,
+    );
     expect(headings).toEqual([
       "Original English",
       "Main Idea",
@@ -184,9 +178,11 @@ describe("4. All structured headings render", () => {
   });
 
   it("all 8 Arabic headings render, in order", () => {
-    renderGenericSlides(true);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const headings = Array.from(slide2El.querySelectorAll(".structured-slide__heading")).map((h) => h.textContent);
+    renderSlides(true, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const headings = Array.from(slide2Panel.querySelectorAll(".structured-slide__heading")).map(
+      (h) => h.textContent,
+    );
     expect(headings).toEqual([
       "النص الإنجليزي الأصلي",
       "الفكرة الرئيسية",
@@ -200,18 +196,20 @@ describe("4. All structured headings render", () => {
   });
 
   it("headings are real semantic <h4> elements, bold via CSS class", () => {
-    renderGenericSlides(false);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const headingTags = Array.from(slide2El.querySelectorAll(".structured-slide__heading")).map((h) => h.tagName);
+    renderSlides(false, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const headingTags = Array.from(slide2Panel.querySelectorAll(".structured-slide__heading")).map(
+      (h) => h.tagName,
+    );
     expect(headingTags.every((t) => t === "H4")).toBe(true);
   });
 });
 
 describe("5. The five numbered steps are in order", () => {
   it("English steps render with real bolded titles, in order 1-5", () => {
-    renderGenericSlides(false);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const steps = Array.from(slide2El.querySelectorAll(".structured-slide__steps > li"));
+    renderSlides(false, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const steps = Array.from(slide2Panel.querySelectorAll(".structured-slide__steps > li"));
     expect(steps).toHaveLength(5);
     const titles = steps.map((li) => li.querySelector("strong.structured-slide__step-number")?.textContent);
     expect(titles).toEqual([
@@ -227,9 +225,9 @@ describe("5. The five numbered steps are in order", () => {
   });
 
   it("Arabic steps render with real bolded titles, in order 1-5", () => {
-    renderGenericSlides(true);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const steps = Array.from(slide2El.querySelectorAll(".structured-slide__steps > li"));
+    renderSlides(true, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const steps = Array.from(slide2Panel.querySelectorAll(".structured-slide__steps > li"));
     const titles = steps.map((li) => li.querySelector("strong.structured-slide__step-number")?.textContent);
     expect(titles).toEqual([
       "الخطوة 1 — تُمثّل المسافة بالرمز L",
@@ -243,7 +241,7 @@ describe("5. The five numbered steps are in order", () => {
 
 describe("6. L, M, T, and L/T render correctly", () => {
   it("italicizes standalone L, M, T tokens (existing ch01-t01 whitelist already includes them)", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 2);
     expect(container.innerHTML).toContain("<em>L</em>");
     expect(container.innerHTML).toContain("<em>M</em>");
     expect(container.innerHTML).toContain("<em>T</em>");
@@ -261,7 +259,7 @@ describe("6. L, M, T, and L/T render correctly", () => {
 
 describe("7. The distinction between dimensions and units is present", () => {
   it("Step 4 and the Misconception both state L/M/T are dimensions, not units", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 2);
     const text = container.textContent ?? "";
     expect(text).toContain("L, M, and T represent dimensions, not individual units.");
     expect(text).toContain("Misconception: L, M, and T are units. Correction: they are symbols for physical dimensions.");
@@ -270,9 +268,9 @@ describe("7. The distinction between dimensions and units is present", () => {
 
 describe("8. The speed example calculates 60 miles/h", () => {
   it("renders the exact worked equation in its own distinct equation block", () => {
-    renderGenericSlides(false);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const block = slide2El.querySelector(".structured-slide__equation-block");
+    renderSlides(false, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const block = slide2Panel.querySelector(".structured-slide__equation-block");
     expect(block?.textContent).toBe("Speed = 120 miles / 2 h = 60 miles/h");
   });
 
@@ -283,11 +281,13 @@ describe("8. The speed example calculates 60 miles/h", () => {
 
 describe("9. Figure Explanation — intentionally omitted by explicit project-owner decision, not fabricated", () => {
   it("no Figure Explanation heading or image placeholder renders", () => {
-    renderGenericSlides(false);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    const headings = Array.from(slide2El.querySelectorAll(".structured-slide__heading")).map((h) => h.textContent);
+    renderSlides(false, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    const headings = Array.from(slide2Panel.querySelectorAll(".structured-slide__heading")).map(
+      (h) => h.textContent,
+    );
     expect(headings).not.toContain("Figure Explanation");
-    expect(slide2El.querySelector("img")).toBeNull();
+    expect(slide2Panel.querySelector("img")).toBeNull();
   });
 
   it("the source record's blocking.blockingReason no longer includes missingVisual — the omission was an explicit decision, not an unresolved gap", () => {
@@ -302,25 +302,25 @@ describe("9. Figure Explanation — intentionally omitted by explicit project-ow
 
 describe("10. Arabic RTL is correct", () => {
   it("Arabic Slide 2 paragraphs render dir=\"rtl\", including inside the equation block and callouts", () => {
-    renderGenericSlides(true);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    expect(slide2El.querySelectorAll('p[dir="rtl"]').length).toBeGreaterThan(0);
-    expect(slide2El.querySelector(".structured-slide__equation-block")?.getAttribute("dir")).toBe("rtl");
-    const steps = slide2El.querySelectorAll(".structured-slide__steps > li");
+    renderSlides(true, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    expect(slide2Panel.querySelectorAll('p[dir="rtl"]').length).toBeGreaterThan(0);
+    expect(slide2Panel.querySelector(".structured-slide__equation-block")?.getAttribute("dir")).toBe("rtl");
+    const steps = slide2Panel.querySelectorAll(".structured-slide__steps > li");
     expect(Array.from(steps).every((li) => li.getAttribute("dir") === "rtl")).toBe(true);
   });
 
   it("English Slide 2 paragraphs render dir=\"ltr\"", () => {
-    renderGenericSlides(false);
-    const slide2El = document.querySelectorAll(".slide")[1];
-    expect(slide2El.querySelectorAll('p[dir="ltr"]').length).toBeGreaterThan(0);
-    expect(slide2El.querySelectorAll('p[dir="rtl"]').length).toBe(0);
+    renderSlides(false, 2);
+    const slide2Panel = getSlidePanel(container, 2)!;
+    expect(slide2Panel.querySelectorAll('p[dir="ltr"]').length).toBeGreaterThan(0);
+    expect(slide2Panel.querySelectorAll('p[dir="rtl"]').length).toBe(0);
   });
 });
 
 describe("11. The scientific note limits the statement to mechanics", () => {
   it("English Scientific Note states the classification applies mainly to mechanics", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 2);
     const text = container.textContent ?? "";
     expect(text).toContain(
       "Scientific Note: This classification applies mainly to mechanics. Many mechanics quantities can be expressed using length, mass, and time, but the complete SI system contains seven base quantities.",
@@ -328,7 +328,7 @@ describe("11. The scientific note limits the statement to mechanics", () => {
   });
 
   it("Arabic Scientific Note states the same mechanics-only scope", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 2);
     const text = container.textContent ?? "";
     expect(text).toContain(
       "ملاحظة علمية: ينطبق هذا التصنيف بصورة أساسية على الميكانيكا. ويمكن التعبير عن كثير من كميات الميكانيكا باستخدام الطول والكتلة والزمن، بينما يحتوي نظام الوحدات الدولي الكامل على سبع كميات أساسية.",
@@ -392,13 +392,13 @@ describe("Scientific correction — length is the dimension; distance is a quant
   });
 
   it("renders the corrected wording in the DOM, English and Arabic", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 2);
     expect(container.textContent).toContain(
       "L represents the dimension of length. Distance is one physical quantity that has the dimension of length.",
     );
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
+    renderSlides(true, 2);
     expect(container.textContent).toContain(
       "يمثّل الرمز L بُعد الطول، والمسافة إحدى الكميات الفيزيائية التي تمتلك بُعد الطول.",
     );
@@ -414,21 +414,21 @@ describe("Scientific correction — Arabic unit definition", () => {
 });
 
 describe("Reusability — generic Slide/StructuredSlideContent architecture over topic.slides[]", () => {
-  it("both slides of the same topic use different marker configs keyed by blockId, not topicId, rendered via the same generic collection map", () => {
-    renderGenericSlides(false);
+  it("both slides of the same topic use different marker configs keyed by blockId, not topicId, rendered via the same generic accordion map", () => {
     // Slide 1 uses its own equation phrase; Slide 2 uses a different one —
     // both rendered by the exact same StructuredSlideContent component,
-    // driven purely by topic.slides.map (see renderGenericSlides above),
-    // with no per-slide-number conditional anywhere in the render path.
-    // Scoped to Slide 1 and Slide 2's own <section class="slide"> elements
-    // specifically, so a later slide's equation block (e.g. Slide 3, see
-    // src/tests/slide3DistanceUnits.test.tsx) doesn't affect this
-    // Slide-1/Slide-2-scoped assertion.
-    const slideSections = container.querySelectorAll(".slide");
-    const blocksIn = (section: Element) =>
-      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
-    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
-    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
+    // driven purely by topic.slides.map inside SlidesSection, with no
+    // per-slide-number conditional anywhere in the render path. Only one
+    // slide's panel is open at a time, so each is checked in turn.
+    renderSlides(false, 1);
+    expect(
+      getSlidePanel(container, 1)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("v = d / t = 100 m / 5 s = 20 m/s");
+
+    openSlideByNumber(container, 2);
+    expect(
+      getSlidePanel(container, 2)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Speed = 120 miles / 2 h = 60 miles/h");
   });
 
   it("topic.slides is a plain array — adding a third slide would only require a new source record, not new NormalizedTopic fields or adapter wiring", () => {

@@ -6,14 +6,20 @@
 // reusable slide blockType shared with Slides 1-4). Covers the 13 checks
 // explicitly requested for this task. Uses the same jsdom +
 // createRoot/act pattern as src/tests/slide4DifferentUnits.test.tsx.
+//
+// Rendering now goes through the Slides accordion (see
+// src/features/topics/Slides.tsx and src/tests/testHelpers/slidesTestHelpers.tsx)
+// — only one slide's panel is mounted at a time, so any assertion about a
+// slide's rendered content opens that slide first via openSlideByNumber.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { LanguageProvider } from "../app/LanguageContext";
 import { getTopic } from "../content/adapter";
-import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
-import { SlidesSection, Slide } from "../features/topics/Slides";
-import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
+import {
+  renderGenericSlides as renderGenericSlidesShared,
+  openSlideByNumber,
+  getSlidePanel,
+} from "./testHelpers/slidesTestHelpers";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -54,38 +60,11 @@ const slide2 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-2
 const slide3 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-3")!;
 const slide4 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-4")!;
 const slide5 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-5")!;
-const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
 
-// Mirrors src/pages/TopicPage.tsx's actual generic rendering: map over
-// topic.slides in order, passing each slide's own recordId/slideNumber/
-// title/text/table/figure — no per-slide-number conditional, no
-// hardcoded slide count, no Slide-5-specific branch.
-function renderGenericSlides(arabic: boolean) {
-  window.localStorage.setItem("phsh111:language", arabic ? "ar" : "en");
-  act(() => {
-    root.render(
-      <LanguageProvider>
-        <SlidesSection>
-          {topic.slides.map((slide) => (
-            <Slide
-              key={slide.recordId}
-              number={slide.slideNumber}
-              title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
-              id={slide.slideNumber === 1 ? "topic-opening" : undefined}
-            >
-              <StructuredSlideContent
-                blockId={slide.recordId}
-                text={slide.text}
-                table={slide.table}
-                figure={slide.figure}
-                italicTokens={PROSE_TOKENS}
-              />
-            </Slide>
-          ))}
-        </SlidesSection>
-      </LanguageProvider>,
-    );
-  });
+/** Renders the full generic Slides accordion, optionally opening one slide by number (defaults to Slide 1 open, matching a first-time visitor). */
+function renderSlides(arabic: boolean, openSlideNumber?: number) {
+  renderGenericSlidesShared(root, topic, arabic);
+  if (openSlideNumber) openSlideByNumber(container, openSlideNumber);
 }
 
 describe("1. Slide 5 appears after Slide 4", () => {
@@ -100,25 +79,25 @@ describe("1. Slide 5 appears after Slide 4", () => {
     expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2, 3, 4, 5]);
   });
 
-  it("Slide 5's heading follows Slide 4's heading in DOM order, all five under one Slides section", () => {
-    renderGenericSlides(false);
+  it("Slide 5's header follows Slide 4's header in DOM order, all five under one Slides section", () => {
+    renderSlides(false);
     const order = Array.from(container.querySelectorAll("[id]")).map((el) => el.id);
-    const slide4Idx = order.indexOf("slide-4-heading");
-    const slide5Idx = order.indexOf("slide-5-heading");
+    const slide4Idx = order.indexOf("slide-4-header");
+    const slide5Idx = order.indexOf("slide-5-header");
     expect(slide4Idx).toBeGreaterThanOrEqual(0);
     expect(slide5Idx).toBeGreaterThan(slide4Idx);
     expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(5);
   });
 
-  it("Slide 5's exact bilingual title renders", () => {
-    renderGenericSlides(false);
-    expect(container.querySelector("#slide-5-heading")?.textContent).toBe(
+  it("Slide 5's exact bilingual title renders inside its expanded panel", () => {
+    renderSlides(false, 5);
+    expect(getSlidePanel(container, 5)?.textContent).toContain(
       "Slide 5 — How Are Area and Volume Derived from Distance?",
     );
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
-    expect(container.querySelector("#slide-5-heading")?.textContent).toBe(
+    renderSlides(true, 5);
+    expect(getSlidePanel(container, 5)?.textContent).toContain(
       "الشريحة 5 — كيف تُشتق المساحة والحجم من المسافة؟",
     );
   });
@@ -147,14 +126,23 @@ describe("2. Slides 1-4 remain unchanged", () => {
   });
 
   it("Slides 1-4 render their own equation/figure content unchanged, unaffected by Slide 5's presence", () => {
-    renderGenericSlides(false);
-    const slideSections = container.querySelectorAll(".slide");
-    const blocksIn = (section: Element) =>
-      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
-    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
-    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
-    expect(blocksIn(slideSections[2])).toEqual(["Dimensions: 200 cm × 80 cm × 75 cm"]);
-    expect(slideSections[3].querySelector(".slide-figure__img")).not.toBeNull();
+    renderSlides(false, 1);
+    expect(
+      getSlidePanel(container, 1)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("v = d / t = 100 m / 5 s = 20 m/s");
+
+    openSlideByNumber(container, 2);
+    expect(
+      getSlidePanel(container, 2)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Speed = 120 miles / 2 h = 60 miles/h");
+
+    openSlideByNumber(container, 3);
+    expect(
+      getSlidePanel(container, 3)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Dimensions: 200 cm × 80 cm × 75 cm");
+
+    openSlideByNumber(container, 4);
+    expect(getSlidePanel(container, 4)?.querySelector(".slide-figure__img")).not.toBeNull();
   });
 });
 
@@ -172,9 +160,9 @@ describe("3. Slide 5 loads through the generic slides[] architecture", () => {
   });
 
   it("Slide 5 renders via the exact same generic topic.slides.map(...) as Slides 1-4 — no per-slide-number conditional", () => {
-    renderGenericSlides(false);
+    renderSlides(false);
     expect(container.querySelectorAll(".slide")).toHaveLength(5);
-    expect(container.querySelector("#slide-5-heading")).not.toBeNull();
+    expect(container.querySelector("#slide-5-header")).not.toBeNull();
   });
 
   it("Slide 5's figure reuses the exact same generic figureAssetPath/figureAltEn/figureAltAr mechanism as Slide 4, not a new schema field", () => {
@@ -219,9 +207,9 @@ describe("4. Original English content is preserved", () => {
 
 describe("5. All nine structured headings render", () => {
   it("all nine subsection headings render in English", () => {
-    renderGenericSlides(false);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const headings = Array.from(slide5Section.querySelectorAll(".structured-slide__heading")).map(
+    renderSlides(false, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const headings = Array.from(slide5Panel.querySelectorAll(".structured-slide__heading")).map(
       (el) => el.textContent,
     );
     expect(headings).toEqual([
@@ -238,9 +226,9 @@ describe("5. All nine structured headings render", () => {
   });
 
   it("all nine subsection headings render in Arabic", () => {
-    renderGenericSlides(true);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const headings = Array.from(slide5Section.querySelectorAll(".structured-slide__heading")).map(
+    renderSlides(true, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const headings = Array.from(slide5Panel.querySelectorAll(".structured-slide__heading")).map(
       (el) => el.textContent,
     );
     expect(headings).toEqual([
@@ -259,9 +247,9 @@ describe("5. All nine structured headings render", () => {
 
 describe("6. Five numbered steps render in order", () => {
   it("English steps render in order with their exact titles", () => {
-    renderGenericSlides(false);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const steps = Array.from(slide5Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+    renderSlides(false, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const steps = Array.from(slide5Panel.querySelectorAll(".structured-slide__steps > li strong")).map(
       (el) => el.textContent,
     );
     expect(steps).toEqual([
@@ -274,9 +262,9 @@ describe("6. Five numbered steps render in order", () => {
   });
 
   it("Arabic steps render in order with their exact titles", () => {
-    renderGenericSlides(true);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const steps = Array.from(slide5Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+    renderSlides(true, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const steps = Array.from(slide5Panel.querySelectorAll(".structured-slide__steps > li strong")).map(
       (el) => el.textContent,
     );
     expect(steps).toEqual([
@@ -303,9 +291,9 @@ describe("7. L² and L³ render correctly", () => {
   });
 
   it("renders L², L³, m², m³ in the DOM", () => {
-    renderGenericSlides(false);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const text = slide5Section.textContent ?? "";
+    renderSlides(false, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const text = slide5Panel.textContent ?? "";
     expect(text).toContain("L²");
     expect(text).toContain("L³");
     expect(text).toContain("m²");
@@ -331,9 +319,9 @@ describe("8. The floor example produces 12 m²", () => {
   });
 
   it("renders the calculation as a distinct equation block in the DOM", () => {
-    renderGenericSlides(false);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const blocks = Array.from(slide5Section.querySelectorAll(".structured-slide__equation-block")).map(
+    renderSlides(false, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const blocks = Array.from(slide5Panel.querySelectorAll(".structured-slide__equation-block")).map(
       (el) => el.textContent,
     );
     expect(blocks).toEqual(["A = (4 m)(3 m) = 12 m²"]);
@@ -342,8 +330,8 @@ describe("8. The floor example produces 12 m²", () => {
 
 describe("9. The rectangle diagram shows 1 ft and 1.96 ft", () => {
   it("renders a figure with the correct dimensions in its alt text", () => {
-    renderGenericSlides(false);
-    const img = container.querySelectorAll(".slide")[4].querySelector(".slide-figure__img") as HTMLImageElement;
+    renderSlides(false, 5);
+    const img = getSlidePanel(container, 5)!.querySelector(".slide-figure__img") as HTMLImageElement;
     expect(img).not.toBeNull();
     expect(img.alt).toContain("1 foot");
     expect(img.alt).toContain("1.96 feet");
@@ -377,11 +365,11 @@ describe("10. The Figure Explanation calculates 1.96 ft²", () => {
   });
 
   it("renders in the DOM, both languages", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 5);
     expect(container.textContent).toContain("its area is 1.96 ft²");
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
+    renderSlides(true, 5);
     expect(container.textContent).toContain("تبلغ مساحته 1.96 ft²");
   });
 });
@@ -428,31 +416,31 @@ describe("11. The irrelevant coin fragment is absent", () => {
   });
 
   it("no <img> other than the rectangle diagram appears in Slide 5's Figure Explanation section", () => {
-    renderGenericSlides(false);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const imgs = slide5Section.querySelectorAll("img");
+    renderSlides(false, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const imgs = slide5Panel.querySelectorAll("img");
     expect(imgs).toHaveLength(1);
   });
 });
 
 describe("12. Arabic RTL is correct", () => {
   it("document dir is rtl in Arabic, ltr in English", () => {
-    renderGenericSlides(true);
-    const slide5Section = container.querySelectorAll(".slide")[4];
-    const arParagraph = slide5Section.querySelector("p[dir]");
+    renderSlides(true, 5);
+    const slide5Panel = getSlidePanel(container, 5)!;
+    const arParagraph = slide5Panel.querySelector("p[dir]");
     expect(arParagraph?.getAttribute("dir")).toBe("rtl");
 
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(false);
-    const slide5SectionEn = container.querySelectorAll(".slide")[4];
-    const enParagraph = slide5SectionEn.querySelector("p[dir]");
+    renderSlides(false, 5);
+    const slide5PanelEn = getSlidePanel(container, 5)!;
+    const enParagraph = slide5PanelEn.querySelector("p[dir]");
     expect(enParagraph?.getAttribute("dir")).toBe("ltr");
   });
 
   it("Arabic alt text renders on the figure", () => {
-    renderGenericSlides(true);
-    const img = container.querySelectorAll(".slide")[4].querySelector(".slide-figure__img") as HTMLImageElement;
+    renderSlides(true, 5);
+    const img = getSlidePanel(container, 5)!.querySelector(".slide-figure__img") as HTMLImageElement;
     expect(img.alt).toContain("قدم");
   });
 });
@@ -483,7 +471,7 @@ describe("13. Governance and publication flags remain unchanged", () => {
 
 describe("Reusability — Slide 5 proves the generic figure mechanism extends to a hand-authored SVG, not just raster photos", () => {
   it("all five slides render via the exact same generic StructuredSlideContent, distinguished only by their own recordId-keyed config", () => {
-    renderGenericSlides(false);
+    renderSlides(false);
     expect(container.querySelectorAll(".slide")).toHaveLength(5);
   });
 

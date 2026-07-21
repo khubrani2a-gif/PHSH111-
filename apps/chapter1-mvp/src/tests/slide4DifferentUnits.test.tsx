@@ -7,14 +7,20 @@
 // Covers the 13 checks explicitly requested for this task. Uses the same
 // jsdom + createRoot/act pattern as
 // src/tests/slide3DistanceUnits.test.tsx.
+//
+// Rendering now goes through the Slides accordion (see
+// src/features/topics/Slides.tsx and src/tests/testHelpers/slidesTestHelpers.tsx)
+// — only one slide's panel is mounted at a time, so any assertion about a
+// slide's rendered content opens that slide first via openSlideByNumber.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { LanguageProvider } from "../app/LanguageContext";
 import { getTopic } from "../content/adapter";
-import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
-import { SlidesSection, Slide } from "../features/topics/Slides";
-import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
+import {
+  renderGenericSlides as renderGenericSlidesShared,
+  openSlideByNumber,
+  getSlidePanel,
+} from "./testHelpers/slidesTestHelpers";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -55,38 +61,11 @@ const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")
 const slide2 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-2")!;
 const slide3 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-3")!;
 const slide4 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-4")!;
-const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
 
-// Mirrors src/pages/TopicPage.tsx's actual generic rendering: map over
-// topic.slides in order, passing each slide's own recordId/slideNumber/
-// title/text/table/figure — no per-slide-number conditional, no
-// hardcoded slide count, no Slide-4-specific branch.
-function renderGenericSlides(arabic: boolean) {
-  window.localStorage.setItem("phsh111:language", arabic ? "ar" : "en");
-  act(() => {
-    root.render(
-      <LanguageProvider>
-        <SlidesSection>
-          {topic.slides.map((slide) => (
-            <Slide
-              key={slide.recordId}
-              number={slide.slideNumber}
-              title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
-              id={slide.slideNumber === 1 ? "topic-opening" : undefined}
-            >
-              <StructuredSlideContent
-                blockId={slide.recordId}
-                text={slide.text}
-                table={slide.table}
-                figure={slide.figure}
-                italicTokens={PROSE_TOKENS}
-              />
-            </Slide>
-          ))}
-        </SlidesSection>
-      </LanguageProvider>,
-    );
-  });
+/** Renders the full generic Slides accordion, optionally opening one slide by number (defaults to Slide 1 open, matching a first-time visitor). */
+function renderSlides(arabic: boolean, openSlideNumber?: number) {
+  renderGenericSlidesShared(root, topic, arabic);
+  if (openSlideNumber) openSlideByNumber(container, openSlideNumber);
 }
 
 describe("1. Slide 4 appears after Slide 3", () => {
@@ -103,11 +82,11 @@ describe("1. Slide 4 appears after Slide 3", () => {
     expect(topic.slides.slice(0, 4).map((s) => s.slideNumber)).toEqual([1, 2, 3, 4]);
   });
 
-  it("Slide 4's heading follows Slide 3's heading in DOM order, all four under one Slides section", () => {
-    renderGenericSlides(false);
+  it("Slide 4's header follows Slide 3's header in DOM order, all four under one Slides section", () => {
+    renderSlides(false);
     const order = Array.from(container.querySelectorAll("[id]")).map((el) => el.id);
-    const slide3Idx = order.indexOf("slide-3-heading");
-    const slide4Idx = order.indexOf("slide-4-heading");
+    const slide3Idx = order.indexOf("slide-3-header");
+    const slide4Idx = order.indexOf("slide-4-header");
     expect(slide3Idx).toBeGreaterThanOrEqual(0);
     expect(slide4Idx).toBeGreaterThan(slide3Idx);
     // At least Slides 1-4 — a later slide (e.g. Slide 5) may legitimately
@@ -115,15 +94,15 @@ describe("1. Slide 4 appears after Slide 3", () => {
     expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(4);
   });
 
-  it("Slide 4's exact bilingual title renders", () => {
-    renderGenericSlides(false);
-    expect(container.querySelector("#slide-4-heading")?.textContent).toBe(
+  it("Slide 4's exact bilingual title renders inside its expanded panel", () => {
+    renderSlides(false, 4);
+    expect(getSlidePanel(container, 4)?.textContent).toContain(
       "Slide 4 — Why Do We Use Different Units for Different Measurement Scales?",
     );
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
-    expect(container.querySelector("#slide-4-heading")?.textContent).toBe(
+    renderSlides(true, 4);
+    expect(getSlidePanel(container, 4)?.textContent).toContain(
       "الشريحة 4 — لماذا نستخدم وحدات مختلفة باختلاف مقياس القياس؟",
     );
   });
@@ -147,13 +126,20 @@ describe("2. Slides 1-3 remain unchanged", () => {
   });
 
   it("Slides 1-3 render their own equation blocks unchanged, unaffected by Slide 4's presence", () => {
-    renderGenericSlides(false);
-    const slideSections = container.querySelectorAll(".slide");
-    const blocksIn = (section: Element) =>
-      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
-    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
-    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
-    expect(blocksIn(slideSections[2])).toEqual(["Dimensions: 200 cm × 80 cm × 75 cm"]);
+    renderSlides(false, 1);
+    expect(
+      getSlidePanel(container, 1)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("v = d / t = 100 m / 5 s = 20 m/s");
+
+    openSlideByNumber(container, 2);
+    expect(
+      getSlidePanel(container, 2)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Speed = 120 miles / 2 h = 60 miles/h");
+
+    openSlideByNumber(container, 3);
+    expect(
+      getSlidePanel(container, 3)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Dimensions: 200 cm × 80 cm × 75 cm");
   });
 });
 
@@ -171,9 +157,9 @@ describe("3. Slide 4 loads through the generic slides[] architecture", () => {
   });
 
   it("Slide 4 renders via the exact same generic topic.slides.map(...) as Slides 1-3 — no per-slide-number conditional", () => {
-    renderGenericSlides(false);
+    renderSlides(false);
     expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(4);
-    expect(container.querySelector("#slide-4-heading")).not.toBeNull();
+    expect(container.querySelector("#slide-4-header")).not.toBeNull();
   });
 });
 
@@ -204,9 +190,9 @@ describe("4. Original English content is preserved", () => {
 
 describe("5. All structured headings render", () => {
   it("all nine subsection headings render in English", () => {
-    renderGenericSlides(false);
-    const slide4Section = container.querySelectorAll(".slide")[3];
-    const headings = Array.from(slide4Section.querySelectorAll(".structured-slide__heading")).map(
+    renderSlides(false, 4);
+    const slide4Panel = getSlidePanel(container, 4)!;
+    const headings = Array.from(slide4Panel.querySelectorAll(".structured-slide__heading")).map(
       (el) => el.textContent,
     );
     expect(headings).toEqual([
@@ -223,9 +209,9 @@ describe("5. All structured headings render", () => {
   });
 
   it("all nine subsection headings render in Arabic", () => {
-    renderGenericSlides(true);
-    const slide4Section = container.querySelectorAll(".slide")[3];
-    const headings = Array.from(slide4Section.querySelectorAll(".structured-slide__heading")).map(
+    renderSlides(true, 4);
+    const slide4Panel = getSlidePanel(container, 4)!;
+    const headings = Array.from(slide4Panel.querySelectorAll(".structured-slide__heading")).map(
       (el) => el.textContent,
     );
     expect(headings).toEqual([
@@ -244,9 +230,9 @@ describe("5. All structured headings render", () => {
 
 describe("6. Five numbered steps render in order", () => {
   it("English steps render in order with their exact titles", () => {
-    renderGenericSlides(false);
-    const slide4Section = container.querySelectorAll(".slide")[3];
-    const steps = Array.from(slide4Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+    renderSlides(false, 4);
+    const slide4Panel = getSlidePanel(container, 4)!;
+    const steps = Array.from(slide4Panel.querySelectorAll(".structured-slide__steps > li strong")).map(
       (el) => el.textContent,
     );
     expect(steps).toEqual([
@@ -259,9 +245,9 @@ describe("6. Five numbered steps render in order", () => {
   });
 
   it("Arabic steps render in order with their exact titles", () => {
-    renderGenericSlides(true);
-    const slide4Section = container.querySelectorAll(".slide")[3];
-    const steps = Array.from(slide4Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+    renderSlides(true, 4);
+    const slide4Panel = getSlidePanel(container, 4)!;
+    const steps = Array.from(slide4Panel.querySelectorAll(".structured-slide__steps > li strong")).map(
       (el) => el.textContent,
     );
     expect(steps).toEqual([
@@ -288,7 +274,7 @@ describe("7. 19 mm = 0.000019 km is present and correct", () => {
   });
 
   it("renders in the DOM within Step 5, both languages", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 4);
     expect(container.textContent).toContain("19 mm = 0.000019 km");
   });
 });
@@ -314,15 +300,15 @@ describe("8. The classroom example conversions are correct", () => {
 
 describe("9. The figure renders and is enlargeable", () => {
   it("renders a responsive <img> inside the Figure Explanation section", () => {
-    renderGenericSlides(false);
-    const slide4Section = container.querySelectorAll(".slide")[3];
-    const img = slide4Section.querySelector(".slide-figure__img");
+    renderSlides(false, 4);
+    const slide4Panel = getSlidePanel(container, 4)!;
+    const img = slide4Panel.querySelector(".slide-figure__img");
     expect(img).not.toBeNull();
     expect(img?.tagName).toBe("IMG");
   });
 
   it("clicking the enlarge button opens an accessible native <dialog> with the figure", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 4);
     const enlargeButton = container.querySelector(".slide-figure__enlarge") as HTMLButtonElement;
     expect(enlargeButton).not.toBeNull();
     act(() => enlargeButton.click());
@@ -333,7 +319,7 @@ describe("9. The figure renders and is enlargeable", () => {
   });
 
   it("closing the dialog returns to the collapsed preview", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 4);
     const enlargeButton = container.querySelector(".slide-figure__enlarge") as HTMLButtonElement;
     act(() => enlargeButton.click());
     const closeButton = container.querySelector(".slide-figure__close") as HTMLButtonElement;
@@ -346,7 +332,7 @@ describe("9. The figure renders and is enlargeable", () => {
 
 describe("10. Bilingual alt text is present", () => {
   it("English alt text matches exactly", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 4);
     const img = container.querySelector(".slide-figure__img") as HTMLImageElement;
     expect(img.alt).toBe(
       "A coin with a diameter labeled as 19 millimeters and the equivalent value 0.000019 kilometers.",
@@ -354,7 +340,7 @@ describe("10. Bilingual alt text is present", () => {
   });
 
   it("Arabic alt text matches exactly", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 4);
     const img = container.querySelector(".slide-figure__img") as HTMLImageElement;
     expect(img.alt).toBe("قطعة نقدية يظهر قطرها بقيمتين متكافئتين: 19 مليمترًا و0.000019 كيلومتر.");
   });
@@ -369,22 +355,22 @@ describe("10. Bilingual alt text is present", () => {
 
 describe("11. Arabic RTL is correct", () => {
   it("document dir is rtl in Arabic, ltr in English", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 4);
     expect(container.querySelector(".slide-figure__preview")).not.toBeNull();
-    const slide4Section = container.querySelectorAll(".slide")[3];
-    const arParagraph = slide4Section.querySelector("p[dir]");
+    const slide4Panel = getSlidePanel(container, 4)!;
+    const arParagraph = slide4Panel.querySelector("p[dir]");
     expect(arParagraph?.getAttribute("dir")).toBe("rtl");
 
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(false);
-    const slide4SectionEn = container.querySelectorAll(".slide")[3];
-    const enParagraph = slide4SectionEn.querySelector("p[dir]");
+    renderSlides(false, 4);
+    const slide4PanelEn = getSlidePanel(container, 4)!;
+    const enParagraph = slide4PanelEn.querySelector("p[dir]");
     expect(enParagraph?.getAttribute("dir")).toBe("ltr");
   });
 
   it("the enlarge dialog carries dir=\"rtl\" in Arabic", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 4);
     const enlargeButton = container.querySelector(".slide-figure__enlarge") as HTMLButtonElement;
     act(() => enlargeButton.click());
     const dialog = container.querySelector(".slide-figure__dialog");
@@ -408,11 +394,11 @@ describe("12. The misconception clearly states that physical size does not chang
   });
 
   it("renders in the DOM, both languages", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 4);
     expect(container.textContent).toContain("the physical size remains unchanged");
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
+    renderSlides(true, 4);
     expect(container.textContent).toContain("يبقى الحجم الفيزيائي ثابتًا");
   });
 });
@@ -444,7 +430,7 @@ describe("13. Governance and publication flags remain unchanged", () => {
 
 describe("Reusability — Slide 4 proves the architecture scales to a slide-embedded figure without per-slide wiring", () => {
   it("all four slides render via the exact same generic StructuredSlideContent, distinguished only by their own recordId-keyed config", () => {
-    renderGenericSlides(false);
+    renderSlides(false);
     expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(4);
   });
 

@@ -63,3 +63,33 @@ export function writePersistedString(key: string, value: string): void {
     // Best-effort only.
   }
 }
+
+/**
+ * Same narrow scope as the rest of this module (see header comment and
+ * MVP_IMPLEMENTATION_DECISIONS.json amendments[1]) — used only for
+ * ch01-t01's Slides accordion "viewed slide IDs" list, a UI display
+ * preference (which slide headers have been opened at least once), never
+ * treated as a completion, assessment, or analytics record.
+ */
+export function readPersistedStringArray(key: string, fallback: string[]): string[] {
+  if (!isStorageAvailable()) return fallback;
+  try {
+    const raw = window.localStorage.getItem(KEY_PREFIX + key);
+    if (raw === null) return fallback;
+    const parsed: unknown = JSON.parse(raw);
+    return Array.isArray(parsed) && parsed.every((v) => typeof v === "string")
+      ? (parsed as string[])
+      : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function writePersistedStringArray(key: string, value: string[]): void {
+  if (!isStorageAvailable()) return;
+  try {
+    window.localStorage.setItem(KEY_PREFIX + key, JSON.stringify(value));
+  } catch {
+    // Best-effort only.
+  }
+}

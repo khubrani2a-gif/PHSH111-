@@ -1,9 +1,9 @@
 {
   "decisionRecordId": "ch01-mvp-implementation-decisions-001",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "decidedBy": "khubrani2a-gif (project owner)",
   "decisionDate": "2026-07-16",
-  "lastAmendedDate": "2026-07-19",
+  "lastAmendedDate": "2026-07-21",
   "reviewBasis": [
     "docs/app/MVP_PRODUCT_SPEC.md",
     "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json (authorizationVersion 1.1.0, applicationBuildAuthorization section)",
@@ -133,9 +133,13 @@
         "Initial MVP state is limited to exactly: current route, active language, open/closed solution-reveal state, open/closed visual-viewer state, and open/closed internal-reviewer-notes state.",
         "Use local React state and URL routing for all of the above.",
         "Do not include login, database persistence, cloud state, student progress, grades, or analytics of any kind in this MVP.",
-        "AMENDED by amendments[0] (ch01-mvp-implementation-decisions-001-amendment-001, 2026-07-19): the statements above remain the default for every topic and every piece of state not explicitly listed in that amendment. See amendments[0] for the one narrow, additional exception it authorizes."
+        "AMENDED by amendments[0] (ch01-mvp-implementation-decisions-001-amendment-001, 2026-07-19): the statements above remain the default for every topic and every piece of state not explicitly listed in that amendment. See amendments[0] for the one narrow, additional exception it authorizes.",
+        "FURTHER AMENDED by amendments[1] (ch01-mvp-implementation-decisions-001-amendment-002, 2026-07-21): adds exactly one further exception, scoped to ch01-t01's Slides accordion only. See amendments[1]."
       ],
-      "amendedBy": ["ch01-mvp-implementation-decisions-001-amendment-001"]
+      "amendedBy": [
+        "ch01-mvp-implementation-decisions-001-amendment-001",
+        "ch01-mvp-implementation-decisions-001-amendment-002"
+      ]
     },
     "K_gitState": {
       "title": "Git state",
@@ -176,6 +180,22 @@
         "This amendment does not change, and has no bearing on, studentFacingAllowed, studentPublicationAuthorized, publicDeploymentAuthorized, or any other governance/publication flag recorded in decisions.L_publicationState, this document's own publicationState field, or PILOT_AUTHORIZATION.json.",
         "This amendment does not authorize login, a database, cloud state, or any analytics tooling of any kind in this MVP — decisions.J_statePersistence's prohibition on those remains fully in force.",
         "Implementation reference: apps/chapter1-mvp/src/app/persistedState.ts (the single, guarded read/write helper used for every persisted value this amendment covers)."
+      ]
+    },
+    {
+      "amendmentId": "ch01-mvp-implementation-decisions-001-amendment-002",
+      "amendedDecision": "J_statePersistence",
+      "date": "2026-07-21",
+      "decidedBy": "khubrani2a-gif (project owner)",
+      "title": "Scoped localStorage persistence for ch01-t01's Slides accordion: last-opened slide and viewed-slide-IDs",
+      "requestContext": "Approved as part of the request to reorganize ch01-t01's Slides section into a single-open accordion with Previous/Next and jump navigation, implemented in apps/chapter1-mvp/ (branch feature/slides-accordion-navigation).",
+      "statements": [
+        "In addition to the two pieces of state already authorized by amendments[0], the following state, scoped to ch01-t01's Slides accordion only, may also be persisted to the browser's own localStorage, read and written client-side only: (1) which single slide is currently open (the accordion's collapsible-section open/closed state, per amendments[0], now expressed as one open slide among several rather than one open/closed section); and (2) the set of slide record IDs that have ever been opened ('viewed'), used only to render the 'Slides viewed: X of Y' / 'الشرائح المشاهدة: X من Y' progress indicator and each slide header's viewed badge.",
+        "The viewed-slide-IDs set is a UI display preference only — identical in kind to 'which sections are currently expanded' from amendments[0] — not a completion, correctness, assessment, or grading record of any kind. A slide becomes 'viewed' the moment its panel is opened; nothing about how long it was open, what the learner did while it was open, or any performance signal is recorded.",
+        "This persistence is local-browser-storage only (the browser's own localStorage API): no user account, no authentication, no server-side or cloud synchronization, and no data ever leaves the device.",
+        "This amendment does not change, and has no bearing on, studentFacingAllowed, studentPublicationAuthorized, publicDeploymentAuthorized, or any other governance/publication flag recorded in decisions.L_publicationState, this document's own publicationState field, or PILOT_AUTHORIZATION.json.",
+        "This amendment does not authorize login, a database, cloud state, or any analytics tooling of any kind in this MVP — decisions.J_statePersistence's prohibition on those remains fully in force.",
+        "Implementation reference: apps/chapter1-mvp/src/app/persistedState.ts's readPersistedStringArray/writePersistedStringArray helpers, used by apps/chapter1-mvp/src/features/topics/Slides.tsx."
       ]
     }
   ],

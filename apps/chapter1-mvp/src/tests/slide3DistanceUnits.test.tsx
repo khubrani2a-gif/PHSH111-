@@ -6,14 +6,20 @@
 // reusable slide blockType shared with Slides 1 and 2). Covers the 13
 // checks explicitly requested for this task. Uses the same jsdom +
 // createRoot/act pattern as src/tests/slide2DistanceDimensions.test.tsx.
+//
+// Rendering now goes through the Slides accordion (see
+// src/features/topics/Slides.tsx and src/tests/testHelpers/slidesTestHelpers.tsx)
+// — only one slide's panel is mounted at a time, so any assertion about a
+// slide's rendered content opens that slide first via openSlideByNumber.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { LanguageProvider } from "../app/LanguageContext";
 import { getTopic } from "../content/adapter";
-import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
-import { SlidesSection, Slide } from "../features/topics/Slides";
-import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
+import {
+  renderGenericSlides as renderGenericSlidesShared,
+  openSlideByNumber,
+  getSlidePanel,
+} from "./testHelpers/slidesTestHelpers";
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -36,37 +42,11 @@ const topic = getTopic("ch01-t01")!;
 const slide1 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening")!;
 const slide2 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-2")!;
 const slide3 = topic.slides.find((s) => s.recordId === "ch01-t01-block-opening-3")!;
-const PROSE_TOKENS = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"];
 
-// Mirrors src/pages/TopicPage.tsx's actual generic rendering: map over
-// topic.slides in order, passing each slide's own recordId/slideNumber/
-// title/text/table — no per-slide-number conditional, no hardcoded slide
-// count, no Slide-3-specific branch.
-function renderGenericSlides(arabic: boolean) {
-  window.localStorage.setItem("phsh111:language", arabic ? "ar" : "en");
-  act(() => {
-    root.render(
-      <LanguageProvider>
-        <SlidesSection>
-          {topic.slides.map((slide) => (
-            <Slide
-              key={slide.recordId}
-              number={slide.slideNumber}
-              title={{ en: slide.title.en ?? "", ar: slide.title.ar ?? "" }}
-              id={slide.slideNumber === 1 ? "topic-opening" : undefined}
-            >
-              <StructuredSlideContent
-                blockId={slide.recordId}
-                text={slide.text}
-                table={slide.table}
-                italicTokens={PROSE_TOKENS}
-              />
-            </Slide>
-          ))}
-        </SlidesSection>
-      </LanguageProvider>,
-    );
-  });
+/** Renders the full generic Slides accordion, optionally opening one slide by number (defaults to Slide 1 open, matching a first-time visitor). */
+function renderSlides(arabic: boolean, openSlideNumber?: number) {
+  renderGenericSlidesShared(root, topic, arabic);
+  if (openSlideNumber) openSlideByNumber(container, openSlideNumber);
 }
 
 describe("1. Slide 3 appears after Slide 2", () => {
@@ -82,11 +62,11 @@ describe("1. Slide 3 appears after Slide 2", () => {
     expect(topic.slides.slice(0, 3).map((s) => s.slideNumber)).toEqual([1, 2, 3]);
   });
 
-  it("Slide 3's heading follows Slide 2's heading in DOM order, all three under one Slides section", () => {
-    renderGenericSlides(false);
+  it("Slide 3's header follows Slide 2's header in DOM order, all three under one Slides section", () => {
+    renderSlides(false);
     const order = Array.from(container.querySelectorAll("[id]")).map((el) => el.id);
-    const slide2Idx = order.indexOf("slide-2-heading");
-    const slide3Idx = order.indexOf("slide-3-heading");
+    const slide2Idx = order.indexOf("slide-2-header");
+    const slide3Idx = order.indexOf("slide-3-header");
     expect(slide2Idx).toBeGreaterThanOrEqual(0);
     expect(slide3Idx).toBeGreaterThan(slide2Idx);
     // At least Slides 1-3 — a later slide (e.g. Slide 4) may legitimately
@@ -94,15 +74,15 @@ describe("1. Slide 3 appears after Slide 2", () => {
     expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(3);
   });
 
-  it("Slide 3's exact bilingual title renders", () => {
-    renderGenericSlides(false);
-    expect(container.querySelector("#slide-3-heading")?.textContent).toBe(
+  it("Slide 3's exact bilingual title renders inside its expanded panel", () => {
+    renderSlides(false, 3);
+    expect(getSlidePanel(container, 3)?.textContent).toContain(
       "Slide 3 — How Is Distance Measured in Metric and English Units?",
     );
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
-    expect(container.querySelector("#slide-3-heading")?.textContent).toBe(
+    renderSlides(true, 3);
+    expect(getSlidePanel(container, 3)?.textContent).toContain(
       "الشريحة 3 — كيف تُقاس المسافة في النظامين المتري والإنجليزي؟",
     );
   });
@@ -128,12 +108,15 @@ describe("2. Slide 1 and Slide 2 remain unchanged", () => {
   });
 
   it("Slide 1 and Slide 2 render exactly as before: their own equation blocks, unaffected by Slide 3's presence", () => {
-    renderGenericSlides(false);
-    const slideSections = container.querySelectorAll(".slide");
-    const blocksIn = (section: Element) =>
-      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
-    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
-    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
+    renderSlides(false, 1);
+    expect(
+      getSlidePanel(container, 1)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("v = d / t = 100 m / 5 s = 20 m/s");
+
+    openSlideByNumber(container, 2);
+    expect(
+      getSlidePanel(container, 2)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Speed = 120 miles / 2 h = 60 miles/h");
   });
 });
 
@@ -155,9 +138,9 @@ describe("3. Slide 3 is loaded through the generic slides[] architecture", () =>
   });
 
   it("Slide 3 renders via the exact same generic topic.slides.map(...) as Slides 1 and 2 — no per-slide-number conditional", () => {
-    renderGenericSlides(false);
+    renderSlides(false);
     expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(3);
-    expect(container.querySelector("#slide-3-heading")).not.toBeNull();
+    expect(container.querySelector("#slide-3-header")).not.toBeNull();
   });
 });
 
@@ -197,9 +180,9 @@ describe("4. The original English text and original table rows are preserved", (
 
 describe("5. All structured headings render", () => {
   it("all nine subsection headings render in English", () => {
-    renderGenericSlides(false);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    const headings = Array.from(slide3Section.querySelectorAll(".structured-slide__heading")).map(
+    renderSlides(false, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    const headings = Array.from(slide3Panel.querySelectorAll(".structured-slide__heading")).map(
       (el) => el.textContent,
     );
     expect(headings).toEqual([
@@ -216,9 +199,9 @@ describe("5. All structured headings render", () => {
   });
 
   it("all nine subsection headings render in Arabic", () => {
-    renderGenericSlides(true);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    const headings = Array.from(slide3Section.querySelectorAll(".structured-slide__heading")).map(
+    renderSlides(true, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    const headings = Array.from(slide3Panel.querySelectorAll(".structured-slide__heading")).map(
       (el) => el.textContent,
     );
     expect(headings).toEqual([
@@ -237,9 +220,9 @@ describe("5. All structured headings render", () => {
 
 describe("6. Five numbered steps render in order", () => {
   it("English steps render in order with their exact titles", () => {
-    renderGenericSlides(false);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    const steps = Array.from(slide3Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+    renderSlides(false, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    const steps = Array.from(slide3Panel.querySelectorAll(".structured-slide__steps > li strong")).map(
       (el) => el.textContent,
     );
     expect(steps).toEqual([
@@ -252,9 +235,9 @@ describe("6. Five numbered steps render in order", () => {
   });
 
   it("Arabic steps render in order with their exact titles", () => {
-    renderGenericSlides(true);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    const steps = Array.from(slide3Section.querySelectorAll(".structured-slide__steps > li strong")).map(
+    renderSlides(true, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    const steps = Array.from(slide3Panel.querySelectorAll(".structured-slide__steps > li strong")).map(
       (el) => el.textContent,
     );
     expect(steps).toEqual([
@@ -269,7 +252,7 @@ describe("6. Five numbered steps render in order", () => {
 
 describe("7. The semantic table renders correctly", () => {
   it("renders a real <table> with <thead>/<tbody>, correct column headers, in English", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 3);
     const table = container.querySelector(".structured-slide__table")!;
     expect(table.tagName).toBe("TABLE");
     expect(table.querySelector("thead")).not.toBeNull();
@@ -288,22 +271,22 @@ describe("7. The semantic table renders correctly", () => {
   });
 
   it("column headers use scope=\"col\" for accessibility", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 3);
     const headerCells = container.querySelectorAll(".structured-slide__table thead th");
     expect(headerCells).toHaveLength(3);
     headerCells.forEach((th) => expect(th.getAttribute("scope")).toBe("col"));
   });
 
   it("the table is NOT the uploaded screenshot — no <img> inside the Original English section", () => {
-    renderGenericSlides(false);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    expect(slide3Section.querySelectorAll("img")).toHaveLength(0);
+    renderSlides(false, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    expect(slide3Panel.querySelectorAll("img")).toHaveLength(0);
   });
 });
 
 describe("8. Mobile table scrolling works", () => {
   it("the table is wrapped in a horizontally-scrollable container (structured-slide__table-wrapper)", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 3);
     const wrapper = container.querySelector(".structured-slide__table-wrapper");
     expect(wrapper).not.toBeNull();
     expect(wrapper?.querySelector("table.structured-slide__table")).not.toBeNull();
@@ -316,19 +299,19 @@ describe("8. Mobile table scrolling works", () => {
 
 describe("9. Arabic table direction and alignment are correct", () => {
   it("the table wrapper carries dir=\"rtl\" in Arabic and dir=\"ltr\" in English", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 3);
     const arWrapper = container.querySelector(".structured-slide__table-wrapper");
     expect(arWrapper?.getAttribute("dir")).toBe("rtl");
 
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(false);
+    renderSlides(false, 3);
     const enWrapper = container.querySelector(".structured-slide__table-wrapper");
     expect(enWrapper?.getAttribute("dir")).toBe("ltr");
   });
 
   it("the Arabic table renders translated headers and labels", () => {
-    renderGenericSlides(true);
+    renderSlides(true, 3);
     const table = container.querySelector(".structured-slide__table")!;
     const headers = Array.from(table.querySelectorAll("thead th")).map((el) => el.textContent);
     expect(headers).toEqual(["الكمية الفيزيائية", "الوحدات المترية", "الوحدات الإنجليزية"]);
@@ -350,16 +333,16 @@ describe("10. d, l, w, h, and L render correctly", () => {
   });
 
   it("d, l, and w are italicized (whitelisted symbols); h renders as plain text (excluded to avoid the pre-existing km/h and miles/h collision)", () => {
-    renderGenericSlides(false);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    const italics = Array.from(slide3Section.querySelectorAll("em")).map((el) => el.textContent);
+    renderSlides(false, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    const italics = Array.from(slide3Panel.querySelectorAll("em")).map((el) => el.textContent);
     expect(italics).toContain("d");
     expect(italics).toContain("l");
     expect(italics).toContain("w");
     expect(italics).toContain("L");
     expect(italics).not.toContain("h");
     // "h" still appears in the rendered text, just not italicized.
-    expect(slide3Section.textContent).toContain("h commonly represents height.");
+    expect(slide3Panel.textContent).toContain("h commonly represents height.");
   });
 
   it("the symbols d, l, w, h are preserved verbatim in the original table's first-row cell", () => {
@@ -385,11 +368,11 @@ describe("11. The table clarification states that rows are not equivalent conver
   });
 
   it("renders the Table Explanation section in the DOM, both languages", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 3);
     expect(container.textContent).toContain("not necessarily equivalent");
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
+    renderSlides(true, 3);
     expect(container.textContent).toContain("ليست بالضرورة متكافئة");
   });
 });
@@ -408,9 +391,9 @@ describe("12. The example conversion 2 m = 200 cm is correct", () => {
   });
 
   it("renders the dimensions as a distinct, labeled block in the DOM (not an unexplained multiplication)", () => {
-    renderGenericSlides(false);
-    const slide3Section = container.querySelectorAll(".slide")[2];
-    const blocks = Array.from(slide3Section.querySelectorAll(".structured-slide__equation-block")).map(
+    renderSlides(false, 3);
+    const slide3Panel = getSlidePanel(container, 3)!;
+    const blocks = Array.from(slide3Panel.querySelectorAll(".structured-slide__equation-block")).map(
       (el) => el.textContent,
     );
     expect(blocks).toEqual(["Dimensions: 200 cm × 80 cm × 75 cm"]);
@@ -481,11 +464,11 @@ describe("Pedagogical correction — labeled dimensions, not an implied volume c
   });
 
   it("renders the no-volume-calculation clarification in the DOM, both languages", () => {
-    renderGenericSlides(false);
+    renderSlides(false, 3);
     expect(container.textContent).toContain("no volume calculation is required in this example");
     act(() => root.unmount());
     root = createRoot(container);
-    renderGenericSlides(true);
+    renderSlides(true, 3);
     expect(container.textContent).toContain("ولا يتطلب هذا المثال حساب الحجم");
   });
 });
@@ -517,18 +500,23 @@ describe("13. Governance/publication flags remain unchanged", () => {
 
 describe("Reusability — Slide 3 proves the architecture scales without per-slide wiring", () => {
   it("all three slides render via the exact same generic StructuredSlideContent + table prop, distinguished only by their own recordId-keyed config", () => {
-    renderGenericSlides(false);
+    renderSlides(false);
     expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(3);
-    // Scoped to Slides 1-3's own <section class="slide"> elements
-    // specifically, so a later slide's equation block (e.g. Slide 5, which
-    // also configures one) doesn't affect this Slide-1/2/3-scoped
-    // assertion.
-    const slideSections = container.querySelectorAll(".slide");
-    const blocksIn = (section: Element) =>
-      Array.from(section.querySelectorAll(".structured-slide__equation-block")).map((el) => el.textContent);
-    expect(blocksIn(slideSections[0])).toEqual(["v = d / t = 100 m / 5 s = 20 m/s"]);
-    expect(blocksIn(slideSections[1])).toEqual(["Speed = 120 miles / 2 h = 60 miles/h"]);
-    expect(blocksIn(slideSections[2])).toEqual(["Dimensions: 200 cm × 80 cm × 75 cm"]);
+    // Each slide's panel is opened in turn (single-open accordion), so its
+    // equation block is checked one at a time rather than all at once.
+    expect(
+      getSlidePanel(container, 1)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("v = d / t = 100 m / 5 s = 20 m/s");
+
+    openSlideByNumber(container, 2);
+    expect(
+      getSlidePanel(container, 2)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Speed = 120 miles / 2 h = 60 miles/h");
+
+    openSlideByNumber(container, 3);
+    expect(
+      getSlidePanel(container, 3)?.querySelector(".structured-slide__equation-block")?.textContent,
+    ).toBe("Dimensions: 200 cm × 80 cm × 75 cm");
   });
 
   it("topic.slides remains a plain array where every slide has recordId/slideNumber/title.en/title.ar — no slide-count-specific schema", () => {
