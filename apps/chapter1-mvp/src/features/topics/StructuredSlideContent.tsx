@@ -17,6 +17,7 @@ const SUBSECTION_LABEL = {
   figureExplanation: { en: "Figure Explanation", ar: "شرح الشكل" },
   conversionFactorExplanation: { en: "Conversion-Factor Explanation", ar: "شرح عامل التحويل" },
   definitionExplanation: { en: "Definition Explanation", ar: "شرح التعريف" },
+  relationshipExplanation: { en: "Relationship Explanation", ar: "شرح العلاقة" },
   misconception: { en: "Common Misconception", ar: "مفهوم خاطئ شائع" },
   scientificNote: { en: "Scientific Note", ar: "ملاحظة علمية" },
   keyConcept: { en: "Key Concept", ar: "المفهوم الأساسي" },
@@ -41,10 +42,12 @@ export interface StructuredSlideConfig {
   tableExplanationMarker?: Marker;
   /** Optional — when present, an additional "Figure Explanation" subsection is parsed between Simple Example and Common Misconception. Omitted entirely for slides with no embedded figure. Mutually exclusive with tableExplanationMarker/conversionFactorExplanationMarker in current usage — all three occupy the same slot. */
   figureExplanationMarker?: Marker;
-  /** Optional — when present, an additional "Conversion-Factor Explanation" subsection is parsed between Simple Example and Common Misconception. Used by slides with neither a source table nor an embedded figure that still need a labeled explanatory subsection there (e.g. a unit-conversion slide explaining why its conversion factor is valid). Mutually exclusive with tableExplanationMarker/figureExplanationMarker/definitionExplanationMarker in current usage — all four occupy the same slot. */
+  /** Optional — when present, an additional "Conversion-Factor Explanation" subsection is parsed between Simple Example and Common Misconception. Used by slides with neither a source table nor an embedded figure that still need a labeled explanatory subsection there (e.g. a unit-conversion slide explaining why its conversion factor is valid). Mutually exclusive with tableExplanationMarker/figureExplanationMarker/definitionExplanationMarker/relationshipExplanationMarker in current usage — all five occupy the same slot. */
   conversionFactorExplanationMarker?: Marker;
-  /** Optional — when present, an additional "Definition Explanation" subsection is parsed between Simple Example and Common Misconception. Used by slides built around one or more reconstructed source definitions (see NormalizedSlide.definitions) that still need a labeled explanatory subsection contrasting/relating those definitions. Mutually exclusive with tableExplanationMarker/figureExplanationMarker/conversionFactorExplanationMarker in current usage — all four occupy the same slot. */
+  /** Optional — when present, an additional "Definition Explanation" subsection is parsed between Simple Example and Common Misconception. Used by slides built around one or more reconstructed source definitions (see NormalizedSlide.definitions) that still need a labeled explanatory subsection contrasting/relating those definitions. Mutually exclusive with tableExplanationMarker/figureExplanationMarker/conversionFactorExplanationMarker/relationshipExplanationMarker in current usage — all five occupy the same slot. */
   definitionExplanationMarker?: Marker;
+  /** Optional — when present, an additional "Relationship Explanation" subsection is parsed between Simple Example and Common Misconception. Used by slides built around a reciprocal or other quantity-to-quantity relationship (e.g. period/frequency) that still need a labeled explanatory subsection describing how the two quantities relate. Mutually exclusive with tableExplanationMarker/figureExplanationMarker/conversionFactorExplanationMarker/definitionExplanationMarker in current usage — all five occupy the same slot. */
+  relationshipExplanationMarker?: Marker;
   /**
    * Untranslated Latin notation, identical in both languages, that marks a
    * paragraph within Simple Example for distinct equation-block styling.
@@ -213,6 +216,30 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
     },
   },
+  "ch01-t01-block-opening-10": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    relationshipExplanationMarker: { en: "Relationship Explanation:", ar: "شرح العلاقة:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: [
+      "T = 1 / f",
+      "f = 1 / T",
+      "1 Hz = 1 s⁻¹",
+      "1 MHz = 10⁶ Hz",
+      "1 GHz = 10⁹ Hz",
+      "91.5 MHz = 9.15 × 10⁷ Hz",
+      "2 GHz = 2 × 10⁹ Hz",
+      "f = 5.00 Hz",
+      "T = 1 / (5.00 Hz) = 0.200 s",
+    ],
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
@@ -236,6 +263,7 @@ interface ParsedSections {
   figureExplanation: string[];
   conversionFactorExplanation: string[];
   definitionExplanation: string[];
+  relationshipExplanation: string[];
   misconception: string[];
   scientificNote: string[];
   keyConcept: string[];
@@ -272,6 +300,9 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   const definitionExplanationIdx = config.definitionExplanationMarker
     ? paragraphs.findIndex((p) => p.startsWith(config.definitionExplanationMarker![lang]))
     : -1;
+  const relationshipExplanationIdx = config.relationshipExplanationMarker
+    ? paragraphs.findIndex((p) => p.startsWith(config.relationshipExplanationMarker![lang]))
+    : -1;
   const misconceptionIdx = paragraphs.findIndex((p) => p.startsWith(config.misconceptionMarker[lang]));
   const scientificNoteIdx = paragraphs.findIndex((p) => p.startsWith(config.scientificNoteMarker[lang]));
   const keyConceptIdx = config.keyConceptMarker
@@ -284,6 +315,7 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   if (config.figureExplanationMarker) ordered.push(figureExplanationIdx);
   if (config.conversionFactorExplanationMarker) ordered.push(conversionFactorExplanationIdx);
   if (config.definitionExplanationMarker) ordered.push(definitionExplanationIdx);
+  if (config.relationshipExplanationMarker) ordered.push(relationshipExplanationIdx);
   ordered.push(misconceptionIdx, scientificNoteIdx);
   if (config.keyConceptMarker) ordered.push(keyConceptIdx);
   ordered.push(connectionIdx);
@@ -295,12 +327,13 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
   if (!stepParagraphs.every((p) => stepPattern.test(p))) return null;
 
   // Table Explanation, Figure Explanation, Conversion-Factor Explanation,
-  // and Definition Explanation are mutually exclusive in current usage
-  // (each slide has at most a source table, an embedded figure, or
-  // neither and instead a plain explanatory subsection, never more than
-  // one) — all four occupy the same slot immediately after Simple
-  // Example, so whichever is configured determines where Simple Example
-  // ends and itself ends at Common Misconception.
+  // Definition Explanation, and Relationship Explanation are mutually
+  // exclusive in current usage (each slide has at most a source table, an
+  // embedded figure, or neither and instead a plain explanatory
+  // subsection, never more than one) — all five occupy the same slot
+  // immediately after Simple Example, so whichever is configured
+  // determines where Simple Example ends and itself ends at Common
+  // Misconception.
   const simpleExampleEnd = config.tableExplanationMarker
     ? tableExplanationIdx
     : config.figureExplanationMarker
@@ -309,7 +342,9 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
         ? conversionFactorExplanationIdx
         : config.definitionExplanationMarker
           ? definitionExplanationIdx
-          : misconceptionIdx;
+          : config.relationshipExplanationMarker
+            ? relationshipExplanationIdx
+            : misconceptionIdx;
   const scientificNoteEnd = config.keyConceptMarker ? keyConceptIdx : connectionIdx;
 
   return {
@@ -324,6 +359,9 @@ function parseSections(value: string, config: StructuredSlideConfig, lang: "en" 
       : [],
     definitionExplanation: config.definitionExplanationMarker
       ? paragraphs.slice(definitionExplanationIdx, misconceptionIdx)
+      : [],
+    relationshipExplanation: config.relationshipExplanationMarker
+      ? paragraphs.slice(relationshipExplanationIdx, misconceptionIdx)
       : [],
     misconception: paragraphs.slice(misconceptionIdx, scientificNoteIdx),
     scientificNote: paragraphs.slice(scientificNoteIdx, scientificNoteEnd),
@@ -615,6 +653,13 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.definitionExplanation[language]}</h4>
           {renderPlainParagraphs(sections.definitionExplanation, italicTokens, direction)}
+        </section>
+      ) : null}
+
+      {sections.relationshipExplanation.length > 0 ? (
+        <section className="structured-slide__section">
+          <h4 className="structured-slide__heading">{SUBSECTION_LABEL.relationshipExplanation[language]}</h4>
+          {renderPlainParagraphs(sections.relationshipExplanation, italicTokens, direction)}
         </section>
       ) : null}
 

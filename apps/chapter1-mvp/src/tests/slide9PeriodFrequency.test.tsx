@@ -60,8 +60,8 @@ function remount() {
 }
 
 describe("1. Slide 9 appears ninth", () => {
-  it("topic.slides is ordered [Slide 1, ..., Slide 9] by slideNumber", () => {
-    expect(topic.slides.map((s) => s.recordId)).toEqual([
+  it("topic.slides is ordered [Slide 1, ..., Slide 9, ...] by slideNumber", () => {
+    expect(topic.slides.slice(0, 9).map((s) => s.recordId)).toEqual([
       "ch01-t01-block-opening",
       "ch01-t01-block-opening-2",
       "ch01-t01-block-opening-3",
@@ -72,7 +72,7 @@ describe("1. Slide 9 appears ninth", () => {
       "ch01-t01-block-opening-8",
       "ch01-t01-block-opening-9",
     ]);
-    expect(topic.slides.map((s) => s.slideNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    expect(topic.slides.slice(0, 9).map((s) => s.slideNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 
   it("Slide 9's header follows Slide 8's header in DOM order, all nine under one Slides section", () => {
@@ -82,7 +82,7 @@ describe("1. Slide 9 appears ninth", () => {
     const slide9Idx = order.indexOf("slide-9-header");
     expect(slide8Idx).toBeGreaterThanOrEqual(0);
     expect(slide9Idx).toBeGreaterThan(slide8Idx);
-    expect(container.querySelectorAll(".slides-section .slide")).toHaveLength(9);
+    expect(container.querySelectorAll(".slides-section .slide").length).toBeGreaterThanOrEqual(9);
   });
 
   it("Slide 9's exact bilingual title renders inside its expanded panel", () => {
@@ -155,7 +155,7 @@ describe("3. Slide 9 loads through the generic slides[] architecture", () => {
 
   it("Slide 9 renders via the exact same generic topic.slides.map(...) as Slides 1-8 — no per-slide-number conditional", () => {
     renderSlides(false);
-    expect(container.querySelectorAll(".slide")).toHaveLength(9);
+    expect(container.querySelectorAll(".slide").length).toBeGreaterThanOrEqual(9);
     expect(container.querySelector("#slide-9-header")).not.toBeNull();
   });
 
@@ -174,28 +174,29 @@ describe("3. Slide 9 loads through the generic slides[] architecture", () => {
   });
 });
 
-describe("4. Accordion count and jump options update to 9", () => {
-  it("9 accordion headers render, numbered 1-9", () => {
+describe("4. Accordion count and jump options update to at least 9", () => {
+  it("at least 9 accordion headers render, numbered 1-9 in order", () => {
     renderSlides(false);
     const numbers = Array.from(container.querySelectorAll(".slide-accordion__number")).map(
       (el) => el.textContent,
     );
-    expect(numbers).toEqual(["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+    expect(numbers.slice(0, 9)).toEqual(["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
   });
 
-  it("the jump select offers 9 options, including Slide 9", () => {
+  it("the jump select offers at least 9 options, including Slide 9", () => {
     renderSlides(false);
     const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
-    expect(select.options.length).toBe(9);
+    expect(select.options.length).toBeGreaterThanOrEqual(9);
     const values = Array.from(select.options).map((o) => o.value);
     expect(values).toContain("ch01-t01-block-opening-9");
   });
 
-  it("the viewed-progress denominator is 9", () => {
+  it("the viewed-progress denominator is at least 9", () => {
     renderSlides(false);
-    expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
-      "Slides viewed: 1 of 9",
-    );
+    const text = container.querySelector(".slides-section__progress")?.textContent ?? "";
+    const match = /Slides viewed: 1 of (\d+)/.exec(text);
+    expect(match).not.toBeNull();
+    expect(Number(match?.[1])).toBeGreaterThanOrEqual(9);
   });
 });
 
@@ -228,15 +229,17 @@ describe("6. Slide 9's Previous button opens Slide 8", () => {
   });
 });
 
-describe("7. Slide 9's Next button is disabled (final slide)", () => {
-  it("Next is disabled and the pager reads 'Slide 9 of 9'", () => {
+describe("7. Slide 9's Next button opens Slide 10 (Slide 9 is no longer the final slide)", () => {
+  it("Next is enabled on Slide 9 and opens Slide 10 — the final-slide-disabled behavior now belongs to Slide 10 (see slide10PeriodFrequencyHertz.test.tsx and slidesAccordion.test.tsx's dynamic final-slide check)", () => {
     renderSlides(false, 9);
     const panel9 = getSlidePanel(container, 9)!;
     const nextButton = Array.from(panel9.querySelectorAll("button")).find(
       (b) => b.textContent === "Next Slide",
     ) as HTMLButtonElement;
-    expect(nextButton.disabled).toBe(true);
-    expect(panel9.querySelector(".slide-accordion__pager-progress")?.textContent).toBe("Slide 9 of 9");
+    expect(nextButton.disabled).toBe(false);
+    act(() => nextButton.click());
+    expect(getSlideHeader(container, 10)?.getAttribute("aria-expanded")).toBe("true");
+    expect(getSlideHeader(container, 9)?.getAttribute("aria-expanded")).toBe("false");
   });
 });
 
@@ -496,7 +499,7 @@ describe("18. Governance remains blocked and publication unauthorized", () => {
   });
 
   it("recordCount reflects the new record and Slides 1-8's governance flags are untouched", () => {
-    expect(topic.governance.recordCount).toBe(16);
+    expect(topic.governance.recordCount).toBe(17);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);

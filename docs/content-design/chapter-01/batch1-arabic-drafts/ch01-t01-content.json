@@ -1001,6 +1001,89 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-10",
+        "blockType": "slide",
+        "slideNumber": 10,
+        "slideTitleEn": "How Are Period, Frequency, and Hertz Related?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Time\n\nThe relationship between the period of a cyclic phenomenon and its frequency is simple.\n\nThe period equals 1 divided by the frequency, and vice versa.\n\nperiod = 1 / frequency\n\nT = 1 / f\n\nf = 1 / T\n\nThe standard unit of frequency is the hertz (Hz), which equals 1 cycle per second.\n\n1 Hz = 1/s = 1 s⁻¹\n\n91.5 MHz = 91,500,000 Hz\n\n2 GHz = 2,000,000,000 Hz\n\nMain Idea: Period and frequency are reciprocal quantities. Period tells us how long one cycle takes, while frequency tells us how many cycles occur each second. Frequency is measured in hertz, and metric prefixes such as mega and giga represent powers of ten.\n\nStep 1 — Period measures time per cycle\n* Period is represented by T.\n* It measures the time required for one complete cycle.\n* Its SI unit is the second (s).\n* A longer cycle has a larger period.\n\nStep 2 — Frequency measures cycles per unit time\n* Frequency is represented by f.\n* It measures how many complete cycles occur each second.\n* Its SI unit is hertz (Hz).\n* A higher frequency means more cycles occur in a given time.\n\nStep 3 — Period and frequency are reciprocals\n* T = 1 / f\n* f = 1 / T\n* Increasing frequency decreases period.\n* Decreasing frequency increases period.\n* Doubling frequency halves period.\n\nStep 4 — Hertz is equivalent to inverse seconds\n* 1 Hz = 1 s⁻¹\n* One hertz means one cycle per second.\n* The notation s⁻¹ means \"per second.\"\n* Frequency must not be written as Hz/s.\n\nStep 5 — Metric prefixes represent powers of ten\n* 1 MHz = 10⁶ Hz\n* 1 GHz = 10⁹ Hz\n* 91.5 MHz = 9.15 × 10⁷ Hz\n* 2 GHz = 2 × 10⁹ Hz\n* Mega represents 10^6.\n* Giga represents 10^9.\n* Scientific notation makes the scale and significant figures clear.\n\nSimple Example: A periodic signal has a frequency of 5.00 Hz.\n\nf = 5.00 Hz\n\nT = 1 / f\n\nT = 1 / (5.00 Hz) = 0.200 s\n\nThe signal completes one cycle every 0.200 s. The result has three significant figures, matching the given frequency 5.00 Hz.\n\nRelationship Explanation: Period and frequency describe the same repeating phenomenon from opposite perspectives. Period is time per cycle, while frequency is cycles per unit time. Their product is dimensionless: T f = 1. Therefore, when frequency increases, period decreases.\n\nMisconception: a higher frequency means each cycle takes more time. Correction: a higher frequency means more cycles occur each second, so each cycle takes less time.\n\nf = 20.0 Hz\n\nT = 1 / (20.0 Hz) = 0.0500 s\n\nScientific Note: Metric prefixes multiply hertz by exact powers of ten. One megahertz equals 10⁶ Hz, and one gigahertz equals 10⁹ Hz. Scientific notation is often clearer because it explicitly shows scale and significant figures.\n\n91.5 MHz = 91,500,000 Hz = 9.15 × 10⁷ Hz\n\n2 GHz = 2,000,000,000 Hz = 2 × 10⁹ Hz\n\nThe expanded decimal values are numerically equivalent, while scientific notation makes the significant-figure interpretation clearer.\n\nKey Concept: Period and frequency are reciprocals: T = 1 / f and f = 1 / T. Frequency is measured in hertz, where 1 Hz = 1 s⁻¹, and prefixes such as mega and giga represent 10⁶ and 10⁹.\n\nConnection to the Next Slide: After understanding the reciprocal relationship and frequency prefixes, the next step is to solve problems involving period, frequency, and conversions between hertz, megahertz, and gigahertz.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: الزمن\n\nالعلاقة بين الزمن الدوري لظاهرة دورية وترددها بسيطة.\n\nيساوي الزمن الدوري العدد 1 مقسومًا على التردد، والعكس صحيح.\n\nالزمن الدوري = 1 / التردد\n\nT = 1 / f\n\nf = 1 / T\n\nالوحدة القياسية للتردد هي الهرتز (Hz)، والذي يساوي دورة واحدة في الثانية.\n\n1 Hz = 1/s = 1 s⁻¹\n\n91.5 MHz = 91,500,000 Hz\n\n2 GHz = 2,000,000,000 Hz\n\nالفكرة الرئيسية: الزمن الدوري والتردد كميتان متبادلتان؛ فالزمن الدوري يوضح المدة التي تستغرقها دورة واحدة، بينما يوضح التردد عدد الدورات التي تحدث في كل ثانية. ويُقاس التردد بالهرتز، وتمثل البادئات المترية مثل ميجا وجيجا قوى العدد عشرة.\n\nالخطوة 1 — الزمن الدوري يقيس الزمن لكل دورة\n* يرمز للزمن الدوري بالرمز T.\n* يقيس الزمن اللازم لإكمال دورة واحدة.\n* وحدته في النظام الدولي هي الثانية (s).\n* تمتلك الدورة الأطول زمنًا دوريًا أكبر.\n\nالخطوة 2 — التردد يقيس عدد الدورات في وحدة الزمن\n* يرمز للتردد بالرمز f.\n* يقيس عدد الدورات الكاملة التي تحدث في كل ثانية.\n* وحدته في النظام الدولي هي الهرتز (Hz).\n* يعني التردد الأعلى حدوث عدد أكبر من الدورات خلال زمن محدد.\n\nالخطوة 3 — الزمن الدوري والتردد متبادلان\n* T = 1 / f\n* f = 1 / T\n* تؤدي زيادة التردد إلى انخفاض الزمن الدوري.\n* يؤدي انخفاض التردد إلى زيادة الزمن الدوري.\n* تؤدي مضاعفة التردد إلى خفض الزمن الدوري إلى النصف.\n\nالخطوة 4 — الهرتز يعادل ثانية عكسية\n* 1 Hz = 1 s⁻¹\n* يعني الهرتز الواحد دورة واحدة في الثانية.\n* تعني الصيغة s⁻¹ «لكل ثانية».\n* لا ينبغي كتابة التردد بوحدة Hz/s.\n\nالخطوة 5 — البادئات المترية تمثل قوى العدد عشرة\n* 1 MHz = 10⁶ Hz\n* 1 GHz = 10⁹ Hz\n* 91.5 MHz = 9.15 × 10⁷ Hz\n* 2 GHz = 2 × 10⁹ Hz\n* تمثل البادئة ميجا 10^6.\n* تمثل البادئة جيجا 10^9.\n* توضح الصيغة العلمية المقياس وعدد الأرقام المعنوية.\n\nمثال بسيط: إشارة دورية ترددها 5.00 Hz.\n\nf = 5.00 Hz\n\nT = 1 / f\n\nT = 1 / (5.00 Hz) = 0.200 s\n\nتكمل الإشارة دورة واحدة كل 0.200 s. ويحتوي الناتج على ثلاثة أرقام معنوية بما يتفق مع التردد المعطى 5.00 Hz.\n\nشرح العلاقة: يصف الزمن الدوري والتردد الظاهرة المتكررة نفسها من منظورين متعاكسين. فالزمن الدوري هو الزمن لكل دورة، بينما التردد هو عدد الدورات لكل وحدة زمن. وحاصل ضربهما كمية بلا أبعاد: T f = 1. لذلك ينخفض الزمن الدوري عندما يزداد التردد.\n\nمفهوم خاطئ: يعني التردد الأعلى أن كل دورة تستغرق زمنًا أطول. التصحيح: يعني التردد الأعلى حدوث دورات أكثر في كل ثانية، ولذلك تستغرق كل دورة زمنًا أقل.\n\nf = 20.0 Hz\n\nT = 1 / (20.0 Hz) = 0.0500 s\n\nملاحظة علمية: تضرب البادئات المترية الهرتز في قوى دقيقة للعدد عشرة. يساوي الميجاهرتز الواحد 10⁶ Hz، ويساوي الجيجاهرتز الواحد 10⁹ Hz. وغالبًا ما تكون الصيغة العلمية أوضح لأنها تُظهر المقياس وعدد الأرقام المعنوية بصورة صريحة.\n\n91.5 MHz = 91,500,000 Hz = 9.15 × 10⁷ Hz\n\n2 GHz = 2,000,000,000 Hz = 2 × 10⁹ Hz\n\nالقيم العشرية الموسعة تساوي رقميًا الصيغة العلمية، بينما توضح الصيغة العلمية تفسير الأرقام المعنوية بمزيد من الوضوح.\n\nالمفهوم الأساسي: الزمن الدوري والتردد كميتان متبادلتان: T = 1 / f وf = 1 / T. ويُقاس التردد بالهرتز، حيث 1 Hz = 1 s⁻¹، وتمثل البادئتان ميجا وجيجا القيمتين 10⁶ و10⁹.\n\nالصلة بالشريحة التالية: بعد فهم العلاقة التبادلية وبادئات التردد، تكون الخطوة التالية هي حل مسائل تتضمن الزمن الدوري والتردد والتحويل بين الهرتز والميجاهرتز والجيجاهرتز.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: الزمن\n\nالعلاقة بين الزمن الدوري لظاهرة دورية وترددها بسيطة.\n\nيساوي الزمن الدوري العدد 1 مقسومًا على التردد، والعكس صحيح.\n\nالزمن الدوري = 1 / التردد\n\nT = 1 / f\n\nf = 1 / T\n\nالوحدة القياسية للتردد هي الهرتز (Hz)، والذي يساوي دورة واحدة في الثانية.\n\n1 Hz = 1/s = 1 s⁻¹\n\n91.5 MHz = 91,500,000 Hz\n\n2 GHz = 2,000,000,000 Hz\n\nالفكرة الرئيسية: الزمن الدوري والتردد كميتان متبادلتان؛ فالزمن الدوري يوضح المدة التي تستغرقها دورة واحدة، بينما يوضح التردد عدد الدورات التي تحدث في كل ثانية. ويُقاس التردد بالهرتز، وتمثل البادئات المترية مثل ميجا وجيجا قوى العدد عشرة.\n\nالخطوة 1 — الزمن الدوري يقيس الزمن لكل دورة\n* يرمز للزمن الدوري بالرمز T.\n* يقيس الزمن اللازم لإكمال دورة واحدة.\n* وحدته في النظام الدولي هي الثانية (s).\n* تمتلك الدورة الأطول زمنًا دوريًا أكبر.\n\nالخطوة 2 — التردد يقيس عدد الدورات في وحدة الزمن\n* يرمز للتردد بالرمز f.\n* يقيس عدد الدورات الكاملة التي تحدث في كل ثانية.\n* وحدته في النظام الدولي هي الهرتز (Hz).\n* يعني التردد الأعلى حدوث عدد أكبر من الدورات خلال زمن محدد.\n\nالخطوة 3 — الزمن الدوري والتردد متبادلان\n* T = 1 / f\n* f = 1 / T\n* تؤدي زيادة التردد إلى انخفاض الزمن الدوري.\n* يؤدي انخفاض التردد إلى زيادة الزمن الدوري.\n* تؤدي مضاعفة التردد إلى خفض الزمن الدوري إلى النصف.\n\nالخطوة 4 — الهرتز يعادل ثانية عكسية\n* 1 Hz = 1 s⁻¹\n* يعني الهرتز الواحد دورة واحدة في الثانية.\n* تعني الصيغة s⁻¹ «لكل ثانية».\n* لا ينبغي كتابة التردد بوحدة Hz/s.\n\nالخطوة 5 — البادئات المترية تمثل قوى العدد عشرة\n* 1 MHz = 10⁶ Hz\n* 1 GHz = 10⁹ Hz\n* 91.5 MHz = 9.15 × 10⁷ Hz\n* 2 GHz = 2 × 10⁹ Hz\n* تمثل البادئة ميجا 10^6.\n* تمثل البادئة جيجا 10^9.\n* توضح الصيغة العلمية المقياس وعدد الأرقام المعنوية.\n\nمثال بسيط: إشارة دورية ترددها 5.00 Hz.\n\nf = 5.00 Hz\n\nT = 1 / f\n\nT = 1 / (5.00 Hz) = 0.200 s\n\nتكمل الإشارة دورة واحدة كل 0.200 s. ويحتوي الناتج على ثلاثة أرقام معنوية بما يتفق مع التردد المعطى 5.00 Hz.\n\nشرح العلاقة: يصف الزمن الدوري والتردد الظاهرة المتكررة نفسها من منظورين متعاكسين. فالزمن الدوري هو الزمن لكل دورة، بينما التردد هو عدد الدورات لكل وحدة زمن. وحاصل ضربهما كمية بلا أبعاد: T f = 1. لذلك ينخفض الزمن الدوري عندما يزداد التردد.\n\nمفهوم خاطئ: يعني التردد الأعلى أن كل دورة تستغرق زمنًا أطول. التصحيح: يعني التردد الأعلى حدوث دورات أكثر في كل ثانية، ولذلك تستغرق كل دورة زمنًا أقل.\n\nf = 20.0 Hz\n\nT = 1 / (20.0 Hz) = 0.0500 s\n\nملاحظة علمية: تضرب البادئات المترية الهرتز في قوى دقيقة للعدد عشرة. يساوي الميجاهرتز الواحد 10⁶ Hz، ويساوي الجيجاهرتز الواحد 10⁹ Hz. وغالبًا ما تكون الصيغة العلمية أوضح لأنها تُظهر المقياس وعدد الأرقام المعنوية بصورة صريحة.\n\n91.5 MHz = 91,500,000 Hz = 9.15 × 10⁷ Hz\n\n2 GHz = 2,000,000,000 Hz = 2 × 10⁹ Hz\n\nالقيم العشرية الموسعة تساوي رقميًا الصيغة العلمية، بينما توضح الصيغة العلمية تفسير الأرقام المعنوية بمزيد من الوضوح.\n\nالمفهوم الأساسي: الزمن الدوري والتردد كميتان متبادلتان: T = 1 / f وf = 1 / T. ويُقاس التردد بالهرتز، حيث 1 Hz = 1 s⁻¹، وتمثل البادئتان ميجا وجيجا القيمتين 10⁶ و10⁹.\n\nالصلة بالشريحة التالية: بعد فهم العلاقة التبادلية وبادئات التردد، تكون الخطوة التالية هي حل مسائل تتضمن الزمن الدوري والتردد والتحويل بين الهرتز والميجاهرتز والجيجاهرتز.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft-ai-generated-unreviewed",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "pending",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-PERIOD-FREQUENCY-HERTZ-RELATIONSHIP",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-time-period-frequency-hertz-relationship",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/7A050BAB-3817-451D-96B5-9507615B02F5.png, showing the reciprocal period/frequency relationship and hertz/megahertz/gigahertz examples) directly in the implementation task, together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Time... The relationship between the period of a cyclic phenomenon and its frequency is simple...') and the exact relationships/examples to preserve. The uploaded image itself is recorded here as this record's source and is explicitly NOT used as the student-facing visual — the source contains text and equations but no instructional figure requiring raster display, so the relationships are reconstructed semantically using the existing equation-rendering architecture (renderEquationText, the same mechanism used by every other slide's equations), preserving the same relationships and source wording verbatim. No figure asset is created or referenced and blocking.blockingReason does not include 'missingVisual'. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Relationship Explanation, the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored tenth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-9 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-9 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "slideTitleAr": "كيف يرتبط الزمن الدوري والتردد والهرتز؟"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

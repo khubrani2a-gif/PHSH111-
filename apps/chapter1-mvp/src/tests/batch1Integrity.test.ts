@@ -76,8 +76,10 @@ const APPROVED = {
     // "f = 4 Hz" -> "f = 1 / (0.25 s) = 4.0 s⁻¹" / "f = 4.0 Hz") and Common
     // Misconception ("f = 10 Hz" / "T = 1 / 10 Hz = 0.10 s" -> "f = 10.0 Hz"
     // / "T = 1 / (10.0 Hz) = 0.100 s") to make significant figures and
-    // denominator grouping explicit.
-    sha256: "1ce2f20423118dbe112154c566a344d411ca9bfa0472cc5513c11c61d578116c",
+    // denominator grouping explicit. rev-020 adds ch01-t01-block-opening-10
+    // (Slide 10, how period/frequency/hertz relate), including the new
+    // generic relationshipExplanationMarker subsection slot.
+    sha256: "f64c07ed6792dfde3ebacc8583eaa51a4971b21029326f377bc6c2f4287e69ac",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -124,8 +126,9 @@ const APPROVED = {
     // rev-018, including definitionsAr for the two reconstructed
     // definition cards. rev-019 matches English rev-019's Simple
     // Example/Common Misconception significant-figures and
-    // denominator-grouping corrections.
-    sha256: "f430e356d25b8a5ff67af759c2a85a8a948fea7c3c5c90167d89413dde75fc72",
+    // denominator-grouping corrections. rev-020 adds the Arabic side of
+    // ch01-t01-block-opening-10 (Slide 10), matching English rev-020.
+    sha256: "f17da1f697b20aec2ea6f5ede9797808f45537e131d3ccdcf58b78a45a7e4411",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
