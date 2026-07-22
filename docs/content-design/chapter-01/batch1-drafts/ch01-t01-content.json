@@ -723,6 +723,92 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-9",
+        "blockType": "slide",
+        "slideNumber": 9,
+        "slideTitleEn": "What Is the Difference Between Period and Frequency?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Time\n\nPeriod: The time for one complete cycle of a process that repeats. It is abbreviated T, and the units are seconds, minutes, and so forth.\n\nFrequency: The number of cycles of a periodic process that occur per unit time. It is abbreviated f and has units s−1 or hertz (Hz).\n\nMain Idea: Period and frequency both describe the same repeating motion, but from opposite directions. The period T is the time required for one complete cycle, and the frequency f is the number of cycles completed per unit time. Because they describe the same repeating motion in reciprocal ways, either quantity can always be calculated from the other.\n\nStep 1 — A cycle is one complete repetition\n* A cycle is one full repetition of a process that repeats over time.\n* Each cycle begins and ends at the same point in the motion.\n* A vibrating string, a swinging pendulum, and a rotating wheel each complete cycles.\n* Counting or timing these cycles is the basis for both period and frequency.\n\nStep 2 — Period measures the time for one cycle\n* The period is the time required to complete exactly one cycle.\n* It is represented by the symbol T.\n* The SI unit of period is the second (s).\n* A longer period means each cycle takes more time to complete.\n\nStep 3 — Frequency measures cycles per unit time\n* Frequency is the number of cycles that occur in one unit of time.\n* It is represented by the symbol f.\n* The SI unit of frequency is the hertz (Hz).\n* 1 Hz = 1 s⁻¹.\n\nStep 4 — Period and frequency are reciprocals\n* f = 1 / T\n* T = 1 / f\n* Knowing either the period or the frequency of a repeating process is enough to calculate the other.\n* Multiplying a period by its corresponding frequency always yields exactly one cycle.\n\nStep 5 — Higher frequency means shorter period\n* As frequency increases, the time available for each cycle decreases.\n* A process with a short period repeats many times per second, giving it a high frequency.\n* A process with a long period repeats only a few times per second, giving it a low frequency.\n\nSimple Example: A vibrating object completes one cycle every 0.25 s.\n\nT = 0.25 s\n\nf = 1 / T\n\nf = 1 / 0.25 s = 4 s⁻¹\n\nf = 4 Hz\n\nThe object completes four cycles every second.\n\nDefinition Explanation: The two boxed definitions describe the same repeating motion from two complementary directions. The period tells us how much time one cycle takes, while the frequency tells us how many cycles occur in a given amount of time. Because a cycle that takes less time to complete must occur more often, period and frequency are reciprocals of one another rather than two independent quantities.\n\nMisconception: assuming that a frequency of f = 10 Hz means the period is also 10 of something, such as 10 seconds. Correction: period and frequency are reciprocals, so T = 1 / 10 Hz = 0.10 s.\n\nScientific Note: Hertz is a derived SI unit. One hertz equals one inverse second: 1 Hz = 1 s⁻¹, so a process with a frequency of several hertz completes that many cycles every second. Frequency should not be written as Hz/s because hertz already means cycles per second.\n\nKey Concept: Period and frequency are reciprocals describing the same repeating motion: f = 1 / T and T = 1 / f.\n\nConnection to the Next Slide: Having distinguished period from frequency, the next slide extends these ideas to additional fundamental physical quantities built from time.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Period",
+            "definition": "The time for one complete cycle of a process that repeats. It is abbreviated T, and the units are seconds, minutes, and so forth."
+          },
+          {
+            "term": "Frequency",
+            "definition": "The number of cycles of a periodic process that occur per unit time. It is abbreviated f and has units s⁻¹ or hertz (Hz)."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-PERIOD-FREQUENCY-DEFINITIONS",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-time-period-frequency-definitions",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/707A6E6A-0F30-4D77-8DC3-B0C3385D32B8.png, two definition boxes labeled Period and Frequency) directly in the implementation task, together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Time...') and the exact definition wording to preserve. The uploaded image itself is recorded here as this record's source and is explicitly NOT used as the student-facing visual — the source contains no instructional figure requiring raster display, only two term/definition boxes, so those are reconstructed as accessible semantic definition cards (one <dl> per term, with <dt>/<dd> pairs) from their text, preserving the same terms and source wording verbatim; the decorative vertical 'DEFINI' lettering visible in the source image is not reproduced as it carries no meaning of its own. No figure asset is created or referenced and blocking.blockingReason does not include 'missingVisual'. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Definition Explanation, the Common Misconception, the Scientific Note, and the Key Concept were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored ninth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-8 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-8 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

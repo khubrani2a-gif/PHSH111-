@@ -86,7 +86,7 @@ import type { PilotTopicId } from "../types/pilotSchema";
 // found to appear only as their intended physics symbols, with no
 // colliding occurrence.
 export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
-  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w", "V"],
+  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w", "V", "f"],
   "ch01-t02": ["A", "V"],
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],
@@ -116,12 +116,16 @@ export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
 // ch01-t01 and ch01-t04 use the identical token set in both maps below:
 // no prose-specific ambiguity (an English-word or fused-abbreviation
 // collision, comparable to t08's "a" or t04's own excluded "m") was found
-// for any of v/d/t/L/T/M/l/w (t01) or g/W (t04) in either the equation-only
-// fields or the natural-language prose fields — see the header comment on
-// EQUATION_ITALIC_TOKENS_BY_TOPIC above for the full per-token verification,
-// including why "h" is excluded from ch01-t01's whitelist.
+// for any of v/d/t/L/T/M/l/w/f (t01) or g/W (t04) in either the
+// equation-only fields or the natural-language prose fields — see the
+// header comment on EQUATION_ITALIC_TOKENS_BY_TOPIC above for the full
+// per-token verification, including why "h" is excluded from ch01-t01's
+// whitelist. "f" was added for Slide 9 (Period and Frequency) after
+// confirming zero standalone-word occurrences anywhere in ch01-t01's
+// approved content, the same precedent used for "V" (Slide 6) and "l"/"w"
+// (Slide 3).
 export const EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC: Record<PilotTopicId, string[]> = {
-  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w", "V"],
+  "ch01-t01": ["v", "d", "t", "L", "T", "M", "l", "w", "V", "f"],
   "ch01-t02": ["A", "V"],
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],

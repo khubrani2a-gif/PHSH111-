@@ -83,7 +83,21 @@ export interface NormalizedSlide {
    * (undefined) for slides with no figure.
    */
   figure?: { assetUrl: string; alt: NormalizedText };
+  /**
+   * Present only when the underlying record carries one or more
+   * reconstructed term/definition pairs (pilotSchema.ts's
+   * definitionsEn/definitionsAr) — generic to any slide, not tied to a
+   * specific slide number. Absent (undefined) for slides with no
+   * definitions, same convention as `table`/`figure`.
+   */
+  definitions?: { en: DefinitionEntry[] | null; ar: DefinitionEntry[] | null };
   blocking: BlockingState;
+}
+
+/** A term/definition pair, mirroring pilotSchema.ts's DefinitionEntry. */
+export interface DefinitionEntry {
+  term: string;
+  definition: string;
 }
 
 /** An instructor-only record (currently: misconception), never shown in the learner flow. */

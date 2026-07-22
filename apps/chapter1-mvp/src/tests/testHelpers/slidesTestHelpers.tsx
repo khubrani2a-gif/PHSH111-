@@ -37,6 +37,7 @@ export function renderGenericSlides(
                 text={slide.text}
                 table={slide.table}
                 figure={slide.figure}
+                definitions={slide.definitions}
                 italicTokens={proseTokens}
               />
             ),

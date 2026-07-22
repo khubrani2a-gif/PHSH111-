@@ -28,6 +28,7 @@ import {
   type PilotTopicId,
   type ProblemRecord,
   type SourceTable,
+  type DefinitionEntry,
   type VisibilityState,
 } from "../types/pilotSchema";
 
@@ -84,6 +85,16 @@ function isSourceTable(x: unknown): x is SourceTable {
   if (!Array.isArray(x.rows)) return false;
   return x.rows.every(
     (row) => Array.isArray(row) && row.every((cell) => typeof cell === "string" || cell === null),
+  );
+}
+
+function isDefinitionEntryArray(x: unknown): x is DefinitionEntry[] {
+  return (
+    Array.isArray(x) &&
+    x.every(
+      (entry) =>
+        isRecord(entry) && typeof entry.term === "string" && typeof entry.definition === "string",
+    )
   );
 }
 
@@ -234,6 +245,19 @@ function validateContentBlock(
       diag(diagnostics, "error", "malformed-figure", "figureAssetPath is present but figureAltEn is missing", topicId, blockId);
       return null;
     }
+  }
+
+  // Generic to any blockType (not gated on "slide") — definitionsEn/
+  // definitionsAr are a reusable, blockType-independent field (see
+  // pilotSchema.ts's DefinitionEntry header note), only validated when
+  // present.
+  if (raw.definitionsEn !== undefined && !isDefinitionEntryArray(raw.definitionsEn)) {
+    diag(diagnostics, "error", "malformed-definitions", "definitionsEn is present but not a well-formed definition list", topicId, blockId);
+    return null;
+  }
+  if (raw.definitionsAr !== undefined && !isDefinitionEntryArray(raw.definitionsAr)) {
+    diag(diagnostics, "error", "malformed-definitions", "definitionsAr is present but not a well-formed definition list", topicId, blockId);
+    return null;
   }
 
   checkLocalizationComplete(

@@ -164,6 +164,17 @@ export interface SourceTable {
   rows: (string | null)[][];
 }
 
+/**
+ * A single term/definition pair reconstructed from an original source
+ * slide's definition box — generic to any contentBlock (not tied to any
+ * specific blockType or slide number), mirroring SourceTable's role for
+ * tabular source content.
+ */
+export interface DefinitionEntry {
+  term: string;
+  definition: string;
+}
+
 export interface VisualGovernanceEntry {
   visualId: string;
   availabilityStatus: string;
@@ -278,6 +289,19 @@ export interface ContentBlockRecord {
   figureAssetPath?: string;
   figureAltEn?: string;
   figureAltAr?: string;
+  /**
+   * Present only on records that reconstruct one or more explicit
+   * term/definition boxes quoted from an original source slide — generic
+   * to any contentBlock, independent of blockType (mirrors tableEn/tableAr's
+   * role for tabular source content). Mirrors the tableEn/tableAr
+   * convention exactly: the English-only baseline file supplies
+   * definitionsEn (the source definitions' own terms/text, verbatim); the
+   * Arabic candidate file supplies its own copy of definitionsEn
+   * (byte-checked identical by src/content/batch1Merge.ts) plus
+   * definitionsAr, the translated terms/definitions in the same order.
+   */
+  definitionsEn?: DefinitionEntry[];
+  definitionsAr?: DefinitionEntry[];
   contentLeakTestStatus: string;
 }
 

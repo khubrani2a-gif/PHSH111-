@@ -68,8 +68,11 @@ const APPROVED = {
     // scientific-precision review revising Slide 8's Simple Example final
     // equivalence from "1.5 h = 90 min = 5400 s" to
     // "1.5 h = 90 min = 5.4 × 10³ s", making explicit the two significant
-    // figures inherited from the given 1.5 h.
-    sha256: "e1e10d6ec237f7ed09eef79ff2a9718c5b21c5f5957c2addda3124f1894dccdc",
+    // figures inherited from the given 1.5 h. rev-018 adds
+    // ch01-t01-block-opening-9 (Slide 9, period vs. frequency), including
+    // the new generic definitionsEn field reconstructing the source's two
+    // definition boxes.
+    sha256: "8a24da25b04c0acb686f68b9e7bdd5bbe8a67e94c25e169206b2b60fd94d90e3",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -111,8 +114,11 @@ const APPROVED = {
     // (Step 5, Simple Example, Conversion-Factor Explanation). rev-016
     // adds the Arabic side of ch01-t01-block-opening-8 (Slide 8), matching
     // English rev-016. rev-017 matches English rev-017's Simple Example
-    // significant-figures correction (5.4 × 10³ s).
-    sha256: "855fcee64c2f26949fe21573eb7fd4d9d3d210bf95fd2d60046107837964693e",
+    // significant-figures correction (5.4 × 10³ s). rev-018 adds the
+    // Arabic side of ch01-t01-block-opening-9 (Slide 9), matching English
+    // rev-018, including definitionsAr for the two reconstructed
+    // definition cards.
+    sha256: "68a3ff452b177810f4ae7237d552375a80293fc828cb19afed9bdf19af9c3da0",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
