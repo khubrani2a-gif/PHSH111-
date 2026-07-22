@@ -15,6 +15,10 @@ import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { getTopic } from "../content/adapter";
 import {
+  EQUATION_ITALIC_TOKENS_BY_TOPIC,
+  EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC,
+} from "../content/equationRenderer";
+import {
   renderGenericSlides as renderGenericSlidesShared,
   openSlideByNumber,
   getSlideHeader,
@@ -401,7 +405,7 @@ describe("13. The Simple Example produces 4.0 Hz and 0.25 s", () => {
   });
 });
 
-describe("14. f and T render as variables while units remain upright", () => {
+describe("14. f, T, and N render as variables while units remain upright", () => {
   it("the standalone physical symbols 'f' and 'T' are italicized", () => {
     renderSlides(false, 11);
     const emTexts = Array.from(getSlidePanel(container, 11)!.querySelectorAll("em")).map(
@@ -421,14 +425,25 @@ describe("14. f and T render as variables while units remain upright", () => {
     expect(emTexts).not.toContain("cycles/s");
   });
 
-  it("'N' renders entirely upright — no whitelist entry was added for it", () => {
+  it("'N' (number of cycles) renders italicized via Slide 11's own blockId-scoped additionalItalicTokens config — not via the topic-wide prose-safe whitelist", () => {
     renderSlides(false, 11);
     const emTexts = Array.from(getSlidePanel(container, 11)!.querySelectorAll("em")).map(
       (el) => el.textContent,
     );
-    expect(emTexts).not.toContain("N");
+    expect(emTexts).toContain("N");
     const panelText = getSlidePanel(container, 11)!.textContent ?? "";
     expect(panelText).toContain("N = 10 cycles");
+  });
+
+  it("'f = N / Δt' renders with 'f' italic, 'N' italic, 'Δ' upright, and 't' italic", () => {
+    renderSlides(false, 11);
+    const html = getSlidePanel(container, 11)!.innerHTML;
+    expect(html).toContain("<em>f</em> = <em>N</em> / Δ<em>t</em>");
+  });
+
+  it("'N' was NOT added to the topic-wide equation-italics whitelists — Slide 11's italicized 'N' comes only from its own blockId-scoped additionalItalicTokens config", () => {
+    expect(EQUATION_ITALIC_TOKENS_BY_TOPIC["ch01-t01"]).not.toContain("N");
+    expect(EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC["ch01-t01"]).not.toContain("N");
   });
 
   it("'Δt' renders with 'Δ' upright and 't' italic (no new whitelist entry — 't' was already whitelisted for ch01-t01 from Slide 1's v = d / t, and the existing word-boundary regex matches it immediately after 'Δ'; this matches the common physics-typesetting convention of an upright Δ operator applied to an italicized quantity symbol)", () => {

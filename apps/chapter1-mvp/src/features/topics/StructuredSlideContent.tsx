@@ -70,6 +70,20 @@ export interface StructuredSlideConfig {
    * remainder becomes the step's body.
    */
   stepPattern?: { en: RegExp; ar: RegExp };
+  /**
+   * Additional italic tokens merged into the caller-supplied italicTokens
+   * prop, scoped strictly to this one blockId's own rendering — never
+   * written into src/content/equationRenderer.tsx's topic-wide
+   * EQUATION_ITALIC_TOKENS_BY_TOPIC/EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC
+   * whitelists, so it cannot italicize the same token in any other content
+   * block or slide in the topic (mainIdea, organizedExplanation, or any of
+   * this slide's siblings). Use this for a symbol that is unambiguous
+   * within one specific slide's own equations (e.g. Slide 11's "N", the
+   * number-of-cycles variable) but that the project owner has not asked to
+   * be treated as a general-purpose physics symbol for the whole topic's
+   * natural-language prose.
+   */
+  additionalItalicTokens?: readonly string[];
 }
 
 const DEFAULT_STEP_PATTERN = /^\d+\.\s/;
@@ -265,6 +279,14 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       en: /^Step\s+\d+\s+—[^\n]*/,
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
     },
+    // "N" (number of cycles) is unambiguous throughout this slide's own
+    // equations and step values, but is deliberately NOT added to
+    // EQUATION_ITALIC_TOKENS_BY_TOPIC/EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC
+    // in src/content/equationRenderer.tsx — that would italicize every
+    // standalone "N" in ch01-t01's other content blocks and slides too.
+    // This blockId-scoped entry italicizes "N" only within Slide 11's own
+    // rendering (see additionalItalicTokens's header comment above).
+    additionalItalicTokens: ["N"],
   },
 };
 
@@ -619,10 +641,16 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
   }
 
   const config = STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID[blockId];
+  // Merged in locally, never written back into the caller-supplied
+  // italicTokens or into equationRenderer.tsx's topic-wide whitelists — see
+  // additionalItalicTokens's header comment on StructuredSlideConfig.
+  const effectiveItalicTokens = config?.additionalItalicTokens
+    ? [...italicTokens, ...config.additionalItalicTokens]
+    : italicTokens;
   const sections = config ? parseSections(value, config, language) : null;
 
   if (!sections) {
-    return <>{renderPlainParagraphs(value.split(/\n{2,}/), italicTokens, direction)}</>;
+    return <>{renderPlainParagraphs(value.split(/\n{2,}/), effectiveItalicTokens, direction)}</>;
   }
 
   const stepPattern = config?.stepPattern ? config.stepPattern[language] : DEFAULT_STEP_PATTERN;
@@ -632,31 +660,31 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       {sections.original.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.original[language]}</h4>
-          {renderPlainParagraphs(sections.original, italicTokens, direction)}
+          {renderPlainParagraphs(sections.original, effectiveItalicTokens, direction)}
           {tableForLanguage ? renderSourceTable(tableForLanguage, direction) : null}
-          {definitionsForLanguage ? renderDefinitionCards(definitionsForLanguage, italicTokens, direction) : null}
+          {definitionsForLanguage ? renderDefinitionCards(definitionsForLanguage, effectiveItalicTokens, direction) : null}
         </section>
       ) : null}
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.mainIdea[language]}</h4>
-        {renderPlainParagraphs(sections.mainIdea, italicTokens, direction)}
+        {renderPlainParagraphs(sections.mainIdea, effectiveItalicTokens, direction)}
       </section>
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.steps[language]}</h4>
-        {renderSteps(sections.steps, italicTokens, direction, stepPattern, config?.equationBlockPhrase)}
+        {renderSteps(sections.steps, effectiveItalicTokens, direction, stepPattern, config?.equationBlockPhrase)}
       </section>
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.simpleExample[language]}</h4>
-        {renderEquationAwareParagraphs(sections.simpleExample, italicTokens, direction, config?.equationBlockPhrase)}
+        {renderEquationAwareParagraphs(sections.simpleExample, effectiveItalicTokens, direction, config?.equationBlockPhrase)}
       </section>
 
       {sections.tableExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.tableExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.tableExplanation, italicTokens, direction)}
+          {renderPlainParagraphs(sections.tableExplanation, effectiveItalicTokens, direction)}
         </section>
       ) : null}
 
@@ -664,51 +692,51 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figureExplanation[language]}</h4>
           {figure ? <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} /> : null}
-          {renderPlainParagraphs(sections.figureExplanation, italicTokens, direction)}
+          {renderPlainParagraphs(sections.figureExplanation, effectiveItalicTokens, direction)}
         </section>
       ) : null}
 
       {sections.conversionFactorExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.conversionFactorExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.conversionFactorExplanation, italicTokens, direction)}
+          {renderPlainParagraphs(sections.conversionFactorExplanation, effectiveItalicTokens, direction)}
         </section>
       ) : null}
 
       {sections.definitionExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.definitionExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.definitionExplanation, italicTokens, direction)}
+          {renderPlainParagraphs(sections.definitionExplanation, effectiveItalicTokens, direction)}
         </section>
       ) : null}
 
       {sections.relationshipExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.relationshipExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.relationshipExplanation, italicTokens, direction)}
+          {renderPlainParagraphs(sections.relationshipExplanation, effectiveItalicTokens, direction)}
         </section>
       ) : null}
 
       <section className="structured-slide__section structured-slide__callout structured-slide__callout--misconception">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.misconception[language]}</h4>
-        {renderPlainParagraphs(sections.misconception, italicTokens, direction)}
+        {renderPlainParagraphs(sections.misconception, effectiveItalicTokens, direction)}
       </section>
 
       <section className="structured-slide__section structured-slide__callout structured-slide__callout--scientific-note">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.scientificNote[language]}</h4>
-        {renderPlainParagraphs(sections.scientificNote, italicTokens, direction)}
+        {renderPlainParagraphs(sections.scientificNote, effectiveItalicTokens, direction)}
       </section>
 
       {sections.keyConcept.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.keyConcept[language]}</h4>
-          {renderPlainParagraphs(sections.keyConcept, italicTokens, direction)}
+          {renderPlainParagraphs(sections.keyConcept, effectiveItalicTokens, direction)}
         </section>
       ) : null}
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.connection[language]}</h4>
-        {renderPlainParagraphs(sections.connection, italicTokens, direction)}
+        {renderPlainParagraphs(sections.connection, effectiveItalicTokens, direction)}
       </section>
     </div>
   );
