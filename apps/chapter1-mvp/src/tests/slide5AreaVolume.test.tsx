@@ -469,7 +469,7 @@ describe("13. Governance and publication flags remain unchanged", () => {
     // 12 at the time this record was added, now 15 with Slides 6-8 also
     // present (see src/tests/slide6AreaVolumeUnits.test.tsx,
     // slide7MetersToFeet.test.tsx, and slide8TimeMeasurement.test.tsx).
-    expect(topic.governance.recordCount).toBe(16);
+    expect(topic.governance.recordCount).toBe(17);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);

@@ -510,7 +510,7 @@ describe("18. Governance and publication flags remain correctly blocked", () => 
   });
 
   it("recordCount reflects the new record and Slides 1-6's governance flags are untouched", () => {
-    expect(topic.governance.recordCount).toBe(16);
+    expect(topic.governance.recordCount).toBe(17);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);

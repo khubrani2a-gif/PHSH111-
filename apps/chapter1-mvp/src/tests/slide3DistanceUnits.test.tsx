@@ -506,7 +506,7 @@ describe("13. Governance/publication flags remain unchanged", () => {
     // present (see src/tests/slide4DifferentUnits.test.tsx,
     // slide5AreaVolume.test.tsx, slide6AreaVolumeUnits.test.tsx,
     // slide7MetersToFeet.test.tsx, and slide8TimeMeasurement.test.tsx).
-    expect(topic.governance.recordCount).toBe(16);
+    expect(topic.governance.recordCount).toBe(17);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.blockingReason).not.toContain("missingVisual");
