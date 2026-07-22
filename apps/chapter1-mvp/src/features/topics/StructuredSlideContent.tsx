@@ -240,6 +240,32 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       ar: /^الخطوة\s+\d+\s+—[^\n]*/,
     },
   },
+  "ch01-t01-block-opening-11": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    relationshipExplanationMarker: { en: "Relationship Explanation:", ar: "شرح العلاقة:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: [
+      "f = N / Δt",
+      "f = 10 cycles / 2 s",
+      "f = 5 cycles/s",
+      "1 Hz = 1 cycle/s",
+      "f = 5 Hz",
+      "T = 1 / f",
+      "T = 1 / (5 Hz)",
+      "T = 0.2 s",
+      "f T = (5 s⁻¹)(0.2 s) = 1",
+      "f = 12 cycles / 3.0 s = 4.0 Hz",
+      "T = 1 / (4.0 Hz) = 0.25 s",
+    ],
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */

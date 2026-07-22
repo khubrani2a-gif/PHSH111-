@@ -78,8 +78,11 @@ const APPROVED = {
     // / "T = 1 / (10.0 Hz) = 0.100 s") to make significant figures and
     // denominator grouping explicit. rev-020 adds ch01-t01-block-opening-10
     // (Slide 10, how period/frequency/hertz relate), including the new
-    // generic relationshipExplanationMarker subsection slot.
-    sha256: "f64c07ed6792dfde3ebacc8583eaa51a4971b21029326f377bc6c2f4287e69ac",
+    // generic relationshipExplanationMarker subsection slot. rev-021 adds
+    // ch01-t01-block-opening-11 (Slide 11, stopwatch frequency/period
+    // worked problem), reusing the existing relationshipExplanationMarker
+    // slot with no new subsection type.
+    sha256: "41e04816fd2946dd7229af70f391b6667396f70177b0a4ef0c0f2abca50fa93a",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -128,7 +131,9 @@ const APPROVED = {
     // Example/Common Misconception significant-figures and
     // denominator-grouping corrections. rev-020 adds the Arabic side of
     // ch01-t01-block-opening-10 (Slide 10), matching English rev-020.
-    sha256: "f17da1f697b20aec2ea6f5ede9797808f45537e131d3ccdcf58b78a45a7e4411",
+    // rev-021 adds the Arabic side of ch01-t01-block-opening-11 (Slide 11),
+    // matching English rev-021.
+    sha256: "0c3a200509ecf1e6cfd1d0324fd251ba648a0a6b2d2c039d09bae878eb49e184",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

@@ -352,7 +352,7 @@ describe("12. Governance and publication flags remain unchanged", () => {
     // slide8TimeMeasurement.test.tsx) — no problem record exists for
     // ch01-t01, so this count is exactly the contentBlock +
     // instructorScript records.
-    expect(topic.governance.recordCount).toBe(17);
+    expect(topic.governance.recordCount).toBe(18);
   });
 });
 

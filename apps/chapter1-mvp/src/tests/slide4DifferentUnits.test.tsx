@@ -422,7 +422,7 @@ describe("13. Governance and publication flags remain unchanged", () => {
     // present (see src/tests/slide5AreaVolume.test.tsx,
     // slide6AreaVolumeUnits.test.tsx, slide7MetersToFeet.test.tsx, and
     // slide8TimeMeasurement.test.tsx).
-    expect(topic.governance.recordCount).toBe(17);
+    expect(topic.governance.recordCount).toBe(18);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);
