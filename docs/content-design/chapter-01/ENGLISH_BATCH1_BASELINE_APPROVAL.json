@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.16.0",
+  "baselineVersion": "1.17.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,7 +19,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "8a24da25b04c0acb686f68b9e7bdd5bbe8a67e94c25e169206b2b60fd94d90e3",
+      "sha256": "1ce2f20423118dbe112154c566a344d411ca9bfa0472cc5513c11c61d578116c",
       "schemaVersion": "2.3.0",
       "recordCount": 16
     },
@@ -368,6 +368,26 @@
           "apps/chapter1-mvp/src/content/equationRenderer.tsx — 'f' added to ch01-t01's equation-italics whitelist"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the uploaded source image contains no instructional figure, only two definition boxes, which were fully reconstructable as accessible semantic definition cards and were used directly. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-019",
+        "fromVersion": "1.16.0",
+        "toVersion": "1.17.0",
+        "revisedAt": "2026-07-22",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Project-owner scientific-precision review, strictly limited to Slide 9's (ch01-t01-block-opening-9) Simple Example and Common Misconception within localizedContent.en.text in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. The verbatim original English quotation, the two reconstructed definition cards (definitionsEn), the Main Idea, all five numbered steps, the Definition Explanation, the Scientific Note, the Key Concept, and the Connection to the Next Slide are unchanged. No record in ch01-t01 other than Slide 9, and no record in ch01-t04, was touched.",
+        "whatChanged": "(1) The Simple Example's final two equations were revised to make significant figures and denominator grouping explicit: 'f = 1 / 0.25 s = 4 s⁻¹' was replaced with 'f = 1 / (0.25 s) = 4.0 s⁻¹' (parenthesizing the measured denominator and expressing the result to the same two significant figures as the given 0.25 s), and 'f = 4 Hz' was replaced with 'f = 4.0 Hz'. The closing sentence was revised from 'The object completes four cycles every second.' to 'The object completes 4.0 cycles every second. The result has two significant figures, matching the given period 0.25 s.' (2) The Common Misconception's worked correction was revised for the same reason: 'f = 10 Hz' was replaced with 'f = 10.0 Hz', and 'T = 1 / 10 Hz = 0.10 s' was replaced with 'T = 1 / (10.0 Hz) = 0.100 s' (three significant figures, matching the now-explicit 10.0 Hz). The general reciprocal relationships 'f = 1 / T' and 'T = 1 / f' (Step 4 and the Key Concept) are unchanged. src/features/topics/StructuredSlideContent.tsx's ch01-t01-block-opening-9 config entry's equationBlockPhrase fourth and fifth strings were updated from 'f = 1 / 0.25 s = 4 s⁻¹'/'f = 4 Hz' to 'f = 1 / (0.25 s) = 4.0 s⁻¹'/'f = 4.0 Hz' to match, so the Simple Example still renders with the same distinct equation-block styling.",
+        "whatWasNotChanged": "The verbatim quoted original English slide text ('1.1 Fundamental Physical Quantities: Time... Period:...Frequency:...'), the two reconstructed definitionsEn cards (Period, Frequency), the Main Idea, all five numbered steps (including Step 4's general 'f = 1 / T' and 'T = 1 / f' equations), the Definition Explanation, the Scientific Note ('1 Hz = 1 s⁻¹' and the Hz/s caveat), the Key Concept, and the Connection to the Next Slide are unchanged. Slides 1-8 are entirely untouched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Project-owner scientific-precision review of Slide 9 (rev-018) found that the Simple Example's result ('4 s⁻¹'/'4 Hz') did not reflect the two significant figures carried by the given period (0.25 s), and that the bare 'f = 1 / 0.25 s' denominator was ambiguous without parentheses around the measured quantity. The Common Misconception's worked correction had the same issue ('10 Hz' presented without an explicit significant-figures convention, and '0.10 s' not clearly derived from a parenthesized '10.0 Hz'). This revision makes the significant figures and denominator grouping explicit in both places, without altering the general reciprocal relationships or any other section.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening-9.localizedContent.en.text revised (Simple Example, Common Misconception)",
+          "apps/chapter1-mvp/src/features/topics/StructuredSlideContent.tsx — ch01-t01-block-opening-9's equationBlockPhrase fourth/fifth entries updated to match the revised Simple Example text",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-019",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-9 entry's checksums updated",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — englishT01/arabicT01 pinned sha256 updated",
+          "apps/chapter1-mvp/src/tests/slide9PeriodFrequency.test.tsx — exact-text assertions updated to match the revised wording"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-9's blocking.blockingStatus remains 'blocked' (blockingReason still translationPending, scientificReviewPending, other — no missingVisual, unchanged from rev-018), unaffected by this wording-only revision. Slides 1-8's governance fields are entirely unchanged."
       }
     ]
   },

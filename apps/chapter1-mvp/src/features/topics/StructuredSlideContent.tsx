@@ -205,8 +205,8 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
       "f = 1 / T",
       "T = 1 / f",
       "T = 0.25 s",
-      "f = 1 / 0.25 s = 4 s⁻¹",
-      "f = 4 Hz",
+      "f = 1 / (0.25 s) = 4.0 s⁻¹",
+      "f = 4.0 Hz",
     ],
     stepPattern: {
       en: /^Step\s+\d+\s+—[^\n]*/,

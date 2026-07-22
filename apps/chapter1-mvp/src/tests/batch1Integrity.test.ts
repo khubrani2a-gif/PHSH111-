@@ -71,8 +71,13 @@ const APPROVED = {
     // figures inherited from the given 1.5 h. rev-018 adds
     // ch01-t01-block-opening-9 (Slide 9, period vs. frequency), including
     // the new generic definitionsEn field reconstructing the source's two
-    // definition boxes.
-    sha256: "8a24da25b04c0acb686f68b9e7bdd5bbe8a67e94c25e169206b2b60fd94d90e3",
+    // definition boxes. rev-019 is a project-owner scientific-precision
+    // review revising Slide 9's Simple Example ("f = 1 / 0.25 s = 4 s⁻¹" /
+    // "f = 4 Hz" -> "f = 1 / (0.25 s) = 4.0 s⁻¹" / "f = 4.0 Hz") and Common
+    // Misconception ("f = 10 Hz" / "T = 1 / 10 Hz = 0.10 s" -> "f = 10.0 Hz"
+    // / "T = 1 / (10.0 Hz) = 0.100 s") to make significant figures and
+    // denominator grouping explicit.
+    sha256: "1ce2f20423118dbe112154c566a344d411ca9bfa0472cc5513c11c61d578116c",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -117,8 +122,10 @@ const APPROVED = {
     // significant-figures correction (5.4 × 10³ s). rev-018 adds the
     // Arabic side of ch01-t01-block-opening-9 (Slide 9), matching English
     // rev-018, including definitionsAr for the two reconstructed
-    // definition cards.
-    sha256: "68a3ff452b177810f4ae7237d552375a80293fc828cb19afed9bdf19af9c3da0",
+    // definition cards. rev-019 matches English rev-019's Simple
+    // Example/Common Misconception significant-figures and
+    // denominator-grouping corrections.
+    sha256: "f430e356d25b8a5ff67af759c2a85a8a948fea7c3c5c90167d89413dde75fc72",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

@@ -378,13 +378,16 @@ describe("12. 'f = 1 / T' and 'T = 1 / f' render as equation blocks", () => {
   });
 });
 
-describe("13. The Simple Example produces 'f = 4 Hz'", () => {
-  it("English Simple Example states the question and all four worked equations", () => {
+describe("13. The Simple Example produces 'f = 4.0 Hz' with explicit significant figures", () => {
+  it("English Simple Example states the question and all four worked equations, with a parenthesized measured denominator", () => {
     const en = slide9.text.en ?? "";
     expect(en).toContain("Simple Example: A vibrating object completes one cycle every 0.25 s.");
     expect(en).toContain("T = 0.25 s");
-    expect(en).toContain("f = 1 / 0.25 s = 4 s⁻¹");
-    expect(en).toContain("f = 4 Hz");
+    expect(en).toContain("f = 1 / (0.25 s) = 4.0 s⁻¹");
+    expect(en).toContain("f = 4.0 Hz");
+    expect(en).toContain(
+      "The object completes 4.0 cycles every second. The result has two significant figures, matching the given period 0.25 s.",
+    );
     expect(1 / 0.25).toBe(4);
   });
 
@@ -394,30 +397,33 @@ describe("13. The Simple Example produces 'f = 4 Hz'", () => {
       getSlidePanel(container, 9)!.querySelectorAll(".structured-slide__equation-block"),
     ).map((el) => el.textContent);
     expect(blocks).toContain("T = 0.25 s");
-    expect(blocks).toContain("f = 1 / 0.25 s = 4 s⁻¹");
-    expect(blocks).toContain("f = 4 Hz");
+    expect(blocks).toContain("f = 1 / (0.25 s) = 4.0 s⁻¹");
+    expect(blocks).toContain("f = 4.0 Hz");
   });
 
   it("the Arabic Simple Example preserves the same equations, untranslated", () => {
     const ar = slide9.text.ar ?? "";
     expect(ar).toContain("T = 0.25 s");
-    expect(ar).toContain("f = 1 / 0.25 s = 4 s⁻¹");
-    expect(ar).toContain("f = 4 Hz");
+    expect(ar).toContain("f = 1 / (0.25 s) = 4.0 s⁻¹");
+    expect(ar).toContain("f = 4.0 Hz");
+    expect(ar).toContain(
+      "يكمل الجسم 4.0 دورات في كل ثانية. ويحتوي الناتج على رقمين معنويين بما يتفق مع الزمن الدوري المعطى 0.25 s.",
+    );
   });
 });
 
-describe("14. The misconception example produces 'T = 0.10 s'", () => {
-  it("the Common Misconception uses f = 10 Hz and correctly derives T = 1 / 10 Hz = 0.10 s", () => {
+describe("14. The misconception example produces 'T = 0.100 s' with explicit significant figures", () => {
+  it("the Common Misconception uses f = 10.0 Hz and correctly derives T = 1 / (10.0 Hz) = 0.100 s", () => {
     const en = slide9.text.en ?? "";
-    expect(en).toContain("f = 10 Hz");
-    expect(en).toContain("T = 1 / 10 Hz = 0.10 s");
+    expect(en).toContain("f = 10.0 Hz");
+    expect(en).toContain("T = 1 / (10.0 Hz) = 0.100 s");
     expect(1 / 10).toBe(0.1);
   });
 
   it("the Arabic misconception preserves the same equations, untranslated", () => {
     const ar = slide9.text.ar ?? "";
-    expect(ar).toContain("f = 10 Hz");
-    expect(ar).toContain("T = 1 / 10 Hz = 0.10 s");
+    expect(ar).toContain("f = 10.0 Hz");
+    expect(ar).toContain("T = 1 / (10.0 Hz) = 0.100 s");
   });
 });
 
