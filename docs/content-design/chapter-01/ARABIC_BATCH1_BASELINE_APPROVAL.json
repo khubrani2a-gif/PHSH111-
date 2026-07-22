@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.17",
+  "baselineVersion": "1.0.19",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,9 +20,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "855fcee64c2f26949fe21573eb7fd4d9d3d210bf95fd2d60046107837964693e",
+      "sha256": "f430e356d25b8a5ff67af759c2a85a8a948fea7c3c5c90167d89413dde75fc72",
       "schemaVersion": "2.3.0",
-      "recordCount": 15
+      "recordCount": 16
     },
     {
       "topicId": "ch01-t04",
@@ -385,6 +385,41 @@
           "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 pinned sha256 updated"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-8 remains 'draft-ai-generated-unreviewed', unchanged by this revision — this is a project-owner scientific-precision correction pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record's status. blocking.blockingStatus remains 'blocked'. Slides 1-7's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-018",
+        "fromVersion": "1.0.17",
+        "toVersion": "1.0.18",
+        "revisedAt": "2026-07-22",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-017 -> rev-018 (1.15.0 -> 1.16.0): adds the Arabic side of the new ninth slide, ch01-t01-block-opening-9 (blockType \"slide\", slideNumber 9, slideTitleAr \"ما الفرق بين الزمن الدوري والتردد؟\"), as the ninth record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic translation of Slide 9's full structure — the source slide's Arabic prose translation (preserving the definition wording verbatim in both the quoted Original Arabic text, which uses the source's own superscript 's⁻¹' notation exactly as given, distinct from the English original quote's plain 's−1'), Main Idea, five numbered steps (preserving the untranslated equations 'f = 1 / T' and 'T = 1 / f' in Step 4, and '1 Hz = 1 s⁻¹.' in Step 3), Simple Example (preserving the same untranslated equations 'T = 0.25 s', 'f = 1 / T', 'f = 1 / 0.25 s = 4 s⁻¹', and 'f = 4 Hz'), the new Definition Explanation subsection, Common Misconception (preserving 'f = 10 Hz' and 'T = 1 / 10 Hz = 0.10 s'), Scientific Note (preserving '1 Hz = 1 s⁻¹' and the added sentence on why frequency should not be written as Hz/s), Key Concept (preserving 'f = 1 / T و T = 1 / f'), and Connection to the Next Slide — plus definitionsAr (the two reconstructed definition cards' terms and definitions translated into Arabic, 'الزمن الدوري'/'التردد', with definitionsEn verified structurally byte-identical to the English file's definitionsEn by src/content/batch1Merge.ts).",
+        "whatWasNotChanged": "No .ar text on Slides 1-8 was touched. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-018): project-owner request for a ninth slide distinguishing period and frequency, translated into Arabic using the project's established terminology and conventions, with all numerical notation and equations left untranslated per the project's existing convention for embedded Latin/notation fragments.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-9 appended at index 8",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-018",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-9"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-8's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-019",
+        "fromVersion": "1.0.18",
+        "toVersion": "1.0.19",
+        "revisedAt": "2026-07-22",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-018 -> rev-019 (1.16.0 -> 1.17.0): a project-owner scientific-precision review, strictly limited to Slide 9's Simple Example and Common Misconception within ch01-t01-block-opening-9's localizedContent.ar.text and arabic.canonicalArabicTranslation.text in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. The record's localizedContent.en.text was also synced to match the corrected English file byte-for-byte (a structural requirement verified by src/content/batch1Merge.ts, not a new Arabic-side translation decision). No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "The Simple Example's final two equations were revised to match the English correction, untranslated: 'f = 1 / 0.25 s = 4 s⁻¹' was replaced with 'f = 1 / (0.25 s) = 4.0 s⁻¹', and 'f = 4 Hz' was replaced with 'f = 4.0 Hz'. The closing Arabic sentence was revised from 'يكمل الجسم أربع دورات كل ثانية.' to 'يكمل الجسم 4.0 دورات في كل ثانية. ويحتوي الناتج على رقمين معنويين بما يتفق مع الزمن الدوري المعطى 0.25 s.' The Common Misconception's worked correction was revised to match: 'f = 10 Hz' was replaced with 'f = 10.0 Hz', and 'T = 1 / 10 Hz = 0.10 s' was replaced with 'T = 1 / (10.0 Hz) = 0.100 s', within the existing Arabic misconception sentence.",
+        "whatWasNotChanged": "No .ar text on Slides 1-8 was touched. The verbatim original Arabic quotation, the two reconstructed definitionsAr cards, the Main Idea, all five numbered steps, the Definition Explanation, the Scientific Note, the Key Concept, and the Connection to the Next Slide are unchanged. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-019): project-owner scientific-precision review found the same significant-figures and denominator-grouping issue in the Arabic translation as in the English text, and corrected it to match.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening-9.localizedContent.ar.text and arabic.canonicalArabicTranslation.text revised (Simple Example, Common Misconception); localizedContent.en.text synced to the corrected English file",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-019",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-9 entry's checksums updated",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 pinned sha256 updated"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on ch01-t01-block-opening-9 remains 'draft-ai-generated-unreviewed', unchanged by this revision — this is a project-owner scientific-precision correction pass on Claude's translated wording, not the independent third-party linguistic review the rest of this baseline's Arabic content went through, and does not elevate this record's status. blocking.blockingStatus remains 'blocked'. Slides 1-8's Arabic governance fields are entirely unchanged."
       }
     ]
   },

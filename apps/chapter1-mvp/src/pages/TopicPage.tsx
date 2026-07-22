@@ -97,6 +97,7 @@ export function TopicPage() {
                 text={slide.text}
                 table={slide.table}
                 figure={slide.figure}
+                definitions={slide.definitions}
                 italicTokens={proseTokens}
               />
             ),

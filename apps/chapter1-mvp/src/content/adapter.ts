@@ -113,6 +113,13 @@ function normalizeSlides(file: PilotTopicFile): NormalizedSlide[] {
               alt: { en: block.figureAltEn ?? null, ar: block.figureAltAr ?? null },
             }
           : undefined,
+      definitions:
+        block.definitionsEn || block.definitionsAr
+          ? {
+              en: block.definitionsEn ?? null,
+              ar: block.definitionsAr ?? null,
+            }
+          : undefined,
       blocking: block.blocking,
     }))
     .sort((a, b) => a.slideNumber - b.slideNumber);

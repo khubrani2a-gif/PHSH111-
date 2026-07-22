@@ -68,8 +68,16 @@ const APPROVED = {
     // scientific-precision review revising Slide 8's Simple Example final
     // equivalence from "1.5 h = 90 min = 5400 s" to
     // "1.5 h = 90 min = 5.4 × 10³ s", making explicit the two significant
-    // figures inherited from the given 1.5 h.
-    sha256: "e1e10d6ec237f7ed09eef79ff2a9718c5b21c5f5957c2addda3124f1894dccdc",
+    // figures inherited from the given 1.5 h. rev-018 adds
+    // ch01-t01-block-opening-9 (Slide 9, period vs. frequency), including
+    // the new generic definitionsEn field reconstructing the source's two
+    // definition boxes. rev-019 is a project-owner scientific-precision
+    // review revising Slide 9's Simple Example ("f = 1 / 0.25 s = 4 s⁻¹" /
+    // "f = 4 Hz" -> "f = 1 / (0.25 s) = 4.0 s⁻¹" / "f = 4.0 Hz") and Common
+    // Misconception ("f = 10 Hz" / "T = 1 / 10 Hz = 0.10 s" -> "f = 10.0 Hz"
+    // / "T = 1 / (10.0 Hz) = 0.100 s") to make significant figures and
+    // denominator grouping explicit.
+    sha256: "1ce2f20423118dbe112154c566a344d411ca9bfa0472cc5513c11c61d578116c",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -111,8 +119,13 @@ const APPROVED = {
     // (Step 5, Simple Example, Conversion-Factor Explanation). rev-016
     // adds the Arabic side of ch01-t01-block-opening-8 (Slide 8), matching
     // English rev-016. rev-017 matches English rev-017's Simple Example
-    // significant-figures correction (5.4 × 10³ s).
-    sha256: "855fcee64c2f26949fe21573eb7fd4d9d3d210bf95fd2d60046107837964693e",
+    // significant-figures correction (5.4 × 10³ s). rev-018 adds the
+    // Arabic side of ch01-t01-block-opening-9 (Slide 9), matching English
+    // rev-018, including definitionsAr for the two reconstructed
+    // definition cards. rev-019 matches English rev-019's Simple
+    // Example/Common Misconception significant-figures and
+    // denominator-grouping corrections.
+    sha256: "f430e356d25b8a5ff67af759c2a85a8a948fea7c3c5c90167d89413dde75fc72",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

@@ -773,6 +773,37 @@ button:focus-visible {
   font-size: 0.95rem;
 }
 
+/* A slide's optional reconstructed term/definition pairs (see
+   StructuredSlideContent's renderDefinitionCards): one bordered card per
+   <dl>, laid out start-aligned so RTL Arabic mirrors the LTR English
+   layout without any language-specific rule. */
+.structured-slide__definition-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.structured-slide__definition-card {
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid var(--color-focus);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
+
+.structured-slide__definition-term {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  text-align: start;
+}
+
+.structured-slide__definition-body {
+  margin: 0;
+  margin-inline-start: 0;
+  text-align: start;
+}
+
 /* A slide's optional embedded raster figure (see SlideFigure.tsx) — same
    accessible-dialog visual language as .visual-viewer's SVG viewer above,
    sized for a photo rather than a diagram. */

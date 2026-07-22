@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.15.0",
+  "baselineVersion": "1.17.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,9 +19,9 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "e1e10d6ec237f7ed09eef79ff2a9718c5b21c5f5957c2addda3124f1894dccdc",
+      "sha256": "1ce2f20423118dbe112154c566a344d411ca9bfa0472cc5513c11c61d578116c",
       "schemaVersion": "2.3.0",
-      "recordCount": 15
+      "recordCount": 16
     },
     {
       "topicId": "ch01-t04",
@@ -341,6 +341,53 @@
           "apps/chapter1-mvp/src/tests/slide8TimeMeasurement.test.tsx — exact-text assertions updated to match the revised wording"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-8's blocking.blockingStatus remains 'blocked' (blockingReason still translationPending, scientificReviewPending, other — no missingVisual, unchanged from rev-016), unaffected by this wording-only revision. Slides 1-7's governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-018",
+        "fromVersion": "1.15.0",
+        "toVersion": "1.16.0",
+        "revisedAt": "2026-07-22",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening-9 (blockType \"slide\", slideNumber 9), as the ninth record in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json (immediately after ch01-t01-block-opening-8). No existing record was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "A ninth opening/introductory content block was added as a sibling of Slides 1-8, rendered as 'Slide 9' via the existing generic topic.slides[] collection and the single-open accordion (src/features/topics/Slides.tsx) — no new ContentBlockType, no new NormalizedTopic field, no Slide-9-specific adapter branch, TopicPage conditional, or per-slide accordion JSX was added. It presents the distinction between period and frequency, built around a project-owner-uploaded source slide image (/mnt/data/707A6E6A-0F30-4D77-8DC3-B0C3385D32B8.png, two definition boxes labeled Period and Frequency) whose exact original English prose ('1.1 Fundamental Physical Quantities: Time... Period: The time for one complete cycle of a process that repeats... Frequency: The number of cycles of a periodic process that occur per unit time...') is preserved verbatim within the new block's text, including its plain (non-superscript) 's−1' notation exactly as given. The uploaded image contains no instructional figure requiring raster display, so no figure asset was created or referenced and blocking.blockingReason does NOT include 'missingVisual'. Instead, the two source definition boxes are reconstructed as accessible semantic definition cards via two new generic, blockType-independent fields on ContentBlockRecord — definitionsEn/definitionsAr (src/types/pilotSchema.ts's new DefinitionEntry shape, mirroring tableEn/tableAr's role for tabular source content) — wired through a matching NormalizedSlide.definitions field (src/types/normalized.ts), src/content/adapter.ts's normalizeSlides(), a byte-identical structural-equality check on definitionsEn in src/content/batch1Merge.ts (mirroring tableEn), a new isDefinitionEntryArray() type guard in src/content/validate.ts, and a new renderDefinitionCards() function in src/features/topics/StructuredSlideContent.tsx that renders one <dl> per term with a single <dt>/<dd> pair — never the source screenshot, and never reproducing the source image's decorative vertical 'DEFINI' lettering as meaningful content. A new optional definitionExplanationMarker was added to StructuredSlideConfig as a fourth mutually-exclusive sibling of the existing tableExplanationMarker/figureExplanationMarker/conversionFactorExplanationMarker slot, for slides built around reconstructed definitions rather than a table/figure/conversion-factor — a generic parsing/rendering addition, not slide-9-specific logic. The Main Idea, the five numbered steps (a cycle as one complete repetition; period T measuring time per cycle in seconds; frequency f measuring cycles per unit time in hertz, including '1 Hz = 1 s⁻¹'; the reciprocal relationship rendered as equation blocks 'f = 1 / T' and 'T = 1 / f'; and higher frequency meaning shorter period), the Simple Example (a vibrating object completing one cycle every 0.25 s, worked through 'T = 0.25 s', 'f = 1 / T', 'f = 1 / 0.25 s = 4 s⁻¹', and 'f = 4 Hz'), the new Definition Explanation subsection, the Common Misconception (illustrating with 'f = 10 Hz' and 'T = 1 / 10 Hz = 0.10 s'), the Scientific Note (documenting '1 Hz = 1 s⁻¹' as a derived SI unit and noting that frequency should not be written as Hz/s), the Key Concept ('f = 1 / T and T = 1 / f'), and the Connection to the Next Slide were authored/translated by Claude from the project owner's requested structure and exact required wording, not copied from any other source. Lowercase 'f' was added to ch01-t01's per-topic equation-italics whitelist in src/content/equationRenderer.tsx (both the equation-only and prose-safe maps) after confirming zero prior standalone-word occurrences anywhere in the topic's approved baseline content, following the same verification precedent already used for 'V' (Slide 6) and 'l'/'w' (Slide 3); uppercase 'T' was already present (added for Slide 1's v = d / t work, reused here for period).",
+        "whatWasNotChanged": "No instructional prose, equation, table, figure, definition, misconception, or review question in any of ch01-t01's fifteen pre-existing records (including Slides 1-8, entirely byte-for-byte unchanged) was reworded, shortened, reordered relative to one another, or removed. No existing visual asset (ch01-t01-visual-001.svg, the Slide 4 figure, the Slide 5 SVG, Slide 6's or Slide 8's reconstructed tables) was touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Requested by the project owner as a ninth slide for the Fundamental Quantities topic, extending the reusable slide collection to a ninth record and introducing one new generic, reusable definitions mechanism (parallel to the existing table/figure mechanisms) plus its own fourth mutually-exclusive explanation-subsection slot, for slides built around reconstructed term/definition pairs rather than a table, figure, or conversion factor.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-9 appended at index 8",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-018",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-9",
+          "apps/chapter1-mvp/src/types/pilotSchema.ts — new DefinitionEntry interface and definitionsEn/definitionsAr fields on ContentBlockRecord",
+          "apps/chapter1-mvp/src/types/normalized.ts — new DefinitionEntry interface and definitions field on NormalizedSlide",
+          "apps/chapter1-mvp/src/content/adapter.ts — normalizeSlides() wires the new definitions field",
+          "apps/chapter1-mvp/src/content/batch1Merge.ts — structural-equality check for definitionsEn, merge-copy for definitionsAr",
+          "apps/chapter1-mvp/src/content/validate.ts — new isDefinitionEntryArray() type guard and validation",
+          "apps/chapter1-mvp/src/features/topics/StructuredSlideContent.tsx — new definitionExplanationMarker slot and renderDefinitionCards()",
+          "apps/chapter1-mvp/src/pages/TopicPage.tsx — definitions prop wired to StructuredSlideContent",
+          "apps/chapter1-mvp/src/styles/global.css — new .structured-slide__definition-cards/-card/-term/-body rules",
+          "apps/chapter1-mvp/src/content/slideShortTitles.ts — new short-title entry for ch01-t01-block-opening-9",
+          "apps/chapter1-mvp/src/content/equationRenderer.tsx — 'f' added to ch01-t01's equation-italics whitelist"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the uploaded source image contains no instructional figure, only two definition boxes, which were fully reconstructable as accessible semantic definition cards and were used directly. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-019",
+        "fromVersion": "1.16.0",
+        "toVersion": "1.17.0",
+        "revisedAt": "2026-07-22",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Project-owner scientific-precision review, strictly limited to Slide 9's (ch01-t01-block-opening-9) Simple Example and Common Misconception within localizedContent.en.text in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. The verbatim original English quotation, the two reconstructed definition cards (definitionsEn), the Main Idea, all five numbered steps, the Definition Explanation, the Scientific Note, the Key Concept, and the Connection to the Next Slide are unchanged. No record in ch01-t01 other than Slide 9, and no record in ch01-t04, was touched.",
+        "whatChanged": "(1) The Simple Example's final two equations were revised to make significant figures and denominator grouping explicit: 'f = 1 / 0.25 s = 4 s⁻¹' was replaced with 'f = 1 / (0.25 s) = 4.0 s⁻¹' (parenthesizing the measured denominator and expressing the result to the same two significant figures as the given 0.25 s), and 'f = 4 Hz' was replaced with 'f = 4.0 Hz'. The closing sentence was revised from 'The object completes four cycles every second.' to 'The object completes 4.0 cycles every second. The result has two significant figures, matching the given period 0.25 s.' (2) The Common Misconception's worked correction was revised for the same reason: 'f = 10 Hz' was replaced with 'f = 10.0 Hz', and 'T = 1 / 10 Hz = 0.10 s' was replaced with 'T = 1 / (10.0 Hz) = 0.100 s' (three significant figures, matching the now-explicit 10.0 Hz). The general reciprocal relationships 'f = 1 / T' and 'T = 1 / f' (Step 4 and the Key Concept) are unchanged. src/features/topics/StructuredSlideContent.tsx's ch01-t01-block-opening-9 config entry's equationBlockPhrase fourth and fifth strings were updated from 'f = 1 / 0.25 s = 4 s⁻¹'/'f = 4 Hz' to 'f = 1 / (0.25 s) = 4.0 s⁻¹'/'f = 4.0 Hz' to match, so the Simple Example still renders with the same distinct equation-block styling.",
+        "whatWasNotChanged": "The verbatim quoted original English slide text ('1.1 Fundamental Physical Quantities: Time... Period:...Frequency:...'), the two reconstructed definitionsEn cards (Period, Frequency), the Main Idea, all five numbered steps (including Step 4's general 'f = 1 / T' and 'T = 1 / f' equations), the Definition Explanation, the Scientific Note ('1 Hz = 1 s⁻¹' and the Hz/s caveat), the Key Concept, and the Connection to the Next Slide are unchanged. Slides 1-8 are entirely untouched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed.",
+        "rationale": "Project-owner scientific-precision review of Slide 9 (rev-018) found that the Simple Example's result ('4 s⁻¹'/'4 Hz') did not reflect the two significant figures carried by the given period (0.25 s), and that the bare 'f = 1 / 0.25 s' denominator was ambiguous without parentheses around the measured quantity. The Common Misconception's worked correction had the same issue ('10 Hz' presented without an explicit significant-figures convention, and '0.10 s' not clearly derived from a parenthesized '10.0 Hz'). This revision makes the significant figures and denominator grouping explicit in both places, without altering the general reciprocal relationships or any other section.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening-9.localizedContent.en.text revised (Simple Example, Common Misconception)",
+          "apps/chapter1-mvp/src/features/topics/StructuredSlideContent.tsx — ch01-t01-block-opening-9's equationBlockPhrase fourth/fifth entries updated to match the revised Simple Example text",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-019",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-9 entry's checksums updated",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — englishT01/arabicT01 pinned sha256 updated",
+          "apps/chapter1-mvp/src/tests/slide9PeriodFrequency.test.tsx — exact-text assertions updated to match the revised wording"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-9's blocking.blockingStatus remains 'blocked' (blockingReason still translationPending, scientificReviewPending, other — no missingVisual, unchanged from rev-018), unaffected by this wording-only revision. Slides 1-8's governance fields are entirely unchanged."
       }
     ]
   },
