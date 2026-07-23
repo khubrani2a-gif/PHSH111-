@@ -499,7 +499,7 @@ describe("18. Governance remains blocked and publication unauthorized", () => {
   });
 
   it("recordCount reflects the new record and Slides 1-8's governance flags are untouched", () => {
-    expect(topic.governance.recordCount).toBe(18);
+    expect(topic.governance.recordCount).toBe(19);
     expect(slide1.blocking.studentFacingAllowed).toBe(false);
     expect(slide2.blocking.studentFacingAllowed).toBe(false);
     expect(slide3.blocking.studentFacingAllowed).toBe(false);

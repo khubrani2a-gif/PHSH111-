@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.20.0",
+  "baselineVersion": "1.21.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,9 +19,9 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "faf25b27033f62c09eb75541a34cc0b35f430149696b6d4a91b4758bd24baeb3",
+      "sha256": "23b620937bb2ed65fe8caaff9b6d70e14cc4ba6f4260e94c1a16931d5b8c34fd",
       "schemaVersion": "2.3.0",
-      "recordCount": 18
+      "recordCount": 19
     },
     {
       "topicId": "ch01-t04",
@@ -444,6 +444,25 @@
           "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — englishT01/arabicT01 expected sha256 constants refreshed to match"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false; ch01-t01-block-opening-11's blocking.blockingStatus remains 'blocked' (blockingReason still includes 'scientificReviewPending'), unchanged by this documentation-only correction."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-023",
+        "fromVersion": "1.20.0",
+        "toVersion": "1.21.0",
+        "revisedAt": "2026-07-23",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds exactly one new contentBlock record, ch01-t01-block-opening-12 (blockType \"slide\", slideNumber 12), as the twelfth record in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json (immediately after ch01-t01-block-opening-11). No existing record was changed, reordered relative to each other, or removed. No record in ch01-t04 was touched.",
+        "whatChanged": "A twelfth opening/introductory content block was added as a sibling of Slides 1-11, rendered as 'Slide 12' via the existing generic topic.slides[] collection and the single-open accordion (src/features/topics/Slides.tsx) — no new ContentBlockType, no new NormalizedTopic field, no Slide-12-specific adapter branch, TopicPage conditional, or per-slide accordion JSX was added. It presents mass as a measure of inertia, built around a project-owner-uploaded source slide image (/mnt/data/4185AF1B-7E9B-4616-AA8C-AB745EEBE85D.png, a table titled 'Physical Quantity / Metric Units / English Units' listing Mass (m) with kilogram/gram as metric units and slug as the English unit) whose exact original English prose ('1.1 Fundamental Physical Quantities: Mass', 'Mass is also a measure of what we sometimes refer to in everyday speech as inertia...', 'Mass is not in common use in the English system; note the unfamiliar unit, the slug.') is preserved verbatim within the new block's Original English subsection, with no silently added pound/pound-mass/pound-force/conversion-factor/SI wording inside that verbatim subsection. The source table (Mass (m) | kilogram (kg) | slug, with a second row of gram (g) only) is reconstructed as a real semantic <table> reusing the existing generic tableEn/tableExplanationMarker mechanism (the same one Slides 3/6/8 already use) rather than rendering the source screenshot, and no visual asset is created or referenced so blocking.blockingReason does not include 'missingVisual'. The Main Idea, five numbered steps (mass as inertia; inertia resisting velocity change; a = F_net / m; 1 kg = 1000 g; the slug), Simple Example (a 20 kg vs. 80 kg shopping-cart comparison under a = F_net / m), Table Explanation, Common Misconception (mass vs. weight, W = m g), Scientific Note (F_net = m a, m = F_net / a, 1 lbf = 1 slug × 1 ft/s²), Key Concept, and Connection to the Next Slide were authored/translated by Claude from the project owner's requested structure and exact required wording, not copied from any other source. Two generic, reusable extensions were added to src/features/topics/StructuredSlideContent.tsx's StructuredSlideConfig to correctly typeset this slide's variables without any topic-wide whitelist change or per-slide JSX: (1) equationPhraseItalicTokens, which italicizes a bare letter ONLY within one exact, verified equation substring (used here for 'a', which collides with the English indefinite article throughout this slide's own prose, and 'g', which collides with the gram unit symbol elsewhere in this same slide); (2) equationAwareSections, an opt-in list (defaulting to none, unset for every other existing slide) that gives Common Misconception and Scientific Note the same equation-block styling Steps/Simple Example already always receive, needed here because those two subsections state their own equations (W = m g; F_net = m a, m = F_net / a, 1 lbf = 1 slug × 1 ft/s²). Both extensions were verified to change nothing about any other slide's rendering: the full 749-test suite passed unchanged immediately after the architecture change, before this slide's own content was added. 'm' (mass), 'F' (fused only as 'F_net'), and 'W' (weight) are italicized via the existing blockId-scoped additionalItalicTokens mechanism (the same one Slide 11 used for 'N'), verified collision-free — in particular 'm' does not collide with a meters-unit abbreviation anywhere in Slide 12, unlike ch01-t04's excluded 'm'.",
+        "whatWasNotChanged": "No instructional prose, equation, table, figure, definition, misconception, or review question in any of ch01-t01's eighteen pre-existing records (including Slides 1-11, entirely byte-for-byte unchanged) was reworded, shortened, reordered relative to one another, or removed. No existing visual asset was touched. No record in ch01-t04, and no record in any of the four originally-piloted topics, was changed. EQUATION_ITALIC_TOKENS_BY_TOPIC and EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC in src/content/equationRenderer.tsx were not touched for ch01-t01 (remain exactly ['v','d','t','L','T','M','l','w','V','f']) — none of 'm'/'F'/'W'/'a'/'g' was added to either topic-wide whitelist.",
+        "rationale": "Requested by the project owner as a twelfth slide for the Fundamental Quantities topic, extending the reusable slide collection to a twelfth record and proving the two new generic StructuredSlideConfig extensions (equationPhraseItalicTokens, equationAwareSections) require no per-slide-number code while correctly resolving a genuine bare-letter ambiguity (the English article 'a' and the gram unit 'g') that the existing blockId-wide additionalItalicTokens mechanism alone could not safely resolve.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-12 appended at index 11",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-022",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-12",
+          "apps/chapter1-mvp/src/features/topics/StructuredSlideContent.tsx — new ch01-t01-block-opening-12 config entry, plus the new generic equationPhraseItalicTokens/equationAwareSections StructuredSlideConfig fields and their rendering support (opt-in only; verified to not change any other slide's output)",
+          "apps/chapter1-mvp/src/content/slideShortTitles.ts — new short-title entry for ch01-t01-block-opening-12"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the uploaded source image contains explanatory text and a table but no instructional figure, so none is required or missing, and the table is reconstructed semantically rather than rendered as a screenshot. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
       }
     ]
   },

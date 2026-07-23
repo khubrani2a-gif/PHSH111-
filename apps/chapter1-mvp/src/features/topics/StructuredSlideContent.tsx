@@ -84,6 +84,50 @@ export interface StructuredSlideConfig {
    * natural-language prose.
    */
   additionalItalicTokens?: readonly string[];
+  /**
+   * Extra italic tokens applied ONLY within one exact, verified equation
+   * substring (a key from this map, matched the same way as
+   * equationBlockPhrase — via string.includes, never a generic regex),
+   * layered on top of additionalItalicTokens/italicTokens for just that
+   * substring's own render call. Use this for a bare letter that is a
+   * genuine physics variable inside one specific equation but is NOT safe
+   * to italicize as a blockId-wide token (additionalItalicTokens) because
+   * it collides with an English word or a unit symbol elsewhere in the
+   * SAME slide's own text — e.g. Slide 12's "a" (acceleration), which
+   * collides with the English indefinite article throughout the slide's
+   * own prose ("a change in its state of motion"), and "g" (gravitational
+   * acceleration in "W = m g"), which collides with the gram unit symbol
+   * elsewhere in the same slide ("1000 g", "gram (g)"). Every other
+   * occurrence of the same letter — including in a DIFFERENT equation
+   * substring not listed as a key here — is completely unaffected.
+   */
+  equationPhraseItalicTokens?: Record<string, readonly string[]>;
+  /**
+   * Opts specific normally-plain subsections into equation-aware rendering
+   * (equationBlockPhrase visual styling + equationPhraseItalicTokens),
+   * the same treatment Steps and Simple Example already always receive.
+   * Omitted (or a section name left out) for every existing slide's
+   * config, so this is purely additive — Steps/Simple Example rendering,
+   * and the exact <p>/<div> output of every other slide's plain
+   * subsections, are byte-for-byte unchanged unless a slide's config
+   * explicitly opts a section in. Use this only for a subsection that
+   * actually contains one of the slide's own equationBlockPhrase entries
+   * (e.g. Slide 12's Common Misconception, which states "W = m g", and
+   * Scientific Note, which states "F_net = m a").
+   */
+  equationAwareSections?: readonly (
+    | "original"
+    | "mainIdea"
+    | "tableExplanation"
+    | "figureExplanation"
+    | "conversionFactorExplanation"
+    | "definitionExplanation"
+    | "relationshipExplanation"
+    | "misconception"
+    | "scientificNote"
+    | "keyConcept"
+    | "connection"
+  )[];
 }
 
 const DEFAULT_STEP_PATTERN = /^\d+\.\s/;
@@ -288,6 +332,68 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     // rendering (see additionalItalicTokens's header comment above).
     additionalItalicTokens: ["N"],
   },
+  "ch01-t01-block-opening-12": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    tableExplanationMarker: { en: "Table Explanation:", ar: "شرح الجدول:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: [
+      "a = F_net / m",
+      "m_empty = 20 kg",
+      "m_loaded = 80 kg",
+      "1 kg = 1000 g",
+      "W = m g",
+      "F_net = m a",
+      "m = F_net / a",
+      "1 lbf = 1 slug × 1 ft/s²",
+    ],
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+    // "m" (mass), "F" (fused only as "F_net", never a bare standalone
+    // word), and "W" (weight) are unambiguous throughout this slide's own
+    // equations and step values — verified collision-free against every
+    // other rendered field in this record, including no meters-unit "m"
+    // (unlike ch01-t04's excluded "m") since Slide 12 never states a
+    // distance in meters. None are added to
+    // EQUATION_ITALIC_TOKENS_BY_TOPIC/EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC
+    // in src/content/equationRenderer.tsx — that would italicize every
+    // standalone "m"/"F"/"W" in ch01-t01's other content blocks and slides
+    // too (in particular "m" would wrongly italicize the meters unit
+    // abbreviation used throughout Slides 1-11). This blockId-scoped entry
+    // italicizes them only within Slide 12's own rendering (see
+    // additionalItalicTokens's header comment above).
+    additionalItalicTokens: ["m", "F", "W"],
+    // "a" (acceleration) and "g" (gravitational acceleration) are NOT
+    // blockId-wide safe like m/F/W above: "a" is the English indefinite
+    // article and appears repeatedly in this slide's own prose (e.g. Step
+    // 1's "a change in its state of motion", the Simple Example's "a
+    // fully loaded shopping cart"), and "g" collides with the gram unit
+    // symbol elsewhere in this same slide ("1 kg = 1000 g", "gram (g)").
+    // Each is instead italicized ONLY within the one exact equation
+    // substring it is a genuine variable in — see
+    // equationPhraseItalicTokens's header comment on StructuredSlideConfig.
+    // Every other "a"/"g" in Slide 12, including in a different equation,
+    // renders as plain upright text.
+    equationPhraseItalicTokens: {
+      "a = F_net / m": ["a"],
+      "F_net = m a": ["a"],
+      "m = F_net / a": ["a"],
+      "W = m g": ["g"],
+    },
+    // Common Misconception states "W = m g" and Scientific Note states
+    // "F_net = m a" / "m = F_net / a" / "1 lbf = 1 slug × 1 ft/s²" as
+    // their own equation lines — opted into equation-aware rendering
+    // (equation-block styling + equationPhraseItalicTokens) the same way
+    // Steps and Simple Example always are. Every other existing slide's
+    // config leaves equationAwareSections unset, so this option changes
+    // nothing about any other slide's rendering.
+    equationAwareSections: ["misconception", "scientificNote"],
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
@@ -426,11 +532,39 @@ function renderPlainParagraphs(paragraphs: string[], italicTokens: readonly stri
   ));
 }
 
-function matchesEquationBlockPhrase(paragraph: string, equationBlockPhrase: string | string[] | undefined): boolean {
-  if (!equationBlockPhrase) return false;
-  return Array.isArray(equationBlockPhrase)
-    ? equationBlockPhrase.some((phrase) => paragraph.includes(phrase))
-    : paragraph.includes(equationBlockPhrase);
+/** Matches a paragraph/clause against a slide's equationBlockPhrase entries (string.includes, never a generic regex), returning the exact phrase that matched — used both for equation-block visual styling and for equationPhraseItalicTokens lookup. */
+function findMatchingEquationBlockPhrase(
+  text: string,
+  equationBlockPhrase: string | string[] | undefined,
+): string | undefined {
+  if (!equationBlockPhrase) return undefined;
+  const phrases = Array.isArray(equationBlockPhrase) ? equationBlockPhrase : [equationBlockPhrase];
+  return phrases.find((phrase) => text.includes(phrase));
+}
+
+/**
+ * Renders one paragraph/clause of text, checking whether it matches one of
+ * the slide's own equationBlockPhrase entries and, if so, layering that
+ * exact phrase's equationPhraseItalicTokens (if any) on top of the base
+ * italicTokens for this one render only — see equationPhraseItalicTokens's
+ * header comment on StructuredSlideConfig. Every non-matching paragraph
+ * uses the base italicTokens completely unchanged, so a slide with no
+ * equationPhraseItalicTokens entries (every slide except one that opts in)
+ * renders byte-for-byte the same as calling renderEquationText directly.
+ */
+function renderTextWithPhraseItalics(
+  text: string,
+  italicTokens: readonly string[],
+  equationBlockPhrase: string | string[] | undefined,
+  phraseItalicTokens: Record<string, readonly string[]> | undefined,
+): { node: ReturnType<typeof renderEquationText>; isEquationBlock: boolean } {
+  const matchedPhrase = findMatchingEquationBlockPhrase(text, equationBlockPhrase);
+  if (matchedPhrase === undefined) {
+    return { node: renderEquationText(text, italicTokens), isEquationBlock: false };
+  }
+  const extra = phraseItalicTokens?.[matchedPhrase] ?? [];
+  const tokens = extra.length > 0 ? [...italicTokens, ...extra] : italicTokens;
+  return { node: renderEquationText(text, tokens), isEquationBlock: true };
 }
 
 function renderEquationAwareParagraphs(
@@ -438,18 +572,39 @@ function renderEquationAwareParagraphs(
   italicTokens: readonly string[],
   direction: "ltr" | "rtl",
   equationBlockPhrase: string | string[] | undefined,
+  phraseItalicTokens?: Record<string, readonly string[]>,
 ) {
-  return paragraphs.map((paragraph, i) =>
-    matchesEquationBlockPhrase(paragraph, equationBlockPhrase) ? (
+  return paragraphs.map((paragraph, i) => {
+    const { node, isEquationBlock } = renderTextWithPhraseItalics(
+      paragraph,
+      italicTokens,
+      equationBlockPhrase,
+      phraseItalicTokens,
+    );
+    return isEquationBlock ? (
       <div className="structured-slide__equation-block" dir={direction} key={i}>
-        {renderEquationText(paragraph, italicTokens)}
+        {node}
       </div>
     ) : (
       <p className="content-section__text" dir={direction} key={i}>
-        {renderEquationText(paragraph, italicTokens)}
+        {node}
       </p>
-    ),
-  );
+    );
+  });
+}
+
+/** Chooses renderEquationAwareParagraphs vs renderPlainParagraphs per config.equationAwareSections — see that field's header comment. */
+function renderSection(
+  paragraphs: string[],
+  italicTokens: readonly string[],
+  direction: "ltr" | "rtl",
+  equationBlockPhrase: string | string[] | undefined,
+  phraseItalicTokens: Record<string, readonly string[]> | undefined,
+  equationAware: boolean,
+) {
+  return equationAware
+    ? renderEquationAwareParagraphs(paragraphs, italicTokens, direction, equationBlockPhrase, phraseItalicTokens)
+    : renderPlainParagraphs(paragraphs, italicTokens, direction);
 }
 
 function renderSteps(
@@ -458,6 +613,7 @@ function renderSteps(
   direction: "ltr" | "rtl",
   stepPattern: RegExp,
   equationBlockPhrase: string | string[] | undefined,
+  phraseItalicTokens?: Record<string, readonly string[]>,
 ) {
   return (
     <ol className="structured-slide__steps">
@@ -472,24 +628,40 @@ function renderSteps(
             <strong className="structured-slide__step-number">{title}</strong>
             {clauses.length > 1 ? (
               <ul className="structured-slide__step-clauses">
-                {clauses.map((clause, j) =>
-                  matchesEquationBlockPhrase(clause, equationBlockPhrase) ? (
+                {clauses.map((clause, j) => {
+                  const { node, isEquationBlock } = renderTextWithPhraseItalics(
+                    clause,
+                    italicTokens,
+                    equationBlockPhrase,
+                    phraseItalicTokens,
+                  );
+                  return isEquationBlock ? (
                     <li key={j}>
                       <div className="structured-slide__equation-block" dir={direction}>
-                        {renderEquationText(clause, italicTokens)}
+                        {node}
                       </div>
                     </li>
                   ) : (
-                    <li key={j}>{renderEquationText(clause, italicTokens)}</li>
-                  ),
-                )}
+                    <li key={j}>{node}</li>
+                  );
+                })}
               </ul>
-            ) : matchesEquationBlockPhrase(rest, equationBlockPhrase) ? (
-              <div className="structured-slide__equation-block" dir={direction}>
-                {renderEquationText(rest, italicTokens)}
-              </div>
             ) : (
-              <span>{renderEquationText(rest, italicTokens)}</span>
+              (() => {
+                const { node, isEquationBlock } = renderTextWithPhraseItalics(
+                  rest,
+                  italicTokens,
+                  equationBlockPhrase,
+                  phraseItalicTokens,
+                );
+                return isEquationBlock ? (
+                  <div className="structured-slide__equation-block" dir={direction}>
+                    {node}
+                  </div>
+                ) : (
+                  <span>{node}</span>
+                );
+              })()
             )}
           </li>
         );
@@ -654,13 +826,35 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
   }
 
   const stepPattern = config?.stepPattern ? config.stepPattern[language] : DEFAULT_STEP_PATTERN;
+  const equationAwareSections = config?.equationAwareSections ?? [];
+  const isEquationAware = (
+    name:
+      | "original"
+      | "mainIdea"
+      | "tableExplanation"
+      | "figureExplanation"
+      | "conversionFactorExplanation"
+      | "definitionExplanation"
+      | "relationshipExplanation"
+      | "misconception"
+      | "scientificNote"
+      | "keyConcept"
+      | "connection",
+  ) => equationAwareSections.includes(name);
 
   return (
     <div className="structured-slide">
       {sections.original.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.original[language]}</h4>
-          {renderPlainParagraphs(sections.original, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.original,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("original"),
+          )}
           {tableForLanguage ? renderSourceTable(tableForLanguage, direction) : null}
           {definitionsForLanguage ? renderDefinitionCards(definitionsForLanguage, effectiveItalicTokens, direction) : null}
         </section>
@@ -668,23 +862,50 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.mainIdea[language]}</h4>
-        {renderPlainParagraphs(sections.mainIdea, effectiveItalicTokens, direction)}
+        {renderSection(
+          sections.mainIdea,
+          effectiveItalicTokens,
+          direction,
+          config?.equationBlockPhrase,
+          config?.equationPhraseItalicTokens,
+          isEquationAware("mainIdea"),
+        )}
       </section>
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.steps[language]}</h4>
-        {renderSteps(sections.steps, effectiveItalicTokens, direction, stepPattern, config?.equationBlockPhrase)}
+        {renderSteps(
+          sections.steps,
+          effectiveItalicTokens,
+          direction,
+          stepPattern,
+          config?.equationBlockPhrase,
+          config?.equationPhraseItalicTokens,
+        )}
       </section>
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.simpleExample[language]}</h4>
-        {renderEquationAwareParagraphs(sections.simpleExample, effectiveItalicTokens, direction, config?.equationBlockPhrase)}
+        {renderEquationAwareParagraphs(
+          sections.simpleExample,
+          effectiveItalicTokens,
+          direction,
+          config?.equationBlockPhrase,
+          config?.equationPhraseItalicTokens,
+        )}
       </section>
 
       {sections.tableExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.tableExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.tableExplanation, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.tableExplanation,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("tableExplanation"),
+          )}
         </section>
       ) : null}
 
@@ -692,51 +913,107 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figureExplanation[language]}</h4>
           {figure ? <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} /> : null}
-          {renderPlainParagraphs(sections.figureExplanation, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.figureExplanation,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("figureExplanation"),
+          )}
         </section>
       ) : null}
 
       {sections.conversionFactorExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.conversionFactorExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.conversionFactorExplanation, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.conversionFactorExplanation,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("conversionFactorExplanation"),
+          )}
         </section>
       ) : null}
 
       {sections.definitionExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.definitionExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.definitionExplanation, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.definitionExplanation,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("definitionExplanation"),
+          )}
         </section>
       ) : null}
 
       {sections.relationshipExplanation.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.relationshipExplanation[language]}</h4>
-          {renderPlainParagraphs(sections.relationshipExplanation, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.relationshipExplanation,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("relationshipExplanation"),
+          )}
         </section>
       ) : null}
 
       <section className="structured-slide__section structured-slide__callout structured-slide__callout--misconception">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.misconception[language]}</h4>
-        {renderPlainParagraphs(sections.misconception, effectiveItalicTokens, direction)}
+        {renderSection(
+          sections.misconception,
+          effectiveItalicTokens,
+          direction,
+          config?.equationBlockPhrase,
+          config?.equationPhraseItalicTokens,
+          isEquationAware("misconception"),
+        )}
       </section>
 
       <section className="structured-slide__section structured-slide__callout structured-slide__callout--scientific-note">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.scientificNote[language]}</h4>
-        {renderPlainParagraphs(sections.scientificNote, effectiveItalicTokens, direction)}
+        {renderSection(
+          sections.scientificNote,
+          effectiveItalicTokens,
+          direction,
+          config?.equationBlockPhrase,
+          config?.equationPhraseItalicTokens,
+          isEquationAware("scientificNote"),
+        )}
       </section>
 
       {sections.keyConcept.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.keyConcept[language]}</h4>
-          {renderPlainParagraphs(sections.keyConcept, effectiveItalicTokens, direction)}
+          {renderSection(
+            sections.keyConcept,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            isEquationAware("keyConcept"),
+          )}
         </section>
       ) : null}
 
       <section className="structured-slide__section">
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.connection[language]}</h4>
-        {renderPlainParagraphs(sections.connection, effectiveItalicTokens, direction)}
+        {renderSection(
+          sections.connection,
+          effectiveItalicTokens,
+          direction,
+          config?.equationBlockPhrase,
+          config?.equationPhraseItalicTokens,
+          isEquationAware("connection"),
+        )}
       </section>
     </div>
   );

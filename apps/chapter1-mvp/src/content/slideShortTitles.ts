@@ -29,6 +29,7 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t01-block-opening-9": { en: "Period and Frequency", ar: "الزمن الدوري والتردد" },
   "ch01-t01-block-opening-10": { en: "Period–Frequency Relationship", ar: "العلاقة بين الزمن الدوري والتردد" },
   "ch01-t01-block-opening-11": { en: "Stopwatch Frequency", ar: "تردد ساعة الإيقاف" },
+  "ch01-t01-block-opening-12": { en: "Mass and Inertia", ar: "الكتلة والقصور الذاتي" },
 };
 
 /**

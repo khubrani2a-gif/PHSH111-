@@ -961,6 +961,101 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-12",
+        "blockType": "slide",
+        "slideNumber": 12,
+        "slideTitleEn": "Why Does Greater Mass Mean Greater Inertia?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Mass\n\nMass is also a measure of what we sometimes refer to in everyday speech as inertia.\n\nThe larger the mass of an object, the greater its inertia and the more difficult it is to speed up or slow down.\n\nMass is not in common use in the English system; note the unfamiliar unit, the slug.\n\nThe following table lists the mass unit of measure in the metric and English systems and their abbreviations.\n\nMain Idea: Mass measures an object's inertia, which is its resistance to changes in motion. An object with greater mass is more difficult to accelerate or decelerate. Mass is commonly measured in kilograms or grams in the metric system, while the English engineering system uses the slug.\n\nStep 1 — Mass describes the amount of inertia\n* Mass is represented by the symbol m.\n* Inertia is the tendency of an object to resist a change in its state of motion.\n* Mass provides a quantitative measure of this resistance.\n* Greater mass means greater inertia.\n\nStep 2 — Inertia resists changes in velocity\n* An object at rest tends to remain at rest.\n* A moving object tends to continue with the same velocity.\n* Changing speed or direction requires a net force.\n* Greater inertia means greater resistance to that change.\n\nStep 3 — Greater mass makes acceleration more difficult\n* a = F_net / m\n* For the same net force, increasing mass decreases acceleration.\n* A high-mass object is more difficult to speed up.\n* It is also more difficult to slow down or stop.\n\nStep 4 — The metric system uses kilograms and grams\n* 1 kg = 1000 g\n* The kilogram (kg) is the SI base unit of mass.\n* The gram (g) is a smaller metric unit.\n* Kilograms are generally convenient for larger masses.\n* Grams are convenient for smaller masses.\n\nStep 5 — The English engineering system uses the slug\n* The slug is an English engineering unit of mass.\n* It is less familiar in everyday use.\n* A slug measures mass, not force.\n* Mass and weight must not be treated as identical quantities.\n\nSimple Example: Consider an empty shopping cart and a fully loaded shopping cart. Suppose the same horizontal net force is applied to each cart.\n\nm_empty = 20 kg\n\nm_loaded = 80 kg\n\na = F_net / m\n\nThe loaded cart has the smaller acceleration because its mass is greater. It also requires more force to slow down or stop at the same rate.\n\nTable Explanation: The table compares units used to measure mass. The symbol m represents mass. The kilogram is the SI base unit, the gram is a smaller metric unit, and the slug is the English engineering unit of mass. The source does not list the pound as a mass unit.\n\nMisconception: mass and weight are the same physical quantity. Correction: mass measures inertia, whereas weight is the gravitational force acting on an object. Mass remains the same when gravitational conditions change, but weight changes because gravitational acceleration changes.\n\nW = m g\n\nScientific Note: The phrase \"mass is a measure of inertia\" refers to inertial mass.\n\nF_net = m a\n\nm = F_net / a\n\nFor a given net force, the object that undergoes less acceleration has the greater inertial mass. The slug is a mass unit, while pound-force (lbf) is a force unit.\n\n1 lbf = 1 slug × 1 ft/s²\n\nKey Concept: Mass is a quantitative measure of inertia. A larger mass produces greater resistance to acceleration, so a greater net force is required to create the same change in motion.\n\nConnection to the Next Slide: After identifying mass as a measure of inertia and comparing its units, the next step is to distinguish mass from weight and examine how gravitational force depends on mass.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Physical Quantity",
+            "Metric Units",
+            "English Units"
+          ],
+          "rows": [
+            [
+              "Mass (m)",
+              "kilogram (kg)",
+              "slug"
+            ],
+            [
+              null,
+              "gram (g)",
+              null
+            ]
+          ]
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-MASS-INERTIA-TABLE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-mass",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/4185AF1B-7E9B-4616-AA8C-AB745EEBE85D.png, a table titled 'Physical Quantity / Metric Units / English Units' listing Mass (m) with kilogram/gram as metric units and slug as the English unit) together with the slide's original English prose ('1.1 Fundamental Physical Quantities: Mass...'), directly in the implementation task. The uploaded image itself is recorded here as this record's source and is explicitly NOT used as the student-facing visual — the source contains explanatory text and a table but no instructional figure requiring raster display, so the table is reconstructed as semantic HTML (a real <table> with a bilingual <caption>-free header row, column headers with scope=\"col\", and a grouped Mass (m) row header with scope=\"rowgroup\" spanning both rows, matching the existing generic table-rendering mechanism already used by Slides 3/6/8) from its text (headers/rows), preserving the same two-row organization and empty cells verbatim, and no visual asset is created or referenced so blocking.blockingReason does not include 'missingVisual'. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Table Explanation clarification, the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. Per explicit project-owner instruction, 'm' (mass), 'F' (fused only as 'F_net', a net-force symbol), and 'W' (weight) are italicized via a blockId-scoped additionalItalicTokens entry on STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID (not the topic-wide whitelist), verified collision-free against every other rendered field in this record — in particular 'm' does not collide with a meters-unit abbreviation anywhere in Slide 12, unlike ch01-t04's excluded 'm'. 'a' (acceleration) and 'g' (gravitational acceleration) are NOT safe as blockId-wide tokens — 'a' is the English indefinite article and recurs throughout this slide's own prose, and 'g' collides with the gram unit symbol elsewhere in this same slide ('1000 g', 'gram (g)') — so each is instead italicized only within the one exact equation substring it is a genuine variable in, via a new equationPhraseItalicTokens config field (a = F_net / m, F_net = m a, and m = F_net / a italicize 'a'; W = m g italicizes 'g'), scoped no more broadly than the existing additionalItalicTokens mechanism. Common Misconception and Scientific Note are opted into equation-aware rendering via a new equationAwareSections config field so their own equation lines (W = m g; F_net = m a, m = F_net / a, 1 lbf = 1 slug × 1 ft/s²) receive the same equation-block styling Steps and Simple Example already always receive — every other existing slide's config leaves equationAwareSections unset, so this option changes nothing about any other slide's rendering (confirmed by the full existing test suite passing unchanged before this slide's own content was added)."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored twelfth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-11 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-11 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",
