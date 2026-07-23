@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.20",
+  "baselineVersion": "1.0.21",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,9 +20,9 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "f17da1f697b20aec2ea6f5ede9797808f45537e131d3ccdcf58b78a45a7e4411",
+      "sha256": "0c3a200509ecf1e6cfd1d0324fd251ba648a0a6b2d2c039d09bae878eb49e184",
       "schemaVersion": "2.3.0",
-      "recordCount": 17
+      "recordCount": 18
     },
     {
       "topicId": "ch01-t04",
@@ -437,6 +437,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-10"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-9's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-021",
+        "fromVersion": "1.0.20",
+        "toVersion": "1.0.21",
+        "revisedAt": "2026-07-22",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-020 -> rev-021 (1.18.0 -> 1.19.0): adds the Arabic side of the new eleventh slide, ch01-t01-block-opening-11 (blockType \"slide\", slideNumber 11, slideTitleAr \"كيف نحسب التردد والزمن الدوري من عدد الدورات؟\"), as the eleventh record in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No existing record was touched. No record in ch01-t04 was touched.",
+        "whatChanged": "Added the Arabic translation of Slide 11's full structure — the source slide's Arabic prose translation (preserving the worked stopwatch-frequency problem and its calculations verbatim in the quoted Original Arabic text, including 'f = 10 دورات / 2 s = 5 Hz' and 'T = 1 / 5 Hz = 0.2 s'), Main Idea, five numbered steps (preserving the untranslated equations 'f = N / Δt', 'f = 5 Hz', 'T = 1 / f', 'T = 1 / (5 Hz)', 'T = 0.2 s', and 'f T = (5 s⁻¹)(0.2 s) = 1'), Simple Example (preserving 'f = 12 cycles / 3.0 s = 4.0 Hz' and 'T = 1 / (4.0 Hz) = 0.25 s'), the Relationship Explanation (reusing the same generic relationshipExplanationMarker slot, preserving 'cycles/s = Hz' and '1/Hz = s'), Common Misconception, Scientific Note, Key Concept, and Connection to the Next Slide.",
+        "whatWasNotChanged": "No .ar text on Slides 1-10 was touched. No record in ch01-t04 was touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-021): project-owner request for an eleventh slide on calculating frequency and period from a cycle count, translated into Arabic using the project's established terminology and conventions, with all numerical notation and equations left untranslated per the project's existing convention for embedded Latin/notation fragments.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — new record ch01-t01-block-opening-11 appended at index 10",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-021",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-11"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-10's Arabic governance fields are entirely unchanged."
       }
     ]
   },

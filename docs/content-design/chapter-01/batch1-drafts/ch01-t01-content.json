@@ -885,6 +885,82 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-11",
+        "blockType": "slide",
+        "slideNumber": 11,
+        "slideTitleEn": "How Do We Calculate Frequency and Period from a Cycle Count?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Example 1.1\n\nA mechanical stopwatch uses a balance wheel that rotates back and forth 10 times in 2 seconds. What is the frequency of the balance wheel?\n\nfrequency = number of cycles per time\n\nf = 10 cycles / 2 s = 5 Hz\n\nWhat is the period of the balance wheel?\n\nperiod = time for one cycle\n\nperiod = 1 divided by the frequency\n\nT = 1 / 5 Hz = 0.2 s\n\nMain Idea: Frequency is calculated by dividing the number of complete cycles by the elapsed time. Once the frequency is known, the period is found by taking its reciprocal.\n\nStep 1 — Identify what counts as one cycle\n* The balance wheel moves repeatedly back and forth.\n* In this example, one complete back-and-forth motion is treated as one cycle.\n* N = 10 cycles\n* Δt = 2 s\n\nStep 2 — Use the frequency equation\n* f = N / Δt\n* f = 10 cycles / 2 s\n* Frequency is the number of complete cycles occurring per unit time.\n\nStep 3 — Calculate and interpret the frequency\n* f = 5 cycles/s\n* 1 Hz = 1 cycle/s\n* f = 5 Hz\n* The balance wheel completes five full cycles every second.\n\nStep 4 — Use the reciprocal relationship\n* T = 1 / f\n* T = 1 / (5 Hz)\n* Period is the time required for one complete cycle.\n\nStep 5 — Calculate and verify the period\n* T = 0.2 s\n* f T = (5 s⁻¹)(0.2 s) = 1\n* Each complete cycle takes 0.2 s.\n\nSimple Example: A wheel completes 12 cycles in 3.0 s.\n\nf = 12 cycles / 3.0 s = 4.0 Hz\n\nT = 1 / (4.0 Hz) = 0.25 s\n\nThe wheel completes four cycles per second, and each cycle takes 0.25 s.\n\nRelationship Explanation: The example uses two connected relationships. The equation f = N / Δt calculates how many cycles occur each second, while T = 1 / f calculates how much time one cycle requires. The units confirm the relationship: cycles/s = Hz and 1/Hz = s.\n\nf = N / Δt\n\nT = 1 / f\n\ncycles/s = Hz\n\n1/Hz = s\n\nMisconception: moving from one side to the other is always one complete cycle. Correction: a cycle must return the system to its starting position and state of motion. In this source example, each complete back-and-forth motion is counted as one cycle. Counting each one-way motion as a full cycle would double the frequency incorrectly.\n\nScientific Note: The number of cycles is a dimensionless count. Therefore, f = N / Δt has the unit s⁻¹ or Hz. The source reports f = 5 Hz and T = 0.2 s. The number of significant figures retained depends on the precision with which elapsed time and cycle count were measured.\n\nKey Concept: Use f = N / Δt to calculate frequency from cycle count and elapsed time, then use T = 1 / f to calculate the time required for one cycle.\n\nConnection to the Next Slide: After calculating frequency and period from a measured cycle count, the next step is to apply the same equations to oscillations, rotations, waves, and other periodic systems.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-STOPWATCH-FREQUENCY-EXAMPLE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-time-example-1-1-stopwatch-frequency",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner uploaded a source slide image (/mnt/data/C8A3AD1C-2D89-4511-8B9E-5695BA012929.png, a worked problem titled 'Example 1.1' computing the frequency and period of a mechanical stopwatch's balance wheel) directly in the implementation task, together with the exact source calculations to preserve. The uploaded image itself is recorded here as this record's source and is explicitly NOT used as the student-facing visual — the source contains a worked problem and equations but no instructional figure requiring raster display, so the problem and equations are reconstructed semantically using the existing text and equation-rendering architecture (renderEquationText, the same mechanism used by every other slide's equations), preserving the same relationships and source wording verbatim, including the verbatim section's ungrouped 'T = 1 / 5 Hz = 0.2 s' notation (distinct from the organized Step 4's parenthesized 'T = 1 / (5 Hz)'). No figure asset is created or referenced and blocking.blockingReason does not include 'missingVisual'. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Relationship Explanation (reusing the existing generic relationshipExplanationMarker slot introduced for Slide 10, not a new subsection type), the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. Per explicit project-owner instruction, no equation-italics whitelist entry was added for 'N' or 'Δt'. 'N' renders entirely upright: it was confirmed collision-free (zero prior standalone occurrences in ch01-t01's approved content) but judged not strictly necessary, since no required test depends on its italics. 'Δt' renders with 'Δ' upright and 't' italic: 't' was already whitelisted for ch01-t01 (added for Slide 1's v = d / t) and the existing \\b(...)\\b word-boundary regex matches the 't' immediately after 'Δ' (confirmed empirically — Δ, U+0394, is not a JavaScript \\w character, so the boundary exists between 'Δ' and 't'), while 'Δ' itself is never whitelisted and stays upright. This split rendering was verified rather than treated as a defect: it matches the common physics-typesetting convention in which the Δ (\"change in\") operator is left upright while the physical quantity symbol it modifies is italicized. No whitelist entry was added or changed to produce this — it is the pre-existing whitelist's emergent, verified-correct behavior."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored eleventh opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-10 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-10 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",
