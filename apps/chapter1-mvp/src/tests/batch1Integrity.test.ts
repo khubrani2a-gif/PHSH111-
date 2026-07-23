@@ -81,8 +81,11 @@ const APPROVED = {
     // generic relationshipExplanationMarker subsection slot. rev-021 adds
     // ch01-t01-block-opening-11 (Slide 11, stopwatch frequency/period
     // worked problem), reusing the existing relationshipExplanationMarker
-    // slot with no new subsection type.
-    sha256: "41e04816fd2946dd7229af70f391b6667396f70177b0a4ef0c0f2abca50fa93a",
+    // slot with no new subsection type. rev-022 corrects
+    // ch01-t01-block-opening-11's provenanceLinks[0].evidence, which had
+    // gone stale after a separate N-italicization typesetting fix (PR #19)
+    // was merged without updating this provenance text to match.
+    sha256: "faf25b27033f62c09eb75541a34cc0b35f430149696b6d4a91b4758bd24baeb3",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -132,8 +135,13 @@ const APPROVED = {
     // denominator-grouping corrections. rev-020 adds the Arabic side of
     // ch01-t01-block-opening-10 (Slide 10), matching English rev-020.
     // rev-021 adds the Arabic side of ch01-t01-block-opening-11 (Slide 11),
-    // matching English rev-021.
-    sha256: "0c3a200509ecf1e6cfd1d0324fd251ba648a0a6b2d2c039d09bae878eb49e184",
+    // matching English rev-021. A checksum-only correction (no
+    // baselineVersion increment — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // checksumOnlyCorrections entry ch01-arabic-baseline-checksum-001)
+    // then replaced ch01-t01-block-opening-11's provenanceLinks[0].evidence
+    // English-language stale text with the corrected Arabic-language
+    // provenance statement, matching English rev-022.
+    sha256: "238befa47b0fc9edf3561f81af865061c4a040462c86580ccc01a7457e65e5bc",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

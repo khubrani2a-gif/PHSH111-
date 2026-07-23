@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.19.0",
+  "baselineVersion": "1.20.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,7 +19,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "41e04816fd2946dd7229af70f391b6667396f70177b0a4ef0c0f2abca50fa93a",
+      "sha256": "faf25b27033f62c09eb75541a34cc0b35f430149696b6d4a91b4758bd24baeb3",
       "schemaVersion": "2.3.0",
       "recordCount": 18
     },
@@ -426,6 +426,24 @@
           "apps/chapter1-mvp/src/content/slideShortTitles.ts — new short-title entry for ch01-t01-block-opening-11"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the uploaded source image contains a worked problem and equations but no instructional figure, so none is required or missing. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-022",
+        "fromVersion": "1.19.0",
+        "toVersion": "1.20.0",
+        "revisedAt": "2026-07-23",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening-11's provenanceLinks[0].evidence field (governance/provenance metadata, not instructional content) in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json. No other field on this record, and no other record in ch01-t01 or ch01-t04, was touched.",
+        "whatChanged": "rev-021's provenanceLinks[0].evidence text was written before a separate, later N-italicization typesetting correction (delivered as a second commit, 1453b879a0e543721bcd324603b75e6d44f1d24c, on the same feature/slide11-stopwatch-frequency branch merged to main in PR #19) added an additionalItalicTokens field to StructuredSlideContent's StructuredSlideConfig, scoped solely to ch01-t01-block-opening-11, so that 'N' now renders in italic mathematical style within Slide 11. rev-021's evidence text was never updated after that later commit and became factually stale, still describing 'N' as rendering 'entirely upright'. This revision replaces the stale sentences ('Per explicit project-owner instruction, no equation-italics whitelist entry was added for \\'N\\' or \\'Δt\\'. \\'N\\' renders entirely upright: it was confirmed collision-free (zero prior standalone occurrences in ch01-t01's approved content) but judged not strictly necessary, since no required test depends on its italics.') with corrected wording confirming the implemented behavior: f, N, and t render in italic mathematical style; Δ remains upright; N is italicized only within Slide 11 through the block-scoped additionalItalicTokens configuration and is not added to the topic-wide equation-token whitelist (EQUATION_ITALIC_TOKENS_BY_TOPIC / EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC for ch01-t01 remain exactly ['v','d','t','L','T','M','l','w','V','f'], unchanged, with no 'N' entry); units and unit expressions (s, Hz, cycles/s, s⁻¹) remain upright. The immediately following sentence describing Δt's rendering ('Δ' upright, 't' italic, via the pre-existing 't' whitelist entry and its word-boundary regex) was left exactly as written, since it was already accurate and is unchanged by this correction.",
+        "whatWasNotChanged": "No English or Arabic educational wording, original source text, worked calculations, significant figures, equation-rendering code (apps/chapter1-mvp/src/content/equationRenderer.tsx), the additionalItalicTokens configuration itself, any other governance or provenance field, Slides 1-10, accordion behavior, or publication/blocking flags were changed. This is a documentation/governance-provenance correction only, describing rendering behavior that was already live in the merged application — no application code was changed by this revision.",
+        "rationale": "Project-owner request to correct stale provenance documentation that no longer matched the implemented DOM/rendering behavior, after a prior PR (#19) already merged the N-italicization typesetting correction itself without updating this record's provenance evidence text to match.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening-11.provenanceLinks[0].evidence corrected",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — checksumOnlyCorrections entry (no baselineVersion increment; see that file's revisionControlPolicy.rule, scoped only to .ar text/arabic.canonicalArabicTranslation fields, which this correction does not touch)",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-11's englishBaselineDependency and arabicBaselineDependency sha256/baselineVersion values refreshed to match",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — englishT01/arabicT01 expected sha256 constants refreshed to match"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false; ch01-t01-block-opening-11's blocking.blockingStatus remains 'blocked' (blockingReason still includes 'scientificReviewPending'), unchanged by this documentation-only correction."
       }
     ]
   },
