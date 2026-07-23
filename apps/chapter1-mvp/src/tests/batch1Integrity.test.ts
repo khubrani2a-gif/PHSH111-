@@ -137,10 +137,12 @@ const APPROVED = {
     // rev-021 adds the Arabic side of ch01-t01-block-opening-11 (Slide 11),
     // matching English rev-021. A checksum-only correction (no
     // baselineVersion increment — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
-    // checksumOnlyCorrections entry ch01-arabic-baseline-checksum-001)
-    // then replaced ch01-t01-block-opening-11's provenanceLinks[0].evidence
-    // English-language stale text with the corrected Arabic-language
-    // provenance statement, matching English rev-022.
+    // checksumOnlyCorrections entry ch01-arabic-baseline-checksum-001) then
+    // replaced ch01-t01-block-opening-11's provenanceLinks[0].evidence stale
+    // provenance claim with the project-owner-supplied bilingual
+    // English-and-Arabic provenance statement, stored identically in both
+    // content files to satisfy the shared-metadata byte-equality
+    // requirement enforced by batch1Merge.ts, matching English rev-022.
     sha256: "238befa47b0fc9edf3561f81af865061c4a040462c86580ccc01a7457e65e5bc",
   },
   arabicT04: {
