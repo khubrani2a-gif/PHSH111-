@@ -1288,6 +1288,92 @@
       }
     },
     {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t01-block-opening-13",
+        "blockType": "slide",
+        "slideNumber": 13,
+        "slideTitleEn": "How Can a Suitcase Demonstrate the Difference Between Mass and Weight?",
+        "topicId": "ch01-t01",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "1.1 Fundamental Physical Quantities: Mass\n\nWeight, a quantity that is related to, but is not the same as mass, is used instead.\n\nWhen you try to lift a heavy suitcase, you are experiencing its weight.\n\nWhen you pull it along and speed it up or slow it down, you are experiencing its mass.\n\nMain Idea: Mass and weight are related but fundamentally different quantities. Lifting a suitcase requires overcoming its weight, whereas changing its horizontal motion reveals its inertia and therefore its mass.\n\nStep 1 — Mass and weight describe different physical properties\n* Mass measures the inertia of an object.\n* Inertia is the object's resistance to acceleration.\n* Weight is the gravitational force acting on the object.\n* Mass is scalar, while weight is a vector force.\n\nStep 2 — Lifting the suitcase reveals its weight\n* W = m g\n* Gravity pulls the suitcase downward.\n* The gravitational force on the suitcase is its weight.\n* An upward force is required to support or lift it.\n* At constant vertical velocity, the upward applied force balances its weight.\n\nStep 3 — Pulling the suitcase reveals its inertia\n* a = F_net / m\n* A horizontal net force can change the suitcase's velocity.\n* The suitcase resists this change because it has mass.\n* Greater mass means greater resistance to acceleration.\n* This resistance is inertia.\n\nStep 4 — Mass remains constant while weight can change\n* Mass does not depend on location.\n* Weight depends on the local gravitational acceleration g.\n* A weaker gravitational field produces a smaller weight.\n* The suitcase's mass and inertia remain unchanged.\n\nStep 5 — Direction helps distinguish the effects\n* Weight acts vertically downward.\n* The pulling force shown is mainly horizontal.\n* Vertical lifting opposes gravitational force.\n* Horizontal acceleration reveals inertial resistance.\n\nSimple Example: A suitcase has a mass of 20 kg near Earth's surface.\n\nm = 20 kg\n\ng = 9.8 m/s²\n\nW = m g\n\nW = (20 kg)(9.8 m/s²) = 196 N\n\nSuppose a horizontal net force of 40 N acts on the suitcase.\n\nF_net = 40 N\n\na = F_net / m\n\na = (40 N) / (20 kg) = 2.0 m/s²\n\nThe vertical calculation gives the suitcase's weight, while the horizontal calculation shows how its mass resists acceleration.\n\nFigure Explanation: The left side shows a person lifting the suitcase. The upward applied force opposes the suitcase's downward weight. The right side shows a person pulling the suitcase horizontally. The suitcase resists the resulting change in velocity because of its inertia. The figure compares gravitational force with inertial resistance; it does not show mass acting as a force.\n\nMisconception: a suitcase has mass only because gravity pulls on it. Correction: mass measures inertia and is not produced by gravity. Gravity gives the suitcase weight. In a weaker gravitational field, the suitcase has the same mass but a smaller weight.\n\nW = m g\n\nScientific Note: Everyday speech often uses \"weight\" when referring to mass, but physics distinguishes them. Mass is a scalar measured in kilograms. Weight is a vector force measured in newtons and directed toward the attracting body. The phrase \"experiencing its mass\" in the source refers specifically to experiencing the suitcase's inertial resistance while changing its velocity.\n\nKey Concept: Lifting a suitcase requires a force against its weight, while accelerating it horizontally reveals its inertia. Weight is a gravitational force; mass measures resistance to acceleration.\n\nConnection to the Next Slide: After distinguishing mass from weight through lifting and pulling, the next step is to compare their units and examine how weight changes when gravitational acceleration changes.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: الكتلة\n\nيُستخدم بدلًا من ذلك الوزن، وهو كمية ترتبط بالكتلة، لكنها ليست الكتلة نفسها.\n\nعندما تحاول رفع حقيبة ثقيلة، فإنك تختبر وزنها.\n\nوعندما تسحبها وتزيد سرعتها أو تبطئها، فإنك تختبر كتلتها.\n\nالفكرة الرئيسية: الكتلة والوزن كميتان مترابطتان، لكنهما مختلفتان بصورة أساسية. يتطلب رفع حقيبة السفر التغلب على وزنها، بينما يكشف تغيير حركتها الأفقية عن قصورها الذاتي، ومن ثم عن كتلتها.\n\nالخطوة 1 — تصف الكتلة والوزن خاصيتين فيزيائيتين مختلفتين\n* تقيس الكتلة القصور الذاتي للجسم.\n* القصور الذاتي هو مقاومة الجسم للتسارع.\n* الوزن هو قوة الجاذبية المؤثرة في الجسم.\n* الكتلة كمية قياسية، بينما الوزن قوة متجهة.\n\nالخطوة 2 — يكشف رفع الحقيبة عن وزنها\n* W = m g\n* تسحب الجاذبية الحقيبة إلى أسفل.\n* تمثل قوة الجاذبية المؤثرة في الحقيبة وزنها.\n* يلزم تأثير قوة إلى أعلى لحملها أو رفعها.\n* عند ثبات السرعة الرأسية، توازن القوة المؤثرة إلى أعلى وزن الحقيبة.\n\nالخطوة 3 — يكشف سحب الحقيبة عن قصورها الذاتي\n* a = F_net / m\n* يمكن للقوة الأفقية المحصلة أن تغير السرعة المتجهة للحقيبة.\n* تقاوم الحقيبة هذا التغير لأن لها كتلة.\n* تعني الكتلة الأكبر مقاومة أكبر للتسارع.\n* تسمى هذه المقاومة القصور الذاتي.\n\nالخطوة 4 — تبقى الكتلة ثابتة بينما يمكن أن يتغير الوزن\n* لا تعتمد الكتلة على الموقع.\n* يعتمد الوزن على تسارع الجاذبية المحلي g.\n* ينتج مجال الجاذبية الأضعف وزنًا أصغر.\n* تبقى كتلة الحقيبة وقصورها الذاتي دون تغير.\n\nالخطوة 5 — يساعد الاتجاه في التمييز بين الأثرين\n* يؤثر الوزن رأسيًا إلى أسفل.\n* تكون قوة السحب الموضحة أفقية بصورة أساسية.\n* يعاكس الرفع الرأسي قوة الجاذبية.\n* يكشف التسارع الأفقي عن مقاومة القصور الذاتي.\n\nمثال بسيط: كتلة حقيبة سفر قرب سطح الأرض تساوي 20 kg.\n\nm = 20 kg\n\ng = 9.8 m/s²\n\nW = m g\n\nW = (20 kg)(9.8 m/s²) = 196 N\n\nافترض أن قوة أفقية محصلة مقدارها 40 N تؤثر في الحقيبة.\n\nF_net = 40 N\n\na = F_net / m\n\na = (40 N) / (20 kg) = 2.0 m/s²\n\nيعطي الحساب الرأسي وزن الحقيبة، بينما يوضح الحساب الأفقي كيف تقاوم كتلتها التسارع.\n\nشرح الشكل: توضح الجهة اليسرى شخصًا يرفع الحقيبة، حيث تعاكس القوة المؤثرة إلى أعلى وزن الحقيبة المتجه إلى أسفل. وتوضح الجهة اليمنى شخصًا يسحب الحقيبة أفقيًا، إذ تقاوم الحقيبة التغير الناتج في سرعتها المتجهة بسبب قصورها الذاتي. يقارن الشكل بين قوة الجاذبية ومقاومة القصور الذاتي، ولا يصور الكتلة بوصفها قوة.\n\nمفهوم خاطئ: تمتلك حقيبة السفر كتلة فقط لأن الجاذبية تسحبها. التصحيح: تقيس الكتلة القصور الذاتي ولا تنتجها الجاذبية. تمنح الجاذبية الحقيبة وزنها. وفي مجال جاذبية أضعف تكون للحقيبة الكتلة نفسها، لكن وزنًا أصغر.\n\nW = m g\n\nملاحظة علمية: يستخدم الحديث اليومي كلمة «الوزن» كثيرًا عند الإشارة إلى الكتلة، لكن الفيزياء تميز بينهما. الكتلة كمية قياسية تقاس بالكيلوغرام، بينما الوزن قوة متجهة تقاس بالنيوتن وتتجه نحو الجسم الجاذب. وتشير عبارة «تختبر كتلتها» في المصدر تحديدًا إلى اختبار مقاومة الحقيبة القصورية عند تغيير سرعتها المتجهة.\n\nالمفهوم الأساسي: يتطلب رفع حقيبة السفر قوة تعاكس وزنها، بينما يكشف تسريعها أفقيًا عن قصورها الذاتي. الوزن قوة جاذبية، أما الكتلة فتقيس مقاومة التسارع.\n\nالصلة بالشريحة التالية: بعد التمييز بين الكتلة والوزن من خلال الرفع والسحب، تكون الخطوة التالية هي مقارنة وحداتهما ودراسة كيفية تغير الوزن عند تغير تسارع الجاذبية.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "figureAssetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-13-figure.jpg",
+        "figureAltEn": "A person lifts a suitcase vertically on the left and pulls a suitcase horizontally on the right, illustrating weight during lifting and inertia during acceleration.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "1.1 الكميات الفيزيائية الأساسية: الكتلة\n\nيُستخدم بدلًا من ذلك الوزن، وهو كمية ترتبط بالكتلة، لكنها ليست الكتلة نفسها.\n\nعندما تحاول رفع حقيبة ثقيلة، فإنك تختبر وزنها.\n\nوعندما تسحبها وتزيد سرعتها أو تبطئها، فإنك تختبر كتلتها.\n\nالفكرة الرئيسية: الكتلة والوزن كميتان مترابطتان، لكنهما مختلفتان بصورة أساسية. يتطلب رفع حقيبة السفر التغلب على وزنها، بينما يكشف تغيير حركتها الأفقية عن قصورها الذاتي، ومن ثم عن كتلتها.\n\nالخطوة 1 — تصف الكتلة والوزن خاصيتين فيزيائيتين مختلفتين\n* تقيس الكتلة القصور الذاتي للجسم.\n* القصور الذاتي هو مقاومة الجسم للتسارع.\n* الوزن هو قوة الجاذبية المؤثرة في الجسم.\n* الكتلة كمية قياسية، بينما الوزن قوة متجهة.\n\nالخطوة 2 — يكشف رفع الحقيبة عن وزنها\n* W = m g\n* تسحب الجاذبية الحقيبة إلى أسفل.\n* تمثل قوة الجاذبية المؤثرة في الحقيبة وزنها.\n* يلزم تأثير قوة إلى أعلى لحملها أو رفعها.\n* عند ثبات السرعة الرأسية، توازن القوة المؤثرة إلى أعلى وزن الحقيبة.\n\nالخطوة 3 — يكشف سحب الحقيبة عن قصورها الذاتي\n* a = F_net / m\n* يمكن للقوة الأفقية المحصلة أن تغير السرعة المتجهة للحقيبة.\n* تقاوم الحقيبة هذا التغير لأن لها كتلة.\n* تعني الكتلة الأكبر مقاومة أكبر للتسارع.\n* تسمى هذه المقاومة القصور الذاتي.\n\nالخطوة 4 — تبقى الكتلة ثابتة بينما يمكن أن يتغير الوزن\n* لا تعتمد الكتلة على الموقع.\n* يعتمد الوزن على تسارع الجاذبية المحلي g.\n* ينتج مجال الجاذبية الأضعف وزنًا أصغر.\n* تبقى كتلة الحقيبة وقصورها الذاتي دون تغير.\n\nالخطوة 5 — يساعد الاتجاه في التمييز بين الأثرين\n* يؤثر الوزن رأسيًا إلى أسفل.\n* تكون قوة السحب الموضحة أفقية بصورة أساسية.\n* يعاكس الرفع الرأسي قوة الجاذبية.\n* يكشف التسارع الأفقي عن مقاومة القصور الذاتي.\n\nمثال بسيط: كتلة حقيبة سفر قرب سطح الأرض تساوي 20 kg.\n\nm = 20 kg\n\ng = 9.8 m/s²\n\nW = m g\n\nW = (20 kg)(9.8 m/s²) = 196 N\n\nافترض أن قوة أفقية محصلة مقدارها 40 N تؤثر في الحقيبة.\n\nF_net = 40 N\n\na = F_net / m\n\na = (40 N) / (20 kg) = 2.0 m/s²\n\nيعطي الحساب الرأسي وزن الحقيبة، بينما يوضح الحساب الأفقي كيف تقاوم كتلتها التسارع.\n\nشرح الشكل: توضح الجهة اليسرى شخصًا يرفع الحقيبة، حيث تعاكس القوة المؤثرة إلى أعلى وزن الحقيبة المتجه إلى أسفل. وتوضح الجهة اليمنى شخصًا يسحب الحقيبة أفقيًا، إذ تقاوم الحقيبة التغير الناتج في سرعتها المتجهة بسبب قصورها الذاتي. يقارن الشكل بين قوة الجاذبية ومقاومة القصور الذاتي، ولا يصور الكتلة بوصفها قوة.\n\nمفهوم خاطئ: تمتلك حقيبة السفر كتلة فقط لأن الجاذبية تسحبها. التصحيح: تقيس الكتلة القصور الذاتي ولا تنتجها الجاذبية. تمنح الجاذبية الحقيبة وزنها. وفي مجال جاذبية أضعف تكون للحقيبة الكتلة نفسها، لكن وزنًا أصغر.\n\nW = m g\n\nملاحظة علمية: يستخدم الحديث اليومي كلمة «الوزن» كثيرًا عند الإشارة إلى الكتلة، لكن الفيزياء تميز بينهما. الكتلة كمية قياسية تقاس بالكيلوغرام، بينما الوزن قوة متجهة تقاس بالنيوتن وتتجه نحو الجسم الجاذب. وتشير عبارة «تختبر كتلتها» في المصدر تحديدًا إلى اختبار مقاومة الحقيبة القصورية عند تغيير سرعتها المتجهة.\n\nالمفهوم الأساسي: يتطلب رفع حقيبة السفر قوة تعاكس وزنها، بينما يكشف تسريعها أفقيًا عن قصورها الذاتي. الوزن قوة جاذبية، أما الكتلة فتقيس مقاومة التسارع.\n\nالصلة بالشريحة التالية: بعد التمييز بين الكتلة والوزن من خلال الرفع والسحب، تكون الخطوة التالية هي مقارنة وحداتهما ودراسة كيفية تغير الوزن عند تغير تسارع الجاذبية.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft-ai-generated-unreviewed",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "pending",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-OWNER-SLIDE-1.1-MASS-WEIGHT-SUITCASE",
+            "locatorType": "slide",
+            "locatorId": "slide-1.1-fundamental-physical-quantities-mass-weight-suitcase",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Project owner supplied the source illustration (a two-panel instructional drawing: a person lifting a suitcase vertically on the left, and a person pulling the same type of suitcase horizontally by its handle strap on the right) directly as a chat attachment in the implementation task, already focused to the illustration itself — excluding the source slide's green title banner, its bullet text, and unnecessary white margins, so no further cropping was required. The image is used directly as this record's figure asset (stored at figureAssetPath, resolved at build time via src/content/rawImports.ts's RAW_FIGURE_URL_BY_BLOCK_ID), preserving both illustrated actions (lifting and pulling) in one accessible figure via the existing SlideFigure mechanism — no source screenshot (title banner or bullet text) is rendered student-facing, and no visual asset beyond this one figure is referenced, so blocking.blockingReason does not include 'missingVisual'. The Main Idea, the five numbered steps, the Simple Example's surrounding explanatory sentences, the Figure Explanation, the Common Misconception, the Scientific Note, the Key Concept, and the Connection to the Next Slide were newly authored/translated by Claude from the task's requested structure and exact required wording, not copied from any other source — the Arabic side of that newly authored content is marked draft-ai-generated-unreviewed pending project-owner review, distinct from this file's other, already-reviewed 'draft' records. Per explicit project-owner instruction, the source's own emphasis on 'not' (in 'but is not the same as mass') is preserved via a new, generic originalEmphasisPhrases config field wrapping that exact verified substring in a semantic <strong> — no markup was inserted into the approved verbatim text itself. 'F' (fused only as 'F_net'), 'W', and 'g' are italicized via a blockId-scoped additionalItalicTokens entry, verified collision-free (unlike Slide 12, 'g' has no gram-unit collision here since Slide 13 never states a mass in grams, so it is safely blockId-wide here rather than phrase-scoped). 'm' and 'a' are NOT blockId-wide safe — 'm' collides with the metres-per-second-squared unit abbreviation used in this slide's own equations ('9.8 m/s²', '2.0 m/s²'), and 'a' is the English indefinite article recurring throughout this slide's own prose — so both are italicized only within the exact equation substrings where each is a genuine variable, via equationPhraseItalicTokens (reused from Slide 12, unmodified). Slide 13 does not inherit Slide 11's separate blockId-scoped 'N' entry — additionalItalicTokens is scoped per blockId."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored thirteenth opening/introductory slide for ch01-t01, positioned as a sibling of Slides 1-12 rather than a replacement — no prior slide's record is modified by this addition. Deliberately distinct in wording from Slides 1-12 and from the already-approved mainIdea, organizedExplanation, and misconception blocks.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "figureAltAr": "شخص يرفع حقيبة سفر رأسيًا في الجهة اليسرى ويسحب حقيبة أفقيًا في الجهة اليمنى، لتوضيح الوزن أثناء الرفع والقصور الذاتي أثناء التسارع.",
+        "slideTitleAr": "كيف توضح حقيبة السفر الفرق بين الكتلة والوزن؟"
+      }
+    },
+    {
       "recordType": "instructorScript",
       "record": {
         "instructorScriptId": "ch01-is-101",

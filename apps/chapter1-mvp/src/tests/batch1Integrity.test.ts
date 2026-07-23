@@ -89,7 +89,13 @@ const APPROVED = {
     // the existing tableExplanationMarker slot and introducing the new
     // generic equationPhraseItalicTokens/equationAwareSections
     // StructuredSlideConfig fields (see src/tests/slide12MassInertia.test.tsx).
-    sha256: "23b620937bb2ed65fe8caaff9b6d70e14cc4ba6f4260e94c1a16931d5b8c34fd",
+    // rev-024 adds ch01-t01-block-opening-13 (Slide 13, mass versus weight),
+    // reusing the existing figureExplanationMarker slot and reusing
+    // equationPhraseItalicTokens/equationAwareSections unmodified, plus a
+    // new generic originalEmphasisPhrases config field for preserving the
+    // source's own word-level emphasis (see
+    // src/tests/slide13MassVersusWeight.test.tsx).
+    sha256: "0b3904d6d49f220d9191644b5344615b86cca45b152ca885809a435f15764736",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -149,7 +155,9 @@ const APPROVED = {
     // requirement enforced by batch1Merge.ts, matching English rev-022.
     // rev-022 adds the Arabic side of ch01-t01-block-opening-12 (Slide 12),
     // matching English rev-023 (see src/tests/slide12MassInertia.test.tsx).
-    sha256: "1041af0fbf833156a9c9720281d090c08c01ed2ccc734e3e70868b8b6f70fe10",
+    // rev-023 adds the Arabic side of ch01-t01-block-opening-13 (Slide 13),
+    // matching English rev-024 (see src/tests/slide13MassVersusWeight.test.tsx).
+    sha256: "2e2fa8836465dcbe92743d1e525e847cb8b04744ad22ead9093ea918dd814f03",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
