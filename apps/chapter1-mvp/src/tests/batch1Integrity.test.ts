@@ -84,8 +84,12 @@ const APPROVED = {
     // slot with no new subsection type. rev-022 corrects
     // ch01-t01-block-opening-11's provenanceLinks[0].evidence, which had
     // gone stale after a separate N-italicization typesetting fix (PR #19)
-    // was merged without updating this provenance text to match.
-    sha256: "faf25b27033f62c09eb75541a34cc0b35f430149696b6d4a91b4758bd24baeb3",
+    // was merged without updating this provenance text to match. rev-023
+    // adds ch01-t01-block-opening-12 (Slide 12, mass and inertia), reusing
+    // the existing tableExplanationMarker slot and introducing the new
+    // generic equationPhraseItalicTokens/equationAwareSections
+    // StructuredSlideConfig fields (see src/tests/slide12MassInertia.test.tsx).
+    sha256: "23b620937bb2ed65fe8caaff9b6d70e14cc4ba6f4260e94c1a16931d5b8c34fd",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -143,7 +147,9 @@ const APPROVED = {
     // English-and-Arabic provenance statement, stored identically in both
     // content files to satisfy the shared-metadata byte-equality
     // requirement enforced by batch1Merge.ts, matching English rev-022.
-    sha256: "238befa47b0fc9edf3561f81af865061c4a040462c86580ccc01a7457e65e5bc",
+    // rev-022 adds the Arabic side of ch01-t01-block-opening-12 (Slide 12),
+    // matching English rev-023 (see src/tests/slide12MassInertia.test.tsx).
+    sha256: "1041af0fbf833156a9c9720281d090c08c01ed2ccc734e3e70868b8b6f70fe10",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
