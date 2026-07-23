@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "0c3a200509ecf1e6cfd1d0324fd251ba648a0a6b2d2c039d09bae878eb49e184",
+      "sha256": "238befa47b0fc9edf3561f81af865061c4a040462c86580ccc01a7457e65e5bc",
       "schemaVersion": "2.3.0",
       "recordCount": 18
     },
@@ -457,6 +457,25 @@
       }
     ]
   },
+  "checksumOnlyCorrections": [
+    {
+      "correctionId": "ch01-arabic-baseline-checksum-001",
+      "correctedAt": "2026-07-23",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "file": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
+      "field": "ch01-t01-block-opening-11.provenanceLinks[0].evidence",
+      "whatChanged": "Replaced the stale provenance claim (an English-language sentence stating 'N' renders entirely upright, written before a later, separate N-italicization typesetting correction, merged in PR #19, made 'N' render italic within Slide 11 via a block-scoped additionalItalicTokens configuration) with the project-owner-supplied bilingual English-and-Arabic provenance statement, stored identically in both content files to satisfy the shared-metadata byte-equality requirement enforced by batch1Merge.ts, confirming f, N, and t render italic, Δ remains upright, N is applied only through Slide 11's scoped additionalItalicTokens and is not added to the topic-wide equation-token whitelist, and units (s, Hz, cycles/s, s⁻¹) remain upright.",
+      "sha256Before": "0c3a200509ecf1e6cfd1d0324fd251ba648a0a6b2d2c039d09bae878eb49e184",
+      "sha256After": "238befa47b0fc9edf3561f81af865061c4a040462c86580ccc01a7457e65e5bc",
+      "whyNoBaselineVersionIncrement": "This file's own revisionControlPolicy.rule requires a controlled revision (baselineVersion increment + revisionLog entry) only for 'any .ar text field, or arabic.canonicalArabicTranslation, in the instructorScript, contentBlock, or problem records' — the changed field, provenanceLinks[0].evidence, is neither: it is English-language-authored governance/provenance metadata about the record's sourcing and rendering behavior, not Arabic instructional or translated content. No .ar text field and no arabic.canonicalArabicTranslation field on this or any other record was touched. baselineVersion therefore intentionally remains 1.0.21, unchanged by this correction, consistent with the file's own stated policy scope.",
+      "whatWasNotChanged": "No Arabic instructional wording, arabic.canonicalArabicTranslation text, translationStatus, terminologyApprovalStatus, or any other field on ch01-t01-block-opening-11 or any other record was touched. Slides 1-10's Arabic content is entirely unchanged. No record in ch01-t04 was touched.",
+      "resolvedGovernanceRecords": [
+        "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-022 (1.19.0 -> 1.20.0; that file's rule scopes to contentBlock records broadly, so the equivalent English-file correction did require a controlled revision)",
+        "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-11.arabicBaselineDependency.sha256 refreshed to match (baselineVersion left at 1.0.21)",
+        "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 expected sha256 constant refreshed to match"
+      ]
+    }
+  ],
   "identifierRegistrationStatus": {
     "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal Arabic baseline approval and was NOT performed as part of it. Registration remains required before any future application-integration step, unchanged from the status already recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json and PILOT_READINESS.json. IDENTIFIER_REGISTRY.json was not modified by this approval."
   },
