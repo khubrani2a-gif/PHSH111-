@@ -315,6 +315,103 @@ describe("Progress", () => {
   });
 });
 
+function readCanonicalRecordIds(): string[] {
+  const raw = window.localStorage.getItem("phsh111:ch01-t01.slides.learningState");
+  if (!raw) return [];
+  return Object.keys(JSON.parse(raw).records ?? {});
+}
+
+describe("Progress — precise viewed-marking across every navigation path (PR C)", () => {
+  it("29. Next marks only the destination slide Viewed", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=1"] });
+    click(getFooterBtn("next"));
+    expect(readCanonicalRecordIds().sort()).toEqual(
+      ["ch01-t01-block-opening", "ch01-t01-block-opening-2"].sort(),
+    );
+  });
+
+  it("30. Previous marks only the destination slide Viewed", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=5"] });
+    click(getFooterBtn("prev"));
+    expect(readCanonicalRecordIds().sort()).toEqual(
+      ["ch01-t01-block-opening-4", "ch01-t01-block-opening-5"].sort(),
+    );
+  });
+
+  it("31. sidebar selection updates Viewed for the selected slide", () => {
+    renderSlidesExperience(root, topic);
+    const entries = getNavigatorEntries();
+    const slide9 = entries.find((el) => el.textContent?.includes("Period and Frequency"));
+    click(slide9 ?? null);
+    expect(readCanonicalRecordIds()).toContain("ch01-t01-block-opening-9");
+  });
+
+  it("32. drawer selection updates Viewed for the selected slide", () => {
+    renderSlidesExperience(root, topic);
+    click(container.querySelector(".slide-navigator-drawer__trigger"));
+    const entry = Array.from(
+      container.querySelectorAll<HTMLButtonElement>(".slide-navigator-drawer__panel .slide-navigator__entry"),
+    ).find((el) => el.textContent?.includes("Period and Frequency"));
+    click(entry ?? null);
+    expect(readCanonicalRecordIds()).toContain("ch01-t01-block-opening-9");
+  });
+
+  it("33. direct valid ?slide=N entry marks that slide Viewed", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=7"] });
+    expect(readCanonicalRecordIds()).toEqual(["ch01-t01-block-opening-7"]);
+  });
+
+  it("34. an invalid ?slide= entry marks only the safely resolved fallback slide Viewed", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=999"] });
+    expect(readCanonicalRecordIds()).toEqual(["ch01-t01-block-opening"]);
+  });
+
+  it("35. browser Back/Forward marks the actual active slide Viewed at each step", () => {
+    const router = createMemoryRouter(
+      [
+        { path: "/topic", element: (<LanguageProvider><SlidesExperience topic={topic} /></LanguageProvider>) },
+      ],
+      { initialEntries: ["/topic?slide=1"] },
+    );
+    act(() => { root.render(<RouterProvider router={router} />); });
+    click(getFooterBtn("next")); // -> 2
+    click(getFooterBtn("next")); // -> 3
+    act(() => { router.navigate(-1); }); // back to 2 (already viewed)
+    act(() => { router.navigate(-1); }); // back to 1 (already viewed)
+    expect(readCanonicalRecordIds().sort()).toEqual(
+      ["ch01-t01-block-opening", "ch01-t01-block-opening-2", "ch01-t01-block-opening-3"].sort(),
+    );
+  });
+
+  it("36. Study/Review toggle does not alter completion or mastery, and does not create a separate progress record", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    click(getFooterBtn("complete"));
+    click(container.querySelector('.slide-view-mode-toggle__btn[aria-pressed="false"]')); // -> review
+    click(container.querySelector('.slide-view-mode-toggle__btn[aria-pressed="false"]')); // -> study
+    const raw = window.localStorage.getItem("phsh111:ch01-t01.slides.learningState");
+    const records = JSON.parse(raw!).records;
+    expect(Object.keys(records)).toEqual(["ch01-t01-block-opening-3"]);
+    expect(records["ch01-t01-block-opening-3"].completedAt).toBeTypeOf("string");
+    expect(records["ch01-t01-block-opening-3"].masteredAt).toBeUndefined();
+  });
+
+  it("37. switching language preserves progress (no reset, no duplicate record)", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    click(getFooterBtn("complete"));
+    const before = readCanonicalRecordIds().sort();
+
+    act(() => root.unmount());
+    container.remove();
+    container = document.createElement("div");
+    document.body.appendChild(container);
+    root = createRoot(container);
+    renderSlidesExperience(root, topic, { arabic: true, initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+
+    expect(readCanonicalRecordIds().sort()).toEqual(before);
+    expect(getFooterBtn("complete").getAttribute("aria-pressed")).toBe("true");
+  });
+});
+
 describe("Study/Review mode", () => {
   it("Study Mode shows the full slide content, including Original English and Scientific Note", () => {
     renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=13"] });
@@ -544,6 +641,92 @@ describe("View All Slides — return-to-reader active-slide handoff (regression)
       router.navigate(1);
     });
     expect(getSlideOfTotal()).toBe("Slide 8 of 13");
+  });
+});
+
+describe("Cross-view progress synchronization (PR C)", () => {
+  function renderWithRouter(initialEntries: string[]) {
+    const router = createMemoryRouter(
+      [
+        {
+          path: "/topic",
+          element: (
+            <LanguageProvider>
+              <SlidesExperience topic={topic} />
+            </LanguageProvider>
+          ),
+        },
+      ],
+      { initialEntries },
+    );
+    act(() => {
+      root.render(<RouterProvider router={router} />);
+    });
+    return router;
+  }
+
+  function openAccordionSlide(slideNumber: number) {
+    const header = container.querySelector<HTMLButtonElement>(`#slide-${slideNumber}-header`);
+    if (!header) throw new Error(`accordion header for slide ${slideNumber} not found`);
+    click(header);
+  }
+
+  function accordionHasViewedBadge(slideNumber: number): boolean {
+    const header = container.querySelector<HTMLButtonElement>(`#slide-${slideNumber}-header`);
+    return !!header?.querySelector(".slide-accordion__viewed-badge, .slide-accordion__completed-badge");
+  }
+
+  function accordionHasCompletedBadge(slideNumber: number): boolean {
+    const header = container.querySelector<HTMLButtonElement>(`#slide-${slideNumber}-header`);
+    return !!header?.querySelector(".slide-accordion__completed-badge");
+  }
+
+  it("43. a slide marked Viewed in the reader appears Viewed immediately in View All Slides, with no reload", () => {
+    renderWithRouter(["/topic?slide=5"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    expect(accordionHasViewedBadge(5)).toBe(true);
+  });
+
+  it("44. a slide viewed by expanding it in the accordion appears Viewed immediately after returning to the reader", () => {
+    renderWithRouter(["/topic?slide=1"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    openAccordionSlide(7);
+    click(container.querySelector(".slides-experience__return-to-reader"));
+    const current = getNavigatorEntries().find((el) => el.getAttribute("aria-current") === "true");
+    expect(current?.querySelector(".slide-navigator__status")?.textContent).toBe("●");
+  });
+
+  it("45. reader Mark Complete appears immediately in the accordion as a Completed indicator", () => {
+    renderWithRouter(["/topic?slide=3"]);
+    click(getFooterBtn("complete"));
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    expect(accordionHasCompletedBadge(3)).toBe(true);
+  });
+
+  it("46. Mark Incomplete appears immediately in the accordion (Completed indicator disappears, Viewed remains)", () => {
+    renderWithRouter(["/topic?slide=3"]);
+    click(getFooterBtn("complete"));
+    click(getFooterBtn("complete")); // -> incomplete again
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    expect(accordionHasCompletedBadge(3)).toBe(false);
+    expect(accordionHasViewedBadge(3)).toBe(true);
+  });
+
+  it("47. an accordion interaction (opening a different slide) does not remove an existing slide's completion", () => {
+    renderWithRouter(["/topic?slide=3"]);
+    click(getFooterBtn("complete"));
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    openAccordionSlide(7);
+    expect(accordionHasCompletedBadge(3)).toBe(true);
+  });
+
+  it("48. the reader<->accordion handoff continues to preserve the active slide and ?slide=N alongside the new sync guarantees", () => {
+    const router = renderWithRouter(["/topic?slide=3"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    openAccordionSlide(7);
+    click(container.querySelector(".slides-experience__return-to-reader"));
+    expect(getSlideOfTotal()).toBe("Slide 7 of 13");
+    expect(router.state.location.search).toBe("?slide=7");
   });
 });
 

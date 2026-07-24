@@ -51,6 +51,7 @@ export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAl
   const [searchParams, setSearchParams] = useSearchParams();
 
   const slideNumbers = slides.map((s) => s.slideNumber);
+  const recordIds = slides.map((s) => s.recordId);
   const lastSlideKey = `${topicId}.reader.lastSlideNumber`;
 
   const rawParam = searchParams.get(SLIDE_QUERY_PARAM);
@@ -73,7 +74,7 @@ export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAl
     return stored === "review" ? "review" : "study";
   });
 
-  const [learningState, setLearningState] = useState<TopicLearningState>(() => readTopicLearningState(topicId));
+  const [learningState, setLearningState] = useState<TopicLearningState>(() => readTopicLearningState(topicId, recordIds));
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [sectionEntries, setSectionEntries] = useState<SlideSectionNavEntry[]>([]);
 
@@ -200,10 +201,7 @@ export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAl
 
   const groups = resolveSlideGroups(topicId, slideNumbers);
   const entriesBySlideNumber = buildSlideNavigatorEntries(slides, language);
-  const { percent } = completionProgress(
-    learningState,
-    slides.map((s) => s.recordId),
-  );
+  const { percent } = completionProgress(learningState, recordIds);
 
   return (
     <div className="slide-reader" dir={direction}>

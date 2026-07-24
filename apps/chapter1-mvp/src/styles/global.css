@@ -597,6 +597,19 @@ button:focus-visible {
   flex-shrink: 0;
 }
 
+/* Completed reflects the same canonical learning state the Slide Reader's
+   navigator shows (see src/app/slideProgress.ts) — reuses that navigator's
+   completed/mastered color so "completed" reads consistently across both
+   views, distinct from the plain "viewed" badge's color above. Mutually
+   exclusive with .slide-accordion__viewed-badge in the same header (a
+   completed slide is always also viewed, so only the completed badge
+   renders — see Slides.tsx). */
+.slide-accordion__completed-badge {
+  color: var(--color-highlight-border, #16a34a);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
 .slide-accordion__indicator {
   font-size: 1.3rem;
   line-height: 1;
