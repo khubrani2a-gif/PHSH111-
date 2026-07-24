@@ -13,6 +13,9 @@
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";
+import { readFileSync } from "node:fs";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { getTopic } from "../content/adapter";
 import {
   EQUATION_ITALIC_TOKENS_BY_TOPIC,
@@ -660,5 +663,249 @@ describe("26. Governance remains blocked and publication unauthorized", () => {
 describe("27. missingVisual is absent", () => {
   it("blocking.blockingReason does not include 'missingVisual' now that the focused figure asset is integrated", () => {
     expect(slide13.blocking.blockingReason).not.toContain("missingVisual");
+  });
+});
+
+// Content-audit findings F-02 (constant-velocity/friction clarification)
+// and F-22 (provenance correction) — Slide 13 only. No other audit finding
+// is exercised here. Reads the two raw approved content files directly
+// (mirroring src/tests/batch1Integrity.test.ts's own pattern) for the
+// provenance checks, since provenanceLinks is governance/documentation
+// metadata not exposed on the normalized runtime slide object and not
+// rendered in the DOM.
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const CHAPTER01_DIR = resolve(__dirname, "../../../../docs/content-design/chapter-01");
+const ENGLISH_T01_PATH = resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t01-content.json");
+const ARABIC_T01_PATH = resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json");
+
+function findSlide13Record(filePath: string) {
+  const data = JSON.parse(readFileSync(filePath, "utf8"));
+  const found = data.records.find((r: { record: { blockId?: string } }) => r.record.blockId === "ch01-t01-block-opening-13");
+  if (!found) throw new Error(`ch01-t01-block-opening-13 not found in ${filePath}`);
+  return found.record;
+}
+
+const NEW_CLARIFICATION_EN =
+  "At a constant pulling speed, the net horizontal force is zero, and the steady effort a person feels is mostly overcoming friction and rolling resistance — mass and inertia are revealed specifically by a change in velocity, not by sustained motion at constant speed.";
+const NEW_CLARIFICATION_AR =
+  "عند السحب بسرعة ثابتة، تكون القوة الأفقية المحصلة صفرًا، والجهد المستمر الذي يشعر به الشخص ناتج أساسًا عن التغلب على الاحتكاك ومقاومة التدحرج — إذ تنكشف الكتلة والقصور الذاتي تحديدًا عند تغيّر السرعة، لا عند الحركة المستمرة بسرعة ثابتة.";
+const NEW_PROVENANCE =
+  "The project owner supplied a complete slide screenshot containing the title, explanatory text, and lifting-versus-pulling suitcase illustration. A focused derivative figure asset containing only the instructional suitcase comparison was extracted for student-facing display, preserving both illustrated actions (lifting and pulling) in one accessible figure via the existing SlideFigure mechanism — the source screenshot's title banner and bullet text are not rendered student-facing, and no visual asset beyond this one focused derivative figure is referenced, so blocking.blockingReason does not include 'missingVisual'.";
+
+describe("28. F-02 — English Scientific Note contains the exact constant-speed clarification", () => {
+  it("the exact required English sentence is present in slide13.text.en", () => {
+    expect(slide13.text.en ?? "").toContain(NEW_CLARIFICATION_EN);
+  });
+
+  it("renders inside the Scientific Note subsection specifically, not another subsection", () => {
+    renderSlides(false, 13);
+    const panel = getSlidePanel(container, 13)!;
+    const sections = Array.from(panel.querySelectorAll(".structured-slide__section"));
+    const scientificNote = sections.find(
+      (s) => s.querySelector(".structured-slide__heading")?.textContent === "Scientific Note",
+    );
+    expect(scientificNote).toBeDefined();
+    expect(scientificNote!.textContent).toContain(NEW_CLARIFICATION_EN);
+
+    // Confirm it does NOT leak into the adjacent Key Concept subsection.
+    const keyConcept = sections.find(
+      (s) => s.querySelector(".structured-slide__heading")?.textContent === "Key Concept",
+    );
+    expect(keyConcept).toBeDefined();
+    expect(keyConcept!.textContent).not.toContain(NEW_CLARIFICATION_EN);
+  });
+
+  it("the full existing Scientific Note text is still present alongside the new sentence", () => {
+    expect(slide13.text.en ?? "").toContain(
+      "Everyday speech often uses \"weight\" when referring to mass, but physics distinguishes them.",
+    );
+    expect(slide13.text.en ?? "").toContain(
+      "The phrase \"experiencing its mass\" in the source refers specifically to experiencing the suitcase's inertial resistance while changing its velocity.",
+    );
+  });
+});
+
+describe("29. F-02 — Arabic Scientific Note contains the exact approved Arabic sentence", () => {
+  it("the exact required Arabic sentence is present in slide13.text.ar", () => {
+    expect(slide13.text.ar ?? "").toContain(NEW_CLARIFICATION_AR);
+  });
+
+  it("renders inside the Arabic Scientific Note subsection specifically, not another subsection", () => {
+    renderSlides(true, 13);
+    const panel = getSlidePanel(container, 13)!;
+    const sections = Array.from(panel.querySelectorAll(".structured-slide__section"));
+    const scientificNote = sections.find(
+      (s) => s.querySelector(".structured-slide__heading")?.textContent === "ملاحظة علمية",
+    );
+    expect(scientificNote).toBeDefined();
+    expect(scientificNote!.textContent).toContain(NEW_CLARIFICATION_AR);
+
+    const keyConcept = sections.find(
+      (s) => s.querySelector(".structured-slide__heading")?.textContent === "المفهوم الأساسي",
+    );
+    expect(keyConcept).toBeDefined();
+    expect(keyConcept!.textContent).not.toContain(NEW_CLARIFICATION_AR);
+  });
+
+  it("both synchronized Arabic fields (localizedContent.ar.text and arabic.canonicalArabicTranslation.text) contain the identical new sentence", () => {
+    const rec = findSlide13Record(ARABIC_T01_PATH);
+    expect(rec.localizedContent.ar.text).toContain(NEW_CLARIFICATION_AR);
+    expect(rec.arabic.canonicalArabicTranslation.text).toContain(NEW_CLARIFICATION_AR);
+    expect(rec.localizedContent.ar.text).toBe(rec.arabic.canonicalArabicTranslation.text);
+  });
+});
+
+describe("30. F-02 — the Original English verbatim source sentence is byte-for-byte unchanged", () => {
+  it("the exact source sentence is present, character-for-character", () => {
+    expect(slide13.text.en ?? "").toContain(
+      "When you pull it along and speed it up or slow it down, you are experiencing its mass.",
+    );
+  });
+
+  it("all four verbatim Original English source paragraphs are present, unaltered", () => {
+    const en = slide13.text.en ?? "";
+    expect(en).toContain("1.1 Fundamental Physical Quantities: Mass");
+    expect(en).toContain("Weight, a quantity that is related to, but is not the same as mass, is used instead.");
+    expect(en).toContain("When you try to lift a heavy suitcase, you are experiencing its weight.");
+    expect(en).toContain("When you pull it along and speed it up or slow it down, you are experiencing its mass.");
+  });
+
+  it("the Original English subsection in the DOM is unaffected by the Scientific Note addition", () => {
+    renderSlides(false, 13);
+    const panel = getSlidePanel(container, 13)!;
+    const sections = Array.from(panel.querySelectorAll(".structured-slide__section"));
+    const original = sections.find(
+      (s) => s.querySelector(".structured-slide__heading")?.textContent === "Original English",
+    );
+    expect(original).toBeDefined();
+    expect(original!.textContent).not.toContain(NEW_CLARIFICATION_EN);
+    expect(original!.textContent).toContain(
+      "When you pull it along and speed it up or slow it down, you are experiencing its mass.",
+    );
+  });
+});
+
+describe("31. F-02 — existing equations remain unchanged", () => {
+  it("all four Simple Example equations render exactly as before", () => {
+    renderSlides(false, 13);
+    const blocks = Array.from(
+      getSlidePanel(container, 13)!.querySelectorAll(".structured-slide__equation-block"),
+    ).map((el) => el.textContent);
+    expect(blocks).toContain("W = (20 kg)(9.8 m/s²) = 196 N");
+    expect(blocks).toContain("a = (40 N) / (20 kg) = 2.0 m/s²");
+    expect(slide13.text.en ?? "").toContain("W = m g");
+    expect(slide13.text.en ?? "").toContain("a = F_net / m");
+  });
+
+  it("the numerical results are correct and unchanged", () => {
+    expect(20 * 9.8).toBe(196);
+    expect(40 / 20).toBe(2.0);
+  });
+});
+
+describe("32. F-02 — distinguishes net horizontal force (zero at constant velocity) from the applied pulling force", () => {
+  it("the clarification states the NET horizontal force is zero, not the applied pulling force", () => {
+    const en = slide13.text.en ?? "";
+    expect(en).toContain("the net horizontal force is zero");
+    expect(en).not.toContain("the pulling force is zero");
+    expect(en).not.toContain("the applied force is zero");
+  });
+
+  it("Step 2 still correctly states the applied (upward) force balances weight at constant vertical velocity — a distinct, unmodified claim", () => {
+    const en = slide13.text.en ?? "";
+    expect(en).toContain("At constant vertical velocity, the upward applied force balances its weight.");
+  });
+});
+
+describe("33. F-22 — provenance evidence is corrected in both records", () => {
+  it("English record's provenance evidence matches the exact required replacement text", () => {
+    const rec = findSlide13Record(ENGLISH_T01_PATH);
+    expect(rec.provenanceLinks[0].evidence).toContain(NEW_PROVENANCE);
+  });
+
+  it("Arabic record's provenance evidence matches the exact required replacement text (shared metadata, not translated)", () => {
+    const rec = findSlide13Record(ARABIC_T01_PATH);
+    expect(rec.provenanceLinks[0].evidence).toContain(NEW_PROVENANCE);
+  });
+
+  it("the provenance evidence contains the required phrases", () => {
+    const rec = findSlide13Record(ENGLISH_T01_PATH);
+    expect(rec.provenanceLinks[0].evidence).toContain("complete slide screenshot");
+    expect(rec.provenanceLinks[0].evidence).toContain("focused derivative figure asset");
+  });
+
+  it("the provenance evidence no longer contains the incorrect 'already focused'/'no further cropping' claims", () => {
+    const rec = findSlide13Record(ENGLISH_T01_PATH);
+    expect(rec.provenanceLinks[0].evidence).not.toContain("already focused");
+    expect(rec.provenanceLinks[0].evidence).not.toContain("no further cropping was required");
+  });
+
+  it("the provenance evidence is byte-identical across the English and Arabic records", () => {
+    const enRec = findSlide13Record(ENGLISH_T01_PATH);
+    const arRec = findSlide13Record(ARABIC_T01_PATH);
+    expect(enRec.provenanceLinks[0].evidence).toBe(arRec.provenanceLinks[0].evidence);
+  });
+});
+
+describe("34. Figure asset path and alt text remain unchanged", () => {
+  it("figureAssetPath is unchanged", () => {
+    const enRec = findSlide13Record(ENGLISH_T01_PATH);
+    expect(enRec.figureAssetPath).toBe(
+      "docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-13-figure.jpg",
+    );
+  });
+
+  it("figureAltEn is unchanged", () => {
+    const enRec = findSlide13Record(ENGLISH_T01_PATH);
+    expect(enRec.figureAltEn).toBe(
+      "A person lifts a suitcase vertically on the left and pulls a suitcase horizontally on the right, illustrating weight during lifting and inertia during acceleration.",
+    );
+  });
+
+  it("rendered alt text (English and Arabic) is unchanged", () => {
+    renderSlides(false, 13);
+    let img = getSlidePanel(container, 13)!.querySelector("img")!;
+    expect(img.getAttribute("alt")).toBe(
+      "A person lifts a suitcase vertically on the left and pulls a suitcase horizontally on the right, illustrating weight during lifting and inertia during acceleration.",
+    );
+    remount();
+    renderSlides(true, 13);
+    img = getSlidePanel(container, 13)!.querySelector("img")!;
+    expect(img.getAttribute("alt")).toBe(
+      "شخص يرفع حقيبة سفر رأسيًا في الجهة اليسرى ويسحب حقيبة أفقيًا في الجهة اليمنى، لتوضيح الوزن أثناء الرفع والقصور الذاتي أثناء التسارع.",
+    );
+  });
+});
+
+describe("35. Publication and blocking flags remain unchanged", () => {
+  it("blocking.blockingStatus remains 'blocked' and studentFacingAllowed remains false", () => {
+    expect(slide13.blocking.blockingStatus).toBe("blocked");
+    expect(slide13.blocking.studentFacingAllowed).toBe(false);
+  });
+
+  it("topic-level publication flags remain false", () => {
+    expect(topic.governance.studentFacingAllowed).toBe(false);
+    expect(topic.governance.studentPublicationAuthorized).toBe(false);
+  });
+
+  it("Slides 1-12's governance flags are entirely untouched", () => {
+    for (const slide of topic.slides.filter((s) => s.slideNumber <= 12)) {
+      expect(slide.blocking.studentFacingAllowed).toBe(false);
+      expect(slide.blocking.blockingStatus).toBe("blocked");
+    }
+  });
+});
+
+describe("36. Slides 1-12 remain entirely unaffected by the Slide 13 fix", () => {
+  it("Slide 12's own equations and text are byte-for-byte unchanged", () => {
+    expect(slide12.text.en ?? "").toContain("a = F_net / m");
+    expect(slide12.text.en ?? "").toContain("W = m g");
+    expect(slide12.text.en ?? "").toContain("The source does not list the pound as a mass unit.");
+  });
+
+  it("Slide 1's verbatim text is unaffected", () => {
+    expect(slide1.text.en ?? "").toContain(
+      "In physics, there are three basic aspects of the material universe",
+    );
   });
 });

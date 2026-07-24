@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.22.0",
+  "baselineVersion": "1.23.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -19,7 +19,7 @@
       "topicId": "ch01-t01",
       "topicTitle": "Fundamental Quantities",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
-      "sha256": "0b3904d6d49f220d9191644b5344615b86cca45b152ca885809a435f15764736",
+      "sha256": "278fa769325ffd39d11a3cb59818b3b107119ad6ba4443a0345bcee6a2b314d6",
       "schemaVersion": "2.3.0",
       "recordCount": 20
     },
@@ -484,6 +484,23 @@
           "apps/chapter1-mvp/src/content/rawImports.ts — new figure import and RAW_FIGURE_URL_BY_BLOCK_ID entry for ch01-t01-block-opening-13"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the new record; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This new record has NOT been through the drafting-authorization / generation / review / revision / closure-verification sequence the rest of this baseline's content went through — its blocking.blockingStatus is 'blocked' with blockingReason including 'scientificReviewPending', reflecting that its scientific accuracy and translation have been checked only by Claude's own authoring process, not a separate review pass. No 'missingVisual' reason is present: the source illustration is integrated directly as this record's figure asset via the existing generic figure mechanism. This revision authorizes the record's presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-025",
+        "fromVersion": "1.22.0",
+        "toVersion": "1.23.0",
+        "revisedAt": "2026-07-24",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Implements exactly two approved content-audit findings on ch01-t01-block-opening-13 (Slide 13) only, in docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json: (1) content-audit finding F-02, appending one clarifying sentence to Slide 13's Scientific Note; (2) content-audit finding F-22, correcting Slide 13's provenanceLinks[0].evidence. No other section of Slide 13, and no other record in ch01-t01 (Slides 1-12) or ch01-t04, was touched. No other audit finding was implemented.",
+        "whatChanged": "F-02: Appended the sentence 'At a constant pulling speed, the net horizontal force is zero, and the steady effort a person feels is mostly overcoming friction and rolling resistance — mass and inertia are revealed specifically by a change in velocity, not by sustained motion at constant speed.' to the end of Slide 13's existing Scientific Note (after '...while changing its velocity.', before the Key Concept marker). This closes a gap where the explanation correctly connected mass/inertia to a change in velocity but never stated the converse: at constant velocity the net horizontal force is zero, and sustained pulling effort mostly reflects friction/rolling resistance rather than inertia. F-22: Replaced provenanceLinks[0].evidence's first two sentences (which incorrectly claimed the project-owner-supplied source image was 'already focused to the illustration itself... so no further cropping was required') with the project-owner-corrected factual account: the source was a complete slide screenshot (title banner, explanatory bullet text, and the suitcase illustration together), from which a focused derivative figure was extracted for student-facing display. The remainder of the evidence field (describing the newly-authored sections, the originalEmphasisPhrases mechanism, and the additionalItalicTokens/equationPhraseItalicTokens token-scoping rationale) is unchanged.",
+        "whatWasNotChanged": "Slide 13's Original English subsection (including the verbatim sentence 'When you pull it along and speed it up or slow it down, you are experiencing its mass.') is byte-for-byte unchanged. Slide 13's Main Idea, all five numbered steps, Simple Example (including every equation: W = m g, W = (20 kg)(9.8 m/s²) = 196 N, a = F_net / m, a = (40 N) / (20 kg) = 2.0 m/s²), Figure Explanation, Common Misconception, Key Concept, and Connection to the Next Slide are unchanged. figureAssetPath, figureAltEn, slideTitleEn, and every governance/blocking field on Slide 13 are unchanged. Slides 1-12 are entirely byte-for-byte unchanged. No record in ch01-t04 was touched. The committed figure asset (docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-13-figure.jpg) was inspected and confirmed to already be the correctly focused derivative (excludes the source screenshot's title banner and bullet text, retains both the lifting and pulling actions) — it was not regenerated, recompressed, or otherwise modified.",
+        "rationale": "Project-owner-directed implementation of exactly two approved findings from the ch01-t01 content-and-governance audit: F-02 (a genuine pedagogical gap — the prior text never ruled out the common misconception that any sustained pulling effort, not just acceleration, demonstrates mass) and F-22 (a factual correction to the provenance record, per the project owner's own direct correction of the source's actual history — the supplied image was a complete slide screenshot, not an already-cropped illustration).",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json — ch01-t01-block-opening-13.localizedContent.en.text (Scientific Note only) and .provenanceLinks[0].evidence revised",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-025",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-13.englishBaselineDependency/arabicBaselineDependency refreshed to match; every other slide's entry untouched"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. ch01-t01-block-opening-13's blocking.blockingStatus remains 'blocked' (blockingReason unchanged), reviewer identity and review/translation-approval/application-integration/content-leak status are unchanged. This revision does not constitute or imply publication authorization or independent scientific sign-off."
       }
     ]
   },

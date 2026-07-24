@@ -1172,17 +1172,17 @@
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json",
         "englishBaselineDependency": {
           "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.22.0",
-          "sha256": "0b3904d6d49f220d9191644b5344615b86cca45b152ca885809a435f15764736"
+          "baselineVersion": "1.23.0",
+          "sha256": "278fa769325ffd39d11a3cb59818b3b107119ad6ba4443a0345bcee6a2b314d6"
         },
         "arabicBaselineDependency": {
           "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.0.23",
-          "sha256": "2e2fa8836465dcbe92743d1e525e847cb8b04744ad22ead9093ea918dd814f03"
+          "baselineVersion": "1.0.25",
+          "sha256": "b4359d7d3c9b940645a4a6dab4dc96e15f623f811a2f54f891ed1f83f89e77d1"
         },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-23",
-        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.22.0 revisionLog rev-024; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.23 revisionLog rev-023",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.23.0 revisionLog rev-025 (content-audit findings F-02, F-22); ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.25 revisionLog rev-025",
         "status": "registered",
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
