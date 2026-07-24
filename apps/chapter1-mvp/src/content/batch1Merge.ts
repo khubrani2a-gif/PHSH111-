@@ -68,6 +68,22 @@ function isRecordObject(x: unknown): x is Record<string, unknown> {
   return typeof x === "object" && x !== null && !Array.isArray(x);
 }
 
+/**
+ * Extracts and validates a baseline-approval file's `baselineVersion`
+ * field for interpolation into the synthesized `generationNote` (see
+ * mergeEnglishAndArabicTopicFile below). Fails loudly via
+ * Batch1MergeError — never falls back to "1.0.0", "unknown", or an empty
+ * value — so a missing or malformed baseline-approval import is caught
+ * immediately rather than silently producing stale or blank metadata.
+ */
+function requireBaselineVersion(baselineApproval: unknown, label: string): string {
+  const version = isRecordObject(baselineApproval) ? baselineApproval.baselineVersion : undefined;
+  if (typeof version !== "string" || version.trim().length === 0) {
+    throw new Batch1MergeError(`${label}'s baselineVersion is missing or not a non-empty string`);
+  }
+  return version;
+}
+
 /** Strict, order-sensitive structural equality — no coercion, no partial match. */
 function deepEqual(a: unknown, b: unknown): boolean {
   if (a === b) return true;
@@ -364,14 +380,33 @@ function mergeProblemRecord(
  * every other part of the application (adapter, validate) already expects.
  * Throws Batch1MergeError — never returns partial content — on any
  * structural mismatch.
+ *
+ * englishBaselineApproval/arabicBaselineApproval are the raw imported
+ * ENGLISH_BATCH1_BASELINE_APPROVAL.json / ARABIC_BATCH1_BASELINE_APPROVAL.json
+ * governance objects (imported once, centrally, in src/content/rawImports.ts,
+ * like every other external file this application reads) — their
+ * `baselineVersion` fields are read here and interpolated into the
+ * synthesized generationNote below, so that note's version references
+ * always match the baseline-approval files' actual current versions
+ * instead of a hardcoded literal going stale over time.
  */
 export function mergeEnglishAndArabicTopicFile(
   englishRaw: unknown,
   arabicRaw: unknown,
   expectedTopicId: PilotTopicId,
+  englishBaselineApproval: unknown,
+  arabicBaselineApproval: unknown,
 ): PilotTopicFile {
   const en = requireRecordObject(englishRaw, `${expectedTopicId} English file`);
   const ar = requireRecordObject(arabicRaw, `${expectedTopicId} Arabic file`);
+  const englishBaselineVersion = requireBaselineVersion(
+    englishBaselineApproval,
+    `${expectedTopicId} ENGLISH_BATCH1_BASELINE_APPROVAL.json`,
+  );
+  const arabicBaselineVersion = requireBaselineVersion(
+    arabicBaselineApproval,
+    `${expectedTopicId} ARABIC_BATCH1_BASELINE_APPROVAL.json`,
+  );
 
   assertEqual(en.schemaVersion, ar.schemaVersion, `${expectedTopicId}.schemaVersion`);
   if (en.topicId !== expectedTopicId) {
@@ -451,9 +486,9 @@ export function mergeEnglishAndArabicTopicFile(
     generationStatus: "merged-batch1-english-arabic-in-memory",
     generationNote:
       "This PilotTopicFile is an in-memory merge (never written to disk) of the approved English baseline " +
-      `(docs/content-design/chapter-01/batch1-drafts/${expectedTopicId}-content.json, ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.0.0) ` +
+      `(docs/content-design/chapter-01/batch1-drafts/${expectedTopicId}-content.json, ENGLISH_BATCH1_BASELINE_APPROVAL.json v${englishBaselineVersion}) ` +
       `and the approved Arabic baseline (docs/content-design/chapter-01/batch1-arabic-drafts/${expectedTopicId}-content.json, ` +
-      "ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.0), produced by src/content/batch1Merge.ts at module load time. " +
+      `ARABIC_BATCH1_BASELINE_APPROVAL.json v${arabicBaselineVersion}), produced by src/content/batch1Merge.ts at module load time. ` +
       "Every non-Arabic field was verified identical between the two source files before merging.",
     records: mergedRecords,
   };

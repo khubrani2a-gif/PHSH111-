@@ -54,6 +54,16 @@ import ch01t04ContentEn from "../../../../docs/content-design/chapter-01/batch1-
 import ch01t01ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json";
 import ch01t04ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json";
 
+// Batch 1 — the two governance baseline-approval records themselves (not
+// content; immutable; never edited by this application). Both ch01-t01 and
+// ch01-t04 share the same pair of files, since one English and one Arabic
+// baseline-approval record covers all of Batch 1. Read only for their
+// baselineVersion field, interpolated into batch1Merge.ts's synthesized
+// generationNote so it never goes stale relative to the files' actual
+// current versions — see batch1Merge.ts's requireBaselineVersion.
+import englishBatch1BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json";
+import arabicBatch1BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json";
+
 // Batch 1 — approved visuals and their validation records.
 import ch01t01Validation from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json";
 import ch01t04Validation from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001-validation.json";
@@ -81,8 +91,20 @@ import { mergeEnglishAndArabicTopicFile } from "./batch1Merge";
 // run immediately, never silently) if either approved Batch 1 topic's
 // English and Arabic files have drifted out of structural agreement. See
 // src/content/batch1Merge.ts for the exact equality/merge rules.
-const ch01t01Content = mergeEnglishAndArabicTopicFile(ch01t01ContentEn, ch01t01ContentAr, "ch01-t01");
-const ch01t04Content = mergeEnglishAndArabicTopicFile(ch01t04ContentEn, ch01t04ContentAr, "ch01-t04");
+const ch01t01Content = mergeEnglishAndArabicTopicFile(
+  ch01t01ContentEn,
+  ch01t01ContentAr,
+  "ch01-t01",
+  englishBatch1BaselineApproval,
+  arabicBatch1BaselineApproval,
+);
+const ch01t04Content = mergeEnglishAndArabicTopicFile(
+  ch01t04ContentEn,
+  ch01t04ContentAr,
+  "ch01-t04",
+  englishBatch1BaselineApproval,
+  arabicBatch1BaselineApproval,
+);
 
 /** Raw (unvalidated `unknown`) content JSON, keyed by topic ID — narrowed only inside src/content/validate.ts. */
 export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
