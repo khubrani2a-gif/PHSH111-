@@ -547,6 +547,59 @@ describe("View All Slides — return-to-reader active-slide handoff (regression)
   });
 });
 
+describe("Reader-label regression — position/slideNumber consistency (PR A, requirement 5)", () => {
+  it("34. displays the correct current position and total for a mid-deck slide", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    expect(getSlideOfTotal()).toBe("Slide 3 of 13");
+  });
+
+  it("35. the Arabic label renders using the correct localized position/total format", () => {
+    renderSlidesExperience(root, topic, { arabic: true, initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    expect(getSlideOfTotal()).toBe("الشريحة 3 من 13");
+  });
+
+  it("36. deep linking still uses the actual slideNumber, not a positional index, in the URL", () => {
+    const router = createMemoryRouter(
+      [
+        {
+          path: "/topic",
+          element: (
+            <LanguageProvider>
+              <SlidesExperience topic={topic} />
+            </LanguageProvider>
+          ),
+        },
+      ],
+      { initialEntries: ["/topic?slide=8"] },
+    );
+    act(() => {
+      root.render(<RouterProvider router={router} />);
+    });
+    expect(getSlideOfTotal()).toBe("Slide 8 of 13");
+    expect(router.state.location.search).toBe("?slide=8");
+  });
+
+  it("37. Previous/Next remain array-index based and stay consistent with the displayed position", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=1"] });
+    click(getFooterBtn("next"));
+    expect(getSlideOfTotal()).toBe("Slide 2 of 13");
+    click(getFooterBtn("next"));
+    expect(getSlideOfTotal()).toBe("Slide 3 of 13");
+    click(getFooterBtn("prev"));
+    expect(getSlideOfTotal()).toBe("Slide 2 of 13");
+  });
+
+  it("38. the accordion's own slide count and pager text remain unchanged (still positional, byte-for-byte as before this PR)", () => {
+    renderSlidesExperience(root, topic);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    expect(container.querySelectorAll(".slide-accordion__header").length).toBe(13);
+    const header3 = container.querySelector<HTMLButtonElement>("#slide-3-header");
+    click(header3);
+    const pagerProgress = container.querySelector("#slide-3-panel .slide-accordion__pager-progress");
+    expect(pagerProgress?.textContent).toBe("Slide 3 of 13");
+  });
+});
+
 describe("Regression — untouched content and governance", () => {
   it("Slide 8's Arabic counting-cycles correction (F-01) remains present", () => {
     renderSlidesExperience(root, topic, { arabic: true, initialEntries: ["/chapter/1/topic/ch01-t01?slide=8"] });

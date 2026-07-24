@@ -211,12 +211,33 @@ function validateContentBlock(
   }
 
   if (raw.blockType === "slide") {
-    if (typeof raw.slideNumber !== "number" || raw.slideNumber < 1) {
-      diag(diagnostics, "error", "malformed-slide", "slide record is missing a valid slideNumber", topicId, blockId);
+    if (typeof raw.slideNumber !== "number" || raw.slideNumber < 1 || !Number.isInteger(raw.slideNumber)) {
+      diag(
+        diagnostics,
+        "error",
+        "malformed-slide",
+        "slide record is missing a valid slideNumber (must be an integer >= 1)",
+        topicId,
+        blockId,
+      );
       return null;
     }
     if (typeof raw.slideTitleEn !== "string" || raw.slideTitleEn.length === 0) {
       diag(diagnostics, "error", "malformed-slide", "slide record is missing slideTitleEn", topicId, blockId);
+      return null;
+    }
+    // Mirrors the slideTitleEn check above, generalized to also reject a
+    // whitespace-only value (not required for slideTitleEn — see this
+    // check's own PR for why English's existing behavior is left
+    // unchanged). By the time this function runs against the live
+    // application's RAW_CONTENT_BY_TOPIC (see adapter.ts's loadAllTopics),
+    // the English-only and Arabic-only source files have already been
+    // merged (src/content/batch1Merge.ts), so every slide record here
+    // always carries a real slideTitleAr — this check only ever rejects a
+    // genuinely malformed/missing value, never the English-only draft
+    // file's own deliberate omission of the field pre-merge.
+    if (typeof raw.slideTitleAr !== "string" || raw.slideTitleAr.trim().length === 0) {
+      diag(diagnostics, "error", "malformed-slide", "slide record is missing slideTitleAr", topicId, blockId);
       return null;
     }
   }
@@ -373,6 +394,67 @@ function validateInstructorScript(
 }
 
 /**
+ * Validates the file-encounter order of a topic's own slide records: no
+ * duplicate slideNumber, and slideNumbers must form a strictly ascending,
+ * contiguous 1..N sequence IN THE ORDER THE RECORDS ACTUALLY APPEAR in
+ * the source file's `records` array — evaluated here, deliberately
+ * BEFORE src/content/adapter.ts's normalizeSlides() applies its own
+ * defensive `.sort((a, b) => a.slideNumber - b.slideNumber)`. That sort
+ * exists to make the *running application* tolerant of any source file
+ * ordering (a slide's position in the JSON array never has to match its
+ * slideNumber for the UI to render correctly) — but tolerating it at
+ * runtime is exactly why a genuinely wrong, gapped, duplicated, or
+ * out-of-order source file must be caught here instead: otherwise the
+ * runtime's own leniency would silently paper over a content-authoring
+ * mistake (e.g. a copy-pasted slide left with the wrong slideNumber, or
+ * two slides transposed in the file) and nobody would ever notice.
+ *
+ * Called from validateTopicFile against `validatedRecords` — the
+ * already-individually-validated records, in their original file order
+ * (never resorted) — so this only evaluates slides that already passed
+ * their own per-record checks (valid slideNumber type/range, valid
+ * slideTitleEn/Ar), keeping duplicate/out-of-order diagnostics focused on
+ * the cross-record sequence concern rather than re-flagging an
+ * already-reported per-record defect.
+ */
+export function validateSlideSequence(
+  slideBlocks: readonly { slideNumber: number; blockId: string }[],
+  topicId: PilotTopicId,
+  diagnostics: AdapterDiagnostic[],
+): void {
+  const firstSeenAtBlockId = new Map<number, string>();
+  for (const { slideNumber, blockId } of slideBlocks) {
+    const existingBlockId = firstSeenAtBlockId.get(slideNumber);
+    if (existingBlockId !== undefined) {
+      diag(
+        diagnostics,
+        "error",
+        "duplicate-slide-number",
+        `Duplicate slide number ${slideNumber} in topic "${topicId}" (blocks "${existingBlockId}" and "${blockId}")`,
+        topicId,
+        blockId,
+      );
+    } else {
+      firstSeenAtBlockId.set(slideNumber, blockId);
+    }
+  }
+
+  slideBlocks.forEach((block, index) => {
+    const expectedSlideNumber = index + 1;
+    if (block.slideNumber !== expectedSlideNumber) {
+      diag(
+        diagnostics,
+        "error",
+        "non-sequential-slide-numbers",
+        `Topic "${topicId}" slide records are not a contiguous ascending sequence starting at 1: expected slideNumber ${expectedSlideNumber} at source file position ${index + 1}, found ${block.slideNumber} (block "${block.blockId}")`,
+        topicId,
+        block.blockId,
+      );
+    }
+  });
+}
+
+/**
  * Validates one topic's raw content file. Returns null (with diagnostics
  * explaining why) if the file-level shape itself is unusable; otherwise
  * returns a PilotTopicFile whose `records` array contains ONLY the
@@ -449,6 +531,15 @@ export function validateTopicFile(
       );
     }
   }
+
+  const slideBlocks = validatedRecords
+    .filter(
+      (r): r is { recordType: "contentBlock"; record: ContentBlockRecord } => r.recordType === "contentBlock",
+    )
+    .map((r) => r.record)
+    .filter((rec) => rec.blockType === "slide")
+    .map((rec) => ({ slideNumber: rec.slideNumber as number, blockId: rec.blockId }));
+  validateSlideSequence(slideBlocks, expectedTopicId, diagnostics);
 
   return {
     schemaVersion: raw.schemaVersion,
