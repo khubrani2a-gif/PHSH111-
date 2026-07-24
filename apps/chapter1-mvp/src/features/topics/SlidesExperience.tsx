@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useLanguage } from "../../app/LanguageContext";
 import {
   readPersistedNullableString,
@@ -13,6 +14,7 @@ import { SlidesSection } from "./Slides";
 import { StructuredSlideContent } from "./StructuredSlideContent";
 
 const RETURN_TO_READER_LABEL = { en: "← Slide Reader", ar: "→ قارئ الشرائح" } as const;
+const SLIDE_QUERY_PARAM = "slide";
 
 type SlidesViewMode = "reader" | "all";
 
@@ -28,9 +30,19 @@ type SlidesViewMode = "reader" | "all";
  * open" key before switching — SlidesSection's accordion-open state and
  * SlideReader's own ?slide= URL param are read fresh by whichever view
  * mounts next.
+ *
+ * Returning from the accordion to the reader additionally corrects the
+ * `?slide=` URL param itself (not just SlideReader's `initialSlideNumber`
+ * prop) at this view-switch boundary, before SlideReader mounts — see
+ * handleReturnToReader below. SlideReader gives a *valid* `?slide=` param
+ * precedence over `initialSlideNumber` (by design, for real in-reader
+ * navigation/reload), so a stale-but-still-valid param left over from
+ * before switching to the accordion would otherwise silently win over the
+ * accordion-selected slide.
  */
 export function SlidesExperience({ topic, anchorId }: { topic: NormalizedTopic; anchorId?: string }) {
   const { language } = useLanguage();
+  const [searchParams, setSearchParams] = useSearchParams();
   const viewModeKey = `${topic.topicId}.slides.viewMode`;
   const openRecordIdKey = `${topic.topicId}.slides.openRecordId`;
 
@@ -43,17 +55,43 @@ export function SlidesExperience({ topic, anchorId }: { topic: NormalizedTopic; 
 
   const proseTokens = EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC[topic.topicId] ?? [];
 
+  // Reads the accordion's *current* persisted open slide at click time
+  // (never the render-time snapshot below, which is only used to seed
+  // SlideReader's initialSlideNumber fallback) and resolves it to a slide
+  // number, updating the `?slide=` URL param to match before switching
+  // back to the reader — see this component's header comment for why the
+  // URL param itself, not just initialSlideNumber, must be corrected
+  // here. Absent/null/invalid/not-found resolves to undefined, in which
+  // case the stale `slide` param is removed entirely (never set to
+  // "undefined"/"NaN") so SlideReader falls back safely through its own
+  // existing persisted-last-slide/first-slide logic.
+  function handleReturnToReader() {
+    const openRecordId = readPersistedNullableString(openRecordIdKey, "openSlideId");
+    const resolvedSlideNumber =
+      openRecordId.present && openRecordId.value
+        ? topic.slides.find((s) => s.recordId === openRecordId.value)?.slideNumber
+        : undefined;
+
+    const nextParams = new URLSearchParams(searchParams);
+    if (resolvedSlideNumber !== undefined) {
+      nextParams.set(SLIDE_QUERY_PARAM, String(resolvedSlideNumber));
+    } else {
+      nextParams.delete(SLIDE_QUERY_PARAM);
+    }
+    // One coherent history operation, replacing the accordion-view URL
+    // state rather than pushing a new entry — this is a navigation-state
+    // correction, not a new user-facing navigation the way an in-reader
+    // Next/Previous/navigator click is.
+    setSearchParams(nextParams, { replace: true });
+
+    writePersistedString(viewModeKey, "reader");
+    setViewMode("reader");
+  }
+
   if (viewMode === "all") {
     return (
       <div className="slides-experience slides-experience--all">
-        <button
-          type="button"
-          className="slides-experience__return-to-reader"
-          onClick={() => {
-            writePersistedString(viewModeKey, "reader");
-            setViewMode("reader");
-          }}
-        >
+        <button type="button" className="slides-experience__return-to-reader" onClick={handleReturnToReader}>
           {RETURN_TO_READER_LABEL[language]}
         </button>
         <SlidesSection

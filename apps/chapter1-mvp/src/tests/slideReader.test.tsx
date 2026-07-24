@@ -443,6 +443,110 @@ describe("View All Slides (existing accordion) compatibility", () => {
   });
 });
 
+describe("View All Slides — return-to-reader active-slide handoff (regression)", () => {
+  // These tests need the current URL's search string (router.state.location.search),
+  // which a plain MemoryRouter doesn't expose to test code — createMemoryRouter does.
+  function renderWithRouter(initialEntries: string[]) {
+    const router = createMemoryRouter(
+      [
+        {
+          path: "/topic",
+          element: (
+            <LanguageProvider>
+              <SlidesExperience topic={topic} />
+            </LanguageProvider>
+          ),
+        },
+      ],
+      { initialEntries },
+    );
+    act(() => {
+      root.render(<RouterProvider router={router} />);
+    });
+    return router;
+  }
+
+  function openAccordionSlide(slideNumber: number) {
+    const header = container.querySelector<HTMLButtonElement>(`#slide-${slideNumber}-header`);
+    if (!header) throw new Error(`accordion header for slide ${slideNumber} not found`);
+    click(header);
+    expect(header.getAttribute("aria-expanded")).toBe("true");
+  }
+
+  it("reproduces and fixes the stale-query scenario: reader Slide 3 -> View All Slides -> open Slide 7 -> return shows Slide 7, not stale Slide 3", () => {
+    const router = renderWithRouter(["/topic?slide=3"]);
+    expect(getSlideOfTotal()).toBe("Slide 3 of 13");
+
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    openAccordionSlide(7);
+
+    click(container.querySelector(".slides-experience__return-to-reader"));
+
+    expect(getSlideOfTotal()).toBe("Slide 7 of 13");
+    expect(getSlideOfTotal()).not.toBe("Slide 3 of 13");
+    expect(router.state.location.search).toBe("?slide=7");
+  });
+
+  it("preserves unrelated query parameters while correcting the slide param", () => {
+    const router = renderWithRouter(["/topic?debug=1&slide=3"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    openAccordionSlide(7);
+    click(container.querySelector(".slides-experience__return-to-reader"));
+
+    const params = new URLSearchParams(router.state.location.search);
+    expect(params.get("debug")).toBe("1");
+    expect(params.get("slide")).toBe("7");
+  });
+
+  it("an invalid persisted accordion openRecordId does not generate ?slide=undefined or ?slide=NaN", () => {
+    const router = renderWithRouter(["/topic?slide=3"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    // Simulate a stale/invalid persisted value (e.g. content regenerated,
+    // record id no longer exists) rather than a real accordion selection.
+    window.localStorage.setItem(
+      "phsh111:ch01-t01.slides.openRecordId",
+      JSON.stringify({ version: 1, openSlideId: "not-a-real-record-id" }),
+    );
+    click(container.querySelector(".slides-experience__return-to-reader"));
+
+    const params = new URLSearchParams(router.state.location.search);
+    expect(params.get("slide")).not.toBe("undefined");
+    expect(params.get("slide")).not.toBe("NaN");
+    // Falls back safely through SlideReader's own existing logic rather than crashing or showing nothing.
+    expect(getSlideOfTotal()).toMatch(/^Slide \d+ of 13$/);
+  });
+
+  it("returning without opening a different accordion slide preserves the expected current slide", () => {
+    const router = renderWithRouter(["/topic?slide=5"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    click(container.querySelector(".slides-experience__return-to-reader"));
+
+    expect(getSlideOfTotal()).toBe("Slide 5 of 13");
+    expect(router.state.location.search).toBe("?slide=5");
+  });
+
+  it("browser Back/Forward remains coherent after a View All Slides round trip", () => {
+    const router = renderWithRouter(["/topic?slide=3"]);
+    click(container.querySelector(".slide-reader__view-all-btn"));
+    openAccordionSlide(7);
+    click(container.querySelector(".slides-experience__return-to-reader"));
+    expect(getSlideOfTotal()).toBe("Slide 7 of 13");
+
+    click(getFooterBtn("next")); // -> Slide 8, a real pushed navigation
+    expect(getSlideOfTotal()).toBe("Slide 8 of 13");
+
+    act(() => {
+      router.navigate(-1);
+    });
+    expect(getSlideOfTotal()).toBe("Slide 7 of 13");
+
+    act(() => {
+      router.navigate(1);
+    });
+    expect(getSlideOfTotal()).toBe("Slide 8 of 13");
+  });
+});
+
 describe("Regression — untouched content and governance", () => {
   it("Slide 8's Arabic counting-cycles correction (F-01) remains present", () => {
     renderSlidesExperience(root, topic, { arabic: true, initialEntries: ["/chapter/1/topic/ch01-t01?slide=8"] });
