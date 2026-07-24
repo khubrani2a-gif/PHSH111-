@@ -912,6 +912,21 @@ interface StructuredSlideContentProps {
   /** Present only for slides carrying reconstructed term/definition pairs (see NormalizedSlide.definitions) — generic to any slide, not tied to a specific slide number. */
   definitions?: { en: DefinitionEntry[] | null; ar: DefinitionEntry[] | null };
   italicTokens?: readonly string[];
+  /**
+   * When true, renders the Slide Reader's Review Mode: only Main Idea, Key
+   * Concept (when present), the figure/table (when present), and any
+   * equation-block paragraphs within Simple Example — reusing exactly the
+   * same `sections` object Study Mode renders from, never a re-parse of
+   * rendered HTML. Every other subsection (Original English/Arabic, full
+   * Steps, Table/Figure/Conversion-Factor/Definition/Relationship
+   * Explanation, Common Misconception, Scientific Note, Connection) is
+   * simply not rendered in this mode — the underlying approved text is
+   * untouched; this is presentation-only, matching Study Mode's own
+   * "reformats... presentation only" contract. Defaults to false, which
+   * preserves this component's exact current (Study Mode) output for
+   * every existing caller.
+   */
+  compact?: boolean;
 }
 
 /**
@@ -929,7 +944,7 @@ interface StructuredSlideContentProps {
  * expected order — so this is safe to use for future slides without
  * per-slide hardcoding.
  */
-export function StructuredSlideContent({ blockId, text, table, figure, definitions, italicTokens = [] }: StructuredSlideContentProps) {
+export function StructuredSlideContent({ blockId, text, table, figure, definitions, italicTokens = [], compact = false }: StructuredSlideContentProps) {
   const { language, direction } = useLanguage();
   const value = text[language];
   const tableForLanguage = table ? table[language] : null;
@@ -958,6 +973,67 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
 
   const stepPattern = config?.stepPattern ? config.stepPattern[language] : DEFAULT_STEP_PATTERN;
   const equationAwareSections = config?.equationAwareSections ?? [];
+
+  if (compact) {
+    const equationParagraphs = sections.simpleExample.filter(
+      (p) => findMatchingEquationBlockPhrase(p, config?.equationBlockPhrase) !== undefined,
+    );
+    return (
+      <div className="structured-slide structured-slide--compact">
+        <section className="structured-slide__section" id={`${blockId}--main-idea`}>
+          <h4 className="structured-slide__heading">{SUBSECTION_LABEL.mainIdea[language]}</h4>
+          {renderSection(
+            sections.mainIdea,
+            effectiveItalicTokens,
+            direction,
+            config?.equationBlockPhrase,
+            config?.equationPhraseItalicTokens,
+            equationAwareSections.includes("mainIdea"),
+          )}
+        </section>
+
+        {tableForLanguage ? (
+          <section className="structured-slide__section" id={`${blockId}--table`}>
+            {renderSourceTable(tableForLanguage, direction)}
+          </section>
+        ) : null}
+
+        {figure ? (
+          <section className="structured-slide__section" id={`${blockId}--figure`}>
+            <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} />
+          </section>
+        ) : null}
+
+        {equationParagraphs.length > 0 ? (
+          <section className="structured-slide__section" id={`${blockId}--simple-example`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.simpleExample[language]}</h4>
+            {renderEquationAwareParagraphs(
+              equationParagraphs,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+            )}
+          </section>
+        ) : null}
+
+        {sections.keyConcept.length > 0 ? (
+          <section className="structured-slide__section" id={`${blockId}--key-concept`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.keyConcept[language]}</h4>
+            {renderSection(
+              sections.keyConcept,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("keyConcept"),
+            )}
+          </section>
+        ) : null}
+      </div>
+    );
+  }
+
   const isEquationAware = (
     name:
       | "original"
@@ -976,7 +1052,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
   return (
     <div className="structured-slide">
       {sections.original.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--original`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.original[language]}</h4>
           {config?.originalEmphasisPhrases
             ? renderParagraphsWithEmphasis(
@@ -998,7 +1074,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         </section>
       ) : null}
 
-      <section className="structured-slide__section">
+      <section className="structured-slide__section" id={`${blockId}--main-idea`}>
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.mainIdea[language]}</h4>
         {renderSection(
           sections.mainIdea,
@@ -1010,7 +1086,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         )}
       </section>
 
-      <section className="structured-slide__section">
+      <section className="structured-slide__section" id={`${blockId}--steps`}>
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.steps[language]}</h4>
         {renderSteps(
           sections.steps,
@@ -1022,7 +1098,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         )}
       </section>
 
-      <section className="structured-slide__section">
+      <section className="structured-slide__section" id={`${blockId}--simple-example`}>
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.simpleExample[language]}</h4>
         {renderEquationAwareParagraphs(
           sections.simpleExample,
@@ -1034,7 +1110,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       </section>
 
       {sections.tableExplanation.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--table-explanation`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.tableExplanation[language]}</h4>
           {renderSection(
             sections.tableExplanation,
@@ -1048,7 +1124,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       ) : null}
 
       {sections.figureExplanation.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--figure-explanation`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figureExplanation[language]}</h4>
           {figure ? <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} /> : null}
           {renderSection(
@@ -1063,7 +1139,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       ) : null}
 
       {sections.conversionFactorExplanation.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--conversion-factor-explanation`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.conversionFactorExplanation[language]}</h4>
           {renderSection(
             sections.conversionFactorExplanation,
@@ -1077,7 +1153,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       ) : null}
 
       {sections.definitionExplanation.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--definition-explanation`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.definitionExplanation[language]}</h4>
           {renderSection(
             sections.definitionExplanation,
@@ -1091,7 +1167,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       ) : null}
 
       {sections.relationshipExplanation.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--relationship-explanation`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.relationshipExplanation[language]}</h4>
           {renderSection(
             sections.relationshipExplanation,
@@ -1104,7 +1180,10 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         </section>
       ) : null}
 
-      <section className="structured-slide__section structured-slide__callout structured-slide__callout--misconception">
+      <section
+        className="structured-slide__section structured-slide__callout structured-slide__callout--misconception"
+        id={`${blockId}--misconception`}
+      >
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.misconception[language]}</h4>
         {renderSection(
           sections.misconception,
@@ -1116,7 +1195,10 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         )}
       </section>
 
-      <section className="structured-slide__section structured-slide__callout structured-slide__callout--scientific-note">
+      <section
+        className="structured-slide__section structured-slide__callout structured-slide__callout--scientific-note"
+        id={`${blockId}--scientific-note`}
+      >
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.scientificNote[language]}</h4>
         {renderSection(
           sections.scientificNote,
@@ -1129,7 +1211,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       </section>
 
       {sections.keyConcept.length > 0 ? (
-        <section className="structured-slide__section">
+        <section className="structured-slide__section" id={`${blockId}--key-concept`}>
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.keyConcept[language]}</h4>
           {renderSection(
             sections.keyConcept,
@@ -1142,7 +1224,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
         </section>
       ) : null}
 
-      <section className="structured-slide__section">
+      <section className="structured-slide__section" id={`${blockId}--connection`}>
         <h4 className="structured-slide__heading">{SUBSECTION_LABEL.connection[language]}</h4>
         {renderSection(
           sections.connection,
