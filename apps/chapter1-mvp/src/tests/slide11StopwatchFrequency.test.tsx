@@ -536,7 +536,7 @@ describe("17. Slide 11 persistence works across reload", () => {
   it("Slide 11's recordId is written to the same topic-namespaced localStorage key used by every other slide", () => {
     renderSlides(false, 11);
     expect(window.localStorage.getItem("phsh111:ch01-t01.slides.openRecordId")).toBe(
-      "ch01-t01-block-opening-11",
+      JSON.stringify({ version: 1, openSlideId: "ch01-t01-block-opening-11" }),
     );
   });
 });

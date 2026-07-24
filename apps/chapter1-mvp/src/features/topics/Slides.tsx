@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useLanguage } from "../../app/LanguageContext";
 import {
-  readPersistedString,
-  writePersistedString,
   readPersistedStringArray,
   writePersistedStringArray,
+  readPersistedNullableString,
+  writePersistedNullableString,
 } from "../../app/persistedState";
 import { resolveSlideShortTitle } from "../../content/slideShortTitles";
 
@@ -93,9 +93,19 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
   const persistKeyViewed = `${topicId}.slides.viewedRecordIds`;
 
   const [openId, setOpenId] = useState<string | null>(() => {
-    const stored = readPersistedString(persistKeyOpen, "");
-    if (stored && slideIds.includes(stored)) return stored;
-    return slideIds[0] ?? null;
+    const stored = readPersistedNullableString(persistKeyOpen, "openSlideId");
+    // Never stored (first-ever visit to this topic): default to the first
+    // slide open, matching this accordion's long-standing default-open
+    // behavior for a brand-new visitor.
+    if (!stored.present) return slideIds[0] ?? null;
+    // Explicitly stored as closed (the user collapsed the open slide and
+    // left): stay collapsed — this is the whole point of the nullable
+    // model, distinct from "never stored" above.
+    if (stored.value === null) return null;
+    // A valid, still-existing slide id: restore it. An invalid/obsolete id
+    // (e.g. topic content was regenerated) falls back to the same default
+    // as "never stored", rather than crashing or opening nothing.
+    return slideIds.includes(stored.value) ? stored.value : (slideIds[0] ?? null);
   });
 
   const [viewedIds, setViewedIds] = useState<Set<string>>(() => {
@@ -105,7 +115,7 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
   });
 
   useEffect(() => {
-    if (openId) writePersistedString(persistKeyOpen, openId);
+    writePersistedNullableString(persistKeyOpen, "openSlideId", openId);
   }, [openId, persistKeyOpen]);
 
   useEffect(() => {
@@ -119,14 +129,19 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
     else headerRefs.current.delete(id);
   }
 
-  function openSlide(id: string, options?: { moveFocus?: boolean }) {
-    setOpenId(id);
+  function markViewed(id: string) {
     setViewedIds((prev) => {
       if (prev.has(id)) return prev;
       const next = new Set(prev);
       next.add(id);
       return next;
     });
+  }
+
+  /** Always opens the given slide, regardless of what's currently open (or nothing). Used by Previous/Next and the jump selector — never a toggle, so it works correctly even when every slide is currently collapsed. */
+  function openSlide(id: string, options?: { moveFocus?: boolean }) {
+    setOpenId(id);
+    markViewed(id);
     if (options?.moveFocus) {
       const header = headerRefs.current.get(id);
       if (header) {
@@ -143,6 +158,20 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
         header.focus();
       }
     }
+  }
+
+  /**
+   * Header-click behavior only: opens a closed slide, switches to a
+   * different slide (closing whichever was open), or — the fix this
+   * function exists for — closes the given slide if it's the one
+   * currently open, leaving zero slides open. `wasOpen` is the caller's
+   * already-computed `isOpen` for this slide at render time, so viewed
+   * status is only marked when this click is actually opening it, never
+   * when it's closing it.
+   */
+  function toggleSlide(id: string, wasOpen: boolean) {
+    setOpenId((current) => (current === id ? null : id));
+    if (!wasOpen) markViewed(id);
   }
 
   return (
@@ -198,7 +227,7 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   ref={(el) => registerHeaderRef(slide.recordId, el)}
-                  onClick={() => openSlide(slide.recordId)}
+                  onClick={() => toggleSlide(slide.recordId, isOpen)}
                 >
                   <span className="slide-accordion__number" aria-hidden="true">
                     {slide.slideNumber}

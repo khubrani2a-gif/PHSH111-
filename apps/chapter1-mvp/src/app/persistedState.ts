@@ -93,3 +93,60 @@ export function writePersistedStringArray(key: string, value: string[]): void {
     // Best-effort only.
   }
 }
+
+/**
+ * Result of reading a nullable persisted value: whether anything was ever
+ * stored under the key at all, distinct from what was stored. Needed
+ * because `readPersistedString`'s empty-string fallback cannot tell "never
+ * stored" apart from "explicitly stored as absent" — exactly the
+ * distinction the Slides accordion's open/closed state needs (a fresh
+ * visit defaults to a slide open; a visit where the user explicitly
+ * collapsed everything must stay collapsed). Never encodes the absent
+ * value as the literal string "null".
+ */
+export type PersistedNullableString = { present: false } | { present: true; value: string | null };
+
+/**
+ * Reads a small versioned `{ version, <field>: string | null }` JSON
+ * envelope. Same narrow scope as the rest of this module — currently used
+ * only for the Slides accordion's open-slide id. Any missing key,
+ * malformed JSON, wrong version, or wrong-shaped value is treated as
+ * "never stored" rather than thrown — a corrupted or previous-format value
+ * must fall back safely, never crash.
+ */
+export function readPersistedNullableString(key: string, field: string): PersistedNullableString {
+  if (!isStorageAvailable()) return { present: false };
+  try {
+    const raw = window.localStorage.getItem(KEY_PREFIX + key);
+    if (raw === null) return { present: false };
+    const parsed: unknown = JSON.parse(raw);
+    if (
+      typeof parsed === "object" &&
+      parsed !== null &&
+      (parsed as Record<string, unknown>).version === 1 &&
+      field in parsed
+    ) {
+      const value = (parsed as Record<string, unknown>)[field];
+      if (value === null || typeof value === "string") {
+        return { present: true, value };
+      }
+    }
+    return { present: false };
+  } catch {
+    return { present: false };
+  }
+}
+
+/**
+ * Writes the versioned envelope `readPersistedNullableString` reads back.
+ * Explicitly stores `null` inside real JSON (`{"version":1,"<field>":null}`)
+ * rather than ever serializing it as the literal text "null".
+ */
+export function writePersistedNullableString(key: string, field: string, value: string | null): void {
+  if (!isStorageAvailable()) return;
+  try {
+    window.localStorage.setItem(KEY_PREFIX + key, JSON.stringify({ version: 1, [field]: value }));
+  } catch {
+    // Best-effort only.
+  }
+}
