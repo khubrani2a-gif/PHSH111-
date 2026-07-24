@@ -209,7 +209,7 @@ export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAl
     <div className="slide-reader" dir={direction}>
       <SlideReaderHeader
         topicTitle={topicTitle}
-        currentSlideNumber={activeSlideNumber}
+        currentPosition={activeIndex + 1}
         totalSlides={slides.length}
         percent={percent}
         mode={mode}

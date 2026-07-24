@@ -13,7 +13,19 @@ const READER_HEADING_LABEL = { en: "Slide reader", ar: "قارئ الشرائح"
 
 export interface SlideReaderHeaderProps {
   topicTitle: string;
-  currentSlideNumber: number;
+  /**
+   * The active slide's 1-based POSITION among the topic's slides
+   * (index + 1), not its raw `slideNumber` field — matches the
+   * pre-existing accordion pager's own convention (Slides.tsx uses
+   * `index + 1`, never the raw field). For content whose slide numbers
+   * are validated as a contiguous 1..N sequence (see
+   * src/content/validate.ts's validateSlideSequence), position and
+   * slideNumber are always equal, so this is purely a naming/contract
+   * clarification with no observable behavior change for valid content.
+   * Passed explicitly by the caller (SlideReader) rather than assumed
+   * here, so this component never has to guess which one it was given.
+   */
+  currentPosition: number;
   totalSlides: number;
   percent: number;
   mode: SlideDisplayMode;
@@ -26,7 +38,7 @@ export interface SlideReaderHeaderProps {
 
 export function SlideReaderHeader({
   topicTitle,
-  currentSlideNumber,
+  currentPosition,
   totalSlides,
   percent,
   mode,
@@ -42,7 +54,7 @@ export function SlideReaderHeader({
           {topicTitle}
         </h2>
         <span className="slide-reader__slide-of-total">
-          {SLIDE_OF_TOTAL_LABEL[language](currentSlideNumber, totalSlides)}
+          {SLIDE_OF_TOTAL_LABEL[language](currentPosition, totalSlides)}
         </span>
       </div>
       <div className="slide-reader__header-row slide-reader__header-row--controls">
