@@ -15,8 +15,7 @@ import { InstructorReviewPanel } from "../features/topics/InstructorReviewPanel"
 import { InternalStatusPanel } from "../features/topics/InternalStatusPanel";
 import { TopicNavigation } from "../features/topics/TopicNavigation";
 import { TopicReadingGuide } from "../features/topics/TopicReadingGuide";
-import { SlidesSection } from "../features/topics/Slides";
-import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
+import { SlidesExperience } from "../features/topics/SlidesExperience";
 import { DiagnosticsPanel } from "../features/topics/DiagnosticsPanel";
 import type { PilotTopicId } from "../types/pilotSchema";
 
@@ -84,25 +83,7 @@ export function TopicPage() {
       {usesGuidedPresentation ? <TopicReadingGuide /> : null}
 
       {topic.slides.length > 0 ? (
-        <SlidesSection
-          topicId={topic.topicId}
-          anchorId={usesGuidedPresentation ? "topic-opening" : undefined}
-          slides={topic.slides.map((slide) => ({
-            recordId: slide.recordId,
-            slideNumber: slide.slideNumber,
-            title: { en: slide.title.en ?? "", ar: slide.title.ar ?? "" },
-            content: (
-              <StructuredSlideContent
-                blockId={slide.recordId}
-                text={slide.text}
-                table={slide.table}
-                figure={slide.figure}
-                definitions={slide.definitions}
-                italicTokens={proseTokens}
-              />
-            ),
-          }))}
-        />
+        <SlidesExperience topic={topic} anchorId={usesGuidedPresentation ? "topic-opening" : undefined} />
       ) : null}
 
       {topic.mainIdea ? (

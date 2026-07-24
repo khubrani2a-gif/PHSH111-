@@ -150,3 +150,34 @@ export function writePersistedNullableString(key: string, field: string, value: 
     // Best-effort only.
   }
 }
+
+/**
+ * Generic guarded JSON read/write, for a UI-preference/progress value too
+ * structured for the string/boolean/string-array helpers above (e.g. the
+ * Slide Reader's per-slide viewed/completed/mastered timestamps — see
+ * src/app/slideProgress.ts). `isValid` narrows the parsed `unknown` value;
+ * any missing key, malformed JSON, or value that fails `isValid` is
+ * treated as "never stored" and returns `fallback`, matching every other
+ * helper in this module — a corrupted or previous-shape value must fall
+ * back safely, never crash or silently coerce.
+ */
+export function readPersistedJSON<T>(key: string, fallback: T, isValid: (value: unknown) => value is T): T {
+  if (!isStorageAvailable()) return fallback;
+  try {
+    const raw = window.localStorage.getItem(KEY_PREFIX + key);
+    if (raw === null) return fallback;
+    const parsed: unknown = JSON.parse(raw);
+    return isValid(parsed) ? parsed : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function writePersistedJSON<T>(key: string, value: T): void {
+  if (!isStorageAvailable()) return;
+  try {
+    window.localStorage.setItem(KEY_PREFIX + key, JSON.stringify(value));
+  } catch {
+    // Best-effort only.
+  }
+}
