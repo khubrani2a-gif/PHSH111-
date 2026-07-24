@@ -72,6 +72,7 @@ import ch01t04Svg from "../../../../docs/content-design/chapter-01/batch1-visual
 // itself is agnostic to which.
 import ch01t01BlockOpening4Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-4-figure.jpg";
 import ch01t01BlockOpening5Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-5-figure.svg";
+import ch01t01BlockOpening13Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-13-figure.jpg";
 
 import type { PilotTopicId } from "../types/pilotSchema";
 import { mergeEnglishAndArabicTopicFile } from "./batch1Merge";
@@ -127,4 +128,5 @@ export const RAW_SVG_MARKUP_BY_TOPIC: Record<PilotTopicId, string> = {
 export const RAW_FIGURE_URL_BY_BLOCK_ID: Record<string, string> = {
   "ch01-t01-block-opening-4": ch01t01BlockOpening4Figure,
   "ch01-t01-block-opening-5": ch01t01BlockOpening5Figure,
+  "ch01-t01-block-opening-13": ch01t01BlockOpening13Figure,
 };

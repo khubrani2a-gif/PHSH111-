@@ -128,6 +128,16 @@ export interface StructuredSlideConfig {
     | "keyConcept"
     | "connection"
   )[];
+  /**
+   * Exact, verified substrings within the Original English/Arabic
+   * subsection to wrap in a semantic <strong> — see
+   * renderParagraphsWithEmphasis's header comment. Preserves a source
+   * slide's own word-level emphasis (e.g. Slide 13's "not" in "but is
+   * not the same as mass") without inserting any markup into the
+   * approved verbatim text itself. Omitted for every other existing
+   * slide's config, so this is purely additive.
+   */
+  originalEmphasisPhrases?: readonly string[];
 }
 
 const DEFAULT_STEP_PATTERN = /^\d+\.\s/;
@@ -394,6 +404,84 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     // nothing about any other slide's rendering.
     equationAwareSections: ["misconception", "scientificNote"],
   },
+  "ch01-t01-block-opening-13": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    figureExplanationMarker: { en: "Figure Explanation:", ar: "شرح الشكل:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: [
+      "m = 20 kg",
+      "g = 9.8 m/s²",
+      "W = m g",
+      "W = (20 kg)(9.8 m/s²) = 196 N",
+      "F_net = 40 N",
+      "a = F_net / m",
+      "a = (40 N) / (20 kg) = 2.0 m/s²",
+    ],
+    stepPattern: {
+      en: /^Step\s+\d+\s+—[^\n]*/,
+      ar: /^الخطوة\s+\d+\s+—[^\n]*/,
+    },
+    // "F" (fused only as "F_net", never a bare standalone word) and "W"
+    // (weight) are unambiguous throughout this slide's own equations and
+    // step values — verified collision-free. "g" (gravitational
+    // acceleration) is ALSO safe as a blockId-wide token here — unlike
+    // Slide 12, Slide 13 never states a mass in grams, so there is no
+    // gram-unit collision to guard against; "g" is intentionally included
+    // here (not phrase-scoped) so it also italicizes correctly in plain
+    // prose, e.g. Step 4's "Weight depends on the local gravitational
+    // acceleration g." None of these three is added to
+    // EQUATION_ITALIC_TOKENS_BY_TOPIC/EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC
+    // in src/content/equationRenderer.tsx — that would italicize every
+    // standalone "F"/"W"/"g" in ch01-t01's other content blocks and slides
+    // too. This blockId-scoped entry italicizes them only within Slide
+    // 13's own rendering (see additionalItalicTokens's header comment
+    // above). Slide 13 does NOT inherit Slide 11's separate blockId-scoped
+    // "N" entry — additionalItalicTokens is scoped per blockId, so Slide
+    // 11's entry has no effect here.
+    additionalItalicTokens: ["F", "W", "g"],
+    // "m" (mass) and "a" (acceleration) are NOT blockId-wide safe like
+    // F/W/g above: "m" collides with the metres-per-second-squared unit
+    // abbreviation used in this very slide's own equations ("9.8 m/s²",
+    // "2.0 m/s²") — a genuine ambiguity of exactly the kind
+    // additionalItalicTokens's own house rule exists to catch (mirroring
+    // ch01-t04's excluded "m"). "a" is the English indefinite article and
+    // would collide with this slide's own prose ("a suitcase", "a
+    // horizontal net force"). Each is instead italicized ONLY within the
+    // one exact equation substring it is a genuine variable in — see
+    // equationPhraseItalicTokens's header comment on StructuredSlideConfig.
+    // Every other "m"/"a" in Slide 13, including "m/s²" in a DIFFERENT
+    // equation, renders as plain upright text.
+    equationPhraseItalicTokens: {
+      "m = 20 kg": ["m"],
+      "W = m g": ["m"],
+      "a = F_net / m": ["a", "m"],
+      "a = (40 N) / (20 kg) = 2.0 m/s²": ["a"],
+    },
+    // Common Misconception states "W = m g" as its own equation line —
+    // opted into equation-aware rendering (equation-block styling +
+    // equationPhraseItalicTokens) the same way Steps and Simple Example
+    // always are. Scientific Note deliberately does NOT restate any
+    // equation (avoiding visually duplicating "W = m g" a third time), so
+    // it is left as a plain prose section, unlike Slide 12. Every other
+    // existing slide's config leaves equationAwareSections unset, so this
+    // option changes nothing about any other slide's rendering.
+    equationAwareSections: ["misconception"],
+    // Preserves the source's own emphasis on "not" in "but is not the
+    // same as mass" (Original English subsection) via a semantic
+    // <strong>, without inserting any markup into the approved verbatim
+    // text itself — see originalEmphasisPhrases's header comment. "ليست"
+    // is the Arabic negation word used in the Arabic Original subsection's
+    // equivalent sentence ("لكنها ليست الكتلة نفسها") — included here too
+    // so the same source emphasis is preserved in both languages; each
+    // entry only ever matches its own language's paragraphs (English
+    // paragraphs never contain Arabic script and vice versa), so having
+    // both in one list is safe.
+    originalEmphasisPhrases: ["not", "ليست"],
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
@@ -605,6 +693,49 @@ function renderSection(
   return equationAware
     ? renderEquationAwareParagraphs(paragraphs, italicTokens, direction, equationBlockPhrase, phraseItalicTokens)
     : renderPlainParagraphs(paragraphs, italicTokens, direction);
+}
+
+/**
+ * Same as renderPlainParagraphs, plus wrapping one exact, verified
+ * substring per matching paragraph in a semantic <strong> — used to
+ * preserve a source slide's own emphasis on a specific word (e.g. Slide
+ * 13's "not" in "but is not the same as mass") without inserting any
+ * markup into the approved text itself. Matched the same way as
+ * equationBlockPhrase (string.includes, never a generic regex): if
+ * emphasisPhrases is empty/undefined, or no entry matches a given
+ * paragraph, that paragraph renders identically to renderPlainParagraphs.
+ * Distinct from equationPhraseItalicTokens/<em> — <em> is reserved
+ * throughout this file for italicized physics variables, so ordinary
+ * prose emphasis uses <strong> instead, avoiding any visual or semantic
+ * collision between the two.
+ */
+function renderParagraphsWithEmphasis(
+  paragraphs: string[],
+  italicTokens: readonly string[],
+  direction: "ltr" | "rtl",
+  emphasisPhrases: readonly string[] | undefined,
+) {
+  return paragraphs.map((paragraph, i) => {
+    const phrase = emphasisPhrases?.find((p) => paragraph.includes(p));
+    if (!phrase) {
+      return (
+        <p className="content-section__text" dir={direction} key={i}>
+          {renderEquationText(paragraph, italicTokens)}
+        </p>
+      );
+    }
+    const index = paragraph.indexOf(phrase);
+    const before = paragraph.slice(0, index);
+    const match = paragraph.slice(index, index + phrase.length);
+    const after = paragraph.slice(index + phrase.length);
+    return (
+      <p className="content-section__text" dir={direction} key={i}>
+        {renderEquationText(before, italicTokens)}
+        <strong>{renderEquationText(match, italicTokens)}</strong>
+        {renderEquationText(after, italicTokens)}
+      </p>
+    );
+  });
 }
 
 function renderSteps(
@@ -847,14 +978,21 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       {sections.original.length > 0 ? (
         <section className="structured-slide__section">
           <h4 className="structured-slide__heading">{SUBSECTION_LABEL.original[language]}</h4>
-          {renderSection(
-            sections.original,
-            effectiveItalicTokens,
-            direction,
-            config?.equationBlockPhrase,
-            config?.equationPhraseItalicTokens,
-            isEquationAware("original"),
-          )}
+          {config?.originalEmphasisPhrases
+            ? renderParagraphsWithEmphasis(
+                sections.original,
+                effectiveItalicTokens,
+                direction,
+                config.originalEmphasisPhrases,
+              )
+            : renderSection(
+                sections.original,
+                effectiveItalicTokens,
+                direction,
+                config?.equationBlockPhrase,
+                config?.equationPhraseItalicTokens,
+                isEquationAware("original"),
+              )}
           {tableForLanguage ? renderSourceTable(tableForLanguage, direction) : null}
           {definitionsForLanguage ? renderDefinitionCards(definitionsForLanguage, effectiveItalicTokens, direction) : null}
         </section>
