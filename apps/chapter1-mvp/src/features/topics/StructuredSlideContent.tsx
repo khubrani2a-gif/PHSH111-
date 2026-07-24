@@ -13,6 +13,9 @@ const SUBSECTION_LABEL = {
   mainIdea: { en: "Main Idea", ar: "الفكرة الرئيسية" },
   steps: { en: "Step-by-Step Explanation", ar: "الشرح خطوة بخطوة" },
   simpleExample: { en: "Simple Example", ar: "مثال بسيط" },
+  definitions: { en: "Definitions", ar: "التعريفات" },
+  table: { en: "Table", ar: "الجدول" },
+  figure: { en: "Figure", ar: "الشكل" },
   tableExplanation: { en: "Table Explanation", ar: "شرح الجدول" },
   figureExplanation: { en: "Figure Explanation", ar: "شرح الشكل" },
   conversionFactorExplanation: { en: "Conversion-Factor Explanation", ar: "شرح عامل التحويل" },
@@ -631,6 +634,86 @@ function findMatchingEquationBlockPhrase(
 }
 
 /**
+ * Review Mode ("compact") section keys, in the stable pedagogical order
+ * selectReviewSections always returns them in. Purely a set of presence
+ * flags — never a topicId, slideNumber, or blockId — so the same function
+ * works identically for ch01-t01's current slides and for any future
+ * topic's slides that populate the same structured fields.
+ */
+export type ReviewSectionKey =
+  | "mainIdea"
+  | "definitions"
+  | "keyConcept"
+  | "simpleExample"
+  | "table"
+  | "tableExplanation"
+  | "figure"
+  | "figureExplanation"
+  | "conversionFactorExplanation"
+  | "definitionExplanation"
+  | "relationshipExplanation";
+
+export interface ReviewSectionInput {
+  hasDefinitions: boolean;
+  hasKeyConcept: boolean;
+  hasEssentialSimpleExample: boolean;
+  hasTable: boolean;
+  hasTableExplanation: boolean;
+  hasFigure: boolean;
+  hasFigureExplanation: boolean;
+  hasConversionFactorExplanation: boolean;
+  hasDefinitionExplanation: boolean;
+  hasRelationshipExplanation: boolean;
+}
+
+/**
+ * Pure, deterministic selection of which Review Mode sections to render,
+ * and in what order — the one place that order is decided, so the JSX
+ * below and any test asserting on it stay in sync by construction. Main
+ * Idea is unconditional (Review Mode always has at least this); every
+ * other key is included only when its corresponding `has*` flag is true.
+ * Multiple specialized explanation slots (tableExplanation,
+ * figureExplanation, conversionFactorExplanation, definitionExplanation,
+ * relationshipExplanation) may all be true at once and all are returned —
+ * nothing here assumes at most one is populated, even though today's
+ * content happens to populate at most one per slide.
+ */
+export function selectReviewSections(input: ReviewSectionInput): ReviewSectionKey[] {
+  const keys: ReviewSectionKey[] = ["mainIdea"];
+  if (input.hasDefinitions) keys.push("definitions");
+  if (input.hasKeyConcept) keys.push("keyConcept");
+  if (input.hasEssentialSimpleExample) keys.push("simpleExample");
+  if (input.hasTable) keys.push("table");
+  if (input.hasTableExplanation) keys.push("tableExplanation");
+  if (input.hasFigure) keys.push("figure");
+  if (input.hasFigureExplanation) keys.push("figureExplanation");
+  if (input.hasConversionFactorExplanation) keys.push("conversionFactorExplanation");
+  if (input.hasDefinitionExplanation) keys.push("definitionExplanation");
+  if (input.hasRelationshipExplanation) keys.push("relationshipExplanation");
+  return keys;
+}
+
+/**
+ * Selects the Simple Example paragraphs/clauses "essential" enough to keep
+ * in Review Mode: those matching one of the slide's own equationBlockPhrase
+ * entries (an equation, formula, numerical relationship, conversion, or
+ * worked expression), via the same string.includes matching
+ * findMatchingEquationBlockPhrase already uses for equation-block styling
+ * — never a fragile regex over rendered HTML. A slide whose Simple Example
+ * is purely narrative (no equationBlockPhrase configured, or none of its
+ * entries match) returns an empty array, so Review Mode omits that
+ * subsection entirely rather than showing long non-essential prose. Pure
+ * and independent of blockId/slideNumber/topicId — driven entirely by its
+ * two arguments.
+ */
+export function selectEssentialSimpleExampleParagraphs(
+  paragraphs: readonly string[],
+  equationBlockPhrase: string | string[] | undefined,
+): string[] {
+  return paragraphs.filter((p) => findMatchingEquationBlockPhrase(p, equationBlockPhrase) !== undefined);
+}
+
+/**
  * Renders one paragraph/clause of text, checking whether it matches one of
  * the slide's own equationBlockPhrase entries and, if so, layering that
  * exact phrase's equationPhraseItalicTokens (if any) on top of the base
@@ -913,18 +996,24 @@ interface StructuredSlideContentProps {
   definitions?: { en: DefinitionEntry[] | null; ar: DefinitionEntry[] | null };
   italicTokens?: readonly string[];
   /**
-   * When true, renders the Slide Reader's Review Mode: only Main Idea, Key
-   * Concept (when present), the figure/table (when present), and any
-   * equation-block paragraphs within Simple Example — reusing exactly the
-   * same `sections` object Study Mode renders from, never a re-parse of
-   * rendered HTML. Every other subsection (Original English/Arabic, full
-   * Steps, Table/Figure/Conversion-Factor/Definition/Relationship
-   * Explanation, Common Misconception, Scientific Note, Connection) is
-   * simply not rendered in this mode — the underlying approved text is
-   * untouched; this is presentation-only, matching Study Mode's own
-   * "reformats... presentation only" contract. Defaults to false, which
-   * preserves this component's exact current (Study Mode) output for
-   * every existing caller.
+   * When true, renders the Slide Reader's Review Mode — a compact subset
+   * that still preserves every essential conceptual/reference item: Main
+   * Idea, structured Definitions (when present), Key Concept (when
+   * present), an "essential" Simple Example (equation/formula-bearing
+   * paragraphs only — see selectEssentialSimpleExampleParagraphs), the
+   * Table and Figure (when present), and each populated specialized
+   * explanation slot (Table/Figure/Conversion-Factor/Definition/
+   * Relationship Explanation), in that pedagogical order (see
+   * selectReviewSections). Reuses exactly the same `sections` object and
+   * `definitions`/`table`/`figure` props Study Mode renders from, never a
+   * re-parse of rendered HTML. Omitted: Original English/Arabic, the full
+   * numbered Steps, non-essential narrative Simple Example paragraphs,
+   * Common Misconception, Scientific Note, and Connection — these remain
+   * available in Study Mode. The underlying approved text is untouched;
+   * this is presentation-only, matching Study Mode's own "reformats...
+   * presentation only" contract. Defaults to false, which preserves this
+   * component's exact current (Study Mode) output for every existing
+   * caller.
    */
   compact?: boolean;
 }
@@ -975,9 +1064,24 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
   const equationAwareSections = config?.equationAwareSections ?? [];
 
   if (compact) {
-    const equationParagraphs = sections.simpleExample.filter(
-      (p) => findMatchingEquationBlockPhrase(p, config?.equationBlockPhrase) !== undefined,
+    const essentialSimpleExampleParagraphs = selectEssentialSimpleExampleParagraphs(
+      sections.simpleExample,
+      config?.equationBlockPhrase,
     );
+    const reviewSections = selectReviewSections({
+      hasDefinitions: !!definitionsForLanguage && definitionsForLanguage.length > 0,
+      hasKeyConcept: sections.keyConcept.length > 0,
+      hasEssentialSimpleExample: essentialSimpleExampleParagraphs.length > 0,
+      hasTable: !!tableForLanguage,
+      hasTableExplanation: sections.tableExplanation.length > 0,
+      hasFigure: !!figure,
+      hasFigureExplanation: sections.figureExplanation.length > 0,
+      hasConversionFactorExplanation: sections.conversionFactorExplanation.length > 0,
+      hasDefinitionExplanation: sections.definitionExplanation.length > 0,
+      hasRelationshipExplanation: sections.relationshipExplanation.length > 0,
+    });
+    const include = (key: ReviewSectionKey) => reviewSections.includes(key);
+
     return (
       <div className="structured-slide structured-slide--compact">
         <section className="structured-slide__section" id={`${blockId}--main-idea`}>
@@ -992,32 +1096,14 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
           )}
         </section>
 
-        {tableForLanguage ? (
-          <section className="structured-slide__section" id={`${blockId}--table`}>
-            {renderSourceTable(tableForLanguage, direction)}
+        {include("definitions") ? (
+          <section className="structured-slide__section" id={`${blockId}--definitions`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.definitions[language]}</h4>
+            {renderDefinitionCards(definitionsForLanguage!, effectiveItalicTokens, direction)}
           </section>
         ) : null}
 
-        {figure ? (
-          <section className="structured-slide__section" id={`${blockId}--figure`}>
-            <SlideFigure assetUrl={figure.assetUrl} alt={figure.alt} />
-          </section>
-        ) : null}
-
-        {equationParagraphs.length > 0 ? (
-          <section className="structured-slide__section" id={`${blockId}--simple-example`}>
-            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.simpleExample[language]}</h4>
-            {renderEquationAwareParagraphs(
-              equationParagraphs,
-              effectiveItalicTokens,
-              direction,
-              config?.equationBlockPhrase,
-              config?.equationPhraseItalicTokens,
-            )}
-          </section>
-        ) : null}
-
-        {sections.keyConcept.length > 0 ? (
+        {include("keyConcept") ? (
           <section className="structured-slide__section" id={`${blockId}--key-concept`}>
             <h4 className="structured-slide__heading">{SUBSECTION_LABEL.keyConcept[language]}</h4>
             {renderSection(
@@ -1027,6 +1113,103 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
               config?.equationBlockPhrase,
               config?.equationPhraseItalicTokens,
               equationAwareSections.includes("keyConcept"),
+            )}
+          </section>
+        ) : null}
+
+        {include("simpleExample") ? (
+          <section className="structured-slide__section" id={`${blockId}--simple-example`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.simpleExample[language]}</h4>
+            {renderEquationAwareParagraphs(
+              essentialSimpleExampleParagraphs,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+            )}
+          </section>
+        ) : null}
+
+        {include("table") ? (
+          <section className="structured-slide__section" id={`${blockId}--table`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.table[language]}</h4>
+            {renderSourceTable(tableForLanguage!, direction)}
+          </section>
+        ) : null}
+
+        {include("tableExplanation") ? (
+          <section className="structured-slide__section" id={`${blockId}--table-explanation`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.tableExplanation[language]}</h4>
+            {renderSection(
+              sections.tableExplanation,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("tableExplanation"),
+            )}
+          </section>
+        ) : null}
+
+        {include("figure") ? (
+          <section className="structured-slide__section" id={`${blockId}--figure`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figure[language]}</h4>
+            <SlideFigure assetUrl={figure!.assetUrl} alt={figure!.alt} />
+          </section>
+        ) : null}
+
+        {include("figureExplanation") ? (
+          <section className="structured-slide__section" id={`${blockId}--figure-explanation`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.figureExplanation[language]}</h4>
+            {renderSection(
+              sections.figureExplanation,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("figureExplanation"),
+            )}
+          </section>
+        ) : null}
+
+        {include("conversionFactorExplanation") ? (
+          <section className="structured-slide__section" id={`${blockId}--conversion-factor-explanation`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.conversionFactorExplanation[language]}</h4>
+            {renderSection(
+              sections.conversionFactorExplanation,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("conversionFactorExplanation"),
+            )}
+          </section>
+        ) : null}
+
+        {include("definitionExplanation") ? (
+          <section className="structured-slide__section" id={`${blockId}--definition-explanation`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.definitionExplanation[language]}</h4>
+            {renderSection(
+              sections.definitionExplanation,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("definitionExplanation"),
+            )}
+          </section>
+        ) : null}
+
+        {include("relationshipExplanation") ? (
+          <section className="structured-slide__section" id={`${blockId}--relationship-explanation`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.relationshipExplanation[language]}</h4>
+            {renderSection(
+              sections.relationshipExplanation,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("relationshipExplanation"),
             )}
           </section>
         ) : null}
