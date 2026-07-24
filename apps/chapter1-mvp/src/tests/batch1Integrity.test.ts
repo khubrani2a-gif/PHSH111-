@@ -95,7 +95,16 @@ const APPROVED = {
     // new generic originalEmphasisPhrases config field for preserving the
     // source's own word-level emphasis (see
     // src/tests/slide13MassVersusWeight.test.tsx).
-    sha256: "0b3904d6d49f220d9191644b5344615b86cca45b152ca885809a435f15764736",
+    // rev-025 implements exactly two approved content-audit findings on
+    // Slide 13 only: F-02 appends one clarifying sentence to the Scientific
+    // Note (constant-velocity net force is zero; sustained pulling effort
+    // mostly reflects friction/rolling resistance, not inertia); F-22
+    // corrects provenanceLinks[0].evidence to state the project-owner
+    // source was a complete slide screenshot (title banner, bullet text,
+    // and illustration together), from which a focused derivative figure
+    // was extracted — not an already-cropped source. No other slide or
+    // section was touched (see src/tests/slide13MassVersusWeight.test.tsx).
+    sha256: "278fa769325ffd39d11a3cb59818b3b107119ad6ba4443a0345bcee6a2b314d6",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -163,7 +172,14 @@ const APPROVED = {
     // by counting regular repeated cycles." Arabic-only; no English-side
     // change (content-audit finding F-01; see
     // src/tests/slide8TimeMeasurement.test.tsx).
-    sha256: "f2b36b5fea9eecf914b7659b4afb74a693252bd3a2664850194e03833f4a25af",
+    // rev-025 matches English rev-025's exactly-two-findings Slide 13
+    // implementation: F-02 appends the Arabic constant-velocity/friction
+    // clarification sentence to the Scientific Note (both localizedContent.ar.text
+    // and arabic.canonicalArabicTranslation.text); F-22 corrects
+    // provenanceLinks[0].evidence identically (byte-for-byte) to the English
+    // file's own correction — this field is shared, non-localized metadata,
+    // not translated (see src/tests/slide13MassVersusWeight.test.tsx).
+    sha256: "b4359d7d3c9b940645a4a6dab4dc96e15f623f811a2f54f891ed1f83f89e77d1",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),

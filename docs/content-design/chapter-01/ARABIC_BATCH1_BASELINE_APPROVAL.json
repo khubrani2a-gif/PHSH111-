@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.24",
+  "baselineVersion": "1.0.25",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "f2b36b5fea9eecf914b7659b4afb74a693252bd3a2664850194e03833f4a25af",
+      "sha256": "b4359d7d3c9b940645a4a6dab4dc96e15f623f811a2f54f891ed1f83f89e77d1",
       "schemaVersion": "2.3.0",
       "recordCount": 20
     },
@@ -505,6 +505,23 @@
           "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 expected sha256 constant refreshed to match"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false; blocking.blockingStatus on ch01-t01-block-opening-8 remains 'blocked' (blockingReason unchanged), unaffected by this wording-only correction. This revision does not constitute or imply publication authorization, review-status advancement, or reviewer sign-off of any kind."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-025",
+        "fromVersion": "1.0.24",
+        "toVersion": "1.0.25",
+        "revisedAt": "2026-07-24",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-024 -> rev-025 (1.22.0 -> 1.23.0): implements exactly two approved content-audit findings on ch01-t01-block-opening-13 (Slide 13) only, in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. (1) content-audit finding F-02, appending one clarifying sentence to Slide 13's Arabic Scientific Note, in both localizedContent.ar.text and arabic.canonicalArabicTranslation.text; (2) content-audit finding F-22, correcting Slide 13's provenanceLinks[0].evidence — a shared, English-language, non-localized field, corrected identically (byte-for-byte) to the English file's own correction, not translated. No other section of Slide 13, and no other record in ch01-t01 (Slides 1-12) or ch01-t04, was touched. No other audit finding was implemented.",
+        "whatChanged": "F-02: Appended 'عند السحب بسرعة ثابتة، تكون القوة الأفقية المحصلة صفرًا، والجهد المستمر الذي يشعر به الشخص ناتج أساسًا عن التغلب على الاحتكاك ومقاومة التدحرج — إذ تنكشف الكتلة والقصور الذاتي تحديدًا عند تغيّر السرعة، لا عند الحركة المستمرة بسرعة ثابتة.' to the end of Slide 13's existing Arabic Scientific Note (after '...عند تغيير سرعتها المتجهة.', before the Key Concept marker 'المفهوم الأساسي:'), in both synchronized Arabic text fields, confirmed identical after the edit. F-22: Replaced provenanceLinks[0].evidence's first two sentences with the project-owner-corrected factual account (identical text to the English file's own rev-025 correction — this field is shared, English-language governance metadata, not Arabic instructional content, and must not be translated). The remainder of the evidence field is unchanged.",
+        "whatWasNotChanged": "Slide 13's Arabic translation of the Original English subsection is unchanged. Slide 13's Main Idea, all five numbered steps, Simple Example (all equations unchanged), Figure Explanation, Common Misconception, Key Concept, and Connection to the Next Slide are unchanged in Arabic. figureAssetPath, figureAltAr, slideTitleAr, and every governance/blocking field on Slide 13 are unchanged. Slides 1-12's Arabic content is entirely byte-for-byte unchanged. No record in ch01-t04 was touched. The committed figure asset was inspected and confirmed already correct; it was not regenerated or modified.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-025): project-owner-directed implementation of exactly two approved audit findings (F-02, F-22), translated/mirrored into Arabic using the project's established conventions.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening-13.localizedContent.ar.text and .arabic.canonicalArabicTranslation.text (Scientific Note only) and .provenanceLinks[0].evidence revised",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-025",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-13.arabicBaselineDependency refreshed to match; every other slide's entry untouched"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. ch01-t01-block-opening-13's blocking.blockingStatus remains 'blocked' (blockingReason unchanged); arabic.translationStatus remains 'draft-ai-generated-unreviewed', unaffected by this correction. This revision does not constitute or imply publication authorization or independent scientific sign-off."
       }
     ]
   },
