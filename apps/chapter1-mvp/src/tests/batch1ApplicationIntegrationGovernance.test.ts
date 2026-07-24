@@ -90,26 +90,39 @@ describe("F-03 — English baseline-approval metadata no longer claims integrati
 describe("F-03 — Arabic baseline-approval metadata is consistent with the same authorization state", () => {
   const arabicBaseline = readJson(ARABIC_BASELINE_PATH);
   const applicationIntegrationAuthorized = arabicBaseline.governanceRestrictions.applicationIntegrationAuthorized;
+  const approvalLevelStatement: string = arabicBaseline.governanceRestrictions.approvalLevelStatement;
 
-  it("no longer implies application integration is flatly unauthorized (not a bare false)", () => {
-    expect(applicationIntegrationAuthorized).not.toBe(false);
-    expect(typeof applicationIntegrationAuthorized).toBe("string");
+  // applicationIntegrationAuthorized is an authorization flag and must retain
+  // its Boolean schema type — the explanatory prose belongs in
+  // approvalLevelStatement, never inside this field. See the two dedicated
+  // tests below (exact-value and schema-type) rather than a single loose
+  // truthy/"not false" check, which would not catch a regression back to a
+  // descriptive string.
+  it("is exactly Boolean true", () => {
+    expect(applicationIntegrationAuthorized).toBe(true);
   });
 
-  it("states internal application integration is authorized, referencing PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization", () => {
-    expect(applicationIntegrationAuthorized).toMatch(/internally authorized/i);
-    expect(applicationIntegrationAuthorized).toContain("PILOT_AUTHORIZATION.json");
-    expect(applicationIntegrationAuthorized).toContain("batch1ApplicationIntegrationAuthorization");
+  it("has runtime type 'boolean' (schema-protection: never a descriptive string)", () => {
+    expect(typeof applicationIntegrationAuthorized).toBe("boolean");
   });
 
-  it("is scoped to internal/QA integration only, and preserves the distinction from student-facing publication", () => {
-    expect(applicationIntegrationAuthorized).toMatch(/internal\/QA/i);
-    expect(applicationIntegrationAuthorized).toMatch(/student.?facing publication remains separately unauthorized/i);
+  it("approvalLevelStatement references PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization", () => {
+    expect(approvalLevelStatement).toContain("PILOT_AUTHORIZATION.json");
+    expect(approvalLevelStatement).toContain("batch1ApplicationIntegrationAuthorization");
   });
 
-  it("does not contain any stale claim that integration is not mechanically possible", () => {
+  it("approvalLevelStatement scopes the authorization to internal/QA integration only", () => {
+    expect(approvalLevelStatement).toMatch(/internal\/QA/i);
+  });
+
+  it("approvalLevelStatement preserves the distinction from student-facing publication (a separate, still-absent gate)", () => {
+    expect(approvalLevelStatement).toMatch(/student-publication authorization/i);
+    expect(approvalLevelStatement).toMatch(/still-absent gate/i);
+  });
+
+  it("approvalLevelStatement does not contain any stale claim that integration is not mechanically possible", () => {
     for (const stale of STALE_APPLICATION_INTEGRATION_CLAIMS) {
-      expect(applicationIntegrationAuthorized.toLowerCase()).not.toContain(stale.toLowerCase());
+      expect(approvalLevelStatement.toLowerCase()).not.toContain(stale.toLowerCase());
     }
   });
 });
