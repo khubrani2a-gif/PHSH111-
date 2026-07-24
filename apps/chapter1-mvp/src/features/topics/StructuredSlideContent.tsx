@@ -654,6 +654,7 @@ export type ReviewSectionKey =
   | "relationshipExplanation";
 
 export interface ReviewSectionInput {
+  hasMainIdea: boolean;
   hasDefinitions: boolean;
   hasKeyConcept: boolean;
   hasEssentialSimpleExample: boolean;
@@ -669,17 +670,24 @@ export interface ReviewSectionInput {
 /**
  * Pure, deterministic selection of which Review Mode sections to render,
  * and in what order — the one place that order is decided, so the JSX
- * below and any test asserting on it stay in sync by construction. Main
- * Idea is unconditional (Review Mode always has at least this); every
- * other key is included only when its corresponding `has*` flag is true.
- * Multiple specialized explanation slots (tableExplanation,
- * figureExplanation, conversionFactorExplanation, definitionExplanation,
+ * below and any test asserting on it stay in sync by construction. Every
+ * key, including mainIdea, is included only when its corresponding `has*`
+ * flag is true — Main Idea is conceptually central but is not exempt from
+ * the same presence-driven policy every other section follows, since a
+ * future topic's slide could legally parse to an empty mainIdea while
+ * still carrying other eligible content (definitions, a table, a figure,
+ * Key Concept, a specialized explanation). Rendering an empty Main Idea
+ * heading/wrapper merely because the key is conceptually important would
+ * violate Review Mode's own "no empty sections" contract. Multiple
+ * specialized explanation slots (tableExplanation, figureExplanation,
+ * conversionFactorExplanation, definitionExplanation,
  * relationshipExplanation) may all be true at once and all are returned —
  * nothing here assumes at most one is populated, even though today's
  * content happens to populate at most one per slide.
  */
 export function selectReviewSections(input: ReviewSectionInput): ReviewSectionKey[] {
-  const keys: ReviewSectionKey[] = ["mainIdea"];
+  const keys: ReviewSectionKey[] = [];
+  if (input.hasMainIdea) keys.push("mainIdea");
   if (input.hasDefinitions) keys.push("definitions");
   if (input.hasKeyConcept) keys.push("keyConcept");
   if (input.hasEssentialSimpleExample) keys.push("simpleExample");
@@ -1069,6 +1077,7 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
       config?.equationBlockPhrase,
     );
     const reviewSections = selectReviewSections({
+      hasMainIdea: sections.mainIdea.length > 0,
       hasDefinitions: !!definitionsForLanguage && definitionsForLanguage.length > 0,
       hasKeyConcept: sections.keyConcept.length > 0,
       hasEssentialSimpleExample: essentialSimpleExampleParagraphs.length > 0,
@@ -1084,17 +1093,19 @@ export function StructuredSlideContent({ blockId, text, table, figure, definitio
 
     return (
       <div className="structured-slide structured-slide--compact">
-        <section className="structured-slide__section" id={`${blockId}--main-idea`}>
-          <h4 className="structured-slide__heading">{SUBSECTION_LABEL.mainIdea[language]}</h4>
-          {renderSection(
-            sections.mainIdea,
-            effectiveItalicTokens,
-            direction,
-            config?.equationBlockPhrase,
-            config?.equationPhraseItalicTokens,
-            equationAwareSections.includes("mainIdea"),
-          )}
-        </section>
+        {include("mainIdea") ? (
+          <section className="structured-slide__section" id={`${blockId}--main-idea`}>
+            <h4 className="structured-slide__heading">{SUBSECTION_LABEL.mainIdea[language]}</h4>
+            {renderSection(
+              sections.mainIdea,
+              effectiveItalicTokens,
+              direction,
+              config?.equationBlockPhrase,
+              config?.equationPhraseItalicTokens,
+              equationAwareSections.includes("mainIdea"),
+            )}
+          </section>
+        ) : null}
 
         {include("definitions") ? (
           <section className="structured-slide__section" id={`${blockId}--definitions`}>

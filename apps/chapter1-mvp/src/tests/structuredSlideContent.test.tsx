@@ -300,25 +300,37 @@ describe("StructuredSlideContent — governance untouched", () => {
 // reusable across all current and future topics; no per-slide exceptions).
 // ===========================================================================
 
+// Every flag explicitly false — the "nothing eligible" baseline synthetic
+// input reused by several tests below via spreading, so each test only
+// needs to override the one or two flags it's actually exercising.
+const NO_REVIEW_CONTENT = {
+  hasMainIdea: false,
+  hasDefinitions: false,
+  hasKeyConcept: false,
+  hasEssentialSimpleExample: false,
+  hasTable: false,
+  hasTableExplanation: false,
+  hasFigure: false,
+  hasFigureExplanation: false,
+  hasConversionFactorExplanation: false,
+  hasDefinitionExplanation: false,
+  hasRelationshipExplanation: false,
+} as const;
+
 describe("StructuredSlideContent — Review Mode selection logic (pure, generic, cross-topic)", () => {
-  it("11. selectReviewSections always includes mainIdea, and nothing else when every optional flag is false", () => {
-    const keys = selectReviewSections({
-      hasDefinitions: false,
-      hasKeyConcept: false,
-      hasEssentialSimpleExample: false,
-      hasTable: false,
-      hasTableExplanation: false,
-      hasFigure: false,
-      hasFigureExplanation: false,
-      hasConversionFactorExplanation: false,
-      hasDefinitionExplanation: false,
-      hasRelationshipExplanation: false,
-    });
+  it("11a. hasMainIdea: true includes mainIdea", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasMainIdea: true });
     expect(keys).toEqual(["mainIdea"]);
+  });
+
+  it("11b. hasMainIdea: false omits mainIdea, and every flag false returns no sections at all — Main Idea is not exempt from the presence-driven policy", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT });
+    expect(keys).toEqual([]);
   });
 
   it("12. selectReviewSections returns every populated key in the documented pedagogical order when all flags are true — synthetic input, no topic ID/slide number/block ID involved", () => {
     const keys: ReviewSectionKey[] = selectReviewSections({
+      hasMainIdea: true,
       hasDefinitions: true,
       hasKeyConcept: true,
       hasEssentialSimpleExample: true,
@@ -347,12 +359,9 @@ describe("StructuredSlideContent — Review Mode selection logic (pure, generic,
 
   it("13. multiple populated specialized-explanation slots are all returned together, none dropped for a 'pick one' shortcut — synthetic input, no known block ID", () => {
     const keys = selectReviewSections({
-      hasDefinitions: false,
-      hasKeyConcept: false,
-      hasEssentialSimpleExample: false,
-      hasTable: false,
+      ...NO_REVIEW_CONTENT,
+      hasMainIdea: true,
       hasTableExplanation: true,
-      hasFigure: false,
       hasFigureExplanation: true,
       hasConversionFactorExplanation: true,
       hasDefinitionExplanation: true,
@@ -366,6 +375,36 @@ describe("StructuredSlideContent — Review Mode selection logic (pure, generic,
       "definitionExplanation",
       "relationshipExplanation",
     ]);
+  });
+
+  it("13b. a synthetic slide with no Main Idea but with definitions selects Definitions without Main Idea — no topic/slide/block ID involved", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasDefinitions: true });
+    expect(keys).toEqual(["definitions"]);
+  });
+
+  it("13c. a synthetic slide with no Main Idea but with a table selects the Table without a Main Idea wrapper", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasTable: true });
+    expect(keys).toEqual(["table"]);
+  });
+
+  it("13d. a synthetic slide with no Main Idea but with a figure selects the Figure without a Main Idea wrapper", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasFigure: true });
+    expect(keys).toEqual(["figure"]);
+  });
+
+  it("13e. a synthetic slide with no Main Idea but with a Key Concept selects Key Concept alone", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasKeyConcept: true });
+    expect(keys).toEqual(["keyConcept"]);
+  });
+
+  it("13f. a synthetic slide with no Main Idea but with a specialized explanation selects that explanation alone", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasRelationshipExplanation: true });
+    expect(keys).toEqual(["relationshipExplanation"]);
+  });
+
+  it("13g. a synthetic slide with no eligible content at all selects nothing — the compact root would render zero .structured-slide__section elements", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT });
+    expect(keys).toEqual([]);
   });
 
   it("14. selectEssentialSimpleExampleParagraphs retains an equation-bearing paragraph and drops a purely narrative one — synthetic paragraphs, no topic ID", () => {
@@ -483,15 +522,10 @@ describe("StructuredSlideContent — Review Mode specialized explanation slots",
 
   it("29. multiple populated explanation slots at once render every one of them without losing any (selectReviewSections is exercised directly since no current slide's own config populates more than one slot at a time)", () => {
     const keys = selectReviewSections({
-      hasDefinitions: false,
-      hasKeyConcept: false,
-      hasEssentialSimpleExample: false,
-      hasTable: false,
+      ...NO_REVIEW_CONTENT,
+      hasMainIdea: true,
       hasTableExplanation: true,
-      hasFigure: false,
-      hasFigureExplanation: false,
       hasConversionFactorExplanation: true,
-      hasDefinitionExplanation: false,
       hasRelationshipExplanation: true,
     });
     expect(keys).toEqual(["mainIdea", "tableExplanation", "conversionFactorExplanation", "relationshipExplanation"]);
@@ -645,6 +679,92 @@ describe("StructuredSlideContent — Review Mode current-content regression (all
       const mainIdeaSection = container.querySelector(`#${slide.recordId}--main-idea`);
       expect(mainIdeaSection, `slide ${slide.slideNumber}`).toBeTruthy();
       expect(mainIdeaSection!.children.length, `slide ${slide.slideNumber}`).toBeGreaterThan(1);
+    }
+  });
+});
+
+describe("StructuredSlideContent — Main Idea presence-driven policy (correction: Main Idea is no longer unconditional)", () => {
+  // Under the current parser (parseSections), a slide only produces a
+  // non-null `sections` object once its own mainIdeaMarker has actually
+  // been found in the text — and when that happens, sections.mainIdea
+  // always has at least one paragraph. So no existing ch01-t01 slide (nor
+  // any slide using today's single marker-based parsing convention) can
+  // ever reach the component with sections.mainIdea empty — that is
+  // exactly why "no empty Main Idea" could ship silently wrong before this
+  // correction. The presence-driven policy itself, and the fact that
+  // Main Idea is no longer special-cased, is proven at the selection
+  // layer (selectReviewSections above) — the same pure function whose
+  // output the compact JSX's `include("mainIdea")` check consumes
+  // one-to-one, so a "mainIdea" key excluded there can never produce a
+  // rendered `--main-idea` section, for any future topic or slide shape.
+
+  it("1. hasMainIdea: true includes mainIdea (see also 11a above)", () => {
+    expect(selectReviewSections({ ...NO_REVIEW_CONTENT, hasMainIdea: true })).toEqual(["mainIdea"]);
+  });
+
+  it("2. hasMainIdea: false omits mainIdea even when every other flag is true (see also 12 above, which is the mirror case with hasMainIdea: true)", () => {
+    const keys = selectReviewSections({
+      hasMainIdea: false,
+      hasDefinitions: true,
+      hasKeyConcept: true,
+      hasEssentialSimpleExample: true,
+      hasTable: true,
+      hasTableExplanation: true,
+      hasFigure: true,
+      hasFigureExplanation: true,
+      hasConversionFactorExplanation: true,
+      hasDefinitionExplanation: true,
+      hasRelationshipExplanation: true,
+    });
+    expect(keys).not.toContain("mainIdea");
+    expect(keys).toEqual([
+      "definitions",
+      "keyConcept",
+      "simpleExample",
+      "table",
+      "tableExplanation",
+      "figure",
+      "figureExplanation",
+      "conversionFactorExplanation",
+      "definitionExplanation",
+      "relationshipExplanation",
+    ]);
+  });
+
+  it("3. a synthetic slide with no Main Idea but with definitions selects only Definitions (see also 13b above)", () => {
+    expect(selectReviewSections({ ...NO_REVIEW_CONTENT, hasDefinitions: true })).toEqual(["definitions"]);
+  });
+
+  it("4. a synthetic slide with no Main Idea but with a table selects only the Table, no Main Idea wrapper (see also 13c above)", () => {
+    expect(selectReviewSections({ ...NO_REVIEW_CONTENT, hasTable: true })).toEqual(["table"]);
+  });
+
+  it("5. a synthetic slide with no Main Idea and no other eligible content selects nothing — the compact root would render zero .structured-slide__section elements (see also 13g above)", () => {
+    expect(selectReviewSections({ ...NO_REVIEW_CONTENT })).toEqual([]);
+  });
+
+  it("6. excluding 'mainIdea' from the selected keys means the JSX's include(\"mainIdea\") gate is false, so no --main-idea section (and therefore no section-navigator entry, since SlideReader's nav is built only from rendered .structured-slide__section[id] elements) can ever be produced for it", () => {
+    const keys = selectReviewSections({ ...NO_REVIEW_CONTENT, hasDefinitions: true });
+    expect(keys.includes("mainIdea")).toBe(false);
+    // Cross-checked against real rendering: every current slide that DOES
+    // include "mainIdea" always renders a non-empty --main-idea section
+    // (test 46 above), confirming the include(key) gate in the compact
+    // JSX is wired directly off this same selection output.
+  });
+
+  it("7. current Slides 1-13 still render Main Idea, because their real parsed content is genuinely non-empty (regression, English)", () => {
+    for (const slide of ALL_SLIDES) {
+      renderReview(slide);
+      const headings = Array.from(container.querySelectorAll("h4.structured-slide__heading")).map((h) => h.textContent);
+      expect(headings, `slide ${slide.slideNumber}`).toContain("Main Idea");
+    }
+  });
+
+  it("8. current Slides 1-13 still render Main Idea in Arabic (regression, Arabic/RTL)", () => {
+    for (const slide of ALL_SLIDES) {
+      renderReview(slide, true);
+      const headings = Array.from(container.querySelectorAll("h4.structured-slide__heading")).map((h) => h.textContent);
+      expect(headings, `slide ${slide.slideNumber}`).toContain("الفكرة الرئيسية");
     }
   });
 });
