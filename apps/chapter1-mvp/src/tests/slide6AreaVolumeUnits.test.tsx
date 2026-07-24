@@ -503,7 +503,7 @@ describe("16. Persistence restores Slide 6 when it was last open", () => {
   it("Slide 6's recordId is written to the same topic-namespaced localStorage key used by every other slide", () => {
     renderSlides(false, 6);
     expect(window.localStorage.getItem("phsh111:ch01-t01.slides.openRecordId")).toBe(
-      "ch01-t01-block-opening-6",
+      JSON.stringify({ version: 1, openSlideId: "ch01-t01-block-opening-6" }),
     );
   });
 });

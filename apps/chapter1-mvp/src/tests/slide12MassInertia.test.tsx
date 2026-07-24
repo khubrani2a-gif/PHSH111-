@@ -600,7 +600,7 @@ describe("20. Slide 12 persists across reload", () => {
   it("persists under the topic-namespaced localStorage key", () => {
     renderSlides(false, 12);
     expect(window.localStorage.getItem("phsh111:ch01-t01.slides.openRecordId")).toBe(
-      "ch01-t01-block-opening-12",
+      JSON.stringify({ version: 1, openSlideId: "ch01-t01-block-opening-12" }),
     );
   });
 });

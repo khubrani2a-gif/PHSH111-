@@ -2,12 +2,24 @@
 //
 // Tests for the Slides single-open accordion (src/features/topics/Slides.tsx)
 // on ch01-t01 (Fundamental Quantities), covering the 13 checks explicitly
-// requested for this task: header order, single-open behavior, default
-// open state, persistence (last-open slide + viewed IDs), Previous/Next
-// navigation and boundary disabling, jump navigation, viewed-count
-// progress, focus movement, aria-expanded/aria-controls correctness,
-// Arabic RTL, generic support for a synthetic future slide with zero new
-// component logic, and preservation of Slides 1-5's educational content.
+// requested for the original version of this task: header order,
+// single-open behavior, default open state, persistence (last-open slide +
+// viewed IDs), Previous/Next navigation and boundary disabling, jump
+// navigation, viewed-count progress, focus movement,
+// aria-expanded/aria-controls correctness, Arabic RTL, generic support for
+// a synthetic future slide with zero new component logic, and preservation
+// of Slides 1-5's educational content.
+//
+// Sections 14+ cover the fully-collapsible-accordion fix (a slide's own
+// header can now close it, not just switch to another slide) and its 20
+// required checks: toggle-close behavior, aria-expanded reaching "false"
+// on every header once collapsed, Enter/Space keyboard activation, focus
+// staying on the header after collapse, viewed-progress surviving a
+// collapse, Previous/Next/jump still always opening (never toggling) their
+// target — including reachable from a session that began fully
+// collapsed — nullable persistence (explicit "closed", not the literal
+// string "null") surviving a reload, safe fallback for invalid/obsolete
+// persisted state, and Arabic/RTL parity.
 //
 // This is a presentation/navigation-only feature — no educational
 // wording, figure, table, equation, or governance/publication flag is
@@ -128,7 +140,7 @@ describe("4. Last-open slide persists and restores", () => {
   it("persists under a topic-namespaced localStorage key", () => {
     renderSlides(false, 4);
     expect(window.localStorage.getItem("phsh111:ch01-t01.slides.openRecordId")).toBe(
-      "ch01-t01-block-opening-4",
+      JSON.stringify({ version: 1, openSlideId: "ch01-t01-block-opening-4" }),
     );
   });
 });
@@ -533,5 +545,375 @@ describe("13. Slides 1-5's educational content remains unchanged", () => {
       expect(slide.blocking.studentFacingAllowed).toBe(false);
       expect(slide.blocking.blockingStatus).toBe("blocked");
     }
+  });
+});
+
+// ---------------------------------------------------------------------
+// Fully-collapsible accordion fix: a header can now close its own slide,
+// not just switch to a different one — zero or one slide may be open,
+// never more than one. Sections 14+ below.
+// ---------------------------------------------------------------------
+
+const OPEN_KEY = "phsh111:ch01-t01.slides.openRecordId";
+const VIEWED_KEY = "phsh111:ch01-t01.slides.viewedRecordIds";
+
+/** Persists an explicit "nothing open" (or a specific slide) state before mount, using the same versioned envelope Slides.tsx itself writes — never the literal string "null". */
+function seedOpenState(openSlideId: string | null) {
+  window.localStorage.setItem(OPEN_KEY, JSON.stringify({ version: 1, openSlideId }));
+}
+
+/**
+ * Simulates real-browser `<button>` keyboard activation (Enter/Space
+ * synthesize a `click`) inside jsdom, which — unlike a real browser —
+ * does not implement this native "activation behavior" itself. Mirrors
+ * this suite's existing jsdom-gap polyfill precedent (the `<dialog>`
+ * showModal/close polyfill in slide4DifferentUnits.test.tsx): the
+ * underlying component adds no custom key handling of its own (a plain
+ * `<button type="button">` already gets this for free in every real
+ * browser), so this helper exists purely to make that native behavior
+ * observable under jsdom.
+ */
+function activateViaKeyboard(el: HTMLButtonElement, key: "Enter" | " ") {
+  act(() => {
+    el.dispatchEvent(new KeyboardEvent("keydown", { key, bubbles: true, cancelable: true }));
+    el.click();
+  });
+}
+
+describe("14. Toggling the currently open header closes it (fully collapsible accordion)", () => {
+  it("1. no more than one slide can be open at once, including zero", () => {
+    renderSlides(false);
+    for (const s of topic.slides) {
+      const expandedCount = topic.slides.filter(
+        (m) => getSlideHeader(container, m.slideNumber)?.getAttribute("aria-expanded") === "true",
+      ).length;
+      expect(expandedCount).toBeLessThanOrEqual(1);
+      openSlideByNumber(container, s.slideNumber);
+    }
+  });
+
+  it("2. selecting a closed header opens it", () => {
+    renderSlides(false, 1);
+    expect(getSlideHeader(container, 6)?.getAttribute("aria-expanded")).toBe("false");
+    act(() => getSlideHeader(container, 6)!.click());
+    expect(getSlideHeader(container, 6)?.getAttribute("aria-expanded")).toBe("true");
+    expect(getSlidePanel(container, 6)?.hidden).toBe(false);
+  });
+
+  it("3. selecting the same open header closes it", () => {
+    renderSlides(false, 5);
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("true");
+    act(() => getSlideHeader(container, 5)!.click());
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("false");
+    expect(getSlidePanel(container, 5)?.hidden).toBe(true);
+  });
+
+  it("no other slide opens automatically when the open one is collapsed", () => {
+    renderSlides(false, 5);
+    act(() => getSlideHeader(container, 5)!.click());
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("aria-expanded")).toBe("false");
+    }
+  });
+
+  it("4. after closing, all 13 headers have aria-expanded=\"false\"", () => {
+    renderSlides(false, 9);
+    expect(topic.slides.length).toBe(13);
+    act(() => getSlideHeader(container, 9)!.click());
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("aria-expanded")).toBe("false");
+    }
+  });
+
+  it("the associated panel is hidden (not just visually) after collapse", () => {
+    renderSlides(false, 3);
+    const panel = getSlidePanel(container, 3)!;
+    expect(panel.hidden).toBe(false);
+    act(() => getSlideHeader(container, 3)!.click());
+    expect(panel.hidden).toBe(true);
+    // The panel's instructional body is unmounted too, not merely hidden by CSS.
+    expect(panel.querySelector(".slide__content")).toBeNull();
+  });
+
+  it("5. selecting another header switches the open slide (closes the previous, opens the new one)", () => {
+    renderSlides(false, 2);
+    act(() => getSlideHeader(container, 7)!.click());
+    expect(getSlideHeader(container, 2)?.getAttribute("aria-expanded")).toBe("false");
+    expect(getSlideHeader(container, 7)?.getAttribute("aria-expanded")).toBe("true");
+  });
+});
+
+describe("15. Keyboard activation (Enter and Space) toggles the header", () => {
+  it("6. Enter toggles the selected header open, then Enter again closes it", () => {
+    renderSlides(false, 1);
+    const header = getSlideHeader(container, 4)!;
+    expect(header.getAttribute("aria-expanded")).toBe("false");
+    activateViaKeyboard(header, "Enter");
+    expect(header.getAttribute("aria-expanded")).toBe("true");
+    activateViaKeyboard(header, "Enter");
+    expect(header.getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it("7. Space toggles the selected header open, then Space again closes it", () => {
+    renderSlides(false, 1);
+    const header = getSlideHeader(container, 4)!;
+    expect(header.getAttribute("aria-expanded")).toBe("false");
+    activateViaKeyboard(header, " ");
+    expect(header.getAttribute("aria-expanded")).toBe("true");
+    activateViaKeyboard(header, " ");
+    expect(header.getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it("8. focus remains on the header after collapse", () => {
+    renderSlides(false, 5);
+    const header = getSlideHeader(container, 5)!;
+    header.focus();
+    expect(document.activeElement).toBe(header);
+    act(() => header.click());
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(header);
+  });
+
+  it("headers remain semantic <button> elements — no non-button clickable wrapper was introduced", () => {
+    renderSlides(false);
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.tagName).toBe("BUTTON");
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("type")).toBe("button");
+    }
+  });
+
+  it("aria-controls still points to the correct panel id, and the panel carries a matching accessible identifier, after a collapse", () => {
+    renderSlides(false, 3);
+    act(() => getSlideHeader(container, 3)!.click());
+    const header = getSlideHeader(container, 3)!;
+    const panel = getSlidePanel(container, 3)!;
+    expect(header.getAttribute("aria-controls")).toBe("slide-3-panel");
+    expect(panel.id).toBe("slide-3-panel");
+    expect(panel.getAttribute("aria-labelledby")).toBe("slide-3-header");
+  });
+});
+
+describe("16. Viewed-progress is independent of open/closed state", () => {
+  it("9. collapsing a slide does not remove its viewed status", () => {
+    renderSlides(false, 3);
+    expect(getSlideHeader(container, 3)?.querySelector(".slide-accordion__viewed-badge")).not.toBeNull();
+    act(() => getSlideHeader(container, 3)!.click());
+    expect(getSlideHeader(container, 3)?.getAttribute("aria-expanded")).toBe("false");
+    expect(getSlideHeader(container, 3)?.querySelector(".slide-accordion__viewed-badge")).not.toBeNull();
+  });
+
+  it("collapsing the open slide does not change the viewed-progress count", () => {
+    renderSlides(false, 3);
+    openSlideByNumber(container, 6);
+    const before = container.querySelector(".slides-section__progress")?.textContent;
+    act(() => getSlideHeader(container, 6)!.click());
+    const after = container.querySelector(".slides-section__progress")?.textContent;
+    expect(after).toBe(before);
+  });
+
+  it("10. reopening a slide after collapsing it does not double-count it in viewed-progress", () => {
+    renderSlides(false, 3);
+    const total = topic.slides.length;
+    // Slide 1 (default-open on mount) and Slide 3 (opened above) are both
+    // already viewed at this point.
+    expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
+      `Slides viewed: 2 of ${total}`,
+    );
+    act(() => getSlideHeader(container, 3)!.click()); // close (already viewed)
+    act(() => getSlideHeader(container, 3)!.click()); // reopen
+    expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
+      `Slides viewed: 2 of ${total}`,
+    );
+  });
+});
+
+describe("17. Previous/Next/jump always open their target — never a toggle", () => {
+  it("Next does not close the current slide when clicked (it opens a different slide, so toggle-equality never applies)", () => {
+    renderSlides(false, 2);
+    const panel = getSlidePanel(container, 2)!;
+    const nextButton = Array.from(panel.querySelectorAll("button")).find(
+      (b) => b.textContent === "Next Slide",
+    ) as HTMLButtonElement;
+    act(() => nextButton.click());
+    expect(getSlideHeader(container, 3)?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("13. the jump selector opens its target starting from a fully-collapsed accordion (all slides collapsed on mount)", () => {
+    seedOpenState(null);
+    renderGenericSlides(root, topic, false);
+    // Confirm the accordion actually mounted fully collapsed first.
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("aria-expanded")).toBe("false");
+    }
+    const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
+    const slide8RecordId = topic.slides.find((s) => s.slideNumber === 8)!.recordId;
+    act(() => {
+      select.value = slide8RecordId;
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+    expect(getSlideHeader(container, 8)?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("11/12. Next and Previous still correctly open their unconditional target in a session that began fully collapsed", () => {
+    // Previous/Next buttons live inside their own slide's panel, so they
+    // are only ever reachable in the DOM once that slide is open — a
+    // literal "click Next while the DOM shows zero open panels" is not a
+    // state a real user (or this test) can reach. What this fix must
+    // guarantee instead — and what actually could have regressed by a
+    // careless toggle implementation — is that Next/Previous keep
+    // unconditionally opening their target (never toggle-closing) even in
+    // a session whose accordion started fully collapsed, once the user
+    // has opened anything at all via the always-available jump selector.
+    seedOpenState(null);
+    renderGenericSlides(root, topic, false);
+    const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
+    const slide5RecordId = topic.slides.find((s) => s.slideNumber === 5)!.recordId;
+    act(() => {
+      select.value = slide5RecordId;
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("true");
+
+    const panel5 = getSlidePanel(container, 5)!;
+    const nextButton = Array.from(panel5.querySelectorAll("button")).find(
+      (b) => b.textContent === "Next Slide",
+    ) as HTMLButtonElement;
+    act(() => nextButton.click());
+    expect(getSlideHeader(container, 6)?.getAttribute("aria-expanded")).toBe("true");
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("false");
+
+    const panel6 = getSlidePanel(container, 6)!;
+    const prevButton = Array.from(panel6.querySelectorAll("button")).find(
+      (b) => b.textContent === "Previous Slide",
+    ) as HTMLButtonElement;
+    act(() => prevButton.click());
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("true");
+    expect(getSlideHeader(container, 6)?.getAttribute("aria-expanded")).toBe("false");
+  });
+});
+
+describe("18. Nullable persistence: closed state and open state both survive a reload", () => {
+  it("14. if the user closes the active slide and reloads, all slides remain collapsed", () => {
+    renderSlides(false, 1);
+    act(() => getSlideHeader(container, 1)!.click());
+    expect(getSlideHeader(container, 1)?.getAttribute("aria-expanded")).toBe("false");
+
+    remount();
+    renderSlides(false);
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("aria-expanded")).toBe("false");
+    }
+  });
+
+  it("15. if the user leaves a slide open and reloads, that slide reopens", () => {
+    renderSlides(false, 9);
+    remount();
+    renderSlides(false);
+    expect(getSlideHeader(container, 9)?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("the persisted closed state is a real JSON envelope with openSlideId: null, never the literal text \"null\"", () => {
+    renderSlides(false, 1);
+    act(() => getSlideHeader(container, 1)!.click());
+    const raw = window.localStorage.getItem(OPEN_KEY);
+    expect(raw).not.toBe("null");
+    expect(raw).toBe(JSON.stringify({ version: 1, openSlideId: null }));
+    expect(JSON.parse(raw!)).toEqual({ version: 1, openSlideId: null });
+  });
+
+  it("16. an invalid/obsolete persisted slide id falls back to the default (Slide 1 open) instead of crashing", () => {
+    window.localStorage.setItem(
+      OPEN_KEY,
+      JSON.stringify({ version: 1, openSlideId: "ch01-t01-block-opening-does-not-exist" }),
+    );
+    expect(() => renderGenericSlides(root, topic, false)).not.toThrow();
+    expect(getSlideHeader(container, 1)?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("malformed (non-JSON) persisted state is handled safely and falls back to the default", () => {
+    window.localStorage.setItem(OPEN_KEY, "not valid json {{{");
+    expect(() => renderGenericSlides(root, topic, false)).not.toThrow();
+    expect(getSlideHeader(container, 1)?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("a stale pre-fix raw-string value (the old persistence format) is handled safely and falls back to the default", () => {
+    window.localStorage.setItem(OPEN_KEY, "ch01-t01-block-opening-4");
+    expect(() => renderGenericSlides(root, topic, false)).not.toThrow();
+    expect(getSlideHeader(container, 1)?.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("the viewed-ids list is untouched by the open-state persistence change (still a plain JSON string array)", () => {
+    renderSlides(false, 2);
+    const raw = window.localStorage.getItem(VIEWED_KEY);
+    expect(raw).toBeTruthy();
+    expect(Array.isArray(JSON.parse(raw!))).toBe(true);
+  });
+});
+
+describe("19. Arabic / RTL parity for the fully-collapsible accordion", () => {
+  it("18. selecting the open header again collapses it in Arabic too, and no other header opens", () => {
+    renderSlides(true, 5);
+    expect(getSlideHeader(container, 5)?.getAttribute("aria-expanded")).toBe("true");
+    act(() => getSlideHeader(container, 5)!.click());
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("aria-expanded")).toBe("false");
+    }
+  });
+
+  it("the Arabic expand/collapse indicator text still reflects state correctly across a collapse", () => {
+    renderSlides(true, 5);
+    const header = getSlideHeader(container, 5)!;
+    expect(header.textContent).toContain("طيّ"); // "Collapse", while open
+    act(() => header.click());
+    expect(header.textContent).toContain("توسيع"); // "Expand", once closed
+  });
+
+  it("collapsed state persists after a reload in Arabic too", () => {
+    renderSlides(true, 5);
+    act(() => getSlideHeader(container, 5)!.click());
+    remount();
+    renderSlides(true);
+    for (const s of topic.slides) {
+      expect(getSlideHeader(container, s.slideNumber)?.getAttribute("aria-expanded")).toBe("false");
+    }
+  });
+
+  it("the jump selector opens its target from a fully-collapsed accordion in Arabic too", () => {
+    seedOpenState(null);
+    renderGenericSlides(root, topic, true);
+    const select = container.querySelector<HTMLSelectElement>("#slides-jump-select")!;
+    const slide13RecordId = topic.slides.find((s) => s.slideNumber === 13)!.recordId;
+    act(() => {
+      select.value = slide13RecordId;
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+    expect(getSlideHeader(container, 13)?.getAttribute("aria-expanded")).toBe("true");
+  });
+});
+
+describe("20. Slides 1-13 educational content and governance are unaffected by this UI-only fix", () => {
+  it("17/19. Slide 1's original English text and Slide 13's equations still render correctly through a toggle-close/reopen cycle", () => {
+    renderSlides(false, 1);
+    expect(getSlidePanel(container, 1)?.textContent).toContain(
+      "In physics, there are three basic aspects of the material universe",
+    );
+    act(() => getSlideHeader(container, 1)!.click()); // close
+    act(() => getSlideHeader(container, 1)!.click()); // reopen
+    expect(getSlidePanel(container, 1)?.textContent).toContain(
+      "In physics, there are three basic aspects of the material universe",
+    );
+
+    openSlideByNumber(container, 13);
+    expect(getSlidePanel(container, 13)?.textContent).toContain(
+      "Weight, a quantity that is related to, but is not the same as mass, is used instead.",
+    );
+  });
+
+  it("20. governance and blocking flags for every slide remain unchanged by this UI/state-management-only fix", () => {
+    for (const slide of topic.slides) {
+      expect(slide.blocking.studentFacingAllowed).toBe(false);
+      expect(slide.blocking.blockingStatus).toBe("blocked");
+    }
+    expect(topic.governance.recordCount).toBe(20);
   });
 });

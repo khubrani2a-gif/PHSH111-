@@ -48,10 +48,20 @@ export function renderGenericSlides(
   });
 }
 
-/** Clicks the header button for slide N, opening its panel (and closing whichever was open). */
+/**
+ * Ensures slide N's panel is open (and closes whichever was open), leaving
+ * it open if it already is. The accordion header button now toggles
+ * (clicking an already-open header closes it — see
+ * src/tests/slidesAccordion.test.tsx section 2), so this helper only
+ * clicks when the header isn't already expanded, preserving this
+ * function's own "make sure it's open" contract for the many slide-content
+ * test files that call it. Toggle/close behavior itself is exercised
+ * directly (not through this helper) in slidesAccordion.test.tsx.
+ */
 export function openSlideByNumber(container: HTMLElement, slideNumber: number): void {
   const header = container.querySelector<HTMLButtonElement>(`#slide-${slideNumber}-header`);
   if (!header) throw new Error(`No accordion header button found for slide ${slideNumber}`);
+  if (header.getAttribute("aria-expanded") === "true") return;
   act(() => {
     header.click();
   });
