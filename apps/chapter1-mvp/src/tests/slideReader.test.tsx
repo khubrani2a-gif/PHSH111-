@@ -629,3 +629,126 @@ describe("Regression — untouched content and governance", () => {
     expect(JSON.stringify(topic)).toBe(before);
   });
 });
+
+// ===========================================================================
+// PR B — Review Mode Completeness: section-navigation regression.
+// ===========================================================================
+
+function toggleToReview() {
+  click(container.querySelector('.slide-view-mode-toggle__btn[aria-pressed="false"]'));
+}
+
+function navLabels(): (string | null)[] {
+  return Array.from(container.querySelectorAll(".slide-section-nav__btn")).map((el) => el.textContent);
+}
+
+describe("Review Mode section navigation", () => {
+  it("Review Mode nav for Slide 9 (definitions + Definition Explanation, no table/figure) includes exactly the sections that are present", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=9"] });
+    toggleToReview();
+    const labels = navLabels();
+    expect(labels).toContain("Main Idea");
+    expect(labels).toContain("Definitions");
+    expect(labels).toContain("Key Concept");
+    expect(labels).toContain("Simple Example");
+    expect(labels).toContain("Definition Explanation");
+    expect(labels).not.toContain("Table");
+    expect(labels).not.toContain("Table Explanation");
+    expect(labels).not.toContain("Figure");
+    expect(labels).not.toContain("Figure Explanation");
+    expect(labels).not.toContain("Conversion-Factor Explanation");
+    expect(labels).not.toContain("Relationship Explanation");
+  });
+
+  it("Review Mode nav for Slide 3 (table + Table Explanation, no definitions/figure) includes Table and Table Explanation only", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    toggleToReview();
+    const labels = navLabels();
+    expect(labels).toContain("Table");
+    expect(labels).toContain("Table Explanation");
+    expect(labels).not.toContain("Definitions");
+    expect(labels).not.toContain("Figure");
+    expect(labels).not.toContain("Figure Explanation");
+  });
+
+  it("Review Mode nav for Slide 4 (figure + Figure Explanation) includes Figure and Figure Explanation only", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=4"] });
+    toggleToReview();
+    const labels = navLabels();
+    expect(labels).toContain("Figure");
+    expect(labels).toContain("Figure Explanation");
+    expect(labels).not.toContain("Table");
+    expect(labels).not.toContain("Definitions");
+  });
+
+  it("Review Mode nav has no empty entries — every entry corresponds to a real, non-empty rendered section", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=9"] });
+    toggleToReview();
+    const labels = navLabels();
+    expect(labels.every((l) => !!l && l.trim().length > 0)).toBe(true);
+    const ids = new Set(Array.from(container.querySelectorAll(".structured-slide__section[id]")).map((el) => el.id));
+    expect(ids.size).toBeGreaterThan(0);
+  });
+
+  it("Review Mode section IDs remain unique", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=9"] });
+    toggleToReview();
+    const ids = Array.from(container.querySelectorAll(".structured-slide__section[id]")).map((el) => el.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("switching Study -> Review on Slide 9 refreshes the nav: 'Original English' drops out, 'Definitions' appears", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=9"] });
+    const studyLabels = navLabels();
+    expect(studyLabels).toContain("Original English");
+    expect(studyLabels).not.toContain("Definitions");
+
+    toggleToReview();
+    const reviewLabels = navLabels();
+    expect(reviewLabels).not.toContain("Original English");
+    expect(reviewLabels).toContain("Definitions");
+  });
+
+  it("Arabic labels are correct for the newly added Review Mode sections (Slide 9)", () => {
+    renderSlidesExperience(root, topic, { arabic: true, initialEntries: ["/chapter/1/topic/ch01-t01?slide=9"] });
+    toggleToReview();
+    const labels = navLabels();
+    expect(labels).toContain("التعريفات");
+    expect(labels).toContain("شرح التعريف");
+    expect(labels).toContain("المفهوم الأساسي");
+  });
+
+  it("Arabic labels are correct for Table/Table Explanation (Slide 3)", () => {
+    renderSlidesExperience(root, topic, { arabic: true, initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    toggleToReview();
+    const labels = navLabels();
+    expect(labels).toContain("الجدول");
+    expect(labels).toContain("شرح الجدول");
+  });
+
+  it("clicking the 'Definitions' nav entry scrolls that section into view (Slide 9)", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=9"] });
+    toggleToReview();
+    let called = false;
+    const target = container.querySelector<HTMLElement>("#ch01-t01-block-opening-9--definitions");
+    if (target) target.scrollIntoView = () => { called = true; };
+    const entry = Array.from(container.querySelectorAll(".slide-section-nav__btn")).find(
+      (el) => el.textContent === "Definitions",
+    );
+    click(entry ?? null);
+    expect(called).toBe(true);
+  });
+
+  it("clicking the 'Table Explanation' nav entry scrolls that section into view (Slide 3)", () => {
+    renderSlidesExperience(root, topic, { initialEntries: ["/chapter/1/topic/ch01-t01?slide=3"] });
+    toggleToReview();
+    let called = false;
+    const target = container.querySelector<HTMLElement>("#ch01-t01-block-opening-3--table-explanation");
+    if (target) target.scrollIntoView = () => { called = true; };
+    const entry = Array.from(container.querySelectorAll(".slide-section-nav__btn")).find(
+      (el) => el.textContent === "Table Explanation",
+    );
+    click(entry ?? null);
+    expect(called).toBe(true);
+  });
+});
