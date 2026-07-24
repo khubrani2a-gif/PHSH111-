@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.25",
+  "baselineVersion": "1.0.26",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "b4359d7d3c9b940645a4a6dab4dc96e15f623f811a2f54f891ed1f83f89e77d1",
+      "sha256": "df85d1f917ae1711c20c95b2aa2fed2bed9212a119d7561457397a1dd043a417",
       "schemaVersion": "2.3.0",
       "recordCount": 20
     },
@@ -522,6 +522,24 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-13.arabicBaselineDependency refreshed to match; every other slide's entry untouched"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. ch01-t01-block-opening-13's blocking.blockingStatus remains 'blocked' (blockingReason unchanged); arabic.translationStatus remains 'draft-ai-generated-unreviewed', unaffected by this correction. This revision does not constitute or imply publication authorization or independent scientific sign-off."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-026",
+        "fromVersion": "1.0.25",
+        "toVersion": "1.0.26",
+        "revisedAt": "2026-07-24",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-025 -> rev-026 (1.23.0 -> 1.24.0): implements exactly two approved governance-audit findings, correcting stale application-integration metadata only. (1) content-audit finding F-03, correcting this record's own governanceRestrictions.applicationIntegrationAuthorized (set to Boolean true, its correct schema type — an authorization flag, not a prose field) and approvalLevelStatement (which incorrectly described application-integration authorization as 'a separate, still-absent gate'; now the sole place carrying the explanatory authorization basis, internal/QA-only scope, and the distinction from student-facing publication); (2) content-audit finding F-15, correcting docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json's file-level generationNote, which incorrectly claimed the file 'is NOT read by apps/chapter1-mvp/'. A full controlled revision (not a checksumOnlyCorrections entry) is used here, unlike ch01-arabic-baseline-checksum-001: that correction touched only a content-file field with no change to this approval record's own governance prose, whereas this revision directly edits this record's own governanceRestrictions fields in addition to the content file's generationNote. No .ar text field or arabic.canonicalArabicTranslation content changed. No instructional content changed. No translation content changed. No equation, table, figure, alt text, or slide order changed. Only stale application-integration metadata was corrected. Publication authorization remains false.",
+        "whatChanged": "F-03: Changed applicationIntegrationAuthorized from false to true to reflect the existing internal/QA integration authorization, while retaining the explanatory authorization basis and publication distinction in approvalLevelStatement. applicationIntegrationAuthorized is an authorization flag and retains its Boolean schema type — the explanatory prose (PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization as the authority; internal/QA-only scope; this record not itself being the source of that authorization; the distinction from student-facing publication, which remains unauthorized) lives in approvalLevelStatement, updated from 'a separate, still-absent gate' to accurately describe application-integration authorization as a separate record that already internally authorizes integration. F-15: Revised only the stale architecture clause of ch01-t01-content.json's Arabic generationNote (previously: 'This file is NOT located under docs/content-design/chapter-01/batch1-drafts/ or docs/content-design/chapter-01/pilot/, and is NOT read by apps/chapter1-mvp/ -- it is a controlled candidate-draft artifact only, not application-facing content, and not authorized for student-facing use in any form.') to state the file is read by apps/chapter1-mvp/ under PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization for internal/QA integration only, while preserving verbatim that it remains a controlled candidate-draft artifact and not authorized for student-facing use in any form. This content-file edit changed ch01-t01-content.json's checksum, updated in approvedCandidateFiles above.",
+        "whatWasNotChanged": "No .ar text field and no arabic.canonicalArabicTranslation field on any record was touched. No instructional content changed: every slide's Arabic translation of the Original English, Main Idea, Step-by-Step Explanation, Simple Example, Figure Explanation, Common Misconception, Scientific Note, Key Concept, and Connection to the Next Slide text is byte-for-byte unchanged. No equation, table, figure, alt text, or slide order changed. studentFacingAllowed and studentPublicationAuthorized are unchanged (both remain false). Slides 1-13's Arabic content and every ch01-t04 record are entirely byte-for-byte unchanged except for the single generationNote sentence revised above. Publication authorization remains false throughout.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-026): project-owner-directed implementation of exactly two approved governance findings from the ch01-t01 content-and-governance audit: F-03 (this record's application-integration status had gone stale relative to PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization) and F-15 (the Arabic content file's own generationNote repeated the same now-false claim that the file is not read by the application).",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — governanceRestrictions.applicationIntegrationAuthorized and approvalLevelStatement revised; approvedCandidateFiles[ch01-t01].sha256 refreshed to match the generationNote edit below",
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — generationNote's stale application-integration clause revised",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-026",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — not updated: generationNote is top-level file metadata, not owned by any individual registered block identifier, so no per-block englishBaselineDependency/arabicBaselineDependency pointer is mechanically stale as a result of this revision"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. blocking.blockingStatus, blockingReason, and arabic.translationStatus are unchanged on every record. This revision does not constitute or imply publication authorization or independent scientific sign-off — it corrects only the record of internal/QA application-integration status, which PILOT_AUTHORIZATION.json already separately and previously authorized."
       }
     ]
   },
@@ -548,10 +566,10 @@
     "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal Arabic baseline approval and was NOT performed as part of it. Registration remains required before any future application-integration step, unchanged from the status already recorded in ENGLISH_BATCH1_BASELINE_APPROVAL.json and PILOT_READINESS.json. IDENTIFIER_REGISTRY.json was not modified by this approval."
   },
   "governanceRestrictions": {
-    "approvalLevelStatement": "This is a project-owner internal ARABIC-CONTENT baseline approval only. It is distinct from: (1) independent human scientific or linguistic review (has not occurred, for any topic, at any point in this project), (2) visual approval (no visual exists or is approved), (3) application-integration authorization (a separate, still-absent gate), and (4) student-publication authorization (a separate, still-absent gate).",
+    "approvalLevelStatement": "This is a project-owner internal ARABIC-CONTENT baseline approval only. It is distinct from: (1) independent human scientific or linguistic review (has not occurred, for any topic, at any point in this project), (2) visual approval (no visual exists or is approved), (3) application-integration authorization (a separate record — internally authorized for internal/QA integration only via PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization, not by this Arabic-content approval itself), and (4) student-publication authorization (a separate, still-absent gate).",
     "independentHumanReviewCompleted": false,
     "visualProductionAuthorized": false,
-    "applicationIntegrationAuthorized": false,
+    "applicationIntegrationAuthorized": true,
     "studentFacingAllowed": false,
     "studentPublicationAuthorized": false
   },

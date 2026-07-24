@@ -104,7 +104,16 @@ const APPROVED = {
     // and illustration together), from which a focused derivative figure
     // was extracted — not an already-cropped source. No other slide or
     // section was touched (see src/tests/slide13MassVersusWeight.test.tsx).
-    sha256: "278fa769325ffd39d11a3cb59818b3b107119ad6ba4443a0345bcee6a2b314d6",
+    // rev-026 corrects exactly two stale governance-metadata findings:
+    // F-03 (paired with ENGLISH_BATCH1_BASELINE_APPROVAL.json's own
+    // downstreamStatus.applicationIntegrationStatus correction — not a
+    // content-file field) and F-15, revising this file's top-level
+    // generationNote to state it is read by apps/chapter1-mvp/ under
+    // PILOT_AUTHORIZATION.json's batch1ApplicationIntegrationAuthorization
+    // for internal/QA integration only, no longer claiming the file is not
+    // read by the application. No instructional or translated content
+    // changed (see src/tests/batch1ApplicationIntegrationGovernance.test.ts).
+    sha256: "53776bc966e838f39fd69b5f116be2a7a04717753c32917fa46c5c7434b6a294",
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
@@ -179,7 +188,16 @@ const APPROVED = {
     // provenanceLinks[0].evidence identically (byte-for-byte) to the English
     // file's own correction — this field is shared, non-localized metadata,
     // not translated (see src/tests/slide13MassVersusWeight.test.tsx).
-    sha256: "b4359d7d3c9b940645a4a6dab4dc96e15f623f811a2f54f891ed1f83f89e77d1",
+    // rev-026 matches English rev-026's exactly-two-findings governance
+    // implementation: F-03 (paired with ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // own governanceRestrictions.applicationIntegrationAuthorized/
+    // approvalLevelStatement correction — not a content-file field) and
+    // F-15, revising this file's top-level generationNote to state it is
+    // read by apps/chapter1-mvp/ under PILOT_AUTHORIZATION.json's
+    // batch1ApplicationIntegrationAuthorization for internal/QA integration
+    // only. No .ar text field or arabic.canonicalArabicTranslation content
+    // changed (see src/tests/batch1ApplicationIntegrationGovernance.test.ts).
+    sha256: "df85d1f917ae1711c20c95b2aa2fed2bed9212a119d7561457397a1dd043a417",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
