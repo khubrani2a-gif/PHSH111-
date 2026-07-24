@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.23",
+  "baselineVersion": "1.0.24",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -20,7 +20,7 @@
       "topicTitle": "Fundamental Quantities",
       "topicTitleAr": "الكميات الأساسية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json",
-      "sha256": "2e2fa8836465dcbe92743d1e525e847cb8b04744ad22ead9093ea918dd814f03",
+      "sha256": "f2b36b5fea9eecf914b7659b4afb74a693252bd3a2664850194e03833f4a25af",
       "schemaVersion": "2.3.0",
       "recordCount": 20
     },
@@ -488,6 +488,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — new entry for ch01-t01-block-opening-13"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the new record is 'draft-ai-generated-unreviewed', pending project-owner review, same as every other newly authored slide record in this file. Slides 1-12's Arabic governance fields are entirely unchanged."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-024",
+        "fromVersion": "1.0.23",
+        "toVersion": "1.0.24",
+        "revisedAt": "2026-07-24",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Strictly limited to ch01-t01-block-opening-8's Key Concept sentence, in both localizedContent.ar.text and arabic.canonicalArabicTranslation.text (the two synchronized fields that store this same slide's Arabic body text), in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json. No other sentence, subsection, or field on Slide 8 was touched. No record in ch01-t01 other than Slide 8, and no record in ch01-t04, was touched. This is a narrow implementation of content-audit finding F-01 only — no other audit finding was implemented in this revision.",
+        "whatChanged": "Corrected an Arabic mistranslation in Slide 8's Key Concept sentence. The prior wording, 'يُقاس الزمن بعد الدورات المنتظمة المتكررة' ('time is measured after the regular repeated cycles'), used the preposition 'بعد' ('after') where the English source states 'Time is measured by counting regular repeated cycles.' The corrected wording, 'يُقاس الزمن من خلال عدّ الدورات المنتظمة المتكررة' ('time is measured through counting the regular repeated cycles'), uses 'من خلال عدّ' ('through the counting of') so the corrected meaning does not depend on a single, easily-dropped diacritic distinguishing 'بعد' from 'بعدّ'. The remainder of the sentence ('والثانية هي وحدة الزمن الأساسية في النظام الدولي، بينما تمثل الدقائق والساعات وحدات أكبر تُستخدم في النظامين المتري والإنجليزي') is unchanged.",
+        "whatWasNotChanged": "Slide 8's Original English subsection and its Arabic translation are unchanged. Slide 8's Main Idea, all five numbered steps, Simple Example, Table Explanation, Common Misconception, Scientific Note, and Connection to the Next Slide are unchanged in both languages. No English text anywhere in ch01-t01 was touched (see the paired note in ENGLISH_BATCH1_BASELINE_APPROVAL.json confirming its baselineVersion and checksum are unaffected). Slides 1-7 and Slides 9-13 are entirely byte-for-byte unchanged. No record in ch01-t04 was touched. blocking.blockingStatus, studentFacingAllowed, studentPublicationAuthorized, arabic.translationStatus, terminologyApprovalStatus, and every other governance/review field on ch01-t01-block-opening-8 are unchanged by this wording-only correction.",
+        "rationale": "Project-owner-directed correction of a content-audit finding (F-01): the prior Arabic wording inverted the sentence's meaning from 'measured by counting cycles' to the scientifically nonsensical 'measured after cycles'. This revision applies the exact project-owner-supplied replacement wording.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json — ch01-t01-block-opening-8.localizedContent.ar.text and .arabic.canonicalArabicTranslation.text revised (Key Concept sentence only)",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t01-block-opening-8.arabicBaselineDependency.baselineVersion/sha256 refreshed to match",
+          "apps/chapter1-mvp/src/tests/batch1Integrity.test.ts — arabicT01 expected sha256 constant refreshed to match"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false; blocking.blockingStatus on ch01-t01-block-opening-8 remains 'blocked' (blockingReason unchanged), unaffected by this wording-only correction. This revision does not constitute or imply publication authorization, review-status advancement, or reviewer sign-off of any kind."
       }
     ]
   },

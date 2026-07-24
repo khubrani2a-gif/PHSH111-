@@ -535,3 +535,96 @@ describe("Reusability — Slide 8 proves the architecture scales to an eighth ta
     expect(slide8.table?.en?.caption).toBe("Common Units of Time");
   });
 });
+
+// Content-audit finding F-01: Slide 8's Arabic Key Concept previously read
+// "يُقاس الزمن بعد الدورات المنتظمة المتكررة" ("time is measured after the
+// regular repeated cycles"), inverting the English meaning "Time is
+// measured by counting regular repeated cycles." Corrected to
+// "يُقاس الزمن من خلال عدّ الدورات المنتظمة المتكررة" ("...through the
+// counting of..."). Isolated, scoped assertions only — never an unscoped
+// whole-page .toContain(...) — so a regression in a different subsection
+// or slide cannot make this pass by accident.
+describe("Content-audit fix F-01 — Slide 8's Arabic Key Concept no longer says 'after the cycles'", () => {
+  /** Finds the <section> whose own <h4 class="structured-slide__heading"> matches headingText, scoped to Slide 8's panel — never the whole panel/page. */
+  function getSlide8Subsection(headingText: string): Element {
+    const panel = getSlidePanel(container, 8)!;
+    const sections = Array.from(panel.querySelectorAll(".structured-slide__section"));
+    const match = sections.find(
+      (section) => section.querySelector(".structured-slide__heading")?.textContent === headingText,
+    );
+    if (!match) throw new Error(`No "${headingText}" subsection found in Slide 8's panel`);
+    return match;
+  }
+
+  it("1. in Arabic mode, Slide 8's Key Concept contains the corrected sentence", () => {
+    renderSlides(true, 8);
+    const keyConcept = getSlide8Subsection("المفهوم الأساسي");
+    expect(keyConcept.textContent).toContain("يُقاس الزمن من خلال عدّ الدورات المنتظمة المتكررة");
+  });
+
+  it("2. the defective sequence no longer occurs anywhere in Slide 8's Arabic panel", () => {
+    renderSlides(true, 8);
+    const panelText = getSlidePanel(container, 8)!.textContent ?? "";
+    expect(panelText).not.toContain("يُقاس الزمن بعد الدورات المنتظمة المتكررة");
+  });
+
+  it("3. the corrected sentence renders inside the Key Concept subsection specifically, not another subsection", () => {
+    renderSlides(true, 8);
+    const panel = getSlidePanel(container, 8)!;
+    const sections = Array.from(panel.querySelectorAll(".structured-slide__section"));
+    for (const section of sections) {
+      const heading = section.querySelector(".structured-slide__heading")?.textContent;
+      const containsFix = (section.textContent ?? "").includes("من خلال عدّ الدورات");
+      if (containsFix) {
+        expect(heading).toBe("المفهوم الأساسي");
+      }
+    }
+    // Also confirm it does NOT leak into the immediately-adjacent Connection
+    // subsection, which begins right after Key Concept in Slide 8's source.
+    const connection = getSlide8Subsection("الصلة بالشريحة التالية");
+    expect(connection.textContent).not.toContain("من خلال عدّ الدورات");
+  });
+
+  it("4. the English Key Concept remains byte-for-byte unchanged", () => {
+    const en = slide8.text.en ?? "";
+    expect(en).toContain(
+      "Key Concept: Time is measured by counting regular repeated cycles. The second is the fundamental SI unit, while minutes and hours are larger units used in both the metric and English systems.",
+    );
+  });
+
+  it("5. the Original English subsection remains unchanged", () => {
+    renderSlides(false, 8);
+    const original = getSlide8Subsection("Original English");
+    expect(original.textContent).toContain(
+      "The measure of time is based on periodic phenomena",
+    );
+  });
+
+  it("6. Slides 1-7 and Slides 9-13 render unaffected (spot-checked via their own known-correct anchor text)", () => {
+    const anchors: Record<number, string> = {
+      1: "In physics, there are three basic aspects of the material universe",
+      2: "Mostly all quantities can be classified",
+      3: "Distance represents a measure of space",
+      4: "Why are there so many different units in each system?",
+      5: "Two other physical quantities that are closely related to distance",
+      6: "The following table lists the common area and volume units",
+      7: "Convert 23 meters to feet.",
+      9: "Period: The time for one complete cycle",
+      10: "The relationship between the period of a cyclic phenomenon",
+      11: "A mechanical stopwatch uses a balance wheel",
+      12: "Mass is also a measure of what we sometimes refer to",
+      13: "Weight, a quantity that is related to, but is not the same as mass",
+    };
+    for (const [num, anchor] of Object.entries(anchors)) {
+      const slide = topic.slides.find((s) => s.slideNumber === Number(num))!;
+      expect(slide.text.en ?? "").toContain(anchor);
+    }
+  });
+
+  it("7. governance and checksum integrity are unaffected for this slide's blocking/publication flags", () => {
+    expect(slide8.blocking.blockingStatus).toBe("blocked");
+    expect(slide8.blocking.studentFacingAllowed).toBe(false);
+    expect(topic.governance.studentFacingAllowed).toBe(false);
+    expect(topic.governance.studentPublicationAuthorized).toBe(false);
+  });
+});

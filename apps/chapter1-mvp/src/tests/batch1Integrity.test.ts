@@ -157,7 +157,13 @@ const APPROVED = {
     // matching English rev-023 (see src/tests/slide12MassInertia.test.tsx).
     // rev-023 adds the Arabic side of ch01-t01-block-opening-13 (Slide 13),
     // matching English rev-024 (see src/tests/slide13MassVersusWeight.test.tsx).
-    sha256: "2e2fa8836465dcbe92743d1e525e847cb8b04744ad22ead9093ea918dd814f03",
+    // rev-024 corrects a mistranslation in ch01-t01-block-opening-8's (Slide 8)
+    // Key Concept sentence — "بعد" ("after") replaced with "من خلال عدّ"
+    // ("through the counting of"), matching the English "Time is measured
+    // by counting regular repeated cycles." Arabic-only; no English-side
+    // change (content-audit finding F-01; see
+    // src/tests/slide8TimeMeasurement.test.tsx).
+    sha256: "f2b36b5fea9eecf914b7659b4afb74a693252bd3a2664850194e03833f4a25af",
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
