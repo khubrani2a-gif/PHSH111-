@@ -236,6 +236,1121 @@
     {
       "recordType": "contentBlock",
       "record": {
+        "blockId": "ch01-t02-block-slide-1",
+        "blockType": "slide",
+        "slideNumber": 1,
+        "slideTitleEn": "Why Do Physicists Need Standard Units of Length?",
+        "slideTitleAr": "لماذا يحتاج الفيزيائيون إلى وحدات معيارية للطول؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Imagine describing a coin as “small” and a city block as “big.” Both statements are really about distance, just at completely different scales. Physics needs a way to describe distance that everyone agrees on, so a measurement means the same thing to every person who reads it.\n\nMain Idea: distance is a fundamental physical quantity, and physicists use standard, agreed-upon units so a measurement means the same thing to everyone who reads it.\n\nStep 1 — Recognize why an agreed unit matters\n* Without a shared unit, “5” by itself tells you nothing — 5 what?\n* A unit turns a bare number into a real physical measurement everyone can interpret the same way.\n\nStep 2 — Notice that unit choice depends on scale\n* A coin's diameter is naturally described in millimeters.\n* A distance between cities is naturally described in kilometers.\n* Both describe the same kind of quantity — distance — just at different scales.\n\nStep 3 — Separate the physical quantity from its label\n* The object being measured does not change when the unit changes.\n* Only the number and the unit label change; the underlying distance is fixed.\n\nSimple Example: a hallway can be described as 12 meters, 1200 centimeters, or 0.012 kilometers. All three describe the exact same hallway; only the chosen unit changes which number is convenient to write down.\n\nMisconception: some students think that changing the unit changes the size of the object being measured — for example, believing a room “gets smaller” when its length is restated in centimeters instead of meters. Correction: the physical extent never changes; only its numerical label changes when the unit changes.\n\nScientific Note: the International System of Units (SI) is the standard system most of the scientific world agrees to use specifically so that a measurement reported by one person means the same physical size to every other person, anywhere.\n\nKey Concept: distance is a single, fixed physical quantity; the unit used to describe it is a choice of convenience, never a property of the object itself.\n\nConnection to the Next Slide: before comparing units, we need a precise definition of the physical quantity itself — distance.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تخيّل أن تصف قطعة نقدية بأنها “صغيرة” وحيًّا كاملاً بأنه “كبير”. كلا الوصفين في الحقيقة يتحدثان عن المسافة، لكن بمقياسين مختلفين تمامًا. تحتاج الفيزياء إلى طريقة لوصف المسافة يتفق عليها الجميع، بحيث يعني القياس الشيء نفسه لكل من يقرأه.\n\nالفكرة الرئيسية: المسافة كمية فيزيائية أساسية، ويستخدم الفيزيائيون وحدات معيارية متفقًا عليها حتى يعني القياس الشيء نفسه لكل من يقرأه.\n\nالخطوة 1 — أدرك لماذا تهم الوحدة المتفق عليها\n* بدون وحدة مشتركة، فإن الرقم “5” وحده لا يخبرك بشيء — 5 ماذا؟\n* تحوّل الوحدة رقمًا مجردًا إلى قياس فيزيائي حقيقي يمكن لكل شخص تفسيره بالطريقة نفسها.\n\nالخطوة 2 — لاحظ أن اختيار الوحدة يعتمد على المقياس\n* يُوصف قطر القطعة النقدية طبيعيًا بالمليمتر.\n* تُوصف المسافة بين المدن طبيعيًا بالكيلومتر.\n* كلاهما يصف النوع نفسه من الكمية — المسافة — لكن بمقياسين مختلفين.\n\nالخطوة 3 — افصل الكمية الفيزيائية عن وسمها\n* الجسم المقيس لا يتغير عندما تتغير الوحدة.\n* يتغيّر الرقم ووسم الوحدة فقط؛ أما المسافة الفعلية فتبقى ثابتة.\n\nمثال بسيط: يمكن وصف ممر بأنه 12 مترًا، أو 1200 سنتيمتر، أو 0.012 كيلومتر. تصف الصيغ الثلاث الممر نفسه تمامًا؛ والوحدة المختارة فقط هي ما يغيّر الرقم المناسب لكتابته.\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن تغيير الوحدة يغيّر حجم الجسم المقيس — مثل الاعتقاد بأن الغرفة “تصغر” عندما يُعاد ذكر طولها بالسنتيمتر بدلاً من المتر. التصحيح: الامتداد الفيزيائي لا يتغير أبدًا؛ ويتغيّر وسمه العددي فقط بتغيّر الوحدة.\n\nملاحظة علمية: النظام الدولي للوحدات (SI) هو النظام المعياري الذي يتفق عليه معظم المجتمع العلمي في العالم، تحديدًا حتى يعني القياس الذي يبلغ عنه شخص ما الحجم الفيزيائي نفسه لكل شخص آخر، في أي مكان.\n\nالمفهوم الأساسي: المسافة كمية فيزيائية واحدة وثابتة؛ والوحدة المستخدمة لوصفها اختيار للملاءمة فقط، وليست خاصية للجسم نفسه.\n\nالصلة بالشريحة التالية: قبل مقارنة الوحدات، نحتاج إلى تعريف دقيق للكمية الفيزيائية نفسها — المسافة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تخيّل أن تصف قطعة نقدية بأنها “صغيرة” وحيًّا كاملاً بأنه “كبير”. كلا الوصفين في الحقيقة يتحدثان عن المسافة، لكن بمقياسين مختلفين تمامًا. تحتاج الفيزياء إلى طريقة لوصف المسافة يتفق عليها الجميع، بحيث يعني القياس الشيء نفسه لكل من يقرأه.\n\nالفكرة الرئيسية: المسافة كمية فيزيائية أساسية، ويستخدم الفيزيائيون وحدات معيارية متفقًا عليها حتى يعني القياس الشيء نفسه لكل من يقرأه.\n\nالخطوة 1 — أدرك لماذا تهم الوحدة المتفق عليها\n* بدون وحدة مشتركة، فإن الرقم “5” وحده لا يخبرك بشيء — 5 ماذا؟\n* تحوّل الوحدة رقمًا مجردًا إلى قياس فيزيائي حقيقي يمكن لكل شخص تفسيره بالطريقة نفسها.\n\nالخطوة 2 — لاحظ أن اختيار الوحدة يعتمد على المقياس\n* يُوصف قطر القطعة النقدية طبيعيًا بالمليمتر.\n* تُوصف المسافة بين المدن طبيعيًا بالكيلومتر.\n* كلاهما يصف النوع نفسه من الكمية — المسافة — لكن بمقياسين مختلفين.\n\nالخطوة 3 — افصل الكمية الفيزيائية عن وسمها\n* الجسم المقيس لا يتغير عندما تتغير الوحدة.\n* يتغيّر الرقم ووسم الوحدة فقط؛ أما المسافة الفعلية فتبقى ثابتة.\n\nمثال بسيط: يمكن وصف ممر بأنه 12 مترًا، أو 1200 سنتيمتر، أو 0.012 كيلومتر. تصف الصيغ الثلاث الممر نفسه تمامًا؛ والوحدة المختارة فقط هي ما يغيّر الرقم المناسب لكتابته.\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن تغيير الوحدة يغيّر حجم الجسم المقيس — مثل الاعتقاد بأن الغرفة “تصغر” عندما يُعاد ذكر طولها بالسنتيمتر بدلاً من المتر. التصحيح: الامتداد الفيزيائي لا يتغير أبدًا؛ ويتغيّر وسمه العددي فقط بتغيّر الوحدة.\n\nملاحظة علمية: النظام الدولي للوحدات (SI) هو النظام المعياري الذي يتفق عليه معظم المجتمع العلمي في العالم، تحديدًا حتى يعني القياس الذي يبلغ عنه شخص ما الحجم الفيزيائي نفسه لكل شخص آخر، في أي مكان.\n\nالمفهوم الأساسي: المسافة كمية فيزيائية واحدة وثابتة؛ والوحدة المستخدمة لوصفها اختيار للملاءمة فقط، وليست خاصية للجسم نفسه.\n\nالصلة بالشريحة التالية: قبل مقارنة الوحدات، نحتاج إلى تعريف دقيق للكمية الفيزيائية نفسها — المسافة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-1",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 1 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-2",
+        "blockType": "slide",
+        "slideNumber": 2,
+        "slideTitleEn": "What Is Distance, and How Do We Measure It?",
+        "slideTitleAr": "ما المسافة، وكيف نقيسها؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Physics needs a precise definition of distance, not just an everyday sense of “far” or “close.” Distance is the quantity we use to describe how far apart two points are, however those points are connected.\n\nMain Idea: distance is the length of the path between two points, and it is measured as a magnitude only — it never carries a direction.\n\nStep 1 — Identify what distance actually measures\n* Distance describes how far apart two points are along a path.\n* It answers “how much ground was covered,” not “which way.”\n\nStep 2 — Recognize that distance has no direction\n* Distance is reported as a single positive number and a unit, such as 5 km.\n* A quantity described only by a number and a unit, with no direction, is called a scalar quantity.\n\nStep 3 — Distinguish distance from a specific measured value\n* Any length — a hallway, a race track, a mountain trail — can be described using distance.\n* The specific numerical value always depends on the two points being compared and the path between them.\n\nSimple Example: a runner completes one lap of a 400-meter track. The distance the runner traveled is 400 m — a single positive number and a unit, with no direction attached.\n\nMisconception: students sometimes treat distance as if it were a vector, expecting it to include a direction. Correction: distance is a scalar — it is a magnitude only. (Displacement, which does include direction, is a separate quantity.)\n\nScientific Note: distinguishing scalar quantities like distance from vector quantities like displacement is one of the most important habits to build early in physics, since many later topics depend on keeping the two separate.\n\nKey Concept: distance is a scalar quantity — a magnitude with a unit, and no direction.\n\nConnection to the Next Slide: now that distance itself is defined, we need one standard unit the whole scientific community agrees to measure it in.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تحتاج الفيزياء إلى تعريف دقيق للمسافة، لا مجرد الإحساس اليومي بـ“بعيد” أو “قريب.” المسافة هي الكمية التي نستخدمها لوصف مقدار التباعد بين نقطتين، مهما كانت طريقة اتصال هاتين النقطتين.\n\nالفكرة الرئيسية: المسافة هي طول المسار بين نقطتين، وتُقاس كمقدار فقط — ولا تحمل اتجاهًا أبدًا.\n\nالخطوة 1 — حدّد ما تقيسه المسافة فعليًا\n* تصف المسافة مقدار التباعد بين نقطتين على طول مسار.\n* تجيب عن سؤال “كم من الأرض قُطعت،” لا “في أي اتجاه.”\n\nالخطوة 2 — أدرك أن المسافة لا تحمل اتجاهًا\n* تُذكر المسافة كرقم موجب واحد ووحدة، مثل 5 km.\n* الكمية التي تُوصف برقم ووحدة فقط، دون اتجاه، تُسمى كمية قياسية (scalar).\n\nالخطوة 3 — ميّز المسافة عن قيمة مقيسة محددة\n* يمكن وصف أي طول — ممر، أو مضمار سباق، أو مسار جبلي — باستخدام المسافة.\n* تعتمد القيمة العددية المحددة دائمًا على النقطتين المقارَنتين والمسار الواصل بينهما.\n\nمثال بسيط: يكمل عدّاء لفة واحدة حول مضمار طوله 400 متر. المسافة التي قطعها العدّاء هي 400 m — رقم موجب واحد ووحدة، دون أي اتجاه مرتبط بها.\n\nمفهوم خاطئ: قد يتعامل بعض الطلاب مع المسافة وكأنها كمية متجهة، متوقعين أن تتضمن اتجاهًا. التصحيح: المسافة كمية قياسية — وهي مقدار فقط. (أما الإزاحة، التي تتضمن اتجاهًا، فهي كمية منفصلة.)\n\nملاحظة علمية: التمييز بين الكميات القياسية كالمسافة والكميات المتجهة كالإزاحة من أهم العادات التي يجب بناؤها مبكرًا في الفيزياء، لأن كثيرًا من الموضوعات اللاحقة تعتمد على إبقاء الاثنين منفصلين.\n\nالمفهوم الأساسي: المسافة كمية قياسية — مقدار مع وحدة، ودون اتجاه.\n\nالصلة بالشريحة التالية: بعد تعريف المسافة نفسها، نحتاج إلى وحدة معيارية واحدة يتفق عليها المجتمع العلمي بأكمله لقياسها بها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Distance",
+            "definition": "The length of the path between two points, measured as a magnitude only (no direction)."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "المسافة",
+            "definition": "طول المسار بين نقطتين، وتُقاس كمقدار فقط (دون اتجاه)."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تحتاج الفيزياء إلى تعريف دقيق للمسافة، لا مجرد الإحساس اليومي بـ“بعيد” أو “قريب.” المسافة هي الكمية التي نستخدمها لوصف مقدار التباعد بين نقطتين، مهما كانت طريقة اتصال هاتين النقطتين.\n\nالفكرة الرئيسية: المسافة هي طول المسار بين نقطتين، وتُقاس كمقدار فقط — ولا تحمل اتجاهًا أبدًا.\n\nالخطوة 1 — حدّد ما تقيسه المسافة فعليًا\n* تصف المسافة مقدار التباعد بين نقطتين على طول مسار.\n* تجيب عن سؤال “كم من الأرض قُطعت،” لا “في أي اتجاه.”\n\nالخطوة 2 — أدرك أن المسافة لا تحمل اتجاهًا\n* تُذكر المسافة كرقم موجب واحد ووحدة، مثل 5 km.\n* الكمية التي تُوصف برقم ووحدة فقط، دون اتجاه، تُسمى كمية قياسية (scalar).\n\nالخطوة 3 — ميّز المسافة عن قيمة مقيسة محددة\n* يمكن وصف أي طول — ممر، أو مضمار سباق، أو مسار جبلي — باستخدام المسافة.\n* تعتمد القيمة العددية المحددة دائمًا على النقطتين المقارَنتين والمسار الواصل بينهما.\n\nمثال بسيط: يكمل عدّاء لفة واحدة حول مضمار طوله 400 متر. المسافة التي قطعها العدّاء هي 400 m — رقم موجب واحد ووحدة، دون أي اتجاه مرتبط بها.\n\nمفهوم خاطئ: قد يتعامل بعض الطلاب مع المسافة وكأنها كمية متجهة، متوقعين أن تتضمن اتجاهًا. التصحيح: المسافة كمية قياسية — وهي مقدار فقط. (أما الإزاحة، التي تتضمن اتجاهًا، فهي كمية منفصلة.)\n\nملاحظة علمية: التمييز بين الكميات القياسية كالمسافة والكميات المتجهة كالإزاحة من أهم العادات التي يجب بناؤها مبكرًا في الفيزياء، لأن كثيرًا من الموضوعات اللاحقة تعتمد على إبقاء الاثنين منفصلين.\n\nالمفهوم الأساسي: المسافة كمية قياسية — مقدار مع وحدة، ودون اتجاه.\n\nالصلة بالشريحة التالية: بعد تعريف المسافة نفسها، نحتاج إلى وحدة معيارية واحدة يتفق عليها المجتمع العلمي بأكمله لقياسها بها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-2",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 2 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-3",
+        "blockType": "slide",
+        "slideNumber": 3,
+        "slideTitleEn": "Why Is the Meter the SI Base Unit of Length?",
+        "slideTitleAr": "لماذا يُعد المتر وحدة الطول الأساسية في النظام الدولي؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Scientists worldwide need one shared reference unit for length so that a measurement made in one laboratory means exactly the same physical size in another.\n\nMain Idea: the meter (m) is the SI base unit of length — the single reference unit every other length unit is built from.\n\nStep 1 — Recognize why one base unit is needed\n* A base unit is the starting reference every related unit is defined from.\n* Without one agreed base unit, “length” measurements from different sources could not be compared directly.\n\nStep 2 — Identify the meter as that base unit\n* The International System of Units (SI) defines the meter as its base unit of length.\n* Every other length unit — millimeter, centimeter, kilometer — is defined as a fixed multiple of the meter.\n\nStep 3 — See the meter used at a human scale\n* A door is roughly 2 m tall.\n* An adult's stride is roughly 0.7-1 m.\n* The meter is chosen as the base unit partly because it is a convenient, human-scale reference.\n\nSimple Example: a standard doorway is about 2 m tall. Because the meter is the SI base unit, this single number can be directly compared to any other length reported in meters, anywhere in the world.\n\nMisconception: some students think “SI unit” and “metric unit” mean the exact same set of units. Correction: the SI system chooses one base unit per quantity — the meter for length — and builds every other metric length unit (kilometer, centimeter, millimeter) as a multiple of that one base unit.\n\nScientific Note: the SI system defines seven base units in total, one for each of its fundamental quantities; the meter is the base unit for length specifically.\n\nKey Concept: the meter is the single SI base unit of length; every other metric length unit is a defined multiple of the meter.\n\nConnection to the Next Slide: next we will see how metric prefixes build every other length unit directly out of the meter.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يحتاج العلماء في جميع أنحاء العالم إلى وحدة مرجعية مشتركة واحدة للطول، بحيث يعني القياس الذي يُجرى في مختبر واحد الحجم الفيزيائي نفسه تمامًا في مختبر آخر.\n\nالفكرة الرئيسية: المتر (m) هو وحدة الطول الأساسية في النظام الدولي — وهو الوحدة المرجعية الوحيدة التي تُبنى منها كل وحدات الطول الأخرى.\n\nالخطوة 1 — أدرك لماذا تلزم وحدة أساسية واحدة\n* الوحدة الأساسية هي المرجع الذي تُعرَّف منه كل وحدة مرتبطة بها.\n* بدون وحدة أساسية واحدة متفق عليها، لا يمكن مقارنة قياسات “الطول” من مصادر مختلفة مباشرة.\n\nالخطوة 2 — حدّد المتر بوصفه تلك الوحدة الأساسية\n* يُعرّف النظام الدولي للوحدات (SI) المتر بوصفه وحدته الأساسية للطول.\n* تُعرَّف كل وحدة طول أخرى — المليمتر، السنتيمتر، الكيلومتر — كمضاعف ثابت للمتر.\n\nالخطوة 3 — شاهد استخدام المتر بمقياس بشري\n* يبلغ ارتفاع الباب نحو 2 m.\n* تبلغ خطوة الشخص البالغ نحو 0.7-1 m.\n* اختير المتر وحدة أساسية جزئيًا لأنه مرجع مناسب بمقياس بشري.\n\nمثال بسيط: يبلغ ارتفاع باب قياسي نحو 2 m. ولأن المتر هو الوحدة الأساسية في النظام الدولي، يمكن مقارنة هذا الرقم مباشرة بأي طول آخر مذكور بالمتر، في أي مكان في العالم.\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن “وحدة النظام الدولي” و“الوحدة المترية” تعنيان مجموعة الوحدات نفسها تمامًا. التصحيح: يختار النظام الدولي وحدة أساسية واحدة لكل كمية — المتر للطول — ثم يبني كل وحدة طول مترية أخرى (كيلومتر، سنتيمتر، مليمتر) كمضاعف لتلك الوحدة الأساسية الواحدة.\n\nملاحظة علمية: يُعرّف النظام الدولي سبع وحدات أساسية إجمالاً، واحدة لكل كمية من كمياته الأساسية؛ والمتر هو الوحدة الأساسية للطول تحديدًا.\n\nالمفهوم الأساسي: المتر هو وحدة الطول الأساسية الوحيدة في النظام الدولي؛ وكل وحدة طول مترية أخرى هي مضاعف معرَّف للمتر.\n\nالصلة بالشريحة التالية: سنرى بعد ذلك كيف تبني البادئات المترية كل وحدة طول أخرى مباشرة انطلاقًا من المتر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "SI Unit",
+            "definition": "A standard measurement unit defined by the International System of Units (SI), used so a measurement means the same physical size everywhere."
+          },
+          {
+            "term": "Meter",
+            "definition": "The SI base unit of length, abbreviated m."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "وحدة النظام الدولي",
+            "definition": "وحدة قياس معيارية يعرّفها النظام الدولي للوحدات (SI)، تُستخدم حتى يعني القياس الحجم الفيزيائي نفسه في كل مكان."
+          },
+          {
+            "term": "المتر",
+            "definition": "وحدة الطول الأساسية في النظام الدولي، ويُرمز لها بـ m."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يحتاج العلماء في جميع أنحاء العالم إلى وحدة مرجعية مشتركة واحدة للطول، بحيث يعني القياس الذي يُجرى في مختبر واحد الحجم الفيزيائي نفسه تمامًا في مختبر آخر.\n\nالفكرة الرئيسية: المتر (m) هو وحدة الطول الأساسية في النظام الدولي — وهو الوحدة المرجعية الوحيدة التي تُبنى منها كل وحدات الطول الأخرى.\n\nالخطوة 1 — أدرك لماذا تلزم وحدة أساسية واحدة\n* الوحدة الأساسية هي المرجع الذي تُعرَّف منه كل وحدة مرتبطة بها.\n* بدون وحدة أساسية واحدة متفق عليها، لا يمكن مقارنة قياسات “الطول” من مصادر مختلفة مباشرة.\n\nالخطوة 2 — حدّد المتر بوصفه تلك الوحدة الأساسية\n* يُعرّف النظام الدولي للوحدات (SI) المتر بوصفه وحدته الأساسية للطول.\n* تُعرَّف كل وحدة طول أخرى — المليمتر، السنتيمتر، الكيلومتر — كمضاعف ثابت للمتر.\n\nالخطوة 3 — شاهد استخدام المتر بمقياس بشري\n* يبلغ ارتفاع الباب نحو 2 m.\n* تبلغ خطوة الشخص البالغ نحو 0.7-1 m.\n* اختير المتر وحدة أساسية جزئيًا لأنه مرجع مناسب بمقياس بشري.\n\nمثال بسيط: يبلغ ارتفاع باب قياسي نحو 2 m. ولأن المتر هو الوحدة الأساسية في النظام الدولي، يمكن مقارنة هذا الرقم مباشرة بأي طول آخر مذكور بالمتر، في أي مكان في العالم.\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن “وحدة النظام الدولي” و“الوحدة المترية” تعنيان مجموعة الوحدات نفسها تمامًا. التصحيح: يختار النظام الدولي وحدة أساسية واحدة لكل كمية — المتر للطول — ثم يبني كل وحدة طول مترية أخرى (كيلومتر، سنتيمتر، مليمتر) كمضاعف لتلك الوحدة الأساسية الواحدة.\n\nملاحظة علمية: يُعرّف النظام الدولي سبع وحدات أساسية إجمالاً، واحدة لكل كمية من كمياته الأساسية؛ والمتر هو الوحدة الأساسية للطول تحديدًا.\n\nالمفهوم الأساسي: المتر هو وحدة الطول الأساسية الوحيدة في النظام الدولي؛ وكل وحدة طول مترية أخرى هي مضاعف معرَّف للمتر.\n\nالصلة بالشريحة التالية: سنرى بعد ذلك كيف تبني البادئات المترية كل وحدة طول أخرى مباشرة انطلاقًا من المتر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-3",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 3 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-4",
+        "blockType": "slide",
+        "slideNumber": 4,
+        "slideTitleEn": "How Do Metric Prefixes Change the Size of a Unit?",
+        "slideTitleAr": "كيف تغيّر البادئات المترية حجم الوحدة؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A single unit is not always a convenient size to write down — a city's width in millimeters would need an enormous number. Metric prefixes solve this by rescaling the meter.\n\nMain Idea: a metric prefix attaches to the meter to create a new unit that is a fixed power-of-ten multiple of the meter, chosen for convenience at a given scale.\n\nStep 1 — Recognize what a prefix changes\n* A prefix does not change the physical quantity — only how large a single unit “step” is.\n* Every metric length unit is the meter multiplied (or divided) by a power of ten.\n\nStep 2 — Read a prefix as a power of ten\n* “Kilo-” means ×1000: 1 km = 1000 m.\n* “Centi-” means ×(1/100): 1 cm = 0.01 m.\n* “Milli-” means ×(1/1000): 1 mm = 0.001 m.\n\nStep 3 — Match the prefix to the scale being measured\n* Kilometers suit distances between cities.\n* Meters suit room and human-body scales.\n* Centimeters and millimeters suit small objects.\n\nSimple Example: a paperclip is about 3.5 cm long. Since 1 cm = 0.01 m, this converts as follows:\n\n3.5 cm × 0.01 = 0.035 m\n\nTable Explanation: each row shows how many meters make up one unit of that prefix. Moving down the table, each unit becomes smaller, and it takes more of them to equal one meter.\n\nMisconception: students sometimes think a larger-looking prefix always means a larger unit. Correction: “kilo-” makes a LARGER unit (1 km is a big distance), while “centi-” and “milli-” make SMALLER units — always check whether the prefix multiplies or divides the base unit.\n\nScientific Note: metric prefixes apply the same way to every SI base unit, not just the meter — the same “kilo-,” “centi-,” and “milli-” rescale grams, seconds, and other units by the identical powers of ten.\n\nKey Concept: every metric length unit equals the meter multiplied by a fixed power of ten.\n\nConnection to the Next Slide: to move between two of these units correctly, we need a reliable, repeatable procedure — the conversion factor.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "ليست الوحدة الواحدة دائمًا بالحجم المناسب لكتابتها — فعرض مدينة بالمليمتر يحتاج إلى رقم هائل. تحل البادئات المترية هذه المشكلة بإعادة تحجيم المتر.\n\nالفكرة الرئيسية: تُلحَق البادئة المترية بالمتر لإنشاء وحدة جديدة هي مضاعف ثابت للمتر بقوة من قوى العشرة، تُختار للملاءمة عند مقياس معيّن.\n\nالخطوة 1 — أدرك ما الذي تغيّره البادئة\n* لا تغيّر البادئة الكمية الفيزيائية — بل تغيّر فقط حجم “خطوة” الوحدة الواحدة.\n* كل وحدة طول مترية هي المتر مضروبًا (أو مقسومًا) في قوة من قوى العشرة.\n\nالخطوة 2 — اقرأ البادئة كقوة من قوى العشرة\n* “كيلو-” تعني ×1000: 1 km = 1000 m.\n* “سنتي-” تعني ×(1/100): 1 cm = 0.01 m.\n* “مِلِّي-” تعني ×(1/1000): 1 mm = 0.001 m.\n\nالخطوة 3 — اختر البادئة المناسبة لمقياس الشيء المقيس\n* تناسب الكيلومترات المسافات بين المدن.\n* تناسب الأمتار مقاييس الغرف وجسم الإنسان.\n* تناسب السنتيمترات والمليمترات الأجسام الصغيرة.\n\nمثال بسيط: طول مشبك ورق نحو 3.5 cm. وبما أن 1 cm = 0.01 m، فإن التحويل يكون كما يلي:\n\n3.5 cm × 0.01 = 0.035 m\n\nشرح الجدول: يبيّن كل صف عدد الأمتار التي تكوّن وحدة واحدة من تلك البادئة. وبالانتقال إلى أسفل الجدول، تصبح كل وحدة أصغر، ويلزم عدد أكبر منها ليساوي مترًا واحدًا.\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن البادئة التي تبدو أكبر تعني دائمًا وحدة أكبر. التصحيح: “كيلو-” تصنع وحدة أكبر (فـ 1 km مسافة كبيرة)، بينما تصنع “سنتي-” و“مِلِّي-” وحدات أصغر — تحقّق دائمًا مما إذا كانت البادئة تضرب الوحدة الأساسية أم تقسمها.\n\nملاحظة علمية: تُطبَّق البادئات المترية بالطريقة نفسها على كل وحدة أساسية في النظام الدولي، لا على المتر فقط — فنفس “كيلو-” و“سنتي-” و“مِلِّي-” تعيد تحجيم الغرام والثانية ووحدات أخرى بقوى العشرة نفسها.\n\nالمفهوم الأساسي: كل وحدة طول مترية تساوي المتر مضروبًا في قوة ثابتة من قوى العشرة.\n\nالصلة بالشريحة التالية: للانتقال بين وحدتين من هذه الوحدات بشكل صحيح، نحتاج إلى إجراء موثوق وقابل للتكرار — عامل التحويل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Prefix",
+            "Symbol",
+            "Multiplier",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Kilo-",
+              "km",
+              "× 1000",
+              "1 km = 1000 m"
+            ],
+            [
+              null,
+              "m (base unit)",
+              "× 1",
+              "1 m = 1 m"
+            ],
+            [
+              "Centi-",
+              "cm",
+              "× 0.01",
+              "1 cm = 0.01 m"
+            ],
+            [
+              "Milli-",
+              "mm",
+              "× 0.001",
+              "1 mm = 0.001 m"
+            ]
+          ]
+        },
+        "tableAr": {
+          "headers": [
+            "البادئة",
+            "الرمز",
+            "المضاعف",
+            "مثال"
+          ],
+          "rows": [
+            [
+              "كيلو-",
+              "km",
+              "× 1000",
+              "1 km = 1000 m"
+            ],
+            [
+              null,
+              "m (الوحدة الأساسية)",
+              "× 1",
+              "1 m = 1 m"
+            ],
+            [
+              "سنتي-",
+              "cm",
+              "× 0.01",
+              "1 cm = 0.01 m"
+            ],
+            [
+              "مِلِّي-",
+              "mm",
+              "× 0.001",
+              "1 mm = 0.001 m"
+            ]
+          ]
+        },
+        "tableCaptionEn": "Common metric length prefixes",
+        "tableCaptionAr": "البادئات المترية الشائعة للطول",
+        "definitionsEn": [
+          {
+            "term": "Metric Prefix",
+            "definition": "A word or symbol attached to a base unit (such as the meter) that rescales it by a fixed power of ten, such as kilo- (×1000) or centi- (×0.01)."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "البادئة المترية",
+            "definition": "كلمة أو رمز يُلحَق بوحدة أساسية (كالمتر) لإعادة تحجيمها بقوة ثابتة من قوى العشرة، مثل كيلو- (×1000) أو سنتي- (×0.01)."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "ليست الوحدة الواحدة دائمًا بالحجم المناسب لكتابتها — فعرض مدينة بالمليمتر يحتاج إلى رقم هائل. تحل البادئات المترية هذه المشكلة بإعادة تحجيم المتر.\n\nالفكرة الرئيسية: تُلحَق البادئة المترية بالمتر لإنشاء وحدة جديدة هي مضاعف ثابت للمتر بقوة من قوى العشرة، تُختار للملاءمة عند مقياس معيّن.\n\nالخطوة 1 — أدرك ما الذي تغيّره البادئة\n* لا تغيّر البادئة الكمية الفيزيائية — بل تغيّر فقط حجم “خطوة” الوحدة الواحدة.\n* كل وحدة طول مترية هي المتر مضروبًا (أو مقسومًا) في قوة من قوى العشرة.\n\nالخطوة 2 — اقرأ البادئة كقوة من قوى العشرة\n* “كيلو-” تعني ×1000: 1 km = 1000 m.\n* “سنتي-” تعني ×(1/100): 1 cm = 0.01 m.\n* “مِلِّي-” تعني ×(1/1000): 1 mm = 0.001 m.\n\nالخطوة 3 — اختر البادئة المناسبة لمقياس الشيء المقيس\n* تناسب الكيلومترات المسافات بين المدن.\n* تناسب الأمتار مقاييس الغرف وجسم الإنسان.\n* تناسب السنتيمترات والمليمترات الأجسام الصغيرة.\n\nمثال بسيط: طول مشبك ورق نحو 3.5 cm. وبما أن 1 cm = 0.01 m، فإن التحويل يكون كما يلي:\n\n3.5 cm × 0.01 = 0.035 m\n\nشرح الجدول: يبيّن كل صف عدد الأمتار التي تكوّن وحدة واحدة من تلك البادئة. وبالانتقال إلى أسفل الجدول، تصبح كل وحدة أصغر، ويلزم عدد أكبر منها ليساوي مترًا واحدًا.\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن البادئة التي تبدو أكبر تعني دائمًا وحدة أكبر. التصحيح: “كيلو-” تصنع وحدة أكبر (فـ 1 km مسافة كبيرة)، بينما تصنع “سنتي-” و“مِلِّي-” وحدات أصغر — تحقّق دائمًا مما إذا كانت البادئة تضرب الوحدة الأساسية أم تقسمها.\n\nملاحظة علمية: تُطبَّق البادئات المترية بالطريقة نفسها على كل وحدة أساسية في النظام الدولي، لا على المتر فقط — فنفس “كيلو-” و“سنتي-” و“مِلِّي-” تعيد تحجيم الغرام والثانية ووحدات أخرى بقوى العشرة نفسها.\n\nالمفهوم الأساسي: كل وحدة طول مترية تساوي المتر مضروبًا في قوة ثابتة من قوى العشرة.\n\nالصلة بالشريحة التالية: للانتقال بين وحدتين من هذه الوحدات بشكل صحيح، نحتاج إلى إجراء موثوق وقابل للتكرار — عامل التحويل.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-4",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 4 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-5",
+        "blockType": "slide",
+        "slideNumber": 5,
+        "slideTitleEn": "How Do We Build a Valid Conversion Factor?",
+        "slideTitleAr": "كيف نبني عامل تحويل صحيحًا؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Converting between units is not guesswork — it follows one reliable rule: multiply by a ratio that equals exactly 1.\n\nMain Idea: a conversion factor is a ratio between two equal quantities, arranged so that it equals 1 — multiplying by it changes the unit without changing the actual physical quantity.\n\nStep 1 — Start from a true equality between two units\n* Example: 1 m = 100 cm is a true, fixed equality.\n* Dividing both sides by the same quantity keeps it equal to 1: (100 cm) / (1 m) = 1.\n\nStep 2 — Arrange the factor so the unwanted unit cancels\n* Write the conversion factor as a fraction.\n* Put the unit you want to remove on the opposite side from where it currently is, so it cancels.\n\nStep 3 — Multiply and confirm the units make sense\n* Multiplying by a ratio equal to 1 never changes the actual size of the quantity.\n* Only the number and the unit label change — exactly as expected.\n\nSimple Example: to convert 2.5 m to centimeters, multiply by the factor (100 cm / 1 m), which equals 1:\n\n2.5 m × (100 cm / 1 m) = 250 cm\n\nConversion-Factor Explanation: the factor (100 cm / 1 m) is built directly from the true equality 1 m = 100 cm. Because the top and bottom of the fraction are equal, the whole factor equals 1 — so multiplying by it can never change the actual distance, only which unit describes it. The meter unit in “2.5 m” cancels against the meter in the denominator, leaving only centimeters.\n\nMisconception: some students multiply by the raw numbers in a unit equality without checking which unit cancels, sometimes multiplying when they should divide. Correction: always write the conversion factor as a fraction and confirm the unwanted unit appears once in the numerator and once in the denominator so it cancels.\n\nScientific Note: this “multiply by a ratio equal to 1” technique works for converting any unit of any physical quantity, not just length — it is a general tool used throughout physics and chemistry.\n\nKey Concept: a valid conversion factor is a ratio of two equal quantities, arranged so the original unit cancels.\n\nConnection to the Next Slide: next we will apply this exact technique to convert between several common metric length units.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تحويل الوحدات ليس تخمينًا — بل يتبع قاعدة موثوقة واحدة: اضرب في نسبة تساوي 1 تمامًا.\n\nالفكرة الرئيسية: عامل التحويل هو نسبة بين كميتين متساويتين، تُرتَّب بحيث تساوي 1 — والضرب بها يغيّر الوحدة دون أن يغيّر الكمية الفيزيائية الفعلية.\n\nالخطوة 1 — ابدأ من مساواة صحيحة بين وحدتين\n* مثال: 1 m = 100 cm مساواة صحيحة وثابتة.\n* قسمة الطرفين على الكمية نفسها تبقيها تساوي 1: (100 cm) / (1 m) = 1.\n\nالخطوة 2 — رتّب العامل بحيث تُحذف الوحدة غير المرغوبة\n* اكتب عامل التحويل على صورة كسر.\n* ضع الوحدة التي تريد حذفها في الجانب المقابل لموضعها الحالي، لتُحذف.\n\nالخطوة 3 — اضرب وتحقّق من منطقية الوحدات\n* الضرب في نسبة تساوي 1 لا يغيّر أبدًا الحجم الفعلي للكمية.\n* يتغيّر الرقم ووسم الوحدة فقط — تمامًا كما هو متوقع.\n\nمثال بسيط: لتحويل 2.5 m إلى سنتيمتر، اضرب في العامل (100 cm / 1 m)، الذي يساوي 1:\n\n2.5 m × (100 cm / 1 m) = 250 cm\n\nشرح عامل التحويل: العامل (100 cm / 1 m) مبني مباشرة من المساواة الصحيحة 1 m = 100 cm. ولأن بسط الكسر ومقامه متساويان، فإن العامل بأكمله يساوي 1 — لذا لا يمكن للضرب به أن يغيّر المسافة الفعلية أبدًا، بل يغيّر فقط الوحدة التي تصفها. تُحذف وحدة المتر في “2.5 m” مقابل المتر في المقام، فيتبقى السنتيمتر فقط.\n\nمفهوم خاطئ: قد يضرب بعض الطلاب في الأرقام المجردة من مساواة الوحدات دون التحقق من الوحدة التي تُحذف، فيضربون أحيانًا في موضع يجب أن يقسموا فيه. التصحيح: اكتب عامل التحويل دائمًا على صورة كسر، وتحقّق من ظهور الوحدة غير المرغوبة مرة في البسط ومرة في المقام لتُحذف.\n\nملاحظة علمية: تصلح تقنية “الضرب في نسبة تساوي 1” هذه لتحويل أي وحدة لأي كمية فيزيائية، لا الطول فقط — وهي أداة عامة تُستخدم في الفيزياء والكيمياء على حد سواء.\n\nالمفهوم الأساسي: عامل التحويل الصحيح هو نسبة بين كميتين متساويتين، تُرتَّب بحيث تُحذف الوحدة الأصلية.\n\nالصلة بالشريحة التالية: سنطبّق بعد ذلك هذه التقنية نفسها للتحويل بين عدة وحدات طول مترية شائعة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Conversion Factor",
+            "definition": "A ratio between two equal quantities, equal to 1, used to multiply a measurement and change its unit without changing its actual size."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "عامل التحويل",
+            "definition": "نسبة بين كميتين متساويتين، تساوي 1، تُستخدم لضرب قياس وتغيير وحدته دون تغيير حجمه الفعلي."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تحويل الوحدات ليس تخمينًا — بل يتبع قاعدة موثوقة واحدة: اضرب في نسبة تساوي 1 تمامًا.\n\nالفكرة الرئيسية: عامل التحويل هو نسبة بين كميتين متساويتين، تُرتَّب بحيث تساوي 1 — والضرب بها يغيّر الوحدة دون أن يغيّر الكمية الفيزيائية الفعلية.\n\nالخطوة 1 — ابدأ من مساواة صحيحة بين وحدتين\n* مثال: 1 m = 100 cm مساواة صحيحة وثابتة.\n* قسمة الطرفين على الكمية نفسها تبقيها تساوي 1: (100 cm) / (1 m) = 1.\n\nالخطوة 2 — رتّب العامل بحيث تُحذف الوحدة غير المرغوبة\n* اكتب عامل التحويل على صورة كسر.\n* ضع الوحدة التي تريد حذفها في الجانب المقابل لموضعها الحالي، لتُحذف.\n\nالخطوة 3 — اضرب وتحقّق من منطقية الوحدات\n* الضرب في نسبة تساوي 1 لا يغيّر أبدًا الحجم الفعلي للكمية.\n* يتغيّر الرقم ووسم الوحدة فقط — تمامًا كما هو متوقع.\n\nمثال بسيط: لتحويل 2.5 m إلى سنتيمتر، اضرب في العامل (100 cm / 1 m)، الذي يساوي 1:\n\n2.5 m × (100 cm / 1 m) = 250 cm\n\nشرح عامل التحويل: العامل (100 cm / 1 m) مبني مباشرة من المساواة الصحيحة 1 m = 100 cm. ولأن بسط الكسر ومقامه متساويان، فإن العامل بأكمله يساوي 1 — لذا لا يمكن للضرب به أن يغيّر المسافة الفعلية أبدًا، بل يغيّر فقط الوحدة التي تصفها. تُحذف وحدة المتر في “2.5 m” مقابل المتر في المقام، فيتبقى السنتيمتر فقط.\n\nمفهوم خاطئ: قد يضرب بعض الطلاب في الأرقام المجردة من مساواة الوحدات دون التحقق من الوحدة التي تُحذف، فيضربون أحيانًا في موضع يجب أن يقسموا فيه. التصحيح: اكتب عامل التحويل دائمًا على صورة كسر، وتحقّق من ظهور الوحدة غير المرغوبة مرة في البسط ومرة في المقام لتُحذف.\n\nملاحظة علمية: تصلح تقنية “الضرب في نسبة تساوي 1” هذه لتحويل أي وحدة لأي كمية فيزيائية، لا الطول فقط — وهي أداة عامة تُستخدم في الفيزياء والكيمياء على حد سواء.\n\nالمفهوم الأساسي: عامل التحويل الصحيح هو نسبة بين كميتين متساويتين، تُرتَّب بحيث تُحذف الوحدة الأصلية.\n\nالصلة بالشريحة التالية: سنطبّق بعد ذلك هذه التقنية نفسها للتحويل بين عدة وحدات طول مترية شائعة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-5",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 5 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-6",
+        "blockType": "slide",
+        "slideNumber": 6,
+        "slideTitleEn": "How Do We Convert Between Metric Length Units?",
+        "slideTitleAr": "كيف نحوّل بين وحدات الطول المترية؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "With a valid conversion factor, converting in either direction — from a larger unit to a smaller one, or a smaller unit to a larger one — follows exactly the same technique.\n\nMain Idea: the same conversion-factor technique converts a measurement from a larger unit to a smaller unit, or from a smaller unit to a larger unit — only which quantity goes in the numerator changes.\n\nStep 1 — Converting to a smaller unit multiplies the number\n* A smaller unit needs more of them to describe the same distance.\n* Converting to a smaller unit always makes the numerical value larger.\n\nStep 2 — Converting to a larger unit divides the number\n* A larger unit needs fewer of them to describe the same distance.\n* Converting to a larger unit always makes the numerical value smaller.\n\nStep 3 — Chain factors together when needed\n* Two conversion factors can be applied one after another.\n* Each unit that should cancel must appear once in a numerator and once in a denominator.\n\nSimple Example: a road sign shows a distance of 3.2 km. Step 1 — Converting to meters (a smaller unit):\n\n3.2 km × (1000 m / 1 km) = 3200 m\n\nStep 2 — Converting a lab measurement of 450 cm to meters (a larger unit):\n\n450 cm × (1 m / 100 cm) = 4.5 m\n\nMisconception: some students expect the numerical value to always get bigger when converting, regardless of direction. Correction: converting to a smaller unit increases the number; converting to a larger unit decreases the number — the direction depends on which unit is smaller, not on any fixed rule.\n\nScientific Note: chaining two conversion factors together (for example, kilometers to meters to centimeters in one line) works because each intermediate unit cancels exactly like a single-step conversion.\n\nKey Concept: converting to a smaller unit increases the numerical value; converting to a larger unit decreases it — the physical distance itself never changes.\n\nConnection to the Next Slide: length conversions are the foundation for converting the two-dimensional and three-dimensional quantities built from length — starting with area.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بوجود عامل تحويل صحيح، فإن التحويل في أي من الاتجاهين — من وحدة أكبر إلى أصغر، أو من وحدة أصغر إلى أكبر — يتبع التقنية نفسها تمامًا.\n\nالفكرة الرئيسية: تحوّل التقنية نفسها القائمة على عامل التحويل قياسًا من وحدة أكبر إلى أصغر، أو من وحدة أصغر إلى أكبر — والفرق الوحيد هو أي كمية توضع في البسط.\n\nالخطوة 1 — التحويل إلى وحدة أصغر يضاعف الرقم\n* تحتاج الوحدة الأصغر إلى عدد أكبر منها لوصف المسافة نفسها.\n* يجعل التحويل إلى وحدة أصغر القيمة العددية أكبر دائمًا.\n\nالخطوة 2 — التحويل إلى وحدة أكبر يقسم الرقم\n* تحتاج الوحدة الأكبر إلى عدد أقل منها لوصف المسافة نفسها.\n* يجعل التحويل إلى وحدة أكبر القيمة العددية أصغر دائمًا.\n\nالخطوة 3 — اربط العوامل معًا عند الحاجة\n* يمكن تطبيق عاملَي تحويل أحدهما بعد الآخر.\n* يجب أن تظهر كل وحدة يُراد حذفها مرة في البسط ومرة في المقام.\n\nمثال بسيط: تُظهر لافتة طريق مسافة قدرها 3.2 km. الخطوة 1 — التحويل إلى الأمتار (وحدة أصغر):\n\n3.2 km × (1000 m / 1 km) = 3200 m\n\nالخطوة 2 — تحويل قياس مخبري قدره 450 cm إلى أمتار (وحدة أكبر):\n\n450 cm × (1 m / 100 cm) = 4.5 m\n\nمفهوم خاطئ: قد يتوقع بعض الطلاب أن تكبر القيمة العددية دائمًا عند التحويل، بغض النظر عن الاتجاه. التصحيح: يزيد التحويل إلى وحدة أصغر الرقم؛ ويُنقص التحويل إلى وحدة أكبر الرقم — ويعتمد الاتجاه على أي الوحدتين أصغر، لا على أي قاعدة ثابتة.\n\nملاحظة علمية: يعمل ربط عاملَي تحويل معًا (مثل التحويل من كيلومتر إلى متر ثم إلى سنتيمتر في سطر واحد) لأن كل وحدة وسيطة تُحذف تمامًا كما في التحويل ذي الخطوة الواحدة.\n\nالمفهوم الأساسي: يزيد التحويل إلى وحدة أصغر القيمة العددية؛ ويُنقصها التحويل إلى وحدة أكبر — أما المسافة الفيزيائية نفسها فلا تتغير أبدًا.\n\nالصلة بالشريحة التالية: تحويلات الطول هي الأساس لتحويل الكميات ثنائية وثلاثية الأبعاد المبنية من الطول — ونبدأ بالمساحة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "بوجود عامل تحويل صحيح، فإن التحويل في أي من الاتجاهين — من وحدة أكبر إلى أصغر، أو من وحدة أصغر إلى أكبر — يتبع التقنية نفسها تمامًا.\n\nالفكرة الرئيسية: تحوّل التقنية نفسها القائمة على عامل التحويل قياسًا من وحدة أكبر إلى أصغر، أو من وحدة أصغر إلى أكبر — والفرق الوحيد هو أي كمية توضع في البسط.\n\nالخطوة 1 — التحويل إلى وحدة أصغر يضاعف الرقم\n* تحتاج الوحدة الأصغر إلى عدد أكبر منها لوصف المسافة نفسها.\n* يجعل التحويل إلى وحدة أصغر القيمة العددية أكبر دائمًا.\n\nالخطوة 2 — التحويل إلى وحدة أكبر يقسم الرقم\n* تحتاج الوحدة الأكبر إلى عدد أقل منها لوصف المسافة نفسها.\n* يجعل التحويل إلى وحدة أكبر القيمة العددية أصغر دائمًا.\n\nالخطوة 3 — اربط العوامل معًا عند الحاجة\n* يمكن تطبيق عاملَي تحويل أحدهما بعد الآخر.\n* يجب أن تظهر كل وحدة يُراد حذفها مرة في البسط ومرة في المقام.\n\nمثال بسيط: تُظهر لافتة طريق مسافة قدرها 3.2 km. الخطوة 1 — التحويل إلى الأمتار (وحدة أصغر):\n\n3.2 km × (1000 m / 1 km) = 3200 m\n\nالخطوة 2 — تحويل قياس مخبري قدره 450 cm إلى أمتار (وحدة أكبر):\n\n450 cm × (1 m / 100 cm) = 4.5 m\n\nمفهوم خاطئ: قد يتوقع بعض الطلاب أن تكبر القيمة العددية دائمًا عند التحويل، بغض النظر عن الاتجاه. التصحيح: يزيد التحويل إلى وحدة أصغر الرقم؛ ويُنقص التحويل إلى وحدة أكبر الرقم — ويعتمد الاتجاه على أي الوحدتين أصغر، لا على أي قاعدة ثابتة.\n\nملاحظة علمية: يعمل ربط عاملَي تحويل معًا (مثل التحويل من كيلومتر إلى متر ثم إلى سنتيمتر في سطر واحد) لأن كل وحدة وسيطة تُحذف تمامًا كما في التحويل ذي الخطوة الواحدة.\n\nالمفهوم الأساسي: يزيد التحويل إلى وحدة أصغر القيمة العددية؛ ويُنقصها التحويل إلى وحدة أكبر — أما المسافة الفيزيائية نفسها فلا تتغير أبدًا.\n\nالصلة بالشريحة التالية: تحويلات الطول هي الأساس لتحويل الكميات ثنائية وثلاثية الأبعاد المبنية من الطول — ونبدأ بالمساحة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-6",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 6 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-7",
+        "blockType": "slide",
+        "slideNumber": 7,
+        "slideTitleEn": "Why Does Area Use Square Units?",
+        "slideTitleAr": "لماذا تُستخدم الوحدات المربعة للمساحة؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Area answers a different question than distance: not “how far,” but “how much surface is covered.”\n\nMain Idea: area measures how much surface a two-dimensional region covers, and because it is built from two independent length measurements multiplied together, its units are always length units squared.\n\nStep 1 — See that area needs two lengths\n* A flat, two-dimensional region has both a length and a width.\n* Area combines both measurements into a single quantity describing the surface covered.\n\nStep 2 — Multiply the two lengths together\n* For a rectangle, area equals length times width: A = L × W.\n* Multiplying a length by a length produces a length-squared quantity.\n\nStep 3 — Read the squared unit correctly\n* If both lengths are measured in meters, the area is in square meters (m²).\n* The exponent “2” reflects that two independent length measurements were multiplied.\n\nSimple Example: a rectangular rug is 3 m long and 2 m wide. Its area is:\n\nA = 3 m × 2 m = 6 m²\n\nRelationship Explanation: area is not a new, independent kind of quantity — it is built entirely from length. Because two separate length measurements are multiplied together, the length unit itself is also multiplied by itself, producing a squared unit. This is why area can never be reported in a plain (non-squared) length unit.\n\nMisconception: some students think square meters and meters are just different-sized versions of the same kind of unit, or that a value in m² can be directly compared to a value in m. Correction: m² measures a completely different kind of quantity (surface covered) than m (distance) — the two can never be added, subtracted, or directly compared.\n\nScientific Note: every area has dimensions of length squared, even when its formula is not written explicitly as length × width. For example, the area of a circle is:\n\nA = πr²\n\nKey Concept: area is always reported in squared length units, because it is built from two length measurements multiplied together.\n\nConnection to the Next Slide: next we convert an area between units, which is not the same procedure as converting a plain length.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "تجيب المساحة عن سؤال مختلف عن سؤال المسافة: ليس “كم البعد،” بل “كم مقدار السطح المُغطّى.”\n\nالفكرة الرئيسية: تقيس المساحة مقدار السطح الذي تغطيه منطقة ثنائية البعد، ولأنها تُبنى من قياسَي طول مستقلَّين يُضرَبان معًا، فإن وحداتها دائمًا وحدات طول مرفوعة للقوة الثانية.\n\nالخطوة 1 — لاحظ أن المساحة تحتاج إلى طولين\n* للمنطقة المسطحة ثنائية البعد طول وعرض معًا.\n* تجمع المساحة القياسين في كمية واحدة تصف السطح المُغطّى.\n\nالخطوة 2 — اضرب الطولين معًا\n* لمستطيل، تساوي المساحة الطول مضروبًا في العرض: A = L × W.\n* ضرب طول في طول ينتج كمية مرفوعة للقوة الثانية (طول تربيعي).\n\nالخطوة 3 — اقرأ الوحدة المربعة بشكل صحيح\n* إذا قيس الطولان بالمتر، فإن المساحة تكون بالمتر المربع (m²).\n* يعكس الأس “2” أن قياسَي طول مستقلَّين قد ضُربا معًا.\n\nمثال بسيط: سجادة مستطيلة طولها 3 m وعرضها 2 m. مساحتها:\n\nA = 3 m × 2 m = 6 m²\n\nشرح العلاقة: المساحة ليست نوعًا جديدًا مستقلاً من الكميات — بل تُبنى بالكامل من الطول. ولأن قياسَي طول منفصلَين يُضربان معًا، فإن وحدة الطول نفسها تُضرب في نفسها أيضًا، فتنتج وحدة مربعة. لهذا لا يمكن للمساحة أبدًا أن تُذكر بوحدة طول عادية (غير مربعة).\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن المتر المربع والمتر مجرد نسختين بحجمين مختلفين من الوحدة نفسها، أو أن قيمة بالمتر المربع يمكن مقارنتها مباشرة بقيمة بالمتر. التصحيح: يقيس m² نوعًا مختلفًا تمامًا من الكمية (السطح المُغطّى) عن m (المسافة) — ولا يمكن جمع الاثنين أو طرحهما أو مقارنتهما مباشرة أبدًا.\n\nملاحظة علمية: لكل مساحة أبعاد طول تربيعي، حتى عندما لا تُكتب صيغتها مباشرة على صورة طول × عرض. فمثلًا مساحة الدائرة هي:\n\nA = πr²\n\nالمفهوم الأساسي: تُذكر المساحة دائمًا بوحدات طول مربعة، لأنها تُبنى من قياسَي طول يُضربان معًا.\n\nالصلة بالشريحة التالية: سنحوّل بعد ذلك مساحة بين وحدتين، وهذا ليس الإجراء نفسه المستخدم لتحويل طول عادي.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Area",
+            "definition": "The amount of surface a two-dimensional region covers, always reported in squared length units (such as m²)."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "المساحة",
+            "definition": "مقدار السطح الذي تغطيه منطقة ثنائية البعد، وتُذكر دائمًا بوحدات طول مربعة (مثل m²)."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تجيب المساحة عن سؤال مختلف عن سؤال المسافة: ليس “كم البعد،” بل “كم مقدار السطح المُغطّى.”\n\nالفكرة الرئيسية: تقيس المساحة مقدار السطح الذي تغطيه منطقة ثنائية البعد، ولأنها تُبنى من قياسَي طول مستقلَّين يُضرَبان معًا، فإن وحداتها دائمًا وحدات طول مرفوعة للقوة الثانية.\n\nالخطوة 1 — لاحظ أن المساحة تحتاج إلى طولين\n* للمنطقة المسطحة ثنائية البعد طول وعرض معًا.\n* تجمع المساحة القياسين في كمية واحدة تصف السطح المُغطّى.\n\nالخطوة 2 — اضرب الطولين معًا\n* لمستطيل، تساوي المساحة الطول مضروبًا في العرض: A = L × W.\n* ضرب طول في طول ينتج كمية مرفوعة للقوة الثانية (طول تربيعي).\n\nالخطوة 3 — اقرأ الوحدة المربعة بشكل صحيح\n* إذا قيس الطولان بالمتر، فإن المساحة تكون بالمتر المربع (m²).\n* يعكس الأس “2” أن قياسَي طول مستقلَّين قد ضُربا معًا.\n\nمثال بسيط: سجادة مستطيلة طولها 3 m وعرضها 2 m. مساحتها:\n\nA = 3 m × 2 m = 6 m²\n\nشرح العلاقة: المساحة ليست نوعًا جديدًا مستقلاً من الكميات — بل تُبنى بالكامل من الطول. ولأن قياسَي طول منفصلَين يُضربان معًا، فإن وحدة الطول نفسها تُضرب في نفسها أيضًا، فتنتج وحدة مربعة. لهذا لا يمكن للمساحة أبدًا أن تُذكر بوحدة طول عادية (غير مربعة).\n\nمفهوم خاطئ: قد يظن بعض الطلاب أن المتر المربع والمتر مجرد نسختين بحجمين مختلفين من الوحدة نفسها، أو أن قيمة بالمتر المربع يمكن مقارنتها مباشرة بقيمة بالمتر. التصحيح: يقيس m² نوعًا مختلفًا تمامًا من الكمية (السطح المُغطّى) عن m (المسافة) — ولا يمكن جمع الاثنين أو طرحهما أو مقارنتهما مباشرة أبدًا.\n\nملاحظة علمية: لكل مساحة أبعاد طول تربيعي، حتى عندما لا تُكتب صيغتها مباشرة على صورة طول × عرض. فمثلًا مساحة الدائرة هي:\n\nA = πr²\n\nالمفهوم الأساسي: تُذكر المساحة دائمًا بوحدات طول مربعة، لأنها تُبنى من قياسَي طول يُضربان معًا.\n\nالصلة بالشريحة التالية: سنحوّل بعد ذلك مساحة بين وحدتين، وهذا ليس الإجراء نفسه المستخدم لتحويل طول عادي.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-7",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 7 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-8",
+        "blockType": "slide",
+        "slideNumber": 8,
+        "slideTitleEn": "Why Must the Conversion Factor Be Squared for Area?",
+        "slideTitleAr": "لماذا يجب تربيع عامل التحويل عند تحويل المساحة؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Because area is built from two lengths, converting its unit is not the same one-step procedure used for a plain distance.\n\nMain Idea: converting an area to a different unit requires applying the length conversion factor twice — once for each of the two lengths multiplied together — so the area conversion factor is the length factor squared, not the length factor itself.\n\nStep 1 — Start from the length equality\n* 1 m = 100 cm is the starting point, exactly as for a plain length conversion.\n\nStep 2 — Square both sides to get the area equality\n* Squaring both sides of 1 m = 100 cm gives (1 m)² = (100 cm)².\n* This simplifies to 1 m² = 10,000 cm² — not 100 cm².\n\nStep 3 — Apply the squared factor to convert\n* Multiply the area value by the squared conversion factor.\n* The plain length factor (100) is never used by itself when converting an area.\n\nSimple Example: a tabletop has an area of 1.35 m². Since 1 m² = 10,000 cm², converting gives:\n\n1.35 m² × 10,000 = 13,500 cm²\n\nMisconception: the single most common area-conversion error is writing 1 m² = 100 cm², reusing the plain length factor. Correction: 1 m = 100 cm, so 1 m² = (100 cm)² = 10,000 cm² — the area factor is always the length factor squared.\n\nScientific Note: this squared-factor rule holds for converting an area between ANY two length units, not just meters and centimeters — always square the length conversion factor first.\n\nKey Concept: converting an area between units requires squaring the length conversion factor, never applying it just once.\n\nConnection to the Next Slide: volume follows the same pattern one dimension further — using the length factor cubed.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "لأن المساحة تُبنى من طولين، فإن تحويل وحدتها ليس الإجراء ذا الخطوة الواحدة نفسه المستخدم للمسافة العادية.\n\nالفكرة الرئيسية: يتطلب تحويل مساحة إلى وحدة أخرى تطبيق عامل تحويل الطول مرتين — مرة لكل طول من الطولين المضروبين معًا — لذا فإن عامل تحويل المساحة هو عامل الطول مربعًا، لا عامل الطول نفسه.\n\nالخطوة 1 — ابدأ من مساواة الطول\n* 1 m = 100 cm هي نقطة البداية، تمامًا كما في تحويل الطول العادي.\n\nالخطوة 2 — ربّع الطرفين للحصول على مساواة المساحة\n* تربيع طرفَي 1 m = 100 cm يعطي (1 m)² = (100 cm)².\n* يُبسَّط هذا إلى 1 m² = 10,000 cm² — وليس 100 cm².\n\nالخطوة 3 — طبّق العامل المربع للتحويل\n* اضرب قيمة المساحة في عامل التحويل المربع.\n* لا يُستخدَم عامل الطول العادي (100) وحده أبدًا عند تحويل مساحة.\n\nمثال بسيط: مساحة سطح طاولة 1.35 m². وبما أن 1 m² = 10,000 cm²، فإن التحويل يعطي:\n\n1.35 m² × 10,000 = 13,500 cm²\n\nمفهوم خاطئ: أكثر أخطاء تحويل المساحة شيوعًا هو كتابة 1 m² = 100 cm²، بإعادة استخدام عامل الطول العادي. التصحيح: 1 m = 100 cm، لذا 1 m² = (100 cm)² = 10,000 cm² — وعامل المساحة هو دائمًا عامل الطول مربعًا.\n\nملاحظة علمية: تصلح قاعدة العامل المربع هذه لتحويل مساحة بين أي وحدتَي طول، لا المتر والسنتيمتر فقط — ربّع عامل تحويل الطول دائمًا أولاً.\n\nالمفهوم الأساسي: يتطلب تحويل مساحة بين وحدتين تربيع عامل تحويل الطول، لا تطبيقه مرة واحدة أبدًا.\n\nالصلة بالشريحة التالية: يتبع الحجم النمط نفسه ببُعد إضافي واحد — باستخدام عامل الطول مكعّبًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "لأن المساحة تُبنى من طولين، فإن تحويل وحدتها ليس الإجراء ذا الخطوة الواحدة نفسه المستخدم للمسافة العادية.\n\nالفكرة الرئيسية: يتطلب تحويل مساحة إلى وحدة أخرى تطبيق عامل تحويل الطول مرتين — مرة لكل طول من الطولين المضروبين معًا — لذا فإن عامل تحويل المساحة هو عامل الطول مربعًا، لا عامل الطول نفسه.\n\nالخطوة 1 — ابدأ من مساواة الطول\n* 1 m = 100 cm هي نقطة البداية، تمامًا كما في تحويل الطول العادي.\n\nالخطوة 2 — ربّع الطرفين للحصول على مساواة المساحة\n* تربيع طرفَي 1 m = 100 cm يعطي (1 m)² = (100 cm)².\n* يُبسَّط هذا إلى 1 m² = 10,000 cm² — وليس 100 cm².\n\nالخطوة 3 — طبّق العامل المربع للتحويل\n* اضرب قيمة المساحة في عامل التحويل المربع.\n* لا يُستخدَم عامل الطول العادي (100) وحده أبدًا عند تحويل مساحة.\n\nمثال بسيط: مساحة سطح طاولة 1.35 m². وبما أن 1 m² = 10,000 cm²، فإن التحويل يعطي:\n\n1.35 m² × 10,000 = 13,500 cm²\n\nمفهوم خاطئ: أكثر أخطاء تحويل المساحة شيوعًا هو كتابة 1 m² = 100 cm²، بإعادة استخدام عامل الطول العادي. التصحيح: 1 m = 100 cm، لذا 1 m² = (100 cm)² = 10,000 cm² — وعامل المساحة هو دائمًا عامل الطول مربعًا.\n\nملاحظة علمية: تصلح قاعدة العامل المربع هذه لتحويل مساحة بين أي وحدتَي طول، لا المتر والسنتيمتر فقط — ربّع عامل تحويل الطول دائمًا أولاً.\n\nالمفهوم الأساسي: يتطلب تحويل مساحة بين وحدتين تربيع عامل تحويل الطول، لا تطبيقه مرة واحدة أبدًا.\n\nالصلة بالشريحة التالية: يتبع الحجم النمط نفسه ببُعد إضافي واحد — باستخدام عامل الطول مكعّبًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-8",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 8 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-9",
+        "blockType": "slide",
+        "slideNumber": 9,
+        "slideTitleEn": "Why Does Volume Use Cubic Units?",
+        "slideTitleAr": "لماذا تُستخدم الوحدات المكعبة للحجم؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Volume takes the same idea as area one step further, adding a third independent length measurement.\n\nMain Idea: volume measures how much three-dimensional space a region occupies, and because it is built from three independent length measurements multiplied together, its units are always length units cubed.\n\nStep 1 — See that volume needs three lengths\n* A three-dimensional box has a length, a width, and a height.\n* Volume combines all three measurements into a single quantity describing the space occupied.\n\nStep 2 — Multiply the three lengths together\n* For a rectangular box, volume equals length times width times height: V = L × W × H.\n* Multiplying three lengths together produces a length-cubed quantity.\n\nStep 3 — Read the cubed unit correctly\n* If all three lengths are measured in meters, the volume is in cubic meters (m³).\n* The exponent “3” reflects that three independent length measurements were multiplied.\n\nSimple Example: a storage box is 2 m long, 1 m wide, and 0.5 m tall. Its volume is:\n\nV = 2 m × 1 m × 0.5 m = 1 m³\n\nRelationship Explanation: volume, like area, is not an independent kind of quantity — it is built entirely from length. Because three separate length measurements are multiplied together, the length unit is multiplied by itself three times, producing a cubed unit. This is why volume can never be reported in a plain length unit or a squared area unit.\n\nMisconception: some students confuse a volume value with an area value simply because both are “bigger” than a length, or mix cubic centimeters with square centimeters. Correction: m, m², and m³ measure three completely different kinds of quantities (distance, surface, and space) and can never be interchanged or directly compared.\n\nScientific Note: the same reasoning applies to any three-dimensional shape, not just rectangular boxes — the units always end up cubed because volume always reduces to multiplying three length measurements together.\n\nKey Concept: volume is always reported in cubed length units, because it is built from three length measurements multiplied together.\n\nConnection to the Next Slide: converting a volume between units follows the same squared-factor pattern as area, but one power further — cubed.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يأخذ الحجم الفكرة نفسها التي بُنيت عليها المساحة خطوة أبعد، بإضافة قياس طول مستقل ثالث.\n\nالفكرة الرئيسية: يقيس الحجم مقدار الحيّز ثلاثي الأبعاد الذي تشغله منطقة ما، ولأنه يُبنى من ثلاثة قياسات طول مستقلة تُضرَب معًا، فإن وحداته دائمًا وحدات طول مرفوعة للقوة الثالثة.\n\nالخطوة 1 — لاحظ أن الحجم يحتاج إلى ثلاثة أطوال\n* للصندوق ثلاثي الأبعاد طول وعرض وارتفاع.\n* يجمع الحجم القياسات الثلاثة في كمية واحدة تصف الحيّز المشغول.\n\nالخطوة 2 — اضرب الأطوال الثلاثة معًا\n* لصندوق مستطيل، يساوي الحجم الطول مضروبًا في العرض مضروبًا في الارتفاع: V = L × W × H.\n* ضرب ثلاثة أطوال معًا ينتج كمية مرفوعة للقوة الثالثة (طول تكعيبي).\n\nالخطوة 3 — اقرأ الوحدة المكعبة بشكل صحيح\n* إذا قيست الأطوال الثلاثة بالمتر، فإن الحجم يكون بالمتر المكعب (m³).\n* يعكس الأس “3” أن ثلاثة قياسات طول مستقلة قد ضُربت معًا.\n\nمثال بسيط: صندوق تخزين طوله 2 m وعرضه 1 m وارتفاعه 0.5 m. حجمه:\n\nV = 2 m × 1 m × 0.5 m = 1 m³\n\nشرح العلاقة: الحجم، مثل المساحة، ليس نوعًا مستقلاً من الكميات — بل يُبنى بالكامل من الطول. ولأن ثلاثة قياسات طول منفصلة تُضرَب معًا، فإن وحدة الطول تُضرب في نفسها ثلاث مرات، فتنتج وحدة مكعبة. لهذا لا يمكن للحجم أبدًا أن يُذكر بوحدة طول عادية أو بوحدة مساحة مربعة.\n\nمفهوم خاطئ: قد يخلط بعض الطلاب بين قيمة الحجم وقيمة المساحة لمجرد أن كلتيهما “أكبر” من طول، أو يخلطون بين السنتيمتر المكعب والسنتيمتر المربع. التصحيح: تقيس m وm² وm³ ثلاثة أنواع مختلفة تمامًا من الكميات (المسافة والسطح والحيّز) ولا يمكن استبدال إحداها بالأخرى أو مقارنتها مباشرة أبدًا.\n\nملاحظة علمية: ينطبق المنطق نفسه على أي شكل ثلاثي الأبعاد، لا الصناديق المستطيلة فقط — وتنتهي الوحدات دائمًا مكعبة لأن الحجم يختزل دائمًا إلى ضرب ثلاثة قياسات طول معًا.\n\nالمفهوم الأساسي: يُذكر الحجم دائمًا بوحدات طول مكعبة، لأنه يُبنى من ثلاثة قياسات طول تُضرَب معًا.\n\nالصلة بالشريحة التالية: يتبع تحويل الحجم بين وحدتين النمط نفسه القائم على العامل المربع في المساحة، لكن بقوة إضافية واحدة — مكعبًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Volume",
+            "definition": "The amount of three-dimensional space a region occupies, always reported in cubed length units (such as m³)."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "الحجم",
+            "definition": "مقدار الحيّز ثلاثي الأبعاد الذي تشغله منطقة ما، ويُذكر دائمًا بوحدات طول مكعبة (مثل m³)."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يأخذ الحجم الفكرة نفسها التي بُنيت عليها المساحة خطوة أبعد، بإضافة قياس طول مستقل ثالث.\n\nالفكرة الرئيسية: يقيس الحجم مقدار الحيّز ثلاثي الأبعاد الذي تشغله منطقة ما، ولأنه يُبنى من ثلاثة قياسات طول مستقلة تُضرَب معًا، فإن وحداته دائمًا وحدات طول مرفوعة للقوة الثالثة.\n\nالخطوة 1 — لاحظ أن الحجم يحتاج إلى ثلاثة أطوال\n* للصندوق ثلاثي الأبعاد طول وعرض وارتفاع.\n* يجمع الحجم القياسات الثلاثة في كمية واحدة تصف الحيّز المشغول.\n\nالخطوة 2 — اضرب الأطوال الثلاثة معًا\n* لصندوق مستطيل، يساوي الحجم الطول مضروبًا في العرض مضروبًا في الارتفاع: V = L × W × H.\n* ضرب ثلاثة أطوال معًا ينتج كمية مرفوعة للقوة الثالثة (طول تكعيبي).\n\nالخطوة 3 — اقرأ الوحدة المكعبة بشكل صحيح\n* إذا قيست الأطوال الثلاثة بالمتر، فإن الحجم يكون بالمتر المكعب (m³).\n* يعكس الأس “3” أن ثلاثة قياسات طول مستقلة قد ضُربت معًا.\n\nمثال بسيط: صندوق تخزين طوله 2 m وعرضه 1 m وارتفاعه 0.5 m. حجمه:\n\nV = 2 m × 1 m × 0.5 m = 1 m³\n\nشرح العلاقة: الحجم، مثل المساحة، ليس نوعًا مستقلاً من الكميات — بل يُبنى بالكامل من الطول. ولأن ثلاثة قياسات طول منفصلة تُضرَب معًا، فإن وحدة الطول تُضرب في نفسها ثلاث مرات، فتنتج وحدة مكعبة. لهذا لا يمكن للحجم أبدًا أن يُذكر بوحدة طول عادية أو بوحدة مساحة مربعة.\n\nمفهوم خاطئ: قد يخلط بعض الطلاب بين قيمة الحجم وقيمة المساحة لمجرد أن كلتيهما “أكبر” من طول، أو يخلطون بين السنتيمتر المكعب والسنتيمتر المربع. التصحيح: تقيس m وm² وm³ ثلاثة أنواع مختلفة تمامًا من الكميات (المسافة والسطح والحيّز) ولا يمكن استبدال إحداها بالأخرى أو مقارنتها مباشرة أبدًا.\n\nملاحظة علمية: ينطبق المنطق نفسه على أي شكل ثلاثي الأبعاد، لا الصناديق المستطيلة فقط — وتنتهي الوحدات دائمًا مكعبة لأن الحجم يختزل دائمًا إلى ضرب ثلاثة قياسات طول معًا.\n\nالمفهوم الأساسي: يُذكر الحجم دائمًا بوحدات طول مكعبة، لأنه يُبنى من ثلاثة قياسات طول تُضرَب معًا.\n\nالصلة بالشريحة التالية: يتبع تحويل الحجم بين وحدتين النمط نفسه القائم على العامل المربع في المساحة، لكن بقوة إضافية واحدة — مكعبًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-9",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 9 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-10",
+        "blockType": "slide",
+        "slideNumber": 10,
+        "slideTitleEn": "Why Must the Conversion Factor Be Cubed for Volume?",
+        "slideTitleAr": "لماذا يجب تكعيب عامل التحويل عند تحويل الحجم؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Volume conversion extends the area-conversion pattern by one more power of the length factor.\n\nMain Idea: converting a volume to a different unit requires applying the length conversion factor three times — once for each of the three lengths multiplied together — so the volume conversion factor is the length factor cubed.\n\nStep 1 — Start from the length equality\n* 1 m = 100 cm is the same starting point used for length and area conversions.\n\nStep 2 — Cube both sides to get the volume equality\n* Cubing both sides of 1 m = 100 cm gives (1 m)³ = (100 cm)³.\n* This simplifies to 1 m³ = 1,000,000 cm³ — not 100 cm³, and not 10,000 cm³.\n\nStep 3 — Apply the cubed factor to convert\n* Multiply the volume value by the cubed conversion factor.\n* Neither the plain length factor nor the squared area factor is used when converting a volume.\n\nSimple Example: a shipping crate has a volume of 0.4 m³. Since 1 m³ = 1,000,000 cm³, converting gives:\n\n0.4 m³ × 1,000,000 = 400,000 cm³\n\nMisconception: a common volume-conversion error is writing 1 m³ = 100 cm³ or mistakenly reusing the area factor, 1 m³ = 10,000 cm³. Correction: 1 m = 100 cm, so 1 m³ = (100 cm)³ = 1,000,000 cm³ — the volume factor is always the length factor cubed.\n\nScientific Note: this cubed-factor rule holds for converting a volume between ANY two length units — always cube the length conversion factor first, the same way an area conversion always squares it.\n\nKey Concept: converting a volume between units requires cubing the length conversion factor.\n\nConnection to the Next Slide: with length, area, and volume conversions established, the final slide reviews the most common mistakes to watch for.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يمدّد تحويل الحجم نمط تحويل المساحة بقوة إضافية واحدة من عامل الطول.\n\nالفكرة الرئيسية: يتطلب تحويل حجم إلى وحدة أخرى تطبيق عامل تحويل الطول ثلاث مرات — مرة لكل طول من الأطوال الثلاثة المضروبة معًا — لذا فإن عامل تحويل الحجم هو عامل الطول مكعبًا.\n\nالخطوة 1 — ابدأ من مساواة الطول\n* 1 m = 100 cm هي نقطة البداية نفسها المستخدمة في تحويلات الطول والمساحة.\n\nالخطوة 2 — كعّب الطرفين للحصول على مساواة الحجم\n* تكعيب طرفَي 1 m = 100 cm يعطي (1 m)³ = (100 cm)³.\n* يُبسَّط هذا إلى 1 m³ = 1,000,000 cm³ — وليس 100 cm³، ولا 10,000 cm³.\n\nالخطوة 3 — طبّق العامل المكعب للتحويل\n* اضرب قيمة الحجم في عامل التحويل المكعب.\n* لا يُستخدَم عامل الطول العادي ولا عامل المساحة المربع عند تحويل حجم.\n\nمثال بسيط: حجم صندوق شحن 0.4 m³. وبما أن 1 m³ = 1,000,000 cm³، فإن التحويل يعطي:\n\n0.4 m³ × 1,000,000 = 400,000 cm³\n\nمفهوم خاطئ: من أخطاء تحويل الحجم الشائعة كتابة 1 m³ = 100 cm³، أو إعادة استخدام عامل المساحة خطأً، 1 m³ = 10,000 cm³. التصحيح: 1 m = 100 cm، لذا 1 m³ = (100 cm)³ = 1,000,000 cm³ — وعامل الحجم هو دائمًا عامل الطول مكعبًا.\n\nملاحظة علمية: تصلح قاعدة العامل المكعب هذه لتحويل حجم بين أي وحدتَي طول — كعّب عامل تحويل الطول دائمًا أولاً، تمامًا كما يربّعه تحويل المساحة دائمًا.\n\nالمفهوم الأساسي: يتطلب تحويل حجم بين وحدتين تكعيب عامل تحويل الطول.\n\nالصلة بالشريحة التالية: بعد ترسيخ تحويلات الطول والمساحة والحجم، تراجع الشريحة الأخيرة أكثر الأخطاء شيوعًا التي يجب الانتباه لها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يمدّد تحويل الحجم نمط تحويل المساحة بقوة إضافية واحدة من عامل الطول.\n\nالفكرة الرئيسية: يتطلب تحويل حجم إلى وحدة أخرى تطبيق عامل تحويل الطول ثلاث مرات — مرة لكل طول من الأطوال الثلاثة المضروبة معًا — لذا فإن عامل تحويل الحجم هو عامل الطول مكعبًا.\n\nالخطوة 1 — ابدأ من مساواة الطول\n* 1 m = 100 cm هي نقطة البداية نفسها المستخدمة في تحويلات الطول والمساحة.\n\nالخطوة 2 — كعّب الطرفين للحصول على مساواة الحجم\n* تكعيب طرفَي 1 m = 100 cm يعطي (1 m)³ = (100 cm)³.\n* يُبسَّط هذا إلى 1 m³ = 1,000,000 cm³ — وليس 100 cm³، ولا 10,000 cm³.\n\nالخطوة 3 — طبّق العامل المكعب للتحويل\n* اضرب قيمة الحجم في عامل التحويل المكعب.\n* لا يُستخدَم عامل الطول العادي ولا عامل المساحة المربع عند تحويل حجم.\n\nمثال بسيط: حجم صندوق شحن 0.4 m³. وبما أن 1 m³ = 1,000,000 cm³، فإن التحويل يعطي:\n\n0.4 m³ × 1,000,000 = 400,000 cm³\n\nمفهوم خاطئ: من أخطاء تحويل الحجم الشائعة كتابة 1 m³ = 100 cm³، أو إعادة استخدام عامل المساحة خطأً، 1 m³ = 10,000 cm³. التصحيح: 1 m = 100 cm، لذا 1 m³ = (100 cm)³ = 1,000,000 cm³ — وعامل الحجم هو دائمًا عامل الطول مكعبًا.\n\nملاحظة علمية: تصلح قاعدة العامل المكعب هذه لتحويل حجم بين أي وحدتَي طول — كعّب عامل تحويل الطول دائمًا أولاً، تمامًا كما يربّعه تحويل المساحة دائمًا.\n\nالمفهوم الأساسي: يتطلب تحويل حجم بين وحدتين تكعيب عامل تحويل الطول.\n\nالصلة بالشريحة التالية: بعد ترسيخ تحويلات الطول والمساحة والحجم، تراجع الشريحة الأخيرة أكثر الأخطاء شيوعًا التي يجب الانتباه لها.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-10",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 10 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t02-block-slide-11",
+        "blockType": "slide",
+        "slideNumber": 11,
+        "slideTitleEn": "How Can We Avoid the Most Common Unit-Conversion Mistakes?",
+        "slideTitleAr": "كيف نتجنب أكثر أخطاء تحويل الوحدات شيوعًا؟",
+        "topicId": "ch01-t02",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Every conversion mistake in this topic traces back to one of a small number of recurring errors — recognizing them is the best defense against making them.\n\nMain Idea: nearly every unit-conversion error falls into one of a few recurring patterns — reversing the conversion factor, changing the number without changing the unit, or using the wrong power of the factor for area or volume.\n\nStep 1 — Watch for a reversed conversion factor\n* Always check that the unit you are removing appears once in the numerator and once in the denominator, canceling correctly.\n* A reversed factor produces a wildly wrong-sized answer.\n\nStep 2 — Never change the number without changing the unit\n* Restating a measurement in a new unit must change both the number and the unit label together.\n* If the numerical value changes without the corresponding unit change—or the unit changes without the required numerical conversion—the measurement becomes inconsistent and no longer represents the original value correctly.\n\nStep 3 — Match the power of the factor to the dimension\n* Length: apply the conversion factor once.\n* Area: apply the conversion factor squared.\n* Volume: apply the conversion factor cubed.\n\nSimple Example: converting the same 100-cm-per-meter factor differently for each dimension: length uses ×100, area uses:\n\n×100² = ×10,000\n\nand volume uses:\n\n×100³ = ×1,000,000\n\nTable Explanation: each row applies the exact same base length factor (100), but raised to the power matching how many lengths were multiplied together to build that quantity — one length for distance, two for area, three for volume.\n\nMisconception: two common area-and-volume conversion errors are writing 1 m² = 100 cm² and 1 m³ = 100 cm³, both of which reuse the plain length factor instead of squaring or cubing it. Correction: 1 m² = (100 cm)² = 10,000 cm², and 1 m³ = (100 cm)³ = 1,000,000 cm³ — always match the power of the factor to the number of dimensions.\n\nScientific Note: keeping units attached to every number at every intermediate step of a calculation — never just carrying the number alone — is the single most reliable habit for catching a conversion error before it reaches a final answer.\n\nKey Concept: match the power of the conversion factor to the quantity's dimension — one power for length, two for area, three for volume.\n\nConnection to the Next Slide: with distance, area, and volume conversions secure, these same unit-handling skills apply to every physical quantity that follows in this course.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يعود كل خطأ في التحويل ضمن هذا الموضوع إلى واحد من عدد صغير من الأخطاء المتكررة — والتعرف عليها هو أفضل وسيلة لتجنب الوقوع فيها.\n\nالفكرة الرئيسية: يقع تقريبًا كل خطأ في تحويل الوحدات ضمن أحد أنماط قليلة متكررة — عكس عامل التحويل، أو تغيير الرقم دون تغيير الوحدة، أو استخدام قوة خاطئة للعامل عند المساحة أو الحجم.\n\nالخطوة 1 — انتبه لعامل تحويل مقلوب\n* تحقّق دائمًا من أن الوحدة التي تحذفها تظهر مرة في البسط ومرة في المقام، فتُحذف بشكل صحيح.\n* ينتج عن العامل المقلوب إجابة بحجم خاطئ تمامًا.\n\nالخطوة 2 — لا تغيّر الرقم أبدًا دون تغيير الوحدة\n* يجب أن تُغيّر إعادة صياغة قياس بوحدة جديدة الرقم ووسم الوحدة معًا.\n* إذا تغيّرت القيمة العددية دون تغيير الوحدة المقابل، أو تغيّرت الوحدة دون إجراء التحويل العددي المطلوب، يصبح القياس غير متسق ولا يمثل القيمة الأصلية تمثيلًا صحيحًا.\n\nالخطوة 3 — طابق قوة العامل مع البُعد\n* الطول: طبّق عامل التحويل مرة واحدة.\n* المساحة: طبّق عامل التحويل مربعًا.\n* الحجم: طبّق عامل التحويل مكعبًا.\n\nمثال بسيط: تطبيق عامل الـ100 سنتيمتر لكل متر نفسه بشكل مختلف لكل بُعد: يستخدم الطول ×100، وتستخدم المساحة:\n\n×100² = ×10,000\n\nويستخدم الحجم:\n\n×100³ = ×1,000,000\n\nشرح الجدول: يطبّق كل صف عامل الطول الأساسي نفسه (100)، لكن مرفوعًا للقوة التي تطابق عدد الأطوال التي ضُربت معًا لبناء تلك الكمية — طول واحد للمسافة، وطولان للمساحة، وثلاثة أطوال للحجم.\n\nمفهوم خاطئ: من أكثر الأخطاء شيوعًا في تحويل المساحة والحجم كتابة 1 m² = 100 cm² و1 m³ = 100 cm³، وكلاهما يعيد استخدام عامل الطول العادي بدلاً من تربيعه أو تكعيبه. التصحيح: 1 m² = (100 cm)² = 10,000 cm²، و 1 m³ = (100 cm)³ = 1,000,000 cm³ — طابق دائمًا قوة العامل مع عدد الأبعاد.\n\nملاحظة علمية: إبقاء الوحدات ملتصقة بكل رقم في كل خطوة وسيطة من الحساب — دون حمل الرقم مجردًا أبدًا — هو العادة الأكثر موثوقية لاكتشاف خطأ التحويل قبل أن يصل إلى الإجابة النهائية.\n\nالمفهوم الأساسي: طابق قوة عامل التحويل مع بُعد الكمية — قوة واحدة للطول، وقوتان للمساحة، وثلاث قوى للحجم.\n\nالصلة بالشريحة التالية: بعد ترسيخ تحويلات المسافة والمساحة والحجم، تنطبق مهارات التعامل مع الوحدات نفسها على كل كمية فيزيائية تُطرح لاحقًا في هذا المقرر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Quantity",
+            "Power of the Factor",
+            "1 m = 100 cm becomes"
+          ],
+          "rows": [
+            [
+              "Length",
+              "× 100¹",
+              "1 m = 100 cm"
+            ],
+            [
+              "Area",
+              "× 100²",
+              "1 m² = 10,000 cm²"
+            ],
+            [
+              "Volume",
+              "× 100³",
+              "1 m³ = 1,000,000 cm³"
+            ]
+          ]
+        },
+        "tableAr": {
+          "headers": [
+            "الكمية",
+            "قوة العامل",
+            "1 m = 100 cm تصبح"
+          ],
+          "rows": [
+            [
+              "الطول",
+              "× 100¹",
+              "1 m = 100 cm"
+            ],
+            [
+              "المساحة",
+              "× 100²",
+              "1 m² = 10,000 cm²"
+            ],
+            [
+              "الحجم",
+              "× 100³",
+              "1 m³ = 1,000,000 cm³"
+            ]
+          ]
+        },
+        "tableCaptionEn": "How the conversion factor's power matches each dimension",
+        "tableCaptionAr": "كيف تطابق قوة عامل التحويل كل بُعد",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يعود كل خطأ في التحويل ضمن هذا الموضوع إلى واحد من عدد صغير من الأخطاء المتكررة — والتعرف عليها هو أفضل وسيلة لتجنب الوقوع فيها.\n\nالفكرة الرئيسية: يقع تقريبًا كل خطأ في تحويل الوحدات ضمن أحد أنماط قليلة متكررة — عكس عامل التحويل، أو تغيير الرقم دون تغيير الوحدة، أو استخدام قوة خاطئة للعامل عند المساحة أو الحجم.\n\nالخطوة 1 — انتبه لعامل تحويل مقلوب\n* تحقّق دائمًا من أن الوحدة التي تحذفها تظهر مرة في البسط ومرة في المقام، فتُحذف بشكل صحيح.\n* ينتج عن العامل المقلوب إجابة بحجم خاطئ تمامًا.\n\nالخطوة 2 — لا تغيّر الرقم أبدًا دون تغيير الوحدة\n* يجب أن تُغيّر إعادة صياغة قياس بوحدة جديدة الرقم ووسم الوحدة معًا.\n* إذا تغيّرت القيمة العددية دون تغيير الوحدة المقابل، أو تغيّرت الوحدة دون إجراء التحويل العددي المطلوب، يصبح القياس غير متسق ولا يمثل القيمة الأصلية تمثيلًا صحيحًا.\n\nالخطوة 3 — طابق قوة العامل مع البُعد\n* الطول: طبّق عامل التحويل مرة واحدة.\n* المساحة: طبّق عامل التحويل مربعًا.\n* الحجم: طبّق عامل التحويل مكعبًا.\n\nمثال بسيط: تطبيق عامل الـ100 سنتيمتر لكل متر نفسه بشكل مختلف لكل بُعد: يستخدم الطول ×100، وتستخدم المساحة:\n\n×100² = ×10,000\n\nويستخدم الحجم:\n\n×100³ = ×1,000,000\n\nشرح الجدول: يطبّق كل صف عامل الطول الأساسي نفسه (100)، لكن مرفوعًا للقوة التي تطابق عدد الأطوال التي ضُربت معًا لبناء تلك الكمية — طول واحد للمسافة، وطولان للمساحة، وثلاثة أطوال للحجم.\n\nمفهوم خاطئ: من أكثر الأخطاء شيوعًا في تحويل المساحة والحجم كتابة 1 m² = 100 cm² و1 m³ = 100 cm³، وكلاهما يعيد استخدام عامل الطول العادي بدلاً من تربيعه أو تكعيبه. التصحيح: 1 m² = (100 cm)² = 10,000 cm²، و 1 m³ = (100 cm)³ = 1,000,000 cm³ — طابق دائمًا قوة العامل مع عدد الأبعاد.\n\nملاحظة علمية: إبقاء الوحدات ملتصقة بكل رقم في كل خطوة وسيطة من الحساب — دون حمل الرقم مجردًا أبدًا — هو العادة الأكثر موثوقية لاكتشاف خطأ التحويل قبل أن يصل إلى الإجابة النهائية.\n\nالمفهوم الأساسي: طابق قوة عامل التحويل مع بُعد الكمية — قوة واحدة للطول، وقوتان للمساحة، وثلاث قوى للحجم.\n\nالصلة بالشريحة التالية: بعد ترسيخ تحويلات المسافة والمساحة والحجم، تنطبق مهارات التعامل مع الوحدات نفسها على كل كمية فيزيائية تُطرح لاحقًا في هذا المقرر.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": []
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T02-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t02-block-slide-11",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t02-block-mainidea/organizedExplanation/equationSet/example/misconception records (distance, area, volume, unit conversion); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 11 for ch01-t02's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
         "blockId": "ch01-t02-block-mainidea",
         "blockType": "mainIdea",
         "topicId": "ch01-t02",

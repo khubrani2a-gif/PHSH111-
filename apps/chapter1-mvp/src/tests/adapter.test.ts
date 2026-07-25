@@ -62,9 +62,10 @@ describe("content adapter — real canonical data (four pilot topics + Batch 1)"
     }
   });
 
-  it("counts exactly 9 records per original pilot topic (1 instructorScript + 7 contentBlock + 1 problem), matching the source file", () => {
+  it("counts exactly 9 records for each original pilot topic with no slide content, matching the source file (1 instructorScript + 7 contentBlock + 1 problem); ch01-t02 is the exception since PR D added its 11 real slide records (9 + 11 = 20)", () => {
     for (const topicId of PILOT_TOPIC_ORDER) {
-      expect(getTopic(topicId)?.governance.recordCount).toBe(9);
+      const expected = topicId === "ch01-t02" ? 20 : 9;
+      expect(getTopic(topicId)?.governance.recordCount).toBe(expected);
     }
   });
 

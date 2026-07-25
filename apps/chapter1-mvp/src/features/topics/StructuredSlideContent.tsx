@@ -485,6 +485,134 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     // both in one list is safe.
     originalEmphasisPhrases: ["not", "ليست"],
   },
+
+  // ch01-t02 (Distance, SI Units, Unit Conversion, Area, and Volume) — the
+  // second real slide-bearing topic (PR D). Same generic marker
+  // convention as ch01-t01 above; nothing here is component logic, only
+  // per-blockId configuration data, exactly like every entry above it.
+  "ch01-t02-block-slide-1": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-2": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-3": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-4": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    tableExplanationMarker: { en: "Table Explanation:", ar: "شرح الجدول:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: "3.5 cm × 0.01 = 0.035 m",
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-5": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    conversionFactorExplanationMarker: { en: "Conversion-Factor Explanation:", ar: "شرح عامل التحويل:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: "2.5 m × (100 cm / 1 m) = 250 cm",
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-6": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: ["3.2 km × (1000 m / 1 km) = 3200 m", "450 cm × (1 m / 100 cm) = 4.5 m"],
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-7": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    relationshipExplanationMarker: { en: "Relationship Explanation:", ar: "شرح العلاقة:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    // Two equation-block phrases: the Simple Example's rectangle
+    // computation, and the Scientific Note's circle example (A = πr²,
+    // added in the title/wording correction pass) — both isolated on
+    // their own paragraph in the source, same convention as every other
+    // multi-equation slide (e.g. Slides 6, 9, 11) below.
+    equationBlockPhrase: ["A = 3 m × 2 m = 6 m²", "A = πr²"],
+    // Simple Example is equation-aware unconditionally; Scientific Note is
+    // opt-in only (see equationAwareSections' own header comment and the
+    // two other slides above that already use it) — opted in here so the
+    // circle-example equation gets the same equation-block styling as the
+    // rectangle example, purely by flipping this existing config flag.
+    equationAwareSections: ["scientificNote"],
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-8": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: "1.35 m² × 10,000 = 13,500 cm²",
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-9": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    relationshipExplanationMarker: { en: "Relationship Explanation:", ar: "شرح العلاقة:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: "V = 2 m × 1 m × 0.5 m = 1 m³",
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-10": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: "0.4 m³ × 1,000,000 = 400,000 cm³",
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t02-block-slide-11": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" },
+    simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" },
+    tableExplanationMarker: { en: "Table Explanation:", ar: "شرح الجدول:" },
+    misconceptionMarker: { en: "Misconception:", ar: "مفهوم خاطئ:" },
+    scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
+    keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
+    connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
+    equationBlockPhrase: ["×100² = ×10,000", "×100³ = ×1,000,000"],
+    stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
