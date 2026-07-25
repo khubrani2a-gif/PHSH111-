@@ -16,7 +16,10 @@ import { SLIDE_SHORT_TITLE_BY_BLOCK_ID } from "../content/slideShortTitles";
 import { getTopic, getTopicOrder } from "../content/adapter";
 import type { PilotTopicId } from "../types/pilotSchema";
 
-const TOPIC = "ch01-t02" as PilotTopicId; // synthetic-fixture topic; never a real content topic
+// synthetic-fixture topic; never a real content topic — ch01-t02 was used here
+// until PR D gave it real slide content and its own real SLIDE_GROUPS_BY_TOPIC_ID
+// entry, so this switched to ch01-t03, which (as of PR D) still has none.
+const TOPIC = "ch01-t03" as PilotTopicId;
 
 function group(overrides: Partial<SlideGroup> = {}): SlideGroup {
   return {
@@ -163,6 +166,10 @@ describe("Current-content regression — all registered topics (PR A, requiremen
     for (const slide of topic!.slides) {
       expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID[slide.recordId]).toBeDefined();
     }
-    expect(Object.keys(SLIDE_SHORT_TITLE_BY_BLOCK_ID)).toHaveLength(13);
+    // Scoped to ch01-t01's own keys (not the whole map's size), so this
+    // stays a true "ch01-t01 unchanged" regression as later topics (e.g.
+    // ch01-t02, PR D) add their own short-title entries to the same map.
+    const t01Keys = Object.keys(SLIDE_SHORT_TITLE_BY_BLOCK_ID).filter((k) => k.startsWith("ch01-t01-"));
+    expect(t01Keys).toHaveLength(13);
   });
 });

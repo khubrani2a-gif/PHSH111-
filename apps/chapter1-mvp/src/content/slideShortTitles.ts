@@ -31,6 +31,19 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t01-block-opening-11": { en: "Stopwatch Frequency", ar: "تردد ساعة الإيقاف" },
   "ch01-t01-block-opening-12": { en: "Mass and Inertia", ar: "الكتلة والقصور الذاتي" },
   "ch01-t01-block-opening-13": { en: "Mass versus Weight", ar: "الكتلة مقابل الوزن" },
+
+  // ch01-t02 (Distance, SI Units, Unit Conversion, Area, and Volume — PR D).
+  "ch01-t02-block-slide-1": { en: "Why Standard Units?", ar: "لماذا الوحدات المعيارية؟" },
+  "ch01-t02-block-slide-2": { en: "Defining Distance", ar: "تعريف المسافة" },
+  "ch01-t02-block-slide-3": { en: "The Meter", ar: "المتر" },
+  "ch01-t02-block-slide-4": { en: "Metric Prefixes", ar: "البادئات المترية" },
+  "ch01-t02-block-slide-5": { en: "Conversion Factors", ar: "عوامل التحويل" },
+  "ch01-t02-block-slide-6": { en: "Converting Length Units", ar: "تحويل وحدات الطول" },
+  "ch01-t02-block-slide-7": { en: "Why Area Is Squared", ar: "لماذا المساحة تربيعية" },
+  "ch01-t02-block-slide-8": { en: "Converting Area", ar: "تحويل المساحة" },
+  "ch01-t02-block-slide-9": { en: "Why Volume Is Cubed", ar: "لماذا الحجم تكعيبي" },
+  "ch01-t02-block-slide-10": { en: "Converting Volume", ar: "تحويل الحجم" },
+  "ch01-t02-block-slide-11": { en: "Avoiding Common Mistakes", ar: "تجنّب الأخطاء الشائعة" },
 };
 
 /**

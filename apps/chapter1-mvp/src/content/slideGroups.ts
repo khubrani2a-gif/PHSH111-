@@ -48,6 +48,43 @@ export const SLIDE_GROUPS_BY_TOPIC_ID: Partial<Record<PilotTopicId, SlideGroup[]
       slideNumbers: [12, 13],
     },
   ],
+  /**
+   * ch01-t02 (Distance, SI Units, Unit Conversion, Area, and Volume — PR D,
+   * the second real slide-bearing topic) groups, verified against the
+   * topic's actual current slide titles (see
+   * src/content/slideShortTitles.ts): Slides 1-3 establish distance and
+   * the meter as the SI base unit; Slides 4-6 cover metric prefixes and
+   * building/applying a conversion factor; Slides 7-8 cover area;
+   * Slides 9-10 cover volume; Slide 11 closes with the common
+   * unit-conversion mistakes to avoid.
+   */
+  "ch01-t02": [
+    {
+      id: "ch01-t02-group-measurement-and-standard-units",
+      title: { en: "Measurement and Standard Units", ar: "القياس والوحدات المعيارية" },
+      slideNumbers: [1, 2, 3],
+    },
+    {
+      id: "ch01-t02-group-metric-prefixes-and-conversion-factors",
+      title: { en: "Metric Prefixes and Conversion Factors", ar: "البادئات المترية وعوامل التحويل" },
+      slideNumbers: [4, 5, 6],
+    },
+    {
+      id: "ch01-t02-group-area-and-square-units",
+      title: { en: "Area and Square Units", ar: "المساحة والوحدات المربعة" },
+      slideNumbers: [7, 8],
+    },
+    {
+      id: "ch01-t02-group-volume-and-cubic-units",
+      title: { en: "Volume and Cubic Units", ar: "الحجم والوحدات المكعبة" },
+      slideNumbers: [9, 10],
+    },
+    {
+      id: "ch01-t02-group-error-prevention-and-summary",
+      title: { en: "Error Prevention and Summary", ar: "تجنّب الأخطاء والملخص" },
+      slideNumbers: [11],
+    },
+  ],
 };
 
 /**
