@@ -44,6 +44,18 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t02-block-slide-9": { en: "Why Volume Is Cubed", ar: "لماذا الحجم تكعيبي" },
   "ch01-t02-block-slide-10": { en: "Converting Volume", ar: "تحويل الحجم" },
   "ch01-t02-block-slide-11": { en: "Avoiding Common Mistakes", ar: "تجنّب الأخطاء الشائعة" },
+
+  // ch01-t03 (Time, Period, and Frequency — PR E).
+  "ch01-t03-block-slide-1": { en: "Repeating Process", ar: "العملية المتكررة" },
+  "ch01-t03-block-slide-2": { en: "Complete Cycle", ar: "الدورة الكاملة" },
+  "ch01-t03-block-slide-3": { en: "Period", ar: "الدور" },
+  "ch01-t03-block-slide-4": { en: "Frequency", ar: "التردد" },
+  "ch01-t03-block-slide-5": { en: "Reciprocal Relationship", ar: "العلاقة العكسية" },
+  "ch01-t03-block-slide-6": { en: "Find Frequency", ar: "إيجاد التردد" },
+  "ch01-t03-block-slide-7": { en: "Find Period", ar: "إيجاد الدور" },
+  "ch01-t03-block-slide-8": { en: "Short Period, High Frequency", ar: "دور قصير، تردد مرتفع" },
+  "ch01-t03-block-slide-9": { en: "Half-Cycle Error", ar: "خطأ نصف الدورة" },
+  "ch01-t03-block-slide-10": { en: "Checking Answers", ar: "التحقّق من الإجابات" },
 };
 
 /**

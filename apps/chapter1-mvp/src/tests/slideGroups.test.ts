@@ -18,8 +18,10 @@ import type { PilotTopicId } from "../types/pilotSchema";
 
 // synthetic-fixture topic; never a real content topic — ch01-t02 was used here
 // until PR D gave it real slide content and its own real SLIDE_GROUPS_BY_TOPIC_ID
-// entry, so this switched to ch01-t03, which (as of PR D) still has none.
-const TOPIC = "ch01-t03" as PilotTopicId;
+// entry, so this switched to ch01-t03; PR E then gave ch01-t03 real slide
+// content and its own real SLIDE_GROUPS_BY_TOPIC_ID entry too, so this
+// switched again to ch01-t08, which (as of PR E) still has none.
+const TOPIC = "ch01-t08" as PilotTopicId;
 
 function group(overrides: Partial<SlideGroup> = {}): SlideGroup {
   return {
