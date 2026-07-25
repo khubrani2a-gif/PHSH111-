@@ -43,8 +43,11 @@ export interface SlideReaderProps {
  * a grouped slide navigator (sidebar on desktop, drawer on mobile),
  * Study/Review display modes, and a persisted per-slide learning-progress
  * model (src/app/slideProgress.ts) distinguishing "viewed" from
- * explicitly "completed". The pre-existing accordion (Slides.tsx) is left
- * completely unmodified and remains reachable via "View All Slides".
+ * explicitly "completed". The pre-existing accordion (Slides.tsx, still
+ * reachable via "View All Slides") reads and writes that exact same
+ * canonical per-topic learning state — see slideProgress.ts's header
+ * comment — so a slide viewed or completed in either view is reflected in
+ * the other.
  */
 export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAllSlides, initialSlideNumber }: SlideReaderProps) {
   const { language, direction } = useLanguage();
