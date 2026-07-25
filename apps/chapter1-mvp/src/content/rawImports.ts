@@ -83,6 +83,16 @@ import ch01t04Svg from "../../../../docs/content-design/chapter-01/batch1-visual
 import ch01t01BlockOpening4Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-4-figure.jpg";
 import ch01t01BlockOpening5Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-5-figure.svg";
 import ch01t01BlockOpening13Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-block-opening-13-figure.jpg";
+// ch01-t03-block-slide-2's figure (PR E) reuses the topic's own existing,
+// already-designed, already-approved-internal SVG asset
+// (ch01-t03-visual-001.svg — the same file imported `?raw` above for the
+// topic-singular visualReference record) as a per-slide embedded figure.
+// A second, plain (non-`?raw`) import of the identical file is required
+// here because the two use cases need different Vite outputs: `?raw`
+// yields the raw markup string (topic overview), while a plain import
+// yields the build-time-hashed asset URL a real `<img src>` needs (slide
+// figure) — see this map's own header comment above.
+import ch01t03BlockSlide2Figure from "../../../../docs/content-design/chapter-01/pilot/visuals/ch01-t03-visual-001.svg";
 
 import type { PilotTopicId } from "../types/pilotSchema";
 import { mergeEnglishAndArabicTopicFile } from "./batch1Merge";
@@ -151,4 +161,5 @@ export const RAW_FIGURE_URL_BY_BLOCK_ID: Record<string, string> = {
   "ch01-t01-block-opening-4": ch01t01BlockOpening4Figure,
   "ch01-t01-block-opening-5": ch01t01BlockOpening5Figure,
   "ch01-t01-block-opening-13": ch01t01BlockOpening13Figure,
+  "ch01-t03-block-slide-2": ch01t03BlockSlide2Figure,
 };

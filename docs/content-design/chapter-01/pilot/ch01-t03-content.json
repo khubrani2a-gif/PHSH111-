@@ -234,6 +234,999 @@
     {
       "recordType": "contentBlock",
       "record": {
+        "blockId": "ch01-t03-block-slide-1",
+        "blockType": "slide",
+        "slideNumber": 1,
+        "slideTitleEn": "Why Must We Define the Repeating Process Before Measuring It?",
+        "slideTitleAr": "لماذا يجب تحديد العملية المتكررة قبل قياسها؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Time tells us how long something takes, but timing a repeating process meaningfully requires one more step: agreeing on exactly what one repetition of that process looks like before any clock starts running.\n\nMain Idea: before period or frequency can be measured for any repeating process, that process must be named and one complete cycle of it must be clearly defined — skipping this step makes any measurement of “how fast” or “how long” ambiguous.\n\nStep 1 — Identify the process that is repeating\n* Name the specific object or event that repeats, such as a swinging pendulum, a blinking light, or a rotating fan blade.\n* A vague phrase like “how often it repeats” is not enough without naming what “it” is.\n\nStep 2 — State what counts as one repetition\n* Decide exactly what has to happen for one repetition to be complete.\n* Different observers timing the same process without agreeing on this can get very different answers.\n\nStep 3 — Only then start timing\n* Once the process and one complete cycle are both defined, a clock can be used to measure how long that cycle takes, or how many cycles happen per second.\n* Timing before this step is defined produces a number that cannot be trusted.\n\nSimple Example: two students are asked to time “one blink” of a blinking light. One student starts timing when the light turns on and stops when it turns on again; the other stops as soon as the light turns off. Without agreeing on what counts as one complete blink cycle, their two stopwatch readings will not match, even though they timed the same light.\n\nMisconception: some students assume that “repeating” is enough information to start measuring, and that the timing itself will reveal what one cycle means. Correction: the definition of one complete cycle must come first, from the process itself — the clock cannot supply that definition.\n\nScientific Note: this requirement applies to every periodic process used in this topic, from a mechanical pendulum to an electrical signal — the naming-and-defining step is not a formality, it is the reason two people watching the same repeating process can otherwise disagree about how fast it is.\n\nKey Concept: a repeating process must be named, and one complete cycle of it must be defined, before period or frequency can be measured.\n\nConnection to the Next Slide: next, we define precisely what “one complete cycle” means, using a concrete example.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يخبرنا الزمن بمدة استغراق أمر ما، لكن قياس زمن عملية متكررة بمعنى واضح يتطلب خطوة إضافية: الاتفاق على الشكل الدقيق لتكرار واحد من تلك العملية قبل أن تبدأ أي ساعة بالعدّ.\n\nالفكرة الرئيسية: قبل أن يمكن قياس الدور أو التردد لأي عملية متكررة، يجب تسمية تلك العملية وتحديد معنى دورة كاملة واحدة منها بوضوح — وتجاوز هذه الخطوة يجعل أي قياس لـ\"مدى السرعة\" أو \"المدة\" غامضًا.\n\nالخطوة 1 — حدّد العملية المتكررة\n* سمِّ الجسم أو الحدث المحدد الذي يتكرر، مثل بندول متأرجح، أو ضوء وامض، أو ريشة مروحة دوارة.\n* عبارة غامضة مثل \"عدد مرات تكرارها\" لا تكفي دون تسمية ما هو \"هي\".\n\nالخطوة 2 — حدّد ما الذي يُعدّ تكرارًا واحدًا\n* قرّر بدقة ما الذي يجب أن يحدث حتى يكتمل تكرار واحد.\n* قد يحصل مراقبون مختلفون يقيسون زمن العملية نفسها دون الاتفاق على هذا على إجابات مختلفة جدًا.\n\nالخطوة 3 — ابدأ القياس عندئذٍ فقط\n* بمجرد تحديد العملية ومعنى الدورة الكاملة الواحدة معًا، يمكن استخدام ساعة لقياس المدة التي تستغرقها تلك الدورة، أو عدد الدورات التي تحدث في الثانية.\n* القياس قبل تحديد هذه الخطوة ينتج رقمًا لا يمكن الوثوق به.\n\nمثال بسيط: طُلب من طالبين قياس زمن \"ومضة واحدة\" لضوء وامض. بدأ أحدهما القياس عند إضاءة الضوء وأوقفه عند إضاءته مرة أخرى؛ بينما أوقف الآخر القياس فور انطفاء الضوء. دون الاتفاق على ما يُعدّ دورة ومض كاملة واحدة، لن تتطابق قراءتا ساعتيهما، رغم أنهما قاسا الضوء نفسه.\n\nمفهوم خاطئ: يفترض بعض الطلاب أن \"التكرار\" وحده معلومة كافية لبدء القياس، وأن القياس نفسه سيكشف معنى الدورة الواحدة. التصحيح: يجب أن يأتي تعريف الدورة الكاملة الواحدة أولًا، من العملية نفسها — فالساعة لا يمكنها توفير ذلك التعريف.\n\nملاحظة علمية: ينطبق هذا الشرط على كل عملية دورية تُستخدم في هذا الموضوع، من بندول ميكانيكي إلى إشارة كهربائية — فخطوة التسمية والتحديد ليست شكلية، بل هي السبب في أن شخصين يراقبان العملية المتكررة نفسها قد يختلفان مع ذلك حول مدى سرعتها.\n\nالمفهوم الأساسي: يجب تسمية العملية المتكررة، وتحديد معنى دورة كاملة واحدة منها، قبل أن يمكن قياس الدور أو التردد.\n\nالصلة بالشريحة التالية: في الشريحة التالية، سنحدد بدقة معنى \"دورة كاملة واحدة\"، باستخدام مثال ملموس.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Time",
+            "definition": "The physical quantity that measures the duration between events or the interval over which something happens."
+          },
+          {
+            "term": "Periodic Process",
+            "definition": "A named, repeating physical process whose repetitions can be counted, such as a swinging pendulum or a rotating wheel."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "الزمن",
+            "definition": "الكمية الفيزيائية التي تقيس المدة الفاصلة بين حدثين أو الفترة التي يستغرقها حدوث أمر ما."
+          },
+          {
+            "term": "العملية الدورية",
+            "definition": "عملية فيزيائية متكررة ومُسمّاة يمكن عدّ تكراراتها، مثل بندول متأرجح أو عجلة دوّارة."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يخبرنا الزمن بمدة استغراق أمر ما، لكن قياس زمن عملية متكررة بمعنى واضح يتطلب خطوة إضافية: الاتفاق على الشكل الدقيق لتكرار واحد من تلك العملية قبل أن تبدأ أي ساعة بالعدّ.\n\nالفكرة الرئيسية: قبل أن يمكن قياس الدور أو التردد لأي عملية متكررة، يجب تسمية تلك العملية وتحديد معنى دورة كاملة واحدة منها بوضوح — وتجاوز هذه الخطوة يجعل أي قياس لـ\"مدى السرعة\" أو \"المدة\" غامضًا.\n\nالخطوة 1 — حدّد العملية المتكررة\n* سمِّ الجسم أو الحدث المحدد الذي يتكرر، مثل بندول متأرجح، أو ضوء وامض، أو ريشة مروحة دوارة.\n* عبارة غامضة مثل \"عدد مرات تكرارها\" لا تكفي دون تسمية ما هو \"هي\".\n\nالخطوة 2 — حدّد ما الذي يُعدّ تكرارًا واحدًا\n* قرّر بدقة ما الذي يجب أن يحدث حتى يكتمل تكرار واحد.\n* قد يحصل مراقبون مختلفون يقيسون زمن العملية نفسها دون الاتفاق على هذا على إجابات مختلفة جدًا.\n\nالخطوة 3 — ابدأ القياس عندئذٍ فقط\n* بمجرد تحديد العملية ومعنى الدورة الكاملة الواحدة معًا، يمكن استخدام ساعة لقياس المدة التي تستغرقها تلك الدورة، أو عدد الدورات التي تحدث في الثانية.\n* القياس قبل تحديد هذه الخطوة ينتج رقمًا لا يمكن الوثوق به.\n\nمثال بسيط: طُلب من طالبين قياس زمن \"ومضة واحدة\" لضوء وامض. بدأ أحدهما القياس عند إضاءة الضوء وأوقفه عند إضاءته مرة أخرى؛ بينما أوقف الآخر القياس فور انطفاء الضوء. دون الاتفاق على ما يُعدّ دورة ومض كاملة واحدة، لن تتطابق قراءتا ساعتيهما، رغم أنهما قاسا الضوء نفسه.\n\nمفهوم خاطئ: يفترض بعض الطلاب أن \"التكرار\" وحده معلومة كافية لبدء القياس، وأن القياس نفسه سيكشف معنى الدورة الواحدة. التصحيح: يجب أن يأتي تعريف الدورة الكاملة الواحدة أولًا، من العملية نفسها — فالساعة لا يمكنها توفير ذلك التعريف.\n\nملاحظة علمية: ينطبق هذا الشرط على كل عملية دورية تُستخدم في هذا الموضوع، من بندول ميكانيكي إلى إشارة كهربائية — فخطوة التسمية والتحديد ليست شكلية، بل هي السبب في أن شخصين يراقبان العملية المتكررة نفسها قد يختلفان مع ذلك حول مدى سرعتها.\n\nالمفهوم الأساسي: يجب تسمية العملية المتكررة، وتحديد معنى دورة كاملة واحدة منها، قبل أن يمكن قياس الدور أو التردد.\n\nالصلة بالشريحة التالية: في الشريحة التالية، سنحدد بدقة معنى \"دورة كاملة واحدة\"، باستخدام مثال ملموس.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-1",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 1 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-2",
+        "blockType": "slide",
+        "slideNumber": 2,
+        "slideTitleEn": "What Counts as One Complete Cycle?",
+        "slideTitleAr": "ما الذي يُعدّ دورة كاملة واحدة؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A complete cycle is the exact portion of a repeating process that, once finished, brings the system back to where it started — in both position and direction of motion.\n\nMain Idea: one complete cycle is finished only when a repeating process returns to its starting state — the same position and the same direction of motion — not merely when it looks similar partway through.\n\nStep 1 — Pick a clear starting state\n* Choose an easily recognizable instant to call the start of the cycle, such as a pendulum at its highest point moving to the right.\n* Any repeatable, identifiable instant works, as long as it is stated clearly.\n\nStep 2 — Track the process until it truly returns\n* Follow the process until it comes back to that exact same position.\n* Confirm the direction of motion also matches the start — arriving at the same position while moving the opposite way is not the end of the cycle yet.\n\nStep 3 — Recognize a half cycle is not a full cycle\n* A process often passes through a position that looks like the start, moving the opposite direction, at the halfway point of the cycle.\n* This halfway point marks half of one complete cycle, not a full cycle by itself.\n\nSimple Example: a rotating disk carries a marked dot. At t = 0 the dot is at the top of the disk, moving to the right. Halfway through one rotation (t = T/2), the dot reaches the bottom of the disk — moving to the left, not matching the starting direction, so this is only half of one cycle. Only when the dot returns to the top of the disk moving to the right again (t = T) has one complete cycle finished.\n\nFigure Explanation: the diagram shows the same rotating dot at three instants — the start (t = 0), the halfway point (t = T/2), and the return to the start (t = T) — with a timeline marking all three. The dot's position and direction of motion match only at t = 0 and t = T, which is exactly why those two instants bound one complete cycle.\n\nMisconception: some students count the halfway point as a full cycle simply because the disk has already gone “all the way around” on one side. Correction: a full cycle requires returning to both the same position and the same direction of motion — the halfway point matches neither.\n\nScientific Note: this definition of a complete cycle applies to every kind of periodic motion this course discusses — back-and-forth motion and rotational motion alike — the deciding test is always whether both position and direction of motion have returned to their starting values, never how far the process has traveled.\n\nKey Concept: one complete cycle is the process returning to its starting position and starting direction of motion — no earlier point in the motion qualifies.\n\nConnection to the Next Slide: with one complete cycle defined, we can now measure how long that cycle takes — the period.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "الدورة الكاملة هي الجزء المحدد من عملية متكررة الذي يعيد النظام، عند اكتماله، إلى نقطة بدايته — من حيث الموضع واتجاه الحركة معًا.\n\nالفكرة الرئيسية: لا تكتمل دورة واحدة إلا عندما تعود العملية المتكررة إلى حالتها الابتدائية — الموضع نفسه واتجاه الحركة نفسه — لا مجرد الوصول إلى حالة تبدو مشابهة في منتصف الطريق.\n\nالخطوة 1 — اختر حالة بداية واضحة\n* اختر لحظة يسهل التعرّف عليها لتكون بداية الدورة، مثل بندول عند أعلى نقطة له وهو يتحرك نحو اليمين.\n* تصلح أي لحظة قابلة للتكرار والتعرّف عليها، طالما جرى تحديدها بوضوح.\n\nالخطوة 2 — تابع العملية حتى تعود فعلًا\n* تابع العملية حتى تعود إلى الموضع نفسه بالضبط.\n* تأكّد أيضًا من أن اتجاه الحركة يطابق البداية — فالوصول إلى الموضع نفسه أثناء الحركة بالاتجاه المعاكس لا يعني نهاية الدورة بعد.\n\nالخطوة 3 — تنبّه إلى أن نصف الدورة ليس دورة كاملة\n* غالبًا ما تمرّ العملية بموضع يبدو مطابقًا للبداية، لكن بحركة باتجاه معاكس، عند منتصف الدورة.\n* تمثّل نقطة المنتصف هذه نصف دورة كاملة واحدة فقط، لا دورة كاملة بحد ذاتها.\n\nمثال بسيط: يحمل قرص دوّار نقطة موسومة. عند t = 0 تكون النقطة عند أعلى القرص، متحركة نحو اليمين. وفي منتصف دورة كاملة (t = T/2)، تصل النقطة إلى أسفل القرص — متحركة نحو اليسار، أي بعكس اتجاه البداية، لذا فهذه نصف دورة فقط. ولا تكتمل الدورة الكاملة إلا عندما تعود النقطة إلى أعلى القرص متحركة نحو اليمين مجددًا (t = T).\n\nشرح الشكل: يُظهر الرسم النقطة الدوّارة نفسها عند ثلاث لحظات — البداية (t = 0)، ومنتصف الدورة (t = T/2)، والعودة إلى البداية (t = T) — مع خط زمني يُحدّد اللحظات الثلاث. يتطابق موضع النقطة واتجاه حركتها فقط عند t = 0 وt = T، وهذا بالضبط سبب كون هاتين اللحظتين تحدّان دورة كاملة واحدة.\n\nمفهوم خاطئ: يعدّ بعض الطلاب نقطة المنتصف دورة كاملة لمجرد أن القرص قد أكمل \"الدوران بالكامل\" من جهة واحدة. التصحيح: تتطلب الدورة الكاملة العودة إلى الموضع نفسه واتجاه الحركة نفسه معًا — ولا تطابق نقطة المنتصف أيًّا منهما.\n\nملاحظة علمية: ينطبق تعريف الدورة الكاملة هذا على كل أنواع الحركة الدورية التي يتناولها هذا المقرر — الحركة ذهابًا وإيابًا والحركة الدورانية على حد سواء — والمعيار الفاصل دائمًا هو ما إذا كان الموضع واتجاه الحركة قد عادا معًا إلى قيمتيهما الابتدائيتين، لا مقدار ما قطعته العملية من مسار.\n\nالمفهوم الأساسي: الدورة الكاملة الواحدة هي عودة العملية إلى موضع بدايتها واتجاه حركتها الابتدائي — ولا تصلح أي نقطة أسبق في الحركة لذلك.\n\nالصلة بالشريحة التالية: بعد تحديد معنى الدورة الكاملة الواحدة، يمكننا الآن قياس المدة التي تستغرقها تلك الدورة — وهي الدور.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Complete Cycle",
+            "definition": "The portion of a repeating process, from a chosen starting state back to that exact same state — same position and same direction of motion."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "الدورة الكاملة",
+            "definition": "الجزء من عملية متكررة، من حالة بداية مختارة وحتى العودة إلى الحالة نفسها بالضبط — الموضع نفسه واتجاه الحركة نفسه."
+          }
+        ],
+        "figureAssetPath": "docs/content-design/chapter-01/pilot/visuals/ch01-t03-visual-001.svg",
+        "figureAltEn": "A dot on a rotating disk shown at three instants: the starting position moving right (t = 0), the halfway point moving left (t = T/2), and the return to the starting position and direction (t = T), illustrating one complete cycle.",
+        "figureAltAr": "نقطة على قرص دوّار مُصوَّرة عند ثلاث لحظات: موضع البداية متحركة نحو اليمين (t = 0)، ونقطة المنتصف متحركة نحو اليسار (t = T/2)، والعودة إلى موضع البداية واتجاهها (t = T)، لتوضيح دورة كاملة واحدة.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "الدورة الكاملة هي الجزء المحدد من عملية متكررة الذي يعيد النظام، عند اكتماله، إلى نقطة بدايته — من حيث الموضع واتجاه الحركة معًا.\n\nالفكرة الرئيسية: لا تكتمل دورة واحدة إلا عندما تعود العملية المتكررة إلى حالتها الابتدائية — الموضع نفسه واتجاه الحركة نفسه — لا مجرد الوصول إلى حالة تبدو مشابهة في منتصف الطريق.\n\nالخطوة 1 — اختر حالة بداية واضحة\n* اختر لحظة يسهل التعرّف عليها لتكون بداية الدورة، مثل بندول عند أعلى نقطة له وهو يتحرك نحو اليمين.\n* تصلح أي لحظة قابلة للتكرار والتعرّف عليها، طالما جرى تحديدها بوضوح.\n\nالخطوة 2 — تابع العملية حتى تعود فعلًا\n* تابع العملية حتى تعود إلى الموضع نفسه بالضبط.\n* تأكّد أيضًا من أن اتجاه الحركة يطابق البداية — فالوصول إلى الموضع نفسه أثناء الحركة بالاتجاه المعاكس لا يعني نهاية الدورة بعد.\n\nالخطوة 3 — تنبّه إلى أن نصف الدورة ليس دورة كاملة\n* غالبًا ما تمرّ العملية بموضع يبدو مطابقًا للبداية، لكن بحركة باتجاه معاكس، عند منتصف الدورة.\n* تمثّل نقطة المنتصف هذه نصف دورة كاملة واحدة فقط، لا دورة كاملة بحد ذاتها.\n\nمثال بسيط: يحمل قرص دوّار نقطة موسومة. عند t = 0 تكون النقطة عند أعلى القرص، متحركة نحو اليمين. وفي منتصف دورة كاملة (t = T/2)، تصل النقطة إلى أسفل القرص — متحركة نحو اليسار، أي بعكس اتجاه البداية، لذا فهذه نصف دورة فقط. ولا تكتمل الدورة الكاملة إلا عندما تعود النقطة إلى أعلى القرص متحركة نحو اليمين مجددًا (t = T).\n\nشرح الشكل: يُظهر الرسم النقطة الدوّارة نفسها عند ثلاث لحظات — البداية (t = 0)، ومنتصف الدورة (t = T/2)، والعودة إلى البداية (t = T) — مع خط زمني يُحدّد اللحظات الثلاث. يتطابق موضع النقطة واتجاه حركتها فقط عند t = 0 وt = T، وهذا بالضبط سبب كون هاتين اللحظتين تحدّان دورة كاملة واحدة.\n\nمفهوم خاطئ: يعدّ بعض الطلاب نقطة المنتصف دورة كاملة لمجرد أن القرص قد أكمل \"الدوران بالكامل\" من جهة واحدة. التصحيح: تتطلب الدورة الكاملة العودة إلى الموضع نفسه واتجاه الحركة نفسه معًا — ولا تطابق نقطة المنتصف أيًّا منهما.\n\nملاحظة علمية: ينطبق تعريف الدورة الكاملة هذا على كل أنواع الحركة الدورية التي يتناولها هذا المقرر — الحركة ذهابًا وإيابًا والحركة الدورانية على حد سواء — والمعيار الفاصل دائمًا هو ما إذا كان الموضع واتجاه الحركة قد عادا معًا إلى قيمتيهما الابتدائيتين، لا مقدار ما قطعته العملية من مسار.\n\nالمفهوم الأساسي: الدورة الكاملة الواحدة هي عودة العملية إلى موضع بدايتها واتجاه حركتها الابتدائي — ولا تصلح أي نقطة أسبق في الحركة لذلك.\n\nالصلة بالشريحة التالية: بعد تحديد معنى الدورة الكاملة الواحدة، يمكننا الآن قياس المدة التي تستغرقها تلك الدورة — وهي الدور.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-2",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 2 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-3",
+        "blockType": "slide",
+        "slideNumber": 3,
+        "slideTitleEn": "What Is the Period of a Repeating Process?",
+        "slideTitleAr": "ما هو دور العملية المتكررة؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Once one complete cycle is defined, the period is simply how much time that single cycle takes.\n\nMain Idea: the period, written T, is the time required for one complete cycle of a specified, named periodic process — it is meaningless without first identifying which process and which cycle.\n\nStep 1 — Confirm the cycle is defined\n* Before timing, make sure the process and its one complete cycle (start state to matching return state) are already identified.\n* Skipping this step, as the previous slide showed, makes any resulting number unreliable.\n\nStep 2 — Time from the start of one cycle to its end\n* Start a clock at the beginning of one complete cycle and stop it exactly when that same cycle finishes.\n* The elapsed time on the clock is the period of that process.\n\nStep 3 — Report the period with its unit\n* Period is always reported in units of time — seconds (s) is the standard unit used throughout this course.\n* A period without a time unit is not a complete answer.\n\nSimple Example: a metronome ticks once at the start of each swing and returns to that same tick position and direction every 0.5 s. One complete cycle of the metronome's swing takes 0.5 s, so its period is:\n\nT = 0.5 s\n\nDefinition Explanation: period is not simply “the time for one cycle” in the abstract — it is always the time for one complete cycle of a specific, named process, measured from a clearly identified starting state back to that exact same state.\n\nMisconception: some students report a period without a time unit, or use a fraction of a cycle (like a halfway point) as if it were the full cycle's time. Correction: a period is always a time value with a unit of seconds, measured across one full, correctly defined cycle — never a partial one.\n\nScientific Note: the second is the SI base unit of time, and it is the same second used for a period regardless of what physical process is being timed — a pendulum's period and a metronome's period are both reported in exactly the same unit.\n\nKey Concept: the period T is the time required for one complete cycle of a named periodic process, always reported in seconds.\n\nConnection to the Next Slide: next, we define the complementary quantity — frequency — which counts cycles instead of timing one.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "بمجرد تحديد معنى دورة كاملة واحدة، يكون الدور ببساطة هو المدة التي تستغرقها تلك الدورة الواحدة.\n\nالفكرة الرئيسية: الدور، ويُرمز له بـ T، هو الزمن اللازم لدورة كاملة واحدة من عملية دورية محددة ومُسمّاة — وهو بلا معنى دون تحديد العملية والدورة أولًا.\n\nالخطوة 1 — تأكّد من تحديد الدورة\n* قبل القياس، تأكّد من أن العملية ودورتها الكاملة الواحدة (من حالة البداية وحتى حالة العودة المطابقة) قد حُدّدتا مسبقًا.\n* تجاوز هذه الخطوة، كما أوضحت الشريحة السابقة، يجعل أي رقم ناتج غير موثوق.\n\nالخطوة 2 — قِس الزمن من بداية دورة واحدة حتى نهايتها\n* ابدأ تشغيل الساعة عند بداية دورة كاملة واحدة، وأوقفها بالضبط عند انتهاء تلك الدورة نفسها.\n* الزمن المنقضي على الساعة هو دور تلك العملية.\n\nالخطوة 3 — اذكر الدور مع وحدته\n* يُذكر الدور دائمًا بوحدة زمن — والثانية (s) هي الوحدة المعيارية المستخدمة طوال هذا المقرر.\n* الدور دون وحدة زمن ليس إجابة كاملة.\n\nمثال بسيط: يصدر مترونوم نقرة عند بداية كل تأرجح ويعود إلى موضع النقرة نفسه واتجاهه نفسه كل 0.5 s. تستغرق دورة كاملة واحدة من تأرجح المترونوم 0.5 s، لذا فإن دوره هو:\n\nT = 0.5 s\n\nشرح التعريف: الدور ليس ببساطة \"زمن دورة واحدة\" بمعناه المجرد — بل هو دائمًا زمن دورة كاملة واحدة من عملية محددة ومُسمّاة، يُقاس من حالة بداية محددة بوضوح وحتى العودة إلى تلك الحالة نفسها بالضبط.\n\nمفهوم خاطئ: يذكر بعض الطلاب الدور دون وحدة زمن، أو يستخدمون جزءًا من الدورة (كنقطة المنتصف) كما لو كان زمن الدورة الكاملة. التصحيح: الدور هو دائمًا قيمة زمنية بوحدة الثانية، تُقاس عبر دورة كاملة محددة بشكل صحيح — لا دورة جزئية أبدًا.\n\nملاحظة علمية: الثانية هي وحدة الزمن الأساسية في النظام الدولي، وهي الثانية نفسها المستخدمة للدور بغض النظر عن العملية الفيزيائية التي تُقاس — فدور بندول ودور مترونوم يُذكران بالوحدة نفسها تمامًا.\n\nالمفهوم الأساسي: الدور T هو الزمن اللازم لدورة كاملة واحدة من عملية دورية مُسمّاة، ويُذكر دائمًا بالثانية.\n\nالصلة بالشريحة التالية: في الشريحة التالية، نُعرّف الكمية المكمّلة — التردد — التي تعدّ الدورات بدلًا من توقيت دورة واحدة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Period",
+            "definition": "The time required for one complete cycle of a named periodic process."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "الدور",
+            "definition": "الزمن اللازم لدورة كاملة واحدة من عملية دورية مُسمّاة."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "بمجرد تحديد معنى دورة كاملة واحدة، يكون الدور ببساطة هو المدة التي تستغرقها تلك الدورة الواحدة.\n\nالفكرة الرئيسية: الدور، ويُرمز له بـ T، هو الزمن اللازم لدورة كاملة واحدة من عملية دورية محددة ومُسمّاة — وهو بلا معنى دون تحديد العملية والدورة أولًا.\n\nالخطوة 1 — تأكّد من تحديد الدورة\n* قبل القياس، تأكّد من أن العملية ودورتها الكاملة الواحدة (من حالة البداية وحتى حالة العودة المطابقة) قد حُدّدتا مسبقًا.\n* تجاوز هذه الخطوة، كما أوضحت الشريحة السابقة، يجعل أي رقم ناتج غير موثوق.\n\nالخطوة 2 — قِس الزمن من بداية دورة واحدة حتى نهايتها\n* ابدأ تشغيل الساعة عند بداية دورة كاملة واحدة، وأوقفها بالضبط عند انتهاء تلك الدورة نفسها.\n* الزمن المنقضي على الساعة هو دور تلك العملية.\n\nالخطوة 3 — اذكر الدور مع وحدته\n* يُذكر الدور دائمًا بوحدة زمن — والثانية (s) هي الوحدة المعيارية المستخدمة طوال هذا المقرر.\n* الدور دون وحدة زمن ليس إجابة كاملة.\n\nمثال بسيط: يصدر مترونوم نقرة عند بداية كل تأرجح ويعود إلى موضع النقرة نفسه واتجاهه نفسه كل 0.5 s. تستغرق دورة كاملة واحدة من تأرجح المترونوم 0.5 s، لذا فإن دوره هو:\n\nT = 0.5 s\n\nشرح التعريف: الدور ليس ببساطة \"زمن دورة واحدة\" بمعناه المجرد — بل هو دائمًا زمن دورة كاملة واحدة من عملية محددة ومُسمّاة، يُقاس من حالة بداية محددة بوضوح وحتى العودة إلى تلك الحالة نفسها بالضبط.\n\nمفهوم خاطئ: يذكر بعض الطلاب الدور دون وحدة زمن، أو يستخدمون جزءًا من الدورة (كنقطة المنتصف) كما لو كان زمن الدورة الكاملة. التصحيح: الدور هو دائمًا قيمة زمنية بوحدة الثانية، تُقاس عبر دورة كاملة محددة بشكل صحيح — لا دورة جزئية أبدًا.\n\nملاحظة علمية: الثانية هي وحدة الزمن الأساسية في النظام الدولي، وهي الثانية نفسها المستخدمة للدور بغض النظر عن العملية الفيزيائية التي تُقاس — فدور بندول ودور مترونوم يُذكران بالوحدة نفسها تمامًا.\n\nالمفهوم الأساسي: الدور T هو الزمن اللازم لدورة كاملة واحدة من عملية دورية مُسمّاة، ويُذكر دائمًا بالثانية.\n\nالصلة بالشريحة التالية: في الشريحة التالية، نُعرّف الكمية المكمّلة — التردد — التي تعدّ الدورات بدلًا من توقيت دورة واحدة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-3",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 3 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-4",
+        "blockType": "slide",
+        "slideNumber": 4,
+        "slideTitleEn": "What Is Frequency, and What Does One Hertz Mean?",
+        "slideTitleAr": "ما هو التردد، وماذا يعني الهرتز الواحد؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Frequency answers a different question than period: not “how long does one cycle take,” but “how many complete cycles happen every second.”\n\nMain Idea: frequency, written f, is the number of complete cycles of a named periodic process that occur per unit time — conventionally, per second — and is measured in hertz (Hz).\n\nStep 1 — Confirm the cycle is defined\n* As with period, frequency only makes sense once the process and one complete cycle are clearly identified.\n* The same cycle definition used for period is used for frequency — they describe the same repeating process from two different angles.\n\nStep 2 — Count how many complete cycles occur in one second\n* Frequency counts complete cycles per second, not partial cycles.\n* A process that completes many cycles in one second has a high frequency; one that completes few has a low frequency.\n\nStep 3 — Report frequency in hertz\n* One hertz (1 Hz) means exactly one complete cycle per second.\n* A frequency without the unit hertz is not a complete answer, and hertz is never used to report a period.\n\nSimple Example: a blinking light completes exactly 2 full on-off cycles every second. Its frequency is:\n\nf = 2.0 Hz\n\nTable Explanation: the table lines up period and frequency side by side — period is the time per single cycle (unit: seconds), while frequency is the count of cycles per second (unit: hertz) — the same repeating process described two complementary ways.\n\nMisconception: some students report frequency in seconds, treating it like a time value. Correction: frequency is always reported in hertz, a count of cycles per second — seconds is exclusively the unit for period.\n\nScientific Note: 1 Hz is defined as exactly 1 complete cycle per second for any periodic process — the same unit is used whether the repeating process is mechanical, like a rotating fan blade, or electrical, like an oscillating signal.\n\nKey Concept: frequency f is the number of complete cycles per second, measured in hertz, where 1 Hz means exactly one complete cycle per second.\n\nConnection to the Next Slide: with both period and frequency now defined, the next slide shows exactly how they relate to each other.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يجيب التردد عن سؤال مختلف عن سؤال الدور: ليس \"كم تستغرق دورة واحدة\"، بل \"كم عدد الدورات الكاملة التي تحدث كل ثانية\".\n\nالفكرة الرئيسية: التردد، ويُرمز له بـ f، هو عدد الدورات الكاملة لعملية دورية مُسمّاة التي تحدث في وحدة الزمن — وهي عادةً الثانية — ويُقاس بالهرتز (Hz).\n\nالخطوة 1 — تأكّد من تحديد الدورة\n* كما هو الحال مع الدور، لا يكون للتردد معنى إلا بعد تحديد العملية ودورتها الكاملة الواحدة بوضوح.\n* يُستخدم تعريف الدورة نفسه المستخدم للدور من أجل التردد — فكلاهما يصف العملية المتكررة نفسها من زاويتين مختلفتين.\n\nالخطوة 2 — عُدّ عدد الدورات الكاملة التي تحدث في ثانية واحدة\n* يعدّ التردد الدورات الكاملة في الثانية، لا الدورات الجزئية.\n* العملية التي تُكمل دورات كثيرة في ثانية واحدة لها تردد مرتفع؛ والتي تُكمل دورات قليلة لها تردد منخفض.\n\nالخطوة 3 — اذكر التردد بالهرتز\n* يعني الهرتز الواحد (1 Hz) بالضبط دورة كاملة واحدة في الثانية.\n* التردد دون وحدة الهرتز ليس إجابة كاملة، ولا يُستخدم الهرتز مطلقًا لذكر الدور.\n\nمثال بسيط: يُكمل ضوء وامض دورتي إضاءة-وإطفاء كاملتين بالضبط كل ثانية. تردده هو:\n\nf = 2.0 Hz\n\nشرح الجدول: يُقارن الجدول الدور والتردد جنبًا إلى جنب — فالدور هو الزمن لكل دورة مفردة (وحدته: الثانية)، بينما التردد هو عدد الدورات في الثانية (وحدته: الهرتز) — إذ يصف كلاهما العملية المتكررة نفسها من طريقتين متكاملتين.\n\nمفهوم خاطئ: يذكر بعض الطلاب التردد بالثانية، معاملين إياه كقيمة زمنية. التصحيح: يُذكر التردد دائمًا بالهرتز، وهو عدّ للدورات في الثانية — أما الثانية فهي وحدة الدور حصريًا.\n\nملاحظة علمية: يُعرَّف 1 Hz بأنه دورة كاملة واحدة بالضبط في الثانية لأي عملية دورية — وتُستخدم الوحدة نفسها سواء كانت العملية المتكررة ميكانيكية، كريشة مروحة دوّارة، أو كهربائية، كإشارة متذبذبة.\n\nالمفهوم الأساسي: التردد f هو عدد الدورات الكاملة في الثانية، ويُقاس بالهرتز، حيث يعني 1 Hz دورة كاملة واحدة بالضبط في الثانية.\n\nالصلة بالشريحة التالية: بعد تعريف كل من الدور والتردد، تُظهر الشريحة التالية كيفية ارتباطهما ببعضهما بدقة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Quantity",
+            "Meaning",
+            "Symbol",
+            "Unit"
+          ],
+          "rows": [
+            [
+              "Period",
+              "Time per complete cycle",
+              "T",
+              "second (s)"
+            ],
+            [
+              "Frequency",
+              "Complete cycles per second",
+              "f",
+              "hertz (Hz)"
+            ]
+          ]
+        },
+        "tableAr": {
+          "headers": [
+            "الكمية",
+            "المعنى",
+            "الرمز",
+            "الوحدة"
+          ],
+          "rows": [
+            [
+              "الدور",
+              "الزمن لكل دورة كاملة",
+              "T",
+              "الثانية (s)"
+            ],
+            [
+              "التردد",
+              "عدد الدورات الكاملة في الثانية",
+              "f",
+              "الهرتز (Hz)"
+            ]
+          ]
+        },
+        "tableCaptionEn": "Period and frequency, side by side",
+        "tableCaptionAr": "الدور والتردد، جنبًا إلى جنب",
+        "definitionsEn": [
+          {
+            "term": "Frequency",
+            "definition": "The number of complete cycles of a periodic process occurring per unit time."
+          },
+          {
+            "term": "Hertz",
+            "definition": "One complete cycle per second; the unit of frequency."
+          }
+        ],
+        "definitionsAr": [
+          {
+            "term": "التردد",
+            "definition": "عدد الدورات الكاملة لعملية دورية تحدث في وحدة الزمن."
+          },
+          {
+            "term": "الهرتز",
+            "definition": "دورة كاملة واحدة في الثانية؛ وحدة قياس التردد."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يجيب التردد عن سؤال مختلف عن سؤال الدور: ليس \"كم تستغرق دورة واحدة\"، بل \"كم عدد الدورات الكاملة التي تحدث كل ثانية\".\n\nالفكرة الرئيسية: التردد، ويُرمز له بـ f، هو عدد الدورات الكاملة لعملية دورية مُسمّاة التي تحدث في وحدة الزمن — وهي عادةً الثانية — ويُقاس بالهرتز (Hz).\n\nالخطوة 1 — تأكّد من تحديد الدورة\n* كما هو الحال مع الدور، لا يكون للتردد معنى إلا بعد تحديد العملية ودورتها الكاملة الواحدة بوضوح.\n* يُستخدم تعريف الدورة نفسه المستخدم للدور من أجل التردد — فكلاهما يصف العملية المتكررة نفسها من زاويتين مختلفتين.\n\nالخطوة 2 — عُدّ عدد الدورات الكاملة التي تحدث في ثانية واحدة\n* يعدّ التردد الدورات الكاملة في الثانية، لا الدورات الجزئية.\n* العملية التي تُكمل دورات كثيرة في ثانية واحدة لها تردد مرتفع؛ والتي تُكمل دورات قليلة لها تردد منخفض.\n\nالخطوة 3 — اذكر التردد بالهرتز\n* يعني الهرتز الواحد (1 Hz) بالضبط دورة كاملة واحدة في الثانية.\n* التردد دون وحدة الهرتز ليس إجابة كاملة، ولا يُستخدم الهرتز مطلقًا لذكر الدور.\n\nمثال بسيط: يُكمل ضوء وامض دورتي إضاءة-وإطفاء كاملتين بالضبط كل ثانية. تردده هو:\n\nf = 2.0 Hz\n\nشرح الجدول: يُقارن الجدول الدور والتردد جنبًا إلى جنب — فالدور هو الزمن لكل دورة مفردة (وحدته: الثانية)، بينما التردد هو عدد الدورات في الثانية (وحدته: الهرتز) — إذ يصف كلاهما العملية المتكررة نفسها من طريقتين متكاملتين.\n\nمفهوم خاطئ: يذكر بعض الطلاب التردد بالثانية، معاملين إياه كقيمة زمنية. التصحيح: يُذكر التردد دائمًا بالهرتز، وهو عدّ للدورات في الثانية — أما الثانية فهي وحدة الدور حصريًا.\n\nملاحظة علمية: يُعرَّف 1 Hz بأنه دورة كاملة واحدة بالضبط في الثانية لأي عملية دورية — وتُستخدم الوحدة نفسها سواء كانت العملية المتكررة ميكانيكية، كريشة مروحة دوّارة، أو كهربائية، كإشارة متذبذبة.\n\nالمفهوم الأساسي: التردد f هو عدد الدورات الكاملة في الثانية، ويُقاس بالهرتز، حيث يعني 1 Hz دورة كاملة واحدة بالضبط في الثانية.\n\nالصلة بالشريحة التالية: بعد تعريف كل من الدور والتردد، تُظهر الشريحة التالية كيفية ارتباطهما ببعضهما بدقة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-4",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 4 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-5",
+        "blockType": "slide",
+        "slideNumber": 5,
+        "slideTitleEn": "How Are Period and Frequency Related?",
+        "slideTitleAr": "كيف يرتبط الدور بالتردد؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Period and frequency describe the same repeating process, so they cannot vary independently — once one is known, the other follows directly.\n\nMain Idea: period and frequency are reciprocals of each other — f = 1/T and T = 1/f — but only once one complete cycle has already been defined for the process being described.\n\nStep 1 — See that they describe the same cycle two ways\n* Period is the time per cycle; frequency is the number of cycles per unit time — both describe the exact same repeating cycle, just measured from opposite directions.\n* Neither quantity can be found without the other's underlying cycle being defined first.\n\nStep 2 — Move from time-per-cycle to cycles-per-second\n* If one cycle takes less time, more cycles fit into each second — so frequency increases as period decreases.\n* If one cycle takes more time, fewer cycles fit into each second — so frequency decreases as period increases.\n\nStep 3 — Write the reciprocal relationship\n* Frequency is the reciprocal of period: f = 1/T.\n* Period is the reciprocal of frequency: T = 1/f.\n\nSimple Example: a rotating fan blade completes one full rotation every 0.20 s. Its frequency is:\n\nf = 1/T = 1/0.20 s = 5.0 Hz\n\nRelationship Explanation: because one cycle taking less time allows more cycles to fit into each second, and one cycle taking more time allows fewer cycles to fit into each second, period and frequency always change in opposite directions — this is an inverse (reciprocal) relationship, not a direct one. Doubling the period always halves the frequency, and doubling the frequency always halves the period.\n\nMisconception: some students treat period and frequency as if they increase and decrease together, or write f = T. Correction: f = 1/T and T = 1/f — they are reciprocals, so one grows only as the other shrinks, never both together.\n\nScientific Note: this reciprocal relationship holds for every periodic process without exception, once one complete cycle has been correctly defined — it is a mathematical consequence of what period and frequency each measure, not a rule specific to any one kind of motion.\n\nKey Concept: period and frequency are reciprocals of each other (f = 1/T, T = 1/f), so they always change in opposite directions.\n\nConnection to the Next Slide: next, we practice calculating frequency directly from a given period.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يصف الدور والتردد العملية المتكررة نفسها، لذا لا يمكن أن يتغيّرا باستقلالية عن بعضهما — فبمجرد معرفة أحدهما، تُستنتج قيمة الآخر مباشرة.\n\nالفكرة الرئيسية: الدور والتردد مقلوبان لبعضهما البعض — f = 1/T وT = 1/f — لكن فقط بعد أن تكون الدورة الكاملة الواحدة قد حُدّدت مسبقًا للعملية المعنية.\n\nالخطوة 1 — لاحظ أنهما يصفان الدورة نفسها بطريقتين\n* الدور هو الزمن لكل دورة؛ والتردد هو عدد الدورات في وحدة الزمن — يصف كلاهما الدورة المتكررة نفسها بالضبط، لكن من اتجاهين متعاكسين.\n* لا يمكن إيجاد أي من الكميتين دون تحديد الدورة الأساسية للأخرى أولًا.\n\nالخطوة 2 — انتقل من الزمن-لكل-دورة إلى الدورات-في-الثانية\n* إذا استغرقت الدورة الواحدة زمنًا أقل، تتّسع كل ثانية لعدد أكبر من الدورات — فيزداد التردد كلما قلّ الدور.\n* إذا استغرقت الدورة الواحدة زمنًا أكبر، تتّسع كل ثانية لعدد أقل من الدورات — فيقلّ التردد كلما زاد الدور.\n\nالخطوة 3 — اكتب العلاقة العكسية (المقلوبة)\n* التردد هو مقلوب الدور: f = 1/T.\n* الدور هو مقلوب التردد: T = 1/f.\n\nمثال بسيط: تُكمل ريشة مروحة دوّارة دورة كاملة واحدة كل 0.20 s. تردّدها هو:\n\nf = 1/T = 1/0.20 s = 5.0 Hz\n\nشرح العلاقة: بما أن استغراق الدورة الواحدة زمنًا أقل يتيح اتساع كل ثانية لعدد أكبر من الدورات، واستغراقها زمنًا أكبر يقلّل عدد الدورات التي تتّسع لها كل ثانية، فإن الدور والتردد يتغيّران دائمًا في اتجاهين متعاكسين — وهذه علاقة عكسية (مقلوبة)، لا علاقة طردية. مضاعفة الدور تُنصّف التردد دائمًا، ومضاعفة التردد تُنصّف الدور دائمًا.\n\nمفهوم خاطئ: يتعامل بعض الطلاب مع الدور والتردد كما لو كانا يزدادان وينقصان معًا، أو يكتبون f = T. التصحيح: f = 1/T وT = 1/f — فهما مقلوبان لبعضهما، لذا يزداد أحدهما فقط بقدر ما ينقص الآخر، لا أن يزدادا معًا أبدًا.\n\nملاحظة علمية: تصحّ هذه العلاقة العكسية لكل عملية دورية دون استثناء، بمجرد تحديد دورة كاملة واحدة بشكل صحيح — فهي نتيجة رياضية لما يقيسه كل من الدور والتردد، لا قاعدة خاصة بنوع معيّن من الحركة.\n\nالمفهوم الأساسي: الدور والتردد مقلوبان لبعضهما البعض (f = 1/T، T = 1/f)، لذا يتغيّران دائمًا في اتجاهين متعاكسين.\n\nالصلة بالشريحة التالية: في الشريحة التالية، نتدرّب على حساب التردد مباشرة من دور معطى.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يصف الدور والتردد العملية المتكررة نفسها، لذا لا يمكن أن يتغيّرا باستقلالية عن بعضهما — فبمجرد معرفة أحدهما، تُستنتج قيمة الآخر مباشرة.\n\nالفكرة الرئيسية: الدور والتردد مقلوبان لبعضهما البعض — f = 1/T وT = 1/f — لكن فقط بعد أن تكون الدورة الكاملة الواحدة قد حُدّدت مسبقًا للعملية المعنية.\n\nالخطوة 1 — لاحظ أنهما يصفان الدورة نفسها بطريقتين\n* الدور هو الزمن لكل دورة؛ والتردد هو عدد الدورات في وحدة الزمن — يصف كلاهما الدورة المتكررة نفسها بالضبط، لكن من اتجاهين متعاكسين.\n* لا يمكن إيجاد أي من الكميتين دون تحديد الدورة الأساسية للأخرى أولًا.\n\nالخطوة 2 — انتقل من الزمن-لكل-دورة إلى الدورات-في-الثانية\n* إذا استغرقت الدورة الواحدة زمنًا أقل، تتّسع كل ثانية لعدد أكبر من الدورات — فيزداد التردد كلما قلّ الدور.\n* إذا استغرقت الدورة الواحدة زمنًا أكبر، تتّسع كل ثانية لعدد أقل من الدورات — فيقلّ التردد كلما زاد الدور.\n\nالخطوة 3 — اكتب العلاقة العكسية (المقلوبة)\n* التردد هو مقلوب الدور: f = 1/T.\n* الدور هو مقلوب التردد: T = 1/f.\n\nمثال بسيط: تُكمل ريشة مروحة دوّارة دورة كاملة واحدة كل 0.20 s. تردّدها هو:\n\nf = 1/T = 1/0.20 s = 5.0 Hz\n\nشرح العلاقة: بما أن استغراق الدورة الواحدة زمنًا أقل يتيح اتساع كل ثانية لعدد أكبر من الدورات، واستغراقها زمنًا أكبر يقلّل عدد الدورات التي تتّسع لها كل ثانية، فإن الدور والتردد يتغيّران دائمًا في اتجاهين متعاكسين — وهذه علاقة عكسية (مقلوبة)، لا علاقة طردية. مضاعفة الدور تُنصّف التردد دائمًا، ومضاعفة التردد تُنصّف الدور دائمًا.\n\nمفهوم خاطئ: يتعامل بعض الطلاب مع الدور والتردد كما لو كانا يزدادان وينقصان معًا، أو يكتبون f = T. التصحيح: f = 1/T وT = 1/f — فهما مقلوبان لبعضهما، لذا يزداد أحدهما فقط بقدر ما ينقص الآخر، لا أن يزدادا معًا أبدًا.\n\nملاحظة علمية: تصحّ هذه العلاقة العكسية لكل عملية دورية دون استثناء، بمجرد تحديد دورة كاملة واحدة بشكل صحيح — فهي نتيجة رياضية لما يقيسه كل من الدور والتردد، لا قاعدة خاصة بنوع معيّن من الحركة.\n\nالمفهوم الأساسي: الدور والتردد مقلوبان لبعضهما البعض (f = 1/T، T = 1/f)، لذا يتغيّران دائمًا في اتجاهين متعاكسين.\n\nالصلة بالشريحة التالية: في الشريحة التالية، نتدرّب على حساب التردد مباشرة من دور معطى.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-5",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 5 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-6",
+        "blockType": "slide",
+        "slideNumber": 6,
+        "slideTitleEn": "How Do We Calculate Frequency from Period?",
+        "slideTitleAr": "كيف نحسب التردد من الدور؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Calculating frequency from a known period is a direct application of the reciprocal relationship — take one, divide it by the period.\n\nMain Idea: given a period T for a defined cycle, frequency is found by taking the reciprocal of the period: f = 1/T.\n\nStep 1 — Confirm the period and its unit\n* Make sure the period is expressed in seconds, and that it refers to one correctly defined complete cycle.\n* An unclear or partial-cycle period will produce an incorrect frequency.\n\nStep 2 — Apply the reciprocal\n* Divide 1 by the period value to get the frequency.\n* Keep the unit attached throughout — dividing 1 by a value in seconds produces a result in 1/seconds, which is hertz.\n\nStep 3 — Report the result in hertz\n* State the final frequency value together with the unit Hz.\n* Check that the size of the answer makes sense: a small period should give a large frequency, and vice versa.\n\nSimple Example: a swinging pendulum has a period of T = 0.50 s. Its frequency is:\n\nf = 1/(0.50 s) = 2.0 Hz\n\nMisconception: some students multiply the period by a number instead of taking its reciprocal, or forget to convert the result to hertz. Correction: frequency is found only by taking 1 divided by the period — never by multiplying or by simply relabeling the period's number.\n\nScientific Note: this reciprocal calculation works identically no matter what the periodic process is — a pendulum, a rotating wheel, or an electrical oscillation — as long as the period refers to one correctly defined complete cycle.\n\nKey Concept: frequency is found from a known period using f = 1/T, with the result always reported in hertz.\n\nConnection to the Next Slide: next, we reverse the calculation — finding period from a known frequency.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "حساب التردد من دور معلوم هو تطبيق مباشر للعلاقة العكسية — خذ واحدًا، واقسمه على الدور.\n\nالفكرة الرئيسية: بمعلومية الدور T لدورة محددة، يُوجد التردد بأخذ مقلوب الدور: f = 1/T.\n\nالخطوة 1 — تأكّد من الدور ووحدته\n* تأكّد من أن الدور معبّر عنه بالثانية، وأنه يشير إلى دورة كاملة واحدة محددة بشكل صحيح.\n* الدور غير الواضح أو الجزئي سينتج ترددًا غير صحيح.\n\nالخطوة 2 — طبّق المقلوب\n* اقسم 1 على قيمة الدور للحصول على التردد.\n* أبقِ الوحدة مرتبطة طوال الحساب — فقسمة 1 على قيمة بالثانية تُنتج نتيجة بوحدة 1/ثانية، وهي الهرتز.\n\nالخطوة 3 — اذكر النتيجة بالهرتز\n* اذكر قيمة التردد النهائية مع وحدة Hz.\n* تحقّق من أن حجم الإجابة منطقي: يجب أن يُعطي الدور الصغير ترددًا كبيرًا، والعكس صحيح.\n\nمثال بسيط: يبلغ دور بندول متأرجح T = 0.50 s. تردده هو:\n\nf = 1/(0.50 s) = 2.0 Hz\n\nمفهوم خاطئ: يضرب بعض الطلاب الدور في رقم بدلًا من أخذ مقلوبه، أو ينسون تحويل النتيجة إلى الهرتز. التصحيح: يُوجد التردد فقط بقسمة 1 على الدور — لا بالضرب أو بمجرد إعادة تسمية رقم الدور.\n\nملاحظة علمية: يعمل هذا الحساب العكسي بالطريقة نفسها بغض النظر عن نوع العملية الدورية — بندول، أو عجلة دوّارة، أو تذبذب كهربائي — طالما أن الدور يشير إلى دورة كاملة واحدة محددة بشكل صحيح.\n\nالمفهوم الأساسي: يُوجد التردد من دور معلوم باستخدام f = 1/T، وتُذكر النتيجة دائمًا بالهرتز.\n\nالصلة بالشريحة التالية: في الشريحة التالية، نعكس الحساب — لإيجاد الدور من تردد معلوم.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "حساب التردد من دور معلوم هو تطبيق مباشر للعلاقة العكسية — خذ واحدًا، واقسمه على الدور.\n\nالفكرة الرئيسية: بمعلومية الدور T لدورة محددة، يُوجد التردد بأخذ مقلوب الدور: f = 1/T.\n\nالخطوة 1 — تأكّد من الدور ووحدته\n* تأكّد من أن الدور معبّر عنه بالثانية، وأنه يشير إلى دورة كاملة واحدة محددة بشكل صحيح.\n* الدور غير الواضح أو الجزئي سينتج ترددًا غير صحيح.\n\nالخطوة 2 — طبّق المقلوب\n* اقسم 1 على قيمة الدور للحصول على التردد.\n* أبقِ الوحدة مرتبطة طوال الحساب — فقسمة 1 على قيمة بالثانية تُنتج نتيجة بوحدة 1/ثانية، وهي الهرتز.\n\nالخطوة 3 — اذكر النتيجة بالهرتز\n* اذكر قيمة التردد النهائية مع وحدة Hz.\n* تحقّق من أن حجم الإجابة منطقي: يجب أن يُعطي الدور الصغير ترددًا كبيرًا، والعكس صحيح.\n\nمثال بسيط: يبلغ دور بندول متأرجح T = 0.50 s. تردده هو:\n\nf = 1/(0.50 s) = 2.0 Hz\n\nمفهوم خاطئ: يضرب بعض الطلاب الدور في رقم بدلًا من أخذ مقلوبه، أو ينسون تحويل النتيجة إلى الهرتز. التصحيح: يُوجد التردد فقط بقسمة 1 على الدور — لا بالضرب أو بمجرد إعادة تسمية رقم الدور.\n\nملاحظة علمية: يعمل هذا الحساب العكسي بالطريقة نفسها بغض النظر عن نوع العملية الدورية — بندول، أو عجلة دوّارة، أو تذبذب كهربائي — طالما أن الدور يشير إلى دورة كاملة واحدة محددة بشكل صحيح.\n\nالمفهوم الأساسي: يُوجد التردد من دور معلوم باستخدام f = 1/T، وتُذكر النتيجة دائمًا بالهرتز.\n\nالصلة بالشريحة التالية: في الشريحة التالية، نعكس الحساب — لإيجاد الدور من تردد معلوم.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-6",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 6 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-7",
+        "blockType": "slide",
+        "slideNumber": 7,
+        "slideTitleEn": "How Do We Calculate Period from Frequency?",
+        "slideTitleAr": "كيف نحسب الدور من التردد؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Finding period from a known frequency uses the exact same reciprocal relationship, applied in the other direction.\n\nMain Idea: given a frequency f for a defined cycle, period is found by taking the reciprocal of the frequency: T = 1/f.\n\nStep 1 — Confirm the frequency and its unit\n* Make sure the frequency is expressed in hertz, and that it refers to complete cycles of a clearly defined process.\n* A frequency in the wrong unit will produce an incorrect period.\n\nStep 2 — Apply the reciprocal\n* Divide 1 by the frequency value to get the period.\n* Keep the unit attached throughout — dividing 1 by a value in hertz (1/seconds) produces a result in seconds.\n\nStep 3 — Report the result in seconds\n* State the final period value together with the unit s.\n* Check that the size of the answer makes sense: a large frequency should give a small period, and vice versa.\n\nSimple Example: a strobe light flashes with a frequency of f = 4.0 Hz. Its period is:\n\nT = 1/(4.0 Hz) = 0.25 s\n\nMisconception: some students report the period in hertz, carrying over the frequency's unit by mistake. Correction: period is always reported in seconds — hertz is exclusively the unit for frequency.\n\nScientific Note: checking that a large frequency gives a small period, and a small frequency gives a large period, is a useful intuitive check that applies to every reciprocal calculation in this topic, not just this one specific example.\n\nKey Concept: period is found from a known frequency using T = 1/f, with the result always reported in seconds.\n\nConnection to the Next Slide: next, we look more closely at why a shorter period always means a higher frequency.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يستخدم إيجاد الدور من تردد معلوم العلاقة العكسية نفسها بالضبط، لكن مطبّقة في الاتجاه الآخر.\n\nالفكرة الرئيسية: بمعلومية التردد f لدورة محددة، يُوجد الدور بأخذ مقلوب التردد: T = 1/f.\n\nالخطوة 1 — تأكّد من التردد ووحدته\n* تأكّد من أن التردد معبّر عنه بالهرتز، وأنه يشير إلى دورات كاملة لعملية محددة بوضوح.\n* التردد بوحدة خاطئة سينتج دورًا غير صحيح.\n\nالخطوة 2 — طبّق المقلوب\n* اقسم 1 على قيمة التردد للحصول على الدور.\n* أبقِ الوحدة مرتبطة طوال الحساب — فقسمة 1 على قيمة بالهرتز (1/ثانية) تُنتج نتيجة بالثانية.\n\nالخطوة 3 — اذكر النتيجة بالثانية\n* اذكر قيمة الدور النهائية مع وحدة s.\n* تحقّق من أن حجم الإجابة منطقي: يجب أن يُعطي التردد الكبير دورًا صغيرًا، والعكس صحيح.\n\nمثال بسيط: يومض ضوء ستروبوسكوبي بتردد f = 4.0 Hz. دوره هو:\n\nT = 1/(4.0 Hz) = 0.25 s\n\nمفهوم خاطئ: يذكر بعض الطلاب الدور بالهرتز، ناقلين وحدة التردد إليه خطأً. التصحيح: يُذكر الدور دائمًا بالثانية — والهرتز وحدة التردد حصريًا.\n\nملاحظة علمية: التحقّق من أن ترددًا كبيرًا يُعطي دورًا صغيرًا، وأن ترددًا صغيرًا يُعطي دورًا كبيرًا، هو تحقّق حدسي مفيد ينطبق على كل حساب عكسي في هذا الموضوع، لا على هذا المثال المحدد فقط.\n\nالمفهوم الأساسي: يُوجد الدور من تردد معلوم باستخدام T = 1/f، وتُذكر النتيجة دائمًا بالثانية.\n\nالصلة بالشريحة التالية: في الشريحة التالية، ننظر عن قرب في سبب أن الدور الأقصر يعني دائمًا ترددًا أعلى.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يستخدم إيجاد الدور من تردد معلوم العلاقة العكسية نفسها بالضبط، لكن مطبّقة في الاتجاه الآخر.\n\nالفكرة الرئيسية: بمعلومية التردد f لدورة محددة، يُوجد الدور بأخذ مقلوب التردد: T = 1/f.\n\nالخطوة 1 — تأكّد من التردد ووحدته\n* تأكّد من أن التردد معبّر عنه بالهرتز، وأنه يشير إلى دورات كاملة لعملية محددة بوضوح.\n* التردد بوحدة خاطئة سينتج دورًا غير صحيح.\n\nالخطوة 2 — طبّق المقلوب\n* اقسم 1 على قيمة التردد للحصول على الدور.\n* أبقِ الوحدة مرتبطة طوال الحساب — فقسمة 1 على قيمة بالهرتز (1/ثانية) تُنتج نتيجة بالثانية.\n\nالخطوة 3 — اذكر النتيجة بالثانية\n* اذكر قيمة الدور النهائية مع وحدة s.\n* تحقّق من أن حجم الإجابة منطقي: يجب أن يُعطي التردد الكبير دورًا صغيرًا، والعكس صحيح.\n\nمثال بسيط: يومض ضوء ستروبوسكوبي بتردد f = 4.0 Hz. دوره هو:\n\nT = 1/(4.0 Hz) = 0.25 s\n\nمفهوم خاطئ: يذكر بعض الطلاب الدور بالهرتز، ناقلين وحدة التردد إليه خطأً. التصحيح: يُذكر الدور دائمًا بالثانية — والهرتز وحدة التردد حصريًا.\n\nملاحظة علمية: التحقّق من أن ترددًا كبيرًا يُعطي دورًا صغيرًا، وأن ترددًا صغيرًا يُعطي دورًا كبيرًا، هو تحقّق حدسي مفيد ينطبق على كل حساب عكسي في هذا الموضوع، لا على هذا المثال المحدد فقط.\n\nالمفهوم الأساسي: يُوجد الدور من تردد معلوم باستخدام T = 1/f، وتُذكر النتيجة دائمًا بالثانية.\n\nالصلة بالشريحة التالية: في الشريحة التالية، ننظر عن قرب في سبب أن الدور الأقصر يعني دائمًا ترددًا أعلى.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-7",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 7 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-8",
+        "blockType": "slide",
+        "slideNumber": 8,
+        "slideTitleEn": "Why Does a Shorter Period Mean a Higher Frequency?",
+        "slideTitleAr": "لماذا يعني الدور الأقصر ترددًا أعلى؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "The reciprocal relationship is not just an algebraic fact — it reflects something intuitive about how repeating processes pack into each second.\n\nMain Idea: a shorter period always means a higher frequency, and a longer period always means a lower frequency, because the number of complete cycles that fit into one second depends directly on how much time each individual cycle takes.\n\nStep 1 — Picture a very short period\n* If one complete cycle takes only a small fraction of a second, many such cycles can fit into a single second.\n* Many cycles per second is, by definition, a high frequency.\n\nStep 2 — Picture a very long period\n* If one complete cycle takes a large fraction of a second (or more than a second), only a few such cycles fit into a single second.\n* Few cycles per second is, by definition, a low frequency.\n\nStep 3 — Compare two contrasting processes\n* A fast-blinking light with a short period completes many blinks per second — a high frequency.\n* A slow-blinking light with a long period completes few blinks per second — a low frequency.\n\nSimple Example: a fast-blinking light has a period of 0.1 s, giving a frequency of:\n\nf = 1/0.1 s = 10 Hz\n\nA slow-blinking light has a period of 2.0 s, giving a frequency of:\n\nf = 1/2.0 s = 0.5 Hz\n\nThe light with the shorter period (0.1 s) has the higher frequency (10 Hz); the light with the longer period (2.0 s) has the lower frequency (0.5 Hz).\n\nRelationship Explanation: shortening a period always increases the number of cycles that can fit into one second, which is exactly what frequency counts — so period and frequency always move in opposite directions for the same process. This inverse relationship holds no matter how large or small the numbers involved are.\n\nMisconception: some students believe a “bigger” period value always means something is happening faster, confusing the size of the period number with the speed of repetition. Correction: a larger period means slower repetition (more time per cycle) — frequency, not period, increases with speed of repetition.\n\nScientific Note: this inverse relationship is why doubling a frequency exactly halves the corresponding period, and doubling a period exactly halves the corresponding frequency — the two quantities are always reciprocals, never directly proportional.\n\nKey Concept: a shorter period always corresponds to a higher frequency, and a longer period always corresponds to a lower frequency, for the same repeating process.\n\nConnection to the Next Slide: next, we look at the most common cycle-counting error that produces an incorrect period and frequency in the first place.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "العلاقة العكسية ليست مجرد حقيقة جبرية — بل تعكس أمرًا بديهيًا حول كيفية احتواء كل ثانية على عدد من العمليات المتكررة.\n\nالفكرة الرئيسية: الدور الأقصر يعني دائمًا ترددًا أعلى، والدور الأطول يعني دائمًا ترددًا أقل، لأن عدد الدورات الكاملة التي تتّسع لها الثانية الواحدة يعتمد مباشرة على المدة التي تستغرقها كل دورة مفردة.\n\nالخطوة 1 — تخيّل دورًا قصيرًا جدًا\n* إذا استغرقت الدورة الكاملة الواحدة جزءًا صغيرًا فقط من الثانية، يمكن أن يتّسع لعدد كبير من هذه الدورات في ثانية واحدة.\n* عدد كبير من الدورات في الثانية يعني، بحكم التعريف، ترددًا مرتفعًا.\n\nالخطوة 2 — تخيّل دورًا طويلًا جدًا\n* إذا استغرقت الدورة الكاملة الواحدة جزءًا كبيرًا من الثانية (أو أكثر من ثانية)، فلن يتّسع في الثانية الواحدة إلا لعدد قليل من هذه الدورات.\n* عدد قليل من الدورات في الثانية يعني، بحكم التعريف، ترددًا منخفضًا.\n\nالخطوة 3 — قارن بين عمليتين متباينتين\n* ضوء يومض بسرعة وله دور قصير يُكمل ومضات كثيرة في الثانية — أي تردد مرتفع.\n* ضوء يومض ببطء وله دور طويل يُكمل ومضات قليلة في الثانية — أي تردد منخفض.\n\nمثال بسيط: ضوء يومض بسرعة له دور مقداره 0.1 s، مما يُعطي ترددًا مقداره:\n\nf = 1/0.1 s = 10 Hz\n\nوضوء يومض ببطء له دور مقداره 2.0 s، مما يُعطي ترددًا مقداره:\n\nf = 1/2.0 s = 0.5 Hz\n\nفالضوء ذو الدور الأقصر (0.1 s) له التردد الأعلى (10 Hz)؛ والضوء ذو الدور الأطول (2.0 s) له التردد الأقل (0.5 Hz).\n\nشرح العلاقة: تقصير الدور يزيد دائمًا عدد الدورات التي يمكن أن تتّسع لها الثانية الواحدة، وهذا بالضبط ما يعدّه التردد — لذا يتحرك الدور والتردد دائمًا في اتجاهين متعاكسين للعملية نفسها. تصحّ هذه العلاقة العكسية بغض النظر عن كِبر الأرقام المعنية أو صِغرها.\n\nمفهوم خاطئ: يظن بعض الطلاب أن قيمة الدور \"الأكبر\" تعني دائمًا أن شيئًا ما يحدث بسرعة أكبر، فيخلطون بين حجم رقم الدور وسرعة التكرار. التصحيح: الدور الأكبر يعني تكرارًا أبطأ (زمنًا أكبر لكل دورة) — والتردد، لا الدور، هو الذي يزداد مع سرعة التكرار.\n\nملاحظة علمية: هذه العلاقة العكسية هي سبب أن مضاعفة التردد تُنصّف الدور المقابل بالضبط، ومضاعفة الدور تُنصّف التردد المقابل بالضبط — فالكميتان مقلوبتان دائمًا لبعضهما، لا متناسبتان طرديًا أبدًا.\n\nالمفهوم الأساسي: الدور الأقصر يقابل دائمًا ترددًا أعلى، والدور الأطول يقابل دائمًا ترددًا أقل، للعملية المتكررة نفسها.\n\nالصلة بالشريحة التالية: في الشريحة التالية، ننظر في أكثر خطأ شيوعًا في عدّ الدورات، والذي يُنتج أصلًا دورًا وترددًا غير صحيحين.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "العلاقة العكسية ليست مجرد حقيقة جبرية — بل تعكس أمرًا بديهيًا حول كيفية احتواء كل ثانية على عدد من العمليات المتكررة.\n\nالفكرة الرئيسية: الدور الأقصر يعني دائمًا ترددًا أعلى، والدور الأطول يعني دائمًا ترددًا أقل، لأن عدد الدورات الكاملة التي تتّسع لها الثانية الواحدة يعتمد مباشرة على المدة التي تستغرقها كل دورة مفردة.\n\nالخطوة 1 — تخيّل دورًا قصيرًا جدًا\n* إذا استغرقت الدورة الكاملة الواحدة جزءًا صغيرًا فقط من الثانية، يمكن أن يتّسع لعدد كبير من هذه الدورات في ثانية واحدة.\n* عدد كبير من الدورات في الثانية يعني، بحكم التعريف، ترددًا مرتفعًا.\n\nالخطوة 2 — تخيّل دورًا طويلًا جدًا\n* إذا استغرقت الدورة الكاملة الواحدة جزءًا كبيرًا من الثانية (أو أكثر من ثانية)، فلن يتّسع في الثانية الواحدة إلا لعدد قليل من هذه الدورات.\n* عدد قليل من الدورات في الثانية يعني، بحكم التعريف، ترددًا منخفضًا.\n\nالخطوة 3 — قارن بين عمليتين متباينتين\n* ضوء يومض بسرعة وله دور قصير يُكمل ومضات كثيرة في الثانية — أي تردد مرتفع.\n* ضوء يومض ببطء وله دور طويل يُكمل ومضات قليلة في الثانية — أي تردد منخفض.\n\nمثال بسيط: ضوء يومض بسرعة له دور مقداره 0.1 s، مما يُعطي ترددًا مقداره:\n\nf = 1/0.1 s = 10 Hz\n\nوضوء يومض ببطء له دور مقداره 2.0 s، مما يُعطي ترددًا مقداره:\n\nf = 1/2.0 s = 0.5 Hz\n\nفالضوء ذو الدور الأقصر (0.1 s) له التردد الأعلى (10 Hz)؛ والضوء ذو الدور الأطول (2.0 s) له التردد الأقل (0.5 Hz).\n\nشرح العلاقة: تقصير الدور يزيد دائمًا عدد الدورات التي يمكن أن تتّسع لها الثانية الواحدة، وهذا بالضبط ما يعدّه التردد — لذا يتحرك الدور والتردد دائمًا في اتجاهين متعاكسين للعملية نفسها. تصحّ هذه العلاقة العكسية بغض النظر عن كِبر الأرقام المعنية أو صِغرها.\n\nمفهوم خاطئ: يظن بعض الطلاب أن قيمة الدور \"الأكبر\" تعني دائمًا أن شيئًا ما يحدث بسرعة أكبر، فيخلطون بين حجم رقم الدور وسرعة التكرار. التصحيح: الدور الأكبر يعني تكرارًا أبطأ (زمنًا أكبر لكل دورة) — والتردد، لا الدور، هو الذي يزداد مع سرعة التكرار.\n\nملاحظة علمية: هذه العلاقة العكسية هي سبب أن مضاعفة التردد تُنصّف الدور المقابل بالضبط، ومضاعفة الدور تُنصّف التردد المقابل بالضبط — فالكميتان مقلوبتان دائمًا لبعضهما، لا متناسبتان طرديًا أبدًا.\n\nالمفهوم الأساسي: الدور الأقصر يقابل دائمًا ترددًا أعلى، والدور الأطول يقابل دائمًا ترددًا أقل، للعملية المتكررة نفسها.\n\nالصلة بالشريحة التالية: في الشريحة التالية، ننظر في أكثر خطأ شيوعًا في عدّ الدورات، والذي يُنتج أصلًا دورًا وترددًا غير صحيحين.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-8",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 8 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-9",
+        "blockType": "slide",
+        "slideNumber": 9,
+        "slideTitleEn": "How Do We Avoid Counting Half a Cycle as a Full Cycle?",
+        "slideTitleAr": "كيف نتجنب عدّ نصف الدورة على أنه دورة كاملة؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "The single most common cycle-counting mistake is treating a one-way pass through a motion as if it were the whole cycle.\n\nMain Idea: for a back-and-forth motion like a pendulum, one complete cycle requires both the outward pass and the return pass — counting only one direction of travel doubles the apparent frequency and halves the apparent period.\n\nStep 1 — Identify the full round trip\n* For a pendulum swinging left to right and back again, one complete cycle is the full round trip: left to right, then right back to left.\n* A pass in only one direction returns the pendulum to a different position or a different direction of motion than where it started — not a complete cycle.\n\nStep 2 — Time the entire round trip, not half of it\n* Measure the time for the outward pass, and separately the time for the return pass, then add them together.\n* Using only the outward pass's time as if it were the full period cuts the true period in half.\n\nStep 3 — Check whether the error doubles the frequency\n* Because frequency is the reciprocal of period, halving the period used in a calculation exactly doubles the resulting frequency.\n* A suspiciously high frequency for a slow-looking motion is a signal to re-check whether only half a cycle was actually timed.\n\nSimple Example: a pendulum takes 0.50 s to swing from left to right, and another 0.50 s to swing back from right to left. The complete cycle (left to right and back to left) takes:\n\nT = 0.50 s + 0.50 s = 1.00 s\n\nso the frequency is:\n\nf = 1/T = 1/1.00 s = 1.00 Hz\n\nIf only the 0.50 s one-way pass were mistakenly used as the period, the frequency would be incorrectly calculated as 1/0.50 s = 2.00 Hz — exactly double the correct value.\n\nMisconception: some students time only the outward pass of a back-and-forth motion and report that as the full period. Correction: a complete cycle for back-and-forth motion always includes both the outward and return passes — using only one direction produces a period that is half the true value and a frequency that is double the true value.\n\nScientific Note: this same one-way-pass error can occur for any process with a back-and-forth or round-trip motion, not just a pendulum — always confirm the process has returned to its exact starting position and direction before treating the elapsed time as one complete cycle.\n\nKey Concept: a complete cycle of back-and-forth motion includes both the outward and return passes; counting only one direction doubles the apparent frequency and halves the apparent period.\n\nConnection to the Next Slide: next, we look at how to check a period-or-frequency answer for this kind of mistake before finalizing it.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "أكثر خطأ شيوعًا في عدّ الدورات هو معاملة مسار باتجاه واحد ضمن حركة ذهابًا وإيابًا كما لو كان الدورة الكاملة بأكملها.\n\nالفكرة الرئيسية: بالنسبة إلى حركة ذهابًا وإيابًا كالبندول، تتطلب الدورة الكاملة الواحدة المسار الذهابي والمسار الإيابي معًا — وعدّ اتجاه واحد فقط من الحركة يُضاعف التردد الظاهري ويُنصّف الدور الظاهري.\n\nالخطوة 1 — حدّد الرحلة الكاملة ذهابًا وإيابًا\n* بالنسبة إلى بندول يتأرجح من اليسار إلى اليمين ثم يعود، تكون الدورة الكاملة الواحدة هي الرحلة الكاملة: من اليسار إلى اليمين، ثم من اليمين عودةً إلى اليسار.\n* المسار باتجاه واحد فقط يُعيد البندول إلى موضع مختلف أو اتجاه حركة مختلف عن نقطة بدايته — وليس دورة كاملة.\n\nالخطوة 2 — قِس زمن الرحلة الكاملة، لا نصفها\n* قِس زمن المسار الذهابي، وزمن المسار الإيابي بشكل منفصل، ثم اجمعهما معًا.\n* استخدام زمن المسار الذهابي وحده كما لو كان الدور الكامل يُنصّف الدور الحقيقي.\n\nالخطوة 3 — تحقّق مما إذا كان الخطأ يُضاعف التردد\n* بما أن التردد هو مقلوب الدور، فإن تنصيف الدور المستخدم في حساب ما يُضاعف التردد الناتج بالضبط.\n* تردد مرتفع بشكل مثير للريبة لحركة تبدو بطيئة هو إشارة لإعادة التحقّق مما إذا كان قد جرى قياس نصف دورة فقط فعليًا.\n\nمثال بسيط: يستغرق بندول 0.50 s ليتأرجح من اليسار إلى اليمين، و0.50 s أخرى ليعود من اليمين إلى اليسار. تستغرق الدورة الكاملة (من اليسار إلى اليمين ثم العودة إلى اليسار):\n\nT = 0.50 s + 0.50 s = 1.00 s\n\nلذا فإن التردد هو:\n\nf = 1/T = 1/1.00 s = 1.00 Hz\n\nولو استُخدم خطأً المسار أحادي الاتجاه البالغ 0.50 s وحده كدور، لكان التردد قد حُسب خطأً بقيمة 1/0.50 s = 2.00 Hz — أي ضعف القيمة الصحيحة بالضبط.\n\nمفهوم خاطئ: يقيس بعض الطلاب زمن المسار الذهابي فقط لحركة ذهابًا وإيابًا، ويذكرونه على أنه الدور الكامل. التصحيح: تشمل الدورة الكاملة لحركة ذهابًا وإيابًا دائمًا المسارين الذهابي والإيابي معًا — واستخدام اتجاه واحد فقط يُنتج دورًا يساوي نصف القيمة الحقيقية وترددًا يساوي ضعف القيمة الحقيقية.\n\nملاحظة علمية: يمكن أن يحدث خطأ المسار أحادي الاتجاه نفسه لأي عملية ذات حركة ذهابًا وإيابًا أو رحلة دائرية، لا للبندول فقط — تأكّد دائمًا من أن العملية قد عادت إلى موضعها واتجاهها الابتدائيين بالضبط قبل معاملة الزمن المنقضي على أنه دورة كاملة واحدة.\n\nالمفهوم الأساسي: تشمل الدورة الكاملة لحركة ذهابًا وإيابًا المسارين الذهابي والإيابي معًا؛ وعدّ اتجاه واحد فقط يُضاعف التردد الظاهري ويُنصّف الدور الظاهري.\n\nالصلة بالشريحة التالية: في الشريحة التالية، ننظر في كيفية التحقق من إجابة الدور أو التردد من هذا النوع من الأخطاء قبل اعتمادها نهائيًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "أكثر خطأ شيوعًا في عدّ الدورات هو معاملة مسار باتجاه واحد ضمن حركة ذهابًا وإيابًا كما لو كان الدورة الكاملة بأكملها.\n\nالفكرة الرئيسية: بالنسبة إلى حركة ذهابًا وإيابًا كالبندول، تتطلب الدورة الكاملة الواحدة المسار الذهابي والمسار الإيابي معًا — وعدّ اتجاه واحد فقط من الحركة يُضاعف التردد الظاهري ويُنصّف الدور الظاهري.\n\nالخطوة 1 — حدّد الرحلة الكاملة ذهابًا وإيابًا\n* بالنسبة إلى بندول يتأرجح من اليسار إلى اليمين ثم يعود، تكون الدورة الكاملة الواحدة هي الرحلة الكاملة: من اليسار إلى اليمين، ثم من اليمين عودةً إلى اليسار.\n* المسار باتجاه واحد فقط يُعيد البندول إلى موضع مختلف أو اتجاه حركة مختلف عن نقطة بدايته — وليس دورة كاملة.\n\nالخطوة 2 — قِس زمن الرحلة الكاملة، لا نصفها\n* قِس زمن المسار الذهابي، وزمن المسار الإيابي بشكل منفصل، ثم اجمعهما معًا.\n* استخدام زمن المسار الذهابي وحده كما لو كان الدور الكامل يُنصّف الدور الحقيقي.\n\nالخطوة 3 — تحقّق مما إذا كان الخطأ يُضاعف التردد\n* بما أن التردد هو مقلوب الدور، فإن تنصيف الدور المستخدم في حساب ما يُضاعف التردد الناتج بالضبط.\n* تردد مرتفع بشكل مثير للريبة لحركة تبدو بطيئة هو إشارة لإعادة التحقّق مما إذا كان قد جرى قياس نصف دورة فقط فعليًا.\n\nمثال بسيط: يستغرق بندول 0.50 s ليتأرجح من اليسار إلى اليمين، و0.50 s أخرى ليعود من اليمين إلى اليسار. تستغرق الدورة الكاملة (من اليسار إلى اليمين ثم العودة إلى اليسار):\n\nT = 0.50 s + 0.50 s = 1.00 s\n\nلذا فإن التردد هو:\n\nf = 1/T = 1/1.00 s = 1.00 Hz\n\nولو استُخدم خطأً المسار أحادي الاتجاه البالغ 0.50 s وحده كدور، لكان التردد قد حُسب خطأً بقيمة 1/0.50 s = 2.00 Hz — أي ضعف القيمة الصحيحة بالضبط.\n\nمفهوم خاطئ: يقيس بعض الطلاب زمن المسار الذهابي فقط لحركة ذهابًا وإيابًا، ويذكرونه على أنه الدور الكامل. التصحيح: تشمل الدورة الكاملة لحركة ذهابًا وإيابًا دائمًا المسارين الذهابي والإيابي معًا — واستخدام اتجاه واحد فقط يُنتج دورًا يساوي نصف القيمة الحقيقية وترددًا يساوي ضعف القيمة الحقيقية.\n\nملاحظة علمية: يمكن أن يحدث خطأ المسار أحادي الاتجاه نفسه لأي عملية ذات حركة ذهابًا وإيابًا أو رحلة دائرية، لا للبندول فقط — تأكّد دائمًا من أن العملية قد عادت إلى موضعها واتجاهها الابتدائيين بالضبط قبل معاملة الزمن المنقضي على أنه دورة كاملة واحدة.\n\nالمفهوم الأساسي: تشمل الدورة الكاملة لحركة ذهابًا وإيابًا المسارين الذهابي والإيابي معًا؛ وعدّ اتجاه واحد فقط يُضاعف التردد الظاهري ويُنصّف الدور الظاهري.\n\nالصلة بالشريحة التالية: في الشريحة التالية، ننظر في كيفية التحقق من إجابة الدور أو التردد من هذا النوع من الأخطاء قبل اعتمادها نهائيًا.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-9",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 9 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t03-block-slide-10",
+        "blockType": "slide",
+        "slideNumber": 10,
+        "slideTitleEn": "How Can We Check Period-and-Frequency Answers?",
+        "slideTitleAr": "كيف يمكننا التحقق من إجابات الدور والتردد؟",
+        "topicId": "ch01-t03",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A quick sanity check can catch most period-and-frequency mistakes before they become a wrong final answer.\n\nMain Idea: a calculated period and frequency should always be checked against each other — multiplying them together should equal exactly 1 — and checked against intuition about whether the process seems fast or slow.\n\nStep 1 — Multiply the period and frequency together\n* Because T = 1/f, multiplying T by f should always give exactly 1 (with matching units of seconds and hertz canceling).\n* If the product is not 1, at least one of the two values was calculated incorrectly.\n\nStep 2 — Compare the answer to intuition\n* A process that looks fast should have a small period and a large frequency; a process that looks slow should have a large period and a small frequency.\n* An answer that contradicts this intuition — like a fast-looking process with a low frequency — is worth re-checking.\n\nStep 3 — Re-check the cycle definition if something looks wrong\n* If the check fails, revisit whether the process and one complete cycle were correctly identified, especially for back-and-forth motion.\n* A miscounted half cycle is the most common cause of a frequency that is exactly double, or a period that is exactly half, of the correct value.\n\nSimple Example: a strobe light has a period of T = 0.25 s and a frequency of f = 4.0 Hz. Checking the product:\n\n0.25 s × 4.0 Hz = 1\n\nconfirms the two values are consistent reciprocals of each other.\n\nMisconception: some students treat a period-and-frequency check as optional, assuming a calculation is correct simply because it produced a number. Correction: a calculated period and frequency should always be verified against each other and against intuition — producing a number is not proof that the number is correct.\n\nScientific Note: this multiplication check works for any correctly defined periodic process — it does not confirm that the underlying cycle was identified correctly, only that the arithmetic between T and f is internally consistent, so it should be paired with the intuitive fast-or-slow check above.\n\nKey Concept: a period and frequency should always satisfy T × f = 1, and should match intuition about whether the process is fast or slow.\n\nConnection to the Next Slide: with period and frequency now measurable and checkable, the next topic shifts from timing motion to describing what is actually moving — starting with mass.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يمكن لتحقّق سريع من المنطقية أن يكشف معظم أخطاء الدور والتردد قبل أن تتحوّل إلى إجابة نهائية خاطئة.\n\nالفكرة الرئيسية: يجب دائمًا التحقّق من الدور والتردد المحسوبَين أحدهما مقابل الآخر — إذ يجب أن يساوي حاصل ضربهما 1 بالضبط — والتحقّق منهما أيضًا مقابل الحدس حول ما إذا كانت العملية تبدو سريعة أم بطيئة.\n\nالخطوة 1 — اضرب الدور والتردد معًا\n* بما أن T = 1/f، فإن ضرب T في f يجب أن يُعطي 1 بالضبط دائمًا (مع إلغاء وحدتَي الثانية والهرتز المتطابقتين).\n* إذا لم يكن حاصل الضرب يساوي 1، فإن إحدى القيمتين على الأقل حُسبت بشكل غير صحيح.\n\nالخطوة 2 — قارن الإجابة بالحدس\n* يجب أن تكون للعملية التي تبدو سريعة دور صغير وتردد كبير؛ وللعملية التي تبدو بطيئة دور كبير وتردد صغير.\n* الإجابة التي تناقض هذا الحدس — كعملية تبدو سريعة لكن ترددها منخفض — تستحق إعادة التحقّق.\n\nالخطوة 3 — أعد التحقّق من تعريف الدورة إذا بدا شيء خاطئًا\n* إذا فشل التحقّق، راجع ما إذا كانت العملية والدورة الكاملة الواحدة قد حُدّدتا بشكل صحيح، خصوصًا للحركة ذهابًا وإيابًا.\n* عدّ نصف دورة خطأً هو السبب الأكثر شيوعًا لتردد يساوي ضعف القيمة الصحيحة بالضبط، أو دور يساوي نصف القيمة الصحيحة بالضبط.\n\nمثال بسيط: يبلغ دور ضوء ستروبوسكوبي T = 0.25 s وتردده f = 4.0 Hz. بالتحقّق من حاصل الضرب:\n\n0.25 s × 4.0 Hz = 1\n\nيتأكّد أن القيمتين مقلوبتان متسقتان لبعضهما.\n\nمفهوم خاطئ: يتعامل بعض الطلاب مع التحقّق من الدور والتردد كخطوة اختيارية، ويفترضون أن الحساب صحيح لمجرد أنه أنتج رقمًا. التصحيح: يجب دائمًا التحقّق من الدور والتردد المحسوبَين أحدهما مقابل الآخر ومقابل الحدس — فإنتاج رقم ليس دليلًا على صحته.\n\nملاحظة علمية: يعمل تحقّق الضرب هذا لأي عملية دورية محددة بشكل صحيح — لكنه لا يؤكّد أن الدورة الأساسية قد حُدّدت بشكل صحيح، بل فقط أن الحساب الحسابي بين T وf متّسق داخليًا، لذا ينبغي إقرانه بالتحقّق الحدسي من السرعة أو البطء المذكور أعلاه.\n\nالمفهوم الأساسي: يجب أن يحقّق الدور والتردد دائمًا العلاقة T × f = 1، وأن يتطابقا مع الحدس حول ما إذا كانت العملية سريعة أم بطيئة.\n\nالصلة بالشريحة التالية: بعد أن أصبح الدور والتردد قابلين للقياس والتحقّق، ينتقل الموضوع التالي من توقيت الحركة إلى وصف ما يتحرك فعليًا — بدءًا من الكتلة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يمكن لتحقّق سريع من المنطقية أن يكشف معظم أخطاء الدور والتردد قبل أن تتحوّل إلى إجابة نهائية خاطئة.\n\nالفكرة الرئيسية: يجب دائمًا التحقّق من الدور والتردد المحسوبَين أحدهما مقابل الآخر — إذ يجب أن يساوي حاصل ضربهما 1 بالضبط — والتحقّق منهما أيضًا مقابل الحدس حول ما إذا كانت العملية تبدو سريعة أم بطيئة.\n\nالخطوة 1 — اضرب الدور والتردد معًا\n* بما أن T = 1/f، فإن ضرب T في f يجب أن يُعطي 1 بالضبط دائمًا (مع إلغاء وحدتَي الثانية والهرتز المتطابقتين).\n* إذا لم يكن حاصل الضرب يساوي 1، فإن إحدى القيمتين على الأقل حُسبت بشكل غير صحيح.\n\nالخطوة 2 — قارن الإجابة بالحدس\n* يجب أن تكون للعملية التي تبدو سريعة دور صغير وتردد كبير؛ وللعملية التي تبدو بطيئة دور كبير وتردد صغير.\n* الإجابة التي تناقض هذا الحدس — كعملية تبدو سريعة لكن ترددها منخفض — تستحق إعادة التحقّق.\n\nالخطوة 3 — أعد التحقّق من تعريف الدورة إذا بدا شيء خاطئًا\n* إذا فشل التحقّق، راجع ما إذا كانت العملية والدورة الكاملة الواحدة قد حُدّدتا بشكل صحيح، خصوصًا للحركة ذهابًا وإيابًا.\n* عدّ نصف دورة خطأً هو السبب الأكثر شيوعًا لتردد يساوي ضعف القيمة الصحيحة بالضبط، أو دور يساوي نصف القيمة الصحيحة بالضبط.\n\nمثال بسيط: يبلغ دور ضوء ستروبوسكوبي T = 0.25 s وتردده f = 4.0 Hz. بالتحقّق من حاصل الضرب:\n\n0.25 s × 4.0 Hz = 1\n\nيتأكّد أن القيمتين مقلوبتان متسقتان لبعضهما.\n\nمفهوم خاطئ: يتعامل بعض الطلاب مع التحقّق من الدور والتردد كخطوة اختيارية، ويفترضون أن الحساب صحيح لمجرد أنه أنتج رقمًا. التصحيح: يجب دائمًا التحقّق من الدور والتردد المحسوبَين أحدهما مقابل الآخر ومقابل الحدس — فإنتاج رقم ليس دليلًا على صحته.\n\nملاحظة علمية: يعمل تحقّق الضرب هذا لأي عملية دورية محددة بشكل صحيح — لكنه لا يؤكّد أن الدورة الأساسية قد حُدّدت بشكل صحيح، بل فقط أن الحساب الحسابي بين T وf متّسق داخليًا، لذا ينبغي إقرانه بالتحقّق الحدسي من السرعة أو البطء المذكور أعلاه.\n\nالمفهوم الأساسي: يجب أن يحقّق الدور والتردد دائمًا العلاقة T × f = 1، وأن يتطابقا مع الحدس حول ما إذا كانت العملية سريعة أم بطيئة.\n\nالصلة بالشريحة التالية: بعد أن أصبح الدور والتردد قابلين للقياس والتحقّق، ينتقل الموضوع التالي من توقيت الحركة إلى وصف ما يتحرك فعليًا — بدءًا من الكتلة.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-period",
+            "ch01-term-frequency"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T03-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t03-block-slide-10",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t03-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-006 (name the periodic process, define one complete cycle, T=1/f, f=1/T); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02 for the architectural pattern), not copied from any textbook or copyrighted source."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-006"
+        ],
+        "conflictRecordIds": [],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 10 for ch01-t03's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
         "blockId": "ch01-t03-block-mainidea",
         "blockType": "mainIdea",
         "topicId": "ch01-t03",

@@ -85,6 +85,39 @@ export const SLIDE_GROUPS_BY_TOPIC_ID: Partial<Record<PilotTopicId, SlideGroup[]
       slideNumbers: [11],
     },
   ],
+  /**
+   * ch01-t03 (Time, Period, and Frequency — PR E, the third real
+   * slide-bearing topic) groups, verified against the topic's actual
+   * current slide titles (see src/content/slideShortTitles.ts): Slides 1-2
+   * establish why the repeating process must be named and one complete
+   * cycle defined before any measurement; Slides 3-4 define period and
+   * frequency themselves; Slides 5-7 cover the reciprocal relationship and
+   * both calculation directions; Slides 8-10 build conceptual intuition
+   * for the inverse relationship, the most common cycle-counting error,
+   * and how to check an answer.
+   */
+  "ch01-t03": [
+    {
+      id: "ch01-t03-group-repeating-processes-and-complete-cycles",
+      title: { en: "Repeating Processes and Complete Cycles", ar: "العمليات المتكررة والدورات الكاملة" },
+      slideNumbers: [1, 2],
+    },
+    {
+      id: "ch01-t03-group-period-and-frequency",
+      title: { en: "Period and Frequency", ar: "الدور والتردد" },
+      slideNumbers: [3, 4],
+    },
+    {
+      id: "ch01-t03-group-reciprocal-calculations",
+      title: { en: "Reciprocal Calculations", ar: "الحسابات العكسية" },
+      slideNumbers: [5, 6, 7],
+    },
+    {
+      id: "ch01-t03-group-interpreting-and-checking-results",
+      title: { en: "Interpreting and Checking Results", ar: "تفسير النتائج والتحقّق منها" },
+      slideNumbers: [8, 9, 10],
+    },
+  ],
 };
 
 /**
