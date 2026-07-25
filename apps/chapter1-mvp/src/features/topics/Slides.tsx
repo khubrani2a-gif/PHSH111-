@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useLanguage } from "../../app/LanguageContext";
+import { readPersistedNullableString, writePersistedNullableString } from "../../app/persistedState";
 import {
-  readPersistedStringArray,
-  writePersistedStringArray,
-  readPersistedNullableString,
-  writePersistedNullableString,
-} from "../../app/persistedState";
+  isCompleted,
+  isViewed,
+  readTopicLearningState,
+  withViewed,
+  writeTopicLearningState,
+  type TopicLearningState,
+} from "../../app/slideProgress";
 import { resolveSlideShortTitle } from "../../content/slideShortTitles";
 
 const SLIDES_LABEL = { en: "Slides", ar: "الشرائح" } as const;
@@ -21,6 +24,7 @@ const EXPAND_INDICATOR_LABEL = {
 } as const;
 
 const VIEWED_BADGE_LABEL = { en: "Viewed", ar: "تمت مشاهدتها" } as const;
+const COMPLETED_BADGE_LABEL = { en: "Completed", ar: "مكتملة" } as const;
 
 const JUMP_LABEL = { en: "Jump to slide", ar: "الانتقال إلى شريحة" } as const;
 
@@ -90,7 +94,6 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
   const { language } = useLanguage();
   const slideIds = useMemo(() => slides.map((s) => s.recordId), [slides]);
   const persistKeyOpen = `${topicId}.slides.openRecordId`;
-  const persistKeyViewed = `${topicId}.slides.viewedRecordIds`;
 
   const [openId, setOpenId] = useState<string | null>(() => {
     const stored = readPersistedNullableString(persistKeyOpen, "openSlideId");
@@ -108,10 +111,23 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
     return slideIds.includes(stored.value) ? stored.value : (slideIds[0] ?? null);
   });
 
-  const [viewedIds, setViewedIds] = useState<Set<string>>(() => {
-    const persisted = new Set(readPersistedStringArray(persistKeyViewed, []));
-    if (openId) persisted.add(openId);
-    return persisted;
+  // Canonical learning state (see src/app/slideProgress.ts) — the SAME
+  // per-topic storage the Slide Reader reads and writes, so a slide viewed
+  // or completed in either view is immediately visible in the other the
+  // next time this component mounts (SlidesExperience always fully
+  // unmounts one view and mounts the other on every switch — see that
+  // component's header comment). readTopicLearningState also reconciles
+  // any legacy "viewedRecordIds" entry into canonical state on every read,
+  // never just once, so a returning visitor's older legacy-only viewed
+  // data is never silently lost. This accordion no longer writes its own
+  // separate viewed-ids list — the canonical write below is the only
+  // write path, replacing the legacy key going forward.
+  const [learningState, setLearningState] = useState<TopicLearningState>(() => {
+    const state = readTopicLearningState(topicId, slideIds);
+    // Preserves the pre-existing "default-open slide already counts as
+    // viewed" behavior for a brand-new visitor (openId defaults to the
+    // first slide above) without waiting for a separate render/effect.
+    return openId ? withViewed(state, openId) : state;
   });
 
   useEffect(() => {
@@ -119,8 +135,8 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
   }, [openId, persistKeyOpen]);
 
   useEffect(() => {
-    writePersistedStringArray(persistKeyViewed, Array.from(viewedIds));
-  }, [viewedIds, persistKeyViewed]);
+    writeTopicLearningState(topicId, learningState);
+  }, [learningState, topicId]);
 
   const headerRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
 
@@ -130,12 +146,7 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
   }
 
   function markViewed(id: string) {
-    setViewedIds((prev) => {
-      if (prev.has(id)) return prev;
-      const next = new Set(prev);
-      next.add(id);
-      return next;
-    });
+    setLearningState((prev) => withViewed(prev, id));
   }
 
   /** Always opens the given slide, regardless of what's currently open (or nothing). Used by Previous/Next and the jump selector — never a toggle, so it works correctly even when every slide is currently collapsed. */
@@ -199,14 +210,15 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
           </select>
         </div>
         <p className="slides-section__progress" role="status" aria-live="polite">
-          {VIEWED_PROGRESS_LABEL[language](viewedIds.size, slides.length)}
+          {VIEWED_PROGRESS_LABEL[language](slideIds.filter((id) => isViewed(learningState, id)).length, slides.length)}
         </p>
       </div>
 
       <div className="slides-section__list">
         {slides.map((slide, index) => {
           const isOpen = slide.recordId === openId;
-          const isViewed = viewedIds.has(slide.recordId);
+          const slideViewed = isViewed(learningState, slide.recordId);
+          const slideCompleted = isCompleted(learningState, slide.recordId);
           const headerId = `slide-${slide.slideNumber}-header`;
           const panelId = `slide-${slide.slideNumber}-panel`;
           const shortTitle = resolveSlideShortTitle(
@@ -233,7 +245,12 @@ export function SlidesSection({ topicId, slides, anchorId }: SlidesSectionProps)
                     {slide.slideNumber}
                   </span>
                   <span className="slide-accordion__short-title">{shortTitle}</span>
-                  {isViewed ? (
+                  {slideCompleted ? (
+                    <span className="slide-accordion__completed-badge">
+                      <span aria-hidden="true">✓</span>
+                      <span className="visually-hidden">{COMPLETED_BADGE_LABEL[language]}</span>
+                    </span>
+                  ) : slideViewed ? (
                     <span className="slide-accordion__viewed-badge">
                       <span aria-hidden="true">✓</span>
                       <span className="visually-hidden">{VIEWED_BADGE_LABEL[language]}</span>

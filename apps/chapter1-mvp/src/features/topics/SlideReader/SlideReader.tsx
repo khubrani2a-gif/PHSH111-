@@ -43,14 +43,18 @@ export interface SlideReaderProps {
  * a grouped slide navigator (sidebar on desktop, drawer on mobile),
  * Study/Review display modes, and a persisted per-slide learning-progress
  * model (src/app/slideProgress.ts) distinguishing "viewed" from
- * explicitly "completed". The pre-existing accordion (Slides.tsx) is left
- * completely unmodified and remains reachable via "View All Slides".
+ * explicitly "completed". The pre-existing accordion (Slides.tsx, still
+ * reachable via "View All Slides") reads and writes that exact same
+ * canonical per-topic learning state — see slideProgress.ts's header
+ * comment — so a slide viewed or completed in either view is reflected in
+ * the other.
  */
 export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAllSlides, initialSlideNumber }: SlideReaderProps) {
   const { language, direction } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const slideNumbers = slides.map((s) => s.slideNumber);
+  const recordIds = slides.map((s) => s.recordId);
   const lastSlideKey = `${topicId}.reader.lastSlideNumber`;
 
   const rawParam = searchParams.get(SLIDE_QUERY_PARAM);
@@ -73,7 +77,7 @@ export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAl
     return stored === "review" ? "review" : "study";
   });
 
-  const [learningState, setLearningState] = useState<TopicLearningState>(() => readTopicLearningState(topicId));
+  const [learningState, setLearningState] = useState<TopicLearningState>(() => readTopicLearningState(topicId, recordIds));
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [sectionEntries, setSectionEntries] = useState<SlideSectionNavEntry[]>([]);
 
@@ -200,10 +204,7 @@ export function SlideReader({ topicId, topicTitle, slides, proseTokens, onViewAl
 
   const groups = resolveSlideGroups(topicId, slideNumbers);
   const entriesBySlideNumber = buildSlideNavigatorEntries(slides, language);
-  const { percent } = completionProgress(
-    learningState,
-    slides.map((s) => s.recordId),
-  );
+  const { percent } = completionProgress(learningState, recordIds);
 
   return (
     <div className="slide-reader" dir={direction}>

@@ -289,14 +289,16 @@ describe("8. Viewed count updates and persists", () => {
     );
   });
 
-  it("persists under a topic-namespaced localStorage key, as a JSON array", () => {
+  it("persists under the canonical topic-namespaced learning-state key (PR C: the accordion now writes only canonical state, never the legacy viewedRecordIds key)", () => {
     renderSlides(false, 2);
-    const raw = window.localStorage.getItem("phsh111:ch01-t01.slides.viewedRecordIds");
+    const raw = window.localStorage.getItem("phsh111:ch01-t01.slides.learningState");
     expect(raw).toBeTruthy();
     const parsed = JSON.parse(raw!);
-    expect(parsed.sort()).toEqual(
-      ["ch01-t01-block-opening", "ch01-t01-block-opening-2"].sort(),
-    );
+    expect(parsed.version).toBe(1);
+    expect(parsed.records["ch01-t01-block-opening"].viewedAt).toBeTypeOf("string");
+    expect(parsed.records["ch01-t01-block-opening-2"].viewedAt).toBeTypeOf("string");
+    // The legacy key is no longer written by the accordion (read-only migration source now).
+    expect(window.localStorage.getItem("phsh111:ch01-t01.slides.viewedRecordIds")).toBeNull();
   });
 
   it("the Arabic progress text matches the exact required wording", () => {
@@ -304,6 +306,70 @@ describe("8. Viewed count updates and persists", () => {
     expect(container.querySelector(".slides-section__progress")?.textContent).toBe(
       `الشرائح المشاهدة: 2 من ${total}`,
     );
+  });
+});
+
+describe("8b. Canonical progress synchronization in the accordion (PR C)", () => {
+  const LEARNING_STATE_KEY = "phsh111:ch01-t01.slides.learningState";
+
+  function seedLearningState(records: Record<string, { viewedAt?: string; completedAt?: string; masteredAt?: string }>) {
+    window.localStorage.setItem(LEARNING_STATE_KEY, JSON.stringify({ version: 1, records }));
+  }
+
+  it("expanding a slide marks only it Viewed in canonical storage", () => {
+    renderSlides(false, 2);
+    openSlideByNumber(container, 4);
+    const raw = window.localStorage.getItem(LEARNING_STATE_KEY);
+    const records = JSON.parse(raw!).records;
+    expect(Object.keys(records).sort()).toEqual(
+      ["ch01-t01-block-opening", "ch01-t01-block-opening-2", "ch01-t01-block-opening-4"].sort(),
+    );
+  });
+
+  it("unopened slides remain unseen in canonical storage", () => {
+    renderSlides(false, 2);
+    const raw = window.localStorage.getItem(LEARNING_STATE_KEY);
+    const records = JSON.parse(raw!).records;
+    expect(records["ch01-t01-block-opening-9"]).toBeUndefined();
+    expect(records["ch01-t01-block-opening-13"]).toBeUndefined();
+  });
+
+  it("a slide already marked Completed via the reader shows a Completed indicator in the accordion", () => {
+    seedLearningState({ "ch01-t01-block-opening-3": { viewedAt: "2026-01-01T00:00:00.000Z", completedAt: "2026-01-01T00:01:00.000Z" } });
+    renderSlides(false);
+    const header3 = getSlideHeader(container, 3);
+    expect(header3?.querySelector(".slide-accordion__completed-badge")).not.toBeNull();
+    // Completed and Viewed badges are mutually exclusive in one header — a completed slide shows only the completed badge.
+    expect(header3?.querySelector(".slide-accordion__viewed-badge")).toBeNull();
+  });
+
+  it("a non-completed but viewed slide shows only the Viewed badge, never the Completed badge", () => {
+    renderSlides(false, 3);
+    const header3 = getSlideHeader(container, 3);
+    expect(header3?.querySelector(".slide-accordion__viewed-badge")).not.toBeNull();
+    expect(header3?.querySelector(".slide-accordion__completed-badge")).toBeNull();
+  });
+
+  it("Mastered state is preserved in canonical storage even though the accordion displays no mastery indicator", () => {
+    seedLearningState({ "ch01-t01-block-opening-3": { viewedAt: "2026-01-01T00:00:00.000Z", masteredAt: "2026-01-01T00:02:00.000Z" } });
+    renderSlides(false);
+    openSlideByNumber(container, 5); // an unrelated interaction elsewhere in the accordion
+    const raw = window.localStorage.getItem(LEARNING_STATE_KEY);
+    const records = JSON.parse(raw!).records;
+    expect(records["ch01-t01-block-opening-3"].masteredAt).toBe("2026-01-01T00:02:00.000Z");
+    // No mastery UI is added in this PR — confirm nothing in the accordion renders a star/mastery class.
+    expect(container.querySelector('[class*="mastered"]')).toBeNull();
+  });
+
+  it("closing a slide does not remove its Viewed status or downgrade Completed/Mastered", () => {
+    seedLearningState({ "ch01-t01-block-opening-3": { viewedAt: "2026-01-01T00:00:00.000Z", completedAt: "2026-01-01T00:01:00.000Z", masteredAt: "2026-01-01T00:02:00.000Z" } });
+    renderSlides(false, 3);
+    act(() => getSlideHeader(container, 3)!.click()); // collapse it
+    const raw = window.localStorage.getItem(LEARNING_STATE_KEY);
+    const record = JSON.parse(raw!).records["ch01-t01-block-opening-3"];
+    expect(record.viewedAt).toBe("2026-01-01T00:00:00.000Z");
+    expect(record.completedAt).toBe("2026-01-01T00:01:00.000Z");
+    expect(record.masteredAt).toBe("2026-01-01T00:02:00.000Z");
   });
 });
 
@@ -842,11 +908,14 @@ describe("18. Nullable persistence: closed state and open state both survive a r
     expect(getSlideHeader(container, 1)?.getAttribute("aria-expanded")).toBe("true");
   });
 
-  it("the viewed-ids list is untouched by the open-state persistence change (still a plain JSON string array)", () => {
+  it("the canonical learning-state key is unaffected by the open-state persistence change, and the legacy key is not (re-)written (PR C)", () => {
     renderSlides(false, 2);
-    const raw = window.localStorage.getItem(VIEWED_KEY);
+    const raw = window.localStorage.getItem("phsh111:ch01-t01.slides.learningState");
     expect(raw).toBeTruthy();
-    expect(Array.isArray(JSON.parse(raw!))).toBe(true);
+    const parsed = JSON.parse(raw!);
+    expect(parsed.version).toBe(1);
+    expect(typeof parsed.records).toBe("object");
+    expect(window.localStorage.getItem(VIEWED_KEY)).toBeNull();
   });
 });
 

@@ -18,10 +18,39 @@ const SLIDE_QUERY_PARAM = "slide";
 
 type SlidesViewMode = "reader" | "all";
 
+export interface SlidesExperienceProps {
+  topic: NormalizedTopic;
+  anchorId?: string;
+}
+
+/**
+ * Public entry point — keyed by topic.topicId so React fully unmounts and
+ * remounts the entire stateful subtree (TopicSlidesExperience below,
+ * including SlideReader and SlidesSection) whenever the topic changes,
+ * rather than reusing the same component instances with new props.
+ * TopicPage.tsx re-renders the SAME component tree across topic
+ * navigation (only useParams()'s topicId changes; TopicPage itself is
+ * never remounted) — without this key, SlideReader's/SlidesSection's own
+ * `useState(() => readTopicLearningState(topicId, ...))` initializers
+ * would NOT re-run on a topic change (React preserves state for the same
+ * component type at the same position), leaving the PREVIOUS topic's
+ * learningState/viewMode/openRecordId/reader-mode state mounted under the
+ * NEW topic's props — and their persistence effects would then write that
+ * stale state under the new topic's storage keys. A keyed remount is
+ * preferred over a reset effect specifically because it guarantees old
+ * state is destroyed and every initializer re-runs with the new topicId
+ * BEFORE any write effect can fire — there is no render in which a write
+ * effect could observe stale state paired with the new topicId.
+ */
+export function SlidesExperience(props: SlidesExperienceProps) {
+  return <TopicSlidesExperience key={props.topic.topicId} {...props} />;
+}
+
 /**
  * Swaps between the focused single-slide reader (SlideReader, the new
- * default) and the pre-existing fully-collapsible accordion (SlidesSection,
- * left byte-for-byte unchanged) — see SlideReaderHeader's "View All
+ * default) and the pre-existing fully-collapsible accordion (SlidesSection),
+ * both now reading/writing the same canonical per-topic learning state
+ * (see src/app/slideProgress.ts) — see SlideReaderHeader's "View All
  * Slides" action and this component's own "← Slide Reader" return link.
  * The preferred mode is persisted per topic; a brand-new visitor (no
  * stored preference yet) always starts in the reader, per the reader
@@ -39,8 +68,13 @@ type SlidesViewMode = "reader" | "all";
  * navigation/reload), so a stale-but-still-valid param left over from
  * before switching to the accordion would otherwise silently win over the
  * accordion-selected slide.
+ *
+ * Only ever rendered through the keyed SlidesExperience wrapper above —
+ * never mounted directly for two different topics in succession, so every
+ * piece of state below can safely assume it belongs to exactly one
+ * topicId for its entire lifetime.
  */
-export function SlidesExperience({ topic, anchorId }: { topic: NormalizedTopic; anchorId?: string }) {
+function TopicSlidesExperience({ topic, anchorId }: SlidesExperienceProps) {
   const { language } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const viewModeKey = `${topic.topicId}.slides.viewMode`;
