@@ -557,7 +557,18 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" },
     keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" },
     connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" },
-    equationBlockPhrase: "A = 3 m × 2 m = 6 m²",
+    // Two equation-block phrases: the Simple Example's rectangle
+    // computation, and the Scientific Note's circle example (A = πr²,
+    // added in the title/wording correction pass) — both isolated on
+    // their own paragraph in the source, same convention as every other
+    // multi-equation slide (e.g. Slides 6, 9, 11) below.
+    equationBlockPhrase: ["A = 3 m × 2 m = 6 m²", "A = πr²"],
+    // Simple Example is equation-aware unconditionally; Scientific Note is
+    // opt-in only (see equationAwareSections' own header comment and the
+    // two other slides above that already use it) — opted in here so the
+    // circle-example equation gets the same equation-block styling as the
+    // rectangle example, purely by flipping this existing config flag.
+    equationAwareSections: ["scientificNote"],
     stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
   },
   "ch01-t02-block-slide-8": {

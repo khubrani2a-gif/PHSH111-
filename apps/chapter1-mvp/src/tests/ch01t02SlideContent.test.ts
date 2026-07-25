@@ -19,13 +19,38 @@ const configs = slides.map((s) => ({ slide: s, config: STRUCTURED_SLIDE_CONFIG_B
 const EXPECTED_TITLES_EN = [
   "Why Do Physicists Need Standard Units of Length?",
   "What Is Distance, and How Do We Measure It?",
+  "Why Is the Meter the SI Base Unit of Length?",
+  "How Do Metric Prefixes Change the Size of a Unit?",
+  "How Do We Build a Valid Conversion Factor?",
+  "How Do We Convert Between Metric Length Units?",
+  "Why Does Area Use Square Units?",
+  "Why Must the Conversion Factor Be Squared for Area?",
+  "Why Does Volume Use Cubic Units?",
+  "Why Must the Conversion Factor Be Cubed for Volume?",
+  "How Can We Avoid the Most Common Unit-Conversion Mistakes?",
+];
+
+const EXPECTED_TITLES_AR = [
+  "لماذا يحتاج الفيزيائيون إلى وحدات معيارية للطول؟",
+  "ما المسافة، وكيف نقيسها؟",
+  "لماذا يُعد المتر وحدة الطول الأساسية في النظام الدولي؟",
+  "كيف تغيّر البادئات المترية حجم الوحدة؟",
+  "كيف نبني عامل تحويل صحيحًا؟",
+  "كيف نحوّل بين وحدات الطول المترية؟",
+  "لماذا تُستخدم الوحدات المربعة للمساحة؟",
+  "لماذا يجب تربيع عامل التحويل عند تحويل المساحة؟",
+  "لماذا تُستخدم الوحدات المكعبة للحجم؟",
+  "لماذا يجب تكعيب عامل التحويل عند تحويل الحجم؟",
+  "كيف نتجنب أكثر أخطاء تحويل الوحدات شيوعًا؟",
+];
+
+// Old declarative titles this correction pass replaced — must never reappear.
+const OLD_DECLARATIVE_TITLES = [
   "The Meter: The SI Base Unit of Length",
   "Metric Prefixes: Scaling the Meter Up and Down",
   "Building a Valid Conversion Factor",
   "Converting Between Metric Length Units",
-  "Why Does Area Use Square Units?",
   "Converting Area Between Units",
-  "Why Does Volume Use Cubic Units?",
   "Converting Volume Between Units",
   "Avoiding the Most Common Unit-Conversion Mistakes",
 ];
@@ -47,6 +72,7 @@ describe("ch01-t02 — content registration (PR D, requirements 1-6)", () => {
       expect(slide.title.ar!.trim().length, slide.recordId).toBeGreaterThan(0);
     }
     expect(slides.map((s) => s.title.en)).toEqual(EXPECTED_TITLES_EN);
+    expect(slides.map((s) => s.title.ar)).toEqual(EXPECTED_TITLES_AR);
   });
 
   it("4. every record ID is unique", () => {
@@ -235,6 +261,85 @@ describe("ch01-t02 — structured content (PR D, requirements 16-23)", () => {
     for (const slide of slides) {
       expect(slide.figure, slide.recordId).toBeUndefined();
     }
+  });
+});
+
+describe("ch01-t02 — meaningful question titles (title-correction pass, requirements 1-4)", () => {
+  it("1. every English slide title ends with '?'", () => {
+    for (const slide of slides) {
+      expect(slide.title.en?.trim().endsWith("?"), slide.recordId).toBe(true);
+    }
+  });
+
+  it("2. every Arabic slide title ends with the Arabic question mark '؟'", () => {
+    for (const slide of slides) {
+      expect(slide.title.ar?.trim().endsWith("؟"), slide.recordId).toBe(true);
+    }
+  });
+
+  it("3. every title (English and Arabic) is non-empty", () => {
+    for (const slide of slides) {
+      expect(slide.title.en?.trim().length, slide.recordId).toBeGreaterThan(0);
+      expect(slide.title.ar?.trim().length, slide.recordId).toBeGreaterThan(0);
+    }
+  });
+
+  it("4. none of the old declarative titles remain anywhere in the slide deck", () => {
+    const allEnTitles = slides.map((s) => s.title.en);
+    for (const oldTitle of OLD_DECLARATIVE_TITLES) {
+      expect(allEnTitles).not.toContain(oldTitle);
+    }
+  });
+
+  it("short titles and groups are unchanged by the title correction (still 5 groups, still 11 distinct short titles)", () => {
+    const groups = SLIDE_GROUPS_BY_TOPIC_ID["ch01-t02"]!;
+    expect(groups).toHaveLength(5);
+    for (const slide of slides) {
+      expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID[slide.recordId], slide.recordId).toBeDefined();
+    }
+  });
+});
+
+describe("ch01-t02 — Slide 11 corrected wording (title-correction pass, requirements 5-7)", () => {
+  const slide11 = slides.find((s) => s.slideNumber === 11)!;
+
+  it("5. Slide 11 no longer contains the phrase 'conversion-area errors'", () => {
+    expect(slide11.text.en).not.toContain("conversion-area errors");
+  });
+
+  it("6. Slide 11 Arabic no longer contains the old dual-area-only misconception phrase", () => {
+    expect(slide11.text.ar).not.toContain("أكثر خطأين شيوعًا في تحويل المساحة");
+  });
+
+  it("7. Slide 11 states the misconception accurately as an area-AND-volume conversion error", () => {
+    expect(slide11.text.en).toContain("two common area-and-volume conversion errors");
+    expect(slide11.text.ar).toContain("من أكثر الأخطاء شيوعًا في تحويل المساحة والحجم");
+  });
+
+  it("Slide 11's revised Step 2 wording no longer makes the overly broad 'wrong physical quantity' claim", () => {
+    expect(slide11.text.en).not.toContain("describes the wrong physical quantity");
+    expect(slide11.text.en).toContain("the measurement becomes inconsistent and no longer represents the original value correctly");
+    expect(slide11.text.ar).toContain("يصبح القياس غير متسق ولا يمثل القيمة الأصلية تمثيلًا صحيحًا");
+  });
+});
+
+describe("ch01-t02 — Slide 7 corrected dimensional wording (title-correction pass, requirements 8-9)", () => {
+  const slide7 = slides.find((s) => s.slideNumber === 7)!;
+
+  it("8. Slide 7 states that area has dimensions of length squared, not the old overgeneralized claim", () => {
+    expect(slide7.text.en).not.toContain("any area calculation ultimately reduces to multiplying length measurements together");
+    expect(slide7.text.en).toContain("every area has dimensions of length squared");
+    expect(slide7.text.ar).toContain("لكل مساحة أبعاد طول تربيعي");
+  });
+
+  it("9. Slide 7 includes the circle example A = πr², isolated as its own equation-bearing paragraph", () => {
+    expect(slide7.text.en).toContain("the area of a circle is");
+    expect(slide7.text.en).toContain("A = πr²");
+    expect(slide7.text.ar).toContain("A = πr²");
+    const config = STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID[slide7.recordId]!;
+    const phrases = Array.isArray(config.equationBlockPhrase) ? config.equationBlockPhrase : [config.equationBlockPhrase];
+    expect(phrases).toContain("A = πr²");
+    expect(phrases).toContain("A = 3 m × 2 m = 6 m²");
   });
 });
 

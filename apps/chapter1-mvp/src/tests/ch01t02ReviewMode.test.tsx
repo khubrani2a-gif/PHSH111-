@@ -11,6 +11,7 @@ import { createRoot, type Root } from "react-dom/client";
 import { LanguageProvider } from "../app/LanguageContext";
 import { getTopic } from "../content/adapter";
 import { EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC } from "../content/equationRenderer";
+import { SLIDE_SHORT_TITLE_BY_BLOCK_ID } from "../content/slideShortTitles";
 import { StructuredSlideContent } from "../features/topics/StructuredSlideContent";
 import type { NormalizedSlide } from "../types/normalized";
 
@@ -245,5 +246,70 @@ describe("ch01-t02 — equation rendering reuses the shared renderer", () => {
     renderStudy(slideByNumber(6), true);
     expect(container.textContent).toContain("3.2 km × (1000 m / 1 km) = 3200 m");
     expect(container.textContent).toContain("450 cm × (1 m / 100 cm) = 4.5 m");
+  });
+});
+
+describe("ch01-t02 — title-correction pass: revised wording renders correctly (requirements 10-12)", () => {
+  it("10a. English Study Mode renders Slide 7's revised Scientific Note and circle example", () => {
+    renderStudy(slideByNumber(7));
+    const text = container.textContent ?? "";
+    expect(text).toContain("every area has dimensions of length squared");
+    expect(text).toContain("A = πr²");
+    const equationBlocks = Array.from(container.querySelectorAll(".structured-slide__equation-block")).map(
+      (el) => el.textContent,
+    );
+    expect(equationBlocks).toContain("A = πr²");
+  });
+
+  it("10b. Arabic Study Mode renders Slide 7's revised Scientific Note and circle example", () => {
+    renderStudy(slideByNumber(7), true);
+    const text = container.textContent ?? "";
+    expect(text).toContain("لكل مساحة أبعاد طول تربيعي");
+    expect(text).toContain("A = πr²");
+  });
+
+  it("10c. English Study Mode renders Slide 11's revised misconception and Step 2 wording", () => {
+    renderStudy(slideByNumber(11));
+    const text = container.textContent ?? "";
+    expect(text).toContain("two common area-and-volume conversion errors");
+    expect(text).toContain("the measurement becomes inconsistent and no longer represents the original value correctly");
+    expect(text).not.toContain("conversion-area errors");
+  });
+
+  it("10d. Arabic Study Mode renders Slide 11's revised misconception and Step 2 wording", () => {
+    renderStudy(slideByNumber(11), true);
+    const text = container.textContent ?? "";
+    expect(text).toContain("من أكثر الأخطاء شيوعًا في تحويل المساحة والحجم");
+    expect(text).toContain("يصبح القياس غير متسق ولا يمثل القيمة الأصلية تمثيلًا صحيحًا");
+    expect(text).not.toContain("أكثر خطأين شيوعًا في تحويل المساحة");
+  });
+
+  it("11a. Review Mode for Slide 7 is unchanged by the wording correction: still shows Relationship Explanation, Definitions, and the rectangle equation; still omits Scientific Note", () => {
+    renderReview(slideByNumber(7));
+    expect(headings()).toContain("Relationship Explanation");
+    expect(headings()).toContain("Definitions");
+    expect(headings()).not.toContain("Scientific Note");
+    expect(container.querySelector(".structured-slide__equation-block")?.textContent).toBe("A = 3 m × 2 m = 6 m²");
+  });
+
+  it("11b. Review Mode for Slide 11 is unchanged by the wording correction: still shows Table Explanation and the scaling-factor equations; still omits Misconception", () => {
+    renderReview(slideByNumber(11));
+    expect(headings()).toContain("Table Explanation");
+    expect(headings()).not.toContain("Misconception");
+    const equationBlocks = Array.from(container.querySelectorAll(".structured-slide__equation-block")).map(
+      (el) => el.textContent,
+    );
+    expect(equationBlocks).toContain("×100² = ×10,000");
+    expect(equationBlocks).toContain("×100³ = ×1,000,000");
+  });
+
+  it("12. short titles for Slides 3-11 remain their pre-correction concise labels, unaffected by the full-title question rewrite", () => {
+    expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID["ch01-t02-block-slide-3"]).toEqual({ en: "The Meter", ar: "المتر" });
+    expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID["ch01-t02-block-slide-4"]).toEqual({ en: "Metric Prefixes", ar: "البادئات المترية" });
+    expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID["ch01-t02-block-slide-8"]).toEqual({ en: "Converting Area", ar: "تحويل المساحة" });
+    expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID["ch01-t02-block-slide-11"]).toEqual({
+      en: "Avoiding Common Mistakes",
+      ar: "تجنّب الأخطاء الشائعة",
+    });
   });
 });
