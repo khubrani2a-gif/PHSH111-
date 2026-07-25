@@ -328,9 +328,11 @@ describe("ch01-t03 — scientific regression", () => {
     expect(fullEn).toContain("seconds is exclusively the unit for period");
   });
 
-  it("a complete cycle is explicitly defined as returning to the same position AND direction of motion (Slide 2)", () => {
+  it("a complete cycle is explicitly defined generally as returning to the same state or phase, with mechanical motion (position and velocity) given as the specific illustrative case (Slide 2)", () => {
     const slide2 = slides.find((s) => s.slideNumber === 2)!;
-    expect(slide2.text.en).toContain("same position and the same direction of motion");
+    expect(slide2.text.en).toContain("returns to the same state, or equivalently the same phase");
+    expect(slide2.text.en).toContain("the same position and the same velocity, including direction");
+    expect(slide2.text.ar).toContain("الحالة نفسها، أو بصورة مكافئة إلى الطور نفسه");
   });
 
   it("the periodic process must be named before period or frequency can be measured (Slide 1)", () => {
@@ -374,11 +376,70 @@ describe("ch01-t03 — scientific regression", () => {
     }
   });
 
-  it("no advanced, unsupported concept (angular frequency, phase, radians, sinusoidal functions, SHM equations) was silently introduced", () => {
-    const forbidden = ["angular frequency", "phase", "radian", "sinusoid", "simple harmonic motion", "ω", "sin(", "cos("];
+  it("no advanced, unsupported concept (angular frequency, phase angle/constant, radians, sinusoidal functions, SHM equations) was silently introduced", () => {
+    // "phase" alone is legitimately used (Slide 2's title-correction pass, PR E-correction)
+    // as a general synonym for "state" — "returns to the same state, or equivalently the
+    // same phase" — never in the advanced SHM sense (phase angle/constant/shift, in/out of
+    // phase), which remains forbidden below.
+    const forbidden = [
+      "angular frequency",
+      "phase angle",
+      "phase constant",
+      "phase shift",
+      "in phase",
+      "out of phase",
+      "radian",
+      "sinusoid",
+      "simple harmonic motion",
+      "ω",
+      "sin(",
+      "cos(",
+    ];
     for (const term of forbidden) {
       expect(fullEn.toLowerCase()).not.toContain(term.toLowerCase());
     }
+  });
+});
+
+describe("ch01-t03 — Slide 2 scientific correction (same-state/phase generalization)", () => {
+  const slide2 = slides.find((s) => s.slideNumber === 2)!;
+
+  it("1. Slide 2 defines a complete cycle using the same state or phase", () => {
+    expect(slide2.text.en).toContain("returns to the same state, or equivalently the same phase");
+    expect(slide2.text.ar).toContain("الحالة نفسها، أو بصورة مكافئة إلى الطور نفسه");
+  });
+
+  it("2. mechanical motion mentions the same position and the same velocity, including direction", () => {
+    expect(slide2.text.en).toContain("returning to the same state generally requires the same position and the same velocity, including direction");
+    expect(slide2.text.ar).toContain("الموضع نفسه والسرعة المتجهة نفسها، بما في ذلك اتجاه الحركة");
+  });
+
+  it("3. the slide no longer claims position and direction are the universal test for every periodic process", () => {
+    expect(slide2.text.en).not.toContain("the deciding test is always whether both position and direction of motion have returned");
+    expect(slide2.text.en).toContain("other periodic processes use different state variables");
+  });
+
+  it("4. the rotating-dot example still states: t = 0 at the top, t = T/2 at the bottom, t = T back at the top", () => {
+    expect(slide2.text.en).toContain("At t = 0 the dot is at the top of the disk, moving to the right");
+    expect(slide2.text.en).toContain("Halfway through one rotation (t = T/2), the dot is at the bottom of the disk, moving to the left");
+    expect(slide2.text.en).toContain("Only when the dot returns to the top of the disk moving to the right again (t = T)");
+  });
+
+  it("5. the text does not claim the rotating dot reaches the starting position at T/2", () => {
+    const t2Sentence = "Halfway through one rotation (t = T/2), the dot is at the bottom of the disk";
+    expect(slide2.text.en).toContain(t2Sentence);
+    expect(slide2.text.en).not.toMatch(/T\/2[^.]*reaches the (top|starting position)/);
+  });
+
+  it("8a. the figure asset, slide count, slide numbers, groups, and short titles are unchanged by the correction", () => {
+    expect(slides).toHaveLength(10);
+    expect(slide2.slideNumber).toBe(2);
+    expect(slide2.recordId).toBe("ch01-t03-block-slide-2");
+    expect(slide2.figure?.assetUrl).toBeTruthy();
+    expect(slide2.figure?.alt.en).toContain("t = 0");
+    const groups = SLIDE_GROUPS_BY_TOPIC_ID["ch01-t03"]!;
+    expect(groups.flatMap((g) => g.slideNumbers)).toContain(2);
+    expect(SLIDE_SHORT_TITLE_BY_BLOCK_ID["ch01-t03-block-slide-2"]).toEqual({ en: "Complete Cycle", ar: "الدورة الكاملة" });
   });
 });
 

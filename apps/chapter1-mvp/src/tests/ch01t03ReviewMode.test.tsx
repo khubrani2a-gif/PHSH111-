@@ -248,3 +248,31 @@ describe("ch01-t03 — equation rendering reuses the shared renderer", () => {
     expect(blocks).toContain("f = 1/2.0 s = 0.5 Hz");
   });
 });
+
+describe("ch01-t03 — Slide 2 scientific correction: Study/Review Mode rendering", () => {
+  it("6a. English Study Mode renders the corrected same-state/phase explanation", () => {
+    renderStudy(slideByNumber(2));
+    const text = container.textContent ?? "";
+    expect(text).toContain("returns to the same state, or equivalently the same phase");
+    expect(text).toContain("the same position and the same velocity, including direction");
+  });
+
+  it("6b. Arabic Study Mode renders the corrected same-state/phase explanation", () => {
+    renderStudy(slideByNumber(2), true);
+    const text = container.textContent ?? "";
+    expect(text).toContain("الحالة نفسها، أو بصورة مكافئة إلى الطور نفسه");
+    expect(text).toContain("الموضع نفسه والسرعة المتجهة نفسها، بما في ذلك اتجاه الحركة");
+  });
+
+  it("7. Review Mode retains the corrected Complete Cycle definition and Figure Explanation (Slide 2)", () => {
+    renderReview(slideByNumber(2));
+    expect(headings()).toContain("Definitions");
+    expect(headings()).toContain("Figure Explanation");
+    const definitionText = container.querySelector(".structured-slide__definition-body")?.textContent ?? "";
+    expect(definitionText).toContain("returns to that same state or phase");
+    const figureExplanationSection = Array.from(container.querySelectorAll(".structured-slide__section")).find(
+      (el) => el.querySelector("h4")?.textContent === "Figure Explanation",
+    );
+    expect(figureExplanationSection?.textContent).toContain("matches the starting state only at t = 0 and t = T");
+  });
+});
