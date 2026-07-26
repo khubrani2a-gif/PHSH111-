@@ -226,6 +226,861 @@
     {
       "recordType": "contentBlock",
       "record": {
+        "blockId": "ch01-t04-block-slide-1",
+        "blockType": "slide",
+        "slideNumber": 1,
+        "slideTitleEn": "Why Are Some Objects Harder to Push Than Others?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Ask two questions about the same loaded equipment cart: how hard is it to get moving with a push, and how hard is it to lift straight up off the ground? These questions turn out to be about two completely different physical ideas.\n\nMain Idea: some objects resist a change in motion more than others, and this resistance — not how much the object weighs — is the physical quantity this topic starts with.\n\nStep 1 — Notice that pushing and lifting feel different\n* Pushing a cart along a flat floor tests how hard it is to start, stop, or redirect its motion.\n* Lifting the same cart straight up tests something else entirely — how strongly gravity pulls on it.\n\nStep 2 — Identify what pushing actually reveals\n* The effort needed to push an object into motion, or to stop it once moving, reveals its resistance to a change in motion.\n* A cart that is hard to get rolling, and just as hard to stop, has a large amount of this resistance.\n\nStep 3 — Recognize these are two separate questions\n* “How hard to push?” and “how hard to lift?” are not the same question, even though the answer to both often increases together for ordinary objects.\n* Physics gives each question its own name and its own unit, which this topic builds up one at a time.\n\nSimple Example: an empty equipment cart and the same cart loaded with heavy gear are pushed with the same force. The loaded cart speeds up more slowly — it resists the change in motion more — even before either cart is lifted or weighed.\n\nMisconception: some students assume that “harder to push” and “heavier” always mean exactly the same thing, with no need to distinguish them. Correction: pushing tests resistance to a change in motion, a completely different physical idea from the pull of gravity — the next few slides give each one its own precise definition.\n\nScientific Note: this push-versus-lift contrast is not just a classroom trick — it reflects two genuinely different physical quantities that happen to be related for ordinary objects, but that this topic deliberately keeps separate from the very first slide.\n\nKey Concept: resistance to a change in motion is a distinct physical property from the pull of gravity, even though both are sometimes described loosely as how “heavy” something is.\n\nConnection to the Next Slide: next, we give this resistance to a change in motion its proper physics name — mass.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-1",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 1 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-2",
+        "blockType": "slide",
+        "slideNumber": 2,
+        "slideTitleEn": "What Is Mass?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Mass is the precise physics name for the resistance to a change in motion introduced on the previous slide.\n\nMain Idea: mass measures an object's inertia — its resistance to a change in motion — and is measured in kilograms; “amount of matter” is a reasonable starting intuition, but inertia is the working definition this topic relies on.\n\nStep 1 — Start from the everyday intuition\n* “Amount of matter” is a natural first guess for what mass means.\n* This intuition is useful for getting started, but it becomes circular the moment “amount of matter” is defined using mass itself.\n\nStep 2 — Switch to the operational definition\n* Mass measures how much an object resists a change in motion — how hard it is to speed up, slow down, or redirect.\n* This definition can be tested directly, by pushing on the object, without needing to know what it is made of.\n\nStep 3 — Connect mass to inertia by name\n* Inertia is the general tendency of an object to resist a change in its state of motion.\n* Mass is the measured quantity of that tendency — the number, in kilograms, that says how much inertia an object has.\n\nStep 4 — Confirm the unit\n* Mass is always measured in kilograms (kg), the SI unit of mass.\n* A number without kg is not a complete statement of mass.\n\nSimple Example: a loaded suitcase is much harder to get rolling, and much harder to stop once rolling, than an empty one. The loaded suitcase has more mass — more inertia, more resistance to a change in motion — regardless of where it is or whether anything is pulling on it with gravity.\n\nMisconception: some students treat “mass” as if it only meant “amount of stuff,” with no operational way to measure it. Correction: mass is measured by how much an object resists a change in motion — a property that can be tested directly, by pushing or pulling on the object.\n\nScientific Note: because mass is defined through resistance to a change in motion, and not through gravity at all, an object's mass does not depend on gravity or location — a fact this topic returns to explicitly once weight is introduced.\n\nKey Concept: mass is a measure of an object's inertia, expressed in kilograms — how much it resists a change in its motion.\n\nConnection to the Next Slide: next, we turn from pushing to lifting, and introduce weight — the second physical quantity from the very first slide.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Mass",
+            "definition": "A measure of an object's inertia, or resistance to changes in velocity."
+          },
+          {
+            "term": "Inertia",
+            "definition": "The tendency of an object to resist changes in its state of motion."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-2",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 2 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-3",
+        "blockType": "slide",
+        "slideNumber": 3,
+        "slideTitleEn": "What Is Weight?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Weight answers the “how hard to lift” question from the very first slide — a completely different question from mass.\n\nMain Idea: gravitational weight is the force of gravity acting on an object, and unlike mass, it depends on where the object is — specifically, on the local strength of gravity there.\n\nStep 1 — Identify weight as a force\n* Weight is the pull of gravity on an object, not a property built into the object itself the way mass is.\n* Because it is a force, weight is measured in newtons (N), the SI unit of force — never in kilograms.\n\nStep 2 — Connect weight to local gravity\n* The size of an object's weight depends on the local gravitational field strength (also called the local gravitational acceleration) at its location.\n* A stronger local gravitational field produces a larger weight for the same object; a weaker one produces a smaller weight.\n\nStep 3 — Separate weight from mass\n* The object's mass — its resistance to a change in motion — does not depend on the local gravitational field at all.\n* Only weight changes if the object is moved somewhere with different gravity; mass stays exactly the same.\n\nSimple Example: lifting a loaded suitcase straight up requires working against the pull of gravity on it — this is a direct way to feel its weight, separate from how hard the same suitcase is to push sideways.\n\nMisconception: some students think of weight as a fixed property of an object, the same everywhere, the way mass is. Correction: weight is a force that depends on the local gravitational field strength — the same object has a different weight in a location with different gravity, even though its mass never changes.\n\nScientific Note: because weight is a force due to gravity, it is a vector — it has a direction (toward the source of gravitational attraction, downward at Earth's surface) — while mass, having no direction, is a scalar.\n\nKey Concept: gravitational weight is the force of gravity on an object, measured in newtons, and it depends on the local gravitational field strength — unlike mass, which does not.\n\nConnection to the Next Slide: next, we see exactly how mass and local gravity combine to determine weight.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Weight",
+            "definition": "The gravitational force acting on an object."
+          },
+          {
+            "term": "Gravitational Field Strength",
+            "definition": "The local strength of gravity at a location, also called the local gravitational acceleration; it determines how much gravitational force acts on each kilogram of mass there."
+          }
+        ],
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-3",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 3 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-4",
+        "blockType": "slide",
+        "slideNumber": 4,
+        "slideTitleEn": "How Do We Calculate Weight Using W = mg?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "With mass and local gravity both defined, weight follows from a single, direct relationship.\n\nMain Idea: gravitational weight is calculated as W = mg, where m is the object's mass in kilograms and g is the local gravitational field strength — at Earth's surface, g is approximately 9.8 m/s².\n\nStep 1 — Identify the mass\n* Confirm the object's mass in kilograms.\n* Mass does not change with location, so the same mass value applies wherever the object currently is.\n\nStep 2 — Identify the local gravitational field strength\n* At Earth's surface, use g ≈ 9.8 m/s², the value this topic uses throughout.\n* A different location would use a different value of g — the same equation, a different number.\n\nStep 3 — Multiply to find weight\n* Multiply the mass by g to get the weight: W = mg.\n* Keep the units attached: kilograms times meters per second squared gives newtons.\n\nStep 4 — Report the result in newtons\n* State the final weight with the unit N, never kg.\n* A weight without the unit newtons is not a complete answer.\n\nSimple Example: a textbook has a mass of m = 2.0 kg. At Earth's surface, its weight is:\n\nW = mg = (2.0 kg)(9.8 m/s²) = 19.6 N\n\nMisconception: some students report an object's mass value as if it were also its weight in newtons, skipping the multiplication by g entirely. Correction: weight is found only by multiplying mass by the local gravitational field strength, W = mg — never by simply relabeling the mass number.\n\nScientific Note: W = mg gives only the size (magnitude) of the gravitational-weight force, which acts toward the source of gravitational attraction — downward, at Earth's surface — though this topic does not require a full signed, directional treatment of that force.\n\nKey Concept: weight is calculated as W = mg, combining an object's mass with the local gravitational field strength, and is always reported in newtons.\n\nConnection to the Next Slide: next, we compare mass and weight directly, side by side.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-4",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 4 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-5",
+        "blockType": "slide",
+        "slideNumber": 5,
+        "slideTitleEn": "How Are Mass and Weight Different?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Mass and weight are often blurred together in everyday language, but they are two distinct physical quantities with different units, different behavior, and different symbols.\n\nMain Idea: mass and weight differ in what they measure, what unit they use, whether they depend on location, and whether they have a direction — comparing them side by side makes the distinction concrete.\n\nStep 1 — Compare what each quantity measures\n* Mass measures inertia — resistance to a change in motion.\n* Weight measures the force of gravity acting on the object.\n\nStep 2 — Compare their units\n* Mass is measured in kilograms (kg).\n* Weight is measured in newtons (N) — never kilograms.\n\nStep 3 — Compare their dependence on location\n* Mass does not depend on location; the same object has the same mass everywhere.\n* Weight depends on the local gravitational field strength, so it changes from location to location.\n\nStep 4 — Compare scalar and vector classification\n* Mass is a scalar — it has no direction.\n* Weight, being a force, is a vector — it has a direction, toward the source of gravitational attraction.\n\nSimple Example: a textbook has a mass of 2.0 kg. That 2.0 kg mass value is the same wherever the textbook is taken, but at Earth's surface the same textbook has a weight of 19.6 N — two different numbers, in two different units, describing two different physical quantities of the same object.\n\nTable Explanation: the table lines up mass and weight property by property — the same object has one fixed mass everywhere, but a weight that depends on where it currently is, which is exactly why the everyday habit of saying an object “weighs” so many kilograms blurs two genuinely different physical ideas together.\n\nMisconception: some students treat “10 kg” and “10 kg of weight” as interchangeable, since everyday language uses “weigh” loosely for both. Correction: kilograms are exclusively a unit of mass; weight is properly reported in newtons, and the two units are never interchangeable.\n\nScientific Note: this mass-versus-weight distinction holds for any object, anywhere — a heavier-sounding object is not automatically the one with more inertia, unless the comparison is made at the same location, since weight (unlike mass) shifts with the local gravitational field.\n\nKey Concept: mass and weight are distinct physical quantities — different meanings, different units, different dependence on location, different scalar/vector classification — even though the words are often used loosely as if they meant the same thing.\n\nConnection to the Next Slide: next, we look more closely at why weight can change from place to place while mass never does.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Property",
+            "Mass",
+            "Weight"
+          ],
+          "rows": [
+            [
+              "Meaning",
+              "Resistance to a change in motion (inertia)",
+              "The force of gravity on the object"
+            ],
+            [
+              "Symbol",
+              "m",
+              "W"
+            ],
+            [
+              "SI unit",
+              "kilogram (kg)",
+              "newton (N)"
+            ],
+            [
+              "Scalar or vector",
+              "Scalar",
+              "Vector"
+            ],
+            [
+              "Changes with location?",
+              "No",
+              "Yes"
+            ]
+          ]
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-5",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 5 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-6",
+        "blockType": "slide",
+        "slideNumber": 6,
+        "slideTitleEn": "Why Can Weight Change While Mass Stays Constant?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "The equation W = mg makes explicit why weight and mass behave so differently when an object changes location.\n\nMain Idea: because weight equals mass multiplied by the local gravitational field strength, changing location can change weight (through g) without changing mass (m) at all — the two factors in W = mg play very different roles.\n\nStep 1 — See mass as the fixed factor\n* In W = mg, the mass m is a fixed property of the object — it does not depend on where the object currently is.\n* Moving an object to a new location leaves m completely unchanged in the equation.\n\nStep 2 — See g as the variable factor\n* The local gravitational field strength g depends entirely on location.\n* A different location supplies a different value of g into the same equation.\n\nStep 3 — Multiply through to see the effect on weight\n* Because W = mg, only the changing factor (g) can change the product — a smaller g produces a smaller W for the same m, and a larger g produces a larger W.\n* Weight rises and falls only because g rises and falls; m contributes the same fixed number every time.\n\nSimple Example: a 2.0 kg object weighs 19.6 N at Earth's surface, where g ≈ 9.8 m/s². If the same 2.0 kg object were moved to a location with a smaller g, W = mg would give a smaller weight — but the 2.0 kg mass value plugged into the equation would stay exactly the same.\n\nRelationship Explanation: mass and local gravity are multiplied together to produce weight, so weight inherits its location-dependence entirely from g — mass supplies a constant factor, and only the gravity factor changes as location changes, which is exactly why the same object's weight is smaller somewhere with weaker gravity while its mass never moves from its fixed value.\n\nMisconception: some students assume that if an object's weight is smaller somewhere, its mass must have gotten smaller too. Correction: only g changes with location — m stays fixed in the equation W = mg, so mass never changes just because weight does.\n\nScientific Note: this reasoning applies to any location with a different gravitational field strength, not to any one specific place — the mass-stays-fixed, weight-changes-with-g pattern is a general consequence of W = mg, not a special rule for any single location.\n\nKey Concept: weight changes with location only because g changes with location; mass stays fixed in W = mg no matter where the object is.\n\nConnection to the Next Slide: next, we apply this reasoning to a specific, real example — the Moon.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-6",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 6 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-7",
+        "blockType": "slide",
+        "slideNumber": 7,
+        "slideTitleEn": "What Happens to Mass and Weight on the Moon?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "The Moon is a familiar, real-world example of “somewhere with weaker gravity” — and it shows the mass-versus-weight distinction concretely, without needing an exact number.\n\nMain Idea: an object moved from Earth to the Moon keeps exactly the same mass, but has a smaller gravitational weight there, because the Moon's local gravitational field strength is weaker than Earth's — not zero, just weaker.\n\nStep 1 — Confirm the object's mass does not change\n* Mass measures inertia, and inertia does not depend on gravity at all.\n* The same suitcase has exactly the same mass on the Moon as it does on Earth.\n\nStep 2 — Compare the local gravitational field strengths\n* Earth's surface has a stronger local gravitational field strength than the Moon's surface.\n* A weaker gravitational field is not the same as no gravitational field — the Moon still pulls on objects, just less strongly than Earth does.\n\nStep 3 — Apply W = mg with the weaker g\n* Using the same mass but a smaller g for the Moon, W = mg gives a smaller weight than the same object would have on Earth.\n* The mass value plugged into the equation is unchanged; only the g value is smaller.\n\nSimple Example: a suitcase has a mass of 2.0 kg on Earth. On the Moon, that same suitcase still has a mass of 2.0 kg — but its weight, found from W = mg with the Moon's smaller g, is less than the 19.6 N it would weigh on Earth, though never zero.\n\nTable Explanation: the table lines up the same object's mass and weight on Earth and on the Moon — mass is identical in both rows, because it never depends on location, while the local gravitational field and the resulting weight are both smaller on the Moon, because the Moon's gravity is real but weaker than Earth's.\n\nMisconception: some students think the Moon has “no gravity” or “zero gravity,” and that this is why objects weigh less there. Correction: the Moon has a real, nonzero gravitational field — just a weaker one than Earth's — which is exactly why objects have a smaller (not zero) weight there, while astronauts and equipment are still pulled toward the Moon's surface.\n\nScientific Note: this same reasoning — same mass, smaller weight — applies to any location with weaker local gravity than Earth's, not only the Moon; the Moon is simply the most familiar real-world example.\n\nKey Concept: the same object has identical mass on Earth and on the Moon, but a smaller gravitational weight on the Moon, because the Moon's gravitational field strength is weaker than Earth's, not absent.\n\nConnection to the Next Slide: next, we look at what a scale actually measures, and how that relates to gravitational weight.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "tableEn": {
+          "headers": [
+            "Quantity",
+            "Earth",
+            "Moon"
+          ],
+          "rows": [
+            [
+              "Mass",
+              "Same",
+              "Same"
+            ],
+            [
+              "Local gravitational field strength",
+              "Larger",
+              "Smaller (not zero)"
+            ],
+            [
+              "Weight",
+              "Larger",
+              "Smaller (not zero)"
+            ]
+          ]
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-7",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 7 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-8",
+        "blockType": "slide",
+        "slideNumber": 8,
+        "slideTitleEn": "What Does a Scale Actually Measure?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A scale is the everyday tool most people use to find an object's weight — but it is worth being precise about what it actually reads.\n\nMain Idea: a scale directly measures apparent weight — the support force it provides to hold an object up — which normally equals the object's gravitational weight when the object is simply resting still on the scale.\n\nStep 1 — Identify what a scale physically does\n* A scale provides an upward support force to whatever rests on it.\n* The scale's reading reports the size of that support force, not a direct measurement of gravity itself.\n\nStep 2 — Name this support-force reading\n* This support force — what the scale reads, or what your body feels when something rests on it — is called apparent weight.\n* Apparent weight is a genuinely measurable quantity, distinct in name from gravitational weight, even when their values agree.\n\nStep 3 — See why the two normally agree\n* For an object simply resting still on a scale, the support force must balance the pull of gravity on it.\n* In this ordinary situation, apparent weight and gravitational weight come out equal, which is why a scale reading is normally treated as a measurement of gravitational weight.\n\nStep 4 — Notice the calibration behind the number\n* A scale often displays its reading in kilograms, converting the force it measures using an assumed value of g.\n* That kilogram number is really a stand-in for a force measurement — it is calibrated, not a direct kilogram reading of mass.\n\nSimple Example: a textbook rests still on a bathroom-style scale. The scale must push up on the textbook with a support force exactly large enough to balance gravity's pull on it — the reading the scale displays is this support force, the textbook's apparent weight.\n\nFigure Explanation: the diagram's three panels connect this topic's three ideas to three physical actions — pushing reveals mass (inertia), lifting reveals gravitational weight, and resting on a scale reveals apparent weight, the support force the scale provides. The note on the scale panel is a reminder that apparent weight equals gravitational weight only for an object at rest — a distinction this topic introduces by name but does not extend further.\n\nMisconception: some students assume a bathroom-style scale measures mass directly, with no reference to gravity or force at all. Correction: a scale responds to a force — the support force it provides — and reports that force using a kilogram display calibrated against an assumed value of g; it is not a direct kilogram measurement of mass.\n\nScientific Note: apparent weight is this chapter's own clarifying term for the support-force reading a scale provides — a genuinely useful physical idea, precisely because it names the actual force a scale measures, distinct from gravitational weight even in the ordinary situations where their values agree.\n\nKey Concept: a scale measures apparent weight — a support force — which normally equals gravitational weight for an object at rest, though the two remain distinct physical ideas.\n\nConnection to the Next Slide: with mass, gravitational weight, and apparent weight all now defined, the final slide reviews how to check an answer involving any of them.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "definitionsEn": [
+          {
+            "term": "Apparent Weight",
+            "definition": "The support force measured by a scale."
+          }
+        ],
+        "figureAssetPath": "docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg",
+        "figureAltEn": "A three-panel diagram of the same equipment cart: pushed horizontally to reveal mass (inertia), lifted straight up to reveal gravitational weight (W = mg), and resting on a scale to reveal apparent weight — the support force the scale reads, noted as equal to gravitational weight only when the object is at rest.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-8",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 8 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun",
+        "visualReferenceIds": [
+          "ch01-t04-visual-001"
+        ],
+        "visualGovernance": [
+          {
+            "visualId": "ch01-t04-visual-001",
+            "availabilityStatus": "available",
+            "linkageConfidence": "high",
+            "linkageType": "explicit",
+            "rightsStatus": "approvedInternal",
+            "visualResolutionId": "ch01-t04-visual-validation-001"
+          }
+        ]
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t04-block-slide-9",
+        "blockType": "slide",
+        "slideNumber": 9,
+        "slideTitleEn": "How Can We Check Mass-and-Weight Answers?",
+        "topicId": "ch01-t04",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A few quick checks can catch most mass-and-weight mistakes before they become a wrong final answer.\n\nMain Idea: a mass-and-weight answer should always be checked against its unit, against the equation W = mg, and against whether a change in weight was mistaken for a change in mass.\n\nStep 1 — Check the unit first\n* Kilograms (kg) always indicate mass; newtons (N) always indicate weight or force.\n* An answer in the wrong unit signals an error before any arithmetic is even checked.\n\nStep 2 — Recompute the equation\n* Confirm that W = mg was used correctly: mass multiplied by the local gravitational field strength, never divided, never added.\n* Re-multiply the given mass and g values and confirm the result matches the reported weight.\n\nStep 3 — Re-check the mass-versus-location reasoning\n* If a problem describes an object changing location, confirm the mass value was left unchanged and only the weight value was updated.\n* A mass value that changed between locations is a signal that mass and weight were confused somewhere in the reasoning.\n\nStep 4 — Compare the answer to intuition\n* A weight several times larger than a household object's typical weight, or a mass reported in newtons, is worth re-checking.\n* Reasonable-looking numbers in the right unit are a good sign the calculation was set up correctly.\n\nSimple Example: a textbook has a mass of 2.0 kg and a calculated weight of 19.6 N. Checking the unit (N, correct for weight) and the equation:\n\n2.0 kg × 9.8 m/s² = 19.6 N\n\nconfirms the answer is internally consistent.\n\nMisconception: some students treat a mass-and-weight calculation as finished once a number is produced, without checking that its unit matches the quantity being asked for. Correction: always confirm the unit matches the quantity — kg only for mass, N only for weight — before accepting a calculated answer as complete.\n\nScientific Note: these checks work for any object and any location, not just the specific numbers in one example — the unit check, the equation check, and the mass-versus-location check are general habits this entire topic has been building toward.\n\nKey Concept: a mass-and-weight answer should always be checked against its unit, against W = mg, and against whether mass was mistakenly treated as changing with location.\n\nConnection to the Next Slide: with mass and weight now clearly distinguished, the next topic turns from what is moving to how its motion itself is measured, starting with speed.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-mass",
+            "ch01-term-weight",
+            "ch01-term-apparent-weight"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T04-SLIDE-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t04-block-slide-9",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept and structure derived from this topic's own already-drafted ch01-t04-block-mainidea/organizedExplanation/equationSet/misconception records and the approved correction ch01-corr-002 (mass as inertia, gravitational weight vs. apparent weight, W=mg, g≈9.8 m/s² at Earth's surface); Main Idea, steps, examples, and Arabic translation newly authored by Claude per the Slide Reader's generic structured-slide convention (see ch01-t01/ch01-t02/ch01-t03 for the architectural pattern), not copied from any textbook or copyrighted source. General (non-healthcare) example objects (suitcase, textbook, equipment cart) used deliberately in place of the topic's existing health-science-themed example/problem records, which remain unchanged."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-002"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-002"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored slide 9 for ch01-t04's generic Slide Reader content, distinct from every other slide in this topic and from ch01-t01's/ch01-t02's/ch01-t03's own slides.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
         "blockId": "ch01-t04-block-mainidea",
         "blockType": "mainIdea",
         "topicId": "ch01-t04",

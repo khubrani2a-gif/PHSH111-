@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.24.0",
+  "baselineVersion": "1.25.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -27,9 +27,9 @@
       "topicId": "ch01-t04",
       "topicTitle": "Mass, Inertia and Weight",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-      "sha256": "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b",
+      "sha256": "0c43677482e8874f5bc975384e3b7ed8e3929f1b86596980f94887ddc2c98846",
       "schemaVersion": "2.3.0",
-      "recordCount": 8
+      "recordCount": 17
     }
   ],
   "filePreservationNote": "The approved draft files are unmoved, unrenamed, uncopied, and not promoted into docs/content-design/chapter-01/pilot/. Their internal content and governance fields (blocking, visibility, arabic, etc.) were not altered by this approval. This baseline-approval record, external to the files themselves, is what establishes that the exact versions at the checksums above are approved — mirroring the same pattern already used by ENGLISH_PILOT_BASELINE_APPROVAL.json, which likewise approves the pilot content files in place without relocating or renaming them. The files may continue to be structurally labeled 'draft' internally (generationStatus: \"draft-batch1-english-only-generation\") even though this external record now marks them baseline-approved.",
@@ -519,6 +519,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — not updated: generationNote is top-level file metadata, not owned by any individual registered block identifier, so no per-block englishBaselineDependency/arabicBaselineDependency pointer is mechanically stale as a result of this revision"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. blocking.blockingStatus, blockingReason, scientificReviewPending, translationPending, and reviewer identity are unchanged on every record. This revision does not constitute or imply publication authorization or independent scientific sign-off — it corrects only the record of internal/QA application-integration status, which PILOT_AUTHORIZATION.json already separately and previously authorized."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-027",
+        "fromVersion": "1.24.0",
+        "toVersion": "1.25.0",
+        "revisedAt": "2026-07-26",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Adds nine new contentBlock records (blockType \"slide\", slideNumbers 1-9, blockIds ch01-t04-block-slide-1 through ch01-t04-block-slide-9) to docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json, inserted immediately after the existing ch01-is-104 instructorScript record (index 0) and before the seven pre-existing contentBlock/problem records, which are otherwise untouched. No record in ch01-t01 was touched.",
+        "whatChanged": "Nine slides were authored for the Slide Reader's generic structured-slide architecture (the same one ch01-t01's Slides 1-13, ch01-t02, and ch01-t03 already use), building up mass, inertia, gravitational weight, W = mg (g ≈ 9.8 m/s², matching this topic's own pre-existing ch01-t04-block-equations), the mass-versus-weight distinction, why weight (not mass) changes with location, a qualitative Earth-versus-Moon comparison (no invented non-Earth g value, consistent with this topic's own instructorOnlyCautions), and what a scale measures (apparent weight, this project's own already-approved clarifying term from ch01-corr-002). Slide 5 and Slide 7 each add a new generic tableEn field (reused generic mechanism, no new schema). Slide 6 reuses the existing generic relationshipExplanationMarker subsection slot (introduced for ch01-t01 Slide 10 / ch01-t03 Slide 5). Slide 8 reuses the existing generic figureExplanationMarker slot and the topic's own already-existing ch01-t04-visual-001.svg asset (drafted under this same baseline; see VISUAL_BATCH1_APPROVAL.json) as a per-slide embedded figure via figureAssetPath/figureAltEn, the same reuse pattern ch01-t03's Slide 2 established for the pilot convention. Slides 2, 3, and 8 add new generic definitionsEn fields (Mass/Inertia; Weight/Gravitational Field Strength; Apparent Weight). No new ContentBlockType, StructuredSlideConfig field, adapter branch, or per-topic rendering exception was introduced.",
+        "whatWasNotChanged": "ch01-t04-block-mainidea, ch01-t04-block-explanation, ch01-t04-block-equations, ch01-t04-block-visual, ch01-t04-block-misconception, ch01-t04-block-review, and ch01-prob-104 are byte-for-byte unchanged, including their existing health-themed examples. ch01-is-104 is unchanged. No record in ch01-t01, and no record in any of the four originally-piloted topics, was changed. ch01-t04-visual-001.svg and its validation record are unchanged (reused, not modified).",
+        "rationale": "Requested by the project owner as PR F, the fourth real slide-bearing topic, following the exact source-first authoring and generic-architecture-reuse approach already used for ch01-t02 (PR D) and ch01-t03 (PR E). A pre-implementation source audit confirmed ch01-t04's real source files (this Batch 1 pair, not docs/content-design/chapter-01/pilot/ch01-t04-content.json, which does not exist) and confirmed the topic's real title, 'Mass, Inertia and Weight'. The task's own suggested 12-slide baseline was deliberately narrowed to 9 slides: an astronaut/elevator-style apparent-weight scenario was omitted because it would require an accelerating-reference-frame treatment this topic's own instructorOnlyCautions explicitly rules out, and no invented Moon g value was introduced because the source itself states none is required.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json — nine new slide records inserted at index 1; approvedDraftFiles[ch01-t04].sha256/recordCount refreshed above",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-027",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — nine new identifier entries, ch01-t04-block-slide-1 through ch01-t04-block-slide-9"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the nine new records (blocking.blockingStatus 'blocked', blockingReason includes 'translationPending' and 'scientificReviewPending'); studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This revision authorizes the nine new records' presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file — not any elevated review or approval status beyond that."
       }
     ]
   },

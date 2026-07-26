@@ -281,7 +281,6 @@ describe("Checksums and baseline versions match the actual current files", () =>
     const revisionLog = englishBaseline.revisionControlPolicy.revisionLog;
     const latest = revisionLog[revisionLog.length - 1];
     expect(englishBaseline.baselineVersion).toBe(latest.toVersion);
-    expect(latest.revisionId).toBe("ch01-english-baseline-rev-026");
   });
 
   it("Arabic baselineVersion was bumped and matches the newest revisionLog entry's toVersion", () => {
@@ -289,15 +288,25 @@ describe("Checksums and baseline versions match the actual current files", () =>
     const revisionLog = arabicBaseline.revisionControlPolicy.revisionLog;
     const latest = revisionLog[revisionLog.length - 1];
     expect(arabicBaseline.baselineVersion).toBe(latest.toVersion);
-    expect(latest.revisionId).toBe("ch01-arabic-baseline-rev-026");
   });
 
-  it("the newest revisionLog entries on both files explicitly disclaim instructional/translation content changes", () => {
+  // F-03/F-15 were implemented as revisionLog entry rev-026 on both files —
+  // this test asserts against that specific entry (by ID, not "the newest
+  // entry") since later revisions (e.g. rev-027, PR F's nine new ch01-t04
+  // slides) legitimately DO change instructional content and are not
+  // expected to carry this same disclaimer.
+  it("the rev-026 revisionLog entries on both files explicitly disclaim instructional/translation content changes", () => {
     const englishBaseline = readJson(ENGLISH_BASELINE_PATH);
     const arabicBaseline = readJson(ARABIC_BASELINE_PATH);
-    const latestEn = englishBaseline.revisionControlPolicy.revisionLog.at(-1);
-    const latestAr = arabicBaseline.revisionControlPolicy.revisionLog.at(-1);
-    for (const entry of [latestEn, latestAr]) {
+    const rev026En = englishBaseline.revisionControlPolicy.revisionLog.find(
+      (r: any) => r.revisionId === "ch01-english-baseline-rev-026",
+    );
+    const rev026Ar = arabicBaseline.revisionControlPolicy.revisionLog.find(
+      (r: any) => r.revisionId === "ch01-arabic-baseline-rev-026",
+    );
+    expect(rev026En).toBeDefined();
+    expect(rev026Ar).toBeDefined();
+    for (const entry of [rev026En, rev026Ar]) {
       expect(entry.scope).toMatch(/No instructional content changed/i);
       expect(entry.scope).toMatch(/No translation content changed/i);
       expect(entry.scope).toMatch(/No equation, table, figure, alt text, or slide order changed/i);

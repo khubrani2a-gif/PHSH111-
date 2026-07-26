@@ -118,6 +118,38 @@ export const SLIDE_GROUPS_BY_TOPIC_ID: Partial<Record<PilotTopicId, SlideGroup[]
       slideNumbers: [8, 9, 10],
     },
   ],
+  /**
+   * ch01-t04 (Mass, Inertia, and Weight — PR F, the fourth real
+   * slide-bearing topic) groups, verified against the topic's actual
+   * current slide titles (see src/content/slideShortTitles.ts): Slides 1-2
+   * establish resistance to a change in motion and name it mass/inertia;
+   * Slides 3-4 define gravitational weight and W = mg; Slides 5-7 compare
+   * mass and weight directly, explain why weight (not mass) changes with
+   * location, and apply that to the Moon; Slides 8-9 cover what a scale
+   * actually measures (apparent weight) and how to check an answer.
+   */
+  "ch01-t04": [
+    {
+      id: "ch01-t04-group-mass-and-inertia",
+      title: { en: "Mass and Inertia", ar: "الكتلة والقصور الذاتي" },
+      slideNumbers: [1, 2],
+    },
+    {
+      id: "ch01-t04-group-weight-and-gravity",
+      title: { en: "Weight and Gravity", ar: "الوزن والجاذبية" },
+      slideNumbers: [3, 4],
+    },
+    {
+      id: "ch01-t04-group-comparing-mass-and-weight",
+      title: { en: "Comparing Mass and Weight", ar: "مقارنة الكتلة والوزن" },
+      slideNumbers: [5, 6, 7],
+    },
+    {
+      id: "ch01-t04-group-applications-and-interpretation",
+      title: { en: "Applications and Interpretation", ar: "التطبيقات والتفسير" },
+      slideNumbers: [8, 9],
+    },
+  ],
 };
 
 /**

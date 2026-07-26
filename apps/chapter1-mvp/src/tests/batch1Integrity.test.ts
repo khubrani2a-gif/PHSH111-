@@ -117,7 +117,16 @@ const APPROVED = {
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
-    sha256: "c876a6fe0a041e6c892e5919435b4f2a2ea35fffe52148dc51a138b73a93628b",
+    // Baseline v1.25.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog rev-027: adds nine new slide records (ch01-t04-block-slide-1
+    // through -9), the fourth real slide-bearing topic (PR F), reusing the
+    // exact generic Slide Reader architecture ch01-t01/ch01-t02/ch01-t03
+    // already use — mass, inertia, gravitational weight, W = mg, the
+    // mass-versus-weight distinction, why weight (not mass) changes with
+    // location, a qualitative Earth-versus-Moon comparison, and what a scale
+    // actually measures (apparent weight). No pre-existing ch01-t04 record
+    // was changed.
+    sha256: "0c43677482e8874f5bc975384e3b7ed8e3929f1b86596980f94887ddc2c98846",
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
@@ -201,7 +210,10 @@ const APPROVED = {
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
-    sha256: "d1f5bfbdc5332c4c9295887d5d2c4d4e19f8e36da7a8e3822ca551fed4f11371",
+    // Baseline v1.0.27 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog rev-027, matching English rev-027: adds the Arabic side of
+    // the same nine new slide records (PR F).
+    sha256: "f21e3cc24489518299351c75d75ac136f5023eff0016e5bf4799a92f1cc82125",
   },
   svgT01: {
     path: resolve(CHAPTER01_DIR, "batch1-visuals/ch01-t01-visual-001.svg"),
