@@ -234,6 +234,41 @@ describe("PR G1 — instantaneous speed and speedometer", () => {
   });
 });
 
+describe("PR G1 correction — pace/speed conflation removed from the review question", () => {
+  it("correction-1. the review question uses 'current speed', not 'current pace'", () => {
+    const text = reviewQuestion.localizedContent.en.text;
+    expect(text).toContain("current speed");
+    expect(text.toLowerCase()).not.toContain("current pace");
+  });
+
+  it("correction-2. the review question uses 'average speed', not 'average pace'", () => {
+    const text = reviewQuestion.localizedContent.en.text;
+    expect(text).toContain("average speed");
+    expect(text.toLowerCase()).not.toContain("average pace");
+  });
+
+  it("correction-3. no teaching field contains 'pace', 'min/km', or 'session average pace'", () => {
+    expect(TEACHING_TEXT.toLowerCase()).not.toContain("pace");
+    expect(TEACHING_TEXT.toLowerCase()).not.toContain("min/km");
+    expect(TEACHING_TEXT.toLowerCase()).not.toContain("session average pace");
+    // Whole-file check too, since pace must not appear even outside the teaching-text fields.
+    expect(JSON.stringify(doc).toLowerCase()).not.toContain("pace");
+  });
+
+  it("correction-4. the review question still defines average speed as total distance / total elapsed time", () => {
+    const text = reviewQuestion.localizedContent.en.text;
+    expect(text).toContain(
+      "it equals the total distance covered during the ride divided by the total elapsed time for the ride",
+    );
+  });
+
+  it("correction-5. the review question still identifies the continuously updating reading as a momentary instantaneous-speed reading", () => {
+    const text = reviewQuestion.localizedContent.en.text;
+    expect(text).toContain("the continuously updating 'current speed' reading is an instantaneous speed");
+    expect(text).toContain("it describes the cyclist's speed at one particular moment, updated moment by moment");
+  });
+});
+
 describe("PR G1 — arithmetic-mean caveat", () => {
   it("15. arithmetic averaging of speeds is not presented as the general rule", () => {
     expect(explanation.localizedContent.en.text).toContain(
@@ -298,6 +333,16 @@ describe("PR G1 — concept boundaries (distance vs. displacement, scalar speed,
     expect(fullText.toLowerCase()).not.toContain("derivative");
     expect(fullText).not.toMatch(/\blim\b/);
     expect(fullText).not.toMatch(/d[a-z]\/dt/);
+  });
+
+  it("21b. levelAdaptations does not describe the interval-shrinks-to-zero limit definition", () => {
+    const fullText = JSON.stringify(doc).toLowerCase();
+    expect(fullText).not.toContain("shrinks toward zero");
+    expect(fullText).not.toContain("shrink toward zero");
+    expect(fullText).not.toContain("interval shrinks");
+    expect(instructorScript.levelAdaptations.join(" ")).toContain(
+      "keeping the distinction conceptual and non-calculus-based",
+    );
   });
 
   it("no position-time graph slope content is taught", () => {
