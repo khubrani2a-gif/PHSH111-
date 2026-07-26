@@ -56,6 +56,17 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t03-block-slide-8": { en: "Short Period, High Frequency", ar: "دور قصير، تردد مرتفع" },
   "ch01-t03-block-slide-9": { en: "Half-Cycle Error", ar: "خطأ نصف الدورة" },
   "ch01-t03-block-slide-10": { en: "Checking Answers", ar: "التحقّق من الإجابات" },
+
+  // ch01-t04 (Mass, Inertia, and Weight — PR F).
+  "ch01-t04-block-slide-1": { en: "Push versus Lift", ar: "الدفع مقابل الرفع" },
+  "ch01-t04-block-slide-2": { en: "What Is Mass?", ar: "ما هي الكتلة؟" },
+  "ch01-t04-block-slide-3": { en: "What Is Weight?", ar: "ما هو الوزن؟" },
+  "ch01-t04-block-slide-4": { en: "Calculating Weight", ar: "حساب الوزن" },
+  "ch01-t04-block-slide-5": { en: "Mass versus Weight", ar: "الكتلة مقابل الوزن" },
+  "ch01-t04-block-slide-6": { en: "Why Weight Changes", ar: "لماذا يتغيّر الوزن" },
+  "ch01-t04-block-slide-7": { en: "Mass and Weight on the Moon", ar: "الكتلة والوزن على القمر" },
+  "ch01-t04-block-slide-8": { en: "What a Scale Measures", ar: "ما يقيسه الميزان" },
+  "ch01-t04-block-slide-9": { en: "Checking Answers", ar: "التحقّق من الإجابات" },
 };
 
 /**

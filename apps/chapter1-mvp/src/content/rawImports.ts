@@ -93,6 +93,12 @@ import ch01t01BlockOpening13Figure from "../../../../docs/content-design/chapter
 // yields the build-time-hashed asset URL a real `<img src>` needs (slide
 // figure) — see this map's own header comment above.
 import ch01t03BlockSlide2Figure from "../../../../docs/content-design/chapter-01/pilot/visuals/ch01-t03-visual-001.svg";
+// ch01-t04-block-slide-8's figure (PR F) reuses the topic's own existing,
+// already-designed SVG asset (ch01-t04-visual-001.svg — the same file
+// imported `?raw` above for the topic-singular visualReference record) as a
+// per-slide embedded figure, following the identical ch01-t03-block-slide-2
+// precedent above.
+import ch01t04BlockSlide8Figure from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t04-visual-001.svg";
 
 import type { PilotTopicId } from "../types/pilotSchema";
 import { mergeEnglishAndArabicTopicFile } from "./batch1Merge";
@@ -162,4 +168,5 @@ export const RAW_FIGURE_URL_BY_BLOCK_ID: Record<string, string> = {
   "ch01-t01-block-opening-5": ch01t01BlockOpening5Figure,
   "ch01-t01-block-opening-13": ch01t01BlockOpening13Figure,
   "ch01-t03-block-slide-2": ch01t03BlockSlide2Figure,
+  "ch01-t04-block-slide-8": ch01t04BlockSlide8Figure,
 };
