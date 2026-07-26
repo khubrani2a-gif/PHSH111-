@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-english-batch1-baseline-001",
-  "baselineVersion": "1.25.0",
+  "baselineVersion": "1.26.0",
   "status": "approved",
   "language": "English",
   "batchId": "Batch 1",
@@ -27,7 +27,7 @@
       "topicId": "ch01-t04",
       "topicTitle": "Mass, Inertia and Weight",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
-      "sha256": "0c43677482e8874f5bc975384e3b7ed8e3929f1b86596980f94887ddc2c98846",
+      "sha256": "052fc0982650f828e8efeea20fb726987c29450d6db2a0097f43be4ff9da68b2",
       "schemaVersion": "2.3.0",
       "recordCount": 17
     }
@@ -536,6 +536,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — nine new identifier entries, ch01-t04-block-slide-1 through ch01-t04-block-slide-9"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the nine new records (blocking.blockingStatus 'blocked', blockingReason includes 'translationPending' and 'scientificReviewPending'); studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. This revision authorizes the nine new records' presence in the internal-review application build only, on the same terms as every other blocked/draft record in this file — not any elevated review or approval status beyond that."
+      },
+      {
+        "revisionId": "ch01-english-baseline-rev-028",
+        "fromVersion": "1.25.0",
+        "toVersion": "1.26.0",
+        "revisedAt": "2026-07-26",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Implements a focused scientific correction to two of the nine slides added in rev-027 (ch01-t04-block-slide-1 and ch01-t04-block-slide-2), correcting an unstated-controlled-conditions gap and an overly absolute unit statement. No slide was added, removed, retitled, renumbered, or reordered; no equation, table, figure, group, or short title changed; no other slide's text changed.",
+        "whatChanged": "Slide 1: the pushing-reveals-inertia comparison was revised to explicitly require the same net force and equivalent conditions (negligible or equal friction, rolling resistance, and slope) before comparing the resulting acceleration, replacing the prior framing that could be read as 'how hard the push subjectively feels' alone measuring mass. The opening paragraph, Main Idea, Step 2 (retitled from 'Identify what pushing actually reveals' to 'Compare pushes fairly, under controlled conditions'), Simple Example, Misconception, Scientific Note, and Key Concept were all revised to state or reinforce: 'when two objects experience the same net force under otherwise equivalent conditions, the object with the smaller acceleration has the greater mass and inertia.' Slide 2: Step 4's first bullet, which stated 'Mass is always measured in kilograms (kg), the SI unit of mass,' was replaced with 'The SI base unit of mass is the kilogram (kg). Mass may also be expressed in related units such as grams, but SI calculations should use kilograms unless a conversion is performed.' Its second bullet, 'A number without kg is not a complete statement of mass,' was replaced with 'A numerical mass value must include a valid mass unit; kilograms are required when directly using standard SI equations such as W = mg with g in m/s².'",
+        "whatWasNotChanged": "Slide 1's push-versus-lift instructional contrast, its 3-step structure, and its Connection to the Next Slide are unchanged. Slide 2's Main Idea, Steps 1-3, Simple Example, Misconception, Scientific Note, Key Concept, and Connection to the Next Slide are unchanged — only Step 4's two bullets were revised. Slides 3-9 are entirely byte-for-byte unchanged. No equation, table, figure, group, or short title changed. ch01-t01, ch01-t02, and ch01-t03 were not touched.",
+        "rationale": "Project-owner-directed scientific correction: (1) Slide 1's original phrasing could be read as claiming that subjective pushing effort alone reveals mass, without acknowledging that friction, rolling resistance, or a sloped surface can confound that comparison — the corrected text makes the controlled-conditions requirement (same net force, negligible/equal friction, comparing acceleration) explicit. (2) Slide 2's 'Mass is always measured in kilograms' overstated the SI convention — kilogram is the SI base unit, but mass may legitimately be expressed in grams or other units; the correction clarifies kilogram's role as the base unit while permitting other valid mass units, and clarifies why kilograms specifically are required when directly using W = mg.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json — ch01-t04-block-slide-1.localizedContent.en.text and ch01-t04-block-slide-2.localizedContent.en.text revised; approvedDraftFiles[ch01-t04].sha256 refreshed above",
+          "docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-arabic-baseline-rev-028",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t04-block-slide-1 and ch01-t04-block-slide-2's englishBaselineDependency/arabicBaselineDependency refreshed to match; every other slide's entry untouched"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentExpertReviewCompleted remains false. blocking.blockingStatus, blockingReason, and reviewer identity are unchanged on both corrected records. This revision does not constitute or imply publication authorization or independent scientific sign-off."
       }
     ]
   },

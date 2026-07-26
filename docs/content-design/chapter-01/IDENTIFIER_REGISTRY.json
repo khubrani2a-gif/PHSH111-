@@ -1198,17 +1198,17 @@
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
         "englishBaselineDependency": {
           "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.25.0",
-          "sha256": "0c43677482e8874f5bc975384e3b7ed8e3929f1b86596980f94887ddc2c98846"
+          "baselineVersion": "1.26.0",
+          "sha256": "052fc0982650f828e8efeea20fb726987c29450d6db2a0097f43be4ff9da68b2"
         },
         "arabicBaselineDependency": {
           "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.0.27",
-          "sha256": "f21e3cc24489518299351c75d75ac136f5023eff0016e5bf4799a92f1cc82125"
+          "baselineVersion": "1.0.28",
+          "sha256": "5e13ba3dfc612230e2c3c1c051ee95075227bc4acdf69d89d64aa41c1b545317"
         },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-26",
-        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.25.0 revisionLog rev-027; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.27 revisionLog rev-027",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.26.0 revisionLog rev-028 (focused scientific correction); ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.28 revisionLog rev-028",
         "status": "registered",
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",
@@ -1224,17 +1224,17 @@
         "approvedSourcePath": "docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json",
         "englishBaselineDependency": {
           "record": "ENGLISH_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.25.0",
-          "sha256": "0c43677482e8874f5bc975384e3b7ed8e3929f1b86596980f94887ddc2c98846"
+          "baselineVersion": "1.26.0",
+          "sha256": "052fc0982650f828e8efeea20fb726987c29450d6db2a0097f43be4ff9da68b2"
         },
         "arabicBaselineDependency": {
           "record": "ARABIC_BATCH1_BASELINE_APPROVAL.json",
-          "baselineVersion": "1.0.27",
-          "sha256": "f21e3cc24489518299351c75d75ac136f5023eff0016e5bf4799a92f1cc82125"
+          "baselineVersion": "1.0.28",
+          "sha256": "5e13ba3dfc612230e2c3c1c051ee95075227bc4acdf69d89d64aa41c1b545317"
         },
         "visualBaselineDependency": null,
         "registrationDate": "2026-07-26",
-        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.25.0 revisionLog rev-027; ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.27 revisionLog rev-027",
+        "registrationBasis": "ENGLISH_BATCH1_BASELINE_APPROVAL.json v1.26.0 revisionLog rev-028 (focused scientific correction); ARABIC_BATCH1_BASELINE_APPROVAL.json v1.0.28 revisionLog rev-028",
         "status": "registered",
         "applicationIntegrationState": "unauthorized",
         "publicationState": "unauthorized",

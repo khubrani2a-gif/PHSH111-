@@ -117,16 +117,22 @@ const APPROVED = {
   },
   englishT04: {
     path: resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t04-content.json"),
-    // Baseline v1.25.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
-    // revisionLog rev-027: adds nine new slide records (ch01-t04-block-slide-1
+    // Baseline v1.26.0 — see ENGLISH_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog: rev-027 adds nine new slide records (ch01-t04-block-slide-1
     // through -9), the fourth real slide-bearing topic (PR F), reusing the
     // exact generic Slide Reader architecture ch01-t01/ch01-t02/ch01-t03
     // already use — mass, inertia, gravitational weight, W = mg, the
     // mass-versus-weight distinction, why weight (not mass) changes with
     // location, a qualitative Earth-versus-Moon comparison, and what a scale
-    // actually measures (apparent weight). No pre-existing ch01-t04 record
-    // was changed.
-    sha256: "0c43677482e8874f5bc975384e3b7ed8e3929f1b86596980f94887ddc2c98846",
+    // actually measures (apparent weight). rev-028 is a focused scientific
+    // correction to Slides 1 and 2 only: Slide 1 now requires the same net
+    // force and equivalent (negligible/equal friction, rolling resistance,
+    // slope) conditions before comparing acceleration to compare inertia,
+    // rather than implying subjective push effort alone reveals mass; Slide
+    // 2's Step 4 now states kilogram is the SI base unit of mass (permitting
+    // other valid mass units such as grams) rather than claiming mass is
+    // "always" measured only in kilograms.
+    sha256: "052fc0982650f828e8efeea20fb726987c29450d6db2a0097f43be4ff9da68b2",
   },
   arabicT01: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t01-content.json"),
@@ -210,10 +216,12 @@ const APPROVED = {
   },
   arabicT04: {
     path: resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t04-content.json"),
-    // Baseline v1.0.27 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
-    // revisionLog rev-027, matching English rev-027: adds the Arabic side of
-    // the same nine new slide records (PR F).
-    sha256: "f21e3cc24489518299351c75d75ac136f5023eff0016e5bf4799a92f1cc82125",
+    // Baseline v1.0.28 — see ARABIC_BATCH1_BASELINE_APPROVAL.json's
+    // revisionLog: rev-027, matching English rev-027, adds the Arabic side of
+    // the same nine new slide records (PR F); rev-028, matching English
+    // rev-028, is the paired Arabic half of the focused Slide 1/2 scientific
+    // correction.
+    sha256: "5e13ba3dfc612230e2c3c1c051ee95075227bc4acdf69d89d64aa41c1b545317",
   },
   svgT01: {
     path: resolve(CHAPTER01_DIR, "batch1-visuals/ch01-t01-visual-001.svg"),

@@ -247,3 +247,49 @@ describe("ch01-t04 — equation rendering reuses the shared renderer", () => {
     expect(container.textContent).toContain("W = mg = (2.0 kg)(9.8 m/s²) = 19.6 N");
   });
 });
+
+describe("ch01-t04 — Slide 1/2 scientific correction: Study/Review Mode rendering", () => {
+  it("9a. English Study Mode renders the corrected controlled-conditions comparison (Slide 1)", () => {
+    renderStudy(slideByNumber(1));
+    const text = container.textContent ?? "";
+    expect(text).toContain("the same net force under otherwise equivalent conditions");
+    expect(text).toContain(
+      "the object with the smaller acceleration has the greater mass and inertia",
+    );
+  });
+
+  it("9b. Arabic Study Mode renders the corrected controlled-conditions comparison (Slide 1)", () => {
+    renderStudy(slideByNumber(1), true);
+    const text = container.textContent ?? "";
+    expect(text).toContain("بالقوة المحصلة نفسها في ظروف متكافئة");
+    expect(text).toContain("يكون الجسم ذو التسارع الأصغر أكبر كتلةً وقصورًا ذاتيًا");
+  });
+
+  it("9c. English Study Mode renders the corrected kilogram-as-SI-base-unit wording (Slide 2)", () => {
+    renderStudy(slideByNumber(2));
+    const text = container.textContent ?? "";
+    expect(text).toContain("The SI base unit of mass is the kilogram (kg)");
+    expect(text).not.toContain("always measured in kilograms");
+  });
+
+  it("9d. Arabic Study Mode renders the corrected kilogram-as-SI-base-unit wording (Slide 2)", () => {
+    renderStudy(slideByNumber(2), true);
+    const text = container.textContent ?? "";
+    expect(text).toContain("وحدة النظام الدولي الأساسية للكتلة هي الكيلوغرام");
+    expect(text).not.toContain("تُقاس الكتلة دائمًا بالكيلوغرام");
+  });
+
+  it("10. Review Mode retains the corrected Main Idea (Slide 1) and Key Concept (Slides 1 and 2)", () => {
+    renderReview(slideByNumber(1));
+    let text = container.textContent ?? "";
+    expect(headings()).toContain("Main Idea");
+    expect(text).toContain("the object with the smaller resulting acceleration has the greater mass and inertia");
+    expect(headings()).toContain("Key Concept");
+    expect(text).toContain("subjective pushing effort alone");
+
+    renderReview(slideByNumber(2));
+    text = container.textContent ?? "";
+    expect(headings()).toContain("Key Concept");
+    expect(text).toContain("mass is a measure of an object's inertia");
+  });
+});

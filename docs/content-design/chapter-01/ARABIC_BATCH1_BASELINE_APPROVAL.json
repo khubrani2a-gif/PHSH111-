@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-arabic-batch1-baseline-001",
-  "baselineVersion": "1.0.27",
+  "baselineVersion": "1.0.28",
   "status": "approved",
   "language": "Arabic",
   "batchId": "Batch 1",
@@ -29,7 +29,7 @@
       "topicTitle": "Mass, Inertia and Weight",
       "topicTitleAr": "الكتلة والقصور الذاتي والوزن",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json",
-      "sha256": "f21e3cc24489518299351c75d75ac136f5023eff0016e5bf4799a92f1cc82125",
+      "sha256": "5e13ba3dfc612230e2c3c1c051ee95075227bc4acdf69d89d64aa41c1b545317",
       "schemaVersion": "2.3.0",
       "recordCount": 17
     }
@@ -557,6 +557,23 @@
           "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — nine new identifier entries, ch01-t04-block-slide-1 through ch01-t04-block-slide-9"
         ],
         "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic, including the nine new records; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus on the nine new records is \"draft-ai-generated-unreviewed\" and terminologyApprovalStatus is \"pending\" — neither implies review completion or publication authorization."
+      },
+      {
+        "revisionId": "ch01-arabic-baseline-rev-028",
+        "fromVersion": "1.0.27",
+        "toVersion": "1.0.28",
+        "revisedAt": "2026-07-26",
+        "authorizedBy": "khubrani2a-gif (project owner)",
+        "scope": "Matches the paired English-file revision ch01-english-baseline-rev-028 (1.25.0 -> 1.26.0): adds the Arabic side of the same focused scientific correction to ch01-t04-block-slide-1 and ch01-t04-block-slide-2's localizedContent.en/ar and arabic.canonicalArabicTranslation text. No slide was added, removed, retitled, renumbered, or reordered; no equation, table, figure, group, or short title changed; no other slide's text changed.",
+        "whatChanged": "Slide 1: localizedContent.en, localizedContent.ar, and arabic.canonicalArabicTranslation.text were all revised identically to the paired English-file correction (opening paragraph, Main Idea, Step 2, Simple Example, Misconception, Scientific Note, and Key Concept), stating the controlled-conditions comparison in Arabic: \"عندما يتعرض جسمان للقوة المحصلة نفسها في ظروف متكافئة، يكون الجسم ذو التسارع الأصغر أكبر كتلةً وقصورًا ذاتيًا.\" Slide 2: Step 4's two bullets were revised identically in localizedContent.en, localizedContent.ar, and arabic.canonicalArabicTranslation.text to state the kilogram-as-SI-base-unit framing in Arabic, matching the required phrasing: \"وحدة النظام الدولي الأساسية للكتلة هي الكيلوغرام (kg). ويمكن التعبير عن الكتلة أيضًا بوحدات مرتبطة مثل الغرام، لكن حسابات النظام الدولي تستخدم الكيلوغرام ما لم يُجرَ تحويل للوحدات.\"",
+        "whatWasNotChanged": "arabic.translationStatus remains \"draft-ai-generated-unreviewed\" and terminologyApprovalStatus remains \"pending\" on both corrected records, unchanged by this correction. Slides 3-9's Arabic content is entirely byte-for-byte unchanged. No equation, table, figure, group, or short title changed. ch01-t01, ch01-t02, and ch01-t03 were not touched.",
+        "rationale": "Matches the English-side rationale (ch01-english-baseline-rev-028): project-owner-directed scientific correction providing the Arabic half of the same two-slide correction applied to the English baseline in the paired revision.",
+        "resolvedGovernanceRecords": [
+          "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json — ch01-t04-block-slide-1 and ch01-t04-block-slide-2's localizedContent.en/ar and arabic.canonicalArabicTranslation.text revised; approvedCandidateFiles[ch01-t04].sha256 refreshed above",
+          "docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json — paired revisionLog entry ch01-english-baseline-rev-028",
+          "docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json — ch01-t04-block-slide-1 and ch01-t04-block-slide-2's englishBaselineDependency/arabicBaselineDependency refreshed to match; every other slide's entry untouched"
+        ],
+        "publicationRestrictionsRetained": "studentFacingAllowed remains false on every record in every topic; studentPublicationAuthorized remains false globally; independentHumanReviewCompleted remains false. arabic.translationStatus and terminologyApprovalStatus on the two corrected records are unchanged by this correction."
       }
     ]
   },

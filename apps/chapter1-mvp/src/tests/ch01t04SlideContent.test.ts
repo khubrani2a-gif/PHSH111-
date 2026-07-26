@@ -409,6 +409,62 @@ describe("ch01-t04 — scientific regression", () => {
   });
 });
 
+describe("ch01-t04 — Slide 1/2 scientific correction (controlled-conditions comparison, kilogram as SI base unit)", () => {
+  const slide1 = slides.find((s) => s.slideNumber === 1)!;
+  const slide2 = slides.find((s) => s.slideNumber === 2)!;
+  const fullEn = slides.map((s) => s.text.en).join("\n\n");
+
+  it("1. Slide 1 explicitly uses the same net force or equivalent controlled conditions", () => {
+    expect(slide1.text.en).toContain("the same net force under otherwise equivalent conditions");
+    expect(slide1.text.en).toContain("negligible or equal friction");
+    expect(slide1.text.ar).toContain("بالقوة المحصلة نفسها في ظروف متكافئة");
+  });
+
+  it("2. Slide 1 connects greater mass with smaller acceleration for the same net force", () => {
+    const required =
+      "when two objects experience the same net force under otherwise equivalent conditions, the object with the smaller acceleration has the greater mass and inertia";
+    expect(slide1.text.en).toContain(required);
+    expect(slide1.text.ar).toContain(
+      "يكون الجسم ذو التسارع الأصغر أكبر كتلةً وقصورًا ذاتيًا",
+    );
+  });
+
+  it("3. Slide 1 does not claim that subjective pushing effort alone measures mass", () => {
+    expect(slide1.text.en).not.toMatch(/pushing effort (?:alone|by itself) (?:reveals|measures) mass\.(?! )/);
+    expect(slide1.text.en).toContain("subjective pushing effort alone");
+    expect(slide1.text.en).toContain("does not measure mass or inertia directly");
+  });
+
+  it("4. friction or resistance is acknowledged as a possible confounding force", () => {
+    expect(slide1.text.en).toContain("friction");
+    expect(slide1.text.en).toContain("rolling resistance");
+    expect(slide1.text.en!.toLowerCase()).toContain("confound");
+    expect(slide1.text.ar).toContain("الاحتكاك");
+    expect(slide1.text.ar).toContain("مقاومة التدحرج");
+  });
+
+  it("5. Slide 2 states that kilogram is the SI base unit of mass", () => {
+    expect(slide2.text.en).toContain("The SI base unit of mass is the kilogram (kg)");
+    expect(slide2.text.ar).toContain("وحدة النظام الدولي الأساسية للكتلة هي الكيلوغرام");
+  });
+
+  it("6. Slide 2 does not state that mass is always measured only in kilograms", () => {
+    expect(slide2.text.en).not.toContain("always measured in kilograms");
+    expect(slide2.text.ar).not.toContain("تُقاس الكتلة دائمًا بالكيلوغرام");
+  });
+
+  it("7. Slide 2 permits valid related mass units such as grams", () => {
+    expect(slide2.text.en).toContain("Mass may also be expressed in related units such as grams");
+    expect(slide2.text.ar).toContain("ويمكن التعبير عن الكتلة أيضًا بوحدات مرتبطة مثل الغرام");
+  });
+
+  it("8. W = mg examples still use kilograms with g in m/s²", () => {
+    expect(fullEn).toContain("W = mg = (2.0 kg)(9.8 m/s²) = 19.6 N");
+    expect(fullEn).toContain("2.0 kg × 9.8 m/s² = 19.6 N");
+    expect(slide2.text.en).toContain("standard SI equations such as W = mg with g in m/s²");
+  });
+});
+
 describe("ch01-t04 — registered in the app's topic order", () => {
   it("ch01-t04 is part of getTopicOrder() and passes group validation as part of the full-registry regression", () => {
     expect(getTopicOrder()).toContain("ch01-t04");
