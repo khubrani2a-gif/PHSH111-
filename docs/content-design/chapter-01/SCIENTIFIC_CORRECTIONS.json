@@ -157,7 +157,9 @@
         ]
       },
       "correctionRationale": "The event metadata and time must refer to the same race before the example is student-facing.",
+      "exampleClassification": "A 100 m sprint time is a total-distance-over-total-elapsed-time calculation and therefore an average-speed example, not an instantaneous-speed example, regardless of which of the two internally consistent event/time pairings below is eventually selected. This classification does not depend on resolving the citation gap and is not itself in dispute.",
       "evidenceStatus": "acceptedFromClaudeReviewPendingPrimaryCitationSelection",
+      "evidenceGapDetail": "Two internally consistent event/time pairings are recorded in correctedWording.factPairs (Berlin 2009 / 9.58 s; Beijing 2008 / 9.69 s), both scientifically self-consistent races each athlete plausibly ran. Neither has yet been confirmed against a primary, citable source (e.g. an official World Athletics / IAAF competition-result record) distinguishable from the other by direct citation. Closing this gap requires: (1) selecting exactly one pairing as canonical, (2) recording a specific, checkable primary-source citation for that pairing (not a general encyclopedic claim), and (3) a project-owner or physics-reviewer sign-off confirming the citation. Until all three are complete, this correction must remain approvalStatus \"needsEvidence\" and must not be treated as sufficient evidentiary basis for drafting student-facing content that states one specific pairing as fact.",
       "approvalStatus": "needsEvidence",
       "affectedContentBlockIds": [],
       "studentFacingSuppression": true,
@@ -342,6 +344,62 @@
         "resolutionOwner": "physicsReviewerAndCanonicalEditor",
         "resolutionStatus": "resolved"
       }
+    },
+    {
+      "correctionId": "ch01-corr-010",
+      "title": {"text": "Define average speed as total distance over total elapsed time, not an arithmetic mean of speeds", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t05"],
+      "classification": "needsClarification",
+      "severity": "medium",
+      "provenanceNote": "This record advances the audit-layer finding SCA06 into a formal correction record, per PR G0 (governance/ch01-t05-corrections-authorization). SCA06's own raw audit-finding text is not present anywhere in this repository — docs/content-audits/chapter-01/ is referenced by ID only in IDENTIFIER_REGISTRY.json's namespace patterns and does not exist in this repo's tree. This record's originalWording therefore characterizes SCA06 as it is described in the two in-repo governance documents that reference it (BILINGUAL_GLOSSARY.json's ch01-term-speed/ch01-term-velocity sourceReferences and docs/app/PHSH111_CHAPTER1_EXPANSION_PLAN.md §6/§9), not a verbatim quotation of unavailable source text. correctedWording states well-established, non-controversial kinematics (average speed = total distance / total elapsed time; a simple arithmetic mean of speeds is valid only for equal time intervals) that does not itself require an external citation the way ch01-corr-005's event/time pairing does.",
+      "scientificAuditRecordIds": ["SCA06"],
+      "conflictRecordIds": ["CD-CONF-009"],
+      "originalWording": {
+        "summary": "SCA06, as characterized in BILINGUAL_GLOSSARY.json and PHSH111_CHAPTER1_EXPANSION_PLAN.md, flags that the source material does not reliably distinguish a total-distance-over-total-time average from a simple arithmetic mean of listed speed or velocity values, and does not consistently require total path length (not displacement) as the numerator.",
+        "sourceRecordIds": ["S2-SEG102"]
+      },
+      "correctedWording": {
+        "en": "Average speed equals the total distance traveled divided by the total elapsed time for the interval in question: average speed = total distance / total elapsed time. This is not, in general, the same as the arithmetic mean of the speed values traveled during separate parts of the trip. A simple arithmetic mean of two or more speeds gives the correct average speed only in the special case where each speed was maintained for an equal time interval; when speeds are maintained over equal distances instead (or over unequal times), the arithmetic mean of the speeds is generally NOT the average speed, and total distance divided by total elapsed time must be used instead. Total distance means total path length actually traveled, not displacement — returning to a starting point does not make total distance, or average speed, zero. Total elapsed time includes stops, waiting, and pauses unless a problem explicitly asks for average speed while moving only.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "Without an explicit average = total distance / total elapsed time definition, and without an explicit statement that arithmetic-mean averaging of speeds is valid only in the special equal-time case, students risk applying a naive arithmetic mean to any set of speeds regardless of whether the underlying times or distances were equal — one of the most common conceptual errors in average-speed problems.",
+      "equations": [
+        {
+          "equationId": "ch01-corr-010-eq-001",
+          "expression": "average speed = total distance / total elapsed time",
+          "meaning": "The general, correct method for computing average speed over any interval, valid regardless of whether the traveled speeds vary continuously, are constant in segments, or include stops.",
+          "units": ["m/s", "km/h"]
+        }
+      ],
+      "approvalStatus": "proposed",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+    },
+    {
+      "correctionId": "ch01-corr-011",
+      "title": {"text": "Distinguish instantaneous speed from average speed, including what a speedometer displays", "status": "draft", "language": "en", "direction": "ltr"},
+      "topicIds": ["ch01-t05"],
+      "classification": "needsClarification",
+      "severity": "medium",
+      "provenanceNote": "This record advances the audit-layer finding SCA07 into a formal correction record, per PR G0 (governance/ch01-t05-corrections-authorization). As with ch01-corr-010/SCA06, SCA07's own raw audit-finding text is not present anywhere in this repository; this record characterizes SCA07 as described in BILINGUAL_GLOSSARY.json's ch01-term-speed sourceReferences and docs/app/PHSH111_CHAPTER1_EXPANSION_PLAN.md §6/§9, not a verbatim quotation of unavailable source text. correctedWording states well-established, non-controversial kinematics that does not itself require an external citation.",
+      "scientificAuditRecordIds": ["SCA07"],
+      "conflictRecordIds": ["CD-CONF-010"],
+      "originalWording": {
+        "summary": "SCA07, as characterized in BILINGUAL_GLOSSARY.json and PHSH111_CHAPTER1_EXPANSION_PLAN.md, flags that the source material does not consistently distinguish a speed value measured at one instant (e.g. a speedometer reading) from the average speed over an entire trip, risking a reader treating any single reported speed figure as if it applied to the whole journey.",
+        "sourceRecordIds": ["S2-SEG102"]
+      },
+      "correctedWording": {
+        "en": "Instantaneous speed is the speed of an object at one particular moment; average speed is the total distance traveled divided by the total elapsed time over an entire interval or trip. The two are generally different values for a trip where speed varies, and neither can be substituted for the other. A speedometer displays an approximate instantaneous speed at that moment — it does not display, and cannot be read as, the average speed for the whole journey. A larger instantaneous-speed reading at one moment does not by itself imply a larger average speed for the full trip, since the object may travel more slowly, or stop, during other parts of the same trip.",
+        "ar": null,
+        "arabicStatus": "notGenerated"
+      },
+      "correctionRationale": "Without an explicit instantaneous-versus-average distinction, and without clarifying what a speedometer physically displays, students risk treating a single instantaneous reading (or the speedometer's current value) as though it represented the entire trip's average speed.",
+      "approvalStatus": "proposed",
+      "affectedContentBlockIds": [],
+      "studentFacingSuppression": true,
+      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
     }
   ],
   "validationRules": [
