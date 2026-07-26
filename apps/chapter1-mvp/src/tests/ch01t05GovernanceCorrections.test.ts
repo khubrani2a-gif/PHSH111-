@@ -264,10 +264,26 @@ describe("PR G0 — publication state unchanged chapter-wide", () => {
 });
 
 describe("PR G0 — no content, slide, or application file was created", () => {
-  it("16. no ch01-t05-content.json exists under pilot/, batch1-drafts/, or batch1-arabic-drafts/", () => {
+  // PR G0 itself created no content file (verified by its own PR diff at merge time —
+  // exactly 4 files, none of them ch01-t05-content.json). A later, separately-authorized
+  // PR (PR G1, content/ch01-t05-english-draft) legitimately creates
+  // batch1-drafts/ch01-t05-content.json under ch01T05DraftingAuthorization — see
+  // src/tests/ch01t05DraftContent.test.ts for that PR's own focused coverage. This test
+  // therefore asserts the invariants that remain true regardless of PR G1: no ch01-t05
+  // content exists under pilot/ (never authorized, and PR G1 does not use that path) or
+  // under batch1-arabic-drafts/ (Arabic generation remains unauthorized for ch01-t05).
+  it("16. no ch01-t05-content.json exists under pilot/ or batch1-arabic-drafts/ (Arabic remains unauthorized)", () => {
     expect(existsSync(resolve(CHAPTER01_DIR, "pilot/ch01-t05-content.json"))).toBe(false);
-    expect(existsSync(resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t05-content.json"))).toBe(false);
     expect(existsSync(resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t05-content.json"))).toBe(false);
+  });
+
+  it("16b. if batch1-drafts/ch01-t05-content.json exists, it is English-only, per ch01T05DraftingAuthorization", () => {
+    const path = resolve(CHAPTER01_DIR, "batch1-drafts/ch01-t05-content.json");
+    if (!existsSync(path)) return; // not yet drafted — also valid, if PR G1 has not landed
+    const doc = readJson(path);
+    expect(doc.topicId).toBe("ch01-t05");
+    expect(doc.topicTitleAr).toBeNull();
+    expect(doc.generationStatus).toBe("draft-batch1-english-only-generation");
   });
 
   it("17a. src/types/pilotSchema.ts's PilotTopicId union and APP_TOPIC_ORDER do not include ch01-t05", () => {

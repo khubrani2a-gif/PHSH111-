@@ -1,0 +1,950 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t05",
+  "topicTitle": "Average and Instantaneous Speed",
+  "topicTitleAr": null,
+  "generationStatus": "draft-batch1-english-only-generation",
+  "generationNote": "All content in this file is newly authored under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization, built directly from the two proposed corrections ch01-corr-010 (SCA06: average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (SCA07: instantaneous speed distinguished from average speed, including what a speedometer displays). Neither correction is yet editoriallyApproved — both remain approvalStatus: proposed, per this authorization's own disclosed deviation from the Batch 1 precedent (see PILOT_AUTHORIZATION.json's ch01T05DraftingAuthorization.deliberateDeviationFromBatch1Precedent). ch01-corr-005 (the topic's Usain Bolt event/time citation-pairing correction) remains unresolved at approvalStatus: needsEvidence and is explicitly excluded from this draft: no content in this file uses Usain Bolt, Berlin 2009, Beijing 2008, 9.58 s, 9.69 s, or any example derived from that unresolved event/time pairing (see PILOT_AUTHORIZATION.json's ch01T05DraftingAuthorization.excludedFromThisAuthorization). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the general example (ch01-t05-block-example) and the original problem (ch01-prob-105) use different objects, scenarios, and numbers than any audited source item. Provenance links trace conceptual topic lineage only. This is an ENGLISH-ONLY DRAFT: every record's Arabic content is explicitly represented as missing (arabic.translationStatus: \"missing\"), not omitted silently, not machine-translated, and not copied from the English text. No Arabic candidate file exists for this topic — Arabic generation is not authorized (batch1ArabicGenerationAuthorization.applicableTopicIds remains exactly ch01-t01/ch01-t04). This file contains no slide records — the generic Slide Reader's structured-slide content is a separate, not-yet-authorized future step. This file is NOT located under docs/content-design/chapter-01/pilot/ and is NOT read by apps/chapter1-mvp/ — it is a controlled draft artifact only, not an approved canonical baseline, not application-facing content, and not authorized for student-facing use in any form.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-105",
+        "topicIds": [
+          "ch01-t05"
+        ],
+        "openingHook": {
+          "text": "Ask students to imagine a car trip: the speedometer needle keeps changing as the car speeds up, slows down, and eventually stops at a red light. Then ask: which single number could possibly describe the entire trip, and which number only describes what the speedometer shows at one instant?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "When someone says 'the trip took an hour and we covered 60 kilometers,' and someone else says 'the speedometer just read 80 km/h,' are they describing the same physical quantity?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "Speed measures how rapidly distance is traveled. Average speed describes an entire selected interval — the total distance traveled divided by the total elapsed time for that interval. Instantaneous speed describes only one particular moment, such as a single speedometer reading. During a trip where speed changes, these two values can be very different, and neither can be used in place of the other.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "Define average speed as total distance traveled divided by total elapsed time, and apply this relationship to a multi-segment trip that includes a stop.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Distinguish instantaneous speed (the speed at one particular moment) from average speed (the value for an entire interval), and correctly interpret what a speedometer reading represents.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Recognize that a simple arithmetic mean of listed speed values is not the general method for finding average speed, and identify the specific condition (equal time intervals) under which it happens to work.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "Speed tells us how rapidly an object covers distance. But 'how fast was it going?' can mean two very different things, depending on whether we're asking about an entire trip or about one single moment. Average speed answers the question for an entire selected interval: it equals the total distance traveled during that interval, divided by the total elapsed time for that same interval. Total elapsed time means everything that happened during the interval — moving time, waiting time, any stops — unless a problem specifically asks for the average speed while moving only. Instantaneous speed answers a completely different question: what is the object's speed at one particular moment? A car's speedometer is a real, everyday example of an instantaneous-speed display — at any instant, it shows an approximate reading of how fast the car is going right then, not the average speed for the whole trip. These two numbers are usually different whenever speed is changing, and neither one can substitute for the other. A closely related pitfall involves how average speed is actually calculated. If you already know a trip's total distance and total elapsed time, average speed follows directly: divide one by the other. But if you're instead given a list of speeds — say, a car traveled at 40 km/h for the first half of a trip and 60 km/h for the second half — it is tempting to simply average the two numbers. That shortcut only gives the correct average speed in the special case where each speed was maintained for an equal amount of time. If each speed instead covers an equal distance — a very common setup — that same shortcut gives the wrong answer, and total distance divided by total elapsed time must be used instead.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [],
+        "figureCues": [],
+        "intuition": {
+          "text": "If a question is really asking about the whole trip — how far, over how long, everything included — it's asking about average speed. If it's really asking about right now, at this exact moment, it's asking about instantaneous speed.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [],
+        "tableGuidance": [],
+        "levelAdaptations": [
+          "Introductory: use only the total-distance/total-elapsed-time definition and the speedometer-versus-whole-trip contrast, without discussing the arithmetic-mean special case.",
+          "Standard: introduce the arithmetic-mean special case (equal time intervals) explicitly, and work a multi-segment example that includes a stop.",
+          "Advanced: pose (without solving) the question of how instantaneous speed would be defined mathematically as the time interval shrinks toward zero, explicitly flagging that this extension requires calculus and is outside this topic's scope."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "If a cyclist travels 40 km/h for one hour and 60 km/h for the next hour, is the average speed for the whole trip just (40+60)/2 = 50 km/h? Why or why not?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "If the same cyclist instead travels the first 40 km at 40 km/h and the next 40 km at 60 km/h, is the average speed still 50 km/h?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "Yes — the cyclist rode at each speed for exactly one hour, equal time intervals, so a simple average of the two speeds happens to equal the correct total-distance/total-time answer here.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "No — the two segments took different amounts of time, so simply averaging 40 and 60 does not give the correct answer; total distance and total elapsed time must be added and divided instead.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Believing average speed is always the arithmetic mean of the speeds listed in a problem.",
+          "Believing stopped or waiting time can simply be dropped from the total elapsed time.",
+          "Believing a speedometer shows the average speed for the whole trip.",
+          "Believing that returning to the starting point makes the average speed zero.",
+          "Believing speed includes a direction, the way velocity does."
+        ],
+        "analogies": [
+          "Instantaneous speed is like a single photograph of the speedometer taken at one instant; average speed is like the odometer's total distance reading divided by a stopwatch's total elapsed time for the whole trip — two different tools measuring two different things."
+        ],
+        "examples": [
+          "A car's two-segment trip with a stop (this topic's own worked example).",
+          "A car's speedometer reading at one moment, contrasted with the trip's average speed once the whole journey is finished."
+        ],
+        "transitions": [
+          {
+            "targetTopicId": "ch01-t06",
+            "script": {
+              "text": "Now that we can distinguish an object's average speed for a whole trip from its instantaneous speed at one moment, the next topic adds direction to this picture, starting with velocity.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            }
+          }
+        ],
+        "emphasisNotes": [
+          "Always define average speed as total distance divided by total elapsed time first — never introduce the arithmetic-mean shortcut before this definition is established, per ch01-corr-010.",
+          "Always state explicitly that a speedometer reads an approximate instantaneous speed, not the trip's average speed, per ch01-corr-011."
+        ],
+        "timing": {
+          "estimatedMinutes": 9,
+          "pauseCues": [
+            "After the opening hook question, before revealing the average-versus-instantaneous distinction.",
+            "After stating the arithmetic-mean special case, before working the equal-distance counter-example."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "Do not use the Usain Bolt example, or any numerical example derived from the Berlin 2009 / Beijing 2008 event-time pairing — ch01-corr-005 remains unresolved (approvalStatus: needsEvidence) and is explicitly excluded from this topic's drafting authorization (ch01T05DraftingAuthorization.excludedFromThisAuthorization).",
+          "Do not extend into average velocity, displacement, vector direction, acceleration formulas, position-time graph slopes, or calculus/limit notation here — those belong to ch01-t06 and later topics, per this topic's drafting authorization's concept-boundary restriction."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-is-105",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored original instructor script; no duplicate source versions exist.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t05",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Speed measures how rapidly an object travels distance. Average speed is the total distance traveled during a selected interval divided by the total elapsed time for that same interval — a single value that describes the entire interval, not any one moment within it. Instantaneous speed is the speed of an object at one particular moment, such as a single speedometer reading. When an object's speed changes during a trip, its average speed and its instantaneous speed at any given moment are generally different values, and neither can be substituted for the other.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t05-block-mainidea",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-009",
+          "CD-CONF-010"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored foundational record for ch01-t05, built directly from the proposed corrections ch01-corr-010/ch01-corr-011; no duplicate source version exists yet since this is the topic's first drafted English content.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t05",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Finding an average speed always starts with identifying the full interval in question — the entire trip, or the entire portion of it a problem asks about. Once that interval is fixed, every distance traveled during it must be added together to get the total distance, and every elapsed time during it must be added together to get the total elapsed time. Total elapsed time includes moving time, waiting time, and any stops, unless a problem explicitly asks for the average speed while moving only — a stop contributes zero distance but nonzero time, which lowers the average speed for the interval as a whole. Once the total distance and total elapsed time for the interval are both known, average speed follows directly: divide the total distance by the total elapsed time. This single value describes the entire interval; it is not the same as, and should not be confused with, the speed at any one moment during the trip — that separate idea is called instantaneous speed. A frequent shortcut, and a frequent source of error, involves being given a list of speeds instead of a list of distances and times. It is tempting to simply average the listed speed values. That shortcut gives the correct average speed only in the special case where each listed speed was maintained for an equal time interval. When each listed speed instead applies to an equal distance — a very common setup — averaging the speeds directly gives the wrong answer; total distance divided by total elapsed time must be used instead, which in that case works out differently from a simple arithmetic mean of the two speeds.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t05-block-explanation",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-009",
+          "CD-CONF-010"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored foundational record for ch01-t05, built directly from the proposed corrections ch01-corr-010/ch01-corr-011; no duplicate source version exists yet since this is the topic's first drafted English content.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-equations",
+        "blockType": "equationSet",
+        "topicId": "ch01-t05",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "average speed = total distance traveled / total elapsed time. In symbols, this may be written v_avg = d_total / Δt_total, where v_avg is the average speed (a scalar, with no direction), d_total is the total distance traveled — the total path length covered, not displacement — and Δt_total is the total elapsed time for the interval in question, including any stops or waiting time unless a problem explicitly asks for the average speed while moving only. A valid SI unit for speed is meters per second (m/s); a problem may also state distance and time in other consistent units, but every value must be converted to consistent units before this equation is applied — quantities in different unit systems (for example, a distance in kilometers combined with a time in seconds) cannot be divided directly. This equation gives average speed only; it does not by itself give the speed at any single moment during the interval, which is a separate quantity called instantaneous speed.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t05-block-equations",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-009",
+          "CD-CONF-010"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored foundational record for ch01-t05, built directly from the proposed corrections ch01-corr-010/ch01-corr-011; no duplicate source version exists yet since this is the topic's first drafted English content.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-example",
+        "blockType": "example",
+        "topicId": "ch01-t05",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Example: a car travels 4000 m in 200 s, then stops at a red light for 100 s, then travels another 3000 m in 300 s. Total distance traveled: 4000 m + 3000 m = 7000 m. Total elapsed time: 200 s + 100 s + 300 s = 600 s (the 100 s stop is included, since the average speed for the whole trip is what's requested). Average speed = total distance / total elapsed time = 7000 m / 600 s ≈ 11.7 m/s. Note that this is not the same as simply averaging the two segment speeds (4000 m / 200 s = 20 m/s and 3000 m / 300 s = 10 m/s): (20 m/s + 10 m/s) / 2 = 15 m/s, which is not the trip's actual average speed, because the two segments did not take equal amounts of time. At one moment during the first segment, the car's speedometer reads 22 m/s — this is an instantaneous speed, describing only that one instant, and it is a different value from the trip's average speed of ≈11.7 m/s.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t05-block-example",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-009",
+          "CD-CONF-010"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored foundational record for ch01-t05, built directly from the proposed corrections ch01-corr-010/ch01-corr-011; no duplicate source version exists yet since this is the topic's first drafted English content.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-misconception",
+        "blockType": "misconception",
+        "topicId": "ch01-t05",
+        "visibility": "instructor",
+        "localizedContent": {
+          "en": {
+            "text": "Misconception: average speed is always the arithmetic mean of the speed values listed in a problem — for example, averaging two given speeds directly. Correction: this shortcut only gives the correct average speed when each listed speed applied to an equal time interval; in general, and especially when each speed applies to an equal distance instead, average speed must be computed as total distance divided by total elapsed time. Misconception: stopped or waiting time can be dropped from the total elapsed time without justification. Correction: total elapsed time includes all moving time, waiting time, and stops within the interval in question, unless a problem explicitly asks for the average speed while moving only; a stop contributes zero distance but nonzero time, which lowers the average speed for the whole interval. Misconception: a speedometer displays the average speed for the entire trip. Correction: a speedometer displays an approximate instantaneous speed at that moment only — it does not report, and cannot be read as, the trip's average speed. Misconception: if an object returns to its starting point, its average speed for the trip is zero. Correction: average speed depends on total distance traveled — the total path length covered — not on how far the object ends up from where it started; an object that returns to its starting point can still have covered a large total distance and therefore have a nonzero average speed. Misconception: speed includes a direction, the same way velocity does. Correction: speed is a scalar quantity — it has a magnitude only, with no direction; the physical quantity that adds direction to speed is velocity, a different topic.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t05-block-misconception",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-009",
+          "CD-CONF-010"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored foundational record for ch01-t05, built directly from the proposed corrections ch01-corr-010/ch01-corr-011; no duplicate source version exists yet since this is the topic's first drafted English content.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t05",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "A runner's fitness watch displays two different numbers at the end of a workout: a 'current pace' reading that updates every second while running, and a 'session average pace' computed once the workout ends. Which one is the instantaneous speed and which one is the average speed, and why can these two numbers be different even though they came from the same run? Correct answer: the continuously updating 'current pace' reading is an instantaneous speed — it describes the runner's speed at one particular moment, updated moment by moment. The 'session average pace,' computed only once the whole workout is finished, is an average speed — it equals the total distance covered during the run divided by the total elapsed time for the run, including any walking breaks or stops. The two numbers can differ substantially whenever the runner's pace changes during the workout — for example, a runner who sprints briefly and then walks will show a high instantaneous reading during the sprint, but a much lower session average once the slower walking time is included in the total elapsed time. A common wrong answer treats the two readings as measuring the same thing, or assumes the average must equal a simple average of a few observed instantaneous readings — but the average pace is computed from the full run's total distance and total elapsed time, not from averaging a handful of moment-by-moment readings.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "provenanceLinks": [
+          {
+            "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001",
+            "locatorType": "segment",
+            "locatorId": "ch01-t05-block-review",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored directly from ch01-corr-010 (average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (instantaneous speed distinguished from average speed, including what a speedometer displays), both approvalStatus: proposed under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization. Not derived from, and does not use, the Usain Bolt event/time example excluded by ch01-corr-005 (approvalStatus: needsEvidence). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the example and problem below use original scenarios, objects, and numbers."
+          }
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-010",
+          "ch01-corr-011"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-009",
+          "CD-CONF-010"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Newly authored foundational record for ch01-t05, built directly from the proposed corrections ch01-corr-010/ch01-corr-011; no duplicate source version exists yet since this is the topic's first drafted English content.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "problem",
+      "record": {
+        "problemId": "ch01-prob-105",
+        "topicIds": [
+          "ch01-t05"
+        ],
+        "problemStatement": {
+          "text": "A delivery cyclist travels 1200 m in 150 s, then stops for 60 s to drop off a package, then travels another 1800 m in 200 s. (a) Find the total distance traveled and the total elapsed time for the whole trip. (b) Find the average speed for the whole trip. (c) During the second segment, the cyclist's phone shows a speed reading of 9.5 m/s at one moment. Does this reading represent the average speed for the whole trip, or the instantaneous speed at that moment? Explain.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "givenValues": [
+          {
+            "symbol": "d_1",
+            "value": 1200,
+            "unit": "m",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "t_1",
+            "value": 150,
+            "unit": "s",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "t_stop",
+            "value": 60,
+            "unit": "s",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "d_2",
+            "value": 1800,
+            "unit": "m",
+            "exactOrApproximate": "exact"
+          },
+          {
+            "symbol": "t_2",
+            "value": 200,
+            "unit": "s",
+            "exactOrApproximate": "exact"
+          }
+        ],
+        "conceptualInterpretation": {
+          "text": "Average speed for the whole trip requires the total distance traveled (both moving segments added together) divided by the total elapsed time (both moving segments plus the stop added together). A single instantaneous reading taken during one segment is a different physical quantity and cannot be substituted for the average speed.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "equationSelection": [
+          {
+            "equationId": "ch01-t05-eq-average-speed",
+            "reason": "average speed = total distance / total elapsed time directly gives the average speed once the total distance and total elapsed time for the whole trip are both known.",
+            "conditionsSatisfied": [
+              "Both segment distances and both segment times are given, plus the stop duration.",
+              "The problem asks for the average speed over the whole trip, so the stop must be included in the total elapsed time."
+            ],
+            "conditionsMissing": []
+          }
+        ],
+        "numberedSolution": [
+          {
+            "stepNumber": 1,
+            "purpose": "Find the total distance traveled",
+            "explanation": {
+              "text": "Add both segment distances: 1200 m + 1800 m = 3000 m. The 60 s stop contributes zero distance and is not added here.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "calculationRef": "ch01-prob-105-calc-1"
+          },
+          {
+            "stepNumber": 2,
+            "purpose": "Find the total elapsed time",
+            "explanation": {
+              "text": "Add both segment times and the stop: 150 s + 60 s + 200 s = 410 s. The stop is included because the problem asks for the average speed for the whole trip, not the average speed while moving only.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "calculationRef": "ch01-prob-105-calc-2"
+          },
+          {
+            "stepNumber": 3,
+            "purpose": "Compute the average speed",
+            "explanation": {
+              "text": "average speed = total distance / total elapsed time = 3000 m / 410 s ≈ 7.3 m/s (rounded to two significant figures).",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "calculationRef": "ch01-prob-105-calc-3"
+          },
+          {
+            "stepNumber": 4,
+            "purpose": "Classify the phone's speed reading",
+            "explanation": {
+              "text": "The phone's reading of 9.5 m/s describes the cyclist's speed at one particular moment during the second segment — it is an instantaneous speed, not the trip's average speed. It is a different value from the average speed of ≈7.3 m/s found in Step 3, which is expected, since the cyclist's speed was not constant throughout the trip.",
+              "status": "draft",
+              "language": "en",
+              "direction": "ltr"
+            },
+            "calculationRef": null
+          }
+        ],
+        "calculation": [
+          {
+            "calculationId": "ch01-prob-105-calc-1",
+            "expression": "1200 + 1800",
+            "substitution": "1200 m + 1800 m",
+            "result": 3000.0,
+            "unit": "m",
+            "roundingRule": "exact sum of two given distances",
+            "significantFigures": 2
+          },
+          {
+            "calculationId": "ch01-prob-105-calc-2",
+            "expression": "150 + 60 + 200",
+            "substitution": "150 s + 60 s + 200 s",
+            "result": 410.0,
+            "unit": "s",
+            "roundingRule": "exact sum of two given times and the stop duration",
+            "significantFigures": 2
+          },
+          {
+            "calculationId": "ch01-prob-105-calc-3",
+            "expression": "3000 / 410",
+            "substitution": "3000 m / 410 s",
+            "result": 7.317073170731708,
+            "unit": "m/s",
+            "roundingRule": "result field is the unrounded quotient; reported/final value rounded to two significant figures, matching the precision of the given values",
+            "significantFigures": 2
+          }
+        ],
+        "finalAnswer": {
+          "value": "total distance 3000 m; total elapsed time 410 s; average speed ≈ 7.3 m/s; the 9.5 m/s phone reading is an instantaneous speed, not the average speed",
+          "unit": "m, s, m/s",
+          "direction": null,
+          "sign": null,
+          "referencePoint": null,
+          "interpretation": {
+            "text": "The delivery cyclist's whole trip covers a total distance of 3000 m over a total elapsed time of 410 s, giving an average speed of about 7.3 m/s once the 60 s stop is properly included. The phone's 9.5 m/s reading during the second segment is an instantaneous speed — a single moment's value — and is not interchangeable with the trip's average speed.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        },
+        "units": [
+          "m",
+          "s",
+          "m/s"
+        ],
+        "directionSign": {
+          "applicable": false,
+          "note": "This problem asks only for scalar speed values; direction is not part of speed and is not requested."
+        },
+        "intuition": {
+          "text": "≈7.3 m/s is a reasonable average speed for a delivery cyclist including a stop — noticeably lower than either segment's own moving speed (8.0 m/s and 9.0 m/s), which makes sense once the stopped time is included in the total elapsed time.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "commonMistake": [
+          "Leaving the 60 s stop out of the total elapsed time, which would incorrectly raise the computed average speed.",
+          "Reporting the phone's momentary 9.5 m/s reading as if it were the trip's average speed."
+        ],
+        "sourceAnswer": {
+          "textRef": null,
+          "value": null,
+          "unit": null,
+          "direction": null,
+          "status": "unknown"
+        },
+        "correctedAnswer": {
+          "value": "total distance 3000 m; total elapsed time 410 s; average speed ≈ 7.3 m/s; the 9.5 m/s reading is instantaneous, not average",
+          "unit": "m, s, m/s",
+          "direction": null,
+          "status": "proposed"
+        },
+        "sourceVariants": [
+          {
+            "variantId": "ch01-prob-105-variant-original",
+            "sourceId": "SRC-CH01-BATCH1-ORIGINAL",
+            "problemIds": [],
+            "solutionIds": [],
+            "reviewCardIds": [],
+            "questionIds": [],
+            "pageIds": [],
+            "segmentIds": [],
+            "occurrenceIds": [],
+            "visualIds": [],
+            "answerVariant": "3000 m; 410 s; ≈7.3 m/s; 9.5 m/s is instantaneous, not average",
+            "answerStatus": "correct",
+            "correctionRecordIds": [
+              "ch01-corr-010",
+              "ch01-corr-011"
+            ],
+            "conflictRecordIds": [
+              "CD-CONF-009",
+              "CD-CONF-010"
+            ],
+            "provenanceLinks": []
+          }
+        ],
+        "selectedVariantIds": [
+          "ch01-prob-105-variant-original"
+        ],
+        "selectionRationale": "Only variant; fully original problem (delivery cyclist, two segments, one stop, and an instantaneous-speed classification question), not derived from any audited source's specific scenario, numbers, or wording, and does not use the Usain Bolt example excluded by ch01-corr-005.",
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "missing",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "notStarted",
+          "glossaryTermIds": [
+            "ch01-term-speed",
+            "ch01-term-distance"
+          ]
+        },
+        "duplicateHandling": {
+          "duplicateGroupIds": [],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Only version; fully original.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "answerValidation",
+            "other"
+          ],
+          "blockingRecordIds": [],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        }
+      }
+    }
+  ]
+}
