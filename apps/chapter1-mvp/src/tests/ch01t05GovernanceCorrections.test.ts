@@ -90,13 +90,28 @@ describe("PR G0 — SCA06/SCA07 explicit correction records", () => {
     expect(corr011.topicIds).toEqual(["ch01-t05"]);
   });
 
-  it("neither new correction is self-approved by Claude — both remain 'proposed' pending real reviewer sign-off", () => {
+  // Originally (PR G0) this test asserted both corrections stayed at approvalStatus
+  // "proposed" with null approvals, since no genuine reviewer sign-off had occurred yet.
+  // PR G1A (governance/ch01-t05-english-baseline-approval) is a separate, later,
+  // explicit project-owner-directed action that performed that review and approved
+  // both corrections — the same "update, don't weaken" pattern already used when a
+  // later, separately-authorized PR legitimately advances an earlier PR's own recorded
+  // state. This test now checks the post-PR-G1A invariant instead: both corrections are
+  // approved, and the approval is attributed to the project owner (never a fabricated
+  // third-party reviewer identity), never left silently self-approved with no
+  // attribution at all.
+  it("both corrections were advanced to 'editoriallyApproved' by an explicit, attributed project-owner decision (PR G1A), not self-approved by Claude", () => {
     for (const id of ["ch01-corr-010", "ch01-corr-011"]) {
       const corr = findCorrection(id);
-      expect(corr.approvalStatus).toBe("proposed");
-      expect(corr.approvals.scientificReviewer).toBeNull();
-      expect(corr.approvals.editorialReviewer).toBeNull();
-      expect(corr.approvals.approvedAt).toBeNull();
+      expect(corr.approvalStatus).toBe("editoriallyApproved");
+      expect(corr.approvals.scientificReviewer).toBe("khubrani2a-gif (project owner)");
+      expect(corr.approvals.editorialReviewer).toBe("khubrani2a-gif (project owner)");
+      expect(corr.approvals.approvedAt).not.toBeNull();
+      expect(corr.approvals.approvalBasis).toContain("PR G1A");
+      // studentFacingSuppression stays true even once approved — matches the existing
+      // precedent set by every other already-approved correction (ch01-corr-001,
+      // ch01-corr-009): editorial approval of a correction record is not the same as
+      // student-publication authorization.
       expect(corr.studentFacingSuppression).toBe(true);
     }
   });
