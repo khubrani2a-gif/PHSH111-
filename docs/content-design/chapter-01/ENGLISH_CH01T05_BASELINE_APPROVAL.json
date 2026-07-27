@@ -1,0 +1,128 @@
+{
+  "baselineApprovalId": "ch01-t05-english-baseline-001",
+  "baselineVersion": "1.0.0",
+  "status": "approved",
+  "language": "English",
+  "topicId": "ch01-t05",
+  "topicTitle": "Average and Instantaneous Speed",
+  "approvalLevel": "projectOwnerEnglishBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-27",
+  "scope": {
+    "applicableTopicIds": [
+      "ch01-t05"
+    ],
+    "notApplicableTo": "All other Chapter 1 topics remain outside this baseline. This is a separate, standalone record — it does not extend, merge with, or modify ENGLISH_BATCH1_BASELINE_APPROVAL.json (scope: ch01-t01/ch01-t04) or ENGLISH_PILOT_BASELINE_APPROVAL.json (scope: ch01-t02/ch01-t03/ch01-t08/ch01-t10), both of which remain entirely separate, unmodified governance records with their own independent version sequences. This is PR G1A, following the exact standalone-record pattern already used by those two files."
+  },
+  "approvedDraftFiles": [
+    {
+      "topicId": "ch01-t05",
+      "topicTitle": "Average and Instantaneous Speed",
+      "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json",
+      "sha256": "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374",
+      "schemaVersion": "2.3.0",
+      "recordCount": 8
+    }
+  ],
+  "approvedRecordIds": [
+    "ch01-is-105",
+    "ch01-t05-block-mainidea",
+    "ch01-t05-block-explanation",
+    "ch01-t05-block-equations",
+    "ch01-t05-block-example",
+    "ch01-t05-block-misconception",
+    "ch01-t05-block-review",
+    "ch01-prob-105"
+  ],
+  "filePreservationNote": "The approved draft file is unmoved, unrenamed, uncopied, and not promoted into docs/content-design/chapter-01/pilot/. Its internal content and governance fields (blocking, visibility, arabic, etc.) were not altered by this approval. This baseline-approval record, external to the file itself, is what establishes that the exact version at the checksum above is approved — mirroring the same pattern already used by ENGLISH_BATCH1_BASELINE_APPROVAL.json and ENGLISH_PILOT_BASELINE_APPROVAL.json, both of which likewise approve their content files in place without relocating or renaming them. The file may continue to be structurally labeled 'draft' internally (generationStatus: \"draft-batch1-english-only-generation\") even though this external record now marks it baseline-approved.",
+  "reviewBasis": [
+    "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json — ch01T05DraftingAuthorization (v1.7.0), which explicitly authorized drafting but explicitly listed 'Final English baseline approval for ch01-t05' as a prohibited action reserved for a separate future step",
+    "docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json — ch01-corr-010 and ch01-corr-011, both editoriallyApproved as of this record",
+    "docs/content-design/chapter-01/DUPLICATE_AND_CONFLICT_DECISIONS.json — CD-CONF-009 and CD-CONF-010",
+    "PR G0 (governance/ch01-t05-corrections-authorization) — resolved/advanced ch01-corr-005, created ch01-corr-010/ch01-corr-011, granted ch01T05DraftingAuthorization",
+    "PR G1 (content/ch01-t05-english-draft) — authored the 8 foundational English draft records",
+    "PR G1's scientific correction pass — corrected a pace/speed conflation in the review question and removed a calculus/limit-notation extension from the instructor script's levelAdaptations",
+    "PR G1A (this record) — explicit project-owner instruction given directly in this session to perform a scientific and editorial review of the drafted content and, if valid, create this formal English baseline approval"
+  ],
+  "statementOfApproval": "The English-language draft content for ch01-t05 (Average and Instantaneous Speed), as it exists in docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json at the checksum recorded in approvedDraftFiles, is approved by the project owner as the ch01-t05 English baseline version 1.0.0. This approval is a project-owner content-readiness decision made on the basis of Claude's completed drafting (PR G1), correction (PR G1's scientific correction pass), and review work (PR G1A, this record) — it is not an independently derived, third-party human scientific or editorial re-verification beyond that work, and it does not itself authorize Arabic translation, visual production, application integration, or any student-facing use.",
+  "scientificReviewFindings": {
+    "recordsReviewed": 8,
+    "criteriaChecked": [
+      "Average speed is total distance divided by total elapsed time",
+      "Stops are included unless moving-time-only is explicitly requested",
+      "Distance is not confused with displacement",
+      "Instantaneous speed is distinguished from average speed",
+      "Speedometer/current-speed readings are instantaneous",
+      "Arithmetic averaging is restricted to the equal-time special case",
+      "Speed is treated as scalar",
+      "No pace/speed conflation remains",
+      "No calculus, limit, derivative, or shrinking-interval explanation remains",
+      "No Bolt example or unresolved event/time pairing appears in teaching content",
+      "All numerical examples and problem calculations are correct",
+      "Units and rounding are consistent"
+    ],
+    "result": "All 8 records satisfy all 12 criteria. Numerical verification: general example (4000 m + 3000 m = 7000 m; 200 s + 100 s + 300 s = 600 s; 7000/600 ≈ 11.7 m/s; naive (20+10)/2 = 15 m/s correctly shown as wrong) and ch01-prob-105 (1200 m + 1800 m = 3000 m; 150 s + 60 s + 200 s = 410 s; 3000/410 ≈ 7.317 m/s, correctly rounded to 7.3 m/s at 2 significant figures; segment speeds 1200/150 = 8.0 m/s and 1800/200 = 9.0 m/s consistent with the intuition check) were independently recomputed and confirmed correct. Programmatic scan of the full file confirmed no occurrence of 'pace', 'min/km', 'derivative', 'shrink', or the standalone word 'lim' anywhere, and confirmed 'Bolt', 'Berlin 2009', 'Beijing 2008', '9.58', and '9.69' occur only inside governance/disclosure fields (generationNote, instructorOnlyCautions, sourceTraceability.evidence) and never in any teaching-content field.",
+    "conclusion": "The draft passes scientific and editorial review without modification. No further correction was required or applied as part of this baseline approval."
+  },
+  "approvedCorrectionIds": [
+    "ch01-corr-010",
+    "ch01-corr-011"
+  ],
+  "approvedCorrectionsNote": "Both ch01-corr-010 and ch01-corr-011 were advanced from approvalStatus 'proposed' to 'editoriallyApproved' in SCIENTIFIC_CORRECTIONS.json as part of this same PR, with approvals.scientificReviewer and approvals.editorialReviewer both recorded as 'khubrani2a-gif (project owner)', exactly mirroring the existing approval-field convention already used by ch01-corr-001/002/006/007/008/009. This baseline approval relies on, and does not re-open or re-litigate, those newly-approved correction records.",
+  "excludedCorrectionNote": "ch01-corr-005 (the Usain Bolt event/time citation-pairing correction) is NOT approved by this record and remains at approvalStatus 'needsEvidence' in SCIENTIFIC_CORRECTIONS.json, entirely unchanged. This baseline approval does not rely on, reference, or require ch01-corr-005 in any way — the approved draft file contains no content derived from it (see scientificReviewFindings above). CD-CONF-005 likewise remains unchanged (resolutionStatus: 'proposedPendingCitationAndReviewerApproval').",
+  "conflictRecordsNote": "CD-CONF-009 and CD-CONF-010 (in DUPLICATE_AND_CONFLICT_DECISIONS.json) were reviewed and intentionally left unchanged by this approval. Precedent (CD-CONF-006/007/008, whose linked corrections ch01-corr-006/007/008 are all already editoriallyApproved) establishes that a conflict record's resolutionStatus and canonicalPreferenceStatus do not change when its linked correction becomes editoriallyApproved — approval status lives in SCIENTIFIC_CORRECTIONS.json only, not mirrored in the conflict-decision file. No field in DUPLICATE_AND_CONFLICT_DECISIONS.json was modified by this PR.",
+  "perTopicDecision": {
+    "ch01-t05": {
+      "decision": "approvedAsDrafted",
+      "nonBlockingConditions": []
+    }
+  },
+  "nonBlockingConditionsStatement": "No non-blocking conditions were identified during this review. No scientific defect was found in any of the 8 records (see scientificReviewFindings above).",
+  "governanceRestrictions": {
+    "approvalLevelStatement": "This is a project-owner ENGLISH-CONTENT baseline approval only. It is distinct from: (1) editorial approval of a correction record (a narrower action already recorded separately in SCIENTIFIC_CORRECTIONS.json for ch01-corr-010/ch01-corr-011, performed in this same PR), (2) independent human scientific review (has not occurred, for any topic, at any point in this project), and (3) student-publication authorization (a separate, still-absent gate).",
+    "arabicNotAuthorized": "Arabic content is not generated or approved by this record. ch01-t05's draft file's Arabic fields remain arabic.translationStatus: \"missing\" with null text throughout, unchanged by this approval. No batch1-arabic-drafts/ch01-t05-content.json file exists.",
+    "visualProductionNotAuthorized": "Visual production is not authorized by this record. ch01-t05 has no visualReference record and no figure asset; this authorization does not create one.",
+    "applicationIntegrationNotAuthorized": "Application integration is not authorized by this record. PILOT_AUTHORIZATION.json's applicationBuildAuthorization.applicableTopicIds remains exactly the original four pilot topics; ch01-t05 remains outside PilotTopicId and APP_TOPIC_ORDER.",
+    "routingNavigationNotChanged": "No routing, navigation, or progress-tracking change was made by this approval.",
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "independentExpertReviewCompleted": false
+  },
+  "identifierRegistrationStatus": {
+    "requiredBeforeApplicationIntegration": [
+      "ch01-is-105",
+      "ch01-t05-block-mainidea",
+      "ch01-t05-block-explanation",
+      "ch01-t05-block-equations",
+      "ch01-t05-block-example",
+      "ch01-t05-block-misconception",
+      "ch01-t05-block-review",
+      "ch01-prob-105",
+      "SRC-CH01-T05-DRAFT-AUTHORING-001"
+    ],
+    "statement": "Identifier registration in IDENTIFIER_REGISTRY.json is NOT a prerequisite for this internal English baseline approval and was NOT performed as part of it, exactly mirroring ENGLISH_BATCH1_BASELINE_APPROVAL.json's own identifierRegistrationStatus.statement for ch01-t01/ch01-t04's foundational records. Registration is required before any future application-integration step. IDENTIFIER_REGISTRY.json was not modified by this approval."
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to the English content of ch01-t05 (instructorScript, contentBlock, or problem records in docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json) must be recorded as a controlled revision against this baseline, not made silently.",
+    "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.1.0) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when — following the exact pattern already proven in ENGLISH_BATCH1_BASELINE_APPROVAL.json's and ENGLISH_PILOT_BASELINE_APPROVAL.json's own revisionControlPolicy.revisionLog.",
+    "revisionLog": []
+  },
+  "downstreamStatus": {
+    "arabicStatus": "notGenerated, notAuthorized",
+    "visualStatus": "notProduced, notAuthorized",
+    "applicationIntegrationStatus": "Not authorized. ch01-t05 remains outside PILOT_AUTHORIZATION.json's applicationBuildAuthorization.applicableTopicIds and outside apps/chapter1-mvp/'s PilotTopicId/APP_TOPIC_ORDER.",
+    "independentExpertReviewStatus": "notCompleted",
+    "publicationStatus": "notAuthorized"
+  },
+  "unchangedByThisApproval": [
+    "Every instructorScript, contentBlock, and problem record in docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json remains in its existing draft/blocked governance state — blocking.blockingStatus, blocking.studentFacingAllowed, arabic.translationStatus, and every other governance/localization field on each record are untouched by this approval.",
+    "The draft file itself is unmoved, unrenamed, uncopied, unmodified, and remains at docs/content-design/chapter-01/batch1-drafts/.",
+    "ENGLISH_BATCH1_BASELINE_APPROVAL.json, ENGLISH_PILOT_BASELINE_APPROVAL.json, ARABIC_BATCH1_BASELINE_APPROVAL.json, ARABIC_PILOT_BASELINE_APPROVAL.json, and VISUAL_BATCH1_APPROVAL.json remain entirely separate and unmodified by this record.",
+    "DUPLICATE_AND_CONFLICT_DECISIONS.json (CD-CONF-009, CD-CONF-010, and every other conflict record) is entirely unmodified by this record.",
+    "ch01-corr-005 remains approvalStatus 'needsEvidence', entirely unchanged.",
+    "PILOT_AUTHORIZATION.json's scope.authorizedTopicIds and applicationBuildAuthorization.applicableTopicIds remain exactly the original four pilot topics.",
+    "studentFacingAllowed remains false on every record in every topic.",
+    "studentPublicationAuthorized remains false (global).",
+    "This approval does not authorize Arabic translation, visual production, application integration, or student-facing publication for ch01-t05."
+  ]
+}

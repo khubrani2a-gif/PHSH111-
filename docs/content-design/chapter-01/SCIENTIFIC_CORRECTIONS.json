@@ -372,10 +372,25 @@
           "units": ["m/s", "km/h"]
         }
       ],
-      "approvalStatus": "proposed",
+      "approvalStatus": "editoriallyApproved",
       "affectedContentBlockIds": [],
       "studentFacingSuppression": true,
-      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+      "approvals": {
+        "scientificReviewer": "khubrani2a-gif (project owner)",
+        "editorialReviewer": "khubrani2a-gif (project owner)",
+        "approvedAt": "2026-07-27",
+        "approvalBasis": "Approved by the project owner via explicit instruction given directly in this session (PR G1A — governance/ch01-t05-english-baseline-approval): perform a scientific and editorial review of ch01-t05's drafted English content and, if valid, approve this correction using the exact approval-field convention already established by ch01-corr-001/002/006/007/008/009. This correction states well-established, non-controversial kinematics (average speed = total distance / total elapsed time; arithmetic-mean averaging of speeds valid only for equal time intervals) not requiring external citation, matching the rationale already disclosed in PILOT_AUTHORIZATION.json's ch01T05DraftingAuthorization.deliberateDeviationFromBatch1Precedent. Distinct from, and does not itself constitute, independent third-party physics review, which remains not completed for this project."
+      },
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": [],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
     },
     {
       "correctionId": "ch01-corr-011",
@@ -396,10 +411,25 @@
         "arabicStatus": "notGenerated"
       },
       "correctionRationale": "Without an explicit instantaneous-versus-average distinction, and without clarifying what a speedometer physically displays, students risk treating a single instantaneous reading (or the speedometer's current value) as though it represented the entire trip's average speed.",
-      "approvalStatus": "proposed",
+      "approvalStatus": "editoriallyApproved",
       "affectedContentBlockIds": [],
       "studentFacingSuppression": true,
-      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+      "approvals": {
+        "scientificReviewer": "khubrani2a-gif (project owner)",
+        "editorialReviewer": "khubrani2a-gif (project owner)",
+        "approvedAt": "2026-07-27",
+        "approvalBasis": "Approved by the project owner via explicit instruction given directly in this session (PR G1A — governance/ch01-t05-english-baseline-approval): perform a scientific and editorial review of ch01-t05's drafted English content and, if valid, approve this correction using the exact approval-field convention already established by ch01-corr-001/002/006/007/008/009. This correction states well-established, non-controversial kinematics (instantaneous speed distinguished from average speed; a speedometer displays an approximate instantaneous reading, never the trip average) not requiring external citation, matching the rationale already disclosed in PILOT_AUTHORIZATION.json's ch01T05DraftingAuthorization.deliberateDeviationFromBatch1Precedent. Distinct from, and does not itself constitute, independent third-party physics review, which remains not completed for this project."
+      },
+      "blocking": {
+        "blockingStatus": "notBlocked",
+        "blockingReason": [],
+        "blockingRecordIds": [],
+        "studentFacingAllowed": false,
+        "instructorFacingAllowed": true,
+        "resolutionRequired": false,
+        "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+        "resolutionStatus": "resolved"
+      }
     }
   ],
   "validationRules": [
