@@ -510,11 +510,11 @@ describe("PR G5 — authorized internal application registration", () => {
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).toContain("ch01-t05");
   });
 
-  it("29c. StructuredSlideContent.tsx has only text/equation config entries for ch01-t05", () => {
+  it("29c. StructuredSlideContent.tsx remains topic-generic for ch01-t05", () => {
     const text = readFileSync(
       resolve(__dirname, "../features/topics/StructuredSlideContent.tsx"),
       "utf8",
     );
-    expect(text).toContain("ch01-t05");
+    expect(text).not.toContain("ch01-t05");
   });
 });
