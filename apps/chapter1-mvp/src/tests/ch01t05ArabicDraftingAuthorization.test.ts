@@ -47,7 +47,7 @@ describe("PR G2A — dedicated Arabic authorization exists and is scoped correct
     expect(grant).toBeDefined();
     expect(grant.authorizationStatus).toBe("granted");
     expect(grant.addedInVersion).toBe("1.8.0");
-    expect(authorization.authorizationVersion).toBe("1.9.0");
+    expect(authorization.authorizationVersion).toBe("1.10.0");
   });
 
   it("2. it applies only to ch01-t05", () => {
@@ -61,11 +61,12 @@ describe("PR G2A — dedicated Arabic authorization exists and is scoped correct
   });
 
   it("4. it references the correct checksum", () => {
-    const expectedChecksum = "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374";
-    expect(grant.prerequisites.englishBaselineChecksum.sha256).toBe(expectedChecksum);
-    expect(grant.packagingModel.immutableSourceFile).toContain(expectedChecksum);
-    expect(baseline.approvedDraftFiles[0].sha256).toBe(expectedChecksum);
-    expect(sha256(CONTENT_PATH)).toBe(expectedChecksum);
+    const historicalChecksum = "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374";
+    const currentChecksum = "2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c";
+    expect(grant.prerequisites.englishBaselineChecksum.sha256).toBe(historicalChecksum);
+    expect(grant.packagingModel.immutableSourceFile).toContain(historicalChecksum);
+    expect(baseline.approvedDraftFiles[0].sha256).toBe(currentChecksum);
+    expect(sha256(CONTENT_PATH)).toBe(currentChecksum);
   });
 
   it("5. it requires exactly 8 records", () => {
@@ -102,10 +103,11 @@ describe("PR G2A — what this authorization does NOT authorize", () => {
     expect(grant.publicationRestrictions.join(" ")).toContain("not an approved Arabic baseline");
   });
 
-  it("8. it does not authorize slides", () => {
+  it("8. the historical Arabic-drafting grant does not authorize slides; the later dedicated slide grant does", () => {
     expect(grant.prohibitedActions).toEqual(
       expect.arrayContaining([expect.stringContaining("Creating slide records")]),
     );
+    expect(authorization.ch01T05SlideIntegrationAuthorization.topicId).toBe("ch01-t05");
   });
 
   it("9. it does not authorize figures", () => {
@@ -205,11 +207,11 @@ describe("PR G2A — prerequisite corrections and existing scopes are unaffected
     const orderMatch = schemaText.match(/export const APP_TOPIC_ORDER:[\s\S]*?\];/);
     expect(orderMatch![0]).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).toContain("ch01-t05");
-    expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).not.toContain("ch01-t05");
-    expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).not.toContain("ch01-t05");
+    expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).toContain("ch01-t05");
+    expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).toContain("ch01-t05");
     expect(
       readFileSync(resolve(__dirname, "../features/topics/StructuredSlideContent.tsx"), "utf8"),
-    ).not.toContain("ch01-t05");
+    ).toContain("ch01-t05");
   });
 
   it("the English baseline file remains byte-identical to its recorded checksum (immutability check)", () => {

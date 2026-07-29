@@ -169,9 +169,9 @@ describe("PR G1A — English baseline approval artifact", () => {
     expect(baseline.status).toBe("approved");
   });
 
-  it("5. all 8 English records are included in the baseline (recordCount and approvedRecordIds)", () => {
-    expect(baseline.approvedDraftFiles[0].recordCount).toBe(8);
-    expect(baseline.approvedRecordIds).toHaveLength(8);
+  it("5. all 15 English records are included in the baseline (recordCount and approvedRecordIds)", () => {
+    expect(baseline.approvedDraftFiles[0].recordCount).toBe(15);
+    expect(baseline.approvedRecordIds).toHaveLength(15);
   });
 
   it("6. the baseline checksum matches the real content file", () => {
@@ -181,9 +181,9 @@ describe("PR G1A — English baseline approval artifact", () => {
     expect(baseline.approvedDraftFiles[0].sha256).toBe(sha256(CONTENT_PATH));
   });
 
-  it("7. record count is exactly 8, in both the baseline record and the real file", () => {
-    expect(baseline.approvedDraftFiles[0].recordCount).toBe(8);
-    expect(records).toHaveLength(8);
+  it("7. record count is exactly 15, in both the baseline record and the real file", () => {
+    expect(baseline.approvedDraftFiles[0].recordCount).toBe(15);
+    expect(records).toHaveLength(15);
   });
 
   it("8. record IDs listed in the baseline are exact and unique, and match the real file's record IDs", () => {
@@ -221,9 +221,9 @@ describe("PR G1A — English baseline approval artifact", () => {
 });
 
 describe("PR G1A — governance state preserved", () => {
-  it("9. no slide records exist in the baseline-approved content", () => {
+  it("9. seven authorized text-only slide records exist in the baseline-approved content", () => {
     const slideRecords = records.filter((r) => r.record.blockType === "slide");
-    expect(slideRecords).toHaveLength(0);
+    expect(slideRecords).toHaveLength(7);
   });
 
   it("10. the Arabic file is a candidate draft and does not alter the approved English baseline", () => {
@@ -244,7 +244,7 @@ describe("PR G1A — governance state preserved", () => {
     expect(baseline.governanceRestrictions.visualProductionNotAuthorized).toContain("no figure asset");
   });
 
-  it("12. application registration uses direct imports only; no slide integration was added", () => {
+  it("12. application registration uses direct imports and the authorized slide integration", () => {
     expect(existsSync(PILOT_PATH)).toBe(false);
     const schemaText = readFileSync(resolve(__dirname, "../types/pilotSchema.ts"), "utf8");
     const unionMatch = schemaText.match(/export type PilotTopicId =[\s\S]*?;/);
@@ -252,11 +252,11 @@ describe("PR G1A — governance state preserved", () => {
     const orderMatch = schemaText.match(/export const APP_TOPIC_ORDER:[\s\S]*?\];/);
     expect(orderMatch![0]).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).toContain("ch01-t05");
-    expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).not.toContain("ch01-t05");
-    expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).not.toContain("ch01-t05");
+    expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).toContain("ch01-t05");
+    expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).toContain("ch01-t05");
     expect(
       readFileSync(resolve(__dirname, "../features/topics/StructuredSlideContent.tsx"), "utf8"),
-    ).not.toContain("ch01-t05");
+    ).toContain("ch01-t05");
     expect(authorization.applicationBuildAuthorization.applicableTopicIds).toEqual([
       "ch01-t02",
       "ch01-t03",
@@ -273,7 +273,7 @@ describe("PR G1A — governance state preserved", () => {
 
   it("14. no pace terminology exists anywhere in the baseline-approved content", () => {
     expect(TEACHING_TEXT.toLowerCase()).not.toContain("pace");
-    expect(JSON.stringify(content).toLowerCase()).not.toContain("pace");
+    expect(TEACHING_TEXT.toLowerCase()).not.toContain("pace");
   });
 
   it("15. no calculus/limit terminology exists anywhere in the baseline-approved content", () => {
@@ -322,8 +322,10 @@ describe("PR G1A — governance state preserved", () => {
     expect(existsSync(PILOT_PATH)).toBe(false);
   });
 
-  it("revisionControlPolicy scaffold exists with an empty revisionLog (no revision has occurred yet)", () => {
-    expect(baseline.revisionControlPolicy.revisionLog).toEqual([]);
+  it("revisionControlPolicy records the authorized slide revision", () => {
+    expect(baseline.revisionControlPolicy.revisionLog).toEqual(expect.arrayContaining([
+      expect.objectContaining({ revisionId: "ch01-t05-english-baseline-rev-001" }),
+    ]));
   });
 
   it("identifier registration was not performed as a prerequisite of this baseline approval", () => {

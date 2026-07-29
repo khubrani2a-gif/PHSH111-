@@ -1608,7 +1608,7 @@
     "registrationDate": "2026-07-29",
     "topicId": "ch01-t05",
     "basis": "Explicit project-owner authorization for bilingual text-and-equation Slide Reader integration only.",
-    "englishBaseline": {"version":"1.1.0","sha256":"3535cccde0fe9024e0a38c359f430c4bbe85e5a15c657e52a65df25520935849"},
+    "englishBaseline": {"version":"1.1.0","sha256":"2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c"},
     "arabicBaseline": {"version":"1.1.0","sha256":"d128ec47494eca96911b5b8175e2ccde37ad83cb7ff854341f4a1d8560fdb5a9"},
     "entries": [
       {"identifier":"ch01-t05-block-slide-1","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},

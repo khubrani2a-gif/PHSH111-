@@ -4,7 +4,7 @@
   "topicTitle": "Average and Instantaneous Speed",
   "topicTitleAr": null,
   "generationStatus": "draft-batch1-english-only-generation",
-  "generationNote": "This English baseline is governed by ENGLISH_CH01T05_BASELINE_APPROVAL.json v1.1.0. It contains the eight approved foundational records and seven authorized bilingual Slide Reader records, all derived solely from the approved ch01-t05 baseline scope. The slides are text-and-equation-only; no SVG, figure, visualReference, route, student-facing use, or publication is authorized. ch01-corr-005, Bolt, V10, pace, calculus, and limits remain excluded. Every record remains draft and blocked, with studentFacingAllowed false.",
+  "generationNote": "This English baseline is governed by ENGLISH_CH01T05_BASELINE_APPROVAL.json v1.1.0. It contains the eight approved foundational records and seven authorized bilingual Slide Reader records, all derived solely from the approved ch01-t05 baseline scope. The slides are text-and-equation-only; no SVG, figure, visualReference, route, student-facing use, or publication is authorized. Usain Bolt, ch01-corr-005, V10, pace, calculus, and limits remain excluded. Every record remains draft and blocked, with studentFacingAllowed false.",
   "records": [
     {
       "recordType": "instructorScript",

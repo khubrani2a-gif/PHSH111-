@@ -336,10 +336,10 @@ describe("PR G0 — no content, slide, or application file was created", () => {
     expect(rawImportsText).toContain("ch01-t05");
   });
 
-  it("17c. no slideGroups.ts or slideShortTitles.ts entry references ch01-t05", () => {
+  it("17c. the authorized slide integration registers groups and short titles for ch01-t05", () => {
     const slideGroupsText = readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8");
     const shortTitlesText = readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8");
-    expect(slideGroupsText).not.toContain("ch01-t05");
-    expect(shortTitlesText).not.toContain("ch01-t05");
+    expect(slideGroupsText).toContain("ch01-t05");
+    expect(shortTitlesText).toContain("ch01-t05");
   });
 });
