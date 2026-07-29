@@ -211,7 +211,7 @@ describe("PR G2A — prerequisite corrections and existing scopes are unaffected
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).toContain("ch01-t05");
     expect(
       readFileSync(resolve(__dirname, "../features/topics/StructuredSlideContent.tsx"), "utf8"),
-    ).toContain("ch01-t05");
+    ).not.toContain("ch01-t05");
   });
 
   it("the English baseline file remains byte-identical to its recorded checksum (immutability check)", () => {

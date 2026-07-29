@@ -254,9 +254,11 @@ describe("PR G1A — governance state preserved", () => {
     expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).toContain("ch01-t05");
+    // The approved slides are rendered through the generic reader; no
+    // topic-specific StructuredSlideContent configuration is required.
     expect(
       readFileSync(resolve(__dirname, "../features/topics/StructuredSlideContent.tsx"), "utf8"),
-    ).toContain("ch01-t05");
+    ).not.toContain("ch01-t05");
     expect(authorization.applicationBuildAuthorization.applicableTopicIds).toEqual([
       "ch01-t02",
       "ch01-t03",
