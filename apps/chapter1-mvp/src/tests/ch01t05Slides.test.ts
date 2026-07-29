@@ -17,7 +17,7 @@ describe("ch01-t05 bilingual text-only slides", () => {
 
   it("preserves the approved average-speed, stop, speedometer, and problem facts", () => {
     const text = topic?.slides.map((slide) => `${slide.text.en}\n${slide.text.ar}`).join("\n") ?? "";
-    expect(text).toContain("total elapsed time includes all");
+    expect(text).toContain("total elapsed time includes moving time");
     expect(text).toContain("speedometer displays an approximate instantaneous speed");
     expect(text).toContain("(40 km/h + 60 km/h) / 2 = 50 km/h");
     expect(text).toContain("3000 m / 410 s ≈ 7.3 m/s");

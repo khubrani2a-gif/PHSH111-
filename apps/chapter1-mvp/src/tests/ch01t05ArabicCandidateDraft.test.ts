@@ -28,7 +28,7 @@ describe("ch01-t05 Arabic candidate draft", () => {
 
   it("preserves the approved English baseline byte-for-byte", () => {
     expect(sha256(englishPath)).toBe(json(baselinePath).approvedDraftFiles[0].sha256);
-    expect(sha256(englishPath)).toBe("2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c");
+    expect(sha256(englishPath)).toBe("3982ab6e3f329816a6a3693cb8460c0a612bee78e3c04e1a4ebda91f1b362b72");
   });
 
   it("contains exactly the same fifteen records and IDs", () => {

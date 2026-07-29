@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-t05-english-baseline-001",
-  "baselineVersion": "1.1.0",
+  "baselineVersion": "1.2.0",
   "status": "approved",
   "language": "English",
   "topicId": "ch01-t05",
@@ -19,7 +19,7 @@
       "topicId": "ch01-t05",
       "topicTitle": "Average and Instantaneous Speed",
       "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json",
-      "sha256": "2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c",
+      "sha256": "3982ab6e3f329816a6a3693cb8460c0a612bee78e3c04e1a4ebda91f1b362b72",
       "schemaVersion": "2.3.0",
       "recordCount": 15
     }
@@ -51,9 +51,9 @@
     "PR G1's scientific correction pass — corrected a pace/speed conflation in the review question and removed a calculus/limit-notation extension from the instructor script's levelAdaptations",
     "PR G1A (this record) — explicit project-owner instruction given directly in this session to perform a scientific and editorial review of the drafted content and, if valid, create this formal English baseline approval"
   ],
-  "statementOfApproval": "The English-language draft content for ch01-t05 (Average and Instantaneous Speed), as it exists in docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json at the checksum recorded in approvedDraftFiles, is approved by the project owner as the ch01-t05 English baseline version 1.0.0. This approval is a project-owner content-readiness decision made on the basis of Claude's completed drafting (PR G1), correction (PR G1's scientific correction pass), and review work (PR G1A, this record) — it is not an independently derived, third-party human scientific or editorial re-verification beyond that work, and it does not itself authorize Arabic translation, visual production, application integration, or any student-facing use.",
+  "statementOfApproval": "The English-language draft content for ch01-t05 (Average and Instantaneous Speed), as it exists in docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json at the checksum recorded in approvedDraftFiles, is approved by the project owner as the ch01-t05 English baseline version 1.2.0. This controlled revision retains the approved scientific scope and expands only the seven authorized Slide Reader records into the established structured presentation format; it does not authorize a visual, publication, or student-facing use.",
   "scientificReviewFindings": {
-    "recordsReviewed": 8,
+    "recordsReviewed": 15,
     "criteriaChecked": [
       "Average speed is total distance divided by total elapsed time",
       "Stops are included unless moving-time-only is explicitly requested",
@@ -69,7 +69,7 @@
       "Units and rounding are consistent"
     ],
     "result": "All 8 records satisfy all 12 criteria. Numerical verification: general example (4000 m + 3000 m = 7000 m; 200 s + 100 s + 300 s = 600 s; 7000/600 ≈ 11.7 m/s; naive (20+10)/2 = 15 m/s correctly shown as wrong) and ch01-prob-105 (1200 m + 1800 m = 3000 m; 150 s + 60 s + 200 s = 410 s; 3000/410 ≈ 7.317 m/s, correctly rounded to 7.3 m/s at 2 significant figures; segment speeds 1200/150 = 8.0 m/s and 1800/200 = 9.0 m/s consistent with the intuition check) were independently recomputed and confirmed correct. Programmatic scan of the full file confirmed no occurrence of 'pace', 'min/km', 'derivative', 'shrink', or the standalone word 'lim' anywhere, and confirmed 'Bolt', 'Berlin 2009', 'Beijing 2008', '9.58', and '9.69' occur only inside governance/disclosure fields (generationNote, instructorOnlyCautions, sourceTraceability.evidence) and never in any teaching-content field.",
-    "conclusion": "The draft passes scientific and editorial review without modification. No further correction was required or applied as part of this baseline approval."
+    "conclusion": "The controlled slide-format revision preserves the approved science, calculations, units, and exclusions. No new physics, visual, or student/publication authorization was added."
   },
   "approvedCorrectionIds": [
     "ch01-corr-010",
@@ -112,7 +112,7 @@
   "revisionControlPolicy": {
     "rule": "Any future edit to the English content of ch01-t05 (instructorScript, contentBlock, or problem records in docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json) must be recorded as a controlled revision against this baseline, not made silently.",
     "mechanism": "A controlled revision increments baselineVersion (e.g. 1.0.0 -> 1.1.0) and appends an entry to revisionLog below recording what changed, why, who authorized it, and when — following the exact pattern already proven in ENGLISH_BATCH1_BASELINE_APPROVAL.json's and ENGLISH_PILOT_BASELINE_APPROVAL.json's own revisionControlPolicy.revisionLog.",
-    "revisionLog": [{"revisionId":"ch01-t05-english-baseline-rev-001","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Adds seven bilingual, text-and-equation-only Slide Reader records derived exclusively from the approved baseline; no visual, publication, or student authorization is added."}]
+    "revisionLog": [{"revisionId":"ch01-t05-english-baseline-rev-001","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Adds seven bilingual, text-and-equation-only Slide Reader records derived exclusively from the approved baseline; no visual, publication, or student authorization is added."},{"revisionId":"ch01-t05-english-baseline-rev-002","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Expands the seven authorized slide records into the established structured Study/Review presentation format. Scientific scope, approved numbers, record IDs, and all visual/publication/student restrictions are retained."}]
   },
   "downstreamStatus": {
     "arabicStatus": "notGenerated, notAuthorized",

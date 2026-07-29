@@ -722,6 +722,31 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
   },
 
+  // ch01-t05 (Average and Instantaneous Speed). These are data-only
+  // marker configurations for the same generic Slide Reader used by the
+  // prior topics; no topic-specific component branch is introduced.
+  "ch01-t05-block-slide-1": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: "300 m / 60 s = 5 m/s", stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t05-block-slide-2": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: "50 s + 10 s + 40 s = 100 s", stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t05-block-slide-3": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: "7.3 m/s", stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t05-block-slide-4": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: ["22 m/s", "11.7 m/s"], stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t05-block-slide-5": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: "(40 km/h + 60 km/h) / 2 = 50 km/h", stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t05-block-slide-6": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: "3000 m / 410 s ≈ 7.3 m/s", stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+  "ch01-t05-block-slide-7": {
+    mainIdeaMarker: { en: "Main Idea:", ar: "الفكرة الرئيسية:" }, simpleExampleMarker: { en: "Simple Example:", ar: "مثال بسيط:" }, misconceptionMarker: { en: "Common Misconception:", ar: "مفهوم خاطئ شائع:" }, scientificNoteMarker: { en: "Scientific Note:", ar: "ملاحظة علمية:" }, keyConceptMarker: { en: "Key Concept:", ar: "المفهوم الأساسي:" }, connectionMarker: { en: "Connection to the Next Slide:", ar: "الصلة بالشريحة التالية:" }, equationBlockPhrase: ["9.5 m/s", "3000 m / 410 s ≈ 7.3 m/s"], stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
+  },
+
   // ch01-t04 (Mass, Inertia, and Weight) — the fourth real slide-bearing
   // topic (PR F). Same generic marker convention as ch01-t01/ch01-t02/
   // ch01-t03 above; nothing here is component logic, only per-blockId
@@ -855,7 +880,11 @@ interface ParsedSections {
  * incomplete split.
  */
 function parseSections(value: string, config: StructuredSlideConfig, lang: "en" | "ar"): ParsedSections | null {
-  const paragraphs = value.split(/\n{2,}/);
+  // Legacy Batch 1 records may encode paragraph breaks as the literal
+  // two-character sequence "\\n" while pilot JSON records use actual
+  // newline characters. Normalize only for presentation parsing: neither
+  // source string is written back or otherwise changed.
+  const paragraphs = value.replace(/\\n/g, "\n").split(/\n{2,}/);
   const stepPattern = config.stepPattern ? config.stepPattern[lang] : DEFAULT_STEP_PATTERN;
 
   const mainIdeaIdx = paragraphs.findIndex((p) => p.startsWith(config.mainIdeaMarker[lang]));
