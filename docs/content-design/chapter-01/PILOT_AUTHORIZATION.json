@@ -1,6 +1,6 @@
 {
   "authorizationId": "ch01-pilot-authorization-001",
-  "authorizationVersion": "1.9.0",
+  "authorizationVersion": "1.10.0",
   "status": "granted",
   "grantedBy": "khubrani2a-gif (project owner)",
   "grantedAt": "2026-07-15",
@@ -862,7 +862,19 @@
     "studentPublicationAuthorized": false,
     "relationToOriginalAuthorization": "This additive, topic-scoped exception does not expand scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, PILOT_TOPIC_ORDER, or any publication authorization."
   },
+  "ch01T05SlideIntegrationAuthorization": {
+    "addedInVersion": "1.10.0",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "authorizedAt": "2026-07-29",
+    "topicId": "ch01-t05",
+    "allowedActions": ["Create bilingual text-and-equation slide records from the approved English and Arabic ch01-t05 baselines", "Register slide identifiers", "Render those records through the existing Slide Reader"],
+    "prohibitedActions": ["Create SVG, drawing, figure, visualReference, or visual ID", "Use Bolt, V10, ch01-corr-005, pace, calculus, or limits", "Create a route", "Student-facing release or publication"],
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "visualRequired": false
+  },
   "authorizationHistory": [
+    {"previousAuthorizationVersion":"1.9.0","newAuthorizationVersion":"1.10.0","decisionDate":"2026-07-29","scope":"Narrow ch01-t05 bilingual Slide Reader authorization using approved baselines only; text and equations only, with no visual or publication scope."},
     {
       "version": "1.0.0",
       "action": "granted",

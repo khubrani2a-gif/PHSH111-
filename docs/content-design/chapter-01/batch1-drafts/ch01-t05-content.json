@@ -4,7 +4,7 @@
   "topicTitle": "Average and Instantaneous Speed",
   "topicTitleAr": null,
   "generationStatus": "draft-batch1-english-only-generation",
-  "generationNote": "All content in this file is newly authored under PILOT_AUTHORIZATION.json v1.7.0's ch01T05DraftingAuthorization, built directly from the two proposed corrections ch01-corr-010 (SCA06: average speed = total distance / total elapsed time, not an arithmetic mean of speeds except in the equal-time special case) and ch01-corr-011 (SCA07: instantaneous speed distinguished from average speed, including what a speedometer displays). Neither correction is yet editoriallyApproved — both remain approvalStatus: proposed, per this authorization's own disclosed deviation from the Batch 1 precedent (see PILOT_AUTHORIZATION.json's ch01T05DraftingAuthorization.deliberateDeviationFromBatch1Precedent). ch01-corr-005 (the topic's Usain Bolt event/time citation-pairing correction) remains unresolved at approvalStatus: needsEvidence and is explicitly excluded from this draft: no content in this file uses Usain Bolt, Berlin 2009, Beijing 2008, 9.58 s, 9.69 s, or any example derived from that unresolved event/time pairing (see PILOT_AUTHORIZATION.json's ch01T05DraftingAuthorization.excludedFromThisAuthorization). No textbook, review-card, problem-bank, or Kahoot wording was copied or closely paraphrased; the general example (ch01-t05-block-example) and the original problem (ch01-prob-105) use different objects, scenarios, and numbers than any audited source item. Provenance links trace conceptual topic lineage only. This is an ENGLISH-ONLY DRAFT: every record's Arabic content is explicitly represented as missing (arabic.translationStatus: \"missing\"), not omitted silently, not machine-translated, and not copied from the English text. No Arabic candidate file exists for this topic — Arabic generation is not authorized (batch1ArabicGenerationAuthorization.applicableTopicIds remains exactly ch01-t01/ch01-t04). This file contains no slide records — the generic Slide Reader's structured-slide content is a separate, not-yet-authorized future step. This file is NOT located under docs/content-design/chapter-01/pilot/ and is NOT read by apps/chapter1-mvp/ — it is a controlled draft artifact only, not an approved canonical baseline, not application-facing content, and not authorized for student-facing use in any form.",
+  "generationNote": "This English baseline is governed by ENGLISH_CH01T05_BASELINE_APPROVAL.json v1.1.0. It contains the eight approved foundational records and seven authorized bilingual Slide Reader records, all derived solely from the approved ch01-t05 baseline scope. The slides are text-and-equation-only; no SVG, figure, visualReference, route, student-facing use, or publication is authorized. ch01-corr-005, Bolt, V10, pace, calculus, and limits remain excluded. Every record remains draft and blocked, with studentFacingAllowed false.",
   "records": [
     {
       "recordType": "instructorScript",
@@ -181,6 +181,101 @@
           "resolutionOwner": "physicsReviewerAndCanonicalEditor",
           "resolutionStatus": "open"
         }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-1",
+        "blockType": "slide",
+        "slideNumber": 1,
+        "slideTitleEn": "Average Speed Describes a Whole Interval",
+        "topicId": "ch01-t05",
+        "visibility": "shared",
+        "localizedContent": { "en": { "text": "Average speed describes a selected whole interval, not one instant. It is the total distance traveled during that interval divided by the total elapsed time for the same interval.\\n\\nAverage speed = total distance / total elapsed time\\n\\nUse the totals for the complete interval before doing the division.", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed", "ch01-term-distance"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-1", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "Slide text is a concise presentation of the approved ch01-t05 instructor script and main-idea record only; no external visual or new physics is introduced." }],
+        "scientificCorrectionIds": ["ch01-corr-010"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-2", "blockType": "slide", "slideNumber": 2,
+        "slideTitleEn": "Total Time Includes Stops", "topicId": "ch01-t05", "visibility": "shared",
+        "localizedContent": { "en": { "text": "For average speed, total elapsed time includes all of the selected interval: moving time, waiting time, and stops.\\n\\nA stop adds time even though it adds no distance. Omitting that stop would make the calculated average speed too large.", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed", "ch01-term-distance"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-2", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "Slide text is derived only from the approved ch01-t05 baseline's total-elapsed-time definition." }],
+        "scientificCorrectionIds": ["ch01-corr-010"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-3", "blockType": "slide", "slideNumber": 3,
+        "slideTitleEn": "Instantaneous Speed Is a Moment", "topicId": "ch01-t05", "visibility": "shared",
+        "localizedContent": { "en": { "text": "Instantaneous speed is the speed at one particular moment. It answers a different question from average speed, which describes the entire selected interval.\\n\\nWhen speed changes during a trip, an instantaneous reading and the trip average are generally different.", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-3", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "Slide text is derived only from the approved ch01-t05 baseline's distinction between average and instantaneous speed." }],
+        "scientificCorrectionIds": ["ch01-corr-011"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-4", "blockType": "slide", "slideNumber": 4,
+        "slideTitleEn": "What a Speedometer Shows", "topicId": "ch01-t05", "visibility": "shared",
+        "localizedContent": { "en": { "text": "A speedometer displays an approximate instantaneous speed: how fast the vehicle is moving at that moment.\\n\\nIt does not display the average speed for the entire trip. A stop, a turn, or a later change of speed can change the trip average without changing what an earlier speedometer reading meant.", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-4", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "Slide text is derived only from the approved ch01-t05 baseline's speedometer statement." }],
+        "scientificCorrectionIds": ["ch01-corr-011"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-5", "blockType": "slide", "slideNumber": 5,
+        "slideTitleEn": "When an Arithmetic Mean Works", "topicId": "ch01-t05", "visibility": "shared",
+        "localizedContent": { "en": { "text": "The arithmetic mean of listed speeds is not the general method for average speed. Use total distance divided by total elapsed time.\\n\\nThe shortcut (40 km/h + 60 km/h) / 2 = 50 km/h works only when each speed is maintained for an equal amount of time. Equal distances do not satisfy that condition.", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-5", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "Slide text is derived only from the approved ch01-t05 baseline's equal-time special case." }],
+        "scientificCorrectionIds": ["ch01-corr-010"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-6", "blockType": "slide", "slideNumber": 6,
+        "slideTitleEn": "Solve the Delivery Trip", "topicId": "ch01-t05", "visibility": "shared",
+        "localizedContent": { "en": { "text": "A delivery cyclist travels 1200 m in 150 s, stops for 60 s, then travels 1800 m in 200 s.\\n\\nTotal distance = 1200 m + 1800 m = 3000 m\\nTotal elapsed time = 150 s + 60 s + 200 s = 410 s\\nAverage speed = 3000 m / 410 s ≈ 7.3 m/s", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed", "ch01-term-distance"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-6", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "All scenario details, numbers, units, and solution are from the approved ch01-prob-105 baseline record." }],
+        "scientificCorrectionIds": ["ch01-corr-010"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t05-block-slide-7", "blockType": "slide", "slideNumber": 7,
+        "slideTitleEn": "Check Your Understanding", "topicId": "ch01-t05", "visibility": "shared",
+        "localizedContent": { "en": { "text": "A phone reads 9.5 m/s during the delivery trip. This is an instantaneous speed at the moment of the reading, not the average speed for the whole trip.\\n\\nReview: To find average speed, add the total distance and divide by the total elapsed time, including every stop. Speed is a scalar quantity: it has magnitude and no direction.", "status": "draft", "language": "en", "direction": "ltr" } },
+        "arabic": { "originalArabicText": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "canonicalArabicTranslation": { "text": null, "status": "missing", "language": "ar", "direction": "rtl" }, "translationStatus": "missing", "translationReviewer": null, "terminologyApprovalStatus": "notStarted", "glossaryTermIds": ["ch01-term-speed", "ch01-term-scalar"] },
+        "provenanceLinks": [{ "sourceId": "SRC-CH01-T05-DRAFT-AUTHORING-001", "locatorType": "segment", "locatorId": "ch01-t05-block-slide-7", "linkageType": "explicit", "confidence": "high", "contribution": "concept", "rightsStatus": "pendingReview", "allowedUse": "referenceOnly", "evidence": "Slide text is derived only from approved ch01-prob-105 and ch01-t05 review baseline records." }],
+        "scientificCorrectionIds": ["ch01-corr-010", "ch01-corr-011"], "conflictRecordIds": [],
+        "duplicateHandling": { "duplicateGroupIds": [], "revisionGroupId": null, "canonicalPreferenceStatus": "preferred", "preferredSourceRecordId": null, "preferenceReason": "Bilingual text-only slide derived from the approved ch01-t05 baseline.", "supersededBy": null, "retainedForHistoricalTrace": true },
+        "blocking": { "blockingStatus": "blocked", "blockingReason": ["scientificReviewPending", "editorialReviewPending", "other"], "blockingRecordIds": [], "studentFacingAllowed": false, "instructorFacingAllowed": true, "resolutionRequired": true, "resolutionOwner": "physicsReviewerAndCanonicalEditor", "resolutionStatus": "open" }, "contentLeakTestStatus": "notRun"
       }
     },
     {

@@ -1,5 +1,5 @@
 {
-  "pilotReadinessVersion": "1.15.0",
+  "pilotReadinessVersion": "1.16.0",
   "status": "designPreparedAwaitingClaudeRereviewAndUserApproval",
   "resolvedDesignBlockers": {
     "note": "These three items were the specific blockers identified in the Claude amended-design re-review. Their resolution is a design-layer fix only; it does not change any topic's blockingStatus, does not approve any scientific correction, and does not authorize canonical generation.",
@@ -381,6 +381,18 @@
     "studentFacingAllowed": false,
     "studentPublicationAuthorized": false,
     "note": "This is an independent, narrow readiness record. It does not add ch01-t05 to the original four-topic pilot readiness set and does not authorize slides, visual production, publication, or student use."
+  },
+  "ch01T05SlideReadiness": {
+    "addedInVersion": "1.16.0",
+    "topicId": "ch01-t05",
+    "slideCount": 7,
+    "englishArabicBaselineVersions": ["1.1.0", "1.1.0"],
+    "slideIntegrationAuthorized": true,
+    "visualRequired": false,
+    "visualAbsentByDecision": true,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "status": "readyForInternalSlideReaderVerificationOnly"
   },
   "pilotExitCriteria": [
     "Claude approves the amended design layer",

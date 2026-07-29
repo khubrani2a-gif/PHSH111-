@@ -813,6 +813,11 @@ export const STRUCTURED_SLIDE_CONFIG_BY_BLOCK_ID: Partial<Record<string, Structu
     equationBlockPhrase: "2.0 kg × 9.8 m/s² = 19.6 N",
     stepPattern: { en: /^Step\s+\d+\s+—[^\n]*/, ar: /^الخطوة\s+\d+\s+—[^\n]*/ },
   },
+  // ch01-t05 uses the same generic text-only renderer. The two authored
+  // equations remain LTR tokens inside otherwise RTL Arabic content.
+  "ch01-t05-block-slide-1": { equationBlockPhrase: "Average speed = total distance / total elapsed time" },
+  "ch01-t05-block-slide-5": { equationBlockPhrase: "(40 km/h + 60 km/h) / 2 = 50 km/h" },
+  "ch01-t05-block-slide-6": { equationBlockPhrase: "Average speed = 3000 m / 410 s ≈ 7.3 m/s" },
 };
 
 /** Splits a step's remaining body text into bullet clauses. Prefers an already-authored line-break + "* "/"- " bullet convention (used when a step spans multiple lines); falls back to an already-authored "; "/"؛ " connector within a single line (Slide 1's convention). Either way, only the pre-existing structural separator itself (a newline+marker, or the connector) is consumed — no character of the authored text is altered. */
