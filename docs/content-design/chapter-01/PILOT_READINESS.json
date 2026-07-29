@@ -1,5 +1,5 @@
 {
-  "pilotReadinessVersion": "1.14.0",
+  "pilotReadinessVersion": "1.15.0",
   "status": "designPreparedAwaitingClaudeRereviewAndUserApproval",
   "resolvedDesignBlockers": {
     "note": "These three items were the specific blockers identified in the Claude amended-design re-review. Their resolution is a design-layer fix only; it does not change any topic's blockingStatus, does not approve any scientific correction, and does not authorize canonical generation.",
@@ -343,6 +343,41 @@
     "identifierRegistrationNote": "As of v1.12.0, the project owner has registered exactly the 18 Batch 1 content, problem, source-marker, and approved-visual identifiers required before a future application-integration step — see identifierRegistrationComplete, identifierRegistrationCompletedAt, identifierRegistryVersion, identifierRegistrationRecordPath, totalIdentifiersRegistered, identifierRegistrationBreakdown, and glossaryIdsRemainGlossaryLocal above, and docs/content-design/chapter-01/IDENTIFIER_REGISTRY.json (now registryVersion 1.3.0, batch1IdentifierRegistration) plus docs/app/PHSH111_BATCH1_IDENTIFIER_REGISTRATION_RECORD.md for full detail. This supersedes, for current-state purposes, the 'NOT identifier registration (identifierRegistrationComplete remains false)' clause in visualApprovalNote above, which remains accurate as a historical record of the state at v1.11.0 and is not rewritten. This is an identifier-registration and governance-synchronization action only — it is explicitly NOT independent human visual or scientific approval (independentHumanReviewComplete remains false), NOT application-integration authorization (applicationIntegrationAuthorized and applicationExpansionAuthorized remain false), and NOT student-facing or publication authorization (studentFacingAllowed and studentPublicationAuthorized remain false everywhere). No approved English/Arabic topic file, SVG, or visual-validation record was modified by this registration. Glossary term IDs (the nine Batch 1 terms) remain governed exclusively inside BILINGUAL_GLOSSARY.json, glossaryVersion 1.3.0, unchanged, and were deliberately NOT registered as entries in IDENTIFIER_REGISTRY.json.",
     "applicationIntegrationAuthorizationNote": "As of v1.13.0, the project owner has explicitly authorized INTERNAL APPLICATION INTEGRATION (not student-facing release, not deployment, not publication) for ch01-t01 and ch01-t04 — see applicationIntegrationAuthorized, applicationIntegrationAuthorizedAt, applicationIntegrationAuthorizationRecordPath, applicationIntegrationImplemented, and integrationSourceModel above, and each topic's own applicationExpansionAuthorized/applicationExpansionImplemented fields, plus docs/content-design/chapter-01/PILOT_AUTHORIZATION.json v1.5.0 (batch1ApplicationIntegrationAuthorization) and docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md for full detail. This supersedes, for current-state purposes, the 'NOT application-integration authorization (applicationIntegrationAuthorized and applicationExpansionAuthorized remain false)' clauses in arabicBaselineApprovalNote, visualApprovalNote, and identifierRegistrationNote above, all of which remain accurate as historical records of their respective states and are not rewritten. The selected integration-source model is direct import from the six approved source paths (English, Arabic, visuals) with an in-memory English/Arabic merge step, mirroring the existing rawImports.ts pattern used by the four pilot topics — no duplicate editable source of truth. **This authorization task did not itself perform any integration** — applicationIntegrationImplemented and each topic's applicationExpansionImplemented remain explicitly false; no route, import, registry entry, test, or build-configuration change was made. This is an authorization and architecture-decision action only — it is explicitly NOT independent human visual or scientific review (independentHumanReviewComplete remains false), NOT student-facing or publication authorization (studentFacingAllowed and studentPublicationAuthorized remain false everywhere), and does not itself constitute or imply QA having occurred. No approved English/Arabic topic file, SVG, visual-validation record, or application file was modified by this authorization.",
     "applicationIntegrationVerificationNote": "As of v1.14.0, the authorized application integration has been implemented and verified in an environment with Node.js/npm available: TypeScript typecheck passes clean, the full test suite passes (131/131 tests across 9 files, including 4 new Batch 1 test files), the production build succeeds (81 modules), and local browser QA confirmed all six topics render in the correct order (ch01-t01, ch01-t02, ch01-t03, ch01-t04, ch01-t08, ch01-t10), both new topics render correctly in English and Arabic, ch01-t01 shows no empty problem/solution UI, ch01-t04 renders ch01-prob-104 with 441 N as the labeled unrounded intermediate and 4.4 x 10^2 N as the final result, Review Card labels and instructor-only visibility are correct, the visual dialogs (enlarge/Escape/close/focus-trap/scroll-lock) work for both new visuals, mobile and desktop layouts are usable, and the four original pilot topics show no regression. Two narrow test-only defects (an HTML-entity-escaping assertion mismatch in two new test files, and a static-markup assertion that didn't account for the instructor panel's collapsed-by-default state) were found and fixed during verification — both fixes were in the test files this project's own prior task created, not in any approved content or product code; see docs/app/PHSH111_BATCH1_APPLICATION_VERIFICATION_AND_QA_REPORT.md for full detail. This supersedes, for current-state purposes, the 'This authorization task did not itself perform any integration' clause in applicationIntegrationAuthorizationNote above, which remains an accurate historical record of the state at v1.13.0 and is not rewritten. independentHumanReviewComplete, studentFacingAllowed, and studentPublicationAuthorized all remain false — this is internal verification only, not independent human review, not student-facing authorization, and not publication authorization. No public deployment occurred."
+  },
+  "ch01T05InternalIntegrationReadiness": {
+    "addedInVersion": "1.15.0",
+    "lastUpdatedInVersion": "1.15.0",
+    "authorizationRecordId": "ch01-t05-application-integration-authorization-001",
+    "authorizationSource": "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json v1.9.0, ch01T05ApplicationIntegrationAuthorization",
+    "topicId": "ch01-t05",
+    "englishBaseline": {
+      "approvalPath": "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json",
+      "baselineVersion": "1.0.0",
+      "sha256": "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374",
+      "recordCount": 8,
+      "immutable": true
+    },
+    "arabicBaseline": {
+      "approvalPath": "docs/content-design/chapter-01/ARABIC_CH01T05_BASELINE_APPROVAL.json",
+      "baselineVersion": "1.0.0",
+      "sha256": "83d1d2cfd258c3c3c4ae9186f72c2412c5d507f885b4077a20e5719a485989fb",
+      "recordCount": 8,
+      "immutable": true
+    },
+    "identifierRegistrationComplete": false,
+    "requiredIdentifierCount": 9,
+    "applicationIntegrationAuthorized": true,
+    "applicationIntegrationImplemented": false,
+    "integrationSourceModel": "directImmutableImportsWithInMemoryEnglishArabicMerge",
+    "visualDecision": {
+      "visualRequired": false,
+      "visualIdentifierCreated": false,
+      "excluded": ["ch01-t05-visual-001", "V10", "Bolt", "ch01-corr-005"],
+      "absenceDoesNotBlockInternalIntegration": true
+    },
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "note": "This is an independent, narrow readiness record. It does not add ch01-t05 to the original four-topic pilot readiness set and does not authorize slides, visual production, publication, or student use."
   },
   "pilotExitCriteria": [
     "Claude approves the amended design layer",
