@@ -1,5 +1,5 @@
 {
-  "registryVersion": "1.4.0",
+  "registryVersion": "1.5.0",
   "chapterId": "ch01",
   "status": "designValidated",
   "purpose": "Validate identifiers before canonical records are linked. This registry does not rename source-level IDs.",
@@ -1604,7 +1604,27 @@
       }
     ]
   },
+  "ch01T05SlideIdentifierRegistration": {
+    "registrationDate": "2026-07-29",
+    "topicId": "ch01-t05",
+    "basis": "Explicit project-owner authorization for bilingual text-and-equation Slide Reader integration only.",
+    "englishBaseline": {"version":"1.1.0","sha256":"3adce79124de864611fe4ee515629865b5dbc7278f6cb2780241895071ccfdbc"},
+    "arabicBaseline": {"version":"1.1.0","sha256":"dabec32e613c575b92ac9734a8e6e962e1ea3458aaa0800d86a2892f43270139"},
+    "entries": [
+      {"identifier":"ch01-t05-block-slide-1","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},
+      {"identifier":"ch01-t05-block-slide-2","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},
+      {"identifier":"ch01-t05-block-slide-3","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},
+      {"identifier":"ch01-t05-block-slide-4","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},
+      {"identifier":"ch01-t05-block-slide-5","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},
+      {"identifier":"ch01-t05-block-slide-6","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"},
+      {"identifier":"ch01-t05-block-slide-7","identifierType":"contentBlock","recordType":"contentBlock","blockType":"slide","topicId":"ch01-t05","status":"registered","publicationState":"unauthorized"}
+    ],
+    "visualExclusion": "No visual ID, SVG, figure, or visualReference is registered; V10, Bolt, and ch01-corr-005 remain excluded.",
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false
+  },
   "registrationHistory": [
+    {"previousRegistryVersion":"1.4.0","newRegistryVersion":"1.5.0","decisionDate":"2026-07-29","scope":"ch01-t05 bilingual text-only slide identifiers.","identifiersRegistered":7,"applicableTopicIds":["ch01-t05"],"visualExclusion":"No visual is created or registered; V10, Bolt, and ch01-corr-005 remain excluded.","applicationAndPublicationRestrictions":"Registration does not grant student use or publication."},
     {
       "previousRegistryVersion": "1.3.0",
       "newRegistryVersion": "1.4.0",
