@@ -1,0 +1,121 @@
+{
+  "baselineApprovalId": "ch01-t05-arabic-baseline-001",
+  "baselineVersion": "1.0.0",
+  "status": "approved",
+  "language": "Arabic",
+  "topicId": "ch01-t05",
+  "topicTitle": "Average and Instantaneous Speed",
+  "topicTitleAr": "السرعة المتوسطة والسرعة اللحظية",
+  "approvalLevel": "projectOwnerArabicBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-07-29",
+  "scope": {
+    "applicableTopicIds": ["ch01-t05"],
+    "notApplicableTo": "All other Chapter 1 topics remain outside this baseline. This is a separate, standalone record: it does not extend, merge with, or modify ARABIC_BATCH1_BASELINE_APPROVAL.json (ch01-t01/ch01-t04), ARABIC_PILOT_BASELINE_APPROVAL.json (ch01-t02/ch01-t03/ch01-t08/ch01-t10), or any English baseline record."
+  },
+  "approvedCandidateFiles": [
+    {
+      "topicId": "ch01-t05",
+      "topicTitle": "Average and Instantaneous Speed",
+      "topicTitleAr": "السرعة المتوسطة والسرعة اللحظية",
+      "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json",
+      "sha256": "83d1d2cfd258c3c3c4ae9186f72c2412c5d507f885b4077a20e5719a485989fb",
+      "schemaVersion": "2.3.0",
+      "recordCount": 8
+    }
+  ],
+  "approvedRecordIds": [
+    "ch01-is-105",
+    "ch01-t05-block-mainidea",
+    "ch01-t05-block-explanation",
+    "ch01-t05-block-equations",
+    "ch01-t05-block-example",
+    "ch01-t05-block-misconception",
+    "ch01-t05-block-review",
+    "ch01-prob-105"
+  ],
+  "filePreservationNote": "The approved Arabic candidate file is unmoved, unrenamed, and not promoted into docs/content-design/chapter-01/pilot/ or the application. Its internal generationStatus, translationStatus, blocking, visibility, and publication fields are not altered by this approval: every Arabic translationStatus remains \"draft\" and every record remains blocked and not student-facing. This external record alone establishes the exact file at the recorded checksum as the internal Arabic baseline.",
+  "englishBaselineDependency": {
+    "record": "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json",
+    "baselineVersion": "1.0.0",
+    "status": "approved",
+    "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json",
+    "sha256": "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374",
+    "verifiedResult": "The English source checksum was recomputed and confirmed unchanged. The candidate retains the same eight records, IDs, order, English fields, and governance fields as the approved English baseline; only authorized Arabic localization fields are populated."
+  },
+  "glossaryDependency": {
+    "record": "docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json",
+    "glossaryVersion": "1.3.0",
+    "mandatoryTermIds": ["ch01-term-speed", "ch01-term-distance", "ch01-term-scalar"],
+    "note": "The approved Arabic terminology for speed, distance, and scalar quantity is used. Average speed, instantaneous speed, total elapsed time, and speedometer use the authorized ordinary-language constructions recorded in ch01T05ArabicGenerationAuthorization."
+  },
+  "reviewBasis": [
+    "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json — ch01T05ArabicGenerationAuthorization",
+    "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json",
+    "docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json — ch01-corr-010 and ch01-corr-011 (editoriallyApproved); ch01-corr-005 remains excluded and needsEvidence",
+    "PR #39 — Arabic candidate-draft generation, corrective review, and candidate integrity tests",
+    "Project-owner instruction in this session to review and, if no blocking finding remains, approve this Arabic baseline"
+  ],
+  "arabicReviewFindings": {
+    "recordsReviewed": 8,
+    "criteriaChecked": [
+      "Arabic/English record IDs, order, and English-source checksum are identical to the approved English baseline",
+      "Average speed is total distance divided by total elapsed time, including stops unless moving time is requested",
+      "Distance is not confused with displacement, and speed is not confused with pace",
+      "Instantaneous speed is distinguished from average speed; a speedometer reading and 9.5 m/s are identified as instantaneous",
+      "Arithmetic averaging of speeds is limited to the equal-time case",
+      "All problem numbers, solutions, units, and rounding agree with the English baseline",
+      "Arabic uses the approved glossary terminology and preserves Latin equations and units safely within RTL text",
+      "No Bolt material or ch01-corr-005 teaching content appears",
+      "Every record remains blocked, studentFacingAllowed false, and unpublished"
+    ],
+    "result": "All eight records passed. The delivery-cyclist problem retains total distance 3000 m, total elapsed time 410 s including the 60 s stop, average speed approximately 7.3 m/s, and a separate 9.5 m/s instantaneous phone reading. The instructor script retains the 40 km/h and 60 km/h equal-time condition. No blocking scientific, linguistic, terminology, RTL/LTR, numerical, or governance issue remains.",
+    "conclusion": "Approved as drafted. No change to the Arabic candidate text was required by this approval."
+  },
+  "perTopicDecision": {
+    "ch01-t05": {
+      "decision": "approvedAsDrafted",
+      "nonBlockingConditions": []
+    }
+  },
+  "governanceRestrictions": {
+    "approvalLevelStatement": "This is an internal project-owner Arabic-content baseline approval only. It is not independent human scientific or linguistic review, visual approval, application-integration authorization, deployment authorization, or student-publication authorization.",
+    "visualProductionNotAuthorized": "No visualReference record, figure, or other visual asset is created or authorized.",
+    "applicationIntegrationNotAuthorized": "ch01-t05 remains outside PilotTopicId, APP_TOPIC_ORDER, rawImports, slideGroups, slideShortTitles, StructuredSlideContent, routing, and navigation.",
+    "routingNavigationNotChanged": "No routing, navigation, progress-tracking, or application file is changed by this approval.",
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "independentHumanReviewCompleted": false
+  },
+  "identifierRegistrationStatus": {
+    "requiredBeforeApplicationIntegration": [
+      "ch01-is-105",
+      "ch01-t05-block-mainidea",
+      "ch01-t05-block-explanation",
+      "ch01-t05-block-equations",
+      "ch01-t05-block-example",
+      "ch01-t05-block-misconception",
+      "ch01-t05-block-review",
+      "ch01-prob-105"
+    ],
+    "statement": "Identifier registration is not a prerequisite for this internal Arabic baseline approval and was not performed. It remains required before any separate future application-integration authorization."
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to Arabic content in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json must be recorded as a controlled revision against this baseline, not made silently.",
+    "mechanism": "A controlled revision increments baselineVersion and appends an entry recording scope, rationale, authorization, validation, and retained publication restrictions.",
+    "revisionLog": []
+  },
+  "downstreamStatus": {
+    "visualStatus": "notProduced, notAuthorized",
+    "applicationIntegrationStatus": "notAuthorized",
+    "publicationStatus": "notAuthorized",
+    "studentFacingStatus": "notAllowed"
+  },
+  "unchangedByThisApproval": [
+    "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json, including every Arabic translationStatus and blocking field",
+    "docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json and its approved English checksum",
+    "PILOT_AUTHORIZATION.json, SCIENTIFIC_CORRECTIONS.json, BILINGUAL_GLOSSARY.json, identifier registry, application code, routes, and topic order",
+    "ARABIC_BATCH1_BASELINE_APPROVAL.json, ARABIC_PILOT_BASELINE_APPROVAL.json, and all other baseline records",
+    "studentFacingAllowed and studentPublicationAuthorized, which remain false"
+  ]
+}
