@@ -250,14 +250,23 @@ describe("Batch 1 integrity — approved checksums match governance records", ()
 });
 
 describe("Batch 1 integrity — SVG markup bundled by the app matches the approved checksum", () => {
+  function requireBundledSvg(topicId: "ch01-t01" | "ch01-t04"): string {
+    const bundled = RAW_SVG_MARKUP_BY_TOPIC[topicId];
+    expect(bundled, `${topicId} must retain its authorized bundled SVG`).toBeTypeOf("string");
+    if (typeof bundled !== "string") {
+      throw new Error(`${topicId} has no bundled SVG markup`);
+    }
+    return bundled;
+  }
+
   it("ch01-t01's bundled SVG markup, re-hashed, matches VISUAL_BATCH1_APPROVAL.json", () => {
-    const bundled = RAW_SVG_MARKUP_BY_TOPIC["ch01-t01"];
+    const bundled = requireBundledSvg("ch01-t01");
     const hash = createHash("sha256").update(bundled, "utf8").digest("hex");
     expect(hash).toBe(APPROVED.svgT01.sha256);
   });
 
   it("ch01-t04's bundled SVG markup, re-hashed, matches VISUAL_BATCH1_APPROVAL.json", () => {
-    const bundled = RAW_SVG_MARKUP_BY_TOPIC["ch01-t04"];
+    const bundled = requireBundledSvg("ch01-t04");
     const hash = createHash("sha256").update(bundled, "utf8").digest("hex");
     expect(hash).toBe(APPROVED.svgT04.sha256);
   });
