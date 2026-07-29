@@ -67,6 +67,15 @@ export const SLIDE_SHORT_TITLE_BY_BLOCK_ID: Record<string, { en: string; ar: str
   "ch01-t04-block-slide-7": { en: "Mass and Weight on the Moon", ar: "الكتلة والوزن على القمر" },
   "ch01-t04-block-slide-8": { en: "What a Scale Measures", ar: "ما يقيسه الميزان" },
   "ch01-t04-block-slide-9": { en: "Checking Answers", ar: "التحقّق من الإجابات" },
+
+  // ch01-t05 (Average and Instantaneous Speed — text-only slides).
+  "ch01-t05-block-slide-1": { en: "Average Speed", ar: "السرعة المتوسطة" },
+  "ch01-t05-block-slide-2": { en: "Time Includes Stops", ar: "الزمن يشمل التوقفات" },
+  "ch01-t05-block-slide-3": { en: "Instantaneous Speed", ar: "السرعة اللحظية" },
+  "ch01-t05-block-slide-4": { en: "Speedometer", ar: "عداد السرعة" },
+  "ch01-t05-block-slide-5": { en: "Arithmetic Mean", ar: "المتوسط الحسابي" },
+  "ch01-t05-block-slide-6": { en: "Delivery Trip", ar: "رحلة التوصيل" },
+  "ch01-t05-block-slide-7": { en: "Check Understanding", ar: "تحقّق من الفهم" },
 };
 
 /**

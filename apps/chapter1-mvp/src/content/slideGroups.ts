@@ -150,6 +150,11 @@ export const SLIDE_GROUPS_BY_TOPIC_ID: Partial<Record<PilotTopicId, SlideGroup[]
       slideNumbers: [8, 9],
     },
   ],
+  "ch01-t05": [
+    { id: "ch01-t05-group-average-speed", title: { en: "Average Speed", ar: "السرعة المتوسطة" }, slideNumbers: [1, 2] },
+    { id: "ch01-t05-group-instantaneous-speed", title: { en: "Instantaneous Speed", ar: "السرعة اللحظية" }, slideNumbers: [3, 4] },
+    { id: "ch01-t05-group-calculation", title: { en: "Calculation and Review", ar: "الحساب والمراجعة" }, slideNumbers: [5, 6, 7] },
+  ],
 };
 
 /**
