@@ -62,7 +62,7 @@ describe("PR G2A — dedicated Arabic authorization exists and is scoped correct
 
   it("4. it references the correct checksum", () => {
     const historicalChecksum = "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374";
-    const currentChecksum = "2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c";
+    const currentChecksum = "3982ab6e3f329816a6a3693cb8460c0a612bee78e3c04e1a4ebda91f1b362b72";
     expect(grant.prerequisites.englishBaselineChecksum.sha256).toBe(historicalChecksum);
     expect(grant.packagingModel.immutableSourceFile).toContain(historicalChecksum);
     expect(baseline.approvedDraftFiles[0].sha256).toBe(currentChecksum);
@@ -199,7 +199,7 @@ describe("PR G2A — prerequisite corrections and existing scopes are unaffected
     }
   });
 
-  it("internal application wiring exists without a pilot/ file or slides", () => {
+  it("internal application wiring retains the blocked bilingual structured slides", () => {
     expect(existsSync(PILOT_PATH)).toBe(false);
     const schemaText = readFileSync(resolve(__dirname, "../types/pilotSchema.ts"), "utf8");
     const unionMatch = schemaText.match(/export type PilotTopicId =[\s\S]*?;/);
@@ -211,7 +211,7 @@ describe("PR G2A — prerequisite corrections and existing scopes are unaffected
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).toContain("ch01-t05");
     expect(
       readFileSync(resolve(__dirname, "../features/topics/StructuredSlideContent.tsx"), "utf8"),
-    ).not.toContain("ch01-t05");
+    ).toContain("ch01-t05-block-slide-6");
   });
 
   it("the English baseline file remains byte-identical to its recorded checksum (immutability check)", () => {

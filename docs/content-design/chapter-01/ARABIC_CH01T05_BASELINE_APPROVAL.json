@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-t05-arabic-baseline-001",
-  "baselineVersion": "1.1.0",
+  "baselineVersion": "1.2.0",
   "status": "approved",
   "language": "Arabic",
   "topicId": "ch01-t05",
@@ -19,7 +19,7 @@
       "topicTitle": "Average and Instantaneous Speed",
       "topicTitleAr": "السرعة المتوسطة والسرعة اللحظية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json",
-      "sha256": "d128ec47494eca96911b5b8175e2ccde37ad83cb7ff854341f4a1d8560fdb5a9",
+      "sha256": "800d02bdab2b0e29f81a1a63d4ecda858ec2e565127010fce8032c50d6556cf6",
       "schemaVersion": "2.3.0",
       "recordCount": 15
     }
@@ -44,11 +44,11 @@
   "filePreservationNote": "The approved Arabic candidate file is unmoved, unrenamed, and not promoted into docs/content-design/chapter-01/pilot/ or the application. Its internal generationStatus, translationStatus, blocking, visibility, and publication fields are not altered by this approval: every Arabic translationStatus remains \"draft\" and every record remains blocked and not student-facing. This external record alone establishes the exact file at the recorded checksum as the internal Arabic baseline.",
   "englishBaselineDependency": {
     "record": "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json",
-    "baselineVersion": "1.0.0",
+    "baselineVersion": "1.2.0",
     "status": "approved",
     "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json",
-    "sha256": "2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c",
-    "verifiedResult": "The English source checksum was recomputed and confirmed unchanged. The candidate retains the same eight records, IDs, order, English fields, and governance fields as the approved English baseline; only authorized Arabic localization fields are populated."
+    "sha256": "3982ab6e3f329816a6a3693cb8460c0a612bee78e3c04e1a4ebda91f1b362b72",
+    "verifiedResult": "The English source checksum was recomputed for the controlled structured-slide revision. The candidate retains the same fifteen records, IDs, order, English fields, and governance fields as the revised English baseline; only the equivalent authorized Arabic localization fields are populated."
   },
   "glossaryDependency": {
     "record": "docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json",
@@ -64,7 +64,7 @@
     "Project-owner instruction in this session to review and, if no blocking finding remains, approve this Arabic baseline"
   ],
   "arabicReviewFindings": {
-    "recordsReviewed": 8,
+    "recordsReviewed": 15,
     "criteriaChecked": [
       "Arabic/English record IDs, order, and English-source checksum are identical to the approved English baseline",
       "Average speed is total distance divided by total elapsed time, including stops unless moving time is requested",
@@ -77,7 +77,7 @@
       "Every record remains blocked, studentFacingAllowed false, and unpublished"
     ],
     "result": "All eight records passed. The delivery-cyclist problem retains total distance 3000 m, total elapsed time 410 s including the 60 s stop, average speed approximately 7.3 m/s, and a separate 9.5 m/s instantaneous phone reading. The instructor script retains the 40 km/h and 60 km/h equal-time condition. No blocking scientific, linguistic, terminology, RTL/LTR, numerical, or governance issue remains.",
-    "conclusion": "Approved as drafted. No change to the Arabic candidate text was required by this approval."
+    "conclusion": "The controlled structured-slide revision is approved with equivalent Arabic text, retained RTL/LTR handling, and unchanged publication restrictions."
   },
   "perTopicDecision": {
     "ch01-t05": {
@@ -110,7 +110,7 @@
   "revisionControlPolicy": {
     "rule": "Any future edit to Arabic content in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json must be recorded as a controlled revision against this baseline, not made silently.",
     "mechanism": "A controlled revision increments baselineVersion and appends an entry recording scope, rationale, authorization, validation, and retained publication restrictions.",
-    "revisionLog": [{"revisionId":"ch01-t05-arabic-baseline-rev-001","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Adds seven Arabic localizations for the authorized text-and-equation-only Slide Reader records; translationStatus and all student/publication restrictions remain draft/false."}]
+    "revisionLog": [{"revisionId":"ch01-t05-arabic-baseline-rev-001","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Adds seven Arabic localizations for the authorized text-and-equation-only Slide Reader records; translationStatus and all student/publication restrictions remain draft/false."},{"revisionId":"ch01-t05-arabic-baseline-rev-002","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Expands the seven Arabic slides into the established structured Study/Review presentation format as translations equivalent to the English revision. RTL text and LTR equations/units are retained; no visual, publication, or student authorization is added."}]
   },
   "downstreamStatus": {
     "visualStatus": "notProduced, notAuthorized",

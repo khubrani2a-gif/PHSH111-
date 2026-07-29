@@ -35,8 +35,8 @@ describe("ch01-t05 internal integration", () => {
   });
 
   it("preserves the recorded immutable checksums and does not create a third content source", () => {
-    expect(sha256(englishPath)).toBe("2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c");
-    expect(sha256(arabicPath)).toBe("d128ec47494eca96911b5b8175e2ccde37ad83cb7ff854341f4a1d8560fdb5a9");
+    expect(sha256(englishPath)).toBe("3982ab6e3f329816a6a3693cb8460c0a612bee78e3c04e1a4ebda91f1b362b72");
+    expect(sha256(arabicPath)).toBe("800d02bdab2b0e29f81a1a63d4ecda858ec2e565127010fce8032c50d6556cf6");
     expect(RAW_CONTENT_BY_TOPIC["ch01-t05"]).toBeDefined();
   });
 
