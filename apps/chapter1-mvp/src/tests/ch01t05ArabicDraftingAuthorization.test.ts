@@ -185,8 +185,16 @@ describe("PR G2A — prerequisite corrections and existing scopes are unaffected
     expect(authorization.ch01T05DraftingAuthorization.applicableTopicIds).toEqual(["ch01-t05"]);
   });
 
-  it("17. no Arabic candidate file is created by this PR", () => {
-    expect(existsSync(AR_PATH)).toBe(false);
+  it("17. the subsequently authorized Arabic output remains a blocked candidate draft", () => {
+    expect(existsSync(AR_PATH)).toBe(true);
+    const candidate = readJson(AR_PATH);
+    expect(candidate.generationStatus).toBe("draft-batch1-arabic-candidate-generation");
+    expect(sha256(CONTENT_PATH)).toBe(baseline.approvedDraftFiles[0].sha256);
+    for (const { record } of candidate.records) {
+      expect(record.arabic.translationStatus).toBe("draft");
+      expect(record.blocking.studentFacingAllowed).toBe(false);
+      expect(record.blocking.blockingStatus).toBe("blocked");
+    }
   });
 
   it("no application file references ch01-t05, and no pilot/ file exists", () => {

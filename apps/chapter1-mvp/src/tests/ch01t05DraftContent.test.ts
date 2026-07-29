@@ -75,8 +75,16 @@ describe("PR G1 — file location and topic metadata", () => {
     expect(existsSync(PILOT_PATH)).toBe(false);
   });
 
-  it("2. no Arabic draft file exists for ch01-t05", () => {
-    expect(existsSync(AR_PATH)).toBe(false);
+  it("2. the authorized Arabic output is a candidate draft, not an approved baseline", () => {
+    expect(existsSync(AR_PATH)).toBe(true);
+    const candidate = JSON.parse(readFileSync(AR_PATH, "utf8"));
+    expect(candidate.topicId).toBe("ch01-t05");
+    expect(candidate.generationStatus).toBe("draft-batch1-arabic-candidate-generation");
+    for (const { record } of candidate.records) {
+      expect(record.arabic.translationStatus).toBe("draft");
+      expect(record.blocking.studentFacingAllowed).toBe(false);
+      expect(record.blocking.blockingStatus).toBe("blocked");
+    }
   });
 
   it("3. topic ID is ch01-t05", () => {
