@@ -1,8 +1,8 @@
 # ch01-t05 internal application integration authorization
 
-**Record ID:** `ch01-t05-application-integration-authorization-001`  
-**Date:** 2026-07-29  
-**Authorized by:** `khubrani2a-gif (project owner)`  
+**Record ID:** `ch01-t05-application-integration-authorization-001`
+**Date:** 2026-07-29
+**Authorized by:** `khubrani2a-gif (project owner)`
 **Status:** granted — internal integration and QA only
 
 ## Scope
