@@ -166,6 +166,25 @@ function mergeLocalizedContentField(
   arRaw: unknown,
   path: string,
 ): LocalizedContent {
+  // The approved ch01-t05 problem record uses the equally valid compact
+  // LocalizedText-with-nested-`ar` form, while the older Batch 1 records
+  // use {en, ar}. Normalize that source shape here only in memory; neither
+  // immutable source file is rewritten or relaxed structurally.
+  const enObject = requireRecordObject(enRaw, `${path} (English file)`);
+  const arObject = requireRecordObject(arRaw, `${path} (Arabic file)`);
+  if (!("en" in enObject) && !("en" in arObject)) {
+    const enText = requireLocalizedText(enRaw, `${path} (English file)`);
+    const arText = requireLocalizedText(arRaw, `${path} (Arabic file)`);
+    const nestedArabic = requireLocalizedText(arObject.ar, `${path} (Arabic file).ar`);
+    const normalizedArabicEnglish = {
+      text: arText.text,
+      status: arText.status,
+      language: arText.language,
+      direction: arText.direction,
+    };
+    assertEqual(enText, normalizedArabicEnglish, `${path}.en`);
+    return { en: enText, ar: nestedArabic };
+  }
   const en = requireLocalizedContentSide(enRaw, `${path} (English file)`, ["en"]);
   const ar = requireLocalizedContentSide(arRaw, `${path} (Arabic file)`, ["en", "ar"]);
   assertEqual(en.en, ar.en, `${path}.en`);

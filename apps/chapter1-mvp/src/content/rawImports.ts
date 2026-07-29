@@ -9,8 +9,8 @@
 // (four visual-validation JSON records) for the original four pilot
 // topics; docs/content-design/chapter-01/batch1-drafts/,
 // batch1-arabic-drafts/, and batch1-visuals/ for Batch 1 (ch01-t01,
-// ch01-t04), per PILOT_AUTHORIZATION.json v1.5.0's
-// batch1ApplicationIntegrationAuthorization. Nothing here duplicates
+// ch01-t04), plus the separately authorized ch01-t05 English/Arabic
+// baselines. Nothing here duplicates
 // content — these are live imports of the canonical files themselves,
 // resolved via Vite's module graph (see vite.config.ts's narrowly-scoped
 // server.fs.allow for the dev-server case, which already covers the whole
@@ -49,10 +49,12 @@ import ch01t10Svg from "../../../../docs/content-design/chapter-01/pilot/visuals
 // Batch 1 — approved English baseline (immutable; never edited by this application).
 import ch01t01ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json";
 import ch01t04ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json";
+import ch01t05ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json";
 
 // Batch 1 — approved Arabic candidate baseline (immutable; never edited by this application).
 import ch01t01ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json";
 import ch01t04ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json";
+import ch01t05ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json";
 
 // Batch 1 — the two governance baseline-approval records themselves (not
 // content; immutable; never edited by this application). Both ch01-t01 and
@@ -63,6 +65,8 @@ import ch01t04ContentAr from "../../../../docs/content-design/chapter-01/batch1-
 // current versions — see batch1Merge.ts's requireBaselineVersion.
 import englishBatch1BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_BATCH1_BASELINE_APPROVAL.json";
 import arabicBatch1BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json";
+import englishCh01T05BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json";
+import arabicCh01T05BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_CH01T05_BASELINE_APPROVAL.json";
 
 // Batch 1 — approved visuals and their validation records.
 import ch01t01Validation from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json";
@@ -121,6 +125,13 @@ const ch01t04Content = mergeEnglishAndArabicTopicFile(
   englishBatch1BaselineApproval,
   arabicBatch1BaselineApproval,
 );
+const ch01t05Content = mergeEnglishAndArabicTopicFile(
+  ch01t05ContentEn,
+  ch01t05ContentAr,
+  "ch01-t05",
+  englishCh01T05BaselineApproval,
+  arabicCh01T05BaselineApproval,
+);
 
 /** Raw (unvalidated `unknown`) content JSON, keyed by topic ID — narrowed only inside src/content/validate.ts. */
 export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
@@ -128,12 +139,13 @@ export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
   "ch01-t02": ch01t02Content,
   "ch01-t03": ch01t03Content,
   "ch01-t04": ch01t04Content,
+  "ch01-t05": ch01t05Content,
   "ch01-t08": ch01t08Content,
   "ch01-t10": ch01t10Content,
 };
 
 /** Raw (unvalidated `unknown`) visual-validation JSON, keyed by topic ID. */
-export const RAW_VISUAL_VALIDATION_BY_TOPIC: Record<PilotTopicId, unknown> = {
+export const RAW_VISUAL_VALIDATION_BY_TOPIC: Partial<Record<PilotTopicId, unknown>> = {
   "ch01-t01": ch01t01Validation,
   "ch01-t02": ch01t02Validation,
   "ch01-t03": ch01t03Validation,
@@ -143,7 +155,7 @@ export const RAW_VISUAL_VALIDATION_BY_TOPIC: Record<PilotTopicId, unknown> = {
 };
 
 /** Raw SVG markup (string), unmodified from the source file, keyed by topic ID. */
-export const RAW_SVG_MARKUP_BY_TOPIC: Record<PilotTopicId, string> = {
+export const RAW_SVG_MARKUP_BY_TOPIC: Partial<Record<PilotTopicId, string>> = {
   "ch01-t01": ch01t01Svg,
   "ch01-t02": ch01t02Svg,
   "ch01-t03": ch01t03Svg,

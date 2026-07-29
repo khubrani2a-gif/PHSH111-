@@ -559,7 +559,7 @@ export function validateTopicFile(
  * validateTopicFile so it catches duplicates across topics too, not only
  * within one file.
  *
- * Checked against APP_TOPIC_ORDER (the six-topic chapter-wide sequence:
+ * Checked against APP_TOPIC_ORDER (the seven-topic chapter-wide sequence:
  * ch01-t01, ch01-t02, ch01-t03, ch01-t04, ch01-t08, ch01-t10), not the
  * narrower four-topic PILOT_TOPIC_ORDER — see
  * docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md

@@ -31,13 +31,13 @@ function textOnly(html: string): string {
     .replace(/&#x27;/g, "'");
 }
 
-describe("six-topic registry and order", () => {
-  it("loads exactly six topics, in the correct chapter-wide numerical order", () => {
-    expect(getTopicOrder()).toEqual(["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t08", "ch01-t10"]);
+describe("seven-topic registry and order", () => {
+  it("loads exactly seven topics, in the correct chapter-wide numerical order", () => {
+    expect(getTopicOrder()).toEqual(["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t08", "ch01-t10"]);
     expect(getTopicOrder()).toEqual([...APP_TOPIC_ORDER]);
   });
 
-  it("keeps the four originally pilot topics in their exact original relative order within the six", () => {
+  it("keeps the four originally pilot topics in their exact original relative order", () => {
     const order = getTopicOrder();
     const pilotOnly = order.filter((id) => ["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"].includes(id));
     expect(pilotOnly).toEqual(["ch01-t02", "ch01-t03", "ch01-t08", "ch01-t10"]);

@@ -369,7 +369,8 @@
     "identifierRegistrationCompletedAt": "2026-07-29",
     "requiredIdentifierCount": 9,
     "applicationIntegrationAuthorized": true,
-    "applicationIntegrationImplemented": false,
+    "applicationIntegrationImplemented": true,
+    "applicationIntegrationImplementedAt": "2026-07-29",
     "integrationSourceModel": "directImmutableImportsWithInMemoryEnglishArabicMerge",
     "visualDecision": {
       "visualRequired": false,

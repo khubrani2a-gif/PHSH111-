@@ -244,14 +244,14 @@ describe("PR G1A — governance state preserved", () => {
     expect(baseline.governanceRestrictions.visualProductionNotAuthorized).toContain("no figure asset");
   });
 
-  it("12. no application registration exists (PilotTopicId/APP_TOPIC_ORDER, rawImports, slideGroups, StructuredSlideContent)", () => {
+  it("12. application registration uses direct imports only; no slide integration was added", () => {
     expect(existsSync(PILOT_PATH)).toBe(false);
     const schemaText = readFileSync(resolve(__dirname, "../types/pilotSchema.ts"), "utf8");
     const unionMatch = schemaText.match(/export type PilotTopicId =[\s\S]*?;/);
-    expect(unionMatch![0]).not.toContain("ch01-t05");
+    expect(unionMatch![0]).toContain("ch01-t05");
     const orderMatch = schemaText.match(/export const APP_TOPIC_ORDER:[\s\S]*?\];/);
-    expect(orderMatch![0]).not.toContain("ch01-t05");
-    expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).not.toContain("ch01-t05");
+    expect(orderMatch![0]).toContain("ch01-t05");
+    expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).not.toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).not.toContain("ch01-t05");
     expect(

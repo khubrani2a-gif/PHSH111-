@@ -122,9 +122,9 @@ describe("reviewQuestion normalization — synthetic fixtures", () => {
 });
 
 describe("reviewQuestion — real canonical data (four pilot topics + Batch 1)", () => {
-  const topicIds = ["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t08", "ch01-t10"] as const;
+  const topicIds = ["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t08", "ch01-t10"] as const;
 
-  it("every one of the six real topics currently has a learner-visible reviewQuestion with governance flags left false", () => {
+  it("every one of the seven real topics currently has a learner-visible reviewQuestion with governance flags left false", () => {
     for (const topicId of topicIds) {
       const topic = getTopic(topicId);
       expect(topic?.reviewQuestion).toBeDefined();

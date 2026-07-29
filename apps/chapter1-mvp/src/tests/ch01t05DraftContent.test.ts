@@ -495,17 +495,17 @@ describe("PR G1 — correction links and blocking/publication restrictions", () 
   });
 });
 
-describe("PR G1 — no application registration was added", () => {
-  it("29a. src/types/pilotSchema.ts's PilotTopicId union and APP_TOPIC_ORDER do not include ch01-t05", () => {
+describe("PR G5 — authorized internal application registration", () => {
+  it("29a. PilotTopicId and APP_TOPIC_ORDER include ch01-t05 in numerical order", () => {
     const schemaText = readFileSync(resolve(__dirname, "../types/pilotSchema.ts"), "utf8");
     const unionMatch = schemaText.match(/export type PilotTopicId =[\s\S]*?;/);
-    expect(unionMatch![0]).not.toContain("ch01-t05");
+    expect(unionMatch![0]).toContain("ch01-t05");
     const orderMatch = schemaText.match(/export const APP_TOPIC_ORDER:[\s\S]*?\];/);
-    expect(orderMatch![0]).not.toContain("ch01-t05");
+    expect(orderMatch![0]).toContain("ch01-t05");
   });
 
-  it("29b. no rawImports.ts, slideGroups.ts, or slideShortTitles.ts entry references ch01-t05", () => {
-    expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).not.toContain("ch01-t05");
+  it("29b. raw imports use the approved source pair, while slide files remain untouched", () => {
+    expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).not.toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).not.toContain("ch01-t05");
   });
