@@ -1,0 +1,44 @@
+{
+  "inventoryVersion": "1.0.0",
+  "inventoryId": "ch01-t06-kahoot-user-source-inventory-001",
+  "topicId": "ch01-t06",
+  "sourceId": "SRC-CH01-KAHOOT-001",
+  "sourceStatus": "user-provided-raw-copy",
+  "rawSource": {
+    "path": "docs/content-audits/chapter-01/raw-sources/source-kahoot-001-pasted-text.txt",
+    "providedBy": "project owner",
+    "receivedAt": "2026-07-29",
+    "sha256": "6bce541abb21be6b36b0ded30f253110887e24bdb635a02bd36ac86351149043",
+    "bytePreservation": "The tracked raw copy is byte-identical to the directly provided attachment; no normalization or editing was applied."
+  },
+  "selectionRule": "Include only the project-owner-designated questions 33–40 from the first bank and 20–26 from the second conceptual bank. Treat the Kahoot source as scope/check evidence only, never as wording to reproduce and never as the primary explanatory narrative.",
+  "includedQuestions": [
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 33, "question": "Speed is a:", "correctAnswer": "scalar", "supportedConcept": "speed is scalar"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 34, "question": "Velocity is:", "correctAnswer": "speed in a particular direction", "supportedConcept": "velocity includes direction"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 35, "question": "Which statement gives velocity?", "correctAnswer": "10 m/s east", "supportedConcept": "a velocity statement includes magnitude, unit, and direction"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 36, "question": "A car turns a corner at constant speed. Its velocity:", "correctAnswer": "changes because direction changes", "supportedConcept": "velocity changes when direction changes even if speed is constant"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 37, "question": "A vector has:", "correctAnswer": "magnitude and direction", "supportedConcept": "vector definition"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 38, "question": "Which is a scalar?", "correctAnswer": "speed", "supportedConcept": "speed classification"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 39, "question": "Which is a vector?", "correctAnswer": "velocity", "supportedConcept": "velocity classification"},
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumber": 40, "question": "In vector drawings, arrow length represents:", "correctAnswer": "magnitude", "supportedConcept": "vector-representation convention"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 20, "question": "What makes velocity different from speed?", "correctAnswer": "Direction", "supportedConcept": "speed-versus-velocity distinction"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 21, "question": "Which statement describes velocity?", "correctAnswer": "20 m/s east", "supportedConcept": "a velocity statement includes direction"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 22, "question": "A car turns a corner at constant speed. Its velocity:", "correctAnswer": "Changes", "supportedConcept": "directional change changes velocity"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 23, "question": "Speed is a:", "correctAnswer": "Scalar", "supportedConcept": "speed classification"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 24, "question": "Velocity is a:", "correctAnswer": "Vector", "supportedConcept": "velocity classification"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 25, "question": "A vector always contains:", "correctAnswer": "Magnitude and direction", "supportedConcept": "vector definition"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumber": 26, "question": "The length of a vector arrow represents:", "correctAnswer": "Magnitude", "supportedConcept": "vector-representation convention"}
+  ],
+  "explicitExclusions": [
+    {"bank": "Kahoot Exam — Chapter 1: The Study of Motion", "questionNumbers": [41, 42, 43, 44], "reason": "resultant and vector-addition questions belong to ch01-t07"},
+    {"bank": "Kahoot 2 — Conceptual Mastery of Chapter 1", "questionNumbers": [27, 28], "reason": "vector-addition and resultant questions belong to ch01-t07"},
+    {"scope": "displacement", "reason": "No included question supplies a definition, relationship, or equation for displacement; it is not authorized by this inventory."},
+    {"scope": "equations and numerical calculation", "reason": "No included question authorizes a formula or calculation for ch01-t06."}
+  ],
+  "usageRestrictions": [
+    "Do not copy or closely paraphrase any question or answer wording into canonical content.",
+    "Do not use this source as a primary explanatory narrative.",
+    "Do not introduce vector addition, resultants, displacement, or equations under ch01-t06 from this source.",
+    "No student-facing publication or Kahoot export is authorized by this inventory."
+  ]
+}

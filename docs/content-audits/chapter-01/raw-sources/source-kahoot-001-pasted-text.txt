@@ -1,0 +1,2456 @@
+Below is a complete Kahoot question bank covering 1.1, 1.2, 1.3, and 1.4 using your uploaded chapter, slides, learning checks, and problem resources. It covers fundamental quantities, units, speed, velocity, vectors, acceleration, centripetal acceleration, free fall, and motion graphs.
+
+Kahoot Exam — Chapter 1: The Study of Motion
+#	Question	A	B	C	D	Correct
+1	What are the three fundamental physical quantities in mechanics?	Distance, time, mass	Distance, speed, force	Area, volume, time	Weight, speed, charge	A
+2	Why are distance, time, and mass called fundamental quantities?	They are easiest to memorize	Other quantities can be built from them	They are always vectors	They only use English units	B
+3	Which quantity is derived only from distance?	Time	Mass	Area	Frequency	C
+4	Which unit is best for measuring the diameter of a coin?	kilometer	meter	millimeter	mile	C
+5	Which is the best unit for distance between cities?	millimeter	centimeter	kilometer	inch	C
+6	Distance represents a measure of space in:	one dimension	two dimensions	three dimensions	time only	A
+7	Area usually refers to the size of a:	line	surface	cycle	mass	B
+8	Volume measures the amount of:	surface	space occupied	time elapsed	direction	B
+9	Which is a unit of area?	m	m/s	m²	m/s²	C
+10	Which is a unit of volume?	cm	cm²	cm³	Hz	C
+11	Why do we use many different units?	To make physics harder	To match the scale of the object	Because units are random	Because metric units are inaccurate	B
+12	What is the period of a repeating motion?	Number of cycles per second	Time for one complete cycle	Distance per time	Change in velocity	B
+13	What is frequency?	Time for one cycle	Number of cycles per unit time	Distance traveled	Speed with direction	B
+14	What is the unit hertz equal to?	meter/second	second	cycle per second	meter squared	C
+15	If frequency increases, the period:	increases	decreases	stays constant	becomes zero always	B
+16	A pendulum makes 10 cycles in 2 s. What is its frequency?	2 Hz	5 Hz	10 Hz	20 Hz	B
+17	If frequency is 5 Hz, what is the period?	5 s	2 s	0.5 s	0.2 s	D
+18	Mass is also a measure of:	weight	inertia	speed	distance	B
+19	Greater mass means:	easier to speed up	harder to speed up or slow down	no inertia	smaller volume	B
+20	When you lift a suitcase, you mainly feel its:	mass only	speed	weight	frequency	C
+21	When you pull a suitcase and change its speed, you experience its:	mass/inertia	temperature	period	area	A
+22	Speed is defined as:	distance divided by time	time divided by distance	velocity divided by time	mass divided by volume	A
+23	Average speed equals:	total distance / total time	final speed / initial speed	time / distance	acceleration × radius	A
+24	A car travels 100 m in 5 s. Its average speed is:	5 m/s	10 m/s	20 m/s	50 m/s	C
+25	Instantaneous speed means speed:	over the whole trip	at a specific instant	with direction only	during one hour only	B
+26	A speedometer shows:	average speed	instantaneous speed	acceleration only	period	B
+27	What does Δ mean in physics equations?	total	change in	direction	squared	B
+28	In v=Δd/Δt, Δd means:	final distance + initial distance	final distance − initial distance	time change	velocity change	B
+29	When speed is constant, average speed and instantaneous speed are:	always different	equal	both zero	impossible to compare	B
+30	If speed is constant, distance and time are:	inversely proportional	directly proportional	unrelated	always zero	B
+31	For constant speed, the equation is:	d=vt	v=at	a=v
+2
+/r	T=1/f	A
+32	A runner moves at 7 m/s for 3 s. Distance traveled is:	7 m	10 m	21 m	49 m	C
+33	Speed is a:	vector	scalar	force	direction only	B
+34	Velocity is:	speed only	speed in a particular direction	distance only	acceleration only	B
+35	Which statement gives velocity?	20 m/s	50 mph	10 m/s east	100 km/h	C
+36	A car turns a corner at constant speed. Its velocity:	stays constant	changes because direction changes	becomes zero	loses units	B
+37	A vector has:	magnitude only	direction only	magnitude and direction	no unit	C
+38	Which is a scalar?	velocity	acceleration	displacement	speed	D
+39	Which is a vector?	time	mass	velocity	volume	C
+40	In vector drawings, arrow length represents:	direction	magnitude	time	unit type	B
+41	If a ship moves 20 mph forward and a person runs 8 mph forward on it, resultant speed is:	12 mph	20 mph	28 mph	160 mph	C
+42	If a ship moves 20 mph forward and a person runs 8 mph backward, resultant speed is:	8 mph backward	12 mph forward	28 mph forward	20 mph backward	B
+43	A bird flies 8 m/s north while wind blows 6 m/s east. Resultant speed is:	2 m/s	8 m/s	10 m/s	14 m/s	C
+44	Why is the bird’s speed not 14 m/s in the previous question?	Vectors are perpendicular	Speeds disappear	Wind has no effect	Speed is negative	A
+45	Acceleration is defined as:	change in distance / time	change in velocity / time	distance × time	speed × radius	B
+46	Acceleration happens when velocity changes in:	speed only	direction only	speed or direction or both	mass only	C
+47	A car speeds up from 20 to 25 m/s in 4 s. Acceleration is:	0.8 m/s²	1.25 m/s²	4 m/s²	5 m/s²	B
+48	A runner slows from 9 m/s to 0 in 5 s. Acceleration is:	+1.8 m/s²	−1.8 m/s²	+9 m/s²	−9 m/s²	B
+49	What does negative acceleration mean in straight-line motion?	Object must move backward	Acceleration is opposite chosen positive direction	Speed is always zero	Time is negative	B
+50	Free fall means:	no gravity	only gravity acts, ignoring air resistance	object floats	object has zero acceleration	B
+51	Near Earth’s surface, free-fall acceleration is about:	1 m/s²	4.9 m/s²	9.8 m/s²	22 m/s²	C
+52	One g equals approximately:	9.8 m/s²	9.8 m/s	1 m/s	1 Hz	A
+53	An acceleration of 2g equals:	4.9 m/s²	9.8 m/s²	19.6 m/s²	98 m/s²	C
+54	Centripetal acceleration happens when an object:	moves in a straight line	moves in a circular path	is stationary	has no direction	B
+55	Direction of centripetal acceleration is:	outward	tangent to path	toward center	backward only	C
+56	For circular motion, centripetal acceleration equals:	a=vt	a=v
+2
+/r	a=Δd/Δt	a=1/f	B
+57	If speed doubles in circular motion, centripetal acceleration becomes:	half	double	four times	zero	C
+58	If radius doubles while speed stays constant, centripetal acceleration becomes:	half	double	four times	unchanged	A
+59	A car moves around a curve at constant speed. Is it accelerating?	No, speed is constant	Yes, direction changes	Only if it stops	Only if speed increases	B
+60	A ball on a string moves at 10 m/s with radius 0.5 m. Acceleration is:	5 m/s²	20 m/s²	100 m/s²	200 m/s²	D
+61	The simplest motion is:	circular motion	no motion	acceleration	free fall	B
+62	A stationary object has:	v=0, a=0	v>0, a=0	v=0, a>0	changing distance	A
+63	Uniform motion means:	constant acceleration	constant speed in fixed direction	changing direction	free fall	B
+64	In uniform motion, acceleration is:	constant nonzero	zero	increasing	negative always	B
+65	A distance-time graph for constant velocity is:	curved upward	straight line	vertical only	random	B
+66	The slope of a distance-time graph equals:	acceleration	velocity	mass	period	B
+67	A steeper distance-time graph means:	smaller velocity	larger velocity	zero velocity	negative time	B
+68	A flat distance-time graph means the object is:	moving fast	accelerating	stationary	falling	C
+69	A downward-sloping distance-time graph means:	positive velocity	negative velocity	zero velocity	increasing mass	B
+70	For constant acceleration from rest, velocity is:	v=at	d=vt	a=v
+2
+/r	T=1/f	A
+71	For constant acceleration from rest, distance is:	d=vt	d=
+2
+1
+	​
+
+at
+2
+	d=at	d=v
+2
+/r	B
+72	A velocity-time graph for constant acceleration is:	horizontal only	straight line	circle	no graph possible	B
+73	The slope of a velocity-time graph equals:	distance	velocity	acceleration	mass	C
+74	In free fall from rest, after 2 s the velocity is about:	4.9 m/s	9.8 m/s	19.6 m/s	39.2 m/s	C
+75	In free fall from rest, distance after 2 s is:	4.9 m	9.8 m	19.6 m	39.2 m	C
+76	Why does a falling object travel more distance each second?	Its mass increases	Its velocity increases	Gravity decreases	Time slows down	B
+77	Distance-time graph for free fall curves upward because:	acceleration is zero	velocity increases with time	velocity is constant	distance decreases	B
+78	If velocity-time graph curves upward, acceleration is:	decreasing	increasing	zero	constant negative	B
+79	Which graph has slope equal to velocity?	distance-time	velocity-time	mass-time	period-frequency	A
+80	Which graph has slope equal to acceleration?	distance-time	velocity-time	mass-time	volume-time	B
+Suggested Kahoot Structure
+
+Use 40 questions per game so students do not get tired:
+
+Game 1: Foundations
+Questions 1–40
+Focus: 1.1 and 1.2
+
+Game 2: Motion and Graphs
+Questions 41–80
+Focus: vector addition, acceleration, centripetal acceleration, free fall, and graphs
+
+For stronger students, mix both games and use the calculation questions as “double points.”
+
+Wed, Jul 15 at 2:36 PM
+Ch1-Review card.pdf
+PDF
+Chapter One- The Study of Motion(1).pdf
+PDF
+use this document do construct another kahoot question. please go over every slide and create meaningful and conceptual questions  
+
+Excellent. After reviewing the entire Chapter 1 slide deck (59 slides) and the Learning Check review card, I would not create another Kahoot that focuses on calculations only.
+
+Instead, I would build a high-level conceptual Kahoot that tests whether students truly understand the ideas behind motion, not just memorize equations. This is usually what students struggle with in Physics for Health Sciences.
+
+Kahoot 2 — Conceptual Mastery of Chapter 1
+Fundamental Physical Quantities (1.1)
+1
+
+Why are distance, mass, and time called fundamental quantities?
+
+A. They are the easiest to measure
+
+B. They can be used to build most other physical quantities
+
+C. They only exist in mechanics
+
+D. They are vectors
+
+✅ Answer: B
+
+2
+
+Why is speed written as L/T?
+
+A. It depends only on length
+
+B. It depends only on time
+
+C. It is built from distance and time
+
+D. It is a vector
+
+✅ Answer: C
+
+3
+
+Why do physicists use millimeters, meters, and kilometers instead of only one unit?
+
+A. Different countries prefer different units
+
+B. Different units fit different scales of measurement
+
+C. To avoid decimals
+
+D. To increase precision
+
+✅ Answer: B
+
+4
+
+Which quantity depends only on distance?
+
+A. Area
+
+B. Speed
+
+C. Frequency
+
+D. Acceleration
+
+✅ Answer: A
+
+5
+
+Why is area measured in square units?
+
+A. Because area describes a two-dimensional quantity
+
+B. Because it involves time
+
+C. Because it is a vector
+
+D. Because it measures mass
+
+✅ Answer: A
+
+6
+
+A basketball and a flat sheet can have the same area because:
+
+A. Area applies only to flat surfaces
+
+B. Curved surfaces also have area
+
+C. Area measures volume
+
+D. Area measures mass
+
+✅ Answer: B
+
+7
+
+Which quantity measures how much space an object occupies?
+
+A. Area
+
+B. Volume
+
+C. Distance
+
+D. Mass
+
+✅ Answer: B
+
+8
+
+Time measurement is based on:
+
+A. Weight
+
+B. Velocity
+
+C. Repeating processes
+
+D. Area
+
+✅ Answer: C
+
+9
+
+A pendulum completes more cycles each second. What happens to frequency?
+
+A. Decreases
+
+B. Stays the same
+
+C. Increases
+
+D. Becomes zero
+
+✅ Answer: C
+
+10
+
+If frequency increases, period must:
+
+A. Increase
+
+B. Stay constant
+
+C. Decrease
+
+D. Become negative
+
+✅ Answer: C
+
+11
+
+What does 1 Hz actually mean?
+
+A. One meter per second
+
+B. One cycle per second
+
+C. One acceleration unit
+
+D. One rotation
+
+✅ Answer: B
+
+12
+
+Which object has greater inertia?
+
+A. Empty shopping cart
+
+B. Loaded shopping cart
+
+C. Same inertia
+
+D. Depends on speed
+
+✅ Answer: B
+
+13
+
+Why is a heavier object harder to start moving?
+
+A. Greater volume
+
+B. Greater inertia
+
+C. Greater speed
+
+D. Greater area
+
+✅ Answer: B
+
+14
+
+When lifting a suitcase you mainly experience its:
+
+A. Mass
+
+B. Area
+
+C. Weight
+
+D. Velocity
+
+✅ Answer: C
+
+15
+
+When accelerating a suitcase you mainly experience its:
+
+A. Weight
+
+B. Mass
+
+C. Volume
+
+D. Area
+
+✅ Answer: B
+
+Speed and Velocity (1.2)
+16
+
+Why is average speed sometimes misleading?
+
+A. It ignores total distance
+
+B. It may hide changes during motion
+
+C. It ignores time
+
+D. It is always larger
+
+✅ Answer: B
+
+17
+
+A speedometer measures:
+
+A. Average speed
+
+B. Instantaneous speed
+
+C. Velocity
+
+D. Acceleration
+
+✅ Answer: B
+
+18
+
+The symbol Δ means:
+
+A. Total value
+
+B. Initial value
+
+C. Change in a quantity
+
+D. Final value
+
+✅ Answer: C
+
+19
+
+If a car moves at constant speed, average speed and instantaneous speed are:
+
+A. Different
+
+B. Equal
+
+C. Opposite
+
+D. Unrelated
+
+✅ Answer: B
+
+20
+
+What makes velocity different from speed?
+
+A. Units
+
+B. Direction
+
+C. Magnitude
+
+D. Distance
+
+✅ Answer: B
+
+21
+
+Which statement describes velocity?
+
+A. 60 km/h
+
+B. 30 m/s
+
+C. 20 m/s east
+
+D. 10 mph
+
+✅ Answer: C
+
+22
+
+A car turns a corner at constant speed. Its velocity:
+
+A. Remains constant
+
+B. Changes
+
+C. Becomes zero
+
+D. Doubles
+
+✅ Answer: B
+
+23
+
+Speed is a:
+
+A. Vector
+
+B. Scalar
+
+C. Force
+
+D. Direction
+
+✅ Answer: B
+
+24
+
+Velocity is a:
+
+A. Scalar
+
+B. Vector
+
+C. Unit
+
+D. Force
+
+✅ Answer: B
+
+25
+
+A vector always contains:
+
+A. Magnitude only
+
+B. Direction only
+
+C. Magnitude and direction
+
+D. Time and distance
+
+✅ Answer: C
+
+26
+
+The length of a vector arrow represents:
+
+A. Time
+
+B. Direction
+
+C. Magnitude
+
+D. Speed only
+
+✅ Answer: C
+
+27
+
+Two velocities can add to zero when:
+
+A. They are identical
+
+B. They point in opposite directions with equal magnitude
+
+C. They are perpendicular
+
+D. They are large
+
+✅ Answer: B
+
+28
+
+Why was the bird's resultant speed 10 m/s instead of 14 m/s?
+
+A. Velocities were perpendicular
+
+B. Wind does not affect motion
+
+C. Speeds cannot be added
+
+D. One velocity was negative
+
+✅ Answer: A
+
+Acceleration (1.3)
+29
+
+Acceleration measures:
+
+A. Distance change
+
+B. Velocity change
+
+C. Mass change
+
+D. Time change
+
+✅ Answer: B
+
+30
+
+An object accelerates whenever:
+
+A. Speed changes only
+
+B. Direction changes only
+
+C. Speed or direction changes
+
+D. Mass changes
+
+✅ Answer: C
+
+31
+
+A car moving in a perfect circle at constant speed is:
+
+A. Not accelerating
+
+B. Accelerating
+
+C. Stationary
+
+D. Moving uniformly
+
+✅ Answer: B
+
+32
+
+Why is circular motion accelerated motion?
+
+A. Speed changes
+
+B. Direction changes
+
+C. Mass changes
+
+D. Time changes
+
+✅ Answer: B
+
+33
+
+One g equals approximately:
+
+A. 1 m/s²
+
+B. 5 m/s²
+
+C. 9.8 m/s²
+
+D. 98 m/s²
+
+✅ Answer: C
+
+34
+
+An acceleration of 3g means:
+
+A. Three times Earth's gravitational acceleration
+
+B. Three kilograms
+
+C. Three meters
+
+D. Three seconds
+
+✅ Answer: A
+
+35
+
+Negative acceleration always means:
+
+A. Moving backward
+
+B. Acceleration opposite the chosen positive direction
+
+C. Slowing down
+
+D. Stopping
+
+✅ Answer: B
+
+36
+
+Free fall means:
+
+A. No gravity
+
+B. Gravity is the only force considered
+
+C. Motion without acceleration
+
+D. Falling in vacuum only
+
+✅ Answer: B
+
+37
+
+A feather is usually NOT a perfect free-fall example because:
+
+A. It has mass
+
+B. Air resistance is important
+
+C. Gravity disappears
+
+D. It has velocity
+
+✅ Answer: B
+
+38
+
+Centripetal acceleration always points:
+
+A. Along the velocity
+
+B. Away from center
+
+C. Toward center
+
+D. Downward
+
+✅ Answer: C
+
+39
+
+If speed doubles in circular motion, centripetal acceleration becomes:
+
+A. 2 times
+
+B. 3 times
+
+C. 4 times
+
+D. 8 times
+
+✅ Answer: C
+
+40
+
+If radius doubles while speed stays constant, centripetal acceleration:
+
+A. Doubles
+
+B. Halves
+
+C. Quadruples
+
+D. Stays same
+
+✅ Answer: B
+
+Simple Types of Motion (1.4)
+41
+
+A stationary object has:
+
+A. Velocity only
+
+B. Acceleration only
+
+C. Zero velocity and zero acceleration
+
+D. Constant acceleration
+
+✅ Answer: C
+
+42
+
+Uniform motion means:
+
+A. Constant acceleration
+
+B. Constant speed in a fixed direction
+
+C. Zero velocity
+
+D. Circular motion
+
+✅ Answer: B
+
+43
+
+In uniform motion, acceleration equals:
+
+A. 9.8 m/s²
+
+B. 1 m/s²
+
+C. 0
+
+D. Depends on distance
+
+✅ Answer: C
+
+44
+
+For constant velocity motion, distance is:
+
+A. Proportional to time
+
+B. Proportional to time²
+
+C. Constant
+
+D. Random
+
+✅ Answer: A
+
+45
+
+A distance-time graph for constant velocity is:
+
+A. Curved
+
+B. Horizontal
+
+C. Straight line
+
+D. Circular
+
+✅ Answer: C
+
+46
+
+The slope of a distance-time graph represents:
+
+A. Acceleration
+
+B. Velocity
+
+C. Mass
+
+D. Frequency
+
+✅ Answer: B
+
+47
+
+A steeper distance-time graph indicates:
+
+A. Smaller velocity
+
+B. Larger velocity
+
+C. Zero velocity
+
+D. Negative velocity
+
+✅ Answer: B
+
+48
+
+A horizontal distance-time graph indicates:
+
+A. Acceleration
+
+B. Constant speed
+
+C. No motion
+
+D. Free fall
+
+✅ Answer: C
+
+49
+
+A downward-sloping distance-time graph indicates:
+
+A. Positive velocity
+
+B. Zero velocity
+
+C. Negative velocity
+
+D. Constant acceleration
+
+✅ Answer: C
+
+50
+
+The slope of a velocity-time graph represents:
+
+A. Velocity
+
+B. Distance
+
+C. Acceleration
+
+D. Mass
+
+✅ Answer: C
+
+51
+
+For constant acceleration, the velocity-time graph is:
+
+A. Horizontal
+
+B. Straight line
+
+C. Circle
+
+D. Curved downward
+
+✅ Answer: B
+
+52
+
+Why does a falling object's distance-time graph curve upward?
+
+A. Velocity is increasing
+
+B. Velocity is decreasing
+
+C. Acceleration is zero
+
+D. Gravity disappears
+
+✅ Answer: A
+
+53
+
+In free fall, velocity is proportional to:
+
+A. Distance
+
+B. Time
+
+C. Time²
+
+D. Mass
+
+✅ Answer: B
+
+54
+
+In free fall from rest, distance is proportional to:
+
+A. Time
+
+B. Velocity
+
+C. Time²
+
+D. Mass
+
+✅ Answer: C
+
+55
+
+Which motion model best describes a dropped rock?
+
+A. Uniform motion
+
+B. Stationary motion
+
+C. Constant acceleration motion
+
+D. Circular motion
+
+✅ Answer: C
+
+This set is intentionally conceptual rather than computational, and it closely follows every major idea from Slides 2–59, including the Learning Check concepts, definitions, misconceptions, graphs, vectors, free fall, centripetal acceleration, and motion models.
+
+For an actual class Kahoot, I would recommend:
+
+Kahoot A (30 questions): Fundamental Quantities + Speed & Velocity
+Kahoot B (25 questions): Acceleration + Motion Graphs
+Kahoot C (20 questions): Challenging misconception questions and graph interpretation only
+
+These usually produce much better classroom discussion than calculation-heavy questions.
+
+Mastery Kahoot (100 Questions)
+Level 1 — Foundations (Questions 1–20)
+1
+
+Physics describes three fundamental aspects of the universe. Which set is correct?
+
+A. Force, energy, power
+B. Space, time, matter
+C. Speed, velocity, acceleration
+D. Length, area, volume
+
+✅ Answer: B
+
+Explanation: All physical measurements ultimately describe space, time, and matter.
+
+2
+
+Which quantity is fundamental?
+
+A. Speed
+B. Acceleration
+C. Distance
+D. Area
+
+✅ Answer: C
+
+Explanation: Distance is a fundamental quantity; speed and acceleration are derived.
+
+3
+
+Which quantity is derived from distance alone?
+
+A. Speed
+B. Area
+C. Frequency
+D. Velocity
+
+✅ Answer: B
+
+Explanation: Area depends only on length measurements.
+
+4
+
+Volume measures:
+
+A. Surface size
+B. Amount of space occupied
+C. Direction of motion
+D. Change in distance
+
+✅ Answer: B
+
+5
+
+The best unit for measuring the distance between cities is:
+
+A. mm
+B. cm
+C. m
+D. km
+
+✅ Answer: D
+
+6
+
+The best unit for measuring the diameter of a coin is:
+
+A. km
+B. mm
+C. m
+D. mile
+
+✅ Answer: B
+
+7
+
+Area is measured in:
+
+A. m
+B. m/s
+C. m²
+D. m³
+
+✅ Answer: C
+
+8
+
+Volume is measured in:
+
+A. m²
+B. m³
+C. m/s
+D. Hz
+
+✅ Answer: B
+
+9
+
+Every curved surface:
+
+A. Has no area
+B. Has area
+C. Has volume only
+D. Has acceleration
+
+✅ Answer: B
+
+10
+
+Time measurement is based on:
+
+A. Distance traveled
+B. Periodic processes
+C. Mass changes
+D. Area measurements
+
+✅ Answer: B
+
+11
+
+The period of a motion is:
+
+A. Cycles per second
+B. Time for one cycle
+C. Speed of motion
+D. Distance traveled
+
+✅ Answer: B
+
+12
+
+Frequency measures:
+
+A. Distance per time
+B. Cycles per unit time
+C. Time per cycle squared
+D. Acceleration
+
+✅ Answer: B
+
+13
+
+The SI unit of frequency is:
+
+A. Newton
+B. Joule
+C. Hertz
+D. Meter
+
+✅ Answer: C
+
+14
+
+1 Hz means:
+
+A. One cycle per second
+B. One second per cycle
+C. One meter per second
+D. One acceleration unit
+
+✅ Answer: A
+
+15
+
+If frequency increases, period:
+
+A. Increases
+B. Decreases
+C. Stays same
+D. Doubles
+
+✅ Answer: B
+
+16
+
+Mass is closely related to:
+
+A. Weight
+B. Inertia
+C. Speed
+D. Volume
+
+✅ Answer: B
+
+17
+
+An object with greater mass has:
+
+A. Less inertia
+B. More inertia
+C. Same inertia
+D. Zero inertia
+
+✅ Answer: B
+
+18
+
+When lifting a suitcase you mainly feel:
+
+A. Mass
+B. Velocity
+C. Weight
+D. Frequency
+
+✅ Answer: C
+
+19
+
+When accelerating a suitcase you mainly experience:
+
+A. Weight
+B. Mass
+C. Area
+D. Volume
+
+✅ Answer: B
+
+20
+
+Which statement is correct?
+
+A. Weight and mass are identical
+B. Weight and mass are related but different
+C. Mass is a force
+D. Weight is measured in kilograms
+
+✅ Answer: B
+
+Level 2 — Speed and Velocity (21–40)
+21
+
+Speed is defined as:
+
+A. Distance × time
+B. Distance ÷ time
+C. Time ÷ distance
+D. Velocity ÷ time
+
+✅ Answer: B
+
+22
+
+Average speed equals:
+
+A. Total distance ÷ total time
+B. Final speed ÷ initial speed
+C. Velocity × time
+D. Distance × time
+
+✅ Answer: A
+
+23
+
+Instantaneous speed is:
+
+A. Speed during an entire trip
+B. Speed at a particular instant
+C. Maximum speed
+D. Minimum speed
+
+✅ Answer: B
+
+24
+
+A speedometer measures:
+
+A. Average speed
+B. Instantaneous speed
+C. Acceleration
+D. Distance
+
+✅ Answer: B
+
+25
+
+The symbol Δ means:
+
+A. Total value
+B. Final value
+C. Change in
+D. Initial value
+
+✅ Answer: C
+
+26
+
+Velocity differs from speed because velocity includes:
+
+A. Mass
+B. Direction
+C. Area
+D. Time
+
+✅ Answer: B
+
+27
+
+Speed is a:
+
+A. Vector
+B. Scalar
+C. Force
+D. Momentum
+
+✅ Answer: B
+
+28
+
+Velocity is a:
+
+A. Scalar
+B. Vector
+C. Unit
+D. Constant
+
+✅ Answer: B
+
+29
+
+A vector has:
+
+A. Magnitude only
+B. Direction only
+C. Magnitude and direction
+D. Units only
+
+✅ Answer: C
+
+30
+
+A car turns a corner at constant speed. Its velocity:
+
+A. Remains constant
+B. Changes
+C. Becomes zero
+D. Doubles
+
+✅ Answer: B
+
+31
+
+Which is a velocity?
+
+A. 20 m/s
+B. 60 km/h
+C. 15 m/s east
+D. 10 mph
+
+✅ Answer: C
+
+32
+
+Two vectors can add to zero if:
+
+A. They are perpendicular
+B. They are equal and opposite
+C. One is larger
+D. Both are positive
+
+✅ Answer: B
+
+33
+
+A bird flies north at 8 m/s while wind blows east at 6 m/s. Resultant speed is:
+
+A. 2 m/s
+B. 8 m/s
+C. 10 m/s
+D. 14 m/s
+
+✅ Answer: C
+
+34
+
+Why isn't the resultant speed 14 m/s?
+
+A. Velocities are perpendicular
+B. Wind doesn't count
+C. Speed cannot be added
+D. One velocity is negative
+
+✅ Answer: A
+
+35
+
+When speed is constant:
+
+A. Average and instantaneous speed differ
+B. Average and instantaneous speed are equal
+C. Velocity is zero
+D. Acceleration is positive
+
+✅ Answer: B
+
+36
+
+The equation for constant speed motion is:
+
+A. d = vt
+B. v = at
+C. a = v²/r
+D. d = ½at²
+
+✅ Answer: A
+
+37
+
+If distance doubles and speed stays constant, time:
+
+A. Halves
+B. Doubles
+C. Stays same
+D. Becomes zero
+
+✅ Answer: B
+
+38
+
+A car travels 100 m in 5 s. Average speed is:
+
+A. 5 m/s
+B. 10 m/s
+C. 20 m/s
+D. 50 m/s
+
+✅ Answer: C
+
+39
+
+A vector arrow length represents:
+
+A. Direction
+B. Magnitude
+C. Time
+D. Unit
+
+✅ Answer: B
+
+40
+
+A vector arrowhead represents:
+
+A. Distance
+B. Magnitude
+C. Direction
+D. Speed
+
+✅ Answer: C
+
+Level 3 — Acceleration (41–60)
+41
+
+Acceleration is:
+
+A. Distance/time
+B. Change in velocity/time
+C. Speed/time
+D. Distance²/time
+
+✅ Answer: B
+
+42
+
+Acceleration units are:
+
+A. m/s
+B. m²/s
+C. m/s²
+D. s/m
+
+✅ Answer: C
+
+43
+
+An object accelerates whenever:
+
+A. Speed changes only
+B. Direction changes only
+C. Speed or direction changes
+D. Mass changes
+
+✅ Answer: C
+
+44
+
+1 g equals approximately:
+
+A. 1 m/s²
+B. 4.9 m/s²
+C. 9.8 m/s²
+D. 98 m/s²
+
+✅ Answer: C
+
+45
+
+2 g equals:
+
+A. 4.9 m/s²
+B. 9.8 m/s²
+C. 19.6 m/s²
+D. 29.4 m/s²
+
+✅ Answer: C
+
+46
+
+A car goes from 20 to 25 m/s in 4 s. Acceleration is:
+
+A. 0.5 m/s²
+B. 1.25 m/s²
+C. 2 m/s²
+D. 5 m/s²
+
+✅ Answer: B
+
+47
+
+Negative acceleration means:
+
+A. Moving backward
+B. Acceleration opposite chosen positive direction
+C. No motion
+D. No force
+
+✅ Answer: B
+
+48
+
+A runner slows from 9 m/s to 0 in 5 s. Acceleration is:
+
+A. +1.8 m/s²
+B. -1.8 m/s²
+C. +9 m/s²
+D. -9 m/s²
+
+✅ Answer: B
+
+49
+
+Free fall occurs when:
+
+A. Gravity only acts
+B. Air resistance dominates
+C. Velocity is constant
+D. Acceleration is zero
+
+✅ Answer: A
+
+50
+
+A feather is not a good free-fall example because:
+
+A. No mass
+B. No gravity
+C. Air resistance matters
+D. Velocity is zero
+
+✅ Answer: C
+
+51
+
+In free fall, acceleration is:
+
+A. Increasing
+B. Constant
+C. Zero
+D. Negative always
+
+✅ Answer: B
+
+52
+
+A freely falling object gains speed because:
+
+A. Gravity accelerates it
+B. Mass increases
+C. Distance increases
+D. Time slows
+
+✅ Answer: A
+
+53
+
+A car moving in a circle at constant speed:
+
+A. Has no acceleration
+B. Has acceleration toward center
+C. Has acceleration outward
+D. Is stationary
+
+✅ Answer: B
+
+54
+
+"Centripetal" means:
+
+A. Circular speed
+B. Center-seeking
+C. Constant acceleration
+D. Outward motion
+
+✅ Answer: B
+
+55
+
+Centripetal acceleration points:
+
+A. Tangentially
+B. Away from center
+C. Toward center
+D. Downward
+
+✅ Answer: C
+
+56
+
+Centripetal acceleration formula:
+
+A. d=vt
+B. v=at
+C. a=v²/r
+D. d=½at²
+
+✅ Answer: C
+
+57
+
+If speed doubles, centripetal acceleration becomes:
+
+A. 2×
+B. 3×
+C. 4×
+D. 8×
+
+✅ Answer: C
+
+58
+
+If radius doubles, centripetal acceleration becomes:
+
+A. Double
+B. Half
+C. Same
+D. Four times
+
+✅ Answer: B
+
+59
+
+Why does circular motion require acceleration?
+
+A. Speed changes
+B. Direction changes
+C. Mass changes
+D. Distance changes
+
+✅ Answer: B
+
+60
+
+If a string breaks while an object moves in a circle, the object moves:
+
+A. Toward center
+B. Away from center
+C. Tangent to path
+D. Stops
+
+✅ Answer: C
+
+I'll continue with Level 4 (Graphs, Questions 61–80) and Level 5 (Expert Misconceptions, Questions 81–100) in the next part so the formatting remains clean and easy to import into Kahoot.
+
+Continue 
+Level 4 — Graph Interpretation & Motion Analysis (61–80)
+61
+
+On a distance-time graph, the slope represents:
+
+A. Acceleration
+B. Velocity
+C. Mass
+D. Force
+
+✅ Answer: B
+
+Explanation: Slope = Δdistance/Δtime = velocity.
+
+62
+
+A horizontal distance-time graph indicates:
+
+A. Constant acceleration
+B. Constant velocity
+C. No motion
+D. Free fall
+
+✅ Answer: C
+
+63
+
+A steeper distance-time graph means:
+
+A. Smaller velocity
+B. Larger velocity
+C. Larger mass
+D. Smaller acceleration
+
+✅ Answer: B
+
+64
+
+A negative slope on a distance-time graph indicates:
+
+A. Positive velocity
+B. Zero velocity
+C. Motion in the negative direction
+D. Increasing speed
+
+✅ Answer: C
+
+65
+
+Two objects have straight-line distance-time graphs. One graph is twice as steep as the other.
+
+This means:
+
+A. Twice the acceleration
+B. Twice the velocity
+C. Twice the mass
+D. Twice the time
+
+✅ Answer: B
+
+66
+
+If the slope of a distance-time graph increases with time, the object is:
+
+A. Slowing down
+B. Accelerating
+C. Stationary
+D. Moving with constant velocity
+
+✅ Answer: B
+
+67
+
+A curved upward distance-time graph indicates:
+
+A. Constant velocity
+B. Increasing velocity
+C. Negative acceleration
+D. No acceleration
+
+✅ Answer: B
+
+68
+
+A curved downward distance-time graph indicates:
+
+A. Increasing velocity
+B. Constant acceleration upward
+C. Decreasing velocity
+D. No motion
+
+✅ Answer: C
+
+69
+
+In Figure 1.38, the elevator graph is horizontal between two times.
+
+What does this mean?
+
+A. Constant acceleration
+B. Constant velocity
+C. Elevator is stopped
+D. Elevator is falling
+
+✅ Answer: C
+
+70
+
+In Figure 1.38, when the graph slopes upward, the elevator:
+
+A. Moves upward
+B. Moves downward
+C. Stops
+D. Accelerates downward
+
+✅ Answer: A
+
+71
+
+In Figure 1.38, when the graph slopes downward, the elevator:
+
+A. Moves upward
+B. Moves downward
+C. Stops
+D. Accelerates upward
+
+✅ Answer: B
+
+72
+
+A velocity-time graph has a horizontal line above zero.
+
+This represents:
+
+A. Constant velocity
+B. Constant acceleration
+C. Increasing velocity
+D. No motion
+
+✅ Answer: A
+
+73
+
+The slope of a velocity-time graph represents:
+
+A. Velocity
+B. Distance
+C. Acceleration
+D. Time
+
+✅ Answer: C
+
+74
+
+A positive slope on a velocity-time graph indicates:
+
+A. Positive acceleration
+B. Negative acceleration
+C. Constant velocity
+D. No acceleration
+
+✅ Answer: A
+
+75
+
+A negative slope on a velocity-time graph indicates:
+
+A. Positive acceleration
+B. Negative acceleration
+C. Positive velocity
+D. Constant velocity
+
+✅ Answer: B
+
+76
+
+A velocity-time graph with zero slope indicates:
+
+A. Zero velocity only
+B. Constant acceleration
+C. Constant velocity
+D. Increasing velocity
+
+✅ Answer: C
+
+77
+
+In Figure 1.40, region a has a positive slope.
+
+This means the bullet is:
+
+A. Moving with constant velocity
+B. Accelerating
+C. Stopped
+D. Decelerating
+
+✅ Answer: B
+
+78
+
+In Figure 1.40, region b is horizontal.
+
+This means:
+
+A. Constant velocity
+B. Constant acceleration
+C. Zero velocity
+D. Negative acceleration
+
+✅ Answer: A
+
+79
+
+In Figure 1.40, region c has a steep negative slope.
+
+This means:
+
+A. Strong positive acceleration
+B. Strong negative acceleration
+C. Constant velocity
+D. No motion
+
+✅ Answer: B
+
+80
+
+Which graph directly tells you acceleration from its slope?
+
+A. Distance-time graph
+B. Area-time graph
+C. Velocity-time graph
+D. Mass-time graph
+
+✅ Answer: C
+
+Level 5 — Expert Conceptual Thinking & Misconceptions (81–100)
+81
+
+A car moves at a constant speed of 100 km/h around a circular track.
+
+Which statement is correct?
+
+A. Velocity is constant
+B. Acceleration is zero
+C. Acceleration exists because direction changes
+D. Motion is uniform and unaccelerated
+
+✅ Answer: C
+
+82
+
+An object has zero velocity.
+
+Can it have nonzero acceleration?
+
+A. No
+B. Yes
+C. Only in space
+D. Only if moving in a circle
+
+✅ Answer: B
+
+Explanation: At the highest point of a thrown ball, velocity is zero but acceleration is still g downward.
+
+83
+
+At the highest point of a vertically thrown ball:
+
+A. Velocity and acceleration are both zero
+B. Velocity is zero, acceleration is not
+C. Acceleration is zero, velocity is not
+D. Both are maximum
+
+✅ Answer: B
+
+84
+
+Which quantity can be zero while acceleration is nonzero?
+
+A. Velocity
+B. Time
+C. Distance
+D. Mass
+
+✅ Answer: A
+
+85
+
+A student says:
+
+“If speed is constant, acceleration must be zero.”
+
+Why is this incorrect?
+
+A. Speed is a vector
+B. Direction can change
+C. Mass changes
+D. Time changes
+
+✅ Answer: B
+
+86
+
+Two objects fall from the same height in vacuum.
+
+Which reaches the ground first?
+
+A. Heavier object
+B. Lighter object
+C. Same time
+D. Depends on size
+
+✅ Answer: C
+
+87
+
+Why do many people incorrectly think heavier objects fall faster?
+
+A. Gravity acts only on heavy objects
+B. Air resistance often affects observations
+C. Physics equations are wrong
+D. Mass determines acceleration
+
+✅ Answer: B
+
+88
+
+A car's average speed is 60 km/h.
+
+Must its speedometer always read 60 km/h?
+
+A. Yes
+B. No
+C. Only on highways
+D. Only if acceleration exists
+
+✅ Answer: B
+
+89
+
+A runner completes one full lap and returns to the starting point.
+
+What is the displacement?
+
+A. One lap length
+B. Half lap length
+C. Zero
+D. Depends on speed
+
+✅ Answer: C
+
+90
+
+Can distance traveled be nonzero while displacement is zero?
+
+A. No
+B. Yes
+C. Only in free fall
+D. Only in circular motion
+
+✅ Answer: B
+
+91
+
+Which quantity always requires direction?
+
+A. Speed
+B. Distance
+C. Velocity
+D. Frequency
+
+✅ Answer: C
+
+92
+
+A velocity of +10 m/s changes to -10 m/s.
+
+What happened?
+
+A. Velocity changed by 10 m/s
+B. Velocity changed by 20 m/s
+C. No change occurred
+D. Speed became zero
+
+✅ Answer: B
+
+93
+
+A car moves east at 20 m/s and another moves west at 20 m/s.
+
+Their velocities are:
+
+A. Identical
+B. Different because directions differ
+C. Equal because speeds match
+D. Both zero
+
+✅ Answer: B
+
+94
+
+Which statement best describes inertia?
+
+A. Resistance to changes in motion
+B. Force causing motion
+C. Weight per unit volume
+D. Distance traveled per second
+
+✅ Answer: A
+
+95
+
+If the frequency of an oscillation doubles, the period becomes:
+
+A. Twice as large
+B. Four times larger
+C. Half as large
+D. Unchanged
+
+✅ Answer: C
+
+96
+
+A cyclist moves with constant speed in a straight line.
+
+Which quantity remains constant?
+
+A. Velocity
+B. Acceleration
+C. Position
+D. Distance from start
+
+✅ Answer: A
+
+97
+
+Which situation definitely has zero acceleration?
+
+A. Constant speed in a circle
+B. Constant velocity in a straight line
+C. Speed increasing straight ahead
+D. Speed decreasing straight ahead
+
+✅ Answer: B
+
+98
+
+The most complete description of motion requires:
+
+A. Distance only
+B. Speed only
+C. Velocity and acceleration
+D. Mass only
+
+✅ Answer: C
+
+99
+
+Why do physicists use graphs to study motion?
+
+A. To avoid equations
+B. To visualize relationships and trends in motion
+C. To replace measurements
+D. To calculate mass
+
+✅ Answer: B
+
+100
+
+Which statement best summarizes Chapter 1?
+
+A. Motion is described using distance, time, velocity, and acceleration, often represented with graphs and vectors.
+
+B. Physics is mainly about memorizing formulas.
+
+C. Graphs are more important than concepts.
+
+D. Speed is the only important quantity in motion.
+
+✅ Answer: A
+
+Mastery Outcome:
+A student who can confidently answer Questions 81–100 is typically operating at the level of genuine conceptual understanding rather than formula memorization. These questions target the exact misconceptions that commonly appear on exams and in classroom discussions for Sections 1.1–1.4.
+
+Continue 
+
+The 100-question mastery bank is now complete.
+
+The next logical step is not to add more questions of the same type, but to move to Level 6 — Exam-Trap Questions (101–120).
+
+These are the questions that students most commonly answer incorrectly because they reveal hidden misconceptions.
+
+Level 6 — Exam-Trap Questions (101–120)
+101
+
+A car travels at a constant speed of 80 km/h.
+
+Which statement must be true?
+
+A. Acceleration is zero
+
+B. Velocity is constant
+
+C. Speed is constant
+
+D. Direction is constant
+
+✅ Answer: C
+
+Why students miss it: Constant speed does not guarantee constant direction.
+
+102
+
+An object moves east at 10 m/s.
+
+Five seconds later it moves east at 10 m/s.
+
+Which statement is necessarily true?
+
+A. Acceleration was zero during the entire interval
+
+B. Velocity remained constant
+
+C. Initial and final velocities are equal
+
+D. The object never slowed down
+
+✅ Answer: C
+
+103
+
+A car accelerates from 20 m/s to 30 m/s.
+
+What definitely changed?
+
+A. Speed
+
+B. Velocity
+
+C. Both speed and velocity
+
+D. Direction
+
+✅ Answer: C
+
+104
+
+Can an object move with constant velocity and nonzero acceleration?
+
+A. Yes
+
+B. No
+
+C. Only in free fall
+
+D. Only in circular motion
+
+✅ Answer: B
+
+105
+
+Can an object move with constant speed and nonzero acceleration?
+
+A. No
+
+B. Yes
+
+C. Only in free fall
+
+D. Only at rest
+
+✅ Answer: B
+
+106
+
+Which quantity is always positive?
+
+A. Velocity
+
+B. Acceleration
+
+C. Speed
+
+D. Displacement
+
+✅ Answer: C
+
+107
+
+A velocity of −15 m/s means:
+
+A. Negative speed
+
+B. Negative acceleration
+
+C. Motion in the negative direction
+
+D. Motion slowing down
+
+✅ Answer: C
+
+108
+
+A runner completes two laps around a track.
+
+The displacement is:
+
+A. One lap
+
+B. Two laps
+
+C. Zero
+
+D. Depends on speed
+
+✅ Answer: C
+
+109
+
+A student says:
+
+"If displacement is zero, distance must also be zero."
+
+Why is this wrong?
+
+A. Distance and displacement are unrelated
+
+B. Distance can be nonzero even if final position equals initial position
+
+C. Displacement is always larger
+
+D. Distance can be negative
+
+✅ Answer: B
+
+110
+
+A falling rock accelerates downward.
+
+Which quantity increases continuously?
+
+A. Mass
+
+B. Weight
+
+C. Speed
+
+D. Gravitational acceleration
+
+✅ Answer: C
+
+111
+
+A falling rock experiences:
+
+A. Constant velocity
+
+B. Constant acceleration
+
+C. Constant distance
+
+D. Constant momentum
+
+✅ Answer: B
+
+112
+
+A graph has a slope equal to zero.
+
+What can be concluded?
+
+A. The object is accelerating
+
+B. The graph is horizontal
+
+C. Velocity is positive
+
+D. Time is zero
+
+✅ Answer: B
+
+113
+
+A distance-time graph becomes steeper.
+
+This means:
+
+A. Velocity decreases
+
+B. Velocity increases
+
+C. Acceleration decreases
+
+D. Distance decreases
+
+✅ Answer: B
+
+114
+
+A velocity-time graph becomes steeper.
+
+This means:
+
+A. Velocity increases more rapidly
+
+B. Distance decreases
+
+C. Acceleration decreases
+
+D. Velocity becomes constant
+
+✅ Answer: A
+
+115
+
+What causes centripetal acceleration?
+
+A. Increasing mass
+
+B. Changing direction of velocity
+
+C. Increasing distance
+
+D. Gravity only
+
+✅ Answer: B
+
+116
+
+If a car doubles its speed around a curve, centripetal acceleration:
+
+A. Doubles
+
+B. Triples
+
+C. Quadruples
+
+D. Remains unchanged
+
+✅ Answer: C
+
+117
+
+A car enters a tighter curve while keeping the same speed.
+
+The centripetal acceleration:
+
+A. Increases
+
+B. Decreases
+
+C. Stays same
+
+D. Becomes zero
+
+✅ Answer: A
+
+118
+
+Which quantity describes resistance to acceleration?
+
+A. Weight
+
+B. Inertia
+
+C. Velocity
+
+D. Frequency
+
+✅ Answer: B
+
+119
+
+Which graph directly reveals acceleration?
+
+A. Distance-time graph
+
+B. Velocity-time graph
+
+C. Area-time graph
+
+D. Mass-time graph
+
+✅ Answer: B
+
+120
+
+A student fully understands Chapter 1 if they understand that:
+
+A. Motion is described only by speed
+
+B. Motion can be analyzed using distance, velocity, acceleration, vectors, and graphs
+
+C. Equations are more important than concepts
+
+D. Acceleration only means speeding up
+
+✅ Answer: B
+
+Final Challenge Round (Bonus Questions 121–125)
+
+These are excellent as the last 5 Kahoot questions.
+
+121
+
+At the highest point of a vertical throw:
+
+A. Velocity = 0 and acceleration = 0
+
+B. Velocity = 0 and acceleration = 9.8 m/s² downward
+
+C. Velocity ≠ 0 and acceleration = 0
+
+D. Velocity and acceleration are both maximum
+
+✅ Answer: B
+
+122
+
+Can acceleration exist without motion?
+
+A. No
+
+B. Yes
+
+C. Only in free fall
+
+D. Only in circular motion
+
+✅ Answer: B
+
+123
+
+Which statement is FALSE?
+
+A. Velocity is a vector
+
+B. Speed is a scalar
+
+C. Constant speed always means zero acceleration
+
+D. Acceleration measures change in velocity
+
+✅ Answer: C
+
+124
+
+Which statement best explains why vectors are important?
+
+A. They include units
+
+B. They include direction
+
+C. They are easier than scalars
+
+D. They eliminate equations
+
+✅ Answer: B
+
+125
+
+What is the biggest conceptual mistake students make in Chapter 1?
+
+A. Forgetting units
+
+B. Confusing speed with velocity
+
+C. Thinking acceleration only means speeding up
+
+D. All of the above
+
+✅ Answer: D
+
+These 125 questions together form a near-complete conceptual mastery bank for Sections 1.1–1.4 and are suitable for Kahoot competitions, exam reviews, and flipped-classroom 
