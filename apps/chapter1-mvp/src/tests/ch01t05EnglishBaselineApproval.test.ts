@@ -226,8 +226,16 @@ describe("PR G1A — governance state preserved", () => {
     expect(slideRecords).toHaveLength(0);
   });
 
-  it("10. no Arabic file exists for ch01-t05", () => {
-    expect(existsSync(AR_PATH)).toBe(false);
+  it("10. the Arabic file is a candidate draft and does not alter the approved English baseline", () => {
+    expect(existsSync(AR_PATH)).toBe(true);
+    const candidate = readJson(AR_PATH);
+    expect(candidate.generationStatus).toBe("draft-batch1-arabic-candidate-generation");
+    expect(sha256(CONTENT_PATH)).toBe(baseline.approvedDraftFiles[0].sha256);
+    for (const { record } of candidate.records) {
+      expect(record.arabic.translationStatus).toBe("draft");
+      expect(record.blocking.studentFacingAllowed).toBe(false);
+      expect(record.blocking.blockingStatus).toBe("blocked");
+    }
   });
 
   it("11. no figures/visualReference records exist for ch01-t05", () => {

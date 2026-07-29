@@ -295,12 +295,19 @@ describe("PR G0 — no content, slide, or application file was created", () => {
   // PR (PR G1, content/ch01-t05-english-draft) legitimately creates
   // batch1-drafts/ch01-t05-content.json under ch01T05DraftingAuthorization — see
   // src/tests/ch01t05DraftContent.test.ts for that PR's own focused coverage. This test
-  // therefore asserts the invariants that remain true regardless of PR G1: no ch01-t05
-  // content exists under pilot/ (never authorized, and PR G1 does not use that path) or
-  // under batch1-arabic-drafts/ (Arabic generation remains unauthorized for ch01-t05).
-  it("16. no ch01-t05-content.json exists under pilot/ or batch1-arabic-drafts/ (Arabic remains unauthorized)", () => {
+  // A later authorized Arabic candidate draft may exist only under batch1-arabic-drafts/.
+  // It does not authorize a pilot file, application integration, or publication.
+  it("16. no ch01-t05-content.json exists under pilot/, and the Arabic output remains a blocked candidate draft", () => {
     expect(existsSync(resolve(CHAPTER01_DIR, "pilot/ch01-t05-content.json"))).toBe(false);
-    expect(existsSync(resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t05-content.json"))).toBe(false);
+    const candidatePath = resolve(CHAPTER01_DIR, "batch1-arabic-drafts/ch01-t05-content.json");
+    expect(existsSync(candidatePath)).toBe(true);
+    const candidate = readJson(candidatePath);
+    expect(candidate.generationStatus).toBe("draft-batch1-arabic-candidate-generation");
+    for (const { record } of candidate.records) {
+      expect(record.arabic.translationStatus).toBe("draft");
+      expect(record.blocking.studentFacingAllowed).toBe(false);
+      expect(record.blocking.blockingStatus).toBe("blocked");
+    }
   });
 
   it("16b. if batch1-drafts/ch01-t05-content.json exists, it is English-only, per ch01T05DraftingAuthorization", () => {
