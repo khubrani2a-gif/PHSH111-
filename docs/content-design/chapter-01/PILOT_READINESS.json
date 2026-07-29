@@ -364,7 +364,9 @@
       "recordCount": 8,
       "immutable": true
     },
-    "identifierRegistrationComplete": false,
+    "identifierRegistrationComplete": true,
+    "identifierRegistryVersion": "1.4.0",
+    "identifierRegistrationCompletedAt": "2026-07-29",
     "requiredIdentifierCount": 9,
     "applicationIntegrationAuthorized": true,
     "applicationIntegrationImplemented": false,
