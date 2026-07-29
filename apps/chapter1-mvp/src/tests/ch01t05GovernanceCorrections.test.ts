@@ -319,21 +319,21 @@ describe("PR G0 — no content, slide, or application file was created", () => {
     expect(doc.generationStatus).toBe("draft-batch1-english-only-generation");
   });
 
-  it("17a. src/types/pilotSchema.ts's PilotTopicId union and APP_TOPIC_ORDER do not include ch01-t05", () => {
+  it("17a. subsequent internal authorization adds ch01-t05 while retaining the original pilot scope", () => {
     const schemaPath = resolve(__dirname, "../types/pilotSchema.ts");
     const schemaText = readFileSync(schemaPath, "utf8");
     const unionMatch = schemaText.match(/export type PilotTopicId =[\s\S]*?;/);
     expect(unionMatch, "PilotTopicId union should be found").toBeTruthy();
-    expect(unionMatch![0]).not.toContain("ch01-t05");
+    expect(unionMatch![0]).toContain("ch01-t05");
     const orderMatch = schemaText.match(/export const APP_TOPIC_ORDER:[\s\S]*?\];/);
     expect(orderMatch, "APP_TOPIC_ORDER should be found").toBeTruthy();
-    expect(orderMatch![0]).not.toContain("ch01-t05");
+    expect(orderMatch![0]).toContain("ch01-t05");
   });
 
-  it("17b. no rawImports.ts import references ch01-t05", () => {
+  it("17b. rawImports.ts references ch01-t05 only through the approved source pair", () => {
     const rawImportsPath = resolve(__dirname, "../content/rawImports.ts");
     const rawImportsText = readFileSync(rawImportsPath, "utf8");
-    expect(rawImportsText).not.toContain("ch01-t05");
+    expect(rawImportsText).toContain("ch01-t05");
   });
 
   it("17c. no slideGroups.ts or slideShortTitles.ts entry references ch01-t05", () => {

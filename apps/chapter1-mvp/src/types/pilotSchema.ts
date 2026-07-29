@@ -29,13 +29,15 @@ export const PILOT_SCHEMA_VERSION = "2.3.0" as const;
 
 // Extended from the original four-literal pilot union (ch01-t02/t03/t08/t10)
 // under PILOT_AUTHORIZATION.json v1.5.0's batch1ApplicationIntegrationAuthorization
-// to also include the two Batch 1 topics (ch01-t01, ch01-t04) — see
+// to also include the two Batch 1 topics (ch01-t01, ch01-t04) and the
+// separately authorized internal-only topic ch01-t05 — see
 // docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md §11.
 export type PilotTopicId =
   | "ch01-t01"
   | "ch01-t02"
   | "ch01-t03"
   | "ch01-t04"
+  | "ch01-t05"
   | "ch01-t08"
   | "ch01-t10";
 
@@ -67,17 +69,18 @@ export const BATCH1_TOPIC_ORDER: readonly PilotTopicId[] = [
 
 // The correct, chapter-wide numerical sequence the running application
 // actually displays and loads, derived from each topic's own numeric
-// suffix (01 < 02 < 03 < 04 < 08 < 10) — see
+// suffix (01 < 02 < 03 < 04 < 05 < 08 < 10) — see
 // docs/app/PHSH111_BATCH1_APPLICATION_INTEGRATION_AUTHORIZATION_RECORD.md
 // §10. This is what src/content/adapter.ts's loadAllTopics() and
 // src/content/validate.ts's validateTopicSet() now iterate/check against,
-// not PILOT_TOPIC_ORDER. No placeholder topic (ch01-t05–t07, t09,
+// not PILOT_TOPIC_ORDER. No placeholder topic (ch01-t06–t07, t09,
 // t11–t14) is included — those remain entirely out of scope.
 export const APP_TOPIC_ORDER: readonly PilotTopicId[] = [
   "ch01-t01",
   "ch01-t02",
   "ch01-t03",
   "ch01-t04",
+  "ch01-t05",
   "ch01-t08",
   "ch01-t10",
 ] as const;

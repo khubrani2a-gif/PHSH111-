@@ -211,10 +211,10 @@ describe("validateTopicSet — topic count and order", () => {
     expect(diagnostics.some((d) => d.code === "unexpected-topic-count")).toBe(true);
   });
 
-  it("passes silently for the correct six-topic chapter-wide order", () => {
+  it("passes silently for the correct seven-topic chapter-wide order", () => {
     const diagnostics: AdapterDiagnostic[] = [];
     validateTopicSet(
-      ["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t08", "ch01-t10"] as any,
+      ["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t08", "ch01-t10"] as any,
       diagnostics,
     );
     expect(diagnostics).toEqual([]);

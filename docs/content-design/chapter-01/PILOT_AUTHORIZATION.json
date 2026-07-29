@@ -1,6 +1,6 @@
 {
   "authorizationId": "ch01-pilot-authorization-001",
-  "authorizationVersion": "1.8.0",
+  "authorizationVersion": "1.9.0",
   "status": "granted",
   "grantedBy": "khubrani2a-gif (project owner)",
   "grantedAt": "2026-07-15",
@@ -805,6 +805,63 @@
     "arabicGenerationEqualsToNothingElseNote": "Arabic candidate generation authorized here does not equal, and does not by itself constitute: Arabic baseline approval; student-facing publication; application integration; visual production; or deployment authorization. Each of those remains a separate, later, still-unauthorized action.",
     "relationToOriginalAuthorization": "This is an additive amendment, parallel in kind to how v1.3.0/1.3.1 added batch1ArabicGenerationAuthorization for ch01-t01/ch01-t04 on top of v1.2.0's batch1DraftingAuthorization. It does not retract, reinterpret, or expand scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, batch1DraftingAuthorization.applicableTopicIds, batch1ArabicGenerationAuthorization.applicableTopicIds, or ch01T05DraftingAuthorization.applicableTopicIds above, all of which remain exactly as before this amendment. Arabic candidate-draft generation authorized here is entirely separate from, and does not by itself authorize, Arabic baseline approval, application integration, visual production, or publication for ch01-t05."
   },
+  "ch01T05ApplicationIntegrationAuthorization": {
+    "addedInVersion": "1.9.0",
+    "authorizationRecordId": "ch01-t05-application-integration-authorization-001",
+    "authorizationStatus": "granted",
+    "authorizedAt": "2026-07-29",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "applicableTopicIds": ["ch01-t05"],
+    "purpose": "Narrow internal-only application integration and QA for the already approved English and Arabic ch01-t05 baselines.",
+    "requiredBaselineDependencies": {
+      "english": {
+        "approvalPath": "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json",
+        "baselineVersion": "1.0.0",
+        "sha256": "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374",
+        "recordCount": 8
+      },
+      "arabic": {
+        "approvalPath": "docs/content-design/chapter-01/ARABIC_CH01T05_BASELINE_APPROVAL.json",
+        "baselineVersion": "1.0.0",
+        "sha256": "83d1d2cfd258c3c3c4ae9186f72c2412c5d507f885b4077a20e5719a485989fb",
+        "recordCount": 8
+      }
+    },
+    "requiredIdentifiers": [
+      "ch01-is-105",
+      "ch01-t05-block-mainidea",
+      "ch01-t05-block-explanation",
+      "ch01-t05-block-equations",
+      "ch01-t05-block-example",
+      "ch01-t05-block-misconception",
+      "ch01-t05-block-review",
+      "ch01-prob-105",
+      "SRC-CH01-T05-DRAFT-AUTHORING-001"
+    ],
+    "integrationSourceModel": "Direct immutable imports of the approved English and Arabic source files followed by an in-memory-only merge; no third content source may be written.",
+    "visualDecision": {
+      "decision": "noVisualRequiredForInternalIntegration",
+      "notAuthorizedVisualId": "ch01-t05-visual-001",
+      "excludedReference": "V10 and its Bolt split-time concept are excluded because ch01-corr-005 remains needsEvidence.",
+      "noVisualReferenceOrAssetMayBeCreated": true,
+      "absenceDoesNotBlockInternalIntegration": true
+    },
+    "allowedActions": [
+      "Register the nine listed identifiers.",
+      "Add ch01-t05 to the internal application topic type, chapter order, navigation, raw imports, and tests.",
+      "Make visual-validation maps optional for a topic whose approved source contains no visualReference record.",
+      "Run internal tests, typecheck, and production build."
+    ],
+    "prohibitedActions": [
+      "Create slides, figures, SVGs, a visualReference record, or ch01-t05-visual-001.",
+      "Use Bolt material, V10, or ch01-corr-005 content.",
+      "Change either approved baseline source, add a route pattern, or change PilotTopicId/APP_TOPIC_ORDER for any other topic.",
+      "Authorize or enable student-facing use, publication, deployment, or removal of the Draft / Review Required indication."
+    ],
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "relationToOriginalAuthorization": "This additive, topic-scoped exception does not expand scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, PILOT_TOPIC_ORDER, or any publication authorization."
+  },
   "authorizationHistory": [
     {
       "version": "1.0.0",
@@ -899,6 +956,14 @@
       "authorizedBy": "khubrani2a-gif (project owner)",
       "summary": "Controlled amendment adding a narrowly scoped ARABIC CANDIDATE-DRAFT GENERATION authorization (not Arabic baseline approval, not visual production, not application integration, not publication) for exactly one topic: ch01-t05, at the project owner's explicit request given directly in chat (PR G2A, governance/ch01-t05-arabic-drafting-authorization). This follows the project owner's review and approval of ch01-t05's English baseline (ENGLISH_CH01T05_BASELINE_APPROVAL.json v1.0.0, PR G1A, checksum 894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374, 8 approved records) and the editorial approval of both prerequisite corrections (ch01-corr-010, ch01-corr-011, both editoriallyApproved in SCIENTIFIC_CORRECTIONS.json). This amendment follows the exact corrected packaging model already established by batch1ArabicGenerationAuthorization (as corrected at 1.3.1): the approved English baseline file remains immutable, and a separate new candidate file at docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json is the only authorized output. ch01-corr-005 (the topic's Usain Bolt event/time citation-pairing correction) remains unresolved at approvalStatus 'needsEvidence' and is explicitly excluded — no Berlin 2009 / Beijing 2008 / 9.58 s / 9.69 s content, and no Bolt example, may be introduced in Arabic or otherwise. Mandatory glossary term IDs (ch01-term-speed, ch01-term-distance, ch01-term-scalar) and compound-phrase guidance (average speed, instantaneous speed, total elapsed time, speedometer, all handled as ordinary-language constructions rather than new registered terms) are recorded in ch01T05ArabicGenerationAuthorization.glossaryEnforcement. No BILINGUAL_GLOSSARY.json term was created, approved, or modified by this amendment. scope.authorizedTopicIds, applicationBuildAuthorization.applicableTopicIds, batch1DraftingAuthorization.applicableTopicIds, batch1ArabicGenerationAuthorization.applicableTopicIds, and ch01T05DraftingAuthorization.applicableTopicIds above are all unchanged. This amendment does not add ch01-t05 to PilotTopicId, APP_TOPIC_ORDER, or any application routing/navigation file, and does not itself create any Arabic content, slide, figure, or candidate file — those remain a separate, not-yet-authorized future step. See ch01T05ArabicGenerationAuthorization above for full detail.",
       "reviewBasis": "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json, docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json (ch01-corr-005, ch01-corr-010, ch01-corr-011), explicit project-owner instruction given directly in chat"
+    },
+    {
+      "version": "1.9.0",
+      "action": "amended",
+      "date": "2026-07-29",
+      "authorizedBy": "khubrani2a-gif (project owner)",
+      "summary": "Controlled amendment authorizing internal-only application integration and QA for exactly ch01-t05 after its standalone English and Arabic baseline approvals. It requires registration of eight content records plus SRC-CH01-T05-DRAFT-AUTHORING-001, uses immutable direct imports and an in-memory English/Arabic merge, and explicitly records that no visual is required: ch01-t05-visual-001 is not created, V10/Bolt/ch01-corr-005 are excluded, and the absence of a visual does not block internal integration. No slide, figure, SVG, route pattern, student-facing use, publication, or deployment is authorized.",
+      "reviewBasis": "docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json, docs/content-design/chapter-01/ARABIC_CH01T05_BASELINE_APPROVAL.json, docs/content-design/chapter-01/SCIENTIFIC_CORRECTIONS.json (ch01-corr-005), docs/app/PHSH111_CHAPTER1_EXPANSION_PLAN.md, explicit project-owner instruction given directly in chat"
     }
   ],
   "relatedRecords": {

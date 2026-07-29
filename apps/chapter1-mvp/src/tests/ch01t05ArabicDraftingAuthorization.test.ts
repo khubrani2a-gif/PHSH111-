@@ -47,7 +47,7 @@ describe("PR G2A — dedicated Arabic authorization exists and is scoped correct
     expect(grant).toBeDefined();
     expect(grant.authorizationStatus).toBe("granted");
     expect(grant.addedInVersion).toBe("1.8.0");
-    expect(authorization.authorizationVersion).toBe("1.8.0");
+    expect(authorization.authorizationVersion).toBe("1.9.0");
   });
 
   it("2. it applies only to ch01-t05", () => {
@@ -197,14 +197,14 @@ describe("PR G2A — prerequisite corrections and existing scopes are unaffected
     }
   });
 
-  it("no application file references ch01-t05, and no pilot/ file exists", () => {
+  it("internal application wiring exists without a pilot/ file or slides", () => {
     expect(existsSync(PILOT_PATH)).toBe(false);
     const schemaText = readFileSync(resolve(__dirname, "../types/pilotSchema.ts"), "utf8");
     const unionMatch = schemaText.match(/export type PilotTopicId =[\s\S]*?;/);
-    expect(unionMatch![0]).not.toContain("ch01-t05");
+    expect(unionMatch![0]).toContain("ch01-t05");
     const orderMatch = schemaText.match(/export const APP_TOPIC_ORDER:[\s\S]*?\];/);
-    expect(orderMatch![0]).not.toContain("ch01-t05");
-    expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).not.toContain("ch01-t05");
+    expect(orderMatch![0]).toContain("ch01-t05");
+    expect(readFileSync(resolve(__dirname, "../content/rawImports.ts"), "utf8")).toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideGroups.ts"), "utf8")).not.toContain("ch01-t05");
     expect(readFileSync(resolve(__dirname, "../content/slideShortTitles.ts"), "utf8")).not.toContain("ch01-t05");
     expect(
