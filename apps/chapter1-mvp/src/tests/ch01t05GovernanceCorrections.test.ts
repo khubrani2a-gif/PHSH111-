@@ -217,8 +217,19 @@ describe("PR G0 — CD-CONF-005/009/010 conflict-record links", () => {
 });
 
 describe("PR G0 — ch01-t05 drafting authorization in PILOT_AUTHORIZATION.json", () => {
-  it("12a. authorizationVersion was bumped and ch01T05DraftingAuthorization exists", () => {
-    expect(authorization.authorizationVersion).toBe("1.7.0");
+  // Originally (PR G0) this test asserted authorizationVersion was exactly "1.7.0" —
+  // the version this same PR bumped it to. PR G2A (governance/ch01-t05-arabic-drafting-
+  // authorization) later, separately bumped it again to "1.8.0" to add
+  // ch01T05ArabicGenerationAuthorization. This is a later, legitimately-authorized
+  // amendment, not a regression — see src/tests/ch01t05ArabicDraftingAuthorization.test.ts
+  // for that PR's own focused coverage. This test now only asserts the invariant that
+  // remains true regardless of any later version bump: ch01T05DraftingAuthorization
+  // itself still exists and is unchanged, and the file's version has moved forward
+  // (never backward) from PR G0's own 1.7.0 grant.
+  it("12a. authorizationVersion has advanced to at least 1.7.0 and ch01T05DraftingAuthorization exists", () => {
+    const [major, minor] = authorization.authorizationVersion.split(".").map(Number);
+    expect(major).toBe(1);
+    expect(minor).toBeGreaterThanOrEqual(7);
     expect(authorization.ch01T05DraftingAuthorization).toBeDefined();
   });
 
