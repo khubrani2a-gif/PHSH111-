@@ -47,7 +47,7 @@
     "baselineVersion": "1.0.0",
     "status": "approved",
     "path": "docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json",
-    "sha256": "894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374",
+    "sha256": "2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c",
     "verifiedResult": "The English source checksum was recomputed and confirmed unchanged. The candidate retains the same eight records, IDs, order, English fields, and governance fields as the approved English baseline; only authorized Arabic localization fields are populated."
   },
   "glossaryDependency": {

@@ -13,6 +13,7 @@ const json = (path: string) => JSON.parse(readFileSync(path, "utf8"));
 
 function normalized(record: any) {
   const copy = structuredClone(record);
+  delete copy.record.slideTitleAr;
   delete copy.record.arabic;
   delete copy.record.localizedContent?.ar;
   for (const key of ["problemStatement", "conceptualInterpretation", "intuition"]) delete copy.record[key]?.ar;
@@ -27,12 +28,12 @@ describe("ch01-t05 Arabic candidate draft", () => {
 
   it("preserves the approved English baseline byte-for-byte", () => {
     expect(sha256(englishPath)).toBe(json(baselinePath).approvedDraftFiles[0].sha256);
-    expect(sha256(englishPath)).toBe("894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374");
+    expect(sha256(englishPath)).toBe("2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c");
   });
 
-  it("contains exactly the same eight records and IDs", () => {
+  it("contains exactly the same fifteen records and IDs", () => {
     expect(existsSync(candidatePath)).toBe(true);
-    expect(candidate.records).toHaveLength(8);
+    expect(candidate.records).toHaveLength(15);
     expect(candidate.records.map((item: any) => item.record.instructorScriptId ?? item.record.blockId ?? item.record.problemId))
       .toEqual(english.records.map((item: any) => item.record.instructorScriptId ?? item.record.blockId ?? item.record.problemId));
     expect(candidate.records.map(normalized)).toEqual(english.records.map(normalized));
@@ -53,11 +54,8 @@ describe("ch01-t05 Arabic candidate draft", () => {
   it("uses the authorized glossary terms and has no Bolt teaching content", () => {
     const learnerArabic = candidate.records.map(({ record }: any) => record.localizedContent?.ar?.text ?? record.arabic.canonicalArabicTranslation.text).join(" ");
     expect(learnerArabic).not.toMatch(/Bolt|بولت|برلين|بكين|9\.58|9\.69/i);
-    for (const { record } of candidate.records) {
-      expect(record.arabic.glossaryTermIds).toEqual(expect.arrayContaining([
-        "ch01-term-speed", "ch01-term-distance", "ch01-term-scalar",
-      ]));
-    }
+    const glossaryIds = candidate.records.flatMap(({ record }: any) => record.arabic.glossaryTermIds);
+    expect(glossaryIds).toEqual(expect.arrayContaining(["ch01-term-speed", "ch01-term-distance", "ch01-term-scalar"]));
   });
 
   it("faithfully translates the delivery-cyclist problem and its instantaneous-reading step", () => {

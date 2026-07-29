@@ -19,14 +19,14 @@ describe("ch01-t05 Arabic baseline approval", () => {
   const englishBaseline = json(englishBaselinePath);
   const approval = json(approvalPath);
 
-  it("approves only the exact eight-record Arabic candidate and frozen English source", () => {
+  it("approves the exact fifteen-record Arabic baseline and matching English source", () => {
     expect(approval.status).toBe("approved");
     expect(approval.language).toBe("Arabic");
     expect(approval.topicId).toBe("ch01-t05");
     expect(approval.scope.applicableTopicIds).toEqual(["ch01-t05"]);
     expect(approval.approvedCandidateFiles).toHaveLength(1);
     expect(approval.approvedCandidateFiles[0].sha256).toBe(sha256(candidatePath));
-    expect(approval.approvedCandidateFiles[0].recordCount).toBe(8);
+    expect(approval.approvedCandidateFiles[0].recordCount).toBe(15);
     expect(approval.englishBaselineDependency.sha256).toBe(sha256(englishPath));
     expect(sha256(englishPath)).toBe(englishBaseline.approvedDraftFiles[0].sha256);
     expect(candidate.records.map(recordId)).toEqual(english.records.map(recordId));

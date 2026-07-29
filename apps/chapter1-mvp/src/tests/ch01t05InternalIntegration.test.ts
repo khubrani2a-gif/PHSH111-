@@ -19,10 +19,10 @@ const sha256 = (path: string) => createHash("sha256").update(readFileSync(path))
 describe("ch01-t05 internal integration", () => {
   const topic = getTopic("ch01-t05");
 
-  it("loads the approved English/Arabic pair through the in-memory merge with all eight source records", () => {
+  it("loads the approved English/Arabic pair through the in-memory merge with all fifteen source records", () => {
     expect(topic?.title.en).toBe("Average and Instantaneous Speed");
     expect(topic?.title.ar).toBe("السرعة المتوسطة والسرعة اللحظية");
-    expect(topic?.governance.recordCount).toBe(8);
+    expect(topic?.governance.recordCount).toBe(15);
     expect(topic?.mainIdea?.recordId).toBe("ch01-t05-block-mainidea");
     expect(topic?.explanation?.recordId).toBe("ch01-t05-block-explanation");
     expect(topic?.equations?.recordId).toBe("ch01-t05-block-equations");
@@ -35,8 +35,8 @@ describe("ch01-t05 internal integration", () => {
   });
 
   it("preserves the recorded immutable checksums and does not create a third content source", () => {
-    expect(sha256(englishPath)).toBe("894e8c65d997dbf35aceed06ce30cdbc44077693b8aa0af395bcbe0350bb8374");
-    expect(sha256(arabicPath)).toBe("83d1d2cfd258c3c3c4ae9186f72c2412c5d507f885b4077a20e5719a485989fb");
+    expect(sha256(englishPath)).toBe("2ecb0f9bd42e97cb2c25d9662147a993befaee58c56843bc74449068fb3fd04c");
+    expect(sha256(arabicPath)).toBe("d128ec47494eca96911b5b8175e2ccde37ad83cb7ff854341f4a1d8560fdb5a9");
     expect(RAW_CONTENT_BY_TOPIC["ch01-t05"]).toBeDefined();
   });
 
