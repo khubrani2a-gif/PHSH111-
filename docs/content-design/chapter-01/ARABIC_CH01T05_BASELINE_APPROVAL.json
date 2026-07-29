@@ -1,6 +1,6 @@
 {
   "baselineApprovalId": "ch01-t05-arabic-baseline-001",
-  "baselineVersion": "1.0.0",
+  "baselineVersion": "1.1.0",
   "status": "approved",
   "language": "Arabic",
   "topicId": "ch01-t05",
@@ -19,13 +19,20 @@
       "topicTitle": "Average and Instantaneous Speed",
       "topicTitleAr": "السرعة المتوسطة والسرعة اللحظية",
       "path": "docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json",
-      "sha256": "83d1d2cfd258c3c3c4ae9186f72c2412c5d507f885b4077a20e5719a485989fb",
+      "sha256": "dabec32e613c575b92ac9734a8e6e962e1ea3458aaa0800d86a2892f43270139",
       "schemaVersion": "2.3.0",
-      "recordCount": 8
+      "recordCount": 15
     }
   ],
   "approvedRecordIds": [
     "ch01-is-105",
+    "ch01-t05-block-slide-1",
+    "ch01-t05-block-slide-2",
+    "ch01-t05-block-slide-3",
+    "ch01-t05-block-slide-4",
+    "ch01-t05-block-slide-5",
+    "ch01-t05-block-slide-6",
+    "ch01-t05-block-slide-7",
     "ch01-t05-block-mainidea",
     "ch01-t05-block-explanation",
     "ch01-t05-block-equations",
@@ -103,7 +110,7 @@
   "revisionControlPolicy": {
     "rule": "Any future edit to Arabic content in docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json must be recorded as a controlled revision against this baseline, not made silently.",
     "mechanism": "A controlled revision increments baselineVersion and appends an entry recording scope, rationale, authorization, validation, and retained publication restrictions.",
-    "revisionLog": []
+    "revisionLog": [{"revisionId":"ch01-t05-arabic-baseline-rev-001","authorizedBy":"khubrani2a-gif (project owner)","authorizedAt":"2026-07-29","summary":"Adds seven Arabic localizations for the authorized text-and-equation-only Slide Reader records; translationStatus and all student/publication restrictions remain draft/false."}]
   },
   "downstreamStatus": {
     "visualStatus": "notProduced, notAuthorized",
