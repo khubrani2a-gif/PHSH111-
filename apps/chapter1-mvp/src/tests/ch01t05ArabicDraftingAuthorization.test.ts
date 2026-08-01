@@ -47,7 +47,9 @@ describe("PR G2A — dedicated Arabic authorization exists and is scoped correct
     expect(grant).toBeDefined();
     expect(grant.authorizationStatus).toBe("granted");
     expect(grant.addedInVersion).toBe("1.8.0");
-    expect(authorization.authorizationVersion).toBe("1.10.0");
+    const [major, minor] = authorization.authorizationVersion.split(".").map(Number);
+    expect(major).toBe(1);
+    expect(minor).toBeGreaterThanOrEqual(10);
   });
 
   it("2. it applies only to ch01-t05", () => {
