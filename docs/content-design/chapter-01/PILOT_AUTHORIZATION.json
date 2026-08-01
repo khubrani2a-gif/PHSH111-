@@ -1,6 +1,6 @@
 {
   "authorizationId": "ch01-pilot-authorization-001",
-  "authorizationVersion": "1.11.0",
+  "authorizationVersion": "1.12.0",
   "status": "granted",
   "grantedBy": "khubrani2a-gif (project owner)",
   "grantedAt": "2026-07-15",
@@ -938,7 +938,82 @@
     ],
     "relationToOriginalAuthorization": "This is a new, tightly bounded drafting grant. It authorizes neither a baseline nor any application, visual, Arabic, publication, or student-facing step. Missing SEG032 and Source 002 material are not silently substituted: expanding this scope requires a separate owner decision after those sources are restored."
   },
+  "ch01T06ArabicCandidateDraftAuthorization": {
+    "addedInVersion": "1.12.0",
+    "authorizationRecordId": "ch01-t06-arabic-candidate-draft-authorization-001",
+    "authorizationStatus": "granted",
+    "authorizedAt": "2026-08-01",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "applicableTopicIds": ["ch01-t06"],
+    "purpose": "Create an Arabic candidate draft only from the approved, limited four-record English baseline for ch01-t06. This is not Arabic baseline approval, application integration, visual production, publication, or student use authorization.",
+    "prerequisites": {
+      "englishBaselineApproval": "ENGLISH_CH01T06_BASELINE_APPROVAL.json, baselineVersion 1.0.0, status approved",
+      "englishBaselineChecksum": {
+        "path": "docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json",
+        "sha256": "b242fa01bcb5cfbedf4999536e7a557abf28ff6a3ed2751a3032e95048bd57f1",
+        "recordCount": 4,
+        "verifiedBeforeAndAfterGeneration": true
+      },
+      "approvedTerminology": {
+        "ch01-term-speed": "السرعة",
+        "ch01-term-velocity": "السرعة المتجهة",
+        "ch01-term-scalar": "كمية قياسية",
+        "ch01-term-vector": "كمية متجهة"
+      }
+    },
+    "translationScope": {
+      "recordIdsInRequiredOrder": [
+        "ch01-is-106",
+        "ch01-t06-block-mainidea",
+        "ch01-t06-block-explanation",
+        "ch01-t06-block-review"
+      ],
+      "supportedConcepts": [
+        "Distinguish speed from velocity through direction.",
+        "Speed is a scalar and velocity is a vector.",
+        "A vector has magnitude and direction.",
+        "Velocity changes when direction changes even if speed remains constant."
+      ],
+      "noExpansionRule": "The Arabic candidate contains exactly the same four records in exactly this order and introduces no concept outside supportedConcepts."
+    },
+    "packagingModel": {
+      "immutableEnglishBaseline": "docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json",
+      "authorizedArabicCandidateFile": "docs/content-design/chapter-01/batch2-arabic-drafts/ch01-t06-content.json",
+      "copyingRule": "Create a structural copy of the approved English baseline and populate only Arabic localization fields. Preserve all English text, IDs, record order, source/audit/provenance, visibility, blocking, and governance fields exactly."
+    },
+    "allowedActions": [
+      "Verify the approved English baseline checksum before generation and after validation.",
+      "Create only the separate Arabic candidate file at authorizedArabicCandidateFile.",
+      "Populate Arabic localization fields with authored, scientifically equivalent Arabic using the four approved terminology entries.",
+      "Set arabic.translationStatus to draft on every translated record and preserve RTL direction for Arabic content.",
+      "Create narrowly scoped candidate validation and governance tests."
+    ],
+    "prohibitedActions": [
+      "Modify the approved English baseline, its checksum, record IDs, or record order.",
+      "Arabic baseline approval, canonical promotion, or any claim that a candidate is approved.",
+      "Displacement, equations, numerical calculations, average-velocity formulas, vector addition, resultants, graphs, acceleration, calculus, or limits.",
+      "Creating or planning SVGs, diagrams, figures, visualReference records, visual IDs, or other visual assets.",
+      "Application integration, routes, navigation, topic registry/type/order changes, raw imports, slides, deployment, publication, or student-facing use.",
+      "Creating, modifying, or coining glossary terms. The four approved terminology entries are mandatory where their concepts occur; ordinary Arabic explanatory wording is permitted only when it is not presented as a new controlled term."
+    ],
+    "validationRequirements": [
+      "The English baseline SHA-256 must equal b242fa01bcb5cfbedf4999536e7a557abf28ff6a3ed2751a3032e95048bd57f1 before and after Arabic generation.",
+      "The Arabic candidate must preserve the four IDs and their order exactly and preserve the English portions byte-for-byte.",
+      "Every translated record must have translationStatus draft; no translated record may be student-facing or publication-authorized.",
+      "Arabic text must be RTL; any literal Latin unit or symbol, if present, must remain LTR-isolated without adding equations or calculations.",
+      "Stop and report any new scientific or terminological ambiguity rather than resolving it implicitly."
+    ],
+    "publicationRestrictions": {
+      "studentFacingAllowed": false,
+      "studentPublicationAuthorized": false,
+      "applicationIntegrationAuthorized": false,
+      "arabicBaselineApproved": false,
+      "visualProductionAuthorized": false
+    },
+    "relationToOriginalAuthorization": "This additive Arabic candidate-draft grant does not expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds and does not supersede the English drafting authorization."
+  },
   "authorizationHistory": [
+    {"previousAuthorizationVersion":"1.11.0","newAuthorizationVersion":"1.12.0","decisionDate":"2026-08-01","scope":"Arabic candidate-draft generation only for the approved four-record ch01-t06 English baseline at checksum b242fa01…; no baseline approval, visual, application, slides, publication, or student scope."},
     {"previousAuthorizationVersion":"1.10.0","newAuthorizationVersion":"1.11.0","decisionDate":"2026-08-01","scope":"Limited English candidate drafting authorization for ch01-t06, tied to checksum-verified PDF page 24 and the user-provided Kahoot audit. It excludes displacement, equations/calculations, vector addition/resultants, graphs, acceleration, visuals, Arabic, application integration, publication, and student use."},
     {"previousAuthorizationVersion":"1.9.0","newAuthorizationVersion":"1.10.0","decisionDate":"2026-07-29","scope":"Narrow ch01-t05 bilingual Slide Reader authorization using approved baselines only; text and equations only, with no visual or publication scope."},
     {
