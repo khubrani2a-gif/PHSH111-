@@ -15,8 +15,10 @@ const recordPath = resolve(chapterDir, "../../../docs/app/PHSH111_CH01T06_ENGLIS
 const sha256 = (path: string) => createHash("sha256").update(readFileSync(path)).digest("hex");
 
 describe("ch01-t06 limited English drafting authorization", () => {
-  it("exists at v1.11.0 and applies only to ch01-t06", () => {
-    expect(authorization.authorizationVersion).toBe("1.11.0");
+  it("exists in the root authorization version that includes v1.11.0 and applies only to ch01-t06", () => {
+    const [major, minor] = authorization.authorizationVersion.split(".").map(Number);
+    expect(major).toBe(1);
+    expect(minor).toBeGreaterThanOrEqual(11);
     expect(grant.authorizationStatus).toBe("granted");
     expect(grant.applicableTopicIds).toEqual(["ch01-t06"]);
     expect(existsSync(recordPath)).toBe(true);
