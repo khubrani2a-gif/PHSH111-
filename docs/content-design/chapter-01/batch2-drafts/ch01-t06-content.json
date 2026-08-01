@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t06",
+  "topicTitle": "Velocity, Scalars and Vectors",
+  "topicTitleAr": null,
+  "generationStatus": "draft-batch2-english-candidate-generation",
+  "generationNote": "English candidate draft only, authorized by PILOT_AUTHORIZATION.json v1.11.0. It covers direction as the distinction between speed and velocity; scalar/vector classification; magnitude and direction; and changing velocity at constant speed when direction changes. It is not an English baseline and does not authorize Arabic, visuals, application integration, slides, publication, or student use.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-106",
+        "topicIds": ["ch01-t06"],
+        "openingHook": {"text":"Ask students to compare two statements: 'the cart moves at a steady speed' and 'the cart moves east at a steady speed.' What information appears in only one statement?","status":"draft","language":"en","direction":"ltr"},
+        "meaningfulQuestion": {"text":"Why can an object's velocity change while its speed stays the same?","status":"draft","language":"en","direction":"ltr"},
+        "mainIdea": {"text":"Speed tells how fast an object moves and is a scalar. Velocity tells how fast it moves in a particular direction and is a vector. A vector has magnitude and direction, so changing direction changes velocity even when speed is constant.","status":"draft","language":"en","direction":"ltr"},
+        "learningObjectives": [
+          {"text":"Distinguish speed from velocity by identifying the role of direction.","status":"draft","language":"en","direction":"ltr"},
+          {"text":"Classify speed as scalar and velocity as vector.","status":"draft","language":"en","direction":"ltr"},
+          {"text":"Explain why a turn at constant speed changes velocity.","status":"draft","language":"en","direction":"ltr"}
+        ],
+        "wordForWordTeachingScript": {"text":"Start with what both quantities share: each describes how fast an object moves. Speed gives that magnitude only, so speed is a scalar. Velocity adds one essential piece of information: direction. A statement such as 'moving east' has direction, while a statement giving speed alone does not. That makes velocity a vector. Every vector has magnitude and direction. This means an object need not speed up or slow down for its velocity to change. If it turns while keeping the same speed, its direction changes; therefore its velocity changes. Keep this topic at that conceptual boundary: do not introduce displacement, formulas, vector addition, or acceleration.","status":"draft","language":"en","direction":"ltr"},
+        "slidePageCues": [], "figureCues": [],
+        "intuition": {"text":"Think of speed as answering 'how fast?' and velocity as answering 'how fast, and which way?'.","status":"draft","language":"en","direction":"ltr"},
+        "graphGuidance": [], "tableGuidance": [],
+        "levelAdaptations": ["Introductory: contrast a speed statement with a directional velocity statement.","Standard: use a constant-speed turn to test the distinction."],
+        "questionsToAskStudents": [{"text":"If a cyclist turns a corner without changing speed, what part of velocity changes?","status":"draft","language":"en","direction":"ltr"}],
+        "expectedStudentResponses": [{"text":"The direction changes, so the velocity changes even though the speed remains constant.","status":"draft","language":"en","direction":"ltr"}],
+        "misconceptionsToAnticipate": ["A constant speed always means a constant velocity.","Speed and velocity are interchangeable words.","A vector has direction only and no magnitude."],
+        "analogies": ["A route instruction needs both a distance-like size and a direction; leaving out direction loses part of the instruction."],
+        "examples": ["A cart moving east and then turning north while maintaining the same speed."],
+        "transitions": [{"targetTopicId":"ch01-t07","script":{"text":"The next topic can build on this distinction by treating combinations of vectors separately.","status":"draft","language":"en","direction":"ltr"}}],
+        "emphasisNotes": ["State that direction, not a new numerical calculation, distinguishes velocity from speed.","A turning example is conceptual only; do not introduce acceleration."],
+        "timing": {"estimatedMinutes":6,"pauseCues":["After students identify direction as the added information.","Before revealing why a constant-speed turn changes velocity."]},
+        "instructorOnlyCautions": ["Do not introduce displacement, equations, numerical calculations, vector addition, resultants, graphs, acceleration, a visual, Arabic, or app-facing content under this authorization."],
+        "scientificCorrectionReferences": [],
+        "sourceTraceability": [{"sourceId":"SRC-CH01-PDF-003","locatorType":"page","locatorId":"S3-P024","linkageType":"explicit","confidence":"high","contribution":"concept","rightsStatus":"pendingReview","allowedUse":"referenceOnly","evidence":"Newly authored explanation limited to the page-24 distinction between speed and direction-bearing velocity, and scalar/vector classification; no wording or artwork is reproduced."},{"sourceId":"SRC-CH01-KAHOOT-001","locatorType":"question","locatorId":"first-bank-33-40_and_second-bank-20-26","linkageType":"explicit","confidence":"high","contribution":"concept","rightsStatus":"pendingReview","allowedUse":"referenceOnly","evidence":"Audited only as a concept-scope check; no question or answer wording is reproduced."}],
+        "duplicateHandling": {"duplicateGroupIds":[],"revisionGroupId":null,"canonicalPreferenceStatus":"preferred","preferredSourceRecordId":null,"preferenceReason":"First newly authored, limited English candidate draft for ch01-t06.","supersededBy":null,"retainedForHistoricalTrace":true},
+        "blocking": {"blockingStatus":"blocked","blockingReason":["translationPending","scientificReviewPending","editorialReviewPending","other"],"blockingRecordIds":[],"studentFacingAllowed":false,"instructorFacingAllowed":true,"resolutionRequired":true,"resolutionOwner":"physicsReviewerAndCanonicalEditor","resolutionStatus":"open"}
+      }
+    },
+    {
+      "recordType":"contentBlock",
+      "record": {
+        "blockId":"ch01-t06-block-mainidea","blockType":"mainIdea","topicId":"ch01-t06","visibility":"shared",
+        "localizedContent":{"en":{"text":"Speed is a scalar: it gives magnitude only. Velocity is a vector: it gives magnitude and direction. Thus a description that adds direction describes velocity, not speed alone.","status":"draft","language":"en","direction":"ltr"}},
+        "arabic":{"originalArabicText":{"text":null,"status":"missing","language":"ar","direction":"rtl"},"canonicalArabicTranslation":{"text":null,"status":"missing","language":"ar","direction":"rtl"},"translationStatus":"missing","translationReviewer":null,"terminologyApprovalStatus":"notStarted","glossaryTermIds":[]},
+        "provenanceLinks":[{"sourceId":"SRC-CH01-PDF-003","locatorType":"page","locatorId":"S3-P024","linkageType":"explicit","confidence":"high","contribution":"concept","rightsStatus":"pendingReview","allowedUse":"referenceOnly","evidence":"Newly authored, limited conceptual summary of page 24; no source wording is reproduced."}],
+        "scientificCorrectionIds":[],"conflictRecordIds":[],"duplicateHandling":{"duplicateGroupIds":[],"revisionGroupId":null,"canonicalPreferenceStatus":"preferred","preferredSourceRecordId":null,"preferenceReason":"First limited candidate main-idea record.","supersededBy":null,"retainedForHistoricalTrace":true},"blocking":{"blockingStatus":"blocked","blockingReason":["translationPending","scientificReviewPending","editorialReviewPending","other"],"blockingRecordIds":[],"studentFacingAllowed":false,"instructorFacingAllowed":true,"resolutionRequired":true,"resolutionOwner":"physicsReviewerAndCanonicalEditor","resolutionStatus":"open"},"contentLeakTestStatus":"notRun"
+      }
+    },
+    {
+      "recordType":"contentBlock",
+      "record": {
+        "blockId":"ch01-t06-block-explanation","blockType":"organizedExplanation","topicId":"ch01-t06","visibility":"shared",
+        "localizedContent":{"en":{"text":"Step 1: identify the magnitude of motion, which speed describes. Step 2: ask whether a direction is included. If direction is included, the statement describes velocity. Step 3: classify the quantity: speed is scalar, while velocity is vector because it has magnitude and direction. Step 4: test a turn at constant speed. The magnitude stays the same, but the direction changes, so velocity changes.","status":"draft","language":"en","direction":"ltr"}},
+        "arabic":{"originalArabicText":{"text":null,"status":"missing","language":"ar","direction":"rtl"},"canonicalArabicTranslation":{"text":null,"status":"missing","language":"ar","direction":"rtl"},"translationStatus":"missing","translationReviewer":null,"terminologyApprovalStatus":"notStarted","glossaryTermIds":[]},
+        "provenanceLinks":[{"sourceId":"SRC-CH01-PDF-003","locatorType":"page","locatorId":"S3-P024","linkageType":"explicit","confidence":"high","contribution":"concept","rightsStatus":"pendingReview","allowedUse":"referenceOnly","evidence":"Newly authored explanation of the authorized directional distinction only."},{"sourceId":"SRC-CH01-KAHOOT-001","locatorType":"question","locatorId":"first-bank-36_and_second-bank-22","linkageType":"explicit","confidence":"high","contribution":"concept","rightsStatus":"pendingReview","allowedUse":"referenceOnly","evidence":"Concept check for a constant-speed turn only; no wording is reproduced."}],
+        "scientificCorrectionIds":[],"conflictRecordIds":[],"duplicateHandling":{"duplicateGroupIds":[],"revisionGroupId":null,"canonicalPreferenceStatus":"preferred","preferredSourceRecordId":null,"preferenceReason":"First limited candidate explanation record.","supersededBy":null,"retainedForHistoricalTrace":true},"blocking":{"blockingStatus":"blocked","blockingReason":["translationPending","scientificReviewPending","editorialReviewPending","other"],"blockingRecordIds":[],"studentFacingAllowed":false,"instructorFacingAllowed":true,"resolutionRequired":true,"resolutionOwner":"physicsReviewerAndCanonicalEditor","resolutionStatus":"open"},"contentLeakTestStatus":"notRun"
+      }
+    },
+    {
+      "recordType":"contentBlock",
+      "record": {
+        "blockId":"ch01-t06-block-review","blockType":"reviewQuestion","topicId":"ch01-t06","visibility":"student",
+        "localizedContent":{"en":{"text":"A cyclist rides around a bend while keeping the same speed. Has the cyclist's velocity changed? Explain. Correct answer: yes. Velocity is a vector with magnitude and direction. The speed, or magnitude, stays the same, but the cyclist's direction changes around the bend, so velocity changes. A common wrong answer says velocity stays the same because speed stays the same; it omits direction.","status":"draft","language":"en","direction":"ltr"}},
+        "arabic":{"originalArabicText":{"text":null,"status":"missing","language":"ar","direction":"rtl"},"canonicalArabicTranslation":{"text":null,"status":"missing","language":"ar","direction":"rtl"},"translationStatus":"missing","translationReviewer":null,"terminologyApprovalStatus":"notStarted","glossaryTermIds":[]},
+        "provenanceLinks":[{"sourceId":"SRC-CH01-KAHOOT-001","locatorType":"question","locatorId":"first-bank-36_and_second-bank-22","linkageType":"explicit","confidence":"high","contribution":"concept","rightsStatus":"pendingReview","allowedUse":"referenceOnly","evidence":"Newly authored review prompt limited to the concept audited by the listed questions; it does not reproduce their wording."}],
+        "scientificCorrectionIds":[],"conflictRecordIds":[],"duplicateHandling":{"duplicateGroupIds":[],"revisionGroupId":null,"canonicalPreferenceStatus":"preferred","preferredSourceRecordId":null,"preferenceReason":"First limited candidate review record.","supersededBy":null,"retainedForHistoricalTrace":true},"blocking":{"blockingStatus":"blocked","blockingReason":["translationPending","scientificReviewPending","editorialReviewPending","other"],"blockingRecordIds":[],"studentFacingAllowed":false,"instructorFacingAllowed":true,"resolutionRequired":true,"resolutionOwner":"physicsReviewerAndCanonicalEditor","resolutionStatus":"open"},"contentLeakTestStatus":"notRun"
+      }
+    }
+  ]
+}
