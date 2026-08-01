@@ -200,13 +200,17 @@
     {
       "termId": "ch01-term-vector",
       "englishTerm": "vector",
-      "approvedArabicTerm": {"text": "كمية متجهة", "status": "proposedPendingReviewerApproval"},
+      "approvedArabicTerm": {"text": "كمية متجهة", "status": "approved"},
       "alternateArabicTerms": ["متجه"],
       "definition": "A quantity specified by magnitude and direction.",
       "usageNotes": "The arrow representation must preserve both length scale and direction.",
       "discouragedTranslations": ["كمية قياسية"],
       "sourceReferences": ["S2-SEG104", "S2-SEG106"],
-      "approvalStatus": "pending"
+      "approvalStatus": "approved",
+      "topicIds": ["ch01-t06"],
+      "terminologyReviewer": "khubrani2a-gif (project owner)",
+      "reviewedAt": "2026-08-01",
+      "reviewBasis": "Explicit project-owner approval for ch01-t06 on 2026-08-01. This approves the pre-existing Arabic equivalent كمية متجهة for vector and extends its scope to ch01-t06; no new glossary term or other glossary record was created or changed."
     },
     {
       "termId": "ch01-term-resultant",
