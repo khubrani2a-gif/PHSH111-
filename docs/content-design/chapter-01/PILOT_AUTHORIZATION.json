@@ -1,6 +1,6 @@
 {
   "authorizationId": "ch01-pilot-authorization-001",
-  "authorizationVersion": "1.12.0",
+  "authorizationVersion": "1.13.0",
   "status": "granted",
   "grantedBy": "khubrani2a-gif (project owner)",
   "grantedAt": "2026-07-15",
@@ -1012,7 +1012,20 @@
     },
     "relationToOriginalAuthorization": "This additive Arabic candidate-draft grant does not expand scope.authorizedTopicIds or applicationBuildAuthorization.applicableTopicIds and does not supersede the English drafting authorization."
   },
+  "ch01T06ApplicationIntegrationAuthorization": {
+    "addedInVersion": "1.13.0",
+    "authorizationRecordId": "ch01-t06-application-integration-authorization-001",
+    "authorizationStatus": "granted",
+    "authorizedAt": "2026-08-01",
+    "authorizedBy": "khubrani2a-gif (project owner)",
+    "applicableTopicIds": ["ch01-t06"],
+    "prerequisites": {"englishBaselineSha256":"b242fa01bcb5cfbedf4999536e7a557abf28ff6a3ed2751a3032e95048bd57f1","arabicBaselineSha256":"3f7dbd678bda5c7e4ab588fff19d45209de2ae5408a89c5ecbe0aa14b9b0ed02","registeredRecordIds":["ch01-is-106","ch01-t06-block-mainidea","ch01-t06-block-explanation","ch01-t06-block-review"]},
+    "noVisualDecision": "No educational visual is required by approved sources; no visual ID, SVG, figure, visualReference, or PDF artwork is authorized.",
+    "prohibitedActions": ["slides","new routes","ch01-t07 vector addition/resultants","student-facing use","publication","deployment"],
+    "publicationRestrictions": {"studentFacingAllowed":false,"studentPublicationAuthorized":false,"applicationIntegrationAuthorized":true,"visualProductionAuthorized":false,"slidesAuthorized":false}
+  },
   "authorizationHistory": [
+    {"previousAuthorizationVersion":"1.12.0","newAuthorizationVersion":"1.13.0","decisionDate":"2026-08-01","scope":"Internal-only ch01-t06 integration of approved bilingual four-record baselines without visual, slides, publication, or student use."},
     {"previousAuthorizationVersion":"1.11.0","newAuthorizationVersion":"1.12.0","decisionDate":"2026-08-01","scope":"Arabic candidate-draft generation only for the approved four-record ch01-t06 English baseline at checksum b242fa01…; no baseline approval, visual, application, slides, publication, or student scope."},
     {"previousAuthorizationVersion":"1.10.0","newAuthorizationVersion":"1.11.0","decisionDate":"2026-08-01","scope":"Limited English candidate drafting authorization for ch01-t06, tied to checksum-verified PDF page 24 and the user-provided Kahoot audit. It excludes displacement, equations/calculations, vector addition/resultants, graphs, acceleration, visuals, Arabic, application integration, publication, and student use."},
     {"previousAuthorizationVersion":"1.9.0","newAuthorizationVersion":"1.10.0","decisionDate":"2026-07-29","scope":"Narrow ch01-t05 bilingual Slide Reader authorization using approved baselines only; text and equations only, with no visual or publication scope."},

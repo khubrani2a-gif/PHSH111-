@@ -50,11 +50,13 @@ import ch01t10Svg from "../../../../docs/content-design/chapter-01/pilot/visuals
 import ch01t01ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t01-content.json";
 import ch01t04ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json";
 import ch01t05ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json";
+import ch01t06ContentEn from "../../../../docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json";
 
 // Batch 1 — approved Arabic candidate baseline (immutable; never edited by this application).
 import ch01t01ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json";
 import ch01t04ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json";
 import ch01t05ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json";
+import ch01t06ContentAr from "../../../../docs/content-design/chapter-01/batch2-arabic-drafts/ch01-t06-content.json";
 
 // Batch 1 — the two governance baseline-approval records themselves (not
 // content; immutable; never edited by this application). Both ch01-t01 and
@@ -67,6 +69,8 @@ import englishBatch1BaselineApproval from "../../../../docs/content-design/chapt
 import arabicBatch1BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_BATCH1_BASELINE_APPROVAL.json";
 import englishCh01T05BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_CH01T05_BASELINE_APPROVAL.json";
 import arabicCh01T05BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_CH01T05_BASELINE_APPROVAL.json";
+import englishCh01T06BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_CH01T06_BASELINE_APPROVAL.json";
+import arabicCh01T06BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_CH01T06_BASELINE_APPROVAL.json";
 
 // Batch 1 — approved visuals and their validation records.
 import ch01t01Validation from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json";
@@ -132,6 +136,13 @@ const ch01t05Content = mergeEnglishAndArabicTopicFile(
   englishCh01T05BaselineApproval,
   arabicCh01T05BaselineApproval,
 );
+const ch01t06Content = mergeEnglishAndArabicTopicFile(
+  ch01t06ContentEn,
+  ch01t06ContentAr,
+  "ch01-t06",
+  englishCh01T06BaselineApproval,
+  arabicCh01T06BaselineApproval,
+);
 
 /** Raw (unvalidated `unknown`) content JSON, keyed by topic ID — narrowed only inside src/content/validate.ts. */
 export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
@@ -140,6 +151,7 @@ export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
   "ch01-t03": ch01t03Content,
   "ch01-t04": ch01t04Content,
   "ch01-t05": ch01t05Content,
+  "ch01-t06": ch01t06Content,
   "ch01-t08": ch01t08Content,
   "ch01-t10": ch01t10Content,
 };

@@ -1,5 +1,5 @@
 {
-  "registryVersion": "1.5.0",
+  "registryVersion": "1.6.0",
   "chapterId": "ch01",
   "status": "designValidated",
   "purpose": "Validate identifiers before canonical records are linked. This registry does not rename source-level IDs.",
@@ -1623,7 +1623,25 @@
     "studentFacingAllowed": false,
     "studentPublicationAuthorized": false
   },
+  "ch01T06IdentifierRegistration": {
+    "addedInRegistryVersion": "1.6.0",
+    "registeredAt": "2026-08-01",
+    "registeredBy": "khubrani2a-gif (project owner)",
+    "applicableTopicIds": ["ch01-t06"],
+    "totalIdentifiersRegistered": 4,
+    "scopeStatement": "Registers exactly the four approved ch01-t06 records for internal integration. No source marker or visual identifier is registered.",
+    "visualExclusion": "No ch01-t06-visual-001, SVG, figure, visualReference, or PDF artwork is registered; ch01-t07 vector-addition/resultant material remains excluded.",
+    "entries": [
+      {"identifier":"ch01-is-106","identifierType":"instructorScript","chapterId":"ch01","topicId":"ch01-t06","recordType":"instructorScript","blockType":null,"approvedSourcePath":"docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json","status":"registered","applicationIntegrationState":"authorizedNotImplemented","publicationState":"unauthorized"},
+      {"identifier":"ch01-t06-block-mainidea","identifierType":"contentBlock","chapterId":"ch01","topicId":"ch01-t06","recordType":"contentBlock","blockType":"mainIdea","approvedSourcePath":"docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json","status":"registered","applicationIntegrationState":"authorizedNotImplemented","publicationState":"unauthorized"},
+      {"identifier":"ch01-t06-block-explanation","identifierType":"contentBlock","chapterId":"ch01","topicId":"ch01-t06","recordType":"contentBlock","blockType":"organizedExplanation","approvedSourcePath":"docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json","status":"registered","applicationIntegrationState":"authorizedNotImplemented","publicationState":"unauthorized"},
+      {"identifier":"ch01-t06-block-review","identifierType":"contentBlock","chapterId":"ch01","topicId":"ch01-t06","recordType":"contentBlock","blockType":"reviewQuestion","approvedSourcePath":"docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json","status":"registered","applicationIntegrationState":"authorizedNotImplemented","publicationState":"unauthorized"}
+    ],
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false
+  },
   "registrationHistory": [
+    {"previousRegistryVersion":"1.5.0","newRegistryVersion":"1.6.0","decisionDate":"2026-08-01","scope":"ch01-t06 registration of exactly four approved records without visual or source marker.","identifiersRegistered":4,"applicableTopicIds":["ch01-t06"],"applicationAndPublicationRestrictions":"No student use or publication."},
     {"previousRegistryVersion":"1.4.0","newRegistryVersion":"1.5.0","decisionDate":"2026-07-29","scope":"ch01-t05 bilingual text-only slide identifiers.","identifiersRegistered":7,"applicableTopicIds":["ch01-t05"],"visualExclusion":"No visual is created or registered; V10, Bolt, and ch01-corr-005 remain excluded.","applicationAndPublicationRestrictions":"Registration does not grant student use or publication."},
     {
       "previousRegistryVersion": "1.3.0",

@@ -1,5 +1,5 @@
 {
-  "pilotReadinessVersion": "1.16.0",
+  "pilotReadinessVersion": "1.17.0",
   "status": "designPreparedAwaitingClaudeRereviewAndUserApproval",
   "resolvedDesignBlockers": {
     "note": "These three items were the specific blockers identified in the Claude amended-design re-review. Their resolution is a design-layer fix only; it does not change any topic's blockingStatus, does not approve any scientific correction, and does not authorize canonical generation.",
@@ -31,6 +31,44 @@
   "canonicalGenerationAuthorized": false,
   "canonicalGenerationAuthorizationNote": "Chapter-wide authorization remains false because this authorization is scoped, not chapter-wide: only ch01-t02, ch01-t03, ch01-t08, and ch01-t10 are authorized for draft canonical pilot generation (see each topic's canonicalGenerationAuthorized below, and PILOT_AUTHORIZATION.json). The other ten Chapter 1 topics remain unauthorized.",
   "studentPublicationAuthorized": false,
+  "ch01T06InternalIntegrationReadiness": {
+    "addedInVersion": "1.17.0",
+    "lastUpdatedInVersion": "1.17.0",
+    "authorizationRecordId": "ch01-t06-application-integration-authorization-001",
+    "authorizationSource": "docs/content-design/chapter-01/PILOT_AUTHORIZATION.json v1.13.0, ch01T06ApplicationIntegrationAuthorization",
+    "topicId": "ch01-t06",
+    "englishBaseline": {
+      "approvalPath": "docs/content-design/chapter-01/ENGLISH_CH01T06_BASELINE_APPROVAL.json",
+      "baselineVersion": "1.0.0",
+      "sha256": "b242fa01bcb5cfbedf4999536e7a557abf28ff6a3ed2751a3032e95048bd57f1",
+      "recordCount": 4,
+      "immutable": true
+    },
+    "arabicBaseline": {
+      "approvalPath": "docs/content-design/chapter-01/ARABIC_CH01T06_BASELINE_APPROVAL.json",
+      "baselineVersion": "1.0.0",
+      "sha256": "3f7dbd678bda5c7e4ab588fff19d45209de2ae5408a89c5ecbe0aa14b9b0ed02",
+      "recordCount": 4,
+      "immutable": true
+    },
+    "registeredRecordIds": ["ch01-is-106", "ch01-t06-block-mainidea", "ch01-t06-block-explanation", "ch01-t06-block-review"],
+    "identifierRegistrationComplete": true,
+    "identifierRegistryVersion": "1.6.0",
+    "applicationIntegrationAuthorized": true,
+    "applicationIntegrationImplemented": true,
+    "applicationIntegrationImplementedAt": "2026-08-01",
+    "integrationSourceModel": "directImmutableImportsWithInMemoryEnglishArabicMerge",
+    "visualDecision": {
+      "visualRequired": false,
+      "visualIdentifierCreated": false,
+      "excluded": ["ch01-t06-visual-001", "SVG", "visualReference", "PDF reference artwork", "ch01-t07 vector addition/resultants"],
+      "absenceDoesNotBlockInternalIntegration": true
+    },
+    "slidesAuthorized": false,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "note": "This is an independent, narrow internal-integration readiness record. It does not authorize slides, visual production, new routes, publication, deployment, or student use."
+  },
   "pilotTopicOrder": [
     "ch01-t02",
     "ch01-t03",

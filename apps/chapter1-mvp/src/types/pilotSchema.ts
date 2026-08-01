@@ -38,6 +38,7 @@ export type PilotTopicId =
   | "ch01-t03"
   | "ch01-t04"
   | "ch01-t05"
+  | "ch01-t06"
   | "ch01-t08"
   | "ch01-t10";
 
@@ -81,6 +82,7 @@ export const APP_TOPIC_ORDER: readonly PilotTopicId[] = [
   "ch01-t03",
   "ch01-t04",
   "ch01-t05",
+  "ch01-t06",
   "ch01-t08",
   "ch01-t10",
 ] as const;
