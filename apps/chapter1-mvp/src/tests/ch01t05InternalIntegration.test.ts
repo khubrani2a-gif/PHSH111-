@@ -51,7 +51,7 @@ describe("ch01-t05 internal integration", () => {
 
   it("adds ch01-t05 between t04 and t08 without changing the original pilot order", () => {
     expect(getTopicOrder()).toEqual([
-      "ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t08", "ch01-t10",
+      "ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t06", "ch01-t08", "ch01-t10",
     ]);
   });
 
