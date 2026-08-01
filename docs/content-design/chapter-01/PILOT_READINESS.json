@@ -31,6 +31,7 @@
   "canonicalGenerationAuthorized": false,
   "canonicalGenerationAuthorizationNote": "Chapter-wide authorization remains false because this authorization is scoped, not chapter-wide: only ch01-t02, ch01-t03, ch01-t08, and ch01-t10 are authorized for draft canonical pilot generation (see each topic's canonicalGenerationAuthorized below, and PILOT_AUTHORIZATION.json). The other ten Chapter 1 topics remain unauthorized.",
   "studentPublicationAuthorized": false,
+  "ch01T06InternalIntegrationReadiness": {"topicId":"ch01-t06","status":"internalIntegrationAuthorized","registeredRecordIds":["ch01-is-106","ch01-t06-block-mainidea","ch01-t06-block-explanation","ch01-t06-block-review"],"visualDecision":"notRequired; no visual ID, SVG, figure, visualReference, or PDF artwork is authorized","slidesAuthorized":false,"applicationIntegrationAuthorized":true,"studentFacingAllowed":false,"studentPublicationAuthorized":false},
   "pilotTopicOrder": [
     "ch01-t02",
     "ch01-t03",
