@@ -1,0 +1,74 @@
+{
+  "baselineApprovalId": "ch01-t06-english-baseline-001",
+  "baselineVersion": "1.0.0",
+  "status": "approved",
+  "language": "English",
+  "topicId": "ch01-t06",
+  "topicTitle": "Velocity, Scalars and Vectors",
+  "approvalLevel": "projectOwnerEnglishBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-08-01",
+  "scope": {
+    "applicableTopicIds": ["ch01-t06"],
+    "notApplicableTo": "This standalone English baseline approval does not authorize Arabic, visual production, slides, application integration, publication, student use, or any other Chapter 1 topic."
+  },
+  "approvedDraftFiles": [{
+    "topicId": "ch01-t06",
+    "topicTitle": "Velocity, Scalars and Vectors",
+    "path": "docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json",
+    "sha256": "b242fa01bcb5cfbedf4999536e7a557abf28ff6a3ed2751a3032e95048bd57f1",
+    "schemaVersion": "2.3.0",
+    "recordCount": 4
+  }],
+  "approvedRecordIds": [
+    "ch01-is-106",
+    "ch01-t06-block-mainidea",
+    "ch01-t06-block-explanation",
+    "ch01-t06-block-review"
+  ],
+  "filePreservationNote": "The approved candidate remains in place and retains its draft/blocked internal fields. This external record, at the exact checksum above, establishes the English baseline; it does not rename, copy, promote into pilot/, or alter the candidate file.",
+  "reviewBasis": [
+    "PILOT_AUTHORIZATION.json — ch01T06EnglishDraftingAuthorization v1.11.0",
+    "SRC-CH01-PDF-003, S3-P024, checksum 5a1a9bcdd1f5b3b7a60e3123b65402fc3baa7c246795711a1edd3a6c03fe01b5",
+    "SRC-CH01-KAHOOT-001 audited inventory, checksum 6bce541abb21be6b36b0ded30f253110887e24bdb635a02bd36ac86351149043",
+    "Explicit project-owner approval given directly in this session on 2026-08-01."
+  ],
+  "statementOfApproval": "The project owner approves the exact four-record English candidate at the checksum recorded above as the limited ch01-t06 English baseline version 1.0.0. The approval covers only the authorized conceptual distinction between speed and velocity through direction, scalar/vector classification, vector magnitude and direction, and changing velocity during a constant-speed turn.",
+  "scientificReviewFindings": {
+    "recordsReviewed": 4,
+    "criteriaChecked": [
+      "Speed is treated as scalar and velocity as vector.",
+      "Velocity is distinguished from speed by direction.",
+      "A vector is described as magnitude and direction.",
+      "A constant-speed turn changes velocity because direction changes.",
+      "No displacement, equations, calculations, vector addition, resultants, graphs, acceleration, visual, Arabic, or application content appears."
+    ],
+    "result": "All four records satisfy the limited authorized scope and source evidence. No numerical example, calculation, visual, or downstream authorization is introduced.",
+    "conclusion": "Approved as a limited English baseline only."
+  },
+  "perTopicDecision": {"ch01-t06": {"decision": "approvedAsDrafted", "nonBlockingConditions": []}},
+  "governanceRestrictions": {
+    "arabicNotAuthorized": true,
+    "visualProductionNotAuthorized": true,
+    "applicationIntegrationNotAuthorized": true,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "independentExpertReviewCompleted": false
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future change to the approved English content requires a controlled revision; it must not be edited silently.",
+    "mechanism": "Increment baselineVersion and append a revisionLog entry recording the change, owner authorization, and date.",
+    "revisionLog": []
+  },
+  "downstreamStatus": {
+    "arabicStatus": "notGenerated, notAuthorized",
+    "visualStatus": "notProduced, notAuthorized",
+    "applicationIntegrationStatus": "notAuthorized",
+    "publicationStatus": "notAuthorized"
+  },
+  "unchangedByThisApproval": [
+    "The candidate draft file and its four records remain unchanged.",
+    "Arabic remains missing and unauthorized.",
+    "No visual, slide, route, application, student-facing, or publication permission is created."
+  ]
+}
