@@ -1,0 +1,99 @@
+{
+  "baselineApprovalId": "ch01-t06-arabic-baseline-001",
+  "baselineVersion": "1.0.0",
+  "status": "approved",
+  "language": "Arabic",
+  "topicId": "ch01-t06",
+  "topicTitle": "Velocity, Scalars and Vectors",
+  "topicTitleAr": "السرعة المتجهة والكميات القياسية والمتجهة",
+  "approvalLevel": "projectOwnerArabicBaselineApproval",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedAt": "2026-08-01",
+  "scope": {
+    "applicableTopicIds": ["ch01-t06"],
+    "notApplicableTo": "This standalone Arabic baseline covers only the approved four-record, limited ch01-t06 scope. It does not authorize any other Chapter 1 topic, visual production, slides, application integration, publication, or student use."
+  },
+  "approvedCandidateFiles": [{
+    "topicId": "ch01-t06",
+    "topicTitle": "Velocity, Scalars and Vectors",
+    "topicTitleAr": "السرعة المتجهة والكميات القياسية والمتجهة",
+    "path": "docs/content-design/chapter-01/batch2-arabic-drafts/ch01-t06-content.json",
+    "sha256": "3f7dbd678bda5c7e4ab588fff19d45209de2ae5408a89c5ecbe0aa14b9b0ed02",
+    "schemaVersion": "2.3.0",
+    "recordCount": 4
+  }],
+  "approvedRecordIds": [
+    "ch01-is-106",
+    "ch01-t06-block-mainidea",
+    "ch01-t06-block-explanation",
+    "ch01-t06-block-review"
+  ],
+  "filePreservationNote": "The approved Arabic candidate remains unmoved and unrenamed. This external record alone establishes the exact file at the recorded checksum as the internal Arabic baseline; it does not alter its generationStatus, translationStatus, blocking, visibility, or publication fields.",
+  "englishBaselineDependency": {
+    "record": "docs/content-design/chapter-01/ENGLISH_CH01T06_BASELINE_APPROVAL.json",
+    "baselineVersion": "1.0.0",
+    "status": "approved",
+    "path": "docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json",
+    "sha256": "b242fa01bcb5cfbedf4999536e7a557abf28ff6a3ed2751a3032e95048bd57f1",
+    "verifiedResult": "The approved Arabic candidate preserves the same four records, IDs, order, English fields, provenance, blocking, and governance fields as the approved English baseline; only the equivalent authorized Arabic localization fields are populated."
+  },
+  "glossaryDependency": {
+    "record": "docs/content-design/chapter-01/BILINGUAL_GLOSSARY.json",
+    "mandatoryTermIds": ["ch01-term-speed", "ch01-term-velocity", "ch01-term-scalar", "ch01-term-vector"],
+    "note": "The Arabic baseline uses only the approved terms السرعة، السرعة المتجهة، كمية قياسية، وكمية متجهة; المقدار and الاتجاه remain ordinary explanatory wording."
+  },
+  "reviewBasis": [
+    "PILOT_AUTHORIZATION.json — ch01T06ArabicCandidateDraftAuthorization v1.12.0",
+    "ENGLISH_CH01T06_BASELINE_APPROVAL.json — approved English baseline version 1.0.0",
+    "PR #53 — Arabic candidate draft and integrity test",
+    "Final independent Arabic scientific, linguistic, RTL, and governance review completed before this approval",
+    "Explicit project-owner approval given directly in this session on 2026-08-01"
+  ],
+  "arabicReviewFindings": {
+    "recordsReviewed": 4,
+    "criteriaChecked": [
+      "Arabic and English records have identical IDs and order, and the English checksum equals the approved baseline checksum",
+      "Speed is translated and treated as a scalar; velocity is translated and treated as a vector",
+      "A vector has magnitude and direction",
+      "A constant-speed turn changes velocity because direction changes",
+      "Arabic uses the approved terminology and RTL directions",
+      "No displacement, equations, numerical calculations, vector addition, resultants, graphs, acceleration, visual, slide, application, publication, or student-facing teaching content is introduced",
+      "Every record remains draft, blocked, and not student-facing or publication-authorized"
+    ],
+    "result": "All four Arabic records passed the independent review. The constant-speed turn correctly preserves speed while changing direction and therefore velocity. The approved Arabic terms and RTL metadata are present, and all candidate blocking and publication restrictions remain unchanged.",
+    "conclusion": "Approved as a limited Arabic baseline only."
+  },
+  "perTopicDecision": {
+    "ch01-t06": {
+      "decision": "approvedAsDrafted",
+      "nonBlockingConditions": []
+    }
+  },
+  "governanceRestrictions": {
+    "approvalLevelStatement": "This is an internal project-owner Arabic-content baseline approval only. It is not independent expert review, visual approval, slide authorization, application-integration authorization, deployment authorization, or student-publication authorization.",
+    "visualProductionNotAuthorized": true,
+    "slidesNotAuthorized": true,
+    "applicationIntegrationNotAuthorized": true,
+    "studentFacingAllowed": false,
+    "studentPublicationAuthorized": false,
+    "independentHumanReviewCompleted": false
+  },
+  "revisionControlPolicy": {
+    "rule": "Any future edit to the approved Arabic content requires a controlled revision against this baseline and must not be made silently.",
+    "mechanism": "Increment baselineVersion and append a revisionLog entry recording scope, rationale, authorization, validation, and retained restrictions.",
+    "revisionLog": []
+  },
+  "downstreamStatus": {
+    "visualStatus": "notProduced, notAuthorized",
+    "slideStatus": "notProduced, notAuthorized",
+    "applicationIntegrationStatus": "notAuthorized",
+    "publicationStatus": "notAuthorized",
+    "studentFacingStatus": "notAllowed"
+  },
+  "unchangedByThisApproval": [
+    "docs/content-design/chapter-01/batch2-arabic-drafts/ch01-t06-content.json, including every translationStatus and blocking field",
+    "docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json and its approved English checksum",
+    "PILOT_AUTHORIZATION.json, BILINGUAL_GLOSSARY.json, identifier registry, application code, routes, navigation, and topic order",
+    "studentFacingAllowed and studentPublicationAuthorized, which remain false"
+  ]
+}
