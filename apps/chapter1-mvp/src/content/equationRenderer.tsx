@@ -91,6 +91,7 @@ export const EQUATION_ITALIC_TOKENS_BY_TOPIC: Record<PilotTopicId, string[]> = {
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],
   "ch01-t05": ["v", "d", "t"],
+  "ch01-t06": [],
   "ch01-t08": ["a", "g", "v", "t"],
   "ch01-t10": ["v", "r"],
 };
@@ -131,6 +132,7 @@ export const EQUATION_ITALIC_TOKENS_PROSE_SAFE_BY_TOPIC: Record<PilotTopicId, st
   "ch01-t03": ["f", "T"],
   "ch01-t04": ["g", "W"],
   "ch01-t05": ["v", "d", "t"],
+  "ch01-t06": [],
   "ch01-t08": ["g", "v", "t"],
   "ch01-t10": ["v", "r"],
 };
