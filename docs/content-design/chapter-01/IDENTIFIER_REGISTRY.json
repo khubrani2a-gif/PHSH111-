@@ -1,5 +1,5 @@
 {
-  "registryVersion": "1.5.0",
+  "registryVersion": "1.6.0",
   "chapterId": "ch01",
   "status": "designValidated",
   "purpose": "Validate identifiers before canonical records are linked. This registry does not rename source-level IDs.",

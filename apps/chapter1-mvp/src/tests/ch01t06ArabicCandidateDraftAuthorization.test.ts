@@ -13,7 +13,7 @@ const sha256 = (path: string) => createHash("sha256").update(readFileSync(path))
 
 describe("ch01-t06 Arabic candidate-draft authorization", () => {
   it("authorizes only a four-record Arabic candidate for ch01-t06", () => {
-    expect(authorization.authorizationVersion).toBe("1.12.0");
+    expect(authorization.authorizationVersion).toBe("1.13.0");
     expect(grant.authorizationStatus).toBe("granted");
     expect(grant.applicableTopicIds).toEqual(["ch01-t06"]);
     expect(grant.translationScope.recordIdsInRequiredOrder).toEqual([

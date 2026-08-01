@@ -1,8 +1,8 @@
 # ch01-t06 internal application integration authorization
 
-**Record ID:** ch01-t06-application-integration-authorization-001  
-**Date:** 2026-08-01  
-**Authorized by:** khubrani2a-gif (project owner)  
+**Record ID:** ch01-t06-application-integration-authorization-001
+**Date:** 2026-08-01
+**Authorized by:** khubrani2a-gif (project owner)
 **Status:** granted — internal integration and QA only
 
 The application may load the approved English and Arabic ch01-t06 baselines

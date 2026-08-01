@@ -12,6 +12,8 @@ import { getTopic, getTopicOrder } from "../content/adapter";
 const chapterDir = resolve(process.cwd(), "../../docs/content-design/chapter-01");
 const englishPath = resolve(chapterDir, "batch2-drafts/ch01-t06-content.json");
 const arabicPath = resolve(chapterDir, "batch2-arabic-drafts/ch01-t06-content.json");
+const authorizationPath = resolve(chapterDir, "PILOT_AUTHORIZATION.json");
+const readinessPath = resolve(chapterDir, "PILOT_READINESS.json");
 const sha256 = (path: string) => createHash("sha256").update(readFileSync(path)).digest("hex");
 
 describe("ch01-t06 internal integration without a visual", () => {
@@ -26,6 +28,13 @@ describe("ch01-t06 internal integration without a visual", () => {
     expect(topic?.explanation?.recordId).toBe("ch01-t06-block-explanation");
     expect(topic?.reviewQuestion?.recordId).toBe("ch01-t06-block-review");
     expect(topic?.mainIdea?.text.ar).toContain("كمية قياسية");
+    const rawRecords = (RAW_CONTENT_BY_TOPIC["ch01-t06"] as any).records;
+    for (const record of rawRecords) {
+      expect(record.record.arabic.canonicalArabicTranslation.direction).toBe("rtl");
+    }
+    for (const record of rawRecords.slice(1)) {
+      expect(record.record.localizedContent.ar.direction).toBe("rtl");
+    }
     expect(topic?.reviewQuestion?.text.ar).toContain("تتغير السرعة المتجهة");
   });
 
@@ -44,5 +53,9 @@ describe("ch01-t06 internal integration without a visual", () => {
       expect(record.record.blocking.studentFacingAllowed).toBe(false);
       expect(record.record.arabic.translationStatus).toBe("draft");
     }
+    const authorization = JSON.parse(readFileSync(authorizationPath, "utf8"));
+    const readiness = JSON.parse(readFileSync(readinessPath, "utf8"));
+    expect(authorization.ch01T06ApplicationIntegrationAuthorization.publicationRestrictions.studentPublicationAuthorized).toBe(false);
+    expect(readiness.ch01T06InternalIntegrationReadiness.studentPublicationAuthorized).toBe(false);
   });
 });
