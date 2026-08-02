@@ -1,0 +1,450 @@
+{
+  "schemaVersion": "2.3.0",
+  "topicId": "ch01-t07",
+  "topicTitle": "Vector Representation and Addition",
+  "topicTitleAr": "تمثيل المتجهات وجمعها",
+  "generationStatus": "draft-batch3-arabic-candidate-generation",
+  "generationNote": "Arabic candidate structurally equivalent to the approved English baseline; Arabic localization is draft only and does not authorize application integration, slides, publication, or student use.",
+  "records": [
+    {
+      "recordType": "instructorScript",
+      "record": {
+        "instructorScriptId": "ch01-is-107",
+        "topicIds": [
+          "ch01-t07"
+        ],
+        "openingHook": {
+          "text": "If two arrows describe motions in sequence, how can one arrow represent their combined effect?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "meaningfulQuestion": {
+          "text": "What information must a resultant preserve?",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "mainIdea": {
+          "text": "A vector arrow represents direction and relative magnitude. Vectors may be added head-to-tail. The single vector equal to their sum is the resultant.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "learningObjectives": [
+          {
+            "text": "Represent a vector with an arrow that shows direction and relative magnitude.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Add collinear vectors using one shared direction convention.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          {
+            "text": "Identify the resultant as the single vector equal to a vector sum.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "wordForWordTeachingScript": {
+          "text": "Begin with one arrow: its orientation carries direction and its length represents relative magnitude. To combine two vectors, place the tail of the second at the head of the first. The resultant runs from the first tail to the final head. Along one line, use a chosen positive direction: arrows in the same direction combine, and opposite directions offset. For perpendicular arrows, the head-to-tail construction still defines the resultant. Do not claim that perpendicular input arrows alone make the resultant perpendicular to either input; that needs additional conditions. Keep the discussion conceptual: no components, displacement, formulas, or numerical source values.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "slidePageCues": [
+
+        ],
+        "figureCues": [
+          "Use only the separately authorized original abstract A/B/R diagram after its review; never use publisher Figure 1.13."
+        ],
+        "intuition": {
+          "text": "Follow the first arrow, then the second; the resultant is the one-arrow shortcut from start to finish.",
+          "status": "draft",
+          "language": "en",
+          "direction": "ltr"
+        },
+        "graphGuidance": [
+
+        ],
+        "tableGuidance": [
+
+        ],
+        "levelAdaptations": [
+          "Introductory: trace head-to-tail arrows before naming the resultant.",
+          "Standard: contrast same-direction and opposite-direction collinear arrows."
+        ],
+        "questionsToAskStudents": [
+          {
+            "text": "Which two points determine the resultant in a head-to-tail construction?",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "expectedStudentResponses": [
+          {
+            "text": "It starts at the tail of the first vector and ends at the head of the last vector.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          }
+        ],
+        "misconceptionsToAnticipate": [
+          "Adding magnitudes always gives the resultant magnitude.",
+          "Perpendicular input vectors make the resultant perpendicular to one input.",
+          "The resultant begins at the head of the last vector."
+        ],
+        "analogies": [
+          "Two route instructions followed in sequence can be summarized by one direct start-to-finish instruction."
+        ],
+        "examples": [
+          "Two arrows along a common line: a rightward arrow followed by another rightward arrow has a rightward resultant.",
+          "Two perpendicular arrows may be placed head-to-tail; the resultant joins the start to the final endpoint."
+        ],
+        "transitions": [
+
+        ],
+        "emphasisNotes": [
+          "A resultant is a vector, so direction matters.",
+          "Do not introduce component terminology or a special perpendicularity claim."
+        ],
+        "timing": {
+          "estimatedMinutes": 7,
+          "pauseCues": [
+            "After students identify arrow direction and length.",
+            "Before distinguishing construction from unsupported claims."
+          ]
+        },
+        "instructorOnlyCautions": [
+          "No Arabic, application content, slides, student publication, Figure 1.13 imagery, bird/wind example, components, displacement, acceleration, or source numerical values."
+        ],
+        "scientificCorrectionReferences": [
+          "ch01-corr-003"
+        ],
+        "sourceTraceability": [
+          {
+            "sourceId": "SRC-CH01-PDF-003",
+            "locatorType": "page",
+            "locatorId": "S3-P025_to_S3-P027",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "restricted",
+            "allowedUse": "referenceOnly",
+            "evidence": "Newly authored scope-limited explanation; no publisher wording, figure, or numerical detail is reproduced."
+          },
+          {
+            "sourceId": "SRC-CH01-KAHOOT-001",
+            "locatorType": "question",
+            "locatorId": "first-bank-41-44_and_second-bank-27-28",
+            "linkageType": "explicit",
+            "confidence": "high",
+            "contribution": "concept",
+            "rightsStatus": "pendingReview",
+            "allowedUse": "referenceOnly",
+            "evidence": "Concept scope check only; no wording is reproduced."
+          }
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [
+
+          ],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "First limited English candidate for ch01-t07.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending",
+            "other"
+          ],
+          "blockingRecordIds": [
+            "ch01-corr-003",
+            "ch01-vis-001"
+          ],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "تمهيد: كيف يمكن لسهم واحد أن يمثل الأثر المشترك لسهمين متتابعين؟\n\nالفكرة الرئيسة: يمثل سهم الكمية المتجهة الاتجاه والمقدار النسبي. وعند وضع المتجهات رأسًا لذيل، تكون المحصلة متجهًا واحدًا يكافئ مجموعها.\n\nسكربت التدريس: يمثل اتجاه السهم اتجاه الكمية المتجهة ويمثل طوله مقدارها النسبي. ولجمع متجهين ضع ذيل الثاني عند رأس الأول. تمتد المحصلة من الذيل الأول إلى الرأس الأخير. في بعد واحد تتجمع المتجهات في الاتجاه نفسه وتتعاكس في الاتجاهين المتقابلين. وللمتجهات المتعامدة يظل بناء رأس لذيل هو الذي يحدد المحصلة؛ ولا يكفي تعامد المتجهين وحده للقول إن المحصلة عمودية على أحدهما.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-vector",
+            "ch01-term-resultant"
+          ]
+        }
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t07-block-mainidea",
+        "blockType": "mainIdea",
+        "topicId": "ch01-t07",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "A vector arrow shows direction and relative magnitude. When vectors are combined head-to-tail, the resultant is the single vector from the original start to the final endpoint.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "يمثل سهم الكمية المتجهة الاتجاه والمقدار النسبي. وعند جمع المتجهات رأسًا لذيل، تكون المحصلة سهمًا واحدًا من البداية إلى النهاية.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "يمثل سهم الكمية المتجهة الاتجاه والمقدار النسبي. وعند جمع المتجهات رأسًا لذيل، تكون المحصلة سهمًا واحدًا من البداية إلى النهاية.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-vector",
+            "ch01-term-resultant"
+          ]
+        },
+        "provenanceLinks": [
+
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-003"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-003"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [
+
+          ],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Candidate main idea.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending"
+          ],
+          "blockingRecordIds": [
+            "ch01-corr-003"
+          ],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t07-block-explanation",
+        "blockType": "organizedExplanation",
+        "topicId": "ch01-t07",
+        "visibility": "shared",
+        "localizedContent": {
+          "en": {
+            "text": "Step 1: draw each vector as an arrow. Step 2: place the tail of the next arrow at the head of the previous arrow. Step 3: draw the resultant from the first tail to the final head. Step 4: on one line, choose a positive direction so same-direction vectors combine and opposite-direction vectors offset. Step 5: for perpendicular vectors, use the same head-to-tail construction; do not infer that the resultant is perpendicular to either input merely because the inputs are perpendicular.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "الخطوة 1: ارسم كل كمية متجهة سهمًا. الخطوة 2: ضع ذيل السهم التالي عند رأس السابق. الخطوة 3: ارسم المحصلة من الذيل الأول إلى الرأس الأخير. وفي بعد واحد تتجمع المتجهات في الاتجاه نفسه وتتعاكس في الاتجاهين المتقابلين. وللمتجهات المتعامدة يبقى البناء رأسًا لذيل؛ ولا يكفي تعامد المتجهين وحده للقول إن المحصلة عمودية على أحدهما.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "الخطوة 1: ارسم كل كمية متجهة سهمًا. الخطوة 2: ضع ذيل السهم التالي عند رأس السابق. الخطوة 3: ارسم المحصلة من الذيل الأول إلى الرأس الأخير. وفي بعد واحد تتجمع المتجهات في الاتجاه نفسه وتتعاكس في الاتجاهين المتقابلين. وللمتجهات المتعامدة يبقى البناء رأسًا لذيل؛ ولا يكفي تعامد المتجهين وحده للقول إن المحصلة عمودية على أحدهما.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-vector",
+            "ch01-term-resultant"
+          ]
+        },
+        "provenanceLinks": [
+
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-003"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-003"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [
+
+          ],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Candidate explanation.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending"
+          ],
+          "blockingRecordIds": [
+            "ch01-corr-003"
+          ],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    },
+    {
+      "recordType": "contentBlock",
+      "record": {
+        "blockId": "ch01-t07-block-review",
+        "blockType": "reviewQuestion",
+        "topicId": "ch01-t07",
+        "visibility": "student",
+        "localizedContent": {
+          "en": {
+            "text": "Two vectors are drawn head-to-tail. Which arrow is the resultant? Correct answer: the arrow that starts at the tail of the first vector and ends at the head of the last vector. If the two input arrows are perpendicular, do not assume the resultant is perpendicular to either input; the construction identifies the resultant, but that extra claim needs more information.",
+            "status": "draft",
+            "language": "en",
+            "direction": "ltr"
+          },
+          "ar": {
+            "text": "إذا رُسم متجهان رأسًا لذيل، فما السهم الذي يمثل المحصلة؟ الإجابة: السهم من ذيل المتجه الأول إلى رأس المتجه الأخير. وتعمد المتجهين لا يثبت وحده أن المحصلة عمودية على أي منهما.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          }
+        },
+        "arabic": {
+          "originalArabicText": {
+            "text": null,
+            "status": "missing",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "canonicalArabicTranslation": {
+            "text": "إذا رُسم متجهان رأسًا لذيل، فما السهم الذي يمثل المحصلة؟ الإجابة: السهم من ذيل المتجه الأول إلى رأس المتجه الأخير. وتعمد المتجهين لا يثبت وحده أن المحصلة عمودية على أي منهما.",
+            "status": "draft",
+            "language": "ar",
+            "direction": "rtl"
+          },
+          "translationStatus": "draft",
+          "translationReviewer": null,
+          "terminologyApprovalStatus": "approved",
+          "glossaryTermIds": [
+            "ch01-term-vector",
+            "ch01-term-resultant"
+          ]
+        },
+        "provenanceLinks": [
+
+        ],
+        "scientificCorrectionIds": [
+          "ch01-corr-003"
+        ],
+        "conflictRecordIds": [
+          "CD-CONF-003"
+        ],
+        "duplicateHandling": {
+          "duplicateGroupIds": [
+
+          ],
+          "revisionGroupId": null,
+          "canonicalPreferenceStatus": "preferred",
+          "preferredSourceRecordId": null,
+          "preferenceReason": "Candidate review.",
+          "supersededBy": null,
+          "retainedForHistoricalTrace": true
+        },
+        "blocking": {
+          "blockingStatus": "blocked",
+          "blockingReason": [
+            "translationPending",
+            "scientificReviewPending",
+            "editorialReviewPending"
+          ],
+          "blockingRecordIds": [
+            "ch01-corr-003"
+          ],
+          "studentFacingAllowed": false,
+          "instructorFacingAllowed": true,
+          "resolutionRequired": true,
+          "resolutionOwner": "physicsReviewerAndCanonicalEditor",
+          "resolutionStatus": "open"
+        },
+        "contentLeakTestStatus": "notRun"
+      }
+    }
+  ]
+}
