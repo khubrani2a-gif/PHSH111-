@@ -3,6 +3,7 @@
   "topicId": "ch01-t07",
   "topicTitle": "Vector Representation and Addition",
   "topicTitleAr": "تمثيل المتجهات وجمعها",
+  "englishBaselineSha256": "f06787d6b06f3e5c09753bc0738ee3d6efb11541ed53ccc11ff4d75f0d042c7c",
   "generationStatus": "draft-batch3-arabic-candidate-generation",
   "generationNote": "Arabic candidate structurally equivalent to the approved English baseline; Arabic localization is draft only and does not authorize application integration, slides, publication, or student use.",
   "records": [
