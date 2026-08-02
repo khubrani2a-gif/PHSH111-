@@ -1,0 +1,40 @@
+{
+  "inventoryId": "ch01-t07-figure-1.13-inventory-001",
+  "topicId": "ch01-t07",
+  "sourceId": "SRC-CH01-FIGURE-1.13-001",
+  "rawSource": {
+    "path": null,
+    "sha256": "8f4d3739687482a035011692022b825048c2735e164e9f9dca5349688b5989af",
+    "rightsStatus": "restricted-pending-rights-confirmation",
+    "allowedUse": "local-review-only; no repository storage"
+  },
+  "figureIdentity": {
+    "label": "Figure 1.13",
+    "topicScope": "vector representation and addition",
+    "captionEvidence": "Identity and panel availability were checked locally from the owner-provided attachment; no source image or transcription is retained."
+  },
+  "panels": [
+    {
+      "panelId": "Figure-1.13-c",
+      "label": "(c)",
+      "scientificRole": "head-to-tail vector construction and the resultant-velocity arrow",
+      "sourceLabels": [],
+      "supports": ["vector addition is directional", "resultant is the vector from the construction start to its endpoint"],
+      "doesNotAuthorize": ["copying the panel", "using unrecorded numerical magnitudes", "claiming perpendicularity from a right angle alone"]
+    },
+    {
+      "panelId": "Figure-1.13-d",
+      "label": "(d)",
+      "scientificRole": "head-to-tail vector construction with a differently directed second vector and a resultant-velocity arrow",
+      "sourceLabels": [],
+      "supports": ["changing a component direction changes the resultant direction", "vector addition must retain magnitude and direction"],
+      "doesNotAuthorize": ["copying the panel", "using unrecorded numerical magnitudes", "claiming perpendicularity from a right angle alone"]
+    }
+  ],
+  "resolutionLinks": {
+    "visualResolutionId": "ch01-vis-001",
+    "problemId": "S5-P011",
+    "scientificCorrectionId": "ch01-corr-003",
+    "status": "source image recovered; rights and scientific approval remain open"
+  }
+}
