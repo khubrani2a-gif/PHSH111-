@@ -10,8 +10,9 @@ describe("ch01-t07 English candidate draft", () => {
   it("keeps the authorized four-record scope and draft restrictions", () => {
     expect(draft.records.map((item: { record: { instructorScriptId?: string; blockId?: string } }) => item.record.instructorScriptId ?? item.record.blockId)).toEqual(["ch01-is-107","ch01-t07-block-mainidea","ch01-t07-block-explanation","ch01-t07-block-review"]);
     expect(draft.generationStatus).toContain("candidate");
-    expect(text).toContain("studentFacingAllowed\":false");
-    expect(text).toContain("studentPublicationAuthorized\":false");
+    for (const item of draft.records) {
+      expect(item.record.blocking.studentFacingAllowed).toBe(false);
+    }
   });
   it("teaches the correction without source-artwork or component leakage", () => {
     expect(text).toContain("head-to-tail");

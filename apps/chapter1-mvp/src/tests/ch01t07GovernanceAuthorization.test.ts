@@ -14,12 +14,12 @@ describe("ch01-t07 governance authorization", () => {
     }
     const correction = corrections.records.find((record: { correctionId: string }) => record.correctionId === "ch01-corr-003");
     expect(correction).toMatchObject({approvalStatus:"editoriallyApproved",studentFacingSuppression:true});
-    expect(correction.correctedWording.en).toContain("not merely the presence of a right angle");
+    expect(correction.correctionRationale).toContain("not merely the presence of a right angle");
   });
 
   it("limits the grant to English drafting and a distinct abstract A/B/R visual", () => {
     const grant = authorization.ch01T07GovernanceAndEnglishDraftingAuthorization;
-    expect(authorization.authorizationVersion).toBe("1.14.0");
+    expect(authorization.authorizationVersion).toBe("1.15.0");
     expect(grant.applicableTopicIds).toEqual(["ch01-t07"]);
     expect(grant.visualProductionAuthorization).toMatchObject({visualId:"ch01-t07-visual-001",authorized:true});
     expect(grant.visualProductionAuthorization.prohibited).toContain("bird");

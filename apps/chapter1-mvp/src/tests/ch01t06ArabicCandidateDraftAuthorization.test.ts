@@ -13,7 +13,7 @@ const sha256 = (path: string) => createHash("sha256").update(readFileSync(path))
 
 describe("ch01-t06 Arabic candidate-draft authorization", () => {
   it("authorizes only a four-record Arabic candidate for ch01-t06", () => {
-    expect(authorization.authorizationVersion).toBe("1.13.0");
+    expect(authorization.authorizationVersion).toBe("1.15.0");
     expect(grant.authorizationStatus).toBe("granted");
     expect(grant.applicableTopicIds).toEqual(["ch01-t06"]);
     expect(grant.translationScope.recordIdsInRequiredOrder).toEqual([
@@ -46,7 +46,7 @@ describe("ch01-t06 Arabic candidate-draft authorization", () => {
       });
     }
     expect(glossary.terms.find((entry: { termId: string }) => entry.termId === "ch01-term-vector"))
-      .toMatchObject({ topicIds: ["ch01-t06"] });
+      .toMatchObject({ topicIds: ["ch01-t06", "ch01-t07"] });
   });
 
   it("keeps every downstream capability blocked and excludes out-of-scope physics", () => {

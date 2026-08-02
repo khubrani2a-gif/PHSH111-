@@ -8,7 +8,7 @@ const glossaryPath = resolve(
 );
 
 describe("ch01-t06 vector terminology governance", () => {
-  it("approves the existing Arabic vector term for ch01-t06 only", () => {
+  it("keeps the approved Arabic vector term available to ch01-t06", () => {
     const glossary = JSON.parse(readFileSync(glossaryPath, "utf8"));
     const vector = glossary.terms.find(
       (term: { termId: string }) => term.termId === "ch01-term-vector",
@@ -19,7 +19,7 @@ describe("ch01-t06 vector terminology governance", () => {
       englishTerm: "vector",
       approvedArabicTerm: { text: "كمية متجهة", status: "approved" },
       approvalStatus: "approved",
-      topicIds: ["ch01-t06"],
+      topicIds: ["ch01-t06", "ch01-t07"],
     });
   });
 });

@@ -317,13 +317,13 @@ describe("Batch 1 integrity — English/Arabic non-localized fields agree (raw f
 });
 
 describe("Batch 1 integrity — no unapproved topic or asset is loaded", () => {
-  it("RAW_CONTENT_BY_TOPIC contains exactly the eight internally authorized topics", () => {
+  it("RAW_CONTENT_BY_TOPIC contains exactly the internally authorized topics", () => {
     const keys = Object.keys(RAW_CONTENT_BY_TOPIC).sort();
     expect(keys).toEqual([...APP_TOPIC_ORDER].sort());
   });
 
   it("no placeholder or out-of-scope topic ID is present anywhere in the loaded set", () => {
-    const outOfScope = ["ch01-t07", "ch01-t09", "ch01-t11", "ch01-t12", "ch01-t13", "ch01-t14"];
+    const outOfScope = ["ch01-t09", "ch01-t11", "ch01-t12", "ch01-t13", "ch01-t14"];
     for (const id of outOfScope) {
       expect(Object.prototype.hasOwnProperty.call(RAW_CONTENT_BY_TOPIC, id)).toBe(false);
     }

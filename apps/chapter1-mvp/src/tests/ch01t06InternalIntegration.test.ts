@@ -38,10 +38,10 @@ describe("ch01-t06 internal integration without a visual", () => {
     expect(topic?.reviewQuestion?.text.ar).toContain("تتغير السرعة المتجهة");
   });
 
-  it("orders t06 between t05 and t08 without changing prior topics", () => {
+  it("keeps t06 before the later t07 integration without changing prior topics", () => {
     expect(getTopicOrder()).toEqual([
       "ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04",
-      "ch01-t05", "ch01-t06", "ch01-t08", "ch01-t10",
+      "ch01-t05", "ch01-t06", "ch01-t07", "ch01-t08", "ch01-t10",
     ]);
   });
 
