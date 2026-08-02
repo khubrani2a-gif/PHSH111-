@@ -140,35 +140,40 @@ function normalizeVisual(
   diagnostics: AdapterDiagnostic[],
 ): NormalizedVisual | undefined {
   const block = findContentBlock(file, "visualReference");
-  if (!block) return undefined;
-
-  const governanceEntry = block.visualGovernance?.[0];
   const svgMarkup = RAW_SVG_MARKUP_BY_TOPIC[topicId];
+  const rawValidation = RAW_VISUAL_VALIDATION_BY_TOPIC[topicId] as
+    | VisualValidationRecord
+    | undefined;
+
+  // A separately governed visual can be bundled for a topic whose approved
+  // baseline intentionally has no visualReference content record.  Its SVG
+  // and validation record remain the source of truth; this only lets the
+  // generic adapter expose that already-approved asset to the internal UI.
+  if (!block && (!svgMarkup || !rawValidation)) return undefined;
+
+  const governanceEntry = block?.visualGovernance?.[0];
   if (!svgMarkup) {
     diagnostics.push({
       severity: "error",
       code: "missing-visual",
       message: `No bundled SVG asset found for topic "${topicId}"`,
       topicId,
-      recordId: block.blockId,
+      recordId: block?.blockId ?? rawValidation?.visualId,
     });
   }
 
-  const rawValidation = RAW_VISUAL_VALIDATION_BY_TOPIC[topicId] as
-    | VisualValidationRecord
-    | undefined;
   if (!rawValidation) {
     diagnostics.push({
       severity: "warning",
       code: "missing-visual-validation",
       message: `No visual-validation record found for topic "${topicId}"`,
       topicId,
-      recordId: block.blockId,
+      recordId: block?.blockId,
     });
   }
 
   return {
-    recordId: block.blockId,
+    recordId: block?.blockId ?? rawValidation?.visualId ?? `${topicId}-visual-001`,
     visualId: governanceEntry?.visualId ?? rawValidation?.visualId ?? `${topicId}-visual-001`,
     assetPath: governanceEntry?.assetPath ?? rawValidation?.assetPath ?? "",
     svgMarkup: svgMarkup ?? null,
