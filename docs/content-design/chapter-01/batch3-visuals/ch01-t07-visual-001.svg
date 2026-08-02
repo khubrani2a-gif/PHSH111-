@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract vector addition</title><desc id="desc">Three original arrows labelled A, B, and R show a head-to-tail vector sum.</desc>
+  <rect width="900" height="520" fill="#ffffff"/><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#1463b8"/></marker></defs>
+  <path d="M130 390 L390 190" fill="none" stroke="#1463b8" stroke-width="12" marker-end="url(#arrow)"/><text x="240" y="270" font-family="Arial,sans-serif" font-size="38" fill="#172b4d">A</text>
+  <path d="M390 190 L690 190" fill="none" stroke="#1463b8" stroke-width="12" marker-end="url(#arrow)"/><text x="525" y="165" font-family="Arial,sans-serif" font-size="38" fill="#172b4d">B</text>
+  <path d="M130 390 L690 190" fill="none" stroke="#0b3d91" stroke-width="14" marker-end="url(#arrow)"/><text x="400" y="345" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="#0b3d91">R</text>
+  <text x="130" y="470" font-family="Arial,sans-serif" font-size="25" fill="#172b4d">Original abstract head-to-tail construction</text>
+</svg>
