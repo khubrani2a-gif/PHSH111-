@@ -107,10 +107,10 @@
         "arabicStatus": "notGenerated"
       },
       "correctionRationale": "The direction of the resultant follows the component sum, not merely the presence of a right angle between vectors.",
-      "approvalStatus": "proposed",
+      "approvalStatus": "editoriallyApproved",
       "affectedContentBlockIds": [],
       "studentFacingSuppression": true,
-      "approvals": {"scientificReviewer": null, "editorialReviewer": null, "approvedAt": null}
+      "approvals": {"scientificReviewer": null, "editorialReviewer": "khubrani2a-gif (project owner)", "approvedAt": "2026-08-02"}
     },
     {
       "correctionId": "ch01-corr-004",
