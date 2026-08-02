@@ -1,0 +1,24 @@
+{
+  "approvalId": "ch01-t07-english-baseline-approval-001",
+  "baselineVersion": "1.0.0",
+  "topicId": "ch01-t07",
+  "status": "approved",
+  "approvedAt": "2026-08-02",
+  "approvedBy": "khubrani2a-gif (project owner)",
+  "approvedDraft": {
+    "path": "docs/content-design/chapter-01/batch3-drafts/ch01-t07-content.json",
+    "sha256": "f06787d6b06f3e5c09753bc0738ee3d6efb11541ed53ccc11ff4d75f0d042c7c",
+    "recordIdsInOrder": ["ch01-is-107", "ch01-t07-block-mainidea", "ch01-t07-block-explanation", "ch01-t07-block-review"]
+  },
+  "scientificReview": {
+    "result": "approved",
+    "findings": ["Vectors are represented by direction and relative magnitude.", "The resultant is correctly defined through head-to-tail construction.", "The collinear convention is stated without numerical source claims.", "The perpendicular-vector misconception is explicitly blocked: perpendicular inputs alone do not establish a perpendicular resultant."],
+    "correctionDependency": "ch01-corr-003 editoriallyApproved"
+  },
+  "scopeBoundary": {
+    "included": ["vector representation", "one-dimensional vector addition", "resultant", "perpendicular head-to-tail construction"],
+    "excluded": ["components", "displacement", "acceleration", "graphs", "calculus", "Arabic", "application integration", "slides", "publication", "student use", "Figure 1.13 reuse", "bird and wind imagery"]
+  },
+  "reviewPolicy": "Any content, identifier, source-checksum, or ordering change requires a new candidate review and baseline revision.",
+  "publicationRestrictions": {"studentFacingAllowed": false, "studentPublicationAuthorized": false, "applicationIntegrationAuthorized": false, "arabicBaselineApproved": false}
+}
