@@ -1,0 +1,28 @@
+{
+  "sourceId": "SRC-CH01-FIGURE-1.13-001",
+  "sourceTitle": "Figure 1.13 — vector-addition panels",
+  "sourceType": "user-provided-raster-image-reviewed-locally-not-preserved",
+  "receivedAt": "2026-08-02",
+  "providedBy": "project owner",
+  "preservedFile": null,
+  "media": {
+    "mimeType": "image/png",
+    "widthPixels": 1748,
+    "heightPixels": 1042,
+    "sha256": "8f4d3739687482a035011692022b825048c2735e164e9f9dca5349688b5989af"
+  },
+  "preservationStatus": "reviewed-locally-only; no raw image is retained or tracked in this repository",
+  "identityStatus": "owner-provided as Figure 1.13; the required panels (c) and (d) were visible during local review",
+  "rightsAndAccess": {
+    "status": "restricted-pending-rights-confirmation",
+    "publicReuse": "not-approved",
+    "adaptation": "not-approved",
+    "allowedUse": "local-review-only; no repository storage",
+    "reason": "The attachment contains publisher-style figure and photographic artwork, but no license, textbook edition, copyright holder, or reuse permission was supplied."
+  },
+  "knownLimitations": [
+    "The attachment provides no bibliographic metadata or permission statement.",
+    "The raw image is deliberately excluded from commits and pull requests.",
+    "The local review supports source identification and scope review only; it is not an authorized application asset or a source for copying/redrawing publisher artwork."
+  ]
+}
