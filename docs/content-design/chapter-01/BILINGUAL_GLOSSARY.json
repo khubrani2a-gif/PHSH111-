@@ -117,7 +117,7 @@
       "discouragedTranslations": ["السرعة without direction when a vector is meant"],
       "sourceReferences": ["S2-SEG102", "S2-SEG104", "SCA06", "SCA11", "S3-SCI-005"],
       "approvalStatus": "approved",
-      "topicIds": ["ch01-t10"],
+      "topicIds": ["ch01-t07", "ch01-t10"],
       "terminologyReviewer": "khubrani2a-gif (project owner)",
       "reviewedAt": "2026-07-15",
       "reviewBasis": "Approved by the project owner based on Claude's completed terminology review of ch01-term-velocity (see conversation record). This records the project owner's approval decision, not an independently derived linguistic re-verification beyond that review."
@@ -207,7 +207,7 @@
       "discouragedTranslations": ["كمية قياسية"],
       "sourceReferences": ["S2-SEG104", "S2-SEG106"],
       "approvalStatus": "approved",
-      "topicIds": ["ch01-t06"],
+      "topicIds": ["ch01-t06", "ch01-t07"],
       "terminologyReviewer": "khubrani2a-gif (project owner)",
       "reviewedAt": "2026-08-01",
       "reviewBasis": "Explicit project-owner approval for ch01-t06 on 2026-08-01. This approves the pre-existing Arabic equivalent كمية متجهة for vector and extends its scope to ch01-t06; no new glossary term or other glossary record was created or changed."
@@ -215,13 +215,17 @@
     {
       "termId": "ch01-term-resultant",
       "englishTerm": "resultant",
-      "approvedArabicTerm": {"text": "المحصلة", "status": "proposedPendingReviewerApproval"},
+      "approvedArabicTerm": {"text": "المحصلة", "status": "approved"},
       "alternateArabicTerms": ["المتجه المحصل"],
       "definition": "The single vector equal to the vector sum of two or more vectors.",
       "usageNotes": "Do not infer its direction from magnitudes alone.",
       "discouragedTranslations": ["الناتج without vector context"],
       "sourceReferences": ["S3C-Q009", "R1-Q009", "ch01-corr-003"],
-      "approvalStatus": "pending"
+      "approvalStatus": "approved",
+      "topicIds": ["ch01-t07"],
+      "terminologyReviewer": "khubrani2a-gif (project owner)",
+      "reviewedAt": "2026-08-02",
+      "reviewBasis": "Explicit project-owner approval for ch01-t07. The approved Arabic equivalent is المحصلة; it names the single vector equal to a vector sum and does not authorize component terminology."
     },
     {
       "termId": "ch01-term-slope",

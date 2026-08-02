@@ -10,15 +10,15 @@
       "sourceVisualIds": ["S5-VIS-MISSING-001"],
       "sourceRecordIds": ["S5-SEG019", "S5-P011"],
       "possibleSourcePages": ["S3-P026", "S3-P027"],
-      "possibleSourcePageLinkage": "candidateMatch",
-      "recoverability": "possiblyRecoverableButIdentityUnconfirmed",
-      "replacementOrRedrawNeed": "Compare original figure metadata first; if identity cannot be confirmed, create an original scientifically reviewed redraw rather than copying the candidate pages.",
-      "scientificDependency": "Vector directions and the reported resultant estimates cannot be validated without the panels.",
+      "possibleSourcePageLinkage": "locallyReviewedButRestricted",
+      "recoverability": "reviewedLocallyOnlyNoRepositoryReuse",
+      "replacementOrRedrawNeed": "Do not copy, adapt, display, or redraw the publisher artwork. An independently authored, abstract A/B/R arrow diagram may be produced only under a separate authorization and scientific review; it must use none of the source artwork, bird, wind, numbers, layout, or labels.",
+      "scientificDependency": "The source figure is not used to validate numerical estimates or a perpendicular-resultant claim. Canonical content may rely only on independently reviewed vector-sum wording and an original abstract diagram, if separately authorized.",
       "scientificAuditRecordIds": ["S3C-SCI-003", "R1-SCI-003"],
-      "studentFacingBlockStatus": "blocked",
-      "blockingReason": ["missingVisual", "unverifiedVisual", "answerValidation", "rightsPending"],
+      "studentFacingBlockStatus": "blockedPendingOriginalVisualReview",
+      "blockingReason": ["originalVisualNotYetProduced", "originalVisualNotYetScientificallyReviewed"],
       "resolutionOwner": "visualEditorAndPhysicsReviewer",
-      "resolutionStatus": "open"
+      "resolutionStatus": "sourceReuseClosedOriginalReplacementAuthorized"
     },
     {
       "visualResolutionId": "ch01-vis-002",
