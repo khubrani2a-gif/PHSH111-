@@ -4,14 +4,14 @@ import { APP_TOPIC_ORDER, PILOT_TOPIC_ORDER } from "../types/pilotSchema";
 import { RAW_CONTENT_BY_TOPIC } from "../content/rawImports";
 
 describe("content adapter — real canonical data (four pilot topics + Batch 1)", () => {
-  it("loads all eight internally authorized topics", () => {
+  it("loads all internally authorized topics", () => {
     const { topics } = loadAllTopics();
-    expect(topics).toHaveLength(8);
+    expect(topics).toHaveLength(9);
     expect(topics.map((t) => t.topicId).sort()).toEqual([...APP_TOPIC_ORDER].sort());
   });
 
   it("preserves the correct chapter-wide topic order", () => {
-    expect(getTopicOrder()).toEqual(["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t06", "ch01-t08", "ch01-t10"]);
+    expect(getTopicOrder()).toEqual(["ch01-t01", "ch01-t02", "ch01-t03", "ch01-t04", "ch01-t05", "ch01-t06", "ch01-t07", "ch01-t08", "ch01-t10"]);
   });
 
   it("keeps the original four-topic PILOT_TOPIC_ORDER constant unchanged and in the same relative order", () => {
@@ -97,7 +97,7 @@ describe("content adapter — real canonical data (four pilot topics + Batch 1)"
     expect(t10?.governance.visualReviewStatus).toBe("readyForHumanReview");
   });
 
-  it("supports previous/next lookups following the fixed eight-topic order", () => {
+  it("supports previous/next lookups following the fixed chapter-wide order", () => {
     const order = getTopicOrder();
     expect(order[0]).toBe("ch01-t01");
     expect(order[order.length - 1]).toBe("ch01-t10");
@@ -106,8 +106,9 @@ describe("content adapter — real canonical data (four pilot topics + Batch 1)"
     expect(order[3]).toBe("ch01-t04");
     expect(order[4]).toBe("ch01-t05");
     expect(order[5]).toBe("ch01-t06");
-    expect(order[6]).toBe("ch01-t08");
-    expect(order[7]).toBe("ch01-t10");
+    expect(order[6]).toBe("ch01-t07");
+    expect(order[7]).toBe("ch01-t08");
+    expect(order[8]).toBe("ch01-t10");
   });
 
   it("does not mutate the raw imported JSON (adapter is read-only)", () => {
