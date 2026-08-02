@@ -51,12 +51,14 @@ import ch01t01ContentEn from "../../../../docs/content-design/chapter-01/batch1-
 import ch01t04ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t04-content.json";
 import ch01t05ContentEn from "../../../../docs/content-design/chapter-01/batch1-drafts/ch01-t05-content.json";
 import ch01t06ContentEn from "../../../../docs/content-design/chapter-01/batch2-drafts/ch01-t06-content.json";
+import ch01t07ContentEn from "../../../../docs/content-design/chapter-01/batch3-drafts/ch01-t07-content.json";
 
 // Batch 1 — approved Arabic candidate baseline (immutable; never edited by this application).
 import ch01t01ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t01-content.json";
 import ch01t04ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t04-content.json";
 import ch01t05ContentAr from "../../../../docs/content-design/chapter-01/batch1-arabic-drafts/ch01-t05-content.json";
 import ch01t06ContentAr from "../../../../docs/content-design/chapter-01/batch2-arabic-drafts/ch01-t06-content.json";
+import ch01t07ContentAr from "../../../../docs/content-design/chapter-01/batch3-arabic-drafts/ch01-t07-content.json";
 
 // Batch 1 — the two governance baseline-approval records themselves (not
 // content; immutable; never edited by this application). Both ch01-t01 and
@@ -71,6 +73,10 @@ import englishCh01T05BaselineApproval from "../../../../docs/content-design/chap
 import arabicCh01T05BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_CH01T05_BASELINE_APPROVAL.json";
 import englishCh01T06BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_CH01T06_BASELINE_APPROVAL.json";
 import arabicCh01T06BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_CH01T06_BASELINE_APPROVAL.json";
+import englishCh01T07BaselineApproval from "../../../../docs/content-design/chapter-01/ENGLISH_CH01T07_BASELINE_APPROVAL.json";
+import arabicCh01T07BaselineApproval from "../../../../docs/content-design/chapter-01/ARABIC_CH01T07_BASELINE_APPROVAL.json";
+import ch01t07Validation from "../../../../docs/content-design/chapter-01/batch3-visuals/ch01-t07-visual-001-validation.json";
+import ch01t07Svg from "../../../../docs/content-design/chapter-01/batch3-visuals/ch01-t07-visual-001.svg?raw";
 
 // Batch 1 — approved visuals and their validation records.
 import ch01t01Validation from "../../../../docs/content-design/chapter-01/batch1-visuals/ch01-t01-visual-001-validation.json";
@@ -143,6 +149,7 @@ const ch01t06Content = mergeEnglishAndArabicTopicFile(
   englishCh01T06BaselineApproval,
   arabicCh01T06BaselineApproval,
 );
+const ch01t07Content = mergeEnglishAndArabicTopicFile(ch01t07ContentEn, ch01t07ContentAr, "ch01-t07", englishCh01T07BaselineApproval, arabicCh01T07BaselineApproval);
 
 /** Raw (unvalidated `unknown`) content JSON, keyed by topic ID — narrowed only inside src/content/validate.ts. */
 export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
@@ -152,6 +159,7 @@ export const RAW_CONTENT_BY_TOPIC: Record<PilotTopicId, unknown> = {
   "ch01-t04": ch01t04Content,
   "ch01-t05": ch01t05Content,
   "ch01-t06": ch01t06Content,
+  "ch01-t07": ch01t07Content,
   "ch01-t08": ch01t08Content,
   "ch01-t10": ch01t10Content,
 };
@@ -162,6 +170,7 @@ export const RAW_VISUAL_VALIDATION_BY_TOPIC: Partial<Record<PilotTopicId, unknow
   "ch01-t02": ch01t02Validation,
   "ch01-t03": ch01t03Validation,
   "ch01-t04": ch01t04Validation,
+  "ch01-t07": ch01t07Validation,
   "ch01-t08": ch01t08Validation,
   "ch01-t10": ch01t10Validation,
 };
@@ -172,6 +181,7 @@ export const RAW_SVG_MARKUP_BY_TOPIC: Partial<Record<PilotTopicId, string>> = {
   "ch01-t02": ch01t02Svg,
   "ch01-t03": ch01t03Svg,
   "ch01-t04": ch01t04Svg,
+  "ch01-t07": ch01t07Svg,
   "ch01-t08": ch01t08Svg,
   "ch01-t10": ch01t10Svg,
 };
